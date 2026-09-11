@@ -16,20 +16,20 @@
 | **Git / GitHub** | VCS backbone — repo @ SHA. We own projection, STALE, propose — not a GitHub rebuild. |
 | **CLI** (planned) | Path index / project, list, freshness — same *patterns* as the prior indexer, new engine |
 
-Normative contracts: [docs/P0-contracts.md](docs/P0-contracts.md). Product locks (2026-09-11): [docs/PRODUCT-LOCKS.md](docs/PRODUCT-LOCKS.md). Living plan: [docs/PRODUCT-PLAN.md](docs/PRODUCT-PLAN.md). Business plan (Core GTM + buyer roots): [docs/BUSINESS-PLAN.md](docs/BUSINESS-PLAN.md). P1 Foam acceptance: [docs/P1-acceptance.md](docs/P1-acceptance.md). Agent rules: [AGENTS.md](AGENTS.md).
+Normative contracts: [docs/P0-contracts.md](docs/P0-contracts.md). Product locks (2026-09-11, **NARROW**): [docs/PRODUCT-LOCKS.md](docs/PRODUCT-LOCKS.md). Living plan: [docs/PRODUCT-PLAN.md](docs/PRODUCT-PLAN.md). Business plan (gated GTM + buyer roots): [docs/BUSINESS-PLAN.md](docs/BUSINESS-PLAN.md). P1 Foam acceptance + proof: [docs/P1-acceptance.md](docs/P1-acceptance.md). Agent rules: [AGENTS.md](AGENTS.md).
 
 ## Plan (not shipping here)
 
 1. **P0** — contracts (this repository seed).
-2. **P1** — Foam slice on pilot SoI [`chouswei/modelbasedPrj-itri-vedan-foam-detection`](https://github.com/chouswei/modelbasedPrj-itri-vedan-foam-detection) — [acceptance docs](docs/P1-acceptance.md) done; runtime not in this cut.
-3. **P2** — single-tenant SaaS on the existing droplet (Devicor); InvenTree untouched.
+2. **P1** — Foam slice on pilot SoI [`chouswei/modelbasedPrj-itri-vedan-foam-detection`](https://github.com/chouswei/modelbasedPrj-itri-vedan-foam-detection) — [acceptance + Foam proof](docs/P1-acceptance.md) (docs done; proof not yet run). Runtime not in this cut.
+3. **P2** — single-tenant SaaS on the existing droplet (Devicor); InvenTree untouched. **Spend frozen** until Foam proof passes.
 4. **P3** — tenancy.
 
 P2/P3 are plan phases only. This cut does not claim they are implemented. ClickUp and InvenTree are not SysMLEdge product features.
 
 ## What you can download
 
-Downloadable source is the **SysML zip of a revision**. Never the graph dump.
+Downloadable source is the **SysML zip of a revision** (all `.sysml` in the tree). Never the graph dump. Never parts-only SSOT.
 
 ## Lineage
 
@@ -39,4 +39,4 @@ SysMLEdge keeps those *roles* and **replaces the engine**: MemNet + GQL, SysML t
 
 ## Status
 
-Docs-first seed. Runtime MCP/CLI against MemNet is specified in P0, not implemented here.
+**NARROW** (Elon / Horcrux, 2026-09-11) — Foam proof in progress. Docs-first seed. Runtime MCP/CLI against MemNet is specified in P0, not implemented here.

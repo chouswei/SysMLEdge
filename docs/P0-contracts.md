@@ -57,7 +57,7 @@ hint: reproject from current SysML, or read with staleOk=true (read-only)
 
 ## 3. Whole-tree import, save, download
 
-SSOT operations are **whole tree**. Agents do not merge by dumping the graph.
+SSOT operations are **whole tree always**. Import / save / download = **all** `.sysml` in the tree. **Never** parts-only SSOT. Agents do not merge by dumping the graph. Projection completeness is a mapping gate (Foam-complete for P1); it MUST NOT shrink the zip/tree.
 
 ### 3.1 Layout
 
@@ -104,7 +104,7 @@ Zip import/export is that tree (see 3.4). `proposals/` MAY be omitted from a “
 
 Resume the *roles* from [codebase-sysmledgraph](https://github.com/chouswei/codebase-sysmledgraph) MCP (`query` / `context` / `impact` / list indexed / map) — **not** Cypher, **not** `indexDbGraph` writing Kuzu, **not** a TCP worker for a Kuzu file lock.
 
-Query language is **GQL** against MemNet (cue → neighbourhood / find). GQL NEVER invents structure: every node/edge in a successful read MUST be projectable from SysML at `rev.sha` (v1 mapping in §5).
+Query language is **GQL** against MemNet (cue → neighbourhood / find). GQL NEVER invents structure: every node/edge in a successful read MUST be projectable from SysML at `rev.sha` (mapping in §5).
 
 ### 4.1 Required tools (P0 names)
 
@@ -112,8 +112,8 @@ Query language is **GQL** against MemNet (cue → neighbourhood / find). GQL NEV
 |------|----------------|-----------|
 | `rev_status` | No | Return `current.sha`, `rev.sha`, `rev.stale`. |
 | `gql_read` | No | Bounded GQL read. Requires `staleOk=true` when STALE, else STALE error. |
-| `gql_context` | No | Neighbourhood of one qname/path (part/port/connection). Same STALE rules. |
-| `gql_impact` | No | Upstream/downstream along mapped connections. Same STALE rules. |
+| `gql_context` | No | Neighbourhood of one qname/path (mapped Foam kinds). Same STALE rules. |
+| `gql_impact` | No | Upstream/downstream along mapped connections / relations Foam uses. Same STALE rules. |
 | `list_scope` | No | Indexed project roots / package qnames in the bound projection. |
 | `propose` | No (SSOT) | Write **only** under `sysml-models/proposals/<id>/`. See §6. |
 | `reproject` | No (SSOT) | Rebuild MemNet from **current** SysML. Human or privileged operator. Agents MAY request; MUST NOT pretend the graph is SSOT. |
@@ -126,7 +126,7 @@ Query language is **GQL** against MemNet (cue → neighbourhood / find). GQL NEV
 | `save` / `import` / `download` as unattended **agent** tools | Those are human/operator APIs (CLI/UI/SaaS). Human-auth MCP merge is the human Save path, not an agent merge. |
 | Agent-owned merge / apply of `delta.sysml` onto current | Agent path is read → draft → `propose` only. |
 | Graph write-back as SSOT | Projection is derived. |
-| Unbounded full-tree dump as the **only** merge story | Agents propose deltas (§6). Humans save the whole tree. |
+| Unbounded full-tree dump as the **only** merge **or query** story | Agents propose deltas (§6). GQL/MCP reads are **bounded** (prompt tokens far below whole-tree dump). Humans save the whole tree. |
 | Cypher / Kuzu / `graph.kuzu` | Engine is MemNet. |
 | `mutate` of MemNet that adds structure not in SysML | GQL MUST NOT invent. |
 
@@ -146,9 +146,18 @@ Query language is **GQL** against MemNet (cue → neighbourhood / find). GQL NEV
 
 ---
 
-## 5. Mapping scope v1
+## 5. Mapping scope
 
-Project **only** these SysML constructs into MemNet for v1. Anything else is out of scope until a later mapping rev (must bump a `mapping.version` on the projection).
+**SSOT** is always the whole `.sysml` tree (see §3). Mapping is what MemNet/GQL **indexes**.
+
+| Gate | Rule |
+|------|------|
+| **P1** | **Foam-complete:** project every construct **Foam uses**. Not whole-language / full KerML. |
+| **Later** | Widen element kinds as projects demand. Bump `mapping.version` on the projection. |
+| **Not** | “Parts/ports forever.” That Elon freeze was 2-week anti-scope-creep only ([PRODUCT-LOCKS.md](PRODUCT-LOCKS.md)). |
+| **Not** | Full KerML in two weeks. |
+
+Baseline kinds Foam (and typical trees) already use — **minimum**, not a cap:
 
 | SysML | Graph | Locators (stable) |
 |-------|-------|-------------------|
@@ -159,11 +168,11 @@ Project **only** these SysML constructs into MemNet for v1. Anything else is out
 | ClickUp id | property when present in SysML | e.g. `clickUp=` / documented attribute name in the model |
 | Inventree id | property when present in SysML | e.g. `inventree=` / documented attribute name in the model |
 
+Plus **whatever else Foam’s tree uses**. GQL MUST NOT invent kinds or ids absent from SysML at `rev.sha`. Unmapped SysML (kinds not yet in `mapping.version`) remains in the zip/tree only — the download is still the **full** tree.
+
 Unknown ClickUp/Inventree ids: **omit**. Do not invent placeholders.
 
-**Not product features:** SysMLEdge does not ship ClickUp or InvenTree (no sync, no PLM UI). The rows above are SSOT fidelity when those strings already exist in SysML. P2 on the Devicor droplet MUST leave InvenTree **untouched**.
-
-**MUST NOT** in v1: invent packages, requirements, actions, or allocations as first-class mapped kinds unless they appear as the constructs above. Unmapped SysML remains in the zip/tree only.
+**Not product features:** SysMLEdge does not ship ClickUp or InvenTree (no sync, no PLM UI). Those id rows are SSOT fidelity when the strings already exist in SysML. P2 on the Devicor droplet MUST leave InvenTree **untouched**.
 
 MemNet ingest (when implemented) MUST use path-B SysML ingest with `qname=` / `path=` locators and MUST NOT mint client `NEW` ids as SSOT identity. Identity of structure is the SysML qname + file path + `rev.sha`.
 
@@ -196,13 +205,14 @@ Human apply: merge `delta.sysml` into the tree (human/tooling or **human-auth MC
 Implementations MUST reject:
 
 1. **Graph write-back as SSOT** — MemNet/GQL is a projection. Saving the graph is not saving the model.
-2. **Kuzu** as required runtime, storage (`graph.kuzu`), Cypher, or a long-lived Kuzu worker.
-3. **Full-tree dump as the only merge story for agents** — agents use `proposals/<id>/`; humans overwrite current as a whole tree and keep git history.
+2. **Kuzu** as required runtime, storage (`graph.kuzu`), Cypher, a long-lived Kuzu worker, or a **dual-engine hedge** (default: MemNet sole engine; dual only if Memnetor hard blocker).
+3. **Full-tree dump as the only merge or query story for agents** — agents use `proposals/<id>/` and **bounded** GQL; humans overwrite current as a whole tree and keep git history. MUST NOT stuff the whole `.sysml` tree into the LLM prompt.
 4. Serving the **graph** as downloadable source.
-5. GQL that **invents** parts, ports, connections, or ids (including ClickUp/Inventree) not in SysML at `rev.sha`.
+5. GQL that **invents** structure or ids (including ClickUp/Inventree) not in SysML at `rev.sha`.
 6. Claiming **P2 SaaS** or **P3 tenancy** as shipped in this cut.
 7. **Graphic** SysML canvas / modeler / SysON-like IDE as a SysMLEdge surface (textual SysML + GQL/MCP only).
 8. **ClickUp or InvenTree as product features** (mapping of ids already in SysML is not a product integration).
+9. **Parts-only SSOT** — import/save/download MUST be all `.sysml` in the tree.
 
 ---
 

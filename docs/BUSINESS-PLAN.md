@@ -1,8 +1,48 @@
-# SysMLEdge business plan
+# SysMLEdge business plan (gated)
 
-Plan intent only. **Source:** [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md) (2026-09-11 Core, including [market pin](PRODUCT-LOCKS.md#market-position-pin) and [human root requirements](PRODUCT-LOCKS.md#human-root-requirements-buyer)). **Product:** [PRODUCT-PLAN.md](PRODUCT-PLAN.md). **P1 pass/fail (unchanged eight rows):** [P1-acceptance.md](P1-acceptance.md).
+**As of:** 2026-09-11. **NARROW** lock: Elon / Horcrux. Source locks: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md) (including [market pin](PRODUCT-LOCKS.md#market-position-pin) and [human root requirements](PRODUCT-LOCKS.md#human-root-requirements-buyer)). Foam proof: [P1-acceptance.md](P1-acceptance.md). Living plan: [PRODUCT-PLAN.md](PRODUCT-PLAN.md).
 
-This file does not implement runtime, does not add features, and does not widen P1. Prices are plan numbers, not a live price list in this repo.
+This file is **not** a live price list and **not** a shipping claim. It does not implement runtime.
+
+---
+
+## Verdict
+
+Keep the Foam **contract** slice (bilingual bus). Freeze Pro / Team / SaaS editor / endgame AGI copy until Foam proof passes.
+
+| Keep now | Not a product story until proof |
+|---------|----------------------------------|
+| `graph = model @ SHA`, MemNet one-way, STALE fail-closed, propose-only, no canvas | Pro beachhead, Team ACL, SaaS editor, AGI endgame as marketing |
+
+**Load-bearing claim:** `graph = model @ SHA` + STALE fail-closed is valuable enough that solo SysML+Cursor desks switch and later pay ~US$19–29. **Asserted.** Foam proof + a second paid outsider are the gates.
+
+**Cut:** Docs discipline ≠ product-market proof. Foam Phase-1 hours on P2 UI = kill signal.
+
+---
+
+## Claimed pains 1–5 (CEO, 2026-09-11)
+
+Exact claimed list. **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team ACL.
+
+| # | Pain | Claim |
+|---|------|--------|
+| **1** | grep latency (tens of minutes) | Competitor to kill on **wall-clock**. |
+| **2** | **big SysML + small LLM context** / **context footprint** | Agents query **slices** via **GQL/`pin_map`**. Not stuffing the tree. |
+| **3** | STALE blindness / wrong rev | Fail closed; bind `rev.sha`. |
+| **4** | chat-as-SSOT | Ship-rev zip + propose-only trail. Chat is not SSOT. |
+| **5** | mid-flight reproject | Re-enter after Save/reproject. |
+
+**P1 head-to-head** scores **wall-clock + context footprint + no silent drop** (pains 1–2). Pains **3–5** are contract claims (STALE / propose / ship-rev / reproject) — **not** extra feature work this week. [P1-acceptance.md](P1-acceptance.md). [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md).
+
+---
+
+## MemNet (Elon hard review)
+
+**KEEP MemNet as sole engine — NARROW the surface.** No dual-engine / Kuzu hedge. Kill only if 2-week MemNet proof (M1–M5) fails. **Stands.**
+
+SysMLEdge **owns** `rev.sha` / STALE / reproject@SHA — **CONFIRMED ABSENT** on the MemNet wire (Memnetor 2026-09-09/10). Proof env: **memnet-llm==0.19.8** + TCP-shared MCP. Kuzu not necessary for tip Path-B.
+
+If **M1 or M2 fail:** MemNet not ready as sole engine; stop Pro/beachhead; keep as internal tool or fix fidelity. **No Kuzu.**
 
 ---
 
@@ -18,7 +58,7 @@ SysMLEdge is the **bilingual bus / contract layer**: SysML is the locked model; 
 
 Bilingual = SysML (author SSOT) + GQL (query/represent). Not a zh/EN UI.
 
-**Pitch:** `model@rev` is the API between humans and AGI builders. This **endgame** (contract layer) is already locked; this sheet MUST NOT expand it.
+**Pitch:** `model@rev` is the API between humans and AGI builders. This **endgame** (contract layer) is already locked; this sheet MUST NOT expand it. AGI copy is **not** a P1/Pro story until Foam proof passes.
 
 ---
 
@@ -28,15 +68,17 @@ Own the limits: **not whole SysML**, **no canvas**. Pitch **beat grep, not Magic
 
 ---
 
-## Beachhead
+## Beachhead (asserted)
 
-| | Who | What we do |
-|---|-----|------------|
-| **Group A** | ~1k–10k people on textual SysML v2 + Cursor | **Design for A** |
-| **Success before B** | **10–50 Pro seats** | Do not chase group B until this exists |
-| **Desk #1** | Foam — `chouswei/modelbasedPrj-itri-vedan-foam-detection` | First vertical |
+| | Who | Status |
+|---|-----|--------|
+| **Group A** | ~1k–10k people on textual SysML v2 + Cursor | **Asserted, not evidenced.** Design for A. |
+| **Success before B** | **10–50 Pro seats** | Do not chase group B until this exists **and** Foam proof + second paid outsider. |
+| **Desk #1** | Foam — `chouswei/modelbasedPrj-itri-vedan-foam-detection` | First vertical; proof not run |
 
-Buyer pin from locks: solo / 2–5 engineers on SysML v2 textual + Cursor. Foam desk first, then Pro ~US$19–29. Group B is not this cut (not defense PLM / enterprise >$100 yet).
+Buyer pin: solo / 2–5 engineers on SysML v2 textual + Cursor. Foam desk first, then Pro ~US$19–29 **after** proof. Group B is not this cut (not defense PLM / enterprise >$100 yet).
+
+**Required after Foam:** a **second paid outsider**. Do not treat one Core-adjacent Foam demo as a market.
 
 ---
 
@@ -52,7 +94,7 @@ Buyer pin from locks: solo / 2–5 engineers on SysML v2 textual + Cursor. Foam 
 
 ## Seven human roots
 
-Normative locks: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#human-root-requirements-buyer). These are why the buyer pays. They do not add P1 rows.
+Normative locks: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#human-root-requirements-buyer). These are why the buyer pays. They do not add extra buyer-root P1 rows.
 
 | # | Root | Why it is a root |
 |---|------|------------------|
@@ -62,25 +104,29 @@ Normative locks: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#human-root-requirements-buy
 | 4 | **Keep git as home** | Link/sync the repo; do not abandon GitHub for a closed silo. |
 | 5 | **Mid-flight change** | Fix the model while implementing (Path A) without breaking the loop. |
 | 6 | **Ship a rev** | Download/tag SysML zip @ rev as the locked contract for that release. |
-| 7 | **Affordable** | Free to try; Pro ~US$19–29 / month if it sticks. |
+| 7 | **Affordable** | Free to try; Pro ~US$19–29 / month if it sticks. **Gated** on Foam proof. |
 
 **Derived (not roots):** PR UI, teammates, autopilot — **P2**. See [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md) merge/autopilot and faces.
 
 ### What P1 must prove first
 
-P1 must prove roots **1, 2, 3, and 6**. Mapping to the existing eight acceptance rows is in [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md) (no ninth row). Roots 4, 5, and 7 remain locks; they do not widen P1. P1 demo still **must beat grep**.
+P1 must prove roots **1, 2, 3, and 6** via the **eight contract rows**. NARROW Foam proof **9–12** is the wedge bar (head-to-head + STALE/propose/ship-rev), not extra buyer-root rows. Roots 4, 5, and 7 remain locks. P1 demo still **must beat grep**.
 
 ---
 
 ## Offer / freemium
 
-| Tier | Intent |
-|------|--------|
-| **Free** | 1 small project + MCP + soft caps (project count / tree size / GQL rate) |
-| **Pro** | ~US$19–29 / month: few projects, SaaS editor, higher caps, basic PR |
-| **Team** | ~US$49–79 later: in-tenant ACL |
+| Tier | Intent | Gate |
+|------|--------|------|
+| **Free** | 1 small project + MCP + soft caps | Sketch until Foam proof |
+| **Pro** | ~US$19–29 / month: few projects, SaaS editor, higher caps, basic PR | Foam proof **pass**, then **second paid outsider** |
+| **Team** | ~US$49–79 later: in-tenant ACL | P2; frozen with P2 UI |
 
-SaaS editor is P2 human UI. Basic PR UI is P2 derived, not a root. Locks: do not ship P2 human UI before the P1 query demo beats grep.
+SaaS editor is P2 human UI. Basic PR UI is P2 derived, not a root. MUST NOT experiment on price, billing, or Pro packaging during the two-week Foam proof. MUST NOT ship P2 human UI before the P1 query demo beats grep.
+
+If proof **fails:** kill the Pro/beachhead story for now. Keep docs as a contract sketch or fold into MemNet tooling. MUST NOT ship “bilingual bus” as a product without the head-to-head.
+
+If proof **passes:** KEEP narrowed — Foam vertical + MCP marketplace path. Price/experiment only after the second outsider. P2 UI still gated.
 
 ---
 
@@ -90,8 +136,8 @@ Order:
 
 1. Network / `modelbasedPrj` first.
 2. Public SysML v2 + Cursor signals.
-3. Foam “beat grep” content (GQL/MCP without stuffing the `.sysml` tree).
-4. Cursor MCP marketplace.
+3. Foam “beat grep” content (GQL/`pin_map` slices; **context footprint**; no stuffing the `.sysml` tree).
+4. Cursor MCP marketplace (after Foam proof).
 
 **MUST NOT** use Cameo or defense lists as the find-path. Named design-partner market lists only **after** the P1 demo, and only when asked.
 
@@ -102,8 +148,8 @@ Order:
 | Gate | Lock |
 |------|------|
 | **P0** | Docs done (this seed). |
-| **P1 demo** | Foam query demo **must beat grep**. Proof is the existing eight rows in [P1-acceptance.md](P1-acceptance.md) (GQL without stuffing the tree) — not a ninth row. Those rows also prove buyer roots **1, 2, 3, and 6**. Stress tests (same rows): (a) beat a raw agent + git/grep; (b) STALE real, not theater; (c) Foam desk demo > manifesto. |
-| **Product gate** | Second paid outsider **after** Foam. Do not treat P2 as done until then. |
+| **P1 demo** | Foam query demo **must beat grep**. Contract: eight rows in [P1-acceptance.md](P1-acceptance.md). Wedge: Foam proof 9–12 (**wall-clock + context footprint + no silent drop**; STALE/propose/ship-rev). Buyer roots **1, 2, 3, and 6**. |
+| **Product gate** | Foam proof ALL pass, **then** a second paid outsider. Do not treat P2 as done until then. |
 | **Hours** | Foam Phase-1 hours stay on the Foam slice (import, project, GQL/MCP, STALE, propose, zip). Do not spend them on P2 UI. Do not steal them for **VI**. |
 
 ---
@@ -118,6 +164,29 @@ Order:
 Skills are not this repository’s runtime.
 
 ---
+
+## Risks (document only)
+
+1. Beachhead size is asserted. Without a second paid outsider after Foam, do not keep the paid-wedge story.
+2. MemNet is **SPOF** (KEEP/NARROW, not a Kuzu hedge). Re-ranked: (1) contract bridge — SysMLEdge owns `rev`/STALE; (2) silent drop / nested fidelity; (3) version/ops floor **0.19.8+TCP**. Proof: M1–M5.
+3. “Beat grep” is soft until the timed head-to-head. Competitor = **tens-of-minutes grep**, not Cameo. MUST score **wall-clock + context footprint + no silent drop**. Feature count is not a win. Freemium/Pro SaaS editor (P2) cannot close that gap in P1.
+
+No extra mitigations beyond: run the four proof items; freeze the list in [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md); fail closed on the product story if any item fails.
+
+---
+
+## Reject (business)
+
+1. Selling Pro/Team or a SaaS editor before Foam proof ALL pass.
+2. Treating Core or Foam-adjacent operators as the second paid outsider.
+3. Cameo bake-offs as a two-week workstream (competitor is grep, not Cameo).
+4. ClickUp / InvenTree as a SysMLEdge product to widen TAM.
+5. AGI/endgame copy as a substitute for the head-to-head.
+6. Shipping bilingual bus as a product if proof fails.
+7. Parts-only SSOT, or treating parts/ports as a forever mapping cap.
+8. Selling P1 as a feature-count win instead of **wall-clock + context footprint + no silent drop** vs grep.
+9. Claiming canvas, PLM, ClickUp/InvenTree, or Team ACL as this-week pains (non-claims freeze).
+10. Dual-engine / Kuzu unless Memnetor is a hard blocker.
 
 ## Out of this plan
 
