@@ -62,7 +62,7 @@ P1 stress tests: (a) beat a raw agent + git/grep; (b) STALE is real, not theater
 
 Out of P1: SaaS accounts, in-tenant ACL, graphic canvas, autopilot UI, GitHub-like PR review UI, Kuzu, **whole-language** KerML, ClickUp/InvenTree features.
 
-**Foam + MemNet proof (ALL, 2-week):** **Pains 1–5** and MemNet KEEP/NARROW + Memnetor amendment in [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md). Proof env: **memnet-llm==0.19.8** + TCP-shared MCP. SysMLEdge **owns** `rev`/STALE (absent on MemNet wire). Head-to-head **must time wall-clock** + **context footprint**. Gold MUST include ≥1 nested part that today needs manual CREATE. Impact: `gql_impact` closure **or** narrow to neighbourhood/tip + usage. Bounce = one regression re-run. **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team ACL. **No Kuzu.**
+**Foam + MemNet proof (ALL, 2-week):** **Pains 1–5** and MemNet KEEP/NARROW + Memnetor amendment in [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md). Proof env: **memnet-llm==0.19.8** + TCP-shared MCP. SysMLEdge **owns** `rev`/STALE (absent on MemNet wire). Head-to-head **must time wall-clock** + **context footprint**. Gold MUST include ≥1 nested part that today needs manual CREATE. Impact: `gql_impact` closure **or** narrow to neighbourhood/tip + usage. Bounce = one regression re-run. **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team ACL. **No Kuzu.** **CEO Core (2026-09-11):** MemNet **improve-only** for M1–M5 / Foam fidelity — not a MemNet roadmap. **No C rewrite now**; reopen C/Rust/other only if wall-clock loses with numbers after fidelity is green.
 
 ---
 
