@@ -1,0 +1,25 @@
+{
+  "name": "sysmledge",
+  "version": "0.0.0",
+  "private": true,
+  "description": "SysMLEdge — SysML SSOT + GQL via MemNet. MCP/CLI not implemented in this seed. Engine is MemNet, not Kuzu.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "mcp": "node -e \"console.error('SysMLEdge MemNet MCP is specified in docs/P0-contracts.md and is not implemented in this seed.'); process.exit(1)\""
+  },
+  "keywords": [
+    "sysml",
+    "gql",
+    "memnet",
+    "mcp",
+    "sysmledge"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chouswei/SysMLEdge.git"
+  }
+}
