@@ -1,6 +1,6 @@
 # SysMLEdge product plan
 
-Living plan. **Locks (2026-09-11):** [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md). **P0 behaviour:** [P0-contracts.md](P0-contracts.md). **P1 pass/fail:** [P1-acceptance.md](P1-acceptance.md) (docs done; keep and use as-is).
+Living plan. **Locks (2026-09-11):** [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md). **Business plan (GTM / beachhead):** [BUSINESS-PLAN.md](BUSINESS-PLAN.md). **P0 behaviour:** [P0-contracts.md](P0-contracts.md). **P1 pass/fail:** [P1-acceptance.md](P1-acceptance.md) (docs done; keep and use as-is).
 
 This repository seed does **not** implement runtime MCP/CLI. P2/P3 are not shipping here.
 
@@ -19,7 +19,7 @@ This repository seed does **not** implement runtime MCP/CLI. P2/P3 are not shipp
 | **P2** | Single-tenant SaaS | Plan only | Hosted on the **existing droplet (Devicor)**. Identity, import/save/download, MemNet per project, MCP, in-tenant ACL, Save/STALE UI, optional autopilot/bot review (default off). **InvenTree on that host: untouched.** |
 | **P3** | Tenancy | Plan only | Cross-tenant isolation, authz, billing-shaped tenancy. Not implied by P2. |
 
-**P1 competitor to beat:** **grep** (git + SysML LSP). **Product gate:** second paid outsider **after** the Foam slice. P2 UI after that demo, not before.
+**P1 competitor to beat:** **grep** (git + SysML LSP). **Product gate:** second paid outsider **after** the Foam slice. P2 UI after that demo, not before. Beachhead, personas, freemium, find-path: [BUSINESS-PLAN.md](BUSINESS-PLAN.md) (does not widen P1).
 
 ---
 
