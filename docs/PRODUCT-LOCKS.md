@@ -1,6 +1,6 @@
 # SysMLEdge product locks
 
-**As of:** 2026-09-11. Normative product locks for the living plan in [PRODUCT-PLAN.md](PRODUCT-PLAN.md). Implement against these plus [P0-contracts.md](P0-contracts.md). This file does not implement runtime.
+**As of:** 2026-09-11. Normative product locks for the living plan in [PRODUCT-PLAN.md](PRODUCT-PLAN.md). Market pin and buyer roots also in [BUSINESS-PLAN.md](BUSINESS-PLAN.md) (GTM / beachhead). Implement against these plus [P0-contracts.md](P0-contracts.md). This file does not implement runtime.
 
 If a lock and P0 wording differ, this sheet **notes** the difference and **aligns** P0 language. It MUST NOT weaken: MemNet-only projection, `graph = model @ SHA`, STALE, or **no agent write of SSOT**.
 
@@ -42,7 +42,46 @@ SysMLEdge = **the bilingual bus for textual SysML v2 + agents** — SysML stays 
 - Foam Phase-1 hours stay on the Foam slice (import, project, GQL/MCP, STALE, propose, zip). Do not spend them on P2 UI.
 - Freemium Pro ~US$19–29 is the desk wedge after Foam; Team / defense PLM is not this cut.
 
+**Expert reception:** own **not whole SysML** and **no canvas**. Pitch **beat grep, not MagicDraw**. MUST NOT chase Cameo.
+
+**P1 stress tests** (same eight rows; not extra acceptance): (a) beat a raw agent + git/grep; (b) STALE is real, not theater; (c) Foam desk demo beats a manifesto.
+
+**Pitch:** `model@rev` is the API between humans and AGI builders.
+
+**Endgame** (already locked; do not expand this cut): bilingual bus / **contract layer** — SysML locked by humans; agents build against `model@rev`. See [BUSINESS-PLAN.md](BUSINESS-PLAN.md#position--endgame).
+
 This pin does **not** widen scope: MemNet-only projection, `graph = model @ SHA`, STALE, no agent SSOT write, no graphic IDE, no GitHub clone, ClickUp/InvenTree not product features.
+
+---
+
+## Human root requirements (buyer)
+
+Buyer: **solo / lead MBSE engineer** (same desk as [Market position (pin)](#market-position-pin): solo / 2–5 on SysML v2 textual + Cursor). These **seven** are the roots. They are product intent, not extra P1 rows and not runtime in this seed. GTM / beachhead: [BUSINESS-PLAN.md](BUSINESS-PLAN.md).
+
+| # | Root | Lock |
+|---|------|------|
+| 1 | **Trust the model** | Always know `project@rev` versus **STALE** / **Dirty**. MUST NOT leave the human (or agents) wondering if they saw a ghost tree (unbound graph, Live pretence, or silent drift). |
+| 2 | **Stay SSOT owner** | Only the human — or their explicit policy (human Save, human-auth MCP merge, later opt-in autopilot) — applies SysML. Agents MUST NOT silently rewrite SSOT. |
+| 3 | **Ask without grep pain** | “What uses this?” via MCP/GQL **without** stuffing `.sysml` into chat. |
+| 4 | **Keep git as home** | Link/sync the git/GitHub repo. MUST NOT abandon GitHub for a closed silo. |
+| 5 | **Mid-flight change** | Path A: fix the model while implementing without breaking the day loop. |
+| 6 | **Ship a rev** | Download/tag **SysML zip @ rev** as the locked contract for that release. |
+| 7 | **Affordable** | Free to try; Pro ~US$19–29 / month if it sticks. Plan, not a live price list in this repo. |
+
+**Derived (not roots):** GitHub-like PR UI, in-tenant teammates, autopilot — **P2**. MUST NOT treat them as buyer roots or as P1 scope.
+
+### P1 must prove first
+
+P1 proves roots **1, 2, 3, and 6** (trust, SSOT owner, beat-grep ask, ship rev). Roots **4, 5, and 7** stay locked here; they MUST NOT widen [P1-acceptance.md](P1-acceptance.md) (still **eight** rows; no ninth row).
+
+| Root | Existing P1 rows |
+|------|------------------|
+| 1 Trust | 1 Import (`rev.sha` bound), 3 STALE detect, 4 Reproject, 8 MCP bind `project@rev` |
+| 2 SSOT owner | 5 Propose isolation, 8 no silent SSOT overwrite; 6 human save + history |
+| 3 Beat-grep ask | 2 GQL read without stuffing the `.sysml` tree |
+| 6 Ship a rev | 6 previous SHA remains downloadable, 7 download = SysML zip only |
+
+**Dirty ≠ STALE** stays in this sheet. P1 STALE rows prove projection drift; working-tree Dirty UI is not a P1 acceptance row.
 
 ---
 
@@ -141,7 +180,7 @@ Dirty is **not** STALE.
 
 ## Users, freemium, product gate
 
-**Pinned users:** solo / 2–5 engineers on SysML v2 textual + Cursor; Cursor/MCP agents; later, in-tenant teammates (P2 ACL). See [Market position (pin)](#market-position-pin).
+**Pinned users:** solo / lead MBSE engineer (buyer of the seven roots; desk = 2–5 on SysML v2 textual + Cursor); Cursor/MCP agents; later, in-tenant teammates (P2 ACL — derived, not a root). See [Market position (pin)](#market-position-pin).
 
 | Tier | Intent (plan, not a live price list in this repo) |
 |------|---------------------------------------------------|

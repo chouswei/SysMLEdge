@@ -1,6 +1,6 @@
 # SysMLEdge product plan
 
-Living plan. **Locks (2026-09-11):** [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md). **Business plan (GTM / beachhead):** [BUSINESS-PLAN.md](BUSINESS-PLAN.md). **P0 behaviour:** [P0-contracts.md](P0-contracts.md). **P1 pass/fail:** [P1-acceptance.md](P1-acceptance.md) (docs done; keep and use as-is).
+Living plan. **Locks (2026-09-11):** [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md). **Business plan (GTM / beachhead / buyer roots):** [BUSINESS-PLAN.md](BUSINESS-PLAN.md). **P0 behaviour:** [P0-contracts.md](P0-contracts.md). **P1 pass/fail:** [P1-acceptance.md](P1-acceptance.md) (docs done; keep and use as-is; P1 proves roots 1, 2, 3, and 6 only).
 
 This repository seed does **not** implement runtime MCP/CLI. P2/P3 are not shipping here.
 
@@ -19,7 +19,9 @@ This repository seed does **not** implement runtime MCP/CLI. P2/P3 are not shipp
 | **P2** | Single-tenant SaaS | Plan only | Hosted on the **existing droplet (Devicor)**. Identity, import/save/download, MemNet per project, MCP, in-tenant ACL, Save/STALE UI, optional autopilot/bot review (default off). **InvenTree on that host: untouched.** |
 | **P3** | Tenancy | Plan only | Cross-tenant isolation, authz, billing-shaped tenancy. Not implied by P2. |
 
-**P1 competitor to beat:** **grep** (git + SysML LSP). **Product gate:** second paid outsider **after** the Foam slice. P2 UI after that demo, not before. Beachhead, personas, freemium, find-path: [BUSINESS-PLAN.md](BUSINESS-PLAN.md) (does not widen P1).
+**P1 competitor to beat:** **grep** (git + SysML LSP), not MagicDraw/Cameo. **Product gate:** second paid outsider **after** the Foam slice. P2 UI after that demo, not before. Beachhead, personas, freemium, find-path, expert reception: [BUSINESS-PLAN.md](BUSINESS-PLAN.md) (does not widen P1).
+
+**Pitch:** `model@rev` is the API between humans and AGI builders. Endgame (already locked): bilingual bus / contract layer — [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#market-position-pin). Do not expand that scope here.
 
 ---
 
@@ -38,7 +40,7 @@ This repository seed does **not** implement runtime MCP/CLI. P2/P3 are not shipp
 
 Pilot: **https://github.com/chouswei/modelbasedPrj-itri-vedan-foam-detection** (`sysml-models/` as SSOT).
 
-Acceptance (authoritative eight rows): [P1-acceptance.md](P1-acceptance.md).
+Acceptance (authoritative eight rows): [P1-acceptance.md](P1-acceptance.md). P1 must prove buyer roots **1, 2, 3, and 6** ([PRODUCT-LOCKS.md](PRODUCT-LOCKS.md) mapping; no ninth row).
 
 Must prove (same as that sheet; mapping is P0 v1, not ClickUp/InvenTree product):
 
@@ -48,6 +50,8 @@ Must prove (same as that sheet; mapping is P0 v1, not ClickUp/InvenTree product)
 4. MCP `gql_read` / context / impact; `propose` → `sysml-models/proposals/<id>/`.
 5. Human save overwrites current; download SysML zip @ rev; never download the graph.
 6. MCP session binds **project@rev**; no silent SSOT overwrite.
+
+P1 stress tests (same eight rows; **no ninth row**): (a) beat a raw agent + git/grep; (b) STALE is real, not theater; (c) Foam desk demo > manifesto. Own **not whole SysML / no canvas**; do not chase Cameo.
 
 Out of P1: SaaS accounts, in-tenant ACL, graphic canvas, autopilot UI, GitHub-like PR review UI, Kuzu, full SysML language, ClickUp/InvenTree features.
 
@@ -79,7 +83,7 @@ Hard isolation between tenants (data, MemNet sessions, MCP credentials). Cross-t
 
 ## Pinned users
 
-1. Solo / 2–5 engineers on SysML v2 textual + Cursor.
+1. Solo / lead MBSE engineer (textual SysML v2 + Cursor; desk 2–5; buyer of the seven roots).
 2. Cursor / MCP agents (read + propose).
 3. Later: in-tenant teammates (P2 ACL).
 
