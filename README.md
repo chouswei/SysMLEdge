@@ -15,7 +15,7 @@
 | **MCP** | Agent surface: read GQL; **propose** only; no silent SSOT overwrite |
 | **CLI** (planned) | Path index / project, list, freshness — same *patterns* as the prior indexer, new engine |
 
-Normative contracts: [docs/P0-contracts.md](docs/P0-contracts.md). Phases: [docs/PRODUCT-PLAN.md](docs/PRODUCT-PLAN.md). Agent rules: [AGENTS.md](AGENTS.md).
+Normative contracts: [docs/P0-contracts.md](docs/P0-contracts.md). Phases: [docs/PRODUCT-PLAN.md](docs/PRODUCT-PLAN.md). P1 Foam acceptance: [docs/P1-acceptance.md](docs/P1-acceptance.md). Agent rules: [AGENTS.md](AGENTS.md).
 
 ## Plan (not shipping here)
 

@@ -7,7 +7,7 @@ This document is a skeleton. **P0 is contracts only.** P2/P3 are not shipping in
 | Phase | Name | Ships? (this repo seed) | Intent |
 |-------|------|-------------------------|--------|
 | **P0** | Contracts | **Yes — docs** | Normative sheet so implementers do not rebuild a Kuzu indexer. See [P0-contracts.md](P0-contracts.md). |
-| **P1** | Foam slice | No | One real SoI: import/project the foam-detection SysML tree, GQL read of part/port/connection, STALE, propose path, zip download @ rev. |
+| **P1** | Foam slice | No | One real SoI: import/project the foam-detection SysML tree, GQL read of part/port/connection, STALE, propose path, zip download @ rev. Acceptance: [P1-acceptance.md](P1-acceptance.md). |
 | **P2** | Single-tenant SaaS | No | Hosted project service for **one** tenant: identity, import/save/download, MemNet per project, MCP for that tenant’s agents. |
 | **P3** | Tenancy | No | Isolation, authz, and billing-shaped tenancy. Not implied by P2. |
 
@@ -22,6 +22,8 @@ This document is a skeleton. **P0 is contracts only.** P2/P3 are not shipping in
 ## P1 — Foam slice
 
 Pilot: **https://github.com/chouswei/modelbasedPrj-itri-vedan-foam-detection** (`sysml-models/` as SSOT).
+
+Acceptance tests: [P1-acceptance.md](P1-acceptance.md).
 
 Must prove:
 
