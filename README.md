@@ -1,8 +1,8 @@
 # SysMLEdge
 
-**SysMLEdge** is a project service for SysML v2 models: humans author **SysML** as the single source of truth; agents query and represent the same structure as **GQL**. The graph is a **MemNet** projection of that tree. It is not a Kuzu port, not a graphic SysML IDE, and it does not ship SaaS or tenancy in this cut.
+**SysMLEdge** is the bilingual bus for textual SysML v2 + agents: humans author **SysML** as the single source of truth; Cursor agents query and represent the same structure as **GQL/MCP** instead of grepping the tree. The graph is a **MemNet** projection of that tree. It is not a Kuzu port, not a SysON/Cameo/graphic SysML IDE, not a GitHub clone, and it does not ship SaaS or tenancy in this cut.
 
-**Bilingual** here means SysML (author SSOT) + GQL (query and represent). It does not mean a zh/EN product UI.
+**Bilingual** here means SysML (author SSOT) + GQL (query and represent). It does not mean a zh/EN product UI. Market pin: [docs/PRODUCT-LOCKS.md](docs/PRODUCT-LOCKS.md#market-position-pin).
 
 ## Stack (this cut)
 
@@ -16,7 +16,7 @@
 | **Git / GitHub** | VCS backbone — repo @ SHA. We own projection, STALE, propose — not a GitHub rebuild. |
 | **CLI** (planned) | Path index / project, list, freshness — same *patterns* as the prior indexer, new engine |
 
-Normative contracts: [docs/P0-contracts.md](docs/P0-contracts.md). Product locks (2026-09-11, **NARROW**): [docs/PRODUCT-LOCKS.md](docs/PRODUCT-LOCKS.md). Living plan: [docs/PRODUCT-PLAN.md](docs/PRODUCT-PLAN.md). P1 Foam acceptance + proof: [docs/P1-acceptance.md](docs/P1-acceptance.md). Business / beachhead (gated): [docs/BUSINESS-PLAN.md](docs/BUSINESS-PLAN.md). Agent rules: [AGENTS.md](AGENTS.md).
+Normative contracts: [docs/P0-contracts.md](docs/P0-contracts.md). Product locks (2026-09-11, **NARROW**): [docs/PRODUCT-LOCKS.md](docs/PRODUCT-LOCKS.md). Living plan: [docs/PRODUCT-PLAN.md](docs/PRODUCT-PLAN.md). Business plan (gated GTM + buyer roots): [docs/BUSINESS-PLAN.md](docs/BUSINESS-PLAN.md). P1 Foam acceptance + proof: [docs/P1-acceptance.md](docs/P1-acceptance.md). Agent rules: [AGENTS.md](AGENTS.md).
 
 ## Plan (not shipping here)
 

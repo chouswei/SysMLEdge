@@ -6,7 +6,7 @@ This sheet is the first implementable deliverable. Implement against these names
 
 Pilot system of interest (P1, not this seed): `chouswei/modelbasedPrj-itri-vedan-foam-detection`.
 
-Product locks (position, no graphic, day loop, merge/autopilot, faces, freemium): [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md) as of **2026-09-11**. Where that sheet clarifies this file, wording below is aligned; MemNet, STALE, and **no agent SSOT write** are not weakened.
+Product locks (position, market pin, no graphic, day loop, merge/autopilot, faces, freemium): [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md) as of **2026-09-11**. Where that sheet clarifies this file, wording below is aligned; MemNet, STALE, and **no agent SSOT write** are not weakened.
 
 ---
 

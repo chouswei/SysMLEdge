@@ -7,6 +7,8 @@ Normative contracts: [P0-contracts.md](P0-contracts.md). Product locks: [PRODUCT
 
 This document is the P1 pass/fail sheet. It does not implement runtime.
 
+Buyer roots **1, 2, 3, and 6** (trust, SSOT owner, beat-grep ask, ship rev) MUST pass via the **eight contract** rows below. Mapping: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md). Do not add extra **buyer-root** rows. Foam proof **9–12** is the NARROW wedge bar, not a ninth buyer-root row. Roots 4, 5, and 7 are locks, not extra P1 tests.
+
 ## Must pass
 
 | # | Name | Pass criteria |

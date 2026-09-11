@@ -1,10 +1,10 @@
 # SysMLEdge product plan
 
-Living plan. **Locks (2026-09-11):** [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md) — **NARROW** (Elon / Horcrux). **P0 behaviour:** [P0-contracts.md](P0-contracts.md). **P1 pass/fail + Foam proof:** [P1-acceptance.md](P1-acceptance.md). **Business / beachhead:** [BUSINESS-PLAN.md](BUSINESS-PLAN.md).
+Living plan. **Locks (2026-09-11):** [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md) — **NARROW** (Elon / Horcrux). **P0 behaviour:** [P0-contracts.md](P0-contracts.md). **P1 pass/fail + Foam proof:** [P1-acceptance.md](P1-acceptance.md). **Business (GTM / beachhead / buyer roots, gated):** [BUSINESS-PLAN.md](BUSINESS-PLAN.md).
 
 This repository seed does **not** implement runtime MCP/CLI. P2/P3 are not shipping here.
 
-**Position:** SysML SSOT + GQL/MCP query face. Not SysON/graphic IDE. Not a GitHub rebuild.
+**Position:** bilingual bus for textual SysML v2 + agents (SysML stays the model; GQL/MCP so Cursor agents do not grep the tree). Not SysON/Cameo/graphic IDE. Not a GitHub clone. Not defense PLM yet. Pin: [PRODUCT-LOCKS.md — Market position](PRODUCT-LOCKS.md#market-position-pin).
 
 **Core (unchanged):** name **SysMLEdge**; bilingual = SysML (author SSOT) + GQL (query/represent); SSOT = whole `sysml-models/` tree / zip (**all** `.sysml`); MemNet = one-way projected index (**no Kuzu**); `graph = model @ SHA`; GQL never invents; agents propose only (no write-SSOT tool); human save = whole-tree overwrite + git history; download = SysML zip only; P1 mapping = Foam-complete; pilot SoI = `chouswei/modelbasedPrj-itri-vedan-foam-detection`.
 
@@ -21,9 +21,13 @@ This repository seed does **not** implement runtime MCP/CLI. P2/P3 are not shipp
 | **P2** | Single-tenant SaaS | Plan only. **Spend frozen** until Foam proof passes. | Hosted on the **existing droplet (Devicor)**. Identity, import/save/download, MemNet per project, MCP, in-tenant ACL, Save/STALE UI, optional autopilot/bot review (default off). **InvenTree on that host: untouched.** |
 | **P3** | Tenancy | Plan only | Cross-tenant isolation, authz, billing-shaped tenancy. Not implied by P2. |
 
+**P1 competitor to beat:** **grep** (git + SysML LSP), not MagicDraw/Cameo.
+
 **Product gate:** Foam proof ALL pass, **then** a second paid outsider. Until then: no Pro/beachhead story as shipping intent.
 
 **P2 freeze (explicit):** **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team ACL. Also: SaaS editor, PR UI, billing, Cameo, **full KerML**. Mapping in that window is **Foam-complete**. SSOT is **whole tree always**.
+
+**Pitch:** `model@rev` is the API between humans and AGI builders. Endgame (already locked): bilingual bus / contract layer — [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#market-position-pin). Do not expand that scope here. AGI copy stays gated until Foam proof.
 
 ---
 
@@ -43,7 +47,7 @@ This repository seed does **not** implement runtime MCP/CLI. P2/P3 are not shipp
 
 Pilot: **https://github.com/chouswei/modelbasedPrj-itri-vedan-foam-detection** (`sysml-models/` as SSOT).
 
-Acceptance (authoritative eight contract rows **plus** Foam proof 9–12): [P1-acceptance.md](P1-acceptance.md).
+Acceptance (authoritative eight **contract** rows **plus** Foam proof 9–12): [P1-acceptance.md](P1-acceptance.md). Buyer roots **1, 2, 3, and 6** via the eight contract rows (no extra buyer-root rows).
 
 Must prove (same as that sheet; not ClickUp/InvenTree product):
 
@@ -53,6 +57,8 @@ Must prove (same as that sheet; not ClickUp/InvenTree product):
 4. MCP `gql_read` / context / impact; `propose` → `sysml-models/proposals/<id>/`.
 5. Human save overwrites current; download SysML zip @ rev; never download the graph.
 6. MCP session binds **project@rev**; no silent SSOT overwrite.
+
+P1 stress tests: (a) beat a raw agent + git/grep; (b) STALE is real, not theater; (c) Foam desk demo > manifesto. Own **not whole SysML / no canvas**; do not chase Cameo.
 
 Out of P1: SaaS accounts, in-tenant ACL, graphic canvas, autopilot UI, GitHub-like PR review UI, Kuzu, **whole-language** KerML, ClickUp/InvenTree features.
 
@@ -88,7 +94,7 @@ Hard isolation between tenants (data, MemNet sessions, MCP credentials). Cross-t
 
 ## Pinned users
 
-1. Solo / small MBSE engineer (textual SysML).
+1. Solo / lead MBSE engineer (textual SysML v2 + Cursor; desk 2–5; buyer of the seven roots).
 2. Cursor / MCP agents (read + propose).
 3. Later: in-tenant teammates (P2 ACL).
 
