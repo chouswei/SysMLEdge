@@ -10,9 +10,9 @@
 |-------|------|
 | **SysML** zip or multi-file `sysml-models/` tree | Author SSOT |
 | **Git revision** | Identity of a saved tree (`graph = model @ <git commit SHA>`) |
-| **MemNet** | Projected graph index only. **No Kuzu.** |
+| **MemNet** | Projected graph index only. **No Kuzu.** TCP backend (`serve` + MCP TCP-shared); not the agent wedge once SysMLEdge MCP binds. |
 | **GQL** | Read/represent the projection. MUST NOT invent structure beside SysML. |
-| **MCP** | Agent surface: read GQL; **propose** only; no silent SSOT overwrite |
+| **MCP** | Agent face: **streamable HTTP** (Cursor Bearer, memnet-pi pattern). Read GQL; **propose** only; no silent SSOT overwrite |
 | **Git / GitHub** | VCS backbone — repo @ SHA. We own projection, STALE, propose — not a GitHub rebuild. |
 | **CLI** (planned) | Path index / project, list, freshness — same *patterns* as the prior indexer, new engine |
 

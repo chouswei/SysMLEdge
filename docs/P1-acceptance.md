@@ -14,7 +14,7 @@ Buyer roots **1, 2, 3, and 6** (trust, SSOT owner, beat-grep ask, ship rev) MUST
 | # | Name | Pass criteria |
 |---|------|----------------|
 | 1 | Import | Import Foam `sysml-models/` (dir or zip) = **all** `.sysml` in the tree. Never parts-only SSOT. `rev.sha` bound. MemNet is **Foam-complete** (every construct Foam uses — not parts/ports forever, not whole KerML). Nodes only from that tree. Previous graph nodes gone. |
-| 2 | GQL read | Via MCP/`gql_read` (or equivalent): reachability, ownership, usage for a known Foam element **without** stuffing the full `.sysml` tree into the agent context. Answers include `rev.sha` and `rev.stale=false`. |
+| 2 | GQL read | Via SysMLEdge MCP `gql_read` (or equivalent): reachability, ownership, usage for a known Foam element **without** stuffing the full `.sysml` tree into the agent context. Answers include `rev.sha` and `rev.stale=false`. P1 proof MAY still use MemNet `pin_map` for M1–M4. |
 | 3 | STALE detect | Change a SysML file on disk without reproject. Structure reads with default `staleOk=false` **fail** with `code: STALE`. With `staleOk=true`, read may succeed but MUST return `rev.stale=true`. `propose` while STALE **refused**. |
 | 4 | Reproject | `reproject` from current SysML → new bind; STALE clears; live reads succeed. |
 | 5 | Propose isolation | `propose` writes only under `sysml-models/proposals/<id>/` (`PATCH.md` + `delta.sysml`). Current SSOT tree unchanged; no MemNet write-back as SSOT. |
