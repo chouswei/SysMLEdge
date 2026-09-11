@@ -125,6 +125,18 @@ In addition to the NARROW product freeze:
 8. Graph dumps as downloadable source
 9. Autopilot / bot-merge
 10. First-class `rev` / STALE inside MemNet (SysMLEdge owns the bind)
+11. A **MemNet product roadmap** (engine features not required for M1–M5 / Foam fidelity)
+
+### Improve only (CEO Core, 2026-09-11)
+
+**Lock:** MemNet work in this cut is **improve-only** for **M1–M5 / Foam fidelity**. It is **not** a MemNet roadmap. KEEP sole / NARROW / the NOT-build list above **stand**.
+
+| Owner | Stays |
+|-------|-------|
+| **SysMLEdge** | `rev.sha` / STALE / reproject@SHA. Product face; bind is not on the MemNet wire. |
+| **MemNet** | Engine at **memnet-llm==0.19.8 + TCP**. Do not fork a SysMLEdge MemNet line. |
+
+MUST NOT: add MemNet features beyond what M1–M5 / Foam fidelity require; put `rev` / STALE / reproject inside MemNet; dual-engine / Kuzu; treat this product as MemNet's backlog.
 
 ---
 
@@ -349,6 +361,7 @@ SysMLEdge does **not** ship ClickUp or InvenTree: no sync, no PLM UI, no “link
 | ClickUp/InvenTree | Mapped when present in SysML | Not product features | **Clarify** P0 §5: projection of SysML attributes only. |
 | SSOT shape | Whole-tree import/save/download | **All** `.sysml`; never parts-only SSOT | Align P0 §3. |
 | Mapping | P0 seed listed part/port/connection as v1 | **P1 = Foam-complete**; not parts/ports forever; not full KerML in 2 weeks | **Supersede** a forever parts/ports cap. Elon freeze = 2-week anti-scope-creep only. |
+| MemNet improve | Engine + Path-B | **Improve-only** M1–M5 / Foam fidelity; **0.19.8 + TCP**; SysMLEdge owns `rev`/STALE/reproject | Does **not** reopen KEEP sole / NARROW / NOT-build. Not a MemNet roadmap. |
 
 ---
 
@@ -372,3 +385,4 @@ Implementations MUST reject, in addition to P0 §7:
 14. Stuffing the whole SysML tree into the LLM prompt instead of GQL/`pin_map` slices.
 15. Dual-engine / Kuzu hedge. Kuzu is **not necessary** for tip Path-B. Dual only if Memnetor becomes a documented hard blocker later.
 16. Inventing first-class `rev` / STALE inside MemNet. SysMLEdge owns the bind. Treating STALE proof as pass without that bind is theater.
+17. A MemNet **roadmap** from this product. MemNet improve-only for **M1–M5 / Foam fidelity**; engine stays **0.19.8 + TCP**.
