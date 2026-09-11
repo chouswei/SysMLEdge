@@ -20,17 +20,19 @@ Keep the Foam **contract** slice (bilingual bus). Freeze Pro / Team / SaaS edito
 
 ---
 
-## Competitor (pain lock)
+## Claimed pains 1–5 (CEO, 2026-09-11)
 
-**Kill:** tens-of-minutes **Cursor + git + grep/LSP → LLM** on the same Foam questions. That is the beachhead competitor — not Cameo, not a feature checklist.
+Exact claimed list. **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team ACL.
 
-**P1 axes:** **wall-clock + context footprint + no silent drop.** Not feature count.
+| # | Pain | Claim |
+|---|------|--------|
+| **1** | grep latency (tens of minutes) | Competitor to kill on **wall-clock**. |
+| **2** | **big SysML + small LLM context** / **context footprint** | Agents query **slices** via **GQL/`pin_map`**. Not stuffing the tree. |
+| **3** | STALE blindness / wrong rev | Fail closed; bind `rev.sha`. |
+| **4** | chat-as-SSOT | Ship-rev zip + propose-only trail. Chat is not SSOT. |
+| **5** | mid-flight model change → re-entrant reproject | Re-enter after Save/reproject. |
 
-**Pain #2:** **big SysML + small LLM context.** **SysMLEdge** = agents query **slices** via **GQL/`pin_map`** instead of stuffing the tree. Head-to-head MUST measure **context footprint** (prompt tokens) on the three Foam Qs; SysMLEdge MUST be **far smaller** than a whole-tree dump.
-
-**no silent drop:** LLM-on-grep **always loses something** (truncate / silent drop). Score it: SysMLEdge GQL MUST preserve ownership / usage / impact edges and return `rev.sha` + `rev.stale=false`. Grep→LLM MAY omit; that is grep’s loss.
-
-Proof scoring: [P1-acceptance.md](P1-acceptance.md) row 9. Locks: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md).
+**P1 head-to-head** scores **wall-clock + context footprint + no silent drop** (pains 1–2). Pains **3–5** are contract claims (STALE / propose / ship-rev / reproject) — **not** extra feature work this week. [P1-acceptance.md](P1-acceptance.md). [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md).
 
 ---
 
@@ -89,4 +91,4 @@ No extra mitigations beyond: run the four proof items; freeze the list in [PRODU
 5. AGI/endgame copy as a substitute for the head-to-head.
 6. Shipping bilingual bus as a product if proof fails.
 7. Parts-only SSOT, or treating parts/ports as a forever mapping cap.
-8. Selling P1 as a feature-count win instead of **wall-clock + context footprint + no silent drop** vs grep.
+9. Claiming canvas, PLM, ClickUp/InvenTree, or Team ACL as this-week pains (non-claims freeze).

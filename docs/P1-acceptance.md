@@ -32,7 +32,9 @@ This document is the P1 pass/fail sheet. It does not implement runtime.
 
 Hard pass/fail. Cited from [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md), [PRODUCT-PLAN.md](PRODUCT-PLAN.md), [BUSINESS-PLAN.md](BUSINESS-PLAN.md). **Demand ALL four.** Contract rows 1–8 above remain; this section extends them. Evidence is a scripted log or a short recording — **no slides**.
 
-**Pain #1:** tens-of-minutes grep is the competitor to kill. **Pain #2:** **big SysML + small LLM context.** **SysMLEdge** = agents query **slices** via **GQL/`pin_map`** instead of stuffing the tree. **P1 axes** = **wall-clock + context footprint + no silent drop.** Not feature count.
+**Claimed pains 1–5** ([PRODUCT-LOCKS.md](PRODUCT-LOCKS.md)): **1** grep latency; **2** big SysML + small LLM context / **context footprint** (GQL/`pin_map` slices); **3** STALE blindness / wrong rev; **4** chat-as-SSOT (no ship-rev zip, no propose-only trail); **5** mid-flight model change → re-entrant reproject. **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team ACL.
+
+**P1 head-to-head** scores **wall-clock + context footprint + no silent drop** (pains 1–2). Pains **3–5** are proven by STALE / propose / ship-rev / reproject rows below — **not** extra feature work this week.
 
 ### Row 9 — score all three axes
 
@@ -54,8 +56,8 @@ Log wall-clock, **context footprint** (prompt tokens per Q + whole-tree-dump bas
 | # | Name | Pass criteria |
 |---|------|----------------|
 | 9 | Head-to-head | **wall-clock + context footprint + no silent drop** on the three Foam Qs. Competitor = tens-of-minutes grep, not Cameo. Context footprint **far smaller** than whole-tree dump. |
-| 10 | STALE not theater | Mutate SysML on disk → structure read fails `code: STALE` → `propose` refused → `reproject` clears → live reads work. Scripted log or short recording. |
-| 11 | Propose + ship rev | `propose` only under `proposals/<id>/`; SSOT unchanged; human save → new SHA; prior SHA zip downloadable; download = SysML zip only. **All eight** rows above green on Foam MemNet. |
+| 10 | STALE not theater | **Pain 3 + 5:** mutate SysML on disk → structure read fails `code: STALE` → `propose` refused → `reproject` clears → live reads work. Scripted log or short recording. No extra feature work this week. |
+| 11 | Propose + ship rev | **Pain 4:** `propose` only under `proposals/<id>/`; SSOT unchanged; human save → new SHA; prior SHA zip downloadable; download = SysML zip only. **All eight** rows above green on Foam MemNet. |
 | 12 | Non-Core operator | One operator **not** from Core runs the demo **cold**. Keep using this vs grep? **Yes/no + why.** If **no**, narrow further or **kill** the wedge claim. |
 
 ### Fail / pass (product)

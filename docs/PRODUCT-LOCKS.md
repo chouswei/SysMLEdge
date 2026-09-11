@@ -29,7 +29,17 @@ NARROW fail/pass gates above **stand**. Mapping and SSOT rules below do **not** 
 
 ### Freeze (do not spend the two weeks on)
 
+**Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team ACL.
+
 Product / ocean — **not** a forever mapping cap:
+
+1. P2 SaaS editor
+2. PR UI
+3. Team ACL
+4. Billing
+5. Cameo comparisons
+6. ClickUp / InvenTree product
+7. Full KerML / whole-language coverage in two weeks
 
 1. P2 SaaS editor
 2. PR UI
@@ -49,21 +59,27 @@ Elon’s “parts/ports” freeze was **2-week anti-scope-creep for mapping work
 
 ---
 
-## Pain lock and competitor (CEO + user, 2026-09-11)
+## Claimed pains 1–5 (CEO, 2026-09-11)
 
-**Pain #1:** tens-of-minutes **Cursor + git + grep/LSP** on SysML (then LLM). That is the competitor to kill. Not Cameo. Not feature count.
+Exact claimed list. **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team ACL.
 
-**Pain #2:** **big SysML + small LLM context.** Grep→LLM truncates/drops. **SysMLEdge** = agents query **slices** via **GQL/`pin_map`** instead of stuffing the tree.
+| # | Pain | SysMLEdge claim |
+|---|------|-----------------|
+| **1** | grep latency (tens of minutes) | Beat grep on **wall-clock** (head-to-head). |
+| **2** | **big SysML + small LLM context** / **context footprint** | Agents query **slices** via **GQL/`pin_map`**. Not stuffing the tree. |
+| **3** | STALE blindness / wrong rev | Show STALE; fail closed; `rev.sha` bound. |
+| **4** | chat-as-SSOT | No ship-rev zip, no propose-only trail — SysMLEdge **has** both. |
+| **5** | mid-flight model change → re-entrant reproject | Day loop: edit → Save → reproject → keep going. |
 
-**P1 axes** (same Foam questions — usage / ownership / impact): **wall-clock + context footprint + no silent drop.**
+**P1 head-to-head** still scores **wall-clock + context footprint + no silent drop** (pains **1–2** + silent-drop vs grep→LLM). Pains **3–5** are **contract claims** proven by existing STALE / propose / ship-rev / reproject rows in [P1-acceptance.md](P1-acceptance.md) — **not** extra feature work this week.
 
 | Axis | Measure |
 |------|---------|
 | **wall-clock** | Elapsed time vs grep path. Not tokens as a proxy for time. |
-| **context footprint** | Prompt/context tokens per Q. SysMLEdge MUST be **far smaller** than a whole-tree dump. Slices via GQL/`pin_map` — not paste `sysml-models/`. |
-| **no silent drop** | GQL answers **preserve** ownership / usage / impact edges. Grep→LLM MAY omit; score the drop. SysMLEdge MUST include `rev.sha` + `rev.stale=false`. |
+| **context footprint** | Prompt/context tokens per Q. Far smaller than a whole-tree dump. GQL/`pin_map` slices. |
+| **no silent drop** | Preserve ownership / usage / impact edges. Grep→LLM MAY omit. SysMLEdge MUST include `rev.sha` + `rev.stale=false`. |
 
-P1 MUST NOT be declared won on feature count. Scoring sheet: [P1-acceptance.md](P1-acceptance.md) row 9.
+P1 MUST NOT be declared won on feature count. Scoring: [P1-acceptance.md](P1-acceptance.md) row 9 (axes) and rows 3–8 / 10–11 (pains 3–5).
 
 ---
 
@@ -75,7 +91,7 @@ P1 MUST NOT be declared won on feature count. Scoring sheet: [P1-acceptance.md](
 | **Mapping** | Every construct **that tree uses**. Not “parts/ports forever”. Not “full KerML in 2 weeks.” |
 | **P1 gate** | **Foam-complete** projection (whatever Foam uses) + beat-grep / STALE / demo. **Not** whole-language coverage. Widen element kinds as later projects demand (`mapping.version` bump). |
 
-**Head-to-head:** see **Pain lock and competitor** above. P1 axes = **wall-clock + context footprint + no silent drop**. [P1-acceptance.md](P1-acceptance.md) row 9.
+**Head-to-head:** P1 axes = **wall-clock + context footprint + no silent drop** (pains 1–2). Pains 3–5 = existing contract rows, not extra features this week. [P1-acceptance.md](P1-acceptance.md).
 
 ---
 
