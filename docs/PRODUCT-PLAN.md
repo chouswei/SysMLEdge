@@ -4,7 +4,7 @@ Living plan. **Locks (2026-09-11):** [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md). **P0 
 
 This repository seed does **not** implement runtime MCP/CLI. P2/P3 are not shipping here.
 
-**Position:** SysML SSOT + GQL/MCP query face. Not SysON/graphic IDE. Not a GitHub rebuild.
+**Position:** bilingual bus for textual SysML v2 + agents (SysML stays the model; GQL/MCP so Cursor agents do not grep the tree). Not SysON/Cameo/graphic IDE. Not a GitHub clone. Not defense PLM yet. Pin: [PRODUCT-LOCKS.md — Market position](PRODUCT-LOCKS.md#market-position-pin).
 
 **Core (unchanged):** name **SysMLEdge**; bilingual = SysML (author SSOT) + GQL (query/represent); SSOT = SysML zip / `sysml-models/` tree; MemNet = one-way projected index (**no Kuzu**); `graph = model @ SHA`; GQL never invents; agents propose only (no write-SSOT tool); human save = whole-tree overwrite + git history; download = SysML zip only; pilot SoI = `chouswei/modelbasedPrj-itri-vedan-foam-detection`.
 
@@ -19,7 +19,7 @@ This repository seed does **not** implement runtime MCP/CLI. P2/P3 are not shipp
 | **P2** | Single-tenant SaaS | Plan only | Hosted on the **existing droplet (Devicor)**. Identity, import/save/download, MemNet per project, MCP, in-tenant ACL, Save/STALE UI, optional autopilot/bot review (default off). **InvenTree on that host: untouched.** |
 | **P3** | Tenancy | Plan only | Cross-tenant isolation, authz, billing-shaped tenancy. Not implied by P2. |
 
-**Product gate:** second paid outsider **after** the Foam slice.
+**P1 competitor to beat:** **grep** (git + SysML LSP). **Product gate:** second paid outsider **after** the Foam slice. P2 UI after that demo, not before.
 
 ---
 
@@ -79,7 +79,7 @@ Hard isolation between tenants (data, MemNet sessions, MCP credentials). Cross-t
 
 ## Pinned users
 
-1. Solo / small MBSE engineer (textual SysML).
+1. Solo / 2–5 engineers on SysML v2 textual + Cursor.
 2. Cursor / MCP agents (read + propose).
 3. Later: in-tenant teammates (P2 ACL).
 

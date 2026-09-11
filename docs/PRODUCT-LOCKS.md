@@ -8,15 +8,41 @@ If a lock and P0 wording differ, this sheet **notes** the difference and **align
 
 ## Position
 
-SysMLEdge is **SysML SSOT + GQL/MCP query face**.
+SysMLEdge is **SysML SSOT + GQL/MCP query face**. Competitive/buyer pin: [Market position (pin)](#market-position-pin).
 
 | Is | Is not |
 |----|--------|
-| Textual SysML v2 as author SSOT; MemNet one-way projection; GQL/MCP to query and represent | SysON or any graphic SysML IDE |
-| Link/sync a GitHub (or git) repo **at a SHA**; own projection, STALE, and propose | A rebuild of GitHub (issues, PRs-as-product, social VCS) |
+| Textual SysML v2 as author SSOT; MemNet one-way projection; GQL/MCP to query and represent | Graphic MBSE IDE (SysON, Cameo, canvas, diagram-as-SSOT) |
+| Link/sync a GitHub (or git) repo **at a SHA**; own projection, STALE, and propose | A GitHub clone (issues, PRs-as-product, social VCS) |
 | Project service for MBSE + agents | ClickUp or InvenTree as product features |
 
-**No graphic:** no diagram canvas, graphic modeler, or diagram-as-SSOT. Authoring is **textual SysML**. Query is **GQL/MCP**.
+**No graphic:** no diagram canvas, graphic modeler, or diagram-as-SSOT. Authoring is **textual SysML**. Query is **GQL/MCP**. Agents **propose** only; they do not write SSOT.
+
+---
+
+## Market position (pin)
+
+SysMLEdge = **the bilingual bus for textual SysML v2 + agents** — SysML stays the model; GQL/MCP is how Cursor agents query it without grepping the tree.
+
+| We are | We are not |
+|--------|------------|
+| Model + agent bus on git/SysML | SysON / Cameo / graphic MBSE IDE |
+| Beats “git + LSP + grep `.sysml`” | A GitHub clone |
+| Desk → Foam first, then Pro ~$19–29 | Defense PLM / enterprise >$100 (yet) |
+
+**Buyer:** solo / 2–5 engineers on SysML v2 textual + Cursor.
+
+**Competitor to beat on the P1 demo:** **grep** (git + SysML LSP). P1 is proven when GQL/MCP answers mapped structure **without** stuffing the `.sysml` tree into the agent.
+
+**Product gate:** second paid outsider **after** the Foam slice. Foam is the first vertical; do not treat P2 as “done” until that second paid outsider exists.
+
+**CEO review risk (do not look like another SysML editor):**
+
+- Do not ship P2 human UI (SaaS editor / canvas-shaped surface) before P1 proves the query demo against grep.
+- Foam Phase-1 hours stay on the Foam slice (import, project, GQL/MCP, STALE, propose, zip). Do not spend them on P2 UI.
+- Freemium Pro ~US$19–29 is the desk wedge after Foam; Team / defense PLM is not this cut.
+
+This pin does **not** widen scope: MemNet-only projection, `graph = model @ SHA`, STALE, no agent SSOT write, no graphic IDE, no GitHub clone, ClickUp/InvenTree not product features.
 
 ---
 
@@ -115,7 +141,7 @@ Dirty is **not** STALE.
 
 ## Users, freemium, product gate
 
-**Pinned users:** solo / small MBSE engineer; Cursor/MCP agents; later, in-tenant teammates (P2 ACL).
+**Pinned users:** solo / 2–5 engineers on SysML v2 textual + Cursor; Cursor/MCP agents; later, in-tenant teammates (P2 ACL). See [Market position (pin)](#market-position-pin).
 
 | Tier | Intent (plan, not a live price list in this repo) |
 |------|---------------------------------------------------|
@@ -143,7 +169,8 @@ SysMLEdge does **not** ship ClickUp or InvenTree: no sync, no PLM UI, no “link
 | STALE / `staleOk` | Show; refuse pretence; `staleOk` read-only | Same + UI states Dirty ≠ STALE | P0 STALE rules stand. Dirty added as working-tree, not projection drift. |
 | Agent SSOT write | Silent MCP save forbidden | Agent merge **banned**; no write-SSOT tool | Unchanged. |
 | Human-auth MCP merge | Save is human UI/CLI; MCP `save` forbidden as **unattended** | Token + confirm → apply + Save + reproject | **Clarify** P0: unattended/agent save stays forbidden; human-auth merge is the human Save path on MCP. |
-| Graphic IDE | Not specified | Explicit reject | Add to P0 reject list (does not weaken contracts). |
+| Graphic IDE | Not specified | Explicit reject (SysON/Cameo) | Add to P0 reject list (does not weaken contracts). |
+| Market pin | Not specified | Bilingual bus; beat grep on P1; Desk→Foam then Pro; not defense PLM yet | Plan/locks only. Does not add runtime or P2 UI. |
 | ClickUp/InvenTree | Mapped when present in SysML | Not product features | **Clarify** P0 §5: projection of SysML attributes only. |
 
 ---
@@ -152,7 +179,7 @@ SysMLEdge does **not** ship ClickUp or InvenTree: no sync, no PLM UI, no “link
 
 Implementations MUST reject, in addition to P0 §7:
 
-1. Graphic canvas / SysON-like modeler as a SysMLEdge surface.
+1. Graphic canvas / SysON- or Cameo-like modeler as a SysMLEdge surface; a product that looks like another SysML editor.
 2. Rebuilding GitHub (or treating GitHub review as the SSOT owner).
 3. Agent-owned merge or any agent write-SSOT tool.
 4. ClickUp or InvenTree as SysMLEdge features (including P2 touching InvenTree on Devicor).
@@ -160,3 +187,4 @@ Implementations MUST reject, in addition to P0 §7:
 6. Bot review that writes SSOT.
 7. Serving MemNet/GQL as downloadable source; Kuzu/Cypher.
 8. Claiming P2 SaaS or P3 tenancy as shipping in this repository seed.
+9. Shipping P2 UI before the P1 query demo beats grep; spending Foam Phase-1 hours on P2 UI.
