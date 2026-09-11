@@ -24,11 +24,11 @@ Keep the Foam **contract** slice (bilingual bus). Freeze Pro / Team / SaaS edito
 
 **Kill:** tens-of-minutes **Cursor + git + grep/LSP → LLM** on the same Foam questions. That is the beachhead competitor — not Cameo, not a feature checklist.
 
-**P1 win:** **wall-clock + less context**. Not feature count.
+**P1 axes:** **wall-clock + context footprint + no silent drop.** Not feature count.
 
-**Context-window pain:** LLM cannot hold a large SysML system. Grep→LLM truncates/drops. Wedge = structured GQL over the full projected graph **without** stuffing the whole tree into the prompt. Head-to-head MUST measure **prompt/context tokens** on the three Foam Qs; SysMLEdge MUST be **far smaller** than a whole-tree dump.
+**Pain #2:** **big SysML + small LLM context.** **SysMLEdge** = agents query **slices** via **GQL/`pin_map`** instead of stuffing the tree. Head-to-head MUST measure **context footprint** (prompt tokens) on the three Foam Qs; SysMLEdge MUST be **far smaller** than a whole-tree dump.
 
-**Third axis:** structure fidelity. LLM-on-grep **always loses something** (silent drop / truncation). Score it: SysMLEdge GQL MUST preserve ownership / usage / impact edges and return `rev.sha` + `rev.stale=false`. Grep→LLM MAY omit; that is grep’s loss.
+**no silent drop:** LLM-on-grep **always loses something** (truncate / silent drop). Score it: SysMLEdge GQL MUST preserve ownership / usage / impact edges and return `rev.sha` + `rev.stale=false`. Grep→LLM MAY omit; that is grep’s loss.
 
 Proof scoring: [P1-acceptance.md](P1-acceptance.md) row 9. Locks: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md).
 
@@ -74,7 +74,7 @@ P2 SaaS editor and freemium UI remain a **gap** while P1 forbids that UI. Do not
 
 1. Beachhead size is asserted. Without a second paid outsider after Foam, do not keep the paid-wedge story.
 2. MemNet is **SPOF**. Thin or slow Foam projection kills GQL vs LSP; the head-to-head is the check.
-3. “Beat grep” is soft until the timed head-to-head. Competitor = **tens-of-minutes grep**, not Cameo. MUST score **wall-clock + prompt tokens (far below whole-tree dump) + structure fidelity** (silent drop / truncate on grep→LLM). Feature count is not a win. Freemium/Pro SaaS editor (P2) cannot close that gap in P1.
+3. “Beat grep” is soft until the timed head-to-head. Competitor = **tens-of-minutes grep**, not Cameo. MUST score **wall-clock + context footprint + no silent drop**. Feature count is not a win. Freemium/Pro SaaS editor (P2) cannot close that gap in P1.
 
 No extra mitigations beyond: run the four proof items; freeze the list in [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md); fail closed on the product story if any item fails.
 
@@ -89,4 +89,4 @@ No extra mitigations beyond: run the four proof items; freeze the list in [PRODU
 5. AGI/endgame copy as a substitute for the head-to-head.
 6. Shipping bilingual bus as a product if proof fails.
 7. Parts-only SSOT, or treating parts/ports as a forever mapping cap.
-8. Selling P1 as a feature-count win instead of wall-clock + measured prompt tokens (far below whole-tree dump) + scored fidelity vs grep.
+8. Selling P1 as a feature-count win instead of **wall-clock + context footprint + no silent drop** vs grep.

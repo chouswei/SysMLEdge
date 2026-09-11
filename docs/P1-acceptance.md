@@ -32,7 +32,7 @@ This document is the P1 pass/fail sheet. It does not implement runtime.
 
 Hard pass/fail. Cited from [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md), [PRODUCT-PLAN.md](PRODUCT-PLAN.md), [BUSINESS-PLAN.md](BUSINESS-PLAN.md). **Demand ALL four.** Contract rows 1–8 above remain; this section extends them. Evidence is a scripted log or a short recording — **no slides**.
 
-**Pain lock:** tens-of-minutes grep is the competitor to kill. P1 win = **wall-clock + less context** on the **same** Foam Qs — **not** feature count. LLM context **cannot** hold a large SysML system; grep→LLM truncates/drops. Wedge = structured GQL over the **full** projected graph without stuffing the whole tree into the prompt.
+**Pain #1:** tens-of-minutes grep is the competitor to kill. **Pain #2:** **big SysML + small LLM context.** **SysMLEdge** = agents query **slices** via **GQL/`pin_map`** instead of stuffing the tree. **P1 axes** = **wall-clock + context footprint + no silent drop.** Not feature count.
 
 ### Row 9 — score all three axes
 
@@ -40,20 +40,20 @@ Same operator. Three fixed Foam questions: **usage / ownership / impact**.
 
 | Arm | Path |
 |-----|------|
-| **A (competitor)** | raw Cursor + git + grep/LSP → LLM. Pain: **tens of minutes**; context window **cannot** hold the tree → **truncate / drop**. |
-| **B** | SysMLEdge MCP / GQL over the **full** projected graph; prompt is bounded neighbourhoods, not the zip. |
+| **A (competitor)** | raw Cursor + git + grep/LSP → LLM. Pain #1: **tens of minutes**. Pain #2: **big SysML + small LLM context** → truncate / **silent drop**. |
+| **B** | SysMLEdge: agents query **slices** via **GQL/`pin_map`** over the full projected graph. MUST NOT stuff the tree. |
 
 | Axis | Pass for SysMLEdge |
 |------|---------------------|
-| **Wall-clock** | Faster than Arm A on each of the three Qs. Log elapsed time (not tokens as a proxy for time). |
-| **Less context** | Log **prompt/context tokens** used to answer each Q. SysMLEdge MUST be **far smaller** than a **whole-tree dump** of Foam `.sysml`, and smaller than Arm A. MUST NOT paste the full tree into the prompt. |
-| **Structure fidelity** | GQL answers **preserve ownership / usage / impact edges** (read from the full projection). Arm A MAY omit via truncate/silent drop; score the drop. SysMLEdge answers MUST carry `rev.sha` + `rev.stale=false`. |
+| **wall-clock** | Faster than Arm A on each of the three Qs. Log elapsed time (not tokens as a proxy for time). |
+| **context footprint** | Log prompt/context tokens used to answer each Q. SysMLEdge MUST be **far smaller** than a **whole-tree dump** of Foam `.sysml`, and smaller than Arm A. GQL/`pin_map` slices only. |
+| **no silent drop** | GQL answers **preserve ownership / usage / impact edges** (read from the full projection). Arm A MAY omit via truncate/silent drop; score the drop. SysMLEdge answers MUST carry `rev.sha` + `rev.stale=false`. |
 
-Log wall-clock, **prompt/context tokens per Q**, whole-tree-dump token count (baseline), correctness, fidelity notes (edges kept vs silently dropped), `rev.sha` / `rev.stale`. Feature count is **not** a win.
+Log wall-clock, **context footprint** (prompt tokens per Q + whole-tree-dump baseline), **no silent drop** notes (edges kept vs dropped), `rev.sha` / `rev.stale`. Feature count is **not** a win.
 
 | # | Name | Pass criteria |
 |---|------|----------------|
-| 9 | Head-to-head | All three axes above on the three Foam Qs. Competitor = tens-of-minutes grep, not Cameo. Prompt tokens **far smaller** than whole-tree dump. |
+| 9 | Head-to-head | **wall-clock + context footprint + no silent drop** on the three Foam Qs. Competitor = tens-of-minutes grep, not Cameo. Context footprint **far smaller** than whole-tree dump. |
 | 10 | STALE not theater | Mutate SysML on disk → structure read fails `code: STALE` → `propose` refused → `reproject` clears → live reads work. Scripted log or short recording. |
 | 11 | Propose + ship rev | `propose` only under `proposals/<id>/`; SSOT unchanged; human save → new SHA; prior SHA zip downloadable; download = SysML zip only. **All eight** rows above green on Foam MemNet. |
 | 12 | Non-Core operator | One operator **not** from Core runs the demo **cold**. Keep using this vs grep? **Yes/no + why.** If **no**, narrow further or **kill** the wedge claim. |

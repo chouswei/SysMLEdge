@@ -45,28 +45,25 @@ Elon’s “parts/ports” freeze was **2-week anti-scope-creep for mapping work
 
 1. Beachhead ~1k–10k textual SysML v2 + Cursor is **asserted, not evidenced**. Second paid outsider **after Foam** is required.
 2. MemNet is **SPOF** — thin/slow Foam projection kills GQL vs LSP.
-3. “Beat grep” is **soft** until the timed head-to-head scores **wall-clock + less context + structure fidelity** on the same Foam Qs. Freemium/Pro SaaS editor (P2) is a **gap** while P1 forbids that UI.
+3. “Beat grep” is **soft** until the timed head-to-head scores **wall-clock + context footprint + no silent drop** on the same Foam Qs. Freemium/Pro SaaS editor (P2) is a **gap** while P1 forbids that UI.
 
 ---
 
 ## Pain lock and competitor (CEO + user, 2026-09-11)
 
-**Competitor to kill:** tens-of-minutes **Cursor + git + grep/LSP** on SysML (then LLM). Not Cameo. Not feature count.
+**Pain #1:** tens-of-minutes **Cursor + git + grep/LSP** on SysML (then LLM). That is the competitor to kill. Not Cameo. Not feature count.
 
-**P1 win** (same Foam questions — usage / ownership / impact): **wall-clock + less context**. Not a bigger language surface.
+**Pain #2:** **big SysML + small LLM context.** Grep→LLM truncates/drops. **SysMLEdge** = agents query **slices** via **GQL/`pin_map`** instead of stuffing the tree.
 
-**Context-window pain:** an LLM **cannot hold** a large SysML system. Grep→LLM **truncates / drops**. SysMLEdge wedge = **structured GQL over the full projected graph** without stuffing the whole tree into the prompt.
+**P1 axes** (same Foam questions — usage / ownership / impact): **wall-clock + context footprint + no silent drop.**
 
-**Less-context axis (measure):** log **prompt/context tokens** used to answer each of the three Foam Qs. SysMLEdge MUST be **far smaller** than a whole-tree dump (and smaller than Arm A’s stuffed context). Bounded GQL neighbourhoods — not “paste `sysml-models/`”.
+| Axis | Measure |
+|------|---------|
+| **wall-clock** | Elapsed time vs grep path. Not tokens as a proxy for time. |
+| **context footprint** | Prompt/context tokens per Q. SysMLEdge MUST be **far smaller** than a whole-tree dump. Slices via GQL/`pin_map` — not paste `sysml-models/`. |
+| **no silent drop** | GQL answers **preserve** ownership / usage / impact edges. Grep→LLM MAY omit; score the drop. SysMLEdge MUST include `rev.sha` + `rev.stale=false`. |
 
-**Third axis — structure fidelity:** LLM-on-grep **always loses something** (silent drop / truncation). Head-to-head MUST **score** it:
-
-| Arm | Structure |
-|-----|-----------|
-| SysMLEdge GQL | Answers **preserve** ownership / usage / impact **edges**. MUST include `rev.sha` + `rev.stale=false`. |
-| grep → LLM | MAY omit edges; that omission is a **fail for grep**, not a pass for “the model is in the files.” |
-
-P1 MUST NOT be declared won on wall-clock tokens-as-proxy, correctness, or feature count alone. Context-axis **prompt tokens** MUST still be logged. Scoring sheet: [P1-acceptance.md](P1-acceptance.md) row 9.
+P1 MUST NOT be declared won on feature count. Scoring sheet: [P1-acceptance.md](P1-acceptance.md) row 9.
 
 ---
 
@@ -78,7 +75,7 @@ P1 MUST NOT be declared won on wall-clock tokens-as-proxy, correctness, or featu
 | **Mapping** | Every construct **that tree uses**. Not “parts/ports forever”. Not “full KerML in 2 weeks.” |
 | **P1 gate** | **Foam-complete** projection (whatever Foam uses) + beat-grep / STALE / demo. **Not** whole-language coverage. Widen element kinds as later projects demand (`mapping.version` bump). |
 
-**Head-to-head:** see **Pain lock and competitor** above. Tens-of-minutes grep is the competitor. Win = wall-clock + less context + scored structure fidelity on the same Foam Qs — not feature count. [P1-acceptance.md](P1-acceptance.md) row 9.
+**Head-to-head:** see **Pain lock and competitor** above. P1 axes = **wall-clock + context footprint + no silent drop**. [P1-acceptance.md](P1-acceptance.md) row 9.
 
 ---
 
@@ -244,5 +241,5 @@ Implementations MUST reject, in addition to P0 §7:
 10. Spending Foam Phase-1 hours on P2 UI, PR UI, Team ACL, billing, Cameo, ClickUp/InvenTree product, or **full KerML** in two weeks.
 11. Parts-only SSOT (import/save/download of a subset of `.sysml` as “the model”).
 12. Treating “parts/ports” as a forever mapping cap, or boiling the ocean (whole-language) in the two-week proof.
-13. Declaring P1 won on **feature count** (or wall-clock tokens-as-proxy / correctness alone) instead of wall-clock + measured prompt tokens (far below whole-tree dump) + scored structure fidelity vs tens-of-minutes grep.
-14. Stuffing the whole SysML tree into the LLM prompt as the GQL/MCP story.
+13. Declaring P1 won on **feature count** instead of **wall-clock + context footprint + no silent drop** vs tens-of-minutes grep.
+14. Stuffing the whole SysML tree into the LLM prompt instead of GQL/`pin_map` slices.
