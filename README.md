@@ -1,8 +1,8 @@
 # SysMLEdge
 
-**SysMLEdge** is a project service for SysML v2 models: humans author **SysML** as the single source of truth; agents query and represent the same structure as **GQL**. The graph is a **MemNet** projection of that tree. It is not a Kuzu port, not a graphic SysML IDE, and it does not ship SaaS or tenancy in this cut.
+**SysMLEdge** is the bilingual bus for textual SysML v2 + agents: humans author **SysML** as the single source of truth; Cursor agents query and represent the same structure as **GQL/MCP** instead of grepping the tree. The graph is a **MemNet** projection of that tree. It is not a Kuzu port, not a SysON/Cameo/graphic SysML IDE, not a GitHub clone, and it does not ship SaaS or tenancy in this cut.
 
-**Bilingual** here means SysML (author SSOT) + GQL (query and represent). It does not mean a zh/EN product UI.
+**Bilingual** here means SysML (author SSOT) + GQL (query and represent). It does not mean a zh/EN product UI. Market pin: [docs/PRODUCT-LOCKS.md](docs/PRODUCT-LOCKS.md#market-position-pin).
 
 ## Stack (this cut)
 
