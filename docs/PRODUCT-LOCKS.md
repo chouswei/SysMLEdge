@@ -16,7 +16,7 @@ If a lock and P0 wording differ, this sheet **notes** the difference and **align
 
 **Load-bearing claim:** `graph = model @ SHA` + STALE fail-closed is valuable enough that solo SysML+Cursor desks switch and later pay ~US$19–29. That claim is **not** proven by this docs seed.
 
-**Proof bar:** ALL four Foam proof items in [P1-acceptance.md](P1-acceptance.md) (head-to-head, STALE not theater, propose+ship rev, one non-Core operator). Business and pricing: [BUSINESS-PLAN.md](BUSINESS-PLAN.md). Plan freeze: [PRODUCT-PLAN.md](PRODUCT-PLAN.md).
+**Proof bar:** ALL Foam proof items **and** ALL MemNet proof items in [P1-acceptance.md](P1-acceptance.md). Kill the engine story only if the 2-week **MemNet** proof fails. Kill Pro/beachhead if Foam head-to-head fails.
 
 | Gate | Rule |
 |------|------|
@@ -72,6 +72,42 @@ Exact claimed list. **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team 
 | **no silent drop** | Preserve ownership / usage / impact edges. Grep→LLM MAY omit. SysMLEdge MUST include `rev.sha` + `rev.stale=false`. |
 
 P1 MUST NOT be declared won on feature count. Scoring: [P1-acceptance.md](P1-acceptance.md) row 9 (axes) and rows 3–8 / 10–11 (pains 3–5).
+
+---
+
+## MemNet engine (Elon hard review, 2026-09-11)
+
+**Verdict: KEEP MemNet as sole SysMLEdge engine — NARROW the MemNet surface.** No dual-engine / Kuzu hedge. **Kill only if** the 2-week MemNet proof fails.
+
+**Why narrow:** MemNet is session / mission / `pin_map` goldfish (catalog ≠ mission; serve + MCP MUST share TCP; empty `pin_map` / `session_not_found` known). SysMLEdge `rev.sha` / STALE / reproject / `gql_*` is a **product face on top** — not proven identical to the Path-B mission loop.
+
+**Top risks (document; no extra mitigations here):**
+
+1. Silent drop / fidelity gap
+2. Ops fragility: serve ≠ MCP
+3. Contract bridge gap for `rev` / STALE / reproject
+4. Latency **UNKNOWN** until Memnetor
+
+**2-week MemNet proof (ALL pass/fail, alongside Foam):** [P1-acceptance.md](P1-acceptance.md) M1–M5.
+
+| Fail | Rule |
+|------|------|
+| **M1 or M2 fail** | MemNet **not ready** as sole engine. Stop Pro/beachhead. Keep as internal tool or fix fidelity. |
+| **Dual-engine / Kuzu** | Only if **Memnetor** is a **hard blocker**. Default: **no Kuzu**. |
+
+### NOT build (2 weeks) — MemNet surface
+
+In addition to the NARROW product freeze:
+
+1. Full KerML map
+2. Kuzu / Cypher dual-engine
+3. `snap_model` / PKG as mission SSOT
+4. Multi-tenant / billing / ACL / InvenTree
+5. Graph write-back as SSOT
+6. Agent save
+7. `pin_map` expand beyond Foam P1
+8. Graph dumps as downloadable source
+9. Autopilot / bot-merge
 
 ---
 
@@ -317,3 +353,5 @@ Implementations MUST reject, in addition to P0 §7:
 12. Treating “parts/ports” as a forever mapping cap, or boiling the ocean (whole-language) in the two-week proof.
 13. Declaring P1 won on **feature count** instead of **wall-clock + context footprint + no silent drop** vs tens-of-minutes grep.
 14. Stuffing the whole SysML tree into the LLM prompt instead of GQL/`pin_map` slices.
+15. Dual-engine / Kuzu hedge unless Memnetor is a documented hard blocker. Default: MemNet sole engine.
+16. Treating SysMLEdge `gql_*` / `rev.sha` as already identical to the Path-B mission loop before MemNet proof M1–M5.

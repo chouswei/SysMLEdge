@@ -69,7 +69,30 @@ Log wall-clock, **context footprint** (prompt tokens per Q + whole-tree-dump bas
 | **Fail** (any of 9–12) | Kill the Pro/beachhead story for now. Keep docs as a contract sketch or fold into MemNet tooling. MUST NOT ship “bilingual bus” as a product without the head-to-head. |
 | **Pass** (all of 9–12) | KEEP narrowed — Foam vertical + MCP marketplace path. Price/experiment only after a **second paid outsider**. P2 UI still gated. |
 
+## MemNet proof (2-week, ALL required) — Elon 2026-09-11
+
+**Alongside Foam.** KEEP MemNet as sole engine; **NARROW** the surface. No Kuzu hedge. **Kill only if** this proof fails. Cited from [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#memnet-engine-elon-hard-review-2026-09-11).
+
+UNKNOWN on a required field = **fail that line**.
+
+| # | Name | Pass criteria |
+|---|------|----------------|
+| **M1** | Gold fidelity | Frozen **N** parts / ports / connections from Foam `sysml-models/`. Zero extras not in SysML. Zero silent drops. **Publish counts.** |
+| **M2** | Query slice | Same 3 Foam Qs (usage / ownership / impact) via `pin_map` and/or `gql_*`. Bound `rev.sha` + `rev.stale=false`. **UNKNOWN = fail that line.** |
+| **M3** | STALE/reproject on MemNet path | Mutate → fail-closed → `propose` refused → `reproject` → live. Timed / scripted. |
+| **M4** | Bounce recovery | `session_save` → restart **serve + MCP together** → load → gold `pin_map` **non-empty**. Record **memnet-llm** version. **Fail if** MCP `session_list` ≠ serve. |
+| **M5** | Wall-clock + context vs grep | Same 3 Qs vs grep/LSP. Score **wall-clock + context footprint** (may share logs with row 9). |
+
+| Outcome | Engine / product rule |
+|---------|------------------------|
+| **M1 or M2 fail** | MemNet **not ready** as sole engine. Stop Pro/beachhead. Keep as internal tool or fix fidelity. Dual-engine **only** if Memnetor hard blocker — default **no Kuzu**. |
+| **M3–M5 fail** | Same: do not ship bilingual bus as a product on an unproven MemNet path. |
+| **All M1–M5 pass** | KEEP MemNet sole engine, **narrowed** surface. Foam proof 9–12 still required for the wedge. |
+
+**NOT this week:** full KerML map; Kuzu/Cypher dual; `snap_model`/PKG as mission SSOT; multi-tenant/billing/ACL/InvenTree; graph write-back SSOT; agent save; `pin_map` expand beyond Foam P1; graph dumps as downloadable source; autopilot/bot-merge.
+
 ## Done when
 
 - **Contract:** all eight rows (1–8) pass on the Foam pilot tree with MemNet + MCP (or CLI stand-in for the same contracts). P1 = Foam-complete + these rows — **not** whole-language coverage.
-- **Wedge:** all four Foam proof items (9–12) pass (NARROW fail/pass unchanged). Until then the product is NARROW / proof in progress — not a beachhead.
+- **Wedge:** all four Foam proof items (9–12) pass (NARROW fail/pass unchanged).
+- **Engine:** all five MemNet proof items (M1–M5) pass. Until then MemNet is KEEP/NARROW, not a dual-engine hedge.

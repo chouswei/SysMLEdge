@@ -205,7 +205,7 @@ Human apply: merge `delta.sysml` into the tree (human/tooling or **human-auth MC
 Implementations MUST reject:
 
 1. **Graph write-back as SSOT** — MemNet/GQL is a projection. Saving the graph is not saving the model.
-2. **Kuzu** as required runtime, storage (`graph.kuzu`), Cypher, or a long-lived Kuzu worker.
+2. **Kuzu** as required runtime, storage (`graph.kuzu`), Cypher, a long-lived Kuzu worker, or a **dual-engine hedge** (default: MemNet sole engine; dual only if Memnetor hard blocker).
 3. **Full-tree dump as the only merge or query story for agents** — agents use `proposals/<id>/` and **bounded** GQL; humans overwrite current as a whole tree and keep git history. MUST NOT stuff the whole `.sysml` tree into the LLM prompt.
 4. Serving the **graph** as downloadable source.
 5. GQL that **invents** structure or ids (including ClickUp/Inventree) not in SysML at `rev.sha`.

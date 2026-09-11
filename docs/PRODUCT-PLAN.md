@@ -17,7 +17,7 @@ This repository seed does **not** implement runtime MCP/CLI. P2/P3 are not shipp
 | Phase | Name | This repo | Intent |
 |-------|------|-----------|--------|
 | **P0** | Contracts | **Docs done** | Normative sheet so implementers do not rebuild a Kuzu indexer. |
-| **P1** | Foam slice | **Docs done** ([P1-acceptance.md](P1-acceptance.md)). Runtime next (not this docs change). **Proof in progress.** | Contract rows 1–8 plus Foam proof 9–12 (head-to-head, STALE not theater, propose+ship rev, non-Core operator). ALL required. |
+| **P1** | Foam slice | **Docs done** ([P1-acceptance.md](P1-acceptance.md)). Runtime next (not this docs change). **Proof in progress.** | Contract rows 1–8 plus Foam proof 9–12 **and** MemNet proof M1–M5. ALL required. |
 | **P2** | Single-tenant SaaS | Plan only. **Spend frozen** until Foam proof passes. | Hosted on the **existing droplet (Devicor)**. Identity, import/save/download, MemNet per project, MCP, in-tenant ACL, Save/STALE UI, optional autopilot/bot review (default off). **InvenTree on that host: untouched.** |
 | **P3** | Tenancy | Plan only | Cross-tenant isolation, authz, billing-shaped tenancy. Not implied by P2. |
 
@@ -62,7 +62,7 @@ P1 stress tests: (a) beat a raw agent + git/grep; (b) STALE is real, not theater
 
 Out of P1: SaaS accounts, in-tenant ACL, graphic canvas, autopilot UI, GitHub-like PR review UI, Kuzu, **whole-language** KerML, ClickUp/InvenTree features.
 
-**Foam proof (ALL, 2-week):** **Pains 1–5** in [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md). Head-to-head scores **wall-clock + context footprint + no silent drop** (pains 1–2). Pains 3–5 = STALE / propose / ship-rev / reproject — not extra features this week. **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team ACL. NARROW fail/pass unchanged.
+**Foam + MemNet proof (ALL, 2-week):** **Pains 1–5** and MemNet KEEP/NARROW in [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md). Head-to-head scores **wall-clock + context footprint + no silent drop** (pains 1–2 / M5). Pains 3–5 = STALE / propose / ship-rev / reproject (M3). **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team ACL. MemNet M1–M5 alongside Foam 9–12. NARROW fail/pass unchanged. Dual-engine only if Memnetor hard blocker — default no Kuzu.
 
 ---
 
