@@ -6,7 +6,7 @@ This repository seed does **not** implement runtime MCP/CLI. P2/P3 are not shipp
 
 **Position:** bilingual bus for textual SysML v2 + agents (SysML stays the model; GQL/MCP so Cursor agents do not grep the tree). Not SysON/Cameo/graphic IDE. Not a GitHub clone. Not defense PLM yet. Pin: [PRODUCT-LOCKS.md — Market position](PRODUCT-LOCKS.md#market-position-pin).
 
-**Core (unchanged):** name **SysMLEdge**; bilingual = SysML (author SSOT) + GQL (query/represent); SSOT = whole `sysml-models/` tree / zip (**all** `.sysml`); MemNet = one-way projected index (**no Kuzu**); `graph = model @ SHA`; GQL never invents; agents propose only (no write-SSOT tool); human save = whole-tree overwrite + git history; download = SysML zip only; P1 mapping = Foam-complete; pilot SoI = `chouswei/modelbasedPrj-itri-vedan-foam-detection`.
+**Core (unchanged):** name **SysMLEdge**; bilingual = SysML (author SSOT) + GQL (query/represent); SSOT = whole `sysml-models/` tree / zip (**all** `.sysml`); MemNet = one-way projected index (**no Kuzu**; TCP backend-only; no C rewrite now); agent MCP face = **streamable HTTP** (Cursor Bearer, memnet-pi pattern); `graph = model @ SHA`; GQL never invents; agents propose only (no write-SSOT tool); human save = whole-tree overwrite + git history; download = SysML zip only; P1 mapping = Foam-complete; pilot SoI = `chouswei/modelbasedPrj-itri-vedan-foam-detection`.
 
 **NARROW (2026-09-11):** keep the Foam contract slice (bilingual bus). Freeze P2 spend until Foam proof **ALL** pass. Pro / Team / SaaS editor / AGI-as-product copy stay gated. Docs discipline ≠ product-market proof. Foam Phase-1 hours on P2 UI = kill signal.
 

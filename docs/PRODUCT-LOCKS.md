@@ -240,21 +240,34 @@ P1 proves roots **1, 2, 3, and 6** (trust, SSOT owner, beat-grep ask, ship rev) 
 SysML zip / sysml-models/ tree     author SSOT
         |  human Save (whole tree) → git commit
         v
-MemNet one-way projection @ rev.sha
+MemNet one-way projection @ rev.sha     TCP backend (serve + MCP TCP-shared)
         |
         v
-GQL query / MCP read + propose
+SysMLEdge MCP  streamable HTTP (Cursor Bearer)
+  rev_status / gql_* / propose
 ```
 
 | Layer | Lock |
 |-------|------|
 | **SSOT** | SysML zip or `sysml-models/` tree. Import/save/download = **all** `.sysml` in that tree. Never parts-only SSOT. Download = SysML zip @ rev only. |
 | **Git / GitHub** | VCS backbone. Bind **project @ SHA**. SysMLEdge owns projection, STALE, and propose — not GitHub’s review UI. |
-| **MemNet** | Projected index. **P1:** Foam-complete (kinds Foam uses). Later: widen as projects demand. **No Kuzu**, no Cypher, no `graph.kuzu`. |
+| **MemNet** | Projected index. **P1:** Foam-complete (kinds Foam uses). Later: widen as projects demand. **TCP backend-only** (`serve` + MCP TCP-shared). **No Kuzu**, no Cypher, no `graph.kuzu`. Not the agent-facing wedge once SysMLEdge MCP binds. |
 | **GQL** | Query/represent what SysML already says at `rev.sha`. MUST NOT invent. |
+| **MCP face** | **Streamable HTTP** with Cursor **Bearer**, same pattern as **memnet-pi**. Agents call **SysMLEdge MCP** (`rev_status` / `gql_*` / `propose`). |
 | **STALE** | Projection `rev.sha` ≠ current SHA. Show it; refuse live-SSOT pretence. `staleOk` is read-only. |
 
 Save **never** writes the graph. Save → auto-reproject → Live. Graph write-back is not a save.
+
+This face lock does **not** reopen KEEP sole / NARROW / improve-only / **no C rewrite now**. SysMLEdge consumes MemNet as the projection engine; it does not replace it.
+
+### Agent MCP vs MemNet (2026-09-11 Core)
+
+| Surface | Role |
+|---------|------|
+| **SysMLEdge MCP** | Agent-facing wedge. Streamable HTTP, Cursor Bearer (memnet-pi pattern). Bind **project@rev**. Tools: `rev_status`, `gql_read` / `gql_context` / `gql_impact`, `propose` (P0 §4). |
+| **MemNet** | Backend only: TCP `serve` plus MCP **TCP-shared** with that serve. One-way projection. Not the Cursor plugin target once SysMLEdge binds. |
+
+**P1 proof** MAY still use MemNet `pin_map` for **M1–M4**. That is a proof path, not a second product MCP face.
 
 ---
 
@@ -315,7 +328,7 @@ Dirty is **not** STALE.
 
 | Face | Surface |
 |------|---------|
-| **Agent** | Cursor **MCP plugin** (bind **project@rev**). |
+| **Agent** | Cursor **MCP plugin** → **SysMLEdge MCP** streamable HTTP (Bearer). Bind **project@rev**. |
 | **Human** | SaaS editor and/or files (zip / `sysml-models/` tree). |
 
 **Project ≠ account.** One account may hold several projects. MCP binds **project@rev**, not “the user’s graph”.
@@ -355,7 +368,8 @@ SysMLEdge does **not** ship ClickUp or InvenTree: no sync, no PLM UI, no “link
 
 | Topic | P0 (seed) | This lock | Alignment |
 |-------|-----------|-----------|-----------|
-| Engine | MemNet; Kuzu rejected | Same | Unchanged. |
+| Engine | MemNet; Kuzu rejected | Same; TCP backend-only; no C rewrite now | Unchanged. KEEP sole / NARROW / improve-only stand. |
+| Agent MCP transport | Tool names; not Cypher / Kuzu worker | Streamable HTTP + Bearer (memnet-pi); MemNet TCP-shared is backend | **Clarify** P0 §4: product face is SysMLEdge MCP, not MemNet HTTP. |
 | STALE / `staleOk` | Show; refuse pretence; `staleOk` read-only | Same + UI states Dirty ≠ STALE | P0 STALE rules stand. Dirty added as working-tree, not projection drift. |
 | Agent SSOT write | Silent MCP save forbidden | Agent merge **banned**; no write-SSOT tool | Unchanged. |
 | Human-auth MCP merge | Save is human UI/CLI; MCP `save` forbidden as **unattended** | Token + confirm → apply + Save + reproject | **Clarify** P0: unattended/agent save stays forbidden; human-auth merge is the human Save path on MCP. |
@@ -390,3 +404,4 @@ Implementations MUST reject, in addition to P0 §7:
 16. Inventing first-class `rev` / STALE inside MemNet. SysMLEdge owns the bind. Treating STALE proof as pass without that bind is theater.
 17. A MemNet **roadmap** from this product. MemNet improve-only for **M1–M5 / Foam fidelity**; engine stays **0.19.8 + TCP**.
 18. A **C rewrite now** (or Rust/other engine-form rewrite) before **0.19.8 + TCP** proof. Reopen form only if wall-clock **loses with numbers** after fidelity is green.
+19. Serving **MemNet** (TCP or its MCP) as the agent-facing wedge once SysMLEdge MCP binds.

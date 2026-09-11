@@ -8,6 +8,7 @@ SysML is the author **SSOT**. MemNet/GQL is the **trail** (projected index). Do 
 - Read the graph only as `graph = model @ <git commit SHA>`. If STALE, show it and refuse live-SSOT pretence (`staleOk` is read-only).
 - Propose via `sysml-models/proposals/<id>/{PATCH.md, delta.sysml}`. Humans save: whole-tree overwrite of current; git keeps history.
 - Use GQL to query/represent what SysML already says. Bounded reads; no full-tree dump as the only merge story.
+- Hit **SysMLEdge MCP** (streamable HTTP, Cursor Bearer) for `rev_status` / `gql_*` / `propose`. MemNet is TCP backend-only once that face binds.
 
 ## MUST NOT
 

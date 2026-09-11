@@ -104,6 +104,10 @@ Zip import/export is that tree (see 3.4). `proposals/` MAY be omitted from a “
 
 Resume the *roles* from [codebase-sysmledgraph](https://github.com/chouswei/codebase-sysmledgraph) MCP (`query` / `context` / `impact` / list indexed / map) — **not** Cypher, **not** `indexDbGraph` writing Kuzu, **not** a TCP worker for a Kuzu file lock.
 
+**Transport (2026-09-11 Core):** the agent-facing **SysMLEdge MCP** is **streamable HTTP** with Cursor **Bearer**, same pattern as **memnet-pi**. Agents call this face for `rev_status` / `gql_*` / `propose` (and the rest of §4.1). **MemNet** is **TCP backend-only** (`serve` + MCP TCP-shared). Once SysMLEdge MCP binds, MemNet is not the Cursor plugin wedge. This does **not** reopen KEEP sole / NARROW / improve-only / **no C rewrite now**.
+
+**P1 proof** MAY still use MemNet `pin_map` for **M1–M4**. That is not the product agent face.
+
 Query language is **GQL** against MemNet (cue → neighbourhood / find). GQL NEVER invents structure: every node/edge in a successful read MUST be projectable from SysML at `rev.sha` (mapping in §5).
 
 ### 4.1 Required tools (P0 names)
@@ -129,6 +133,7 @@ Query language is **GQL** against MemNet (cue → neighbourhood / find). GQL NEV
 | Unbounded full-tree dump as the **only** merge **or query** story | Agents propose deltas (§6). GQL/MCP reads are **bounded** (prompt tokens far below whole-tree dump). Humans save the whole tree. |
 | Cypher / Kuzu / `graph.kuzu` | Engine is MemNet. |
 | `mutate` of MemNet that adds structure not in SysML | GQL MUST NOT invent. |
+| MemNet as the agent MCP face after SysMLEdge binds | MemNet stays TCP-shared backend; agents hit SysMLEdge streamable HTTP. |
 
 `rename` in the old package was dry-run preview. SysMLEdge: rename is a **proposal** (`delta.sysml` + `PATCH.md`), not a graph edit.
 
@@ -213,6 +218,7 @@ Implementations MUST reject:
 7. **Graphic** SysML canvas / modeler / SysON-like IDE as a SysMLEdge surface (textual SysML + GQL/MCP only).
 8. **ClickUp or InvenTree as product features** (mapping of ids already in SysML is not a product integration).
 9. **Parts-only SSOT** — import/save/download MUST be all `.sysml` in the tree.
+10. Treating **MemNet** (TCP or its MCP) as the agent-facing wedge once SysMLEdge MCP binds.
 
 ---
 
