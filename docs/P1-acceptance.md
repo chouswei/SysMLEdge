@@ -71,25 +71,27 @@ Log wall-clock, **context footprint** (prompt tokens per Q + whole-tree-dump bas
 
 ## MemNet proof (2-week, ALL required) — Elon 2026-09-11
 
-**Alongside Foam.** KEEP MemNet as sole engine; **NARROW** the surface. No Kuzu hedge. **Kill only if** this proof fails. Cited from [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#memnet-engine-elon-hard-review-2026-09-11).
+**Alongside Foam.** KEEP MemNet as sole engine; **NARROW** the surface. No Kuzu hedge. **Kill only if** this proof fails. Amendment (Memnetor 2026-09-09/10): [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#memnet-engine-elon-hard-review-2026-09-11).
 
-UNKNOWN on a required field = **fail that line**.
+**Proof env:** `memnet-llm==0.19.8` + TCP-shared MCP (`MEMNET_MCP_TRANSPORT=tcp`, serve `:18765` / mcp `:18766`). UNKNOWN on a required field = **fail that line**.
+
+**Impact claim:** MUST NOT claim exhaustive impact until measured. Either prove `gql_impact` **closure** on Foam gold, **or** narrow the P1 win to neighbourhood / tip + **usage** cues.
 
 | # | Name | Pass criteria |
 |---|------|----------------|
-| **M1** | Gold fidelity | Frozen **N** parts / ports / connections from Foam `sysml-models/`. Zero extras not in SysML. Zero silent drops. **Publish counts.** |
-| **M2** | Query slice | Same 3 Foam Qs (usage / ownership / impact) via `pin_map` and/or `gql_*`. Bound `rev.sha` + `rev.stale=false`. **UNKNOWN = fail that line.** |
-| **M3** | STALE/reproject on MemNet path | Mutate → fail-closed → `propose` refused → `reproject` → live. Timed / scripted. |
-| **M4** | Bounce recovery | `session_save` → restart **serve + MCP together** → load → gold `pin_map` **non-empty**. Record **memnet-llm** version. **Fail if** MCP `session_list` ≠ serve. |
-| **M5** | Wall-clock + context vs grep | Same 3 Qs vs grep/LSP. Score **wall-clock + context footprint** (may share logs with row 9). |
+| **M1** | Gold fidelity | Frozen **N** parts / ports / connections from Foam `sysml-models/`. Gold list MUST include **≥1 nested part** that today needs **manual CREATE** (e.g. `backgroundSetIndicator`). **Pass only if** ingest/reproject covers it **without** hand CREATE — **or** document it P1 out-of-scope and **narrow the claim**. Zero extras not in SysML. Zero silent drops. **Publish counts.** |
+| **M2** | Query slice | Same 3 Foam Qs via `pin_map` and/or `gql_*`. **SysMLEdge** binds `rev.sha` + `rev.stale=false` (absent on MemNet wire). **UNKNOWN = fail that line.** Impact: closure on gold **or** narrowed neighbourhood/usage (see above). |
+| **M3** | STALE/reproject | **SysMLEdge-owned** bind. Mutate → fail-closed → `propose` refused → `reproject` → live. Timed / scripted. MUST NOT invent first-class STALE inside MemNet. Theater if bind is missing. |
+| **M4** | Bounce regression | **Re-run once** in the 2-week window on **0.19.8** TCP-shared: `session_save` → restart **serve + MCP together** → load → gold `pin_map` **non-empty**. Record memnet-llm version. **Fail if** MCP `session_list` ≠ serve. Known: **FAIL on 0.19.7**. Serve death without `session_save` loses in-process sessions. |
+| **M5** | Wall-clock + context vs grep | Same 3 Qs vs grep/LSP. **MUST time wall-clock** (Path-B UNKNOWN until timed). Also **context footprint**. May share logs with row 9. |
 
 | Outcome | Engine / product rule |
 |---------|------------------------|
-| **M1 or M2 fail** | MemNet **not ready** as sole engine. Stop Pro/beachhead. Keep as internal tool or fix fidelity. Dual-engine **only** if Memnetor hard blocker — default **no Kuzu**. |
+| **M1 or M2 fail** | MemNet **not ready** as sole engine. Stop Pro/beachhead. Keep as internal tool or fix fidelity. **No Kuzu.** |
 | **M3–M5 fail** | Same: do not ship bilingual bus as a product on an unproven MemNet path. |
 | **All M1–M5 pass** | KEEP MemNet sole engine, **narrowed** surface. Foam proof 9–12 still required for the wedge. |
 
-**NOT this week:** full KerML map; Kuzu/Cypher dual; `snap_model`/PKG as mission SSOT; multi-tenant/billing/ACL/InvenTree; graph write-back SSOT; agent save; `pin_map` expand beyond Foam P1; graph dumps as downloadable source; autopilot/bot-merge.
+**NOT this week:** full KerML map; Kuzu/Cypher dual; `snap_model`/PKG as mission SSOT; multi-tenant/billing/ACL/InvenTree; graph write-back SSOT; agent save; `pin_map` expand beyond Foam P1; graph dumps as downloadable source; autopilot/bot-merge; first-class `rev`/STALE inside MemNet.
 
 ## Done when
 

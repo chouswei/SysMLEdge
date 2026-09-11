@@ -77,23 +77,39 @@ P1 MUST NOT be declared won on feature count. Scoring: [P1-acceptance.md](P1-acc
 
 ## MemNet engine (Elon hard review, 2026-09-11)
 
-**Verdict: KEEP MemNet as sole SysMLEdge engine — NARROW the MemNet surface.** No dual-engine / Kuzu hedge. **Kill only if** the 2-week MemNet proof fails.
+**Verdict: KEEP MemNet as sole SysMLEdge engine — NARROW the MemNet surface.** No dual-engine / Kuzu hedge. **Kill only if** the 2-week MemNet proof fails. **Stands.**
 
 **Why narrow:** MemNet is session / mission / `pin_map` goldfish (catalog ≠ mission; serve + MCP MUST share TCP; empty `pin_map` / `session_not_found` known). SysMLEdge `rev.sha` / STALE / reproject / `gql_*` is a **product face on top** — not proven identical to the Path-B mission loop.
 
-**Top risks (document; no extra mitigations here):**
+**One owner for `rev` / STALE:** **SysMLEdge**. MUST NOT invent first-class `rev` / STALE inside MemNet.
 
-1. Silent drop / fidelity gap
-2. Ops fragility: serve ≠ MCP
-3. Contract bridge gap for `rev` / STALE / reproject
-4. Latency **UNKNOWN** until Memnetor
+### Amendment — Memnetor fact sheet (2026-09-09 / 10)
 
-**2-week MemNet proof (ALL pass/fail, alongside Foam):** [P1-acceptance.md](P1-acceptance.md) M1–M5.
+Verified (do not relitigate):
+
+| Fact | Status |
+|------|--------|
+| Tip Path-B + `pin_map` | **PASS** on `mn_b05a9869` TCP-shared. Nested e.g. `backgroundSetIndicator` needed **manual CREATE**. Impact **PARTIAL**. Path-B wall-clock **UNKNOWN**. |
+| Serve + MCP | **PASS** with `MEMNET_MCP_TRANSPORT=tcp`, serve `:18765` / mcp `:18766`, **memnet-llm==0.19.8**. Pre-fix in-process → `session_not_found`. |
+| Bounce | **PASS** on **0.19.8**. **FAIL** on **0.19.7**. **Floor = 0.19.8**. |
+| `rev.sha` / STALE / reproject@SHA | **CONFIRMED ABSENT** on the MemNet wire — **SysMLEdge-to-build**. Without SysMLEdge owning the bind, STALE proof is **theater**. |
+| Serve death | Loses in-process sessions without `session_save`. |
+| Kuzu | **Not necessary** for tip `pin_map` / Path-B. |
+
+**Proof env lock:** `memnet-llm==0.19.8` + **TCP-shared** MCP (`MEMNET_MCP_TRANSPORT=tcp`). Bounce is a **regression re-run once** in the 2-week window (not a new feature).
+
+**Risks (re-ranked):**
+
+1. **Contract bridge** — SysMLEdge must own `rev` / STALE / reproject@SHA (was risk #3; now #1).
+2. Silent drop / **nested** fidelity (manual CREATE gap).
+3. Version / ops floor: **0.19.8 + TCP**. Latency still **UNKNOWN** until timed (M5).
+
+**2-week MemNet proof (ALL pass/fail, alongside Foam):** [P1-acceptance.md](P1-acceptance.md) M1–M5 (tightened below).
 
 | Fail | Rule |
 |------|------|
 | **M1 or M2 fail** | MemNet **not ready** as sole engine. Stop Pro/beachhead. Keep as internal tool or fix fidelity. |
-| **Dual-engine / Kuzu** | Only if **Memnetor** is a **hard blocker**. Default: **no Kuzu**. |
+| **Dual-engine / Kuzu** | **No.** Kuzu is not necessary for tip Path-B. Dual-engine only if Memnetor becomes a **hard blocker** later. Default: **no Kuzu**. |
 
 ### NOT build (2 weeks) — MemNet surface
 
@@ -108,6 +124,7 @@ In addition to the NARROW product freeze:
 7. `pin_map` expand beyond Foam P1
 8. Graph dumps as downloadable source
 9. Autopilot / bot-merge
+10. First-class `rev` / STALE inside MemNet (SysMLEdge owns the bind)
 
 ---
 
@@ -353,5 +370,5 @@ Implementations MUST reject, in addition to P0 §7:
 12. Treating “parts/ports” as a forever mapping cap, or boiling the ocean (whole-language) in the two-week proof.
 13. Declaring P1 won on **feature count** instead of **wall-clock + context footprint + no silent drop** vs tens-of-minutes grep.
 14. Stuffing the whole SysML tree into the LLM prompt instead of GQL/`pin_map` slices.
-15. Dual-engine / Kuzu hedge unless Memnetor is a documented hard blocker. Default: MemNet sole engine.
-16. Treating SysMLEdge `gql_*` / `rev.sha` as already identical to the Path-B mission loop before MemNet proof M1–M5.
+15. Dual-engine / Kuzu hedge. Kuzu is **not necessary** for tip Path-B. Dual only if Memnetor becomes a documented hard blocker later.
+16. Inventing first-class `rev` / STALE inside MemNet. SysMLEdge owns the bind. Treating STALE proof as pass without that bind is theater.

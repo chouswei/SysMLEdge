@@ -38,11 +38,11 @@ Exact claimed list. **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team 
 
 ## MemNet (Elon hard review)
 
-**KEEP MemNet as sole engine — NARROW the surface.** No dual-engine / Kuzu hedge. Kill only if 2-week MemNet proof (M1–M5) fails.
+**KEEP MemNet as sole engine — NARROW the surface.** No dual-engine / Kuzu hedge. Kill only if 2-week MemNet proof (M1–M5) fails. **Stands.**
 
-`rev.sha` / STALE / reproject / `gql_*` is a product face on MemNet — not proven identical to Path-B until M1–M5.
+SysMLEdge **owns** `rev.sha` / STALE / reproject@SHA — **CONFIRMED ABSENT** on the MemNet wire (Memnetor 2026-09-09/10). Proof env: **memnet-llm==0.19.8** + TCP-shared MCP. Kuzu not necessary for tip Path-B.
 
-If **M1 or M2 fail:** MemNet not ready as sole engine; stop Pro/beachhead; keep as internal tool or fix fidelity. Dual-engine only if Memnetor hard blocker — default **no Kuzu**.
+If **M1 or M2 fail:** MemNet not ready as sole engine; stop Pro/beachhead; keep as internal tool or fix fidelity. **No Kuzu.**
 
 ---
 
@@ -168,7 +168,7 @@ Skills are not this repository’s runtime.
 ## Risks (document only)
 
 1. Beachhead size is asserted. Without a second paid outsider after Foam, do not keep the paid-wedge story.
-2. MemNet is **SPOF** (KEEP/NARROW, not a Kuzu hedge). Documented: silent drop / fidelity; serve≠MCP; `rev`/STALE/reproject bridge; latency UNKNOWN until Memnetor. Proof: M1–M5.
+2. MemNet is **SPOF** (KEEP/NARROW, not a Kuzu hedge). Re-ranked: (1) contract bridge — SysMLEdge owns `rev`/STALE; (2) silent drop / nested fidelity; (3) version/ops floor **0.19.8+TCP**. Proof: M1–M5.
 3. “Beat grep” is soft until the timed head-to-head. Competitor = **tens-of-minutes grep**, not Cameo. MUST score **wall-clock + context footprint + no silent drop**. Feature count is not a win. Freemium/Pro SaaS editor (P2) cannot close that gap in P1.
 
 No extra mitigations beyond: run the four proof items; freeze the list in [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md); fail closed on the product story if any item fails.
