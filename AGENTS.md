@@ -14,7 +14,9 @@ SysML is the author **SSOT**. MemNet/GQL is the **trail** (projected index). Do 
 - Write the graph back as SSOT, or serve MemNet/GQL dumps as downloadable source (download = SysML zip only).
 - Use **Kuzu**, Cypher, or `graph.kuzu` in this product.
 - Invent qnames, parts, ports, connections, or PLM ids not in SysML at `rev.sha`.
-- Silently overwrite `sysml-models/` SSOT files. MCP has no silent save.
+- Silently overwrite `sysml-models/` SSOT files. MCP has no silent save and **no agent write-SSOT tool** (agent merge banned).
 - Claim P2 SaaS or P3 tenancy is shipping in this repository seed.
+- Treat ClickUp or InvenTree as SysMLEdge features (ids in SysML may project; that is not a PLM product).
+- Add a graphic SysML canvas or modeler.
 
-Contracts: [docs/P0-contracts.md](docs/P0-contracts.md). Plan: [docs/PRODUCT-PLAN.md](docs/PRODUCT-PLAN.md).
+Contracts: [docs/P0-contracts.md](docs/P0-contracts.md). Locks: [docs/PRODUCT-LOCKS.md](docs/PRODUCT-LOCKS.md). Plan: [docs/PRODUCT-PLAN.md](docs/PRODUCT-PLAN.md).

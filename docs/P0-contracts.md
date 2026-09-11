@@ -6,6 +6,8 @@ This sheet is the first implementable deliverable. Implement against these names
 
 Pilot system of interest (P1, not this seed): `chouswei/modelbasedPrj-itri-vedan-foam-detection`.
 
+Product locks (position, no graphic, day loop, merge/autopilot, faces, freemium): [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md) as of **2026-09-11**. Where that sheet clarifies this file, wording below is aligned; MemNet, STALE, and **no agent SSOT write** are not weakened.
+
 ---
 
 ## 1. Revision identity
@@ -81,10 +83,12 @@ Zip import/export is that tree (see 3.4). `proposals/` MAY be omitted from a “
 
 | Rule | |
 |------|--|
-| Who | Human (UI/CLI with explicit save). MCP MUST NOT call this silently. |
+| Who | Human (UI/files/CLI with explicit save). **Agent merge is banned.** MCP MUST NOT call this silently or as an unattended agent tool. |
+| Human-auth MCP merge | Allowed: human **token + confirm** → apply a proposal onto current + Save + reproject. Same effect as human Save. Not an agent tool. |
 | Effect | **Whole-tree overwrite of current** from the working SysML tree the human accepted. Git keeps **revision history** (previous SHAs remain downloadable). |
-| Graph | Reproject MemNet to the new SHA. |
-| Agents | A proposal is not saved until a human applies it (typically by accepting files into `sysml-models/` then save). |
+| Graph | **Save never writes the graph.** After commit, **auto-reproject** MemNet to the new SHA (Live). |
+| STALE | Merge is blocked while STALE until **reproject** succeeds. Dirty working tree ≠ STALE (see [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md)). |
+| Agents | A proposal is not saved until a human applies it (files/SaaS Save, or human-auth MCP merge). There is no agent write-SSOT tool. |
 
 ### 3.4 Download @ rev
 
@@ -118,8 +122,9 @@ Query language is **GQL** against MemNet (cue → neighbourhood / find). GQL NEV
 
 | Forbidden | Why |
 |-----------|-----|
-| Silent overwrite of `sysml-models/` SSOT files | Human save is the only SSOT write path. |
-| `save` / `import` / `download` as unattended agent tools | Those are human/operator APIs (CLI/UI). |
+| Silent overwrite of `sysml-models/` SSOT files | Human save (including human-auth MCP merge with token+confirm) is the only SSOT write path. **No agent write-SSOT tool.** |
+| `save` / `import` / `download` as unattended **agent** tools | Those are human/operator APIs (CLI/UI/SaaS). Human-auth MCP merge is the human Save path, not an agent merge. |
+| Agent-owned merge / apply of `delta.sysml` onto current | Agent path is read → draft → `propose` only. |
 | Graph write-back as SSOT | Projection is derived. |
 | Unbounded full-tree dump as the **only** merge story | Agents propose deltas (§6). Humans save the whole tree. |
 | Cypher / Kuzu / `graph.kuzu` | Engine is MemNet. |
@@ -156,6 +161,8 @@ Project **only** these SysML constructs into MemNet for v1. Anything else is out
 
 Unknown ClickUp/Inventree ids: **omit**. Do not invent placeholders.
 
+**Not product features:** SysMLEdge does not ship ClickUp or InvenTree (no sync, no PLM UI). The rows above are SSOT fidelity when those strings already exist in SysML. P2 on the Devicor droplet MUST leave InvenTree **untouched**.
+
 **MUST NOT** in v1: invent packages, requirements, actions, or allocations as first-class mapped kinds unless they appear as the constructs above. Unmapped SysML remains in the zip/tree only.
 
 MemNet ingest (when implemented) MUST use path-B SysML ingest with `qname=` / `path=` locators and MUST NOT mint client `NEW` ids as SSOT identity. Identity of structure is the SysML qname + file path + `rev.sha`.
@@ -180,7 +187,7 @@ sysml-models/proposals/<id>/
 | SSOT | Files outside `proposals/` change only on **human save** (whole-tree overwrite). |
 | MCP `propose` | Creates/updates this directory. Returns the path + `base.sha`. |
 
-Human apply: merge `delta.sysml` into the tree (human/tooling), then **save** (commit + reproject). There is no “apply GQL to SSOT”.
+Human apply: merge `delta.sysml` into the tree (human/tooling or **human-auth MCP merge** with token+confirm), then **save** (commit + auto-reproject). There is no “apply GQL to SSOT”. Agents MUST NOT apply. Optional P2 **autopilot** (default off) and **bot review** (default off) are product locks, not P0 runtime — see [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md).
 
 ---
 
@@ -194,6 +201,8 @@ Implementations MUST reject:
 4. Serving the **graph** as downloadable source.
 5. GQL that **invents** parts, ports, connections, or ids (including ClickUp/Inventree) not in SysML at `rev.sha`.
 6. Claiming **P2 SaaS** or **P3 tenancy** as shipped in this cut.
+7. **Graphic** SysML canvas / modeler / SysON-like IDE as a SysMLEdge surface (textual SysML + GQL/MCP only).
+8. **ClickUp or InvenTree as product features** (mapping of ids already in SysML is not a product integration).
 
 ---
 

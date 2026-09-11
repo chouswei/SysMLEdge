@@ -3,7 +3,7 @@
 Pilot SoI: `chouswei/modelbasedPrj-itri-vedan-foam-detection` (`sysml-models/`).
 Engine: **MemNet**. No Kuzu. No SaaS accounts (P1 = local project).
 
-Normative contracts: [P0-contracts.md](P0-contracts.md).
+Normative contracts: [P0-contracts.md](P0-contracts.md). Product locks: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md). Living plan: [PRODUCT-PLAN.md](PRODUCT-PLAN.md).
 
 This document is the P1 pass/fail sheet. It does not implement runtime.
 
