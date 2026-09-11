@@ -23,7 +23,7 @@ This repository seed does **not** implement runtime MCP/CLI. P2/P3 are not shipp
 
 **Product gate:** Foam proof ALL pass, **then** a second paid outsider. Until then: no Pro/beachhead story as shipping intent.
 
-**P2 freeze (explicit):** do not spend the two-week Foam window on SaaS editor, PR UI, Team ACL, billing, Cameo comparisons, ClickUp/InvenTree product, or **full KerML**. Mapping in that window is **Foam-complete** (whatever Foam uses), not a parts/ports forever cap. SSOT is **whole tree always**.
+**P2 freeze (explicit):** **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team ACL. Also: SaaS editor, PR UI, billing, Cameo, **full KerML**. Mapping in that window is **Foam-complete**. SSOT is **whole tree always**.
 
 ---
 
@@ -56,7 +56,7 @@ Must prove (same as that sheet; not ClickUp/InvenTree product):
 
 Out of P1: SaaS accounts, in-tenant ACL, graphic canvas, autopilot UI, GitHub-like PR review UI, Kuzu, **whole-language** KerML, ClickUp/InvenTree features.
 
-**Foam proof (ALL, 2-week):** competitor = tens-of-minutes grep (not Cameo). **Pain #2:** **big SysML + small LLM context.** Head-to-head MUST score **wall-clock + context footprint + no silent drop** (GQL/`pin_map` slices; far smaller than whole-tree dump; `rev.sha` + `rev.stale=false`). STALE not theater; propose + ship rev; non-Core operator yes/no. NARROW fail/pass unchanged. **Not** a feature-count win.
+**Foam proof (ALL, 2-week):** **Pains 1–5** in [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md). Head-to-head scores **wall-clock + context footprint + no silent drop** (pains 1–2). Pains 3–5 = STALE / propose / ship-rev / reproject — not extra features this week. **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team ACL. NARROW fail/pass unchanged.
 
 ---
 
