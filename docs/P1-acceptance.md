@@ -11,8 +11,8 @@ This document is the P1 pass/fail sheet. It does not implement runtime.
 
 | # | Name | Pass criteria |
 |---|------|----------------|
-| 1 | Import | Import Foam `sysml-models/` (dir or zip). `rev.sha` bound. MemNet projection contains only nodes projectable from that tree. Previous graph nodes gone. |
-| 2 | GQL read | Via MCP/`gql_read` (or equivalent): reachability, ownership, usage for a known Foam part/port/connection **without** stuffing the full `.sysml` tree into the agent context. Answers include `rev.sha` and `rev.stale=false`. |
+| 1 | Import | Import Foam `sysml-models/` (dir or zip) = **all** `.sysml` in the tree. Never parts-only SSOT. `rev.sha` bound. MemNet is **Foam-complete** (every construct Foam uses — not parts/ports forever, not whole KerML). Nodes only from that tree. Previous graph nodes gone. |
+| 2 | GQL read | Via MCP/`gql_read` (or equivalent): reachability, ownership, usage for a known Foam element **without** stuffing the full `.sysml` tree into the agent context. Answers include `rev.sha` and `rev.stale=false`. |
 | 3 | STALE detect | Change a SysML file on disk without reproject. Structure reads with default `staleOk=false` **fail** with `code: STALE`. With `staleOk=true`, read may succeed but MUST return `rev.stale=true`. `propose` while STALE **refused**. |
 | 4 | Reproject | `reproject` from current SysML → new bind; STALE clears; live reads succeed. |
 | 5 | Propose isolation | `propose` writes only under `sysml-models/proposals/<id>/` (`PATCH.md` + `delta.sysml`). Current SSOT tree unchanged; no MemNet write-back as SSOT. |
@@ -25,7 +25,8 @@ This document is the P1 pass/fail sheet. It does not implement runtime.
 - Website UI, user accounts, in-tenant ACL, GitHub-like PR review UI (P2)
 - Multi-tenant / billing (P3)
 - Edit-in-graph as SSOT
-- Everything on the NARROW freeze list in [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md) (SaaS editor, PR UI, Team ACL, billing, Cameo, ClickUp/InvenTree product, mapping beyond parts/ports/connections)
+- Everything on the NARROW freeze list in [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md) (SaaS editor, PR UI, Team ACL, billing, Cameo, ClickUp/InvenTree product, **full KerML** in two weeks)
+- Whole-language coverage (P1 = Foam-complete projection + beat-grep / STALE / demo only)
 
 ## Foam proof (2-week, ALL required) — NARROW 2026-09-11
 
@@ -33,7 +34,7 @@ Hard pass/fail. Cited from [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md), [PRODUCT-PLAN.m
 
 | # | Name | Pass criteria |
 |---|------|----------------|
-| 9 | Head-to-head | **Three** fixed Foam questions (usage / ownership / impact). Same operator. Arm A: raw Cursor + git + grep/LSP. Arm B: SysMLEdge MCP. Log **tokens**, **latency**, **answer correctness**, and that SysMLEdge answers carry `rev.sha` + `rev.stale=false`. SysMLEdge MUST win on **context size** and **structure fidelity**. |
+| 9 | Head-to-head | **Three** fixed Foam questions (usage / ownership / impact). Same operator. Arm A: raw Cursor + git + grep/LSP (user pain: this path can take **tens of minutes**). Arm B: SysMLEdge MCP. Log **wall-clock latency**, **tokens**, **answer correctness**, and that SysMLEdge answers carry `rev.sha` + `rev.stale=false`. SysMLEdge MUST win on **wall-clock + context size + structure fidelity** vs that slow grep path. Tokens/correctness alone are **not** enough. |
 | 10 | STALE not theater | Mutate SysML on disk → structure read fails `code: STALE` → `propose` refused → `reproject` clears → live reads work. Scripted log or short recording. |
 | 11 | Propose + ship rev | `propose` only under `proposals/<id>/`; SSOT unchanged; human save → new SHA; prior SHA zip downloadable; download = SysML zip only. **All eight** rows above green on Foam MemNet. |
 | 12 | Non-Core operator | One operator **not** from Core runs the demo **cold**. Keep using this vs grep? **Yes/no + why.** If **no**, narrow further or **kill** the wedge claim. |
@@ -47,5 +48,5 @@ Hard pass/fail. Cited from [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md), [PRODUCT-PLAN.m
 
 ## Done when
 
-- **Contract:** all eight rows (1–8) pass on the Foam pilot tree with MemNet + MCP (or CLI stand-in for the same contracts).
-- **Wedge:** all four Foam proof items (9–12) pass. Until then the product is NARROW / proof in progress — not a beachhead.
+- **Contract:** all eight rows (1–8) pass on the Foam pilot tree with MemNet + MCP (or CLI stand-in for the same contracts). P1 = Foam-complete + these rows — **not** whole-language coverage.
+- **Wedge:** all four Foam proof items (9–12) pass (NARROW fail/pass unchanged). Until then the product is NARROW / proof in progress — not a beachhead.

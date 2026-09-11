@@ -6,7 +6,7 @@ This repository seed does **not** implement runtime MCP/CLI. P2/P3 are not shipp
 
 **Position:** SysML SSOT + GQL/MCP query face. Not SysON/graphic IDE. Not a GitHub rebuild.
 
-**Core (unchanged):** name **SysMLEdge**; bilingual = SysML (author SSOT) + GQL (query/represent); SSOT = SysML zip / `sysml-models/` tree; MemNet = one-way projected index (**no Kuzu**); `graph = model @ SHA`; GQL never invents; agents propose only (no write-SSOT tool); human save = whole-tree overwrite + git history; download = SysML zip only; pilot SoI = `chouswei/modelbasedPrj-itri-vedan-foam-detection`.
+**Core (unchanged):** name **SysMLEdge**; bilingual = SysML (author SSOT) + GQL (query/represent); SSOT = whole `sysml-models/` tree / zip (**all** `.sysml`); MemNet = one-way projected index (**no Kuzu**); `graph = model @ SHA`; GQL never invents; agents propose only (no write-SSOT tool); human save = whole-tree overwrite + git history; download = SysML zip only; P1 mapping = Foam-complete; pilot SoI = `chouswei/modelbasedPrj-itri-vedan-foam-detection`.
 
 **NARROW (2026-09-11):** keep the Foam contract slice (bilingual bus). Freeze P2 spend until Foam proof **ALL** pass. Pro / Team / SaaS editor / AGI-as-product copy stay gated. Docs discipline ≠ product-market proof. Foam Phase-1 hours on P2 UI = kill signal.
 
@@ -23,7 +23,7 @@ This repository seed does **not** implement runtime MCP/CLI. P2/P3 are not shipp
 
 **Product gate:** Foam proof ALL pass, **then** a second paid outsider. Until then: no Pro/beachhead story as shipping intent.
 
-**P2 freeze (explicit):** do not spend the two-week Foam window on SaaS editor, PR UI, Team ACL, billing, Cameo comparisons, ClickUp/InvenTree product, or mapping beyond parts/ports/connections.
+**P2 freeze (explicit):** do not spend the two-week Foam window on SaaS editor, PR UI, Team ACL, billing, Cameo comparisons, ClickUp/InvenTree product, or **full KerML**. Mapping in that window is **Foam-complete** (whatever Foam uses), not a parts/ports forever cap. SSOT is **whole tree always**.
 
 ---
 
@@ -33,7 +33,7 @@ This repository seed does **not** implement runtime MCP/CLI. P2/P3 are not shipp
 - [x] This living plan.
 - [x] [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md) (2026-09-11, NARROW).
 - [x] [BUSINESS-PLAN.md](BUSINESS-PLAN.md) (Pro/beachhead gated on Foam proof).
-- [x] [P0-contracts.md](P0-contracts.md): rev identity, STALE, whole-tree import/save/download, MCP, mapping v1, proposal path, reject list.
+- [x] [P0-contracts.md](P0-contracts.md): rev identity, STALE, whole-tree import/save/download, MCP, Foam-complete mapping, proposal path, reject list.
 - [x] [AGENTS.md](../AGENTS.md).
 - [ ] Runtime MCP/CLI (out of P0 seed; not this change).
 
@@ -45,18 +45,18 @@ Pilot: **https://github.com/chouswei/modelbasedPrj-itri-vedan-foam-detection** (
 
 Acceptance (authoritative eight contract rows **plus** Foam proof 9–12): [P1-acceptance.md](P1-acceptance.md).
 
-Must prove (same as that sheet; mapping is P0 v1, not ClickUp/InvenTree product):
+Must prove (same as that sheet; not ClickUp/InvenTree product):
 
-1. Import zip or clone tree → bind `graph = model @ SHA`.
-2. MemNet projection of mapping v1 only (part / port / connection + `partNumber`; ids only if already in SysML).
+1. Import zip or clone tree → bind `graph = model @ SHA`. Import/save/download = **all** `.sysml`. Never parts-only SSOT.
+2. MemNet **Foam-complete** (every construct Foam uses). Widen kinds later as projects demand. Ids only if already in SysML.
 3. STALE shown and live-SSOT pretence refused; `staleOk` read-only. Dirty ≠ STALE.
 4. MCP `gql_read` / context / impact; `propose` → `sysml-models/proposals/<id>/`.
 5. Human save overwrites current; download SysML zip @ rev; never download the graph.
 6. MCP session binds **project@rev**; no silent SSOT overwrite.
 
-Out of P1: SaaS accounts, in-tenant ACL, graphic canvas, autopilot UI, GitHub-like PR review UI, Kuzu, full SysML language, ClickUp/InvenTree features.
+Out of P1: SaaS accounts, in-tenant ACL, graphic canvas, autopilot UI, GitHub-like PR review UI, Kuzu, **whole-language** KerML, ClickUp/InvenTree features.
 
-**Foam proof (ALL, 2-week):** head-to-head (usage / ownership / impact vs grep/LSP); STALE not theater; propose + ship rev with all eight rows green; one non-Core operator yes/no. Fail → kill Pro/beachhead for now. Pass → KEEP Foam vertical + MCP marketplace; P2 UI still gated.
+**Foam proof (ALL, 2-week):** head-to-head must log **wall-clock** (grep path can take tens of minutes) and win on wall-clock + context size + structure fidelity; STALE not theater; propose + ship rev with all eight rows green; one non-Core operator yes/no. NARROW fail/pass unchanged.
 
 ---
 

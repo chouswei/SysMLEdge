@@ -29,7 +29,7 @@ P2/P3 are plan phases only. This cut does not claim they are implemented. ClickU
 
 ## What you can download
 
-Downloadable source is the **SysML zip of a revision**. Never the graph dump.
+Downloadable source is the **SysML zip of a revision** (all `.sysml` in the tree). Never the graph dump. Never parts-only SSOT.
 
 ## Lineage
 

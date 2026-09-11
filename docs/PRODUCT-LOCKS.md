@@ -25,7 +25,11 @@ If a lock and P0 wording differ, this sheet **notes** the difference and **align
 
 **Strongest cut:** Docs discipline ≠ product-market proof. Foam Phase-1 hours on P2 UI = kill signal.
 
+NARROW fail/pass gates above **stand**. Mapping and SSOT rules below do **not** reopen P2 UI, Pro, or AGI copy.
+
 ### Freeze (do not spend the two weeks on)
+
+Product / ocean — **not** a forever mapping cap:
 
 1. P2 SaaS editor
 2. PR UI
@@ -33,13 +37,27 @@ If a lock and P0 wording differ, this sheet **notes** the difference and **align
 4. Billing
 5. Cameo comparisons
 6. ClickUp / InvenTree product
-7. Expanding mapping beyond parts / ports / connections
+7. Full KerML / whole-language coverage in two weeks
+
+Elon’s “parts/ports” freeze was **2-week anti-scope-creep for mapping work**. It is **superseded** by: **Foam-complete mapping** + **whole-tree SSOT always** (this sheet, Core 2026-09-11). MUST NOT read it as “parts/ports forever” or as permission for parts-only SSOT.
 
 ### Risks (document; no extra mitigations here)
 
 1. Beachhead ~1k–10k textual SysML v2 + Cursor is **asserted, not evidenced**. Second paid outsider **after Foam** is required.
 2. MemNet is **SPOF** — thin/slow Foam projection kills GQL vs LSP.
-3. “Beat grep” is **soft** until a timed head-to-head. Freemium/Pro SaaS editor (P2) is a **gap** while P1 forbids that UI.
+3. “Beat grep” is **soft** until a timed head-to-head that logs **wall-clock** (raw Cursor+git+grep/LSP on SysML can take **tens of minutes**). Freemium/Pro SaaS editor (P2) is a **gap** while P1 forbids that UI.
+
+---
+
+## Whole tree and mapping (Core 2026-09-11)
+
+| Lock | Rule |
+|------|------|
+| **Whole tree always** | Import / save / download = **all** `.sysml` in the tree. Never parts-only SSOT. Projection may omit unmapped *kinds* from GQL; the zip/tree MUST still be the full tree. |
+| **Mapping** | Every construct **that tree uses**. Not “parts/ports forever”. Not “full KerML in 2 weeks.” |
+| **P1 gate** | **Foam-complete** projection (whatever Foam uses) + beat-grep / STALE / demo. **Not** whole-language coverage. Widen element kinds as later projects demand (`mapping.version` bump). |
+
+**Head-to-head pain:** raw Cursor + git + grep/LSP on SysML can take **tens of minutes**. The 2-week head-to-head MUST log **wall-clock latency** (not only tokens/correctness). SysMLEdge MUST win on **wall-clock + context size + structure fidelity** vs that slow grep path. See [P1-acceptance.md](P1-acceptance.md) row 9.
 
 ---
 
@@ -71,9 +89,9 @@ GQL query / MCP read + propose
 
 | Layer | Lock |
 |-------|------|
-| **SSOT** | SysML zip or `sysml-models/` tree. Download = SysML zip @ rev only. |
+| **SSOT** | SysML zip or `sysml-models/` tree. Import/save/download = **all** `.sysml` in that tree. Never parts-only SSOT. Download = SysML zip @ rev only. |
 | **Git / GitHub** | VCS backbone. Bind **project @ SHA**. SysMLEdge owns projection, STALE, and propose — not GitHub’s review UI. |
-| **MemNet** | Projected index of mapping v1. **No Kuzu**, no Cypher, no `graph.kuzu`. |
+| **MemNet** | Projected index. **P1:** Foam-complete (kinds Foam uses). Later: widen as projects demand. **No Kuzu**, no Cypher, no `graph.kuzu`. |
 | **GQL** | Query/represent what SysML already says at `rev.sha`. MUST NOT invent. |
 | **STALE** | Projection `rev.sha` ≠ current SHA. Show it; refuse live-SSOT pretence. `staleOk` is read-only. |
 
@@ -184,6 +202,8 @@ SysMLEdge does **not** ship ClickUp or InvenTree: no sync, no PLM UI, no “link
 | Human-auth MCP merge | Save is human UI/CLI; MCP `save` forbidden as **unattended** | Token + confirm → apply + Save + reproject | **Clarify** P0: unattended/agent save stays forbidden; human-auth merge is the human Save path on MCP. |
 | Graphic IDE | Not specified | Explicit reject | Add to P0 reject list (does not weaken contracts). |
 | ClickUp/InvenTree | Mapped when present in SysML | Not product features | **Clarify** P0 §5: projection of SysML attributes only. |
+| SSOT shape | Whole-tree import/save/download | **All** `.sysml`; never parts-only SSOT | Align P0 §3. |
+| Mapping | P0 seed listed part/port/connection as v1 | **P1 = Foam-complete**; not parts/ports forever; not full KerML in 2 weeks | **Supersede** a forever parts/ports cap. Elon freeze = 2-week anti-scope-creep only. |
 
 ---
 
@@ -200,4 +220,6 @@ Implementations MUST reject, in addition to P0 §7:
 7. Serving MemNet/GQL as downloadable source; Kuzu/Cypher.
 8. Claiming P2 SaaS or P3 tenancy as shipping in this repository seed.
 9. Shipping “bilingual bus” as a product without the Foam head-to-head (NARROW, Elon/Horcrux 2026-09-11).
-10. Spending Foam Phase-1 hours on P2 UI, PR UI, Team ACL, billing, Cameo, ClickUp/InvenTree product, or mapping beyond parts/ports/connections.
+10. Spending Foam Phase-1 hours on P2 UI, PR UI, Team ACL, billing, Cameo, ClickUp/InvenTree product, or **full KerML** in two weeks.
+11. Parts-only SSOT (import/save/download of a subset of `.sysml` as “the model”).
+12. Treating “parts/ports” as a forever mapping cap, or boiling the ocean (whole-language) in the two-week proof.
