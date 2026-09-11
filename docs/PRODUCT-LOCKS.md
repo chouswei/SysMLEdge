@@ -1,8 +1,45 @@
 # SysMLEdge product locks
 
-**As of:** 2026-09-11. Normative product locks for the living plan in [PRODUCT-PLAN.md](PRODUCT-PLAN.md). Implement against these plus [P0-contracts.md](P0-contracts.md). This file does not implement runtime.
+**As of:** 2026-09-11. Normative product locks for the living plan in [PRODUCT-PLAN.md](PRODUCT-PLAN.md). Implement against these plus [P0-contracts.md](P0-contracts.md). Business gates: [BUSINESS-PLAN.md](BUSINESS-PLAN.md). Foam proof: [P1-acceptance.md](P1-acceptance.md). This file does not implement runtime.
 
 If a lock and P0 wording differ, this sheet **notes** the difference and **aligns** P0 language. It MUST NOT weaken: MemNet-only projection, `graph = model @ SHA`, STALE, or **no agent write of SSOT**.
+
+---
+
+## NARROW lock (Elon / Horcrux, 2026-09-11)
+
+**Verdict: NARROW** — keep the Foam contract slice; freeze the rest.
+
+| Keep | Gated until Foam proof passes |
+|-----|-------------------------------|
+| Bilingual bus: `graph = model @ rev`, MemNet one-way, STALE fail-closed, propose-only, no canvas | Pro / Team / SaaS editor; endgame AGI narrative as product story |
+
+**Load-bearing claim:** `graph = model @ SHA` + STALE fail-closed is valuable enough that solo SysML+Cursor desks switch and later pay ~US$19–29. That claim is **not** proven by this docs seed.
+
+**Proof bar:** ALL four Foam proof items in [P1-acceptance.md](P1-acceptance.md) (head-to-head, STALE not theater, propose+ship rev, one non-Core operator). Business and pricing: [BUSINESS-PLAN.md](BUSINESS-PLAN.md). Plan freeze: [PRODUCT-PLAN.md](PRODUCT-PLAN.md).
+
+| Gate | Rule |
+|------|------|
+| **Proof fails** | Kill the Pro/beachhead story for now. Keep docs as a contract sketch or fold into MemNet tooling. MUST NOT ship “bilingual bus” as a product without the head-to-head. |
+| **Proof passes** | KEEP narrowed: Foam vertical + MCP marketplace path. Price/experiment only after a **second paid outsider**. P2 UI still gated. |
+
+**Strongest cut:** Docs discipline ≠ product-market proof. Foam Phase-1 hours on P2 UI = kill signal.
+
+### Freeze (do not spend the two weeks on)
+
+1. P2 SaaS editor
+2. PR UI
+3. Team ACL
+4. Billing
+5. Cameo comparisons
+6. ClickUp / InvenTree product
+7. Expanding mapping beyond parts / ports / connections
+
+### Risks (document; no extra mitigations here)
+
+1. Beachhead ~1k–10k textual SysML v2 + Cursor is **asserted, not evidenced**. Second paid outsider **after Foam** is required.
+2. MemNet is **SPOF** — thin/slow Foam projection kills GQL vs LSP.
+3. “Beat grep” is **soft** until a timed head-to-head. Freemium/Pro SaaS editor (P2) is a **gap** while P1 forbids that UI.
 
 ---
 
@@ -120,10 +157,12 @@ Dirty is **not** STALE.
 | Tier | Intent (plan, not a live price list in this repo) |
 |------|---------------------------------------------------|
 | **Free** | 1 small project + MCP + soft caps. |
-| **Pro** | ~US$19–29 / month: few projects, SaaS editor, higher caps, basic PR. |
-| **Team** | ~US$49–79 later: in-tenant ACL. |
+| **Pro** | ~US$19–29 / month: few projects, SaaS editor, higher caps, basic PR. **Gated:** Foam proof MUST pass; then a second paid outsider before treating Pro as a beachhead. |
+| **Team** | ~US$49–79 later: in-tenant ACL. **Gated** with P2 UI. |
 
-**Product gate:** second paid outsider **after** the Foam slice. Foam is the first vertical; do not treat P2 as “done” until that second paid outsider exists.
+**Product gate:** Foam proof (ALL four items) **then** a second paid outsider. Foam is the first vertical. Do not treat P2 as “done” until that outsider exists. MUST NOT spend Foam Phase-1 hours on the Pro SaaS editor.
+
+**NARROW:** Pro/Team/SaaS editor and AGI-as-product copy stay frozen until [P1-acceptance.md](P1-acceptance.md) Foam proof passes.
 
 ---
 
@@ -160,3 +199,5 @@ Implementations MUST reject, in addition to P0 §7:
 6. Bot review that writes SSOT.
 7. Serving MemNet/GQL as downloadable source; Kuzu/Cypher.
 8. Claiming P2 SaaS or P3 tenancy as shipping in this repository seed.
+9. Shipping “bilingual bus” as a product without the Foam head-to-head (NARROW, Elon/Horcrux 2026-09-11).
+10. Spending Foam Phase-1 hours on P2 UI, PR UI, Team ACL, billing, Cameo, ClickUp/InvenTree product, or mapping beyond parts/ports/connections.
