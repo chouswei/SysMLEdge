@@ -32,9 +32,28 @@ This document is the P1 pass/fail sheet. It does not implement runtime.
 
 Hard pass/fail. Cited from [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md), [PRODUCT-PLAN.md](PRODUCT-PLAN.md), [BUSINESS-PLAN.md](BUSINESS-PLAN.md). **Demand ALL four.** Contract rows 1–8 above remain; this section extends them. Evidence is a scripted log or a short recording — **no slides**.
 
+**Pain lock:** tens-of-minutes grep is the competitor to kill. P1 win = **wall-clock + less context** on the **same** Foam Qs — **not** feature count.
+
+### Row 9 — score all three axes
+
+Same operator. Three fixed Foam questions: **usage / ownership / impact**.
+
+| Arm | Path |
+|-----|------|
+| **A (competitor)** | raw Cursor + git + grep/LSP → LLM. Pain: **tens of minutes**. LLM-on-grep **always loses something** (silent drop). |
+| **B** | SysMLEdge MCP / GQL |
+
+| Axis | Pass for SysMLEdge |
+|------|---------------------|
+| **Wall-clock** | Faster than Arm A on each of the three Qs. Log elapsed time (not tokens as a proxy). |
+| **Context size** | **Less** context stuffed than Arm A for the same Qs. |
+| **Structure fidelity** | GQL answers **preserve ownership / usage / impact edges**. Arm A MAY omit; score the drop. SysMLEdge answers MUST carry `rev.sha` + `rev.stale=false`. |
+
+Log wall-clock, tokens, correctness, fidelity notes (edges kept vs silently dropped), `rev.sha` / `rev.stale`. Tokens/correctness/**feature count** alone are **not** a win.
+
 | # | Name | Pass criteria |
 |---|------|----------------|
-| 9 | Head-to-head | **Three** fixed Foam questions (usage / ownership / impact). Same operator. Arm A: raw Cursor + git + grep/LSP (user pain: this path can take **tens of minutes**). Arm B: SysMLEdge MCP. Log **wall-clock latency**, **tokens**, **answer correctness**, and that SysMLEdge answers carry `rev.sha` + `rev.stale=false`. SysMLEdge MUST win on **wall-clock + context size + structure fidelity** vs that slow grep path. Tokens/correctness alone are **not** enough. |
+| 9 | Head-to-head | All three axes above on the three Foam Qs. Competitor = tens-of-minutes grep, not Cameo. |
 | 10 | STALE not theater | Mutate SysML on disk → structure read fails `code: STALE` → `propose` refused → `reproject` clears → live reads work. Scripted log or short recording. |
 | 11 | Propose + ship rev | `propose` only under `proposals/<id>/`; SSOT unchanged; human save → new SHA; prior SHA zip downloadable; download = SysML zip only. **All eight** rows above green on Foam MemNet. |
 | 12 | Non-Core operator | One operator **not** from Core runs the demo **cold**. Keep using this vs grep? **Yes/no + why.** If **no**, narrow further or **kill** the wedge claim. |

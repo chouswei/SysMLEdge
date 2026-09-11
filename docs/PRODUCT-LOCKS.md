@@ -45,7 +45,24 @@ Elon’s “parts/ports” freeze was **2-week anti-scope-creep for mapping work
 
 1. Beachhead ~1k–10k textual SysML v2 + Cursor is **asserted, not evidenced**. Second paid outsider **after Foam** is required.
 2. MemNet is **SPOF** — thin/slow Foam projection kills GQL vs LSP.
-3. “Beat grep” is **soft** until a timed head-to-head that logs **wall-clock** (raw Cursor+git+grep/LSP on SysML can take **tens of minutes**). Freemium/Pro SaaS editor (P2) is a **gap** while P1 forbids that UI.
+3. “Beat grep” is **soft** until the timed head-to-head scores **wall-clock + less context + structure fidelity** on the same Foam Qs. Freemium/Pro SaaS editor (P2) is a **gap** while P1 forbids that UI.
+
+---
+
+## Pain lock and competitor (CEO + user, 2026-09-11)
+
+**Competitor to kill:** tens-of-minutes **Cursor + git + grep/LSP** on SysML (then LLM). Not Cameo. Not feature count.
+
+**P1 win** (same Foam questions — usage / ownership / impact): **wall-clock + less context**. Not a bigger language surface.
+
+**Third axis — structure fidelity:** LLM-on-grep **always loses something** (silent drop). Head-to-head MUST **score** it:
+
+| Arm | Structure |
+|-----|-----------|
+| SysMLEdge GQL | Answers **preserve** ownership / usage / impact **edges**. MUST include `rev.sha` + `rev.stale=false`. |
+| grep → LLM | MAY omit edges; that omission is a **fail for grep**, not a pass for “the model is in the files.” |
+
+P1 MUST NOT be declared won on tokens, correctness, or feature count alone. Scoring sheet: [P1-acceptance.md](P1-acceptance.md) row 9.
 
 ---
 
@@ -57,7 +74,7 @@ Elon’s “parts/ports” freeze was **2-week anti-scope-creep for mapping work
 | **Mapping** | Every construct **that tree uses**. Not “parts/ports forever”. Not “full KerML in 2 weeks.” |
 | **P1 gate** | **Foam-complete** projection (whatever Foam uses) + beat-grep / STALE / demo. **Not** whole-language coverage. Widen element kinds as later projects demand (`mapping.version` bump). |
 
-**Head-to-head pain:** raw Cursor + git + grep/LSP on SysML can take **tens of minutes**. The 2-week head-to-head MUST log **wall-clock latency** (not only tokens/correctness). SysMLEdge MUST win on **wall-clock + context size + structure fidelity** vs that slow grep path. See [P1-acceptance.md](P1-acceptance.md) row 9.
+**Head-to-head:** see **Pain lock and competitor** above. Tens-of-minutes grep is the competitor. Win = wall-clock + less context + scored structure fidelity on the same Foam Qs — not feature count. [P1-acceptance.md](P1-acceptance.md) row 9.
 
 ---
 
@@ -223,3 +240,4 @@ Implementations MUST reject, in addition to P0 §7:
 10. Spending Foam Phase-1 hours on P2 UI, PR UI, Team ACL, billing, Cameo, ClickUp/InvenTree product, or **full KerML** in two weeks.
 11. Parts-only SSOT (import/save/download of a subset of `.sysml` as “the model”).
 12. Treating “parts/ports” as a forever mapping cap, or boiling the ocean (whole-language) in the two-week proof.
+13. Declaring P1 won on **feature count** (or tokens/correctness alone) instead of wall-clock + less context + scored structure fidelity vs tens-of-minutes grep.
