@@ -19,7 +19,9 @@ This repository seed does **not** implement runtime MCP/CLI. P2/P3 are not shipp
 | **P2** | Single-tenant SaaS | Plan only | Hosted on the **existing droplet (Devicor)**. Identity, import/save/download, MemNet per project, MCP, in-tenant ACL, Save/STALE UI, optional autopilot/bot review (default off). **InvenTree on that host: untouched.** |
 | **P3** | Tenancy | Plan only | Cross-tenant isolation, authz, billing-shaped tenancy. Not implied by P2. |
 
-**P1 competitor to beat:** **grep** (git + SysML LSP). **Product gate:** second paid outsider **after** the Foam slice. P2 UI after that demo, not before. Beachhead, personas, freemium, find-path: [BUSINESS-PLAN.md](BUSINESS-PLAN.md) (does not widen P1).
+**P1 competitor to beat:** **grep** (git + SysML LSP), not MagicDraw/Cameo. **Product gate:** second paid outsider **after** the Foam slice. P2 UI after that demo, not before. Beachhead, personas, freemium, find-path, expert reception: [BUSINESS-PLAN.md](BUSINESS-PLAN.md) (does not widen P1).
+
+**Pitch:** `model@rev` is the API between humans and AGI builders. Endgame (already locked): bilingual bus / contract layer — [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#market-position-pin). Do not expand that scope here.
 
 ---
 
@@ -48,6 +50,8 @@ Must prove (same as that sheet; mapping is P0 v1, not ClickUp/InvenTree product)
 4. MCP `gql_read` / context / impact; `propose` → `sysml-models/proposals/<id>/`.
 5. Human save overwrites current; download SysML zip @ rev; never download the graph.
 6. MCP session binds **project@rev**; no silent SSOT overwrite.
+
+P1 stress tests (same eight rows; **no ninth row**): (a) beat a raw agent + git/grep; (b) STALE is real, not theater; (c) Foam desk demo > manifesto. Own **not whole SysML / no canvas**; do not chase Cameo.
 
 Out of P1: SaaS accounts, in-tenant ACL, graphic canvas, autopilot UI, GitHub-like PR review UI, Kuzu, full SysML language, ClickUp/InvenTree features.
 

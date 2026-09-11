@@ -42,6 +42,14 @@ SysMLEdge = **the bilingual bus for textual SysML v2 + agents** — SysML stays 
 - Foam Phase-1 hours stay on the Foam slice (import, project, GQL/MCP, STALE, propose, zip). Do not spend them on P2 UI.
 - Freemium Pro ~US$19–29 is the desk wedge after Foam; Team / defense PLM is not this cut.
 
+**Expert reception:** own **not whole SysML** and **no canvas**. Pitch **beat grep, not MagicDraw**. MUST NOT chase Cameo.
+
+**P1 stress tests** (same eight rows; not extra acceptance): (a) beat a raw agent + git/grep; (b) STALE is real, not theater; (c) Foam desk demo beats a manifesto.
+
+**Pitch:** `model@rev` is the API between humans and AGI builders.
+
+**Endgame** (already locked; do not expand this cut): bilingual bus / **contract layer** — SysML locked by humans; agents build against `model@rev`. See [BUSINESS-PLAN.md](BUSINESS-PLAN.md#position--endgame).
+
 This pin does **not** widen scope: MemNet-only projection, `graph = model @ SHA`, STALE, no agent SSOT write, no graphic IDE, no GitHub clone, ClickUp/InvenTree not product features.
 
 ---

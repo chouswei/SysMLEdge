@@ -18,6 +18,14 @@ SysMLEdge is the **bilingual bus / contract layer**: SysML is the locked model; 
 
 Bilingual = SysML (author SSOT) + GQL (query/represent). Not a zh/EN UI.
 
+**Pitch:** `model@rev` is the API between humans and AGI builders. This **endgame** (contract layer) is already locked; this sheet MUST NOT expand it.
+
+---
+
+## Expert reception
+
+Own the limits: **not whole SysML**, **no canvas**. Pitch **beat grep, not MagicDraw**. MUST NOT chase Cameo (or Cameo/defense lists as the find-path).
+
 ---
 
 ## Beachhead
@@ -94,7 +102,7 @@ Order:
 | Gate | Lock |
 |------|------|
 | **P0** | Docs done (this seed). |
-| **P1 demo** | Foam query demo **must beat grep**. Proof is the existing eight rows in [P1-acceptance.md](P1-acceptance.md) (GQL without stuffing the tree) — not a ninth row. Those rows also prove buyer roots **1, 2, 3, and 6**. |
+| **P1 demo** | Foam query demo **must beat grep**. Proof is the existing eight rows in [P1-acceptance.md](P1-acceptance.md) (GQL without stuffing the tree) — not a ninth row. Those rows also prove buyer roots **1, 2, 3, and 6**. Stress tests (same rows): (a) beat a raw agent + git/grep; (b) STALE real, not theater; (c) Foam desk demo > manifesto. |
 | **Product gate** | Second paid outsider **after** Foam. Do not treat P2 as done until then. |
 | **Hours** | Foam Phase-1 hours stay on the Foam slice (import, project, GQL/MCP, STALE, propose, zip). Do not spend them on P2 UI. Do not steal them for **VI**. |
 
