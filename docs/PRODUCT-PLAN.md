@@ -1,6 +1,6 @@
 # SysMLEdge product plan
 
-Living plan. **Locks (2026-09-11):** [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md). **Business plan (GTM / beachhead):** [BUSINESS-PLAN.md](BUSINESS-PLAN.md). **P0 behaviour:** [P0-contracts.md](P0-contracts.md). **P1 pass/fail:** [P1-acceptance.md](P1-acceptance.md) (docs done; keep and use as-is).
+Living plan. **Locks (2026-09-11):** [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md). **Business plan (GTM / beachhead / buyer roots):** [BUSINESS-PLAN.md](BUSINESS-PLAN.md). **P0 behaviour:** [P0-contracts.md](P0-contracts.md). **P1 pass/fail:** [P1-acceptance.md](P1-acceptance.md) (docs done; keep and use as-is; P1 proves roots 1, 2, 3, and 6 only).
 
 This repository seed does **not** implement runtime MCP/CLI. P2/P3 are not shipping here.
 
@@ -38,7 +38,7 @@ This repository seed does **not** implement runtime MCP/CLI. P2/P3 are not shipp
 
 Pilot: **https://github.com/chouswei/modelbasedPrj-itri-vedan-foam-detection** (`sysml-models/` as SSOT).
 
-Acceptance (authoritative eight rows): [P1-acceptance.md](P1-acceptance.md).
+Acceptance (authoritative eight rows): [P1-acceptance.md](P1-acceptance.md). P1 must prove buyer roots **1, 2, 3, and 6** ([PRODUCT-LOCKS.md](PRODUCT-LOCKS.md) mapping; no ninth row).
 
 Must prove (same as that sheet; mapping is P0 v1, not ClickUp/InvenTree product):
 
@@ -79,7 +79,7 @@ Hard isolation between tenants (data, MemNet sessions, MCP credentials). Cross-t
 
 ## Pinned users
 
-1. Solo / 2–5 engineers on SysML v2 textual + Cursor.
+1. Solo / lead MBSE engineer (textual SysML v2 + Cursor; desk 2–5; buyer of the seven roots).
 2. Cursor / MCP agents (read + propose).
 3. Later: in-tenant teammates (P2 ACL).
 
