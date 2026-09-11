@@ -126,7 +126,7 @@ Query language is **GQL** against MemNet (cue → neighbourhood / find). GQL NEV
 | `save` / `import` / `download` as unattended **agent** tools | Those are human/operator APIs (CLI/UI/SaaS). Human-auth MCP merge is the human Save path, not an agent merge. |
 | Agent-owned merge / apply of `delta.sysml` onto current | Agent path is read → draft → `propose` only. |
 | Graph write-back as SSOT | Projection is derived. |
-| Unbounded full-tree dump as the **only** merge story | Agents propose deltas (§6). Humans save the whole tree. |
+| Unbounded full-tree dump as the **only** merge **or query** story | Agents propose deltas (§6). GQL/MCP reads are **bounded** (prompt tokens far below whole-tree dump). Humans save the whole tree. |
 | Cypher / Kuzu / `graph.kuzu` | Engine is MemNet. |
 | `mutate` of MemNet that adds structure not in SysML | GQL MUST NOT invent. |
 
@@ -206,7 +206,7 @@ Implementations MUST reject:
 
 1. **Graph write-back as SSOT** — MemNet/GQL is a projection. Saving the graph is not saving the model.
 2. **Kuzu** as required runtime, storage (`graph.kuzu`), Cypher, or a long-lived Kuzu worker.
-3. **Full-tree dump as the only merge story for agents** — agents use `proposals/<id>/`; humans overwrite current as a whole tree and keep git history.
+3. **Full-tree dump as the only merge or query story for agents** — agents use `proposals/<id>/` and **bounded** GQL; humans overwrite current as a whole tree and keep git history. MUST NOT stuff the whole `.sysml` tree into the LLM prompt.
 4. Serving the **graph** as downloadable source.
 5. GQL that **invents** structure or ids (including ClickUp/Inventree) not in SysML at `rev.sha`.
 6. Claiming **P2 SaaS** or **P3 tenancy** as shipped in this cut.
