@@ -55,14 +55,18 @@ Elon’s “parts/ports” freeze was **2-week anti-scope-creep for mapping work
 
 **P1 win** (same Foam questions — usage / ownership / impact): **wall-clock + less context**. Not a bigger language surface.
 
-**Third axis — structure fidelity:** LLM-on-grep **always loses something** (silent drop). Head-to-head MUST **score** it:
+**Context-window pain:** an LLM **cannot hold** a large SysML system. Grep→LLM **truncates / drops**. SysMLEdge wedge = **structured GQL over the full projected graph** without stuffing the whole tree into the prompt.
+
+**Less-context axis (measure):** log **prompt/context tokens** used to answer each of the three Foam Qs. SysMLEdge MUST be **far smaller** than a whole-tree dump (and smaller than Arm A’s stuffed context). Bounded GQL neighbourhoods — not “paste `sysml-models/`”.
+
+**Third axis — structure fidelity:** LLM-on-grep **always loses something** (silent drop / truncation). Head-to-head MUST **score** it:
 
 | Arm | Structure |
 |-----|-----------|
 | SysMLEdge GQL | Answers **preserve** ownership / usage / impact **edges**. MUST include `rev.sha` + `rev.stale=false`. |
 | grep → LLM | MAY omit edges; that omission is a **fail for grep**, not a pass for “the model is in the files.” |
 
-P1 MUST NOT be declared won on tokens, correctness, or feature count alone. Scoring sheet: [P1-acceptance.md](P1-acceptance.md) row 9.
+P1 MUST NOT be declared won on wall-clock tokens-as-proxy, correctness, or feature count alone. Context-axis **prompt tokens** MUST still be logged. Scoring sheet: [P1-acceptance.md](P1-acceptance.md) row 9.
 
 ---
 
@@ -240,4 +244,5 @@ Implementations MUST reject, in addition to P0 §7:
 10. Spending Foam Phase-1 hours on P2 UI, PR UI, Team ACL, billing, Cameo, ClickUp/InvenTree product, or **full KerML** in two weeks.
 11. Parts-only SSOT (import/save/download of a subset of `.sysml` as “the model”).
 12. Treating “parts/ports” as a forever mapping cap, or boiling the ocean (whole-language) in the two-week proof.
-13. Declaring P1 won on **feature count** (or tokens/correctness alone) instead of wall-clock + less context + scored structure fidelity vs tens-of-minutes grep.
+13. Declaring P1 won on **feature count** (or wall-clock tokens-as-proxy / correctness alone) instead of wall-clock + measured prompt tokens (far below whole-tree dump) + scored structure fidelity vs tens-of-minutes grep.
+14. Stuffing the whole SysML tree into the LLM prompt as the GQL/MCP story.

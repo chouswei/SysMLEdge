@@ -56,7 +56,7 @@ Must prove (same as that sheet; not ClickUp/InvenTree product):
 
 Out of P1: SaaS accounts, in-tenant ACL, graphic canvas, autopilot UI, GitHub-like PR review UI, Kuzu, **whole-language** KerML, ClickUp/InvenTree features.
 
-**Foam proof (ALL, 2-week):** competitor = tens-of-minutes grep (not Cameo). Head-to-head MUST score **wall-clock + less context + structure fidelity** (GQL keeps ownership/usage/impact edges; grep→LLM may silently drop; `rev.sha` + `rev.stale=false`). STALE not theater; propose + ship rev; non-Core operator yes/no. NARROW fail/pass unchanged. **Not** a feature-count win.
+**Foam proof (ALL, 2-week):** competitor = tens-of-minutes grep (not Cameo). Head-to-head MUST score **wall-clock + prompt/context tokens (far smaller than whole-tree dump) + structure fidelity** (GQL over the full projection without stuffing the tree; grep→LLM truncates/drops; `rev.sha` + `rev.stale=false`). STALE not theater; propose + ship rev; non-Core operator yes/no. NARROW fail/pass unchanged. **Not** a feature-count win.
 
 ---
 
