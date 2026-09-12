@@ -2,6 +2,7 @@ import { readFile } from "node:fs/promises";
 import { relative, sep } from "node:path";
 import type { ParsedTree, SysmlEdge, SysmlNode } from "../types.js";
 import { listSysmlFiles } from "../rev/sha.js";
+import { groundSysmlGraph } from "./ground.js";
 
 const ATTR_KEYS = ["partNumber", "clickUp", "inventree"] as const;
 
@@ -19,7 +20,7 @@ export async function parseSysmlTree(ssotDir: string): Promise<ParsedTree> {
     edges.push(...parsed.edges);
   }
   resolveConnectionEndpoints(nodes, edges);
-  return { nodes, edges, files: relFiles };
+  return groundSysmlGraph({ nodes, edges, files: relFiles });
 }
 
 /**

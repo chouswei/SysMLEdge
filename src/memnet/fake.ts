@@ -1,24 +1,27 @@
-import type { GqlSlice, ParsedTree, SysmlEdge, SysmlNode } from "../types.js";
+import type { GqlSlice, ParsedTree } from "../types.js";
 import type { MemNetAdapter, MemNetReadCue } from "./adapter.js";
 import { boundSlice } from "./adapter.js";
+import { walkImpact, walkNeighbourhood } from "../sysml/ground.js";
 
 /**
  * In-memory projection for CI when memnet-llm serve is unreachable.
- * Mirrors Path-B ingest kinds (part/port/connection + nested usages).
- * Does not invent qnames. Does not write SysML.
+ * Mirrors Path-B ingest kinds (part/port/connection + nested usages)
+ * and SysML-grounded contains/owns/ends. Does not invent qnames or TSK owns.
  */
 export class FakeMemNet implements MemNetAdapter {
-  private nodes: SysmlNode[] = [];
-  private edges: SysmlEdge[] = [];
+  private tree: ParsedTree = { nodes: [], edges: [], files: [] };
 
   async reproject(_ssotDir: string, parsed: ParsedTree): Promise<string | undefined> {
-    this.nodes = parsed.nodes.map((n) => ({ ...n, properties: { ...n.properties } }));
-    this.edges = parsed.edges.map((e) => ({ ...e }));
+    this.tree = {
+      nodes: parsed.nodes.map((n) => ({ ...n, properties: { ...n.properties } })),
+      edges: parsed.edges.map((e) => ({ ...e })),
+      files: [...parsed.files],
+    };
     return "fake-session";
   }
 
   async gqlRead(cue: MemNetReadCue): Promise<Omit<GqlSlice, "rev.sha" | "rev.stale">> {
-    let nodes = this.nodes;
+    let nodes = this.tree.nodes;
     if (cue.kind) {
       nodes = nodes.filter((n) => n.kind === cue.kind);
     }
@@ -37,7 +40,7 @@ export class FakeMemNet implements MemNetAdapter {
       );
     }
     const qset = new Set(nodes.map((n) => n.qname));
-    const edges = this.edges.filter((e) => qset.has(e.from) || qset.has(e.to));
+    const edges = this.tree.edges.filter((e) => qset.has(e.from) || qset.has(e.to));
     return boundSlice(nodes, edges, cue.maxRows);
   }
 
@@ -45,49 +48,34 @@ export class FakeMemNet implements MemNetAdapter {
     qname: string;
     maxRows: number;
   }): Promise<Omit<GqlSlice, "rev.sha" | "rev.stale">> {
-    const seed =
-      this.nodes.find((n) => n.qname === opts.qname) ??
-      this.nodes.find((n) => n.qname.endsWith("::" + opts.qname));
-    if (!seed) return boundSlice([], [], opts.maxRows);
-    const related = this.nodes.filter(
-      (n) =>
-        n.qname === seed.qname ||
-        n.ownerQname === seed.qname ||
-        n.qname.startsWith(seed.qname + "::") ||
-        seed.ownerQname === n.qname,
-    );
-    const qset = new Set(related.map((n) => n.qname));
-    const edges = this.edges.filter((e) => qset.has(e.from) || qset.has(e.to));
-    return boundSlice(related, edges, opts.maxRows);
+    const { nodes, edges } = walkNeighbourhood(this.tree, {
+      qname: opts.qname,
+      depth: 3,
+      maxRows: opts.maxRows,
+    });
+    return boundSlice(nodes, edges, opts.maxRows);
   }
 
   async gqlImpact(opts: {
     qname: string;
     maxRows: number;
   }): Promise<Omit<GqlSlice, "rev.sha" | "rev.stale">> {
-    const ctx = await this.gqlContext(opts);
-    const frontier = new Set(ctx.nodes.map((n) => n.qname));
-    const extraEdges: SysmlEdge[] = [];
-    for (const e of this.edges) {
-      if (frontier.has(e.from) || frontier.has(e.to)) extraEdges.push(e);
-    }
-    const extraNodes = this.nodes.filter((n) =>
-      extraEdges.some((e) => e.from === n.qname || e.to === n.qname),
-    );
-    const nodes = mergeNodes(ctx.nodes, extraNodes);
-    return boundSlice(nodes, extraEdges, opts.maxRows);
+    const { nodes, edges } = walkImpact(this.tree, {
+      qname: opts.qname,
+      depth: 4,
+      maxRows: opts.maxRows,
+    });
+    return boundSlice(nodes, edges, opts.maxRows);
   }
 
   async listScope(): Promise<string[]> {
-    return this.nodes
+    return this.tree.nodes
       .filter((n) => n.kind === "package" || n.kind === "part")
       .map((n) => n.qname)
       .sort();
   }
-}
 
-function mergeNodes(a: SysmlNode[], b: SysmlNode[]): SysmlNode[] {
-  const map = new Map<string, SysmlNode>();
-  for (const n of [...a, ...b]) map.set(n.qname, n);
-  return [...map.values()];
+  snapshot(): ParsedTree {
+    return this.tree;
+  }
 }

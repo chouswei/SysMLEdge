@@ -1,35 +1,27 @@
 # Foam gold summary — not a proof pass
 proof_executed: false
+proof_pass_claimed: false
 source:
   repo: chouswei/modelbasedPrj-itri-vedan-foam-detection
   sha: 76459224e6afbe74612cca9b37ffe0b3503bda85
+published_narrow: FAKE_reproject_ego
 counts:
-  files: 5
-  packages: 6
-  parts: 256
-  ports: 154
-  connections_parsed: 0
-  nested_parts: 181
+  files: 26
+  packages: 27
+  parts: 663
+  ports: 1400
+  ports_unique_in_list: 1392
+  connections_parsed: 200
+  nested_parts: 388
 nested_hand_create:
   - hint: backgroundSetIndicator
-    status: IDENTIFIED
+    status: AUTO
     qnames:
       - FoamDetectionLiteVer2::CoreMonitorConfigPanel::backgroundSetIndicator
       - FoamDetectionLiteVer2::CoreVideoMonitorToolbar::backgroundSetIndicator
 unknown_counts:
-  connection: 97
-  part_def: 36
   submodule: 1
-parsed_files:
-  - models/behaviour.sysml
-  - models/deploy.sysml
-  - models/items-host-config.sysml
-  - models/items-mqtt.sysml
-  - models/requirements.sysml
-omitted_until_full_clone:
-  - models/connections.sysml
-  - models/root.sysml
-  - outputs/diagrams/foam-lite-demo.sysml
-  - sysml-models/libs
-note: Re-run sysmledge gold after a full Foam clone + submodule. This freeze is parser output, not M1 ingest pass.
-
+tree_files_note: models/ (including connections.sysml + root.sysml) + libs/common/** + outputs/diagrams/foam-lite-demo.sysml
+unknown:
+  - libs/omg KerML gitlink
+note: Parser freeze + FAKE contains/owns/ends neighbourhood. LIVE M1 still FAIL. Path-B CON ≥0.19.9+TCP. Do not treat this YAML as LIVE meters.

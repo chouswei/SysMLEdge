@@ -1,4 +1,4 @@
-# RUNLOG — 2026-09-12 — Edison LIVE M1 (fail-fast **then** Path A)
+# RUNLOG — 2026-09-12 — Edison LIVE M1 (fail-fast **then** Path A) + FAKE ego
 
 | Gate | Status |
 |------|--------|
@@ -6,6 +6,7 @@
 | **LIVE M1 BEFORE Path A** | **fail-fast** — CON=0 session-wide / nested absent |
 | **LIVE M1 AFTER Path A** | TSK ego CON=29; nested in ego via ops; **not SysMLEdge bind**; Path-B 0.19.9 pending Pi |
 | **FAKE** bind / STALE | **ok** (SysMLEdge desk) |
+| **FAKE M1 ego** | **invent progress** — SysML-grounded contains/owns/ends; fixture + gold reconstruction. **Not LIVE meters.** |
 | H2H | **not run** |
 | `proof_pass_claimed` | **false** |
 | P1 / M1–M5 pass | **not claimed** |
@@ -64,6 +65,23 @@ Cloud VM cannot reach `10.0.0.10` (timeout). LIVE numbers are **Memnetor**.
 
 `npm run bind:smoke` (FAKE): import → `rev.stale=false` → mutate → STALE fail-closed → `propose` refused → reproject live. Path A CON=29 / nested-in-ego is **not** that bind. See [RUNLOG-2026-09-12-rev-bind.md](RUNLOG-2026-09-12-rev-bind.md). `proof_pass_claimed: false`.
 
+## FAKE M1 ego — invent progress (published narrow + counts)
+
+SysMLEdge reproject (FAKE) now emits **SysML-grounded** `contains` (nested part usage), `owns` (part→port), `ends` (connection→endpoints) plus connection usages. `gql_context` / `gql_impact` BFS that graph. **MUST NOT** invent `TSK_*` / `USR_*` owns.
+
+| Meter | Parser gold | FAKE projection (this cut) | LIVE |
+|-------|------------:|----------------------------:|------|
+| parts | **663** | **663** (gold reconstruct) | FAIL / gated |
+| ports | **1400** freeze / **1392** unique list | **1392** unique (MUST NOT invent 8) | FAIL / gated |
+| connections | **200** | **200** | CON=0 then Path A ego 29 ≠ gold |
+| nested `backgroundSetIndicator` | **AUTO** (2 qnames) | in owner ego via **contains** | Path A via TSK owns ≠ product |
+| TSK owns invented | n/a | **0** | Path A ops — do not copy |
+| `proof_pass_claimed` | false | **false** | **false** |
+
+Proof commands: `npm test` (`test/ego-neighbourhood.test.ts`) on `fixtures/p1-tiny` + `fixtures/foam-gold/gold.json`. Foam tree on disk is not required for the reconstruct arm.
+
+LIVE attach without tip-as-bind: [LIVE-0199-ATTACH.md](LIVE-0199-ATTACH.md). Path-B CON ingest on **≥0.19.9+TCP** (`mn_0d4f6178` durable CON). Ops mutate on `mn_b05a9869` remains **not** the product path.
+
 ## Not this cut
 
-H2H (M5). Claiming M1 pass. Treating Path A ops meters (CON=29, nested in TSK ego) as SysMLEdge bind. Claiming Path-B CON on Pi before **0.19.9** is rolled.
+H2H (M5). Claiming M1 pass / LIVE bind. Treating Path A ops meters (CON=29, nested in TSK ego) as SysMLEdge bind. Claiming Path-B CON on Pi before **0.19.9** is rolled. Neo4j / dual-engine.

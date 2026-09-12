@@ -10,7 +10,7 @@ MemNet is the **TCP backend** (`memnet serve` `:18765` + MCP TCP-shared `:18766`
 |------|----------------|-----------|
 | `rev_status` | No | `current.sha`, `rev.sha`, `rev.stale` |
 | `gql_read` | No | Bounded read; STALE unless `staleOk=true` |
-| `gql_context` | No | Neighbourhood of one qname |
+| `gql_context` | No | Neighbourhood of one SysML qname along contains/owns/ends/connection |
 | `gql_impact` | No | Connection neighbourhood / usage (not Foam-closure claimed) |
 | `list_scope` | No | Package/part qnames |
 | `propose` | No | `sysml-models/proposals/<id>/{PATCH.md,delta.sysml}` only; refused while STALE |

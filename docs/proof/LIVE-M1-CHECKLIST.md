@@ -21,3 +21,16 @@ Session `mn_b05a9869`. CON **0** session-wide. `backgroundSetIndicator` **ABSENT
 | near_cap | **~4294/5000** |
 
 Parser gold remains 200 CON. TSK ego 29 ≠ session-wide parity and **≠ SysMLEdge bind**. Path-B CON = memnet-llm **0.19.9** (#158) pending Pi.
+
+## LIVE 0.19.9 attach (after Pi roll) — measure, do not claim
+
+Follow [LIVE-0199-ATTACH.md](LIVE-0199-ATTACH.md). Fill only from TCP ingest (no TSK mutate):
+
+| Meter | Gold | LIVE ingest (fill) |
+|-------|------:|---------------------|
+| Engine | ≥0.19.9+TCP | |
+| SysMLEdge `rev.sha` | 40 hex | |
+| CON session-wide | 200 | |
+| `backgroundSetIndicator` in **SysML** ego | AUTO / contains | |
+| `pin_map` cue | SysML qname | (fail if TSK_model) |
+| `proof_pass_claimed` | false | **false** until meters match |

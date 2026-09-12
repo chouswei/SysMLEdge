@@ -30,7 +30,7 @@ Synthetic tree: [`fixtures/p1-tiny/`](fixtures/p1-tiny/) — parts, ports, one c
 
 ### Fake MemNet (CI / default)
 
-Use this when Pi / `memnet serve` is unreachable. Bind, STALE, propose, and reproject run against an in-memory projection parsed from SysML.
+Use this when Pi / `memnet serve` is unreachable. Bind, STALE, propose, and reproject run against an in-memory projection parsed from SysML (parts/ports/connections + nested usages, **contains/owns/ends** neighbourhood). MUST NOT invent mission-TSK owns. LIVE attach plan: [`docs/proof/LIVE-0199-ATTACH.md`](docs/proof/LIVE-0199-ATTACH.md).
 
 ```bash
 npm install

@@ -4,6 +4,7 @@ import type { MemNetAdapter, MemNetReadCue } from "./adapter.js";
 import { FakeMemNet } from "./fake.js";
 import {
   MEMNET_LLM_FLOOR,
+  MEMNET_PATH_B_CON_FLOOR,
   MemNetEnvError,
   assertLiveMemNetEnv,
   parseMemnetVersion,
@@ -23,8 +24,17 @@ interface Envelope {
 }
 
 /**
- * Live MemNet client: length-prefixed JSON argv frames to `memnet serve` TCP
- * (memnet-llm==0.19.8). Floor is 0.19.8 + TCP. This adapter does not own rev/STALE.
+ * Live MemNet client: length-prefixed JSON argv frames to `memnet serve` TCP.
+ * Bounce floor: memnet-llm==0.19.8 + TCP.
+ * Path-B CON ingest (connections without ops mutate): ≥0.19.9 + TCP (MemNet #158).
+ *
+ * SysMLEdge owns rev/STALE/reproject. This adapter MUST NOT:
+ * - treat pin_map / session id as rev.sha
+ * - mutate owns onto TSK_* / USR_* (ops Path A ≠ product)
+ * - cue pin_map at TSK_model_* as project@rev
+ *
+ * LIVE attach: ingest sysml Path-B into a fresh session, then bounded pin_map
+ * on SysML qname= locators. See docs/proof/LIVE-0199-ATTACH.md.
  */
 export class TcpMemNet implements MemNetAdapter {
   private session: string | undefined;
@@ -91,12 +101,14 @@ export class TcpMemNet implements MemNetAdapter {
   }
 
   async reproject(ssotDir: string, parsed: ParsedTree): Promise<string | undefined> {
-    await this.assertEngineFloor();
+    const ver = await this.assertEngineFloor();
     if (!(await this.probe())) {
       throw new MemNetEnvError(
         `memnet serve unreachable at ${this.opts.host}:${this.opts.port}; set MEMNET_BACKEND=fake for CI`,
       );
     }
+    // Path-B CON needs ≥0.19.9. Bounce still 0.19.8. Do not treat 0.19.8 ingest as CON gold.
+    void versionAtLeastFloor(ver, MEMNET_PATH_B_CON_FLOOR);
     const opened = await this.send([
       "session",
       "open",
@@ -115,6 +127,7 @@ export class TcpMemNet implements MemNetAdapter {
     }
     this.session = sid;
     this.live = true;
+    // Path-B ingest only. MUST NOT follow with mutate owns onto TSK_*.
     const ingest = await this.send([
       "ingest",
       "sysml",
@@ -134,6 +147,11 @@ export class TcpMemNet implements MemNetAdapter {
 
   async gqlRead(cue: MemNetReadCue) {
     if (!this.live || !this.session) return this.fallback.gqlRead(cue);
+    if (cue.qname && (cue.qname.startsWith("TSK_") || cue.qname.startsWith("USR_"))) {
+      throw new Error(
+        `refuse TSK/USR cue ${cue.qname}: SysMLEdge pin_map is SysML qname, not mission ego`,
+      );
+    }
     const args = ["query", "pin-map", "--session", this.session, "--depth", "2"];
     if (cue.qname) args.push("--locator", `qname=${cue.qname}`);
     if (cue.keyword) args.push("--keyword", cue.keyword);
@@ -147,6 +165,11 @@ export class TcpMemNet implements MemNetAdapter {
 
   async gqlContext(opts: { qname: string; maxRows: number }) {
     if (!this.live || !this.session) return this.fallback.gqlContext(opts);
+    if (opts.qname.startsWith("TSK_") || opts.qname.startsWith("USR_")) {
+      throw new Error(
+        `refuse TSK/USR cue ${opts.qname}: SysMLEdge pin_map is SysML qname, not mission ego`,
+      );
+    }
     await this.send([
       "query",
       "pin-map",
