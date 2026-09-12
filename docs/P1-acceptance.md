@@ -15,7 +15,7 @@ No scope widen. Source: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#ceo-core-p1-gate-202
 
 **Pass only:** live `0.19.8`+TCP after bind; wall-clock + context vs same Foam Qs; fail-closed STALE; no silent drop.
 
-**Kill theater:** fake CI, tip-as-bind, H2H before meters.
+**Kill theater:** fake CI, tip-as-bind, H2H before meters, H2H vs gold-200.
 
 **Must-fix before Foam gold:** full-clone construct matrix; nested ingest without hand CREATE (or narrow the claim); timed H2H on 0.19.8+TCP after `rev` bind.
 
@@ -31,7 +31,7 @@ No scope widen. Source: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#ceo-core-p1-gate-202
 
 1. **M1** gold fidelity (construct matrix + nested without hand-CREATE, **or** narrow) + **publish counts**
 2. SysMLEdge `rev.sha` / STALE / reproject bind (**M2–M3**)
-3. Timed H2H wall-clock + context on **0.19.8+TCP after bind** (**M5** / row **9**)
+3. Timed H2H wall-clock + context on **0.19.8+TCP after bind** (**M5** / row **9**). Score the **narrow** claim (124 + nested ego); gold-200 stays out of the competitor story.
 4. Then cold non-Core yes/no (**row 12**)
 
 **Day-1 instruments:** env lock 0.19.8+TCP; M1 counts; bind existence (`rev.sha` + stale on structure read); STALE smoke (mutate → STALE → `propose` refused).
@@ -76,7 +76,7 @@ Hard pass/fail. Cited from [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md), [PRODUCT-PLAN.m
 
 **Claimed pains 1–5** ([PRODUCT-LOCKS.md](PRODUCT-LOCKS.md)): **1** grep latency; **2** big SysML + small LLM context / **context footprint** (GQL/`pin_map` slices); **3** STALE blindness / wrong rev; **4** chat-as-SSOT (no ship-rev zip, no propose-only trail); **5** mid-flight model change → re-entrant reproject. **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team ACL.
 
-**P1 head-to-head** scores **wall-clock + context footprint + no silent drop** (pains 1–2). Pains **3–5** are proven by STALE / propose / ship-rev / reproject rows below — **not** extra feature work this week.
+**P1 head-to-head** scores **wall-clock + context footprint + no silent drop** (pains 1–2). **CEO+Elon Core (verbatim):** Timed H2H must score the **narrow** claim (124 + nested ego) — gold-200 stays out of the competitor story. Pains **3–5** are proven by STALE / propose / ship-rev / reproject rows below — **not** extra feature work this week.
 
 ### Row 9 — score all three axes
 
@@ -91,13 +91,13 @@ Same operator. Three fixed Foam questions: **usage / ownership / impact**.
 |------|---------------------|
 | **wall-clock** | Faster than Arm A on each of the three Qs. Log elapsed time (not tokens as a proxy for time). |
 | **context footprint** | Log prompt/context tokens used to answer each Q. SysMLEdge MUST be **far smaller** than a **whole-tree dump** of Foam `.sysml`, and smaller than Arm A. GQL/`pin_map` slices only. |
-| **no silent drop** | GQL answers **preserve ownership / usage / impact edges** (read from the full projection). Arm A MAY omit via truncate/silent drop; score the drop. SysMLEdge answers MUST carry `rev.sha` + `rev.stale=false`. |
+| **no silent drop** | GQL answers **preserve the narrow claim** (LIVE CON **124** + nested qname ego). Arm A MAY omit via truncate/silent drop; score the drop. SysMLEdge answers MUST carry `rev.sha` + `rev.stale=false`. Gold-200 stays **out** of the competitor story. |
 
-Log wall-clock, **context footprint** (prompt tokens per Q + whole-tree-dump baseline), **no silent drop** notes (edges kept vs dropped), `rev.sha` / `rev.stale`. Feature count is **not** a win.
+Log wall-clock, **context footprint** (prompt tokens per Q + whole-tree-dump baseline), **no silent drop** notes (narrow edges kept vs dropped), `rev.sha` / `rev.stale`. Feature count is **not** a win. MUST NOT treat parser gold **200** as the H2H bar.
 
 | # | Name | Pass criteria |
 |---|------|----------------|
-| 9 | Head-to-head | **wall-clock + context footprint + no silent drop** on the three Foam Qs. Competitor = tens-of-minutes grep, not Cameo. Context footprint **far smaller** than whole-tree dump. |
+| 9 | Head-to-head | **wall-clock + context footprint + no silent drop** on the three Foam Qs, scoring the **narrow** claim (124 + nested ego). Competitor = tens-of-minutes grep, not Cameo, **not** gold-200. Context footprint **far smaller** than whole-tree dump. |
 | 10 | STALE not theater | **Pain 3 + 5:** mutate SysML on disk → structure read fails `code: STALE` → `propose` refused → `reproject` clears → live reads work. Scripted log or short recording. No extra feature work this week. |
 | 11 | Propose + ship rev | **Pain 4:** `propose` only under `proposals/<id>/`; SSOT unchanged; human save → new SHA; prior SHA zip downloadable; download = SysML zip only. **All eight** rows above green on Foam MemNet. |
 | 12 | Non-Core operator | One operator **not** from Core runs the demo **cold**. Keep using this vs grep? **Yes/no + why.** If **no**, narrow further or **kill** the wedge claim. |
@@ -123,7 +123,7 @@ Log wall-clock, **context footprint** (prompt tokens per Q + whole-tree-dump bas
 | **M2** | Query slice | Same 3 Foam Qs via `pin_map` and/or `gql_*`. **SysMLEdge** binds `rev.sha` + `rev.stale=false` (absent on MemNet wire). **UNKNOWN = fail that line.** Impact: closure on gold **or** narrowed neighbourhood/usage (see above). |
 | **M3** | STALE/reproject | **SysMLEdge-owned** bind. Mutate → fail-closed → `propose` refused → `reproject` → live. Timed / scripted. MUST NOT invent first-class STALE inside MemNet. Theater if bind is missing. |
 | **M4** | Bounce regression | **Re-run once** in the 2-week window on **0.19.8** TCP-shared: `session_save` → restart **serve + MCP together** → load → gold `pin_map` **non-empty**. Record memnet-llm version. **Fail if** MCP `session_list` ≠ serve. Known: **FAIL on 0.19.7**. Serve death without `session_save` loses in-process sessions. |
-| **M5** | Wall-clock + context vs grep | **Must-fix:** timed H2H on **0.19.8+TCP** after `rev` bind. Same 3 Qs vs grep/LSP. **MUST time wall-clock** (Path-B UNKNOWN until timed). Also **context footprint**. Kill: tip Path-B sold as bind. May share logs with row 9. |
+| **M5** | Wall-clock + context vs grep | **Must-fix:** timed H2H on **0.19.8+TCP** after `rev` bind. Same 3 Qs vs grep/LSP. **MUST time wall-clock** (Path-B UNKNOWN until timed). Also **context footprint**. **CEO+Elon Core (verbatim):** Timed H2H must score the **narrow** claim (124 + nested ego) — gold-200 stays out of the competitor story. Kill: tip Path-B sold as bind; H2H vs gold-200. May share logs with row 9. |
 
 | Outcome | Engine / product rule |
 |---------|------------------------|

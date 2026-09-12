@@ -22,7 +22,7 @@ Product-story locks are **exact** in [CEO Core — Steve taste](#ceo-core--steve
 | **Sysmler Core** (2026-09-12) | **KEEP / NARROW** the spine. Cite CEO Core P1 gate (exact locks below). |
 | **CEO Core P1 gate** (2026-09-12) | Exact locks: **Sequence** / **Pass only** / **Kill theater** (cite Edison). Must-fix / kill risks / OK. Scaffold ≠ P1. |
 | **Edison Core experiment** (Thomas Alva Edison / Horcrux, 2026-09-12) | **KEEP / NARROW** the 2-week Foam cycle (9–12 + M1–M5). Do **not** invert sequence. Engine + story locks untouched. Scaffold ≠ P1. |
-| **CEO Core — Steve + Elon agree** (2026-09-12) | **M1 narrow+counts published** (Core GO 2026-09-12; advisors Jon/Edison/Steve/Elon + CEO). LIVE bind **cleared** for the next Edison step. [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego ≠ pass. Parser gold **200** is **reference only** — MUST NOT invent CON to chase it. **KEEP MemNet sole** — no Neo4j / dual-engine / Kuzu / C rewrite until fidelity green **and** timed H2H loses with numbers. Gaps = Foam projection fidelity + SysMLEdge reproject ego, **not** the wrong store. Path-B CON floor **≥0.19.9+TCP**. |
+| **CEO Core — Steve + Elon agree** (2026-09-12) | **M1 claim** = LIVE CON **124** + nested qname ego YES on `mn_0d4f6178` @ 0.19.9. Gold 200 = parser ref only. No invent edges. LIVE bind unlocked after this publish lands. Timed H2H must score the **narrow** claim (124 + nested ego) — gold-200 stays out of the competitor story. **KEEP MemNet sole.** Path-B CON floor **≥0.19.9+TCP**. |
 
 **Taste risks** (Steve Jobs + CEO Core 2026-09-12): **Kill smells:** IDE / canvas / MemNet tip = product. Prior: Cameo-lite; MemNet-wrapper (tip Path-B ≠ product); yet-another-MCP without beat-grep cold feel.
 
@@ -88,7 +88,10 @@ This file does not implement runtime.
 
 **Cite:** Steve Jobs + Elon Musk / CEO Core 2026-09-12. **Agree.** Engine KEEP sole / NARROW / improve-only **stand**. This file does not implement runtime.
 
-**Cite:** Core GO 2026-09-12 + advisors Jon / Edison / Steve / Elon + CEO: prefer **narrow+counts**. MUST NOT invent CON to chase gold **200**.
+**CEO+Elon Core locks (verbatim):**
+
+1. M1 claim = LIVE CON **124** + nested qname ego YES on `mn_0d4f6178` @ 0.19.9. Gold 200 = parser ref only. No invent edges. LIVE bind unlocked after this publish lands.
+2. Timed H2H must score the **narrow** claim (124 + nested ego) — gold-200 stays out of the competitor story.
 
 Path A on `mn_b05a9869` remains **FAIL** as a gold-parity / bind claim (BEFORE: CON=0 / nested absent; AFTER: TSK ego CON=29 via ops ≠ SysMLEdge bind). **Published M1 narrow** is Path-B LIVE on `mn_0d4f6178` @ **memnet-llm==0.19.9+TCP**: CON find \|Q\|=**124** (**29** `connection_def` + **95** `connectionUsage`) — ingest alone, **no** owns mutate; both `backgroundSetIndicator` gold qnames close via SysML `qname=` `pin_map` + `contains` (Truncation=false on tip ego). TSK-only ego = wrong cue (not claimed). [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego still ≠ pass. Exact meters: [proof/RUNLOG-2026-09-12-m1-bind.md](proof/RUNLOG-2026-09-12-m1-bind.md).
 
@@ -96,10 +99,12 @@ This publish **clears** the M1 FAIL **LIVE-bind gate**. Next Edison step = **LIV
 
 | Lock | Rule |
 |------|------|
-| **M1 narrow+counts published** | Path-B LIVE counts above **are** the M1 bar for this cut. Parser gold `connections_parsed` **200** is **reference only** — **not** the M1 fail bar. MUST NOT invent CON to chase 200. [#21](https://github.com/chouswei/SysMLEdge/pull/21) **FAKE ego ≠ pass.** LIVE bind is **cleared** as the next Edison step. MUST NOT claim full P1 / `proof_pass_claimed` until bind + H2H + cold. FAKE bind smoke ≠ LIVE bind. Path A CON=29 / nested-in-ego ≠ bind. |
+| **M1 claim** (CEO+Elon Core, verbatim) | M1 claim = LIVE CON **124** + nested qname ego YES on `mn_0d4f6178` @ 0.19.9. Gold 200 = parser ref only. No invent edges. LIVE bind unlocked after this publish lands. |
+| **H2H scores narrow** (CEO+Elon Core, verbatim) | Timed H2H must score the **narrow** claim (124 + nested ego) — gold-200 stays out of the competitor story. |
 | **KEEP MemNet sole** | **No Neo4j / dual-engine / Kuzu / C rewrite** until fidelity is **green** **and** timed H2H **loses with numbers**. Same reopen bar as engine form. MUST NOT reopen on taste or “wrong store”. |
 | **Gaps** | Foam **projection fidelity** + SysMLEdge **reproject ego**. **Not** the wrong store. CON=0 / nested absent / TSK-only ego is a projection + ego problem. MUST NOT treat it as a reason to swap MemNet. |
 | **Path-B CON floor** | **≥ memnet-llm==0.19.9 + TCP**. Bounce remains proven on **0.19.8**. Path-B CON ingest is **0.19.9** (MemNet **#158**). MUST NOT claim Path-B CON on Pi below that floor. |
+| **#21 / P1** | [#21](https://github.com/chouswei/SysMLEdge/pull/21) **FAKE ego ≠ pass.** MUST NOT claim full P1 / `proof_pass_claimed` until bind + H2H + cold. FAKE bind smoke ≠ LIVE bind. Path A CON=29 / nested-in-ego ≠ bind. |
 
 ---
 
@@ -177,7 +182,7 @@ Same sequence, Day-1 instruments, refuse list, and fail-fast in [P1-acceptance.m
 
 1. **M1** gold fidelity (construct matrix + nested without hand-CREATE, **or** narrow the claim) + **publish counts**
 2. SysMLEdge `rev.sha` / STALE / reproject bind (**M2–M3**)
-3. Timed H2H wall-clock + context on **TCP after bind** (**M5** / row **9**). Path-B CON on **≥0.19.9+TCP**.
+3. Timed H2H wall-clock + context on **TCP after bind** (**M5** / row **9**). Path-B CON on **≥0.19.9+TCP**. Score the **narrow** claim (124 + nested ego); gold-200 stays out of the competitor story.
 4. Then cold non-Core yes/no (**row 12**)
 
 ### Day-1 instruments
@@ -221,13 +226,13 @@ Exact claimed list. **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team 
 | **4** | chat-as-SSOT | No ship-rev zip, no propose-only trail — SysMLEdge **has** both. |
 | **5** | mid-flight model change → re-entrant reproject | Day loop: edit → Save → reproject → keep going. |
 
-**P1 head-to-head** still scores **wall-clock + context footprint + no silent drop** (pains **1–2** + silent-drop vs grep→LLM). Pains **3–5** are **contract claims** proven by existing STALE / propose / ship-rev / reproject rows in [P1-acceptance.md](P1-acceptance.md) — **not** extra feature work this week.
+**P1 head-to-head** still scores **wall-clock + context footprint + no silent drop** (pains **1–2** + silent-drop vs grep→LLM). **CEO+Elon Core (verbatim):** Timed H2H must score the **narrow** claim (124 + nested ego) — gold-200 stays out of the competitor story. Pains **3–5** are **contract claims** proven by existing STALE / propose / ship-rev / reproject rows in [P1-acceptance.md](P1-acceptance.md) — **not** extra feature work this week.
 
 | Axis | Measure |
 |------|---------|
 | **wall-clock** | Elapsed time vs grep path. Not tokens as a proxy for time. |
 | **context footprint** | Prompt/context tokens per Q. Far smaller than a whole-tree dump. GQL/`pin_map` slices. |
-| **no silent drop** | Preserve ownership / usage / impact edges. Grep→LLM MAY omit. SysMLEdge MUST include `rev.sha` + `rev.stale=false`. |
+| **no silent drop** | Preserve the **narrow** claim (LIVE CON **124** + nested qname ego). Grep→LLM MAY omit. SysMLEdge MUST include `rev.sha` + `rev.stale=false`. MUST NOT score gold-200 in the competitor story. |
 
 P1 MUST NOT be declared won on feature count. Scoring: [P1-acceptance.md](P1-acceptance.md) row 9 (axes) and rows 3–8 / 10–11 (pains 3–5).
 
@@ -309,7 +314,7 @@ MUST NOT: add MemNet features beyond what M1–M5 / Foam fidelity require; put `
 | **Mapping** | Every construct **that tree uses**. Not “parts/ports forever”. Not “full KerML in 2 weeks.” |
 | **P1 gate** | **Foam-complete** projection (whatever Foam uses) + beat-grep / STALE / demo. **Not** whole-language coverage. Widen element kinds as later projects demand (`mapping.version` bump). |
 
-**Head-to-head:** P1 axes = **wall-clock + context footprint + no silent drop** (pains 1–2). Pains 3–5 = existing contract rows, not extra features this week. [P1-acceptance.md](P1-acceptance.md).
+**Head-to-head:** P1 axes = **wall-clock + context footprint + no silent drop** (pains 1–2) on the **narrow** claim (124 + nested ego). Gold-200 stays out of the competitor story. Pains 3–5 = existing contract rows, not extra features this week. [P1-acceptance.md](P1-acceptance.md).
 
 ---
 
@@ -347,7 +352,7 @@ SysMLEdge (this cut) is **Foam desk proof**. **One-liner:** SysML stays the mode
 
 **Buyer (desk, not a seat target):** solo / 2–5 engineers on SysML v2 textual + Cursor.
 
-**Competitor to beat on the P1 demo:** **grep** (git + SysML LSP). P1 is proven when GQL/MCP answers mapped structure **without** stuffing the `.sysml` tree into the agent — scored as **wall-clock + context footprint + no silent drop**.
+**Competitor to beat on the P1 demo:** **grep** (git + SysML LSP). P1 is proven when GQL/MCP answers the **narrow** claim (124 + nested ego) **without** stuffing the `.sysml` tree into the agent — scored as **wall-clock + context footprint + no silent drop**. Gold-200 stays out of the competitor story.
 
 **Product-story proof (2-week):** one **non-Core** operator, **3 Foam Qs**, wall-clock + context + no silent drop, **yes/no keep-using**. **No slides.** Pass bar **unchanged**: rows 9–12 + M1–M5; scaffold ≠ P1. **Cold yes** → outsider → then price. **Cold no** → kill Pro/beachhead; keep Foam tooling.
 
@@ -572,4 +577,4 @@ Implementations MUST reject, in addition to P0 §7:
 24. Taste-cut narrative (Steve Jobs + CEO Core 2026-09-12): AGI copy; Pro/Team/marketplace; beachhead math; bilingual bus as brand lead; plus prior list (contract layer / humans–AGI API; seven roots as a pitch; freemium / Pro ~$19–29; SaaS-editor / PR-UI foreshadowing; slides instead of the 3-Q Foam keep-using proof).
 25. **Kill smells** (Steve Jobs + CEO Core 2026-09-12): IDE / canvas / MemNet tip = product.
 26. Edison Core (Thomas Alva Edison / Horcrux 2026-09-12): invert M1 → bind → timed H2H → row 12; time H2H before M1+bind; skip Day-1 instruments; spend hours on the refuse/freeze list.
-27. Steve + Elon agree (CEO Core 2026-09-12; Core GO same day): treat M1 gaps as Neo4j / dual-engine / wrong store; invent CON to chase gold **200**; treat [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as M1 pass; claim Path-B CON below **≥0.19.9+TCP**; claim Path-B CON **124** as gold **200**; claim full P1 / `proof_pass_claimed` before bind + H2H + cold.
+27. Steve + Elon agree (CEO Core 2026-09-12; Core GO same day): treat M1 gaps as Neo4j / dual-engine / wrong store; invent CON to chase gold **200**; treat [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as M1 pass; claim Path-B CON below **≥0.19.9+TCP**; claim Path-B CON **124** as gold **200**; score timed H2H against gold-200; claim full P1 / `proof_pass_claimed` before bind + H2H + cold.
