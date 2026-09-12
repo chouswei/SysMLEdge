@@ -24,7 +24,7 @@ SysMLEdge MCP gql_context / gql_impact wraps that + rev.sha
 
 | Must | Must not |
 |------|----------|
-| `ingest sysml` on the **current SSOT path** into a **new** session | `mutate` owns onto `TSK_*` / `USR_*` |
+| `ingest sysml` on the **current SSOT path** into a **new** session (lock **(f)**) | `mutate` owns onto `TSK_*` / `USR_*`; same-sid replace-ingest **(r)** |
 | Cue `qname=FoamDetectionLiteVer2::…` (SysML) | Cue `TSK_model_*` as ego / bind |
 | Record SysMLEdge `rev.sha` (40 hex git) **and** MemNet `mn_…` separately | Treat session id as `rev.sha` |
 | Compare CON / nested / ego to [foam-gold](../../fixtures/foam-gold/gold.json) | Claim gold because `pin_map` is non-empty |
@@ -51,14 +51,14 @@ Then measure (fill [LIVE-M1-CHECKLIST.md](LIVE-M1-CHECKLIST.md)):
 4. Same for config-panel nested usage.
 5. `gql_impact` on `…::foamDetection` — neighbourhood/usage only until closure is measured.
 
-Until LIVE `rev.sha` is recorded from **SysMLEdge** `rev_status` on a **new** session, do not treat Path-B `pin_map` as bind. LIVE meters (p1-tiny, Memnetor): [RUNLOG-2026-09-12-live-bind.md](RUNLOG-2026-09-12-live-bind.md) — `mn_27ce8714`, housekeep **56/5000**, `proof_pass_claimed: false`. **Not Foam M1.** **Not CON=124.**
+Until LIVE `rev.sha` is recorded from **SysMLEdge** `rev_status` on a **new** session, do not treat Path-B `pin_map` as bind. **(f)** clean (Memnetor): `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d`. Dirty `mn_27ce8714` = honesty archive only (housekeep **56→116**). `proof_pass_claimed: false`. **Not Foam M1.** **Not CON=124.** MUST NOT sell continuous same-session **(g)** until **(r)**.
 
 ## Kill theater
 
 - Tip Path-B sold as bind
 - Path A CON=29 / nested-in-TSK-ego as SysMLEdge bind
 - Claiming M1 / P1 pass from FAKE tests or from Path-B `pin_map`
-- H2H before timed run (H2H scores **124 + nested ego**, not gold-200)
+- H2H before timed Foam run, or treating p1-tiny / `mn_be03c1a9` H2H as wedge pass (plumbing only; score Foam `mn_0d4f6178` CON **124** + nested, not gold-200)
 - Neo4j / dual-engine because CON=0 was a projection/ego gap
 - Attaching bind to `mn_0d4f6178` / `mn_b05a9869`
 - leftover `--map` TAG wire; `one_way: true` as product truth

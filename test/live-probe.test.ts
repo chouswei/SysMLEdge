@@ -6,7 +6,8 @@ import {
   isProtectedMemnetSession,
   PATH_B_SESSION,
   PATH_A_OPS_SESSION,
-  LIVE_BIND_SESSION_2026_09_12,
+  LIVE_BIND_DIRTY_ARCHIVE,
+  LOCK_F_CLEAN_SESSION,
 } from "../src/memnet/sessions.js";
 
 test("LIVE TCP probe: this host cannot invent a bind; 10.0.0.10 is the LAN Pi", async () => {
@@ -20,10 +21,11 @@ test("LIVE TCP probe: this host cannot invent a bind; 10.0.0.10 is the LAN Pi", 
   }
 });
 
-test("cited Path-A/Path-B sessions are protected from attach-as-bind", () => {
+test("cited Path-A/Path-B and dirty archive sessions are protected from attach-as-bind", () => {
   assert.equal(isProtectedMemnetSession(PATH_B_SESSION), true);
   assert.equal(isProtectedMemnetSession(PATH_A_OPS_SESSION), true);
-  assert.equal(isProtectedMemnetSession(LIVE_BIND_SESSION_2026_09_12), false);
+  assert.equal(isProtectedMemnetSession(LIVE_BIND_DIRTY_ARCHIVE), true);
+  assert.equal(isProtectedMemnetSession(LOCK_F_CLEAN_SESSION), false);
   assert.ok(BIND_SMOKE_THEATER.includes("pin_map"));
   assert.ok(BIND_SMOKE_THEATER.includes("#21"));
   assert.ok(BIND_SMOKE_THEATER.includes("124"));

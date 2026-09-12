@@ -71,7 +71,7 @@ Exact claimed list. **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team 
 | **4** | chat-as-SSOT | Ship-rev zip + propose-only trail. Chat is not SSOT. |
 | **5** | mid-flight reproject | Re-enter after Save/reproject. |
 
-**P1 head-to-head** scores **wall-clock + context footprint + no silent drop** (pains 1–2). **CEO+Elon Core (verbatim):** Timed H2H must score the **narrow** claim (124 + nested ego) — gold-200 stays out of the competitor story. Pains **3–5** are contract claims (STALE / propose / ship-rev / reproject) — **not** extra feature work this week. [P1-acceptance.md](P1-acceptance.md). [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md).
+**P1 head-to-head** scores **wall-clock + context footprint + no silent drop** (pains 1–2). **CEO / Elon / Edison Core:** Timed H2H must score the **narrow** claim on **Foam** `mn_0d4f6178` (124 + nested ego). H2H on p1-tiny / `mn_be03c1a9` = **plumbing only**. Gold-200 stays out of the competitor story. Pains **3–5** are contract claims (STALE / propose / ship-rev / reproject) — **not** extra feature work this week. [P1-acceptance.md](P1-acceptance.md). [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md).
 
 ---
 
@@ -162,7 +162,7 @@ Order:
 | **Pass bar** | Rows 9–12 + M1–M5; scaffold ≠ P1. Unchanged. |
 | **After cold yes** | Outsider → then price. |
 | **Hours** | Foam Phase-1 hours stay on the Foam slice (import, project, GQL/MCP, STALE, propose, zip). Do not spend them on P2 UI. Do not steal them for **VI**. |
-| **(g)** | **Provisional.** Mirror-lie **PASS** on `mn_27ce8714`. Out of beachhead pitch. MUST NOT claim `proof_pass`. Invent next = wait Core (`r`)/(`f`) then H2H. |
+| **(g)** | **Provisional.** Mirror-lie **PASS** on dirty archive `mn_27ce8714`. MUST NOT sell continuous same-session **(g)** until **(r)**. Out of beachhead pitch. MUST NOT claim `proof_pass`. **Lock (f) exact:** `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d`. Tiny H2H = plumbing. Wedge H2H = Foam `mn_0d4f6178`. |
 
 ---
 
@@ -204,8 +204,8 @@ No extra mitigations beyond: run the proof items; freeze the list in [PRODUCT-LO
 12. Dual-engine / Kuzu / Neo4j unless Memnetor is a hard blocker. MUST NOT reopen Neo4j.
 13. Slides as a substitute for the 3-Q Foam keep-using proof.
 14. Selling **(g)** (typed SysML ops → bit-true zip) as proven, or putting it in the beachhead pitch (CEO Core 2026-09-12 pinned features). Mirror-lie **PASS** ≠ proven.
-15. Claiming M1 on LIVE bind `mn_27ce8714` (p1-tiny CON \|Q\|=**5**), or mixing it with Foam narrow M1 on `mn_0d4f6178`.
-16. Claiming `proof_pass`. Inventing replace-on-reproject without Core (`r`)/(`f`).
+15. Claiming M1 on p1-tiny `mn_be03c1a9` / dirty archive `mn_27ce8714`, or mixing them with Foam narrow M1 on `mn_0d4f6178`.
+16. Claiming `proof_pass` from p1-tiny H2H. Selling continuous same-session **(g)** until **(r)**. Same-sid replace-ingest **(r)** this cut. Treating dirty `mn_27ce8714` as live **(f)**. Letting tiny soft-pass the wedge.
 
 ## Out of this plan
 

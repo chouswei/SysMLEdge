@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 # Memnetor / Devicor: LIVE SysMLEdge rev bind on Pi (localhost memnet serve).
-# MUST NOT ingest into mn_0d4f6178 or mn_b05a9869. Opens a NEW session.
+# MUST NOT ingest into mn_0d4f6178, mn_b05a9869, or dirty archive mn_27ce8714. Opens a NEW session.
+# Lock (f) clean = mn_be03c1a9 @ f6768b1108b20c15212f0895f41fb7a27b6a408d. Refuse same-sid attach. (r) deferred.
 # 0.19.9 session open uses SCHEMA --map-file (fixtures/memnet-session.map).
-# proof_pass_claimed=false until H2H + cold. H2H scores narrow 124+nested, not gold-200.
+# proof_pass_claimed=false until Foam H2H + cold on mn_0d4f6178 (CON 124+nested). Tiny/mn_be03c1a9 H2H = plumbing only.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
-if [[ "${MEMNET_ATTACH_SESSION:-}" == "mn_0d4f6178" || "${MEMNET_ATTACH_SESSION:-}" == "mn_b05a9869" ]]; then
-  echo "refuse: do not attach LIVE bind to cited Path-B/Path-A sessions. Attach plan = new ingest session (docs/proof/LIVE-0199-ATTACH.md)." >&2
+if [[ "${MEMNET_ATTACH_SESSION:-}" == "mn_0d4f6178" || "${MEMNET_ATTACH_SESSION:-}" == "mn_b05a9869" || "${MEMNET_ATTACH_SESSION:-}" == "mn_27ce8714" ]]; then
+  echo "refuse: do not attach LIVE bind to cited Path-B/Path-A or dirty archive mn_27ce8714. Lock (f) = new sid (mn_be03c1a9 is the clean bind)." >&2
   exit 2
 fi
 

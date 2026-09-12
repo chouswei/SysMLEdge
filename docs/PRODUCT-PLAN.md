@@ -7,12 +7,12 @@ This repository seed does **not** implement P2/P3. P1 **runtime first cut** (fix
 **CEO Core 2026-09-12 pinned features** (verbatim sense; locks: [PRODUCT-LOCKS.md — pinned features (v1)](PRODUCT-LOCKS.md#ceo-core--pinned-features-v1-2026-09-12)):
 
 1. Upload/bind SysML tree @ `rev` + STALE fail-closed
-2. GQL/MCP ask (no stuff/grep) — **narrow M1 claim** (`mn_0d4f6178` CON \|Q\|=**124** + nested; **not** gold 200; **not** `mn_27ce8714`)
+2. GQL/MCP ask (no stuff/grep) — **narrow M1 claim** (`mn_0d4f6178` CON \|Q\|=**124** + nested; **not** gold 200; **not** p1-tiny)
 3. Propose `delta.sysml` → Save/reproject (agents)
-4. **(g) provisional:** typed SysML ops → bit-true zip @ rev (mirror-lie = kill). Mirror-lie meter on `mn_27ce8714`: **PASS**. MUST NOT sell (g) as proven.
+4. **(g) provisional:** typed SysML ops → bit-true zip @ rev (mirror-lie = kill). Mirror-lie meter on dirty archive `mn_27ce8714`: **PASS**. MUST NOT sell (g) as proven. MUST NOT sell continuous same-session **(g)** until **(r)**.
 5. Streamable-HTTP MCP; MemNet sole backend
 
-**Invent status:** mirror-lie **PASS** (InventProbe in MemNet; gold parts **11→13**, ports **12→13**; zip≡disk). Same-session re-ingest **appends** (rows **56→116**, dup qnames). MUST NOT invent replace-on-reproject without Core (`r`)/(`f`). **Invent next:** wait Core (`r`)/(`f`) → then H2H. LIVE bind `mn_27ce8714` is **p1-tiny** (CON \|Q\|=**5**) — **no M1 claim**. `proof_pass_claimed: false`. don’t-migrate / no Pro until cold Foam. KEEP MemNet sole. Do not reopen Neo4j.
+**Invent status:** mirror-lie **PASS** on dirty archive `mn_27ce8714` (InventProbe; gold parts **11→13**, ports **12→13**; zip≡disk; append 56→116). **Lock (f) exact:** `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d`. **(r)** deferred. MUST NOT sell continuous same-session **(g)** until **(r)**. H2H on p1-tiny / `mn_be03c1a9` = **plumbing only**. `proof_pass_claimed` stays **false** until Foam `mn_0d4f6178` H2H + cold unless Core re-locks P1 desk to tiny. p1-tiny **no M1 claim**. don’t-migrate / no Pro until cold Foam. KEEP MemNet sole. Do not reopen Neo4j.
 
 **Out:** canvas, Neo4j, ClickUp/InvenTree as product, P2 ACL/PR UI, Pro pitch until cold Foam.
 
@@ -76,7 +76,7 @@ P1 stress tests: (a) beat a raw agent + git/grep; (b) STALE is real, not theater
 
 Out of P1: SaaS accounts, in-tenant ACL, graphic canvas, autopilot UI, GitHub-like PR review UI, Kuzu, Neo4j, **whole-language** KerML, ClickUp/InvenTree features, Pro pitch until cold Foam. **(g)** is not a P1 pass (mirror-lie **PASS** ≠ proven).
 
-**Foam + MemNet proof (ALL, 2-week):** **Pains 1–5** and MemNet KEEP/NARROW + Memnetor amendment in [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md). Proof env: **memnet-llm==0.19.8** + TCP-shared MCP. SysMLEdge **owns** `rev`/STALE (absent on MemNet wire). Mirror-lie **PASS** on `mn_27ce8714`; **invent next** = wait Core (`r`)/(`f`) then H2H. Head-to-head **must time wall-clock** + **context footprint** **after** that Core cut. Gold MUST include ≥1 nested part that today needs manual CREATE. Impact: `gql_impact` closure **or** narrow to neighbourhood/tip + usage. Bounce = one regression re-run. **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team ACL. **No Kuzu. No Neo4j.** **CEO Core (2026-09-11):** MemNet **improve-only** for M1–M5 / Foam fidelity — not a MemNet roadmap. **No C rewrite now**; reopen C/Rust/other only if wall-clock loses with numbers after fidelity is green. **(g) provisional**; `proof_pass_claimed: false`.
+**Foam + MemNet proof (ALL, 2-week):** **Pains 1–5** and MemNet KEEP/NARROW + Memnetor amendment in [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md). Proof env: **memnet-llm==0.19.8** + TCP-shared MCP. SysMLEdge **owns** `rev`/STALE (absent on MemNet wire). Mirror-lie **PASS** on dirty archive `mn_27ce8714` (append honesty); **lock (f)** exact = `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d`; **(r)** deferred. MUST NOT sell continuous same-session **(g)** until **(r)**. Head-to-head **must time wall-clock** + **context footprint** on the **Foam** narrow claim (`mn_0d4f6178` CON **124** + nested). H2H on p1-tiny / `mn_be03c1a9` = **plumbing only**. Gold MUST include ≥1 nested part that today needs manual CREATE. Impact: `gql_impact` closure **or** narrow to neighbourhood/tip + usage. Bounce = one regression re-run. **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team ACL. **No Kuzu. No Neo4j.** **CEO Core (2026-09-11):** MemNet **improve-only** for M1–M5 / Foam fidelity — not a MemNet roadmap. **No C rewrite now**; reopen C/Rust/other only if wall-clock loses with numbers after fidelity is green. **(g) provisional**; `proof_pass_claimed: false`.
 
 ---
 
