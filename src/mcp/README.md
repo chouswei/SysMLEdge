@@ -2,7 +2,7 @@
 
 Agent-facing **streamable HTTP** face (Cursor Bearer), same pattern as memnet-pi.
 
-MemNet is the **TCP backend** (`memnet serve` `:18765` + MCP TCP-shared `:18766`). Agents call this face, not MemNet, once bound.
+MemNet is the **TCP backend** (`memnet serve` `:18765` + MCP TCP-shared `:18766`, `MEMNET_MCP_TRANSPORT=tcp`, memnet-llm==0.19.8). Agents call this face, not MemNet, once bound. Live floor: [docs/proof/MEMNET-LIVE.md](../../docs/proof/MEMNET-LIVE.md).
 
 ## Tools
 
@@ -18,4 +18,4 @@ MemNet is the **TCP backend** (`memnet serve` `:18765` + MCP TCP-shared `:18766`
 
 Forbidden: agent `save` / `import` / merge onto current. Human save is CLI.
 
-Do not add `kuzu`. Do not rewrite MemNet in C.
+Do not add `kuzu`. Do not rewrite MemNet in C. Proof harness: `sysmledge proof` is shape-only (`proof_executed: false`).

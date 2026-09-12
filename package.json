@@ -2,7 +2,7 @@
   "name": "sysmledge",
   "version": "0.1.0",
   "private": true,
-  "description": "SysMLEdge — SysML SSOT + GQL via MemNet. P1 runtime first cut (fixture + bind + streamable HTTP MCP). Engine is MemNet, not Kuzu. Not ready to serve real projects.",
+  "description": "SysMLEdge — SysML SSOT + GQL via MemNet. P1 Foam proof scaffolding (gold + import + live TCP floor). Proof not executed. Engine is MemNet, not Kuzu. Not ready to serve real projects.",
   "type": "module",
   "engines": {
     "node": ">=20"
@@ -15,7 +15,12 @@
     "mcp": "tsx src/mcp/main.ts",
     "cli": "tsx src/cli.ts",
     "test": "tsx --test test/*.test.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "foam:import": "bash scripts/foam-import.sh",
+    "foam:gold": "tsx src/cli.ts gold",
+    "proof": "tsx src/cli.ts proof",
+    "head-to-head": "tsx src/cli.ts head-to-head",
+    "memnet:check": "tsx src/cli.ts memnet-check"
   },
   "keywords": [
     "sysml",

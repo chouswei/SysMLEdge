@@ -3,12 +3,21 @@ import { dirname, resolve } from "node:path";
 import { createMemNetAdapter } from "./memnet/factory.js";
 import { SysMLEdgeProject } from "./bind/project.js";
 import { createMcpHttpServer } from "./mcp/http.js";
+import { extractFoamGold, goldJson, summariseGold } from "./sysml/gold.js";
+import { importFoamTree, runProofHarness, emptyHeadToHead } from "./proof/harness.js";
+import { TcpMemNet } from "./memnet/tcp.js";
+import { assertLiveMemNetEnv } from "./memnet/env.js";
 
 function usage(): never {
-  console.error(`sysmledge — P1 runtime first cut (fixture + bind + MCP)
+  console.error(`sysmledge — P1 runtime (fixture + Foam proof scaffolding)
 
 Usage:
   sysmledge import <sysml-tree> [--project DIR]
+  sysmledge import-foam <foam-repo> [--project DIR]
+  sysmledge gold <sysml-models-dir> [--sha SHA] [-o FILE]
+  sysmledge proof [--project DIR] [--foam-ssot DIR] [--live]
+  sysmledge head-to-head [-o FILE]
+  sysmledge memnet-check
   sysmledge status [--project DIR]
   sysmledge reproject [--project DIR]
   sysmledge save [--message MSG] [--project DIR]
@@ -16,10 +25,17 @@ Usage:
   sysmledge mcp [--project DIR] [--port N]
 
 Env:
-  MEMNET_BACKEND=fake|tcp     default fake (CI)
-  MEMNET_SERVE_HOST/PORT      live memnet serve (0.19.8 TCP)
-  SYSMLEDGE_MCP_TOKEN        Bearer token (optional locally)
-  SYSMLEDGE_MCP_PORT         default 18776
+  MEMNET_BACKEND=fake|tcp          default fake (CI)
+  MEMNET_MCP_TRANSPORT=tcp          required when backend=tcp
+  MEMNET_SERVE_HOST                default 127.0.0.1
+  MEMNET_SERVE_PORT                must be 18765 for live proof env
+  MEMNET_MCP_PORT                  must be 18766 for TCP-shared MCP
+  MEMNET_LLM_VERSION                e.g. 0.19.8 (required if serve omits version)
+  SYSMLEDGE_MCP_TOKEN              Bearer token (optional locally)
+  SYSMLEDGE_MCP_PORT               default 18776
+  FOAM_SOURCE_SHA                  Foam git SHA for gold freeze
+
+Proof M1–M5 is scaffolding only. This CLI MUST NOT claim a Foam/MemNet proof pass.
 `);
   process.exit(2);
 }
@@ -27,6 +43,58 @@ Env:
 async function main(argv: string[]): Promise<void> {
   const cmd = argv[0];
   if (!cmd || cmd === "-h" || cmd === "--help") usage();
+
+  if (cmd === "memnet-check") {
+    const live = assertLiveMemNetEnv();
+    const tcp = new TcpMemNet({ host: live.host, port: live.servePort });
+    const version = await tcp.assertEngineFloor();
+    console.log(
+      JSON.stringify(
+        {
+          ok: true,
+          memnet_llm: version,
+          serve: `${live.host}:${live.servePort}`,
+          mcp_port: live.mcpPort,
+          transport: live.transport,
+        },
+        null,
+        2,
+      ),
+    );
+    return;
+  }
+
+  if (cmd === "gold") {
+    const src = argv[1];
+    if (!src) usage();
+    const sha = flag(argv, "--sha") ?? process.env.FOAM_SOURCE_SHA ?? "UNKNOWN";
+    const gold = await extractFoamGold(resolve(src), sha);
+    const json = goldJson(gold);
+    const out = flag(argv, "-o") ?? flag(argv, "--out");
+    if (out) {
+      await mkdir(dirname(resolve(out)), { recursive: true });
+      await writeFile(out, json);
+    } else {
+      process.stdout.write(json);
+    }
+    console.error(summariseGold(gold));
+    return;
+  }
+
+  if (cmd === "head-to-head") {
+    const log = emptyHeadToHead();
+    const json = JSON.stringify(log, null, 2) + "\n";
+    const out = flag(argv, "-o") ?? flag(argv, "--out");
+    if (out) {
+      await mkdir(dirname(resolve(out)), { recursive: true });
+      await writeFile(out, json);
+      console.error(`wrote ${out} (wall-clock and tokens still null; proof not executed)`);
+    } else {
+      process.stdout.write(json);
+    }
+    return;
+  }
+
   const projectDir = flag(argv, "--project") ?? process.cwd();
   const project = new SysMLEdgeProject(resolve(projectDir), createMemNetAdapter());
 
@@ -35,6 +103,24 @@ async function main(argv: string[]): Promise<void> {
     if (!src) usage();
     const st = await project.importTree(resolve(src));
     console.log(JSON.stringify(st, null, 2));
+    return;
+  }
+  if (cmd === "import-foam") {
+    const src = argv[1];
+    if (!src) usage();
+    const st = await importFoamTree({ source: resolve(src), project });
+    console.log(JSON.stringify({ ...st, proof_pass_claimed: false }, null, 2));
+    return;
+  }
+  if (cmd === "proof") {
+    const foamSsot = flag(argv, "--foam-ssot");
+    const live = argv.includes("--live");
+    const report = await runProofHarness({
+      foamSsot: foamSsot ? resolve(foamSsot) : undefined,
+      project,
+      live,
+    });
+    console.log(JSON.stringify(report, null, 2));
     return;
   }
   if (cmd === "status") {

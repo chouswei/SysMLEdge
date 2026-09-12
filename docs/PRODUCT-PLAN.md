@@ -17,7 +17,7 @@ This repository seed does **not** implement P2/P3. P1 **runtime first cut** (fix
 | Phase | Name | This repo | Intent |
 |-------|------|-----------|--------|
 | **P0** | Contracts | **Docs done** | Normative sheet so implementers do not rebuild a Kuzu indexer. |
-| **P1** | Foam slice | Runtime first cut in-repo (fixture CI). Foam proof **not** claimed. | Contract rows 1–8 plus Foam proof 9–12 **and** MemNet proof M1–M5. ALL required. |
+| **P1** | Foam slice | Runtime first cut + **Foam proof scaffolding** (gold, import, 0.19.8 TCP floor, M1–M5 stubs). **Proof not executed / not passed.** | Contract rows 1–8 plus Foam proof 9–12 **and** MemNet proof M1–M5. ALL required. |
 | **P2** | Single-tenant SaaS | Plan only. **Spend frozen** until Foam proof passes. | Hosted on the **existing droplet (Devicor)**. Identity, import/save/download, MemNet per project, MCP, in-tenant ACL, Save/STALE UI, optional autopilot/bot review (default off). **InvenTree on that host: untouched.** |
 | **P3** | Tenancy | Plan only | Cross-tenant isolation, authz, billing-shaped tenancy. Not implied by P2. |
 

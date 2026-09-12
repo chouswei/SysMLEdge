@@ -2,6 +2,13 @@ import { connect } from "node:net";
 import type { ParsedTree } from "../types.js";
 import type { MemNetAdapter, MemNetReadCue } from "./adapter.js";
 import { FakeMemNet } from "./fake.js";
+import {
+  MEMNET_LLM_FLOOR,
+  MemNetEnvError,
+  assertLiveMemNetEnv,
+  parseMemnetVersion,
+  versionAtLeastFloor,
+} from "./env.js";
 
 export interface TcpMemNetOptions {
   host: string;
@@ -45,9 +52,48 @@ export class TcpMemNet implements MemNetAdapter {
     });
   }
 
-  async reproject(ssotDir: string, parsed: ParsedTree): Promise<string | undefined> {
+  /**
+   * Fail clearly if serve is down, TCP-shared env is wrong, or memnet-llm is
+   * below 0.19.8. Does not invent a version when the wire is silent.
+   */
+  async assertEngineFloor(env: NodeJS.ProcessEnv = process.env): Promise<string> {
+    const live = assertLiveMemNetEnv(env);
     if (!(await this.probe())) {
-      throw new Error(
+      throw new MemNetEnvError(
+        `memnet serve unreachable at ${this.opts.host}:${this.opts.port} (need TCP :18765). ` +
+          `Set MEMNET_BACKEND=fake for CI. Floor memnet-llm==${MEMNET_LLM_FLOOR}.`,
+      );
+    }
+    let raw = "";
+    for (const args of [["--version"], ["version"]] as const) {
+      try {
+        const res = await this.send([...args]);
+        raw = `${res.stdout}\n${res.stderr}`;
+        const v = parseMemnetVersion(raw);
+        if (v) {
+          if (!versionAtLeastFloor(v)) {
+            throw new MemNetEnvError(
+              `memnet-llm==${v} is below floor ${MEMNET_LLM_FLOOR} (known bounce FAIL on 0.19.7)`,
+            );
+          }
+          return v;
+        }
+      } catch (e) {
+        if (e instanceof MemNetEnvError) throw e;
+      }
+    }
+    if (live.declaredVersion) return live.declaredVersion;
+    throw new MemNetEnvError(
+      `memnet-llm version UNKNOWN on TCP ${this.opts.host}:${this.opts.port}. ` +
+        `Set MEMNET_LLM_VERSION=${MEMNET_LLM_FLOOR} after ` +
+        `\`memnet --version\` shows ${MEMNET_LLM_FLOOR}, or fix serve. Wire said: ${raw.slice(0, 200) || "(empty)"}`,
+    );
+  }
+
+  async reproject(ssotDir: string, parsed: ParsedTree): Promise<string | undefined> {
+    await this.assertEngineFloor();
+    if (!(await this.probe())) {
+      throw new MemNetEnvError(
         `memnet serve unreachable at ${this.opts.host}:${this.opts.port}; set MEMNET_BACKEND=fake for CI`,
       );
     }

@@ -4,7 +4,7 @@
 
 **Bilingual** here means SysML (author SSOT) + GQL (query and represent). It does not mean a zh/EN product UI. Market pin: [docs/PRODUCT-LOCKS.md](docs/PRODUCT-LOCKS.md#market-position-pin).
 
-**This cut is P1 runtime enablement only.** It does **not** make SysMLEdge ready to serve real projects. Plan ≠ product. Foam proof (`docs/P1-acceptance.md` rows 9–12 and M1–M5 on the Foam tree) is **not** claimed.
+**This cut is P1 Foam proof scaffolding** on the runtime from #11. It does **not** make SysMLEdge ready to serve real projects. Plan ≠ product. Foam proof (`docs/P1-acceptance.md` rows 9–12 and M1–M5) is **not** claimed and **not** executed.
 
 ## Stack (this cut)
 
@@ -16,7 +16,7 @@
 | **GQL** | Read/represent the projection. MUST NOT invent structure beside SysML. |
 | **MCP** | Agent face: **streamable HTTP** (Cursor Bearer, memnet-pi pattern). Read GQL; **propose** only; no silent SSOT overwrite |
 | **Git / GitHub** | VCS backbone — repo @ SHA. We own projection, STALE, propose — not a GitHub rebuild. |
-| **CLI** | `import` / `status` / `save` / `download` / `reproject` / `mcp` |
+| **CLI** | `import` / `import-foam` / `gold` / `proof` / `head-to-head` / `memnet-check` / `status` / `save` / `download` / `reproject` / `mcp` |
 
 Normative contracts: [docs/P0-contracts.md](docs/P0-contracts.md). Product locks (2026-09-11, **NARROW**): [docs/PRODUCT-LOCKS.md](docs/PRODUCT-LOCKS.md). Living plan: [docs/PRODUCT-PLAN.md](docs/PRODUCT-PLAN.md). Business plan (gated GTM + buyer roots): [docs/BUSINESS-PLAN.md](docs/BUSINESS-PLAN.md). P1 Foam acceptance + proof: [docs/P1-acceptance.md](docs/P1-acceptance.md). Agent rules: [AGENTS.md](AGENTS.md).
 
@@ -38,6 +38,18 @@ npx tsx src/cli.ts status --project /tmp/p1-desk
 npm test
 ```
 
+### Foam import + gold (proof scaffolding)
+
+Foam is the **one** SoI. Import the whole `sysml-models/` tree (all `.sysml`). Do not spend hours on Foam VI. Frozen gold: [`fixtures/foam-gold/`](fixtures/foam-gold/). Runbooks: [`docs/proof/FOAM-IMPORT.md`](docs/proof/FOAM-IMPORT.md), [`docs/proof/MEMNET-LIVE.md`](docs/proof/MEMNET-LIVE.md), [`docs/proof/M1-M5.md`](docs/proof/M1-M5.md).
+
+```bash
+# operator: clone Foam (private) + submodule, then bind
+bash scripts/foam-import.sh
+npx tsx src/cli.ts gold /tmp/foam-soi/sysml-models --sha "$(git -C /tmp/foam-soi rev-parse HEAD)"
+npx tsx src/cli.ts proof --project /tmp/foam-desk --foam-ssot /tmp/foam-soi/sysml-models
+npx tsx src/cli.ts head-to-head   # timings stay null until a timed run
+```
+
 ### Live Pi (memnet-llm==0.19.8 + TCP)
 
 Proof env lock: **memnet-llm==0.19.8** and TCP-shared (`MEMNET_MCP_TRANSPORT=tcp`). SysMLEdge still owns `rev` / STALE / reproject.
@@ -55,6 +67,10 @@ export MEMNET_SERVE_HOST=127.0.0.1
 export MEMNET_SERVE_PORT=18765
 export SYSMLEDGE_MCP_TOKEN=replace-me   # Cursor Authorization: Bearer
 export SYSMLEDGE_PROJECT=/tmp/p1-desk
+export MEMNET_MCP_TRANSPORT=tcp
+export MEMNET_MCP_PORT=18766
+export MEMNET_LLM_VERSION=0.19.8
+npx tsx src/cli.ts memnet-check
 npm run mcp
 # streamable HTTP: http://127.0.0.1:18776/mcp
 ```
@@ -66,7 +82,7 @@ Human/operator (not agent tools): `sysmledge import`, `save`, `download`. Agents
 ## Plan (not shipping here)
 
 1. **P0** — contracts (this repository seed).
-2. **P1** — Foam slice on pilot SoI [`chouswei/modelbasedPrj-itri-vedan-foam-detection`](https://github.com/chouswei/modelbasedPrj-itri-vedan-foam-detection) — [acceptance + Foam proof](docs/P1-acceptance.md) (docs done; **proof not yet run**). This repo now has a **fixture** runtime so that proof can start.
+2. **P1** — Foam slice on pilot SoI [`chouswei/modelbasedPrj-itri-vedan-foam-detection`](https://github.com/chouswei/modelbasedPrj-itri-vedan-foam-detection) — [acceptance](docs/P1-acceptance.md). Runtime + **proof scaffolding** in this cut; **proof not yet run or passed**.
 3. **P2** — single-tenant SaaS on the existing droplet (Devicor); InvenTree untouched. **Spend frozen** until Foam proof passes.
 4. **P3** — tenancy.
 
@@ -84,4 +100,4 @@ SysMLEdge keeps those *roles* and **replaces the engine**: MemNet + GQL, SysML t
 
 ## Status
 
-**NARROW** (Elon / Horcrux, 2026-09-11) — Foam proof in progress. P1 runtime first cut: fixture + SysMLEdge-owned bind + streamable HTTP MCP. Not a Foam pass. Not ready to serve real projects.
+**NARROW** (Elon / Horcrux, 2026-09-11) — Foam proof scaffolding (gold, import docs, live 0.19.8 TCP floor, M1–M5 harness stubs). **Not a Foam/MemNet proof pass.** Not ready to serve real projects.
