@@ -4,7 +4,7 @@
 |------|--------|
 | **LIVE env** | unlocked (`memnet-llm==0.19.8` + TCP; `mn_b05a9869`) |
 | **LIVE M1 BEFORE Path A** | **fail-fast** — CON=0 session-wide / nested absent |
-| **LIVE M1 AFTER Path A** | TSK ego CON=29; nested in ego via panel **owns**; **not** durable Path-B ingest |
+| **LIVE M1 AFTER Path A** | TSK ego CON=29; nested in ego via ops; **not SysMLEdge bind**; Path-B 0.19.9 pending Pi |
 | **FAKE** bind / STALE | **ok** (SysMLEdge desk) |
 | H2H | **not run** |
 | `proof_pass_claimed` | **false** |
@@ -38,11 +38,11 @@ Kill smells: silent drop of graph edges; nested ingest without the nested row.
 | POR | **≥3** |
 | Truncation | **false** |
 | `backgroundSetIndicator` | **in TSK ego** via panel **owns** (`contains` / `HAS_PART`) |
-| Durable Path-B ingest | **still required** — ops mutate ≠ Path-B CON map |
+| Durable Path-B ingest | **0.19.9 shipped** (MemNet **#158**); **pending Pi roll**. Ops mutate ≠ bind |
 | `proof_pass_claimed` | **false** |
 | near_cap | **~4294/5000** |
 
-Parser gold still **200** connections / nested **AUTO**. Path A TSK ego CON=29 is a **slice**, not session-wide gold parity. **B CON map still required.**
+Parser gold still **200** connections / nested **AUTO**. Path A TSK ego CON=29 is a **slice**, not session-wide gold parity, and **not SysMLEdge bind**.
 
 ## Parser gold matrix (this PR)
 
@@ -62,8 +62,8 @@ Cloud VM cannot reach `10.0.0.10` (timeout). LIVE numbers are **Memnetor**.
 
 ## FAKE=ok (SysMLEdge bind only)
 
-`npm run m1:smoke` forces fake: import → `rev.stale=false` → mutate → STALE → `propose` refused. That does **not** make LIVE M1 a pass.
+`npm run bind:smoke` (FAKE): import → `rev.stale=false` → mutate → STALE fail-closed → `propose` refused → reproject live. Path A CON=29 / nested-in-ego is **not** that bind. See [RUNLOG-2026-09-12-rev-bind.md](RUNLOG-2026-09-12-rev-bind.md). `proof_pass_claimed: false`.
 
 ## Not this cut
 
-H2H (M5). Claiming M1 pass. Treating Path A ops mutate as Path-B ingest.
+H2H (M5). Claiming M1 pass. Treating Path A ops meters (CON=29, nested in TSK ego) as SysMLEdge bind. Claiming Path-B CON on Pi before **0.19.9** is rolled.

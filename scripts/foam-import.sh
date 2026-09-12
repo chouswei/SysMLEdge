@@ -9,7 +9,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 
 if [[ ! -d "$FOAM_DIR/sysml-models" ]]; then
   git clone --recurse-submodules "$FOAM_URL" "$FOAM_DIR" || {
-    echo "git clone failed (private repo / token). Place Foam sysml-models/ at $FOAM_DIR or use scripts/m1-smoke.sh with FOAM_DIR." >&2
+    echo "git clone failed (private repo / token). Place Foam sysml-models/ at $FOAM_DIR or use npm run bind:smoke." >&2
     exit 1
   }
 fi
@@ -24,5 +24,5 @@ export MEMNET_BACKEND="${MEMNET_BACKEND:-fake}"
 cd "$ROOT"
 npx tsx src/cli.ts import-foam "$FOAM_DIR" --project "$PROJECT"
 npx tsx src/cli.ts status --project "$PROJECT"
-npx tsx src/cli.ts smoke-bind --project "$PROJECT"
-echo "proof_pass_claimed=false memnet_backend=$MEMNET_BACKEND"
+npx tsx src/cli.ts smoke-bind --project "$PROJECT" --mcp
+echo "proof_pass_claimed=false memnet_backend=$MEMNET_BACKEND scaffold_not_p1=true"

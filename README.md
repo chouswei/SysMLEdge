@@ -46,7 +46,7 @@ Foam is the **one** SoI. Import the whole `sysml-models/` tree (all `.sysml`). D
 
 ```bash
 # operator: clone Foam (private) + submodule, then bind
-FOAM_DIR=/tmp/foam-soi SYSMLEDGE_PROJECT=/tmp/foam-desk npm run m1:smoke   # FAKE bind; not M1–M5 pass
+FOAM_DIR=/tmp/foam-soi SYSMLEDGE_PROJECT=/tmp/foam-desk npm run bind:smoke   # FAKE bind; not M1–M5 / P1 pass
 npx tsx src/cli.ts gold /tmp/foam-soi/sysml-models --sha "$(git -C /tmp/foam-soi rev-parse HEAD 2>/dev/null || echo UNKNOWN)"
 npx tsx src/cli.ts proof --project /tmp/foam-desk --foam-ssot /tmp/foam-soi/sysml-models
 npx tsx src/cli.ts head-to-head   # timings stay null until a timed run
@@ -73,9 +73,12 @@ export MEMNET_MCP_TRANSPORT=tcp
 export MEMNET_MCP_PORT=18766
 export MEMNET_LLM_VERSION=0.19.8
 npx tsx src/cli.ts memnet-check
+BIND_SMOKE_LIVE=1 npm run bind:smoke   # same bind rules; Path A CON=29 ≠ bind; 0.19.9 pending Pi
 npm run mcp
 # streamable HTTP: http://127.0.0.1:18776/mcp
 ```
+
+LIVE operator boxes: [docs/proof/LIVE-BIND-CHECKLIST.md](docs/proof/LIVE-BIND-CHECKLIST.md). `mn_b05a9869` / `pin_map` are **not** bind.
 
 Cursor: HTTP MCP URL `http://127.0.0.1:18776/mcp` with `Authorization: Bearer ${SYSMLEDGE_MCP_TOKEN}`.
 

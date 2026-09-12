@@ -68,9 +68,9 @@ Harness `sysmledge proof --live` only asserts the env. It does **not** restart p
 | | Fake | Live |
 |--|------|------|
 | CI | default `MEMNET_BACKEND=fake` | skip |
-| Bind / STALE / propose | yes | same SysMLEdge bind |
-| M1 ingest fidelity | structure only | **FAIL-FAST** Memnetor: CON=0, nested ABSENT (see RUNLOG) |
+| Bind / STALE / propose / reproject | **FAKE green** (`npm run bind:smoke`) | same SysMLEdge bind when TCP up ([LIVE-BIND-CHECKLIST.md](LIVE-BIND-CHECKLIST.md)) |
+| M1 ingest fidelity | structure only | Path A AFTER: TSK ego CON=29 + nested via ops — **not bind**. Path-B CON = **0.19.9 (#158) pending Pi roll** |
 
-## LIVE M1 (Memnetor 2026-09-12)
+## LIVE M1 (Memnetor 2026-09-12) — **not SysMLEdge bind**
 
-**BEFORE:** CON=0, nested ABSENT. **AFTER Path A:** TSK ego CON=29 PRT≈21 POR≥3 Truncation=false; nested in ego via panel owns. Ops mutate ≠ durable Path-B ingest. `proof_pass_claimed: false`. near_cap ~4294/5000. [RUNLOG](RUNLOG-2026-09-12-m1-bind.md).
+Session `mn_b05a9869`. **BEFORE:** CON=0, nested ABSENT, TSK ego = TSK only. **AFTER Path A (ops):** TSK ego **CON=29**, nested `backgroundSetIndicator` in ego via panel owns, Truncation=false. **Still not `rev.sha` bind.** Path-B CON ingest shipped as **memnet-llm 0.19.9** (MemNet **#158**), **pending Pi roll**. `proof_pass_claimed: false`. near_cap ~4294/5000. [M1 RUNLOG](RUNLOG-2026-09-12-m1-bind.md). Bind smoke: [RUNLOG-2026-09-12-rev-bind.md](RUNLOG-2026-09-12-rev-bind.md).
