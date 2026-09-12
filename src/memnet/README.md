@@ -16,7 +16,7 @@ See [docs/proof/MEMNET-LIVE.md](../../docs/proof/MEMNET-LIVE.md).
 | `MEMNET_SERVE_PORT` | **must be `18765`** |
 | `MEMNET_MCP_PORT` | **must be `18766`** |
 | `MEMNET_LLM_VERSION` | bounce `0.19.8`; LIVE bind / Path-B CON ingest `0.19.9` if serve does not print a version |
-| `MEMNET_MAP_FILE` | SCHEMA `--map-file` on the **serve host**. Default: `fixtures/memnet-session.map`. leftover `--map` TAG lines are **not** sent. |
+| `MEMNET_MAP_FILE` | SCHEMA `--map-file` on the **serve host**. Default: `fixtures/memnet-session.map` (PKG/PRT/POR/CON MUST include `qname` / `path` / `sysml_kind`). leftover `--map` TAG lines are **not** sent. MUST NOT paste narrow `fields=id name kind role status recycle`. |
 
 `createMemNetAdapter()` and `TcpMemNet.assertEngineFloor()` fail with `MemNetEnvError` when the floor is wrong. Default backend remains **fake** for CI.
 
