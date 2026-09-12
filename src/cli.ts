@@ -4,7 +4,7 @@ import { createMemNetAdapter } from "./memnet/factory.js";
 import { SysMLEdgeProject } from "./bind/project.js";
 import { createMcpHttpServer } from "./mcp/http.js";
 import { extractFoamGold, goldJson, summariseGold } from "./sysml/gold.js";
-import { importFoamTree, runProofHarness, emptyHeadToHead } from "./proof/harness.js";
+import { importFoamTree, runProofHarness, emptyHeadToHead, smokeBind } from "./proof/harness.js";
 import { TcpMemNet } from "./memnet/tcp.js";
 import { assertLiveMemNetEnv } from "./memnet/env.js";
 
@@ -16,6 +16,7 @@ Usage:
   sysmledge import-foam <foam-repo> [--project DIR]
   sysmledge gold <sysml-models-dir> [--sha SHA] [-o FILE]
   sysmledge proof [--project DIR] [--foam-ssot DIR] [--live]
+  sysmledge smoke-bind [--project DIR] [--mutate-file REL]
   sysmledge head-to-head [-o FILE]
   sysmledge memnet-check
   sysmledge status [--project DIR]
@@ -97,6 +98,14 @@ async function main(argv: string[]): Promise<void> {
 
   const projectDir = flag(argv, "--project") ?? process.cwd();
   const project = new SysMLEdgeProject(resolve(projectDir), createMemNetAdapter());
+
+  if (cmd === "smoke-bind") {
+    const mutateRel = flag(argv, "--mutate-file");
+    const report = await smokeBind(project, { mutateRel });
+    console.log(JSON.stringify(report, null, 2));
+    if (!report.ok) process.exit(1);
+    return;
+  }
 
   if (cmd === "import") {
     const src = argv[1];

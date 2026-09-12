@@ -24,11 +24,23 @@ Whole-tree SSOT = **all** `.sysml` under `sysml-models/` (including `models/`, `
 
 Default MemNet is **fake** (CI). Live Pi is optional (`docs/proof/MEMNET-LIVE.md`).
 
+One command (default **FAKE** MemNet; does not claim M1–M5):
+
+```bash
+export MEMNET_BACKEND=fake
+export FOAM_DIR=/tmp/foam-soi
+export SYSMLEDGE_PROJECT=/tmp/foam-desk
+npm run m1:smoke
+```
+
+Equivalent split:
+
 ```bash
 # from SysMLEdge
 export MEMNET_BACKEND=fake
 npx tsx src/cli.ts import-foam /tmp/foam-soi --project /tmp/foam-desk
 npx tsx src/cli.ts status --project /tmp/foam-desk
+npx tsx src/cli.ts smoke-bind --project /tmp/foam-desk
 ```
 
 Equivalent:
@@ -43,7 +55,7 @@ npx tsx src/cli.ts import /tmp/foam-soi --project /tmp/foam-desk
 
 ## Gold list
 
-Frozen parser output: [`fixtures/foam-gold/`](../../fixtures/foam-gold/). Regenerate (does not claim ingest fidelity; does not claim the full-clone construct matrix):
+Frozen parser output: [`fixtures/foam-gold/`](../../fixtures/foam-gold/). See [RUNLOG-2026-09-12-m1-bind.md](RUNLOG-2026-09-12-m1-bind.md). Regenerate (does not claim live ingest fidelity):
 
 ```bash
 npx tsx src/cli.ts gold /tmp/foam-soi/sysml-models --sha <FOAM_HEAD_SHA> -o fixtures/foam-gold/gold.json

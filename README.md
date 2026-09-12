@@ -46,8 +46,8 @@ Foam is the **one** SoI. Import the whole `sysml-models/` tree (all `.sysml`). D
 
 ```bash
 # operator: clone Foam (private) + submodule, then bind
-bash scripts/foam-import.sh
-npx tsx src/cli.ts gold /tmp/foam-soi/sysml-models --sha "$(git -C /tmp/foam-soi rev-parse HEAD)"
+FOAM_DIR=/tmp/foam-soi SYSMLEDGE_PROJECT=/tmp/foam-desk npm run m1:smoke   # FAKE bind; not M1–M5 pass
+npx tsx src/cli.ts gold /tmp/foam-soi/sysml-models --sha "$(git -C /tmp/foam-soi rev-parse HEAD 2>/dev/null || echo UNKNOWN)"
 npx tsx src/cli.ts proof --project /tmp/foam-desk --foam-ssot /tmp/foam-soi/sysml-models
 npx tsx src/cli.ts head-to-head   # timings stay null until a timed run
 ```

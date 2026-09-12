@@ -9,7 +9,7 @@ import {
   assertLiveMemNetEnv,
   parseMemnetVersion,
 } from "../src/memnet/env.js";
-import { emptyHeadToHead, runProofHarness } from "../src/proof/harness.js";
+import { emptyHeadToHead, runProofHarness, smokeBind } from "../src/proof/harness.js";
 import { FOAM_QUESTIONS } from "../src/proof/questions.js";
 import { SysMLEdgeProject } from "../src/bind/project.js";
 import { FakeMemNet } from "../src/memnet/fake.js";
@@ -70,6 +70,18 @@ test("proof harness on fake bind is shape-only and does not claim pass", async (
   }
   const h2h = emptyHeadToHead();
   assert.equal(h2h.questions.length, 3);
+});
+
+test("smokeBind FAKE: bound stale=false then mutate → STALE → propose refused", async () => {
+  const dir = await mkdtemp(join(tmpdir(), "sysmledge-smoke-"));
+  const project = new SysMLEdgeProject(dir, new FakeMemNet());
+  await project.importTree(fixtureRoot);
+  const report = await smokeBind(project);
+  assert.equal(report.proof_pass_claimed, false);
+  assert.equal(report.memnet_mode, "FAKE");
+  assert.equal(report.ok, true);
+  assert.equal(report.stale["rev.stale"], true);
+  assert.equal(report.stale.propose_refused, true);
 });
 
 test("p1-tiny nestedDetector still parsed after Foam brace-depth fix", async () => {

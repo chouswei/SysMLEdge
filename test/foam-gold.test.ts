@@ -19,5 +19,8 @@ test("frozen Foam gold lists nested backgroundSetIndicator and does not claim pa
   const nested = gold.nested_hand_create.find((n) => n.hint === "backgroundSetIndicator");
   assert.ok(nested?.qnames.some((q) => q.includes("CoreVideoMonitorToolbar")));
   assert.ok(nested?.qnames.some((q) => q.includes("CoreMonitorConfigPanel")));
-  assert.ok(gold.unknown.length >= 1, "UNKNOWN nested/connection cases must be explicit");
+  assert.ok(nested?.status === "AUTO" || nested?.status === "IDENTIFIED");
+  assert.ok(gold.counts.files >= 7, "full Foam models/ must include connections.sysml + root.sysml");
+  assert.ok(gold.counts.connections_parsed >= 90, "silent drop: connections_parsed:0 / quote-swallow");
+  assert.equal(nested?.status, "AUTO");
 });

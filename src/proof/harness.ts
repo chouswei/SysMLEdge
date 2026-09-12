@@ -1,4 +1,4 @@
-import { access } from "node:fs/promises";
+import { access, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import type { FoamGoldList } from "../sysml/gold.js";
 import { extractFoamGold, summariseGold } from "../sysml/gold.js";
@@ -14,6 +14,7 @@ import {
   assertLiveMemNetEnv,
 } from "../memnet/env.js";
 import { TcpMemNet } from "../memnet/tcp.js";
+import { listSysmlFiles } from "../rev/sha.js";
 
 export type ProofLineStatus = "PASS_SHAPE" | "SKIPPED_NO_LIVE_MEMNET" | "NOT_EXECUTED";
 
@@ -225,6 +226,89 @@ export async function runProofHarness(opts: {
     lines,
     gold_summary: gold ? summariseGold(gold) : undefined,
     head_to_head: head,
+  };
+}
+
+export async function smokeBind(
+  project: SysMLEdgeProject,
+  opts: { mutateRel?: string } = {},
+): Promise<{
+  ok: boolean;
+  memnet_backend: string;
+  memnet_mode: "FAKE" | "LIVE_TCP";
+  bind: { "rev.sha": string | null; "rev.stale": boolean };
+  stale: { "rev.stale": boolean; propose_refused: boolean; code?: string };
+  notes: string[];
+  proof_pass_claimed: false;
+}> {
+  const backend = process.env.MEMNET_BACKEND ?? "fake";
+  const memnet_mode = backend === "tcp" ? "LIVE_TCP" : "FAKE";
+  const notes: string[] = [];
+  const bind = await project.revStatus();
+  const bound =
+    typeof bind["rev.sha"] === "string" &&
+    /^[0-9a-f]{40}$/.test(bind["rev.sha"]) &&
+    bind["rev.stale"] === false;
+  if (!bound) {
+    return {
+      ok: false,
+      memnet_backend: backend,
+      memnet_mode,
+      bind: { "rev.sha": bind["rev.sha"], "rev.stale": bind["rev.stale"] },
+      stale: { "rev.stale": bind["rev.stale"], propose_refused: false },
+      notes: ["rev_status not bound with stale=false"],
+      proof_pass_claimed: false,
+    };
+  }
+  notes.push(`bound rev.sha=${bind["rev.sha"]} stale=false memnet_mode=${memnet_mode}`);
+
+  const files = await listSysmlFiles(project.ssotDir());
+  const prefer =
+    opts.mutateRel ??
+    files.map((f) => f.replace(/\\/g, "/")).find((f) => f.endsWith("root.sysml") || f.endsWith("P1Tiny.sysml"));
+  const targetAbs = prefer
+    ? prefer.startsWith("/")
+      ? prefer
+      : files.find((f) => f.replace(/\\/g, "/").endsWith(prefer)) ?? files[0]
+    : files[0];
+  if (!targetAbs) {
+    notes.push("no .sysml to mutate");
+    return {
+      ok: false,
+      memnet_backend: backend,
+      memnet_mode,
+      bind: { "rev.sha": bind["rev.sha"], "rev.stale": bind["rev.stale"] },
+      stale: { "rev.stale": false, propose_refused: false },
+      notes,
+      proof_pass_claimed: false,
+    };
+  }
+  const body = await readFile(targetAbs, "utf8");
+  await writeFile(targetAbs, body + "\n// sysmledge-stale-smoke\n");
+  const st = await project.revStatus();
+  let propose_refused = false;
+  let code: string | undefined;
+  try {
+    await project.propose({ intent: "stale-smoke", deltaSysml: "// refused\n" });
+  } catch (e) {
+    if (e instanceof StaleError) {
+      propose_refused = true;
+      code = e.shape.code;
+    } else {
+      notes.push(e instanceof Error ? e.message : String(e));
+    }
+  }
+  const ok = st["rev.stale"] === true && propose_refused;
+  notes.push(`mutated ${targetAbs}`);
+  notes.push("M1–M5 NOT claimed. This is bind/STALE smoke only.");
+  return {
+    ok: bound && ok,
+    memnet_backend: backend,
+    memnet_mode,
+    bind: { "rev.sha": bind["rev.sha"], "rev.stale": bind["rev.stale"] },
+    stale: { "rev.stale": st["rev.stale"], propose_refused, code },
+    notes,
+    proof_pass_claimed: false,
   };
 }
 

@@ -22,13 +22,67 @@ export async function parseSysmlTree(ssotDir: string): Promise<ParsedTree> {
   return { nodes, edges, files: relFiles };
 }
 
+/**
+ * Strip block comments. Skip glob star-star-slash-star (second star then slash)
+ * so markdown globs do not close `doc` comments early and drop later constructs.
+ */
 function stripComments(src: string): string {
-  return src.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/.*$/gm, " ");
+  let out = "";
+  let i = 0;
+  while (i < src.length) {
+    if (src.startsWith("//", i)) {
+      const nl = src.indexOf("\n", i);
+      i = nl < 0 ? src.length : nl;
+      continue;
+    }
+    if (src.startsWith("/*", i)) {
+      i += 2;
+      while (i < src.length) {
+        if (src[i] === "*" && src[i + 1] === "/") {
+          const globStarSlashStar = src[i - 1] === "*" && src[i + 2] === "*";
+          if (!globStarSlashStar) {
+            i += 2;
+            out += " ";
+            break;
+          }
+        }
+        i += 1;
+      }
+      continue;
+    }
+    out += src[i];
+    i += 1;
+  }
+  return out;
 }
 
-/** Brace matching must not see `{` / `}` inside quoted SysML strings. */
+/**
+ * Brace matching must not see `{` / `}` inside quoted SysML strings.
+ * Only pair quotes on the same line. An unmatched `"` (odd count after
+ * comment strip, or a closer treated as opener) must not swallow later
+ * `connection` usages on following lines.
+ */
 function stripStrings(src: string): string {
-  return src.replace(/"(?:\\.|[^"\\])*"/g, '""');
+  let out = "";
+  let i = 0;
+  while (i < src.length) {
+    if (src[i] === '"') {
+      const start = i;
+      i += 1;
+      while (i < src.length && src[i] !== '"' && src[i] !== "\n") i += 1;
+      if (src[i] === '"') {
+        i += 1;
+        out += '""';
+        continue;
+      }
+      out += '"';
+      i = start + 1;
+      continue;
+    }
+    out += src[i];
+    i += 1;
+  }
+  return out;
 }
 
 interface Frame {
@@ -44,7 +98,7 @@ function parseFile(src: string, path: string): { nodes: SysmlNode[]; edges: Sysm
   const stack: Frame[] = [];
   let depth = 0;
   const re =
-    /\b(package|part\s+def|port\s+def|part|port|connection|attribute)\b|[{};]/g;
+    /\b(package|part\s+def|port\s+def|part|port|connection|connect|attribute)\b|[{};]/g;
   let match: RegExpExecArray | null;
   const seen = new Set<string>();
 
@@ -143,8 +197,11 @@ function parseFile(src: string, path: string): { nodes: SysmlNode[]; edges: Sysm
       continue;
     }
 
-    if (tok === "connection") {
-      const conn = parseConnection(src, re.lastIndex);
+    if (tok === "connection" || tok === "connect") {
+      const conn =
+        tok === "connect"
+          ? parseConnectStmt(src, re.lastIndex)
+          : parseConnection(src, re.lastIndex);
       if (!conn) continue;
       const qname = qualify(stack, conn.name);
       edges.push({
@@ -195,18 +252,68 @@ function parseUsage(
   return { name: m[1], typeName: m[2] };
 }
 
+function matchingBrace(src: string, openIdx: number): number {
+  let depth = 0;
+  for (let i = openIdx; i < src.length; i++) {
+    const ch = src[i];
+    if (ch === "{") depth += 1;
+    else if (ch === "}") {
+      depth -= 1;
+      if (depth === 0) return i;
+    }
+  }
+  return -1;
+}
+
+function connectionWindow(src: string, from: number): string {
+  const brace = src.indexOf("{", from);
+  const semi = src.indexOf(";", from);
+  if (brace >= 0 && (semi < 0 || brace < semi)) {
+    const end = matchingBrace(src, brace);
+    return src.slice(from, end >= 0 ? end + 1 : from + 8000);
+  }
+  return src.slice(from, from + 800);
+}
+
+function parseConnectStmt(
+  src: string,
+  from: number,
+): { name: string; from: string; to: string } | null {
+  const m = /^\s*([A-Za-z0-9_.]+)\s+to\s+([A-Za-z0-9_.]+)/.exec(src.slice(from));
+  const cFrom = m?.[1];
+  const cTo = m?.[2];
+  if (!cFrom || !cTo) return null;
+  return { name: `connect_${cFrom}_to_${cTo}`.replace(/\./g, "_"), from: cFrom, to: cTo };
+}
+
 function parseConnection(
   src: string,
   from: number,
 ): { name: string; from: string; to: string } | null {
-  const slice = src.slice(from, from + 400);
-  const named = /^\s*([A-Za-z_][A-Za-z0-9_]*)/.exec(slice);
-  const name = named?.[1] ?? "connection";
-  const conn = /connect\s+([A-Za-z0-9_.]+)\s+to\s+([A-Za-z0-9_.]+)/.exec(slice);
-  const cFrom = conn?.[1];
-  const cTo = conn?.[2];
-  if (!cFrom || !cTo) return null;
-  return { name, from: cFrom, to: cTo };
+  const isDef = /^\s*def\b/.test(src.slice(from));
+  const head = /^\s*(?:def\s+)?([A-Za-z_][A-Za-z0-9_]*)(?:\s*:\s*[A-Za-z_][A-Za-z0-9_]*)?/.exec(
+    src.slice(from),
+  );
+  const name = head?.[1] ?? "connection";
+  const window = connectionWindow(src, from);
+  const connect = /connect\s+([A-Za-z0-9_.]+)\s+to\s+([A-Za-z0-9_.]+)/.exec(window);
+  if (connect?.[1] && connect[2]) {
+    return { name, from: connect[1], to: connect[2] };
+  }
+  const usageEnds = [
+    ...window.matchAll(/\bend\s+port\s+[A-Za-z_][A-Za-z0-9_]*\s*::>\s*([A-Za-z0-9_.]+)/g),
+  ].map((m) => m[1]);
+  if (usageEnds[0] && usageEnds[1]) {
+    return { name, from: usageEnds[0], to: usageEnds[1] };
+  }
+  if (isDef) return null;
+  const defEnds = [
+    ...window.matchAll(/\bend\s+port\s+([A-Za-z_][A-Za-z0-9_]*)\s*:\s*([A-Za-z_][A-Za-z0-9_.]*)/g),
+  ];
+  if (defEnds[0]?.[1] && defEnds[1]?.[1]) {
+    return { name, from: `${name}.${defEnds[0][1]}`, to: `${name}.${defEnds[1][1]}` };
+  }
+  return null;
 }
 
 function parseAttribute(
@@ -266,13 +373,18 @@ function resolveRef(
 ): string {
   if (nodes.some((n) => n.qname === ref)) return ref;
   const parts = ref.split(".");
-  if (parts.length === 2) {
-    const ownerHits = byShort.get(parts[0] ?? "") ?? [];
-    const portHits = byShort.get(parts[1] ?? "") ?? [];
-    const owner = ownerHits[0];
-    const port = portHits.find((q) => q.includes("::" + (parts[1] ?? ""))) ?? portHits[0];
+  if (parts.length >= 2) {
+    const portName = parts.at(-1) ?? "";
+    const ownerHint = parts[0] ?? "";
+    const ownerHits = byShort.get(ownerHint) ?? [];
+    const portHits = byShort.get(portName) ?? [];
+    const ownerQ = ownerHits[0];
+    const port =
+      portHits.find((q) => ownerQ && q.startsWith(ownerQ + "::") && q.endsWith("::" + portName)) ??
+      portHits.find((q) => q.endsWith("::" + portName)) ??
+      portHits[0];
     if (port) return port;
-    if (owner) return `${owner}::${parts[1]}`;
+    if (ownerQ) return `${ownerQ}::${portName}`;
   }
   const hits = byShort.get(ref) ?? [];
   return hits[0] ?? ref;
