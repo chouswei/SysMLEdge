@@ -1,0 +1,100 @@
+{
+  "track": "A1-bsi-remeter-d1-warm-cold",
+  "lock": "CEO Core A1 + claim pin d=1 ego",
+  "timestamp_asia_taipei": "2026-09-12T18:05:30.914032+08:00",
+  "memnetSession": "mn_0d395e61",
+  "cap_live_expected": "5903|10000",
+  "arm_A_once": {
+    "wall_clock_ms": 102.584,
+    "context_bytes": 4725,
+    "hits": 29,
+    "silent_drop": false,
+    "symbol": "backgroundSetIndicator",
+    "desk": "/tmp/foam-desk-gof/sysml-models"
+  },
+  "protocol": {
+    "arm_A": "grep -RIn backgroundSetIndicator FOAM_DIR once",
+    "arm_B": "pin-map qname=SEED depth=1 warm + cold>=5s idle",
+    "must_win": [
+      "context_B_leq_A warm+cold",
+      "no_silent_drop warm+cold"
+    ],
+    "wall": "log P/F only",
+    "system_seed": "skipped this cut"
+  },
+  "rows": [
+    {
+      "seed": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::backgroundSetIndicator",
+      "depth": 1,
+      "arm_A_bytes": 4725,
+      "arm_A_hits": 29,
+      "warm": {
+        "wall_clock_ms": 508.322,
+        "context_bytes": 655,
+        "hits": 3,
+        "silent_drop": false,
+        "truncation": false,
+        "returncode": 0,
+        "cmd": "/home/instmeasure/venvs/memnet/bin/memnet query pin-map --session mn_0d395e61 --locator qname=FoamDetectionLiteVer2::CoreVideoMonitorToolbar::backgroundSetIndicator --depth 1"
+      },
+      "cold": {
+        "wall_clock_ms": 607.884,
+        "context_bytes": 655,
+        "hits": 3,
+        "silent_drop": false,
+        "truncation": false,
+        "returncode": 0,
+        "cmd": "/home/instmeasure/venvs/memnet/bin/memnet query pin-map --session mn_0d395e61 --locator qname=FoamDetectionLiteVer2::CoreVideoMonitorToolbar::backgroundSetIndicator --depth 1"
+      },
+      "context_B_leq_A_warm": true,
+      "context_B_leq_A_cold": true,
+      "context_P_F": "P",
+      "nodrop_P_F": "P",
+      "wall_warm_vs_A_P_F": "F",
+      "must_win_seed": true
+    },
+    {
+      "seed": "FoamDetectionLiteVer2::CoreMonitorConfigPanel::backgroundSetIndicator",
+      "depth": 1,
+      "arm_A_bytes": 4725,
+      "arm_A_hits": 29,
+      "warm": {
+        "wall_clock_ms": 562.503,
+        "context_bytes": 649,
+        "hits": 3,
+        "silent_drop": false,
+        "truncation": false,
+        "returncode": 0,
+        "cmd": "/home/instmeasure/venvs/memnet/bin/memnet query pin-map --session mn_0d395e61 --locator qname=FoamDetectionLiteVer2::CoreMonitorConfigPanel::backgroundSetIndicator --depth 1"
+      },
+      "cold": {
+        "wall_clock_ms": 534.621,
+        "context_bytes": 649,
+        "hits": 3,
+        "silent_drop": false,
+        "truncation": false,
+        "returncode": 0,
+        "cmd": "/home/instmeasure/venvs/memnet/bin/memnet query pin-map --session mn_0d395e61 --locator qname=FoamDetectionLiteVer2::CoreMonitorConfigPanel::backgroundSetIndicator --depth 1"
+      },
+      "context_B_leq_A_warm": true,
+      "context_B_leq_A_cold": true,
+      "context_P_F": "P",
+      "nodrop_P_F": "P",
+      "wall_warm_vs_A_P_F": "F",
+      "must_win_seed": true
+    }
+  ],
+  "must_win_passed": true,
+  "claim_text": "BSI tips = depth=1 ego (owner/contains) — not depth=2 sibling neighbourhood.",
+  "proof_pass_claimed": false,
+  "soft_pass": false,
+  "InvenTree": "untouched",
+  "tip_untouched": true,
+  "serve_invent": false,
+  "map_sha256": "c2f16136e6f09f9a6c1ddf0026a15676f731575f1d2a1da6ccc2c464aa727bc3",
+  "memnet_llm": "0.19.9",
+  "stray_sids_discarded": [
+    "mn_dbabac66"
+  ],
+  "not_renamed_from": "mn_c7b75f2c"
+}
