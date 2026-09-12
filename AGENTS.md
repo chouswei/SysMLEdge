@@ -21,6 +21,6 @@
 - Add a graphic SysML canvas or modeler.
 - Widen **P1** to a dual-write editor. Foam proof still scores **projection fidelity + bind**.
 - Reopen KEEP MemNet sole, M1 narrow (CON 124 + nested on `mn_0d4f6178` @ 0.19.9), or LIVE bind gates.
-- Claim **(g)** proven or sell continuous same-session **(g)** until **(r)**. Mirror-lie **PASS** on dirty archive `mn_27ce8714` does **not** sell (g). **(g) is provisional.** MUST NOT claim `proof_pass`. **Lock (f) exact:** `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d`. Dirty `mn_27ce8714` = honesty archive only. H2H on p1-tiny / `mn_be03c1a9` = **plumbing only**. `proof_pass_claimed` stays **false** until Foam `mn_0d4f6178` H2H + cold unless Core re-locks P1 desk to tiny. Do not reopen Neo4j.
+- Claim **(g)** proven or sell continuous same-session **(g)** until **(r)**. Mirror-lie **PASS** on dirty archive `mn_27ce8714` does **not** sell (g). **(g) is provisional.** MUST NOT claim `proof_pass`. **Lock (f) exact:** `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d`. Dirty `mn_27ce8714` = honesty archive only. H2H on p1-tiny / `mn_be03c1a9` = **plumbing only** ([docs/proof/RUNLOG-2026-09-12-h2h-plumbing.md](docs/proof/RUNLOG-2026-09-12-h2h-plumbing.md)). `proof_pass_claimed` stays **false** until Foam `mn_0d4f6178` H2H + cold unless Core re-locks P1 desk to tiny. Do not reopen Neo4j.
 
 Contracts: [docs/P0-contracts.md](docs/P0-contracts.md). Locks: [docs/PRODUCT-LOCKS.md](docs/PRODUCT-LOCKS.md) (CEO Core 2026-09-12 pinned features). Plan: [docs/PRODUCT-PLAN.md](docs/PRODUCT-PLAN.md).

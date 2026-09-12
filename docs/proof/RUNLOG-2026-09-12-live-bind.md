@@ -65,7 +65,7 @@ Serve/MCP ports on the floor row (`:18765` / `:18766`). `proof_pass_claimed` sta
 | STALE fail-closed | **true** (`gql_read` default / `propose` refused while stale) |
 | `reproject` live | **true** |
 | MCP gates (`rev_status` / `gql_read` / `propose` / `reproject`) | **true** |
-| H2H | **held** — p1-tiny / `mn_be03c1a9` H2H would be **plumbing only**; wedge H2H = Foam `mn_0d4f6178` |
+| H2H | **plumbing logged** on `mn_be03c1a9` ([RUNLOG-2026-09-12-h2h-plumbing.md](RUNLOG-2026-09-12-h2h-plumbing.md)) — **not** Foam M5. Wedge H2H = Foam `mn_0d4f6178` |
 | cold | **held** (not run) |
 | `proof_pass_claimed` | **false** |
 
@@ -128,7 +128,7 @@ BIND_SMOKE_LIVE=1 npm run bind:live
 - Not treat dirty `mn_27ce8714` as live **(f)** (honesty archive only)
 - Not sell continuous same-session **(g)** until **(r)**
 - Not `proof_pass_claimed` (tiny H2H ≠ Foam wedge; invent meter ≠ P1)
-- Not Foam wedge H2H / cold (tiny H2H = plumbing only)
+- Not Foam wedge H2H / cold (tiny H2H = plumbing only). Exact table: [RUNLOG-2026-09-12-h2h-plumbing.md](RUNLOG-2026-09-12-h2h-plumbing.md).
 - Not Neo4j / dual-engine / dual-write editor
 - Not attach to `mn_0d4f6178` / `mn_b05a9869` / dirty `mn_27ce8714`
 - Not treat same-session append (rows 56→116) as replace-on-reproject (**(r)** deferred)

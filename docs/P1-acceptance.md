@@ -99,6 +99,8 @@ Same operator. Three fixed Foam questions: **usage / ownership / impact**.
 
 Log wall-clock, **context footprint** (prompt tokens per Q + whole-tree-dump baseline), **no silent drop** notes (narrow edges kept vs dropped), `rev.sha` / `rev.stale`. Feature count is **not** a win. MUST NOT treat parser gold **200** as the H2H bar.
 
+**Plumbing (not this row):** Memnetor table on `mn_be03c1a9` — `A_total` **6ms/1181B** vs `B_total` **1992ms/8557B**; B silent_drop **no**; post-H2H **56/5000** clean. CLI `head-to-head` is a **null scaffold**. `proof_pass_claimed: false`. Product H2H still Foam `mn_0d4f6178` + cold. [proof/RUNLOG-2026-09-12-h2h-plumbing.md](proof/RUNLOG-2026-09-12-h2h-plumbing.md).
+
 | # | Name | Pass criteria |
 |---|------|----------------|
 | 9 | Head-to-head | **wall-clock + context footprint + no silent drop** on the three **Foam** Qs, scoring the **narrow** claim (`mn_0d4f6178` CON **124** + nested ego). Competitor = tens-of-minutes grep, not Cameo, **not** gold-200. H2H on **p1-tiny** / `mn_be03c1a9` = **plumbing only** — MUST NOT set `proof_pass_claimed`. Context footprint **far smaller** than whole-tree dump. |
@@ -127,7 +129,7 @@ Log wall-clock, **context footprint** (prompt tokens per Q + whole-tree-dump bas
 | **M2** | Query slice | Same 3 Foam Qs via `pin_map` and/or `gql_*`. **SysMLEdge** binds `rev.sha` + `rev.stale=false` (absent on MemNet wire). **UNKNOWN = fail that line.** Impact: closure on gold **or** narrowed neighbourhood/usage (see above). |
 | **M3** | STALE/reproject | **SysMLEdge-owned** bind. Mutate → fail-closed → `propose` refused → `reproject` → live. **Lock (f) exact:** clean `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d`. Timed / scripted. MUST NOT invent first-class STALE inside MemNet. MUST NOT same-sid replace-ingest **(r)**. Dirty `mn_27ce8714` is archive only. Theater if bind is missing. |
 | **M4** | Bounce regression | **Re-run once** in the 2-week window on **0.19.8** TCP-shared: `session_save` → restart **serve + MCP together** → load → gold `pin_map` **non-empty**. Record memnet-llm version. **Fail if** MCP `session_list` ≠ serve. Known: **FAIL on 0.19.7**. Serve death without `session_save` loses in-process sessions. |
-| **M5** | Wall-clock + context vs grep | **Must-fix:** timed H2H on **0.19.8+TCP** after `rev` bind, on the **Foam** desk (`mn_0d4f6178` CON **124** + nested). Same 3 Foam Qs vs grep/LSP. **MUST time wall-clock**. Also **context footprint**. H2H on **p1-tiny** / `mn_be03c1a9` = **plumbing only** — MUST NOT set `proof_pass_claimed`. Gold-200 stays out. Kill: tip Path-B sold as bind; H2H vs gold-200; tiny soft-pass. May share plumbing logs with row 9; wedge pass = Foam only unless Core re-locks P1 desk to tiny. |
+| **M5** | Wall-clock + context vs grep | **Must-fix:** timed H2H on **0.19.8+TCP** after `rev` bind, on the **Foam** desk (`mn_0d4f6178` CON **124** + nested). Same 3 Foam Qs vs grep/LSP. **MUST time wall-clock**. Also **context footprint**. H2H on **p1-tiny** / `mn_be03c1a9` = **plumbing only** (`A_total` **6ms/1181B** vs `B_total` **1992ms/8557B**; B silent_drop **no**; [RUNLOG-2026-09-12-h2h-plumbing.md](proof/RUNLOG-2026-09-12-h2h-plumbing.md)) — MUST NOT set `proof_pass_claimed`. CLI `head-to-head` is a **null scaffold**. Gold-200 stays out. Kill: tip Path-B sold as bind; H2H vs gold-200; tiny soft-pass. Wedge pass = Foam only unless Core re-locks P1 desk to tiny. |
 
 | Outcome | Engine / product rule |
 |---------|------------------------|

@@ -41,6 +41,7 @@ Env:
   FOAM_SOURCE_SHA                  Foam git SHA for gold freeze
 
 Proof M1–M5 is scaffolding only. This CLI MUST NOT claim a Foam/MemNet proof pass.
+  head-to-head is a null scaffold (known gap). Plumbing p1-tiny meters are operator-logged, not this command.
 `);
   process.exit(2);
 }
@@ -109,7 +110,9 @@ async function main(argv: string[]): Promise<void> {
     if (out) {
       await mkdir(dirname(resolve(out)), { recursive: true });
       await writeFile(out, json);
-      console.error(`wrote ${out} (wall-clock and tokens still null; proof not executed)`);
+      console.error(
+        `wrote ${out} (null scaffold: wall-clock and tokens still null; plumbing H2H ≠ product pass; see docs/proof/RUNLOG-2026-09-12-h2h-plumbing.md)`,
+      );
     } else {
       process.stdout.write(json);
     }

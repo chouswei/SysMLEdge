@@ -74,6 +74,9 @@ test("proof harness on fake bind is shape-only and does not claim pass", async (
   }
   const h2h = emptyHeadToHead();
   assert.equal(h2h.questions.length, 3);
+  assert.equal(h2h.proof_pass_claimed, false);
+  assert.equal(h2h.status, "NOT_EXECUTED");
+  assert.match(h2h.known_gap, /null scaffold/);
 });
 
 test("smokeBind FAKE: bound stale=false then mutate → STALE → propose refused → reproject live", async () => {
