@@ -4,6 +4,8 @@
  */
 
 export const MEMNET_LLM_FLOOR = "0.19.8";
+/** Path-B CON from ingest (MemNet #158). Bounce stays 0.19.8. LIVE bind still gated. */
+export const MEMNET_PATH_B_CON_FLOOR = "0.19.9";
 export const MEMNET_SERVE_PORT_DEFAULT = 18765;
 export const MEMNET_MCP_PORT_DEFAULT = 18766;
 

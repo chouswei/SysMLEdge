@@ -9,8 +9,11 @@ export interface SysmlNode {
   properties: Record<string, string>;
 }
 
+/** Structural kinds projected from SysML. MUST NOT include mission TSK owns. */
+export type GroundEdgeKind = "connection" | "contains" | "owns" | "ends";
+
 export interface SysmlEdge {
-  kind: "connection";
+  kind: GroundEdgeKind;
   qname: string;
   path: string;
   from: string;
@@ -52,7 +55,7 @@ export interface BindState {
   importedAt: string;
 }
 
-export const MAPPING_VERSION = "p1-tiny-0.1";
+export const MAPPING_VERSION = "p1-foam-ego-0.2";
 
 export const STALE_HINT =
   "reproject from current SysML, or read with staleOk=true (read-only)";

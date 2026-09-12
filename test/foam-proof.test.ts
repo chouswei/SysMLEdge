@@ -8,6 +8,8 @@ import {
   MemNetEnvError,
   assertLiveMemNetEnv,
   parseMemnetVersion,
+  MEMNET_PATH_B_CON_FLOOR,
+  versionAtLeastFloor,
 } from "../src/memnet/env.js";
 import { emptyHeadToHead, runProofHarness, smokeBind } from "../src/proof/harness.js";
 import { FOAM_QUESTIONS } from "../src/proof/questions.js";
@@ -41,6 +43,8 @@ test("live env fails closed without TCP share or 0.19.8", () => {
   });
   assert.equal(ok.servePort, 18765);
   assert.equal(ok.mcpPort, 18766);
+  assert.equal(versionAtLeastFloor("0.19.9", MEMNET_PATH_B_CON_FLOOR), true);
+  assert.equal(versionAtLeastFloor("0.19.8", MEMNET_PATH_B_CON_FLOOR), false);
 });
 
 test("gold extract on p1-tiny has nested usage; proof not claimed", async () => {

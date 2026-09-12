@@ -61,6 +61,7 @@ export function buildGoldFromParsed(
   const nested = parts.filter(
     (n) => n.ownerQname && partQ.has(n.ownerQname),
   );
+  const connections = parsed.edges.filter((e) => e.kind === "connection");
   const nestedHand = FOAM_NESTED_HAND_CREATE_HINTS.map((hint) => {
     const qnames = parts
       .filter((n) => n.qname.split("::").pop() === hint)
@@ -72,7 +73,7 @@ export function buildGoldFromParsed(
       status: (qnames.length > 0 ? "AUTO" : "UNKNOWN") as "AUTO" | "HAND_CREATE_NEEDED" | "IDENTIFIED" | "UNKNOWN",
       ingest_note:
         qnames.length > 0
-          ? "Parser emits nested usages; FakeMemNet copies them with no hand CREATE. Live MemNet ingest CREATE is UNPROVEN (not M1 pass)."
+          ? "Parser emits nested usages; FakeMemNet projects contains/owns/ends with no hand CREATE and no mission-TSK owns. Live MemNet Path-B CON ingest is ≥0.19.9+TCP (not this gold freeze)."
           : "Not found in this tree.",
     };
   });
@@ -90,14 +91,14 @@ export function buildGoldFromParsed(
       packages: packages.length,
       parts: parts.length,
       ports: ports.length,
-      connections_parsed: parsed.edges.length,
+      connections_parsed: connections.length,
       nested_parts: nested.length,
     },
     tree_files: [...parsed.files].sort(),
     packages: sortUniq(packages),
     parts: sortUniq(parts.map((n) => n.qname)),
     ports: sortUniq(ports.map((n) => n.qname)),
-    connections: parsed.edges
+    connections: connections
       .map((e) => ({ qname: e.qname, from: e.from, to: e.to }))
       .sort((a, b) => a.qname.localeCompare(b.qname)),
     nested_parts: nested
@@ -189,7 +190,9 @@ async function scanUnknownConnections(
   parsed: ParsedTree,
 ): Promise<GoldUnknown[]> {
   const files = await listSysmlFiles(ssotDir);
-  const parsedQ = new Set(parsed.edges.map((e) => e.qname));
+  const parsedQ = new Set(
+    parsed.edges.filter((e) => e.kind === "connection").map((e) => e.qname),
+  );
   const unknown: GoldUnknown[] = [];
   const nameRe = /^[ \t]*connection\s+(?!def\b)([A-Za-z_][A-Za-z0-9_]*)/gm;
   for (const abs of files) {

@@ -69,7 +69,7 @@ Harness `sysmledge proof --live` only asserts the env. It does **not** restart p
 |--|------|------|
 | CI | default `MEMNET_BACKEND=fake` | skip |
 | Bind / STALE / propose / reproject | **FAKE green** (`npm run bind:smoke`) | same SysMLEdge bind when TCP up ([LIVE-BIND-CHECKLIST.md](LIVE-BIND-CHECKLIST.md)) |
-| M1 ingest fidelity | structure only | Path A AFTER: TSK ego CON=29 + nested via ops — **not bind**. Path-B CON = **0.19.9 (#158) pending Pi roll** |
+| M1 ingest fidelity | FAKE ego: SysML contains/owns/ends; gold reconstruct counts | Path A AFTER: TSK ego CON=29 + nested via ops — **not bind**. Path-B CON = **0.19.9 (#158) pending Pi roll**. Attach: [LIVE-0199-ATTACH.md](LIVE-0199-ATTACH.md) |
 
 ## LIVE M1 (Memnetor 2026-09-12) — **not SysMLEdge bind**
 
