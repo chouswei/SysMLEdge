@@ -3,19 +3,49 @@
 Pilot SoI: `chouswei/modelbasedPrj-itri-vedan-foam-detection` (`sysml-models/`).
 Engine: **MemNet**. No Kuzu. No SaaS accounts (P1 = local project).
 
-Normative contracts: [P0-contracts.md](P0-contracts.md). Product locks: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md) (**NARROW**, Elon/Horcrux 2026-09-11; **Sysmler KEEP / NARROW** + **CEO Core P1 gate**, 2026-09-12). Living plan: [PRODUCT-PLAN.md](PRODUCT-PLAN.md). Business: [BUSINESS-PLAN.md](BUSINESS-PLAN.md).
+Normative contracts: [P0-contracts.md](P0-contracts.md). Product locks: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md) (**NARROW**, Elon/Horcrux 2026-09-11; **Sysmler KEEP / NARROW** + **CEO Core P1 gate** + **Edison Core experiment**, 2026-09-12). Living plan: [PRODUCT-PLAN.md](PRODUCT-PLAN.md). Business: [BUSINESS-PLAN.md](BUSINESS-PLAN.md).
 
 This document is the P1 pass/fail sheet. It does not implement runtime.
 
-### P1 gate (Sysmler KEEP / NARROW + CEO Core 2026-09-12)
+### P1 gate (Edison + CEO Core 2026-09-12)
 
-No scope widen. Source: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#ceo-core-p1-gate-2026-09-12).
+No scope widen. Source: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#ceo-core-p1-gate-2026-09-12). **Cite:** Edison Core (Thomas Alva Edison / Horcrux) + CEO Core 2026-09-12.
+
+**Sequence:** M1 fidelity → `rev` bind → timed H2H → cold non-Core.
+
+**Pass only:** live `0.19.8`+TCP after bind; wall-clock + context vs same Foam Qs; fail-closed STALE; no silent drop.
+
+**Kill theater:** fake CI, tip-as-bind, H2H before meters.
 
 **Must-fix before Foam gold:** full-clone construct matrix; nested ingest without hand CREATE (or narrow the claim); timed H2H on 0.19.8+TCP after `rev` bind.
 
 **Kill risks:** silent drop (`connections_parsed:0` / omitted files); tip Path-B sold as bind; full KerML in 2 weeks; shrink zip to parts-only.
 
 **OK:** propose `delta.sysml` + human Save; narrow impact until proven; scaffold ≠ P1.
+
+### Experiment sequence (Edison Core — Thomas Alva Edison / Horcrux 2026-09-12)
+
+**KEEP / NARROW.** 2-week Foam (9–12 + M1–M5) is the right first cycle. Engine + story locks untouched. Scaffold ≠ P1. Source: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#edison-core-experiment-thomas-alva-edison--horcrux-2026-09-12).
+
+**Do not invert:**
+
+1. **M1** gold fidelity (construct matrix + nested without hand-CREATE, **or** narrow) + **publish counts**
+2. SysMLEdge `rev.sha` / STALE / reproject bind (**M2–M3**)
+3. Timed H2H wall-clock + context on **0.19.8+TCP after bind** (**M5** / row **9**)
+4. Then cold non-Core yes/no (**row 12**)
+
+**Day-1 instruments:** env lock 0.19.8+TCP; M1 counts; bind existence (`rev.sha` + stale on structure read); STALE smoke (mutate → STALE → `propose` refused).
+
+**Refuse:** P2 UI / canvas / IDE / Pro–Team–marketplace; full KerML; parts-only zip; dual-engine / Kuzu; C rewrite now; second desk; MemNet mission as `project@rev`; timing H2H before M1+bind; scaffold CI as gold; expand `pin_map` / impact before fidelity.
+
+| Fail | Stop |
+|------|------|
+| Silent drop / nested hand-CREATE un-narrowed | Stop the wedge |
+| No `rev` bind | STALE theater — stop the story |
+| M1 or M2 fail | MemNet **not** a sole-engine claim |
+| M5 loses with numbers **after** fidelity | Reopen engine **form** only then |
+| Row 12 cold **no** | Kill Pro/beachhead |
+| Hours on freeze list | Cut immediately |
 
 Buyer roots **1, 2, 3, and 6** (trust, SSOT owner, beat-grep ask, ship rev) MUST pass via the **eight contract** rows below. Mapping: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md). Do not add extra **buyer-root** rows. Foam proof **9–12** is the NARROW wedge bar, not a ninth buyer-root row. Roots 4, 5, and 7 are locks, not extra P1 tests.
 
@@ -42,7 +72,7 @@ Buyer roots **1, 2, 3, and 6** (trust, SSOT owner, beat-grep ask, ship rev) MUST
 
 ## Foam proof (2-week, ALL required) — NARROW 2026-09-11
 
-Hard pass/fail. Cited from [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md), [PRODUCT-PLAN.md](PRODUCT-PLAN.md), [BUSINESS-PLAN.md](BUSINESS-PLAN.md). **Demand ALL four.** Contract rows 1–8 above remain; this section extends them. Evidence is a scripted log or a short recording — **no slides**.
+Hard pass/fail. Cited from [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md), [PRODUCT-PLAN.md](PRODUCT-PLAN.md), [BUSINESS-PLAN.md](BUSINESS-PLAN.md). **Demand ALL four.** Contract rows 1–8 above remain; this section extends them. Evidence is a scripted log or a short recording — **no slides**. **Edison sequence:** row 9 only after M1 + `rev` bind; row 12 last.
 
 **Claimed pains 1–5** ([PRODUCT-LOCKS.md](PRODUCT-LOCKS.md)): **1** grep latency; **2** big SysML + small LLM context / **context footprint** (GQL/`pin_map` slices); **3** STALE blindness / wrong rev; **4** chat-as-SSOT (no ship-rev zip, no propose-only trail); **5** mid-flight model change → re-entrant reproject. **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team ACL.
 
@@ -81,7 +111,7 @@ Log wall-clock, **context footprint** (prompt tokens per Q + whole-tree-dump bas
 
 ## MemNet proof (2-week, ALL required) — Elon 2026-09-11
 
-**Alongside Foam.** KEEP MemNet as sole engine; **NARROW** the surface. No Kuzu hedge. **Kill only if** this proof fails. Amendment (Memnetor 2026-09-09/10): [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#memnet-engine-elon-hard-review-2026-09-11).
+**Alongside Foam.** KEEP MemNet as sole engine; **NARROW** the surface. No Kuzu hedge. **Kill only if** this proof fails. Amendment (Memnetor 2026-09-09/10): [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#memnet-engine-elon-hard-review-2026-09-11). **Sequence:** Edison Core — M1 before bind; timed H2H (M5 / row 9) only after M1+bind; row 12 last. MUST NOT invert.
 
 **Proof env:** `memnet-llm==0.19.8` + TCP-shared MCP (`MEMNET_MCP_TRANSPORT=tcp`, serve `:18765` / mcp `:18766`). UNKNOWN on a required field = **fail that line**.
 
@@ -108,4 +138,4 @@ Log wall-clock, **context footprint** (prompt tokens per Q + whole-tree-dump bas
 - **Contract:** all eight rows (1–8) pass on the Foam pilot tree with MemNet + MCP (or CLI stand-in for the same contracts). P1 = Foam-complete + these rows — **not** whole-language coverage.
 - **Wedge:** all four Foam proof items (9–12) pass (NARROW fail/pass unchanged).
 - **Engine:** all five MemNet proof items (M1–M5) pass. Until then MemNet is KEEP/NARROW, not a dual-engine hedge.
-- **Not done:** scaffold ≠ P1 ([#11](https://github.com/chouswei/SysMLEdge/pull/11) / [#12](https://github.com/chouswei/SysMLEdge/pull/12)). CEO Core must-fix still open.
+- **Not done:** scaffold ≠ P1 ([#11](https://github.com/chouswei/SysMLEdge/pull/11) / [#12](https://github.com/chouswei/SysMLEdge/pull/12)). CEO Core must-fix still open. Edison: do not invert M1 → bind → H2H → row 12.
