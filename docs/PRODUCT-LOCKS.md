@@ -22,12 +22,13 @@ Product-story locks are **exact** in [CEO Core — Steve taste](#ceo-core--steve
 | **Sysmler Core** (2026-09-12) | **KEEP / NARROW** the spine. Cite CEO Core P1 gate (exact locks below). |
 | **CEO Core P1 gate** (2026-09-12) | Exact locks: **Sequence** / **Pass only** / **Kill theater** (cite Edison). Must-fix / kill risks / OK. Scaffold ≠ P1. |
 | **Edison Core experiment** (Thomas Alva Edison / Horcrux, 2026-09-12) | **KEEP / NARROW** the 2-week Foam cycle (9–12 + M1–M5). Do **not** invert sequence. Engine + story locks untouched. Scaffold ≠ P1. |
+| **CEO Core — Steve + Elon agree** (2026-09-12) | **M1 FAIL still gates.** LIVE bind deferred until Post-A/B clear **or** published narrow+counts. **KEEP MemNet sole** — no Neo4j / dual-engine / Kuzu / C rewrite until fidelity green **and** timed H2H loses with numbers. Gaps = Foam projection fidelity + SysMLEdge reproject ego, **not** the wrong store. Path-B CON floor **≥0.19.9+TCP**. |
 
 **Taste risks** (Steve Jobs + CEO Core 2026-09-12): **Kill smells:** IDE / canvas / MemNet tip = product. Prior: Cameo-lite; MemNet-wrapper (tip Path-B ≠ product); yet-another-MCP without beat-grep cold feel.
 
 **Strongest cut:** Docs discipline ≠ product-market proof. Foam Phase-1 hours on P2 UI = kill signal.
 
-NARROW fail/pass gates above **stand**. Mapping and SSOT rules below do **not** reopen P2 UI, Pro, or AGI copy. **plan ≠ product** (CEO), **don’t-migrate** (Elon Core 2026-09-12), **Sysmler KEEP / NARROW**, **CEO Core P1 gate**, and **Edison Core experiment** (Thomas Alva Edison / Horcrux 2026-09-12) stand with those gates (sections below). This taste cut does **not** reopen MemNet sole, `rev`/STALE ownership, plan ≠ product, or don’t-migrate.
+NARROW fail/pass gates above **stand**. Mapping and SSOT rules below do **not** reopen P2 UI, Pro, or AGI copy. **plan ≠ product** (CEO), **don’t-migrate** (Elon Core 2026-09-12), **Sysmler KEEP / NARROW**, **CEO Core P1 gate**, **Edison Core experiment** (Thomas Alva Edison / Horcrux 2026-09-12), and **CEO Core — Steve + Elon agree** (2026-09-12) stand with those gates (sections below). This taste cut does **not** reopen MemNet sole, `rev`/STALE ownership, plan ≠ product, or don’t-migrate.
 
 ### Freeze (do not spend the two weeks on)
 
@@ -83,6 +84,21 @@ This file does not implement runtime.
 
 ---
 
+## CEO Core — Steve + Elon agree (2026-09-12)
+
+**Cite:** Steve Jobs + Elon Musk / CEO Core 2026-09-12. **Agree.** Engine KEEP sole / NARROW / improve-only **stand**. This file does not implement runtime.
+
+LIVE M1 on `mn_b05a9869` is **FAIL** (BEFORE Path A: CON=0 session-wide / nested absent). Path A AFTER meters (TSK ego CON=29, nested via ops) ≠ gold and **≠ SysMLEdge bind**. Exact meters: [proof/RUNLOG-2026-09-12-m1-bind.md](proof/RUNLOG-2026-09-12-m1-bind.md).
+
+| Lock | Rule |
+|------|------|
+| **M1 FAIL still gates** | LIVE bind is **deferred** until **Post-A/B clear** **or** a **published** narrow + counts. MUST NOT claim LIVE `rev.sha` / STALE / reproject while M1 is FAIL without that publish. FAKE bind smoke ≠ LIVE bind. Path A CON=29 / nested-in-ego ≠ bind. |
+| **KEEP MemNet sole** | **No Neo4j / dual-engine / Kuzu / C rewrite** until fidelity is **green** **and** timed H2H **loses with numbers**. Same reopen bar as engine form. MUST NOT reopen on taste or “wrong store”. |
+| **Gaps** | Foam **projection fidelity** + SysMLEdge **reproject ego**. **Not** the wrong store. CON=0 / nested absent / TSK-only ego is a projection + ego problem. MUST NOT treat it as a reason to swap MemNet. |
+| **Path-B CON floor** | **≥ memnet-llm==0.19.9 + TCP**. Bounce remains proven on **0.19.8**. Path-B CON ingest is **0.19.9** (MemNet **#158**). MUST NOT claim Path-B CON on Pi below that floor. |
+
+---
+
 ## plan ≠ product (CEO Core, 2026-09-12)
 
 **plan ≠ product.** Ready to *build* P1; not ready to *serve* projects until **Foam proof** + **MemNet proof** ([P1-acceptance.md](P1-acceptance.md) 9–12 and M1–M5) **and** **SysMLEdge MCP bind** ([P1-acceptance.md](P1-acceptance.md) row 8) pass.
@@ -103,7 +119,7 @@ Cited with NARROW fail/pass and MemNet M1–M5 above. Those gates **stand**. Thi
 2. Agents / repos pointed at MemNet mission sessions as `project@rev`.
 3. “Almost P1” migration of a second repo when only Path-B / `pin_map` works.
 4. Hours on P2 UI or multi-repo onboarding before timed head-to-head **and** gold fidelity.
-5. Pinning below **memnet-llm==0.19.8** or dropping TCP share.
+5. Pinning below **memnet-llm==0.19.8** or dropping TCP share. Path-B CON claimed below **≥0.19.9+TCP**. LIVE bind claimed while **M1 FAIL** without Post-A/B clear or published narrow+counts.
 
 **Optional** only after Foam **gold** bind + STALE **green**: read-only replay of the same **eight** P1 contract rows on a second repo. **Not** required for P1.
 
@@ -125,15 +141,15 @@ This review does **not** pass Foam gold. P1 gate = **CEO Core** exact locks (nex
 
 ## CEO Core P1 gate (2026-09-12)
 
-**Cite:** Edison Core (Thomas Alva Edison / Horcrux) + CEO Core 2026-09-12. No scope widen. Same text in [P1-acceptance.md](P1-acceptance.md).
+**Cite:** Edison Core (Thomas Alva Edison / Horcrux) + CEO Core 2026-09-12. **Steve + Elon agree** (M1 FAIL / KEEP sole / Path-B CON floor) is exact in the section above. No scope widen. Same text in [P1-acceptance.md](P1-acceptance.md) except the later Steve+Elon floor (this sheet).
 
 **Sequence:** M1 fidelity → `rev` bind → timed H2H → cold non-Core.
 
-**Pass only:** live `0.19.8`+TCP after bind; wall-clock + context vs same Foam Qs; fail-closed STALE; no silent drop.
+**Pass only:** live TCP after bind; bounce proven on `0.19.8`; Path-B CON **≥0.19.9+TCP**; wall-clock + context vs same Foam Qs; fail-closed STALE; no silent drop. LIVE bind still gated by **M1 FAIL** (deferred until Post-A/B clear or published narrow+counts).
 
-**Kill theater:** fake CI, tip-as-bind, H2H before meters.
+**Kill theater:** fake CI, tip-as-bind, H2H before meters, LIVE bind while M1 FAIL unpublished.
 
-**Must-fix before Foam gold:** full-clone construct matrix; nested ingest without hand CREATE (or narrow the claim); timed H2H on 0.19.8+TCP after `rev` bind.
+**Must-fix before Foam gold:** full-clone construct matrix; nested ingest without hand CREATE (or narrow the claim); timed H2H on TCP after `rev` bind (Path-B CON on **≥0.19.9+TCP**).
 
 **Kill risks:** silent drop (`connections_parsed:0` / omitted files); tip Path-B sold as bind; full KerML in 2 weeks; shrink zip to parts-only.
 
@@ -153,21 +169,21 @@ Same sequence, Day-1 instruments, refuse list, and fail-fast in [P1-acceptance.m
 
 1. **M1** gold fidelity (construct matrix + nested without hand-CREATE, **or** narrow the claim) + **publish counts**
 2. SysMLEdge `rev.sha` / STALE / reproject bind (**M2–M3**)
-3. Timed H2H wall-clock + context on **0.19.8+TCP after bind** (**M5** / row **9**)
+3. Timed H2H wall-clock + context on **TCP after bind** (**M5** / row **9**). Path-B CON on **≥0.19.9+TCP**.
 4. Then cold non-Core yes/no (**row 12**)
 
 ### Day-1 instruments
 
 | Instrument | Proof |
 |------------|-------|
-| Env lock | `memnet-llm==0.19.8` + TCP |
-| M1 counts | Published construct / ingest counts |
+| Env lock | Bounce: `memnet-llm==0.19.8` + TCP. Path-B CON: **≥0.19.9+TCP**. |
+| M1 counts | Published construct / ingest counts **or** published narrow + counts (M1 FAIL still gates LIVE bind) |
 | Bind existence | `rev.sha` + stale on every structure read |
 | STALE smoke | mutate → STALE → `propose` refused |
 
 ### Refuse (this cycle)
 
-P2 UI / canvas / IDE / Pro–Team–marketplace; full KerML; parts-only zip; dual-engine / Kuzu; C rewrite now; second desk; MemNet mission as `project@rev`; timing H2H before M1+bind; scaffold CI as gold; expand `pin_map` / impact before fidelity.
+P2 UI / canvas / IDE / Pro–Team–marketplace; full KerML; parts-only zip; Neo4j / dual-engine / Kuzu; C rewrite now; second desk; MemNet mission as `project@rev`; timing H2H before M1+bind; LIVE bind while M1 FAIL unpublished; scaffold CI as gold; expand `pin_map` / impact before fidelity; treat projection gaps as a store swap.
 
 ### Fail-fast
 
@@ -178,7 +194,10 @@ P2 UI / canvas / IDE / Pro–Team–marketplace; full KerML; parts-only zip; dua
 | M1 or M2 fail | MemNet **not** a sole-engine claim |
 | M5 loses with numbers **after** fidelity | Reopen engine **form** only then |
 | Row 12 cold **no** | Kill Pro/beachhead |
+| M1 FAIL without Post-A/B clear or published narrow+counts | LIVE bind deferred. KEEP MemNet sole — do **not** swap store |
 | Hours on freeze list | Cut immediately |
+
+M1/M2 fail still means MemNet is **not a sole-engine claim**. It does **not** reopen Neo4j / dual-engine. **Cite:** Steve + Elon agree.
 
 ---
 
@@ -208,7 +227,7 @@ P1 MUST NOT be declared won on feature count. Scoring: [P1-acceptance.md](P1-acc
 
 ## MemNet engine (Elon hard review, 2026-09-11)
 
-**Verdict: KEEP MemNet as sole SysMLEdge engine — NARROW the MemNet surface.** No dual-engine / Kuzu hedge. **Kill only if** the 2-week MemNet proof fails. **Stands.**
+**Verdict: KEEP MemNet as sole SysMLEdge engine — NARROW the MemNet surface.** No Neo4j / dual-engine / Kuzu hedge. **Kill only if** the 2-week MemNet proof fails. **Stands.** **Cite:** Steve + Elon agree 2026-09-12. Gaps = Foam projection fidelity + SysMLEdge reproject ego, **not** the wrong store.
 
 **Why narrow:** MemNet is session / mission / `pin_map` goldfish (catalog ≠ mission; serve + MCP MUST share TCP; empty `pin_map` / `session_not_found` known). SysMLEdge `rev.sha` / STALE / reproject / `gql_*` is a **product face on top** — not proven identical to the Path-B mission loop.
 
@@ -222,32 +241,32 @@ Verified (do not relitigate):
 |------|--------|
 | Tip Path-B + `pin_map` | **PASS** on `mn_b05a9869` TCP-shared. Nested e.g. `backgroundSetIndicator` needed **manual CREATE**. Impact **PARTIAL**. Path-B wall-clock **UNKNOWN**. |
 | Serve + MCP | **PASS** with `MEMNET_MCP_TRANSPORT=tcp`, serve `:18765` / mcp `:18766`, **memnet-llm==0.19.8**. Pre-fix in-process → `session_not_found`. |
-| Bounce | **PASS** on **0.19.8**. **FAIL** on **0.19.7**. **Floor = 0.19.8**. |
+| Bounce | **PASS** on **0.19.8**. **FAIL** on **0.19.7**. Bounce floor = **0.19.8**. Path-B CON floor = **≥0.19.9+TCP** (MemNet **#158**; pending Pi roll). |
 | `rev.sha` / STALE / reproject@SHA | **CONFIRMED ABSENT** on the MemNet wire — **SysMLEdge-to-build**. Without SysMLEdge owning the bind, STALE proof is **theater**. |
 | Serve death | Loses in-process sessions without `session_save`. |
-| Kuzu | **Not necessary** for tip `pin_map` / Path-B. |
+| Kuzu / Neo4j | **Not necessary** for tip `pin_map` / Path-B. Gaps are projection + reproject ego, **not** the store. |
 
-**Proof env lock:** `memnet-llm==0.19.8` + **TCP-shared** MCP (`MEMNET_MCP_TRANSPORT=tcp`). Bounce is a **regression re-run once** in the 2-week window (not a new feature).
+**Proof env lock:** bounce `memnet-llm==0.19.8` + **TCP-shared** MCP (`MEMNET_MCP_TRANSPORT=tcp`). Path-B CON: **≥0.19.9+TCP**. Bounce is a **regression re-run once** in the 2-week window (not a new feature).
 
 **Risks (re-ranked):**
 
-1. **Contract bridge** — SysMLEdge must own `rev` / STALE / reproject@SHA (was risk #3; now #1).
-2. Silent drop / **nested** fidelity (manual CREATE gap).
-3. Version / ops floor: **0.19.8 + TCP**. Latency still **UNKNOWN** until timed (M5).
+1. **Contract bridge** — SysMLEdge must own `rev` / STALE / reproject@SHA (was risk #3; now #1). LIVE bind deferred while **M1 FAIL** (Steve + Elon agree).
+2. Silent drop / **nested** fidelity (manual CREATE gap) — Foam **projection** + SysMLEdge **reproject ego**, not a store swap.
+3. Version / ops: bounce **0.19.8 + TCP**; Path-B CON **≥0.19.9+TCP**. Latency still **UNKNOWN** until timed (M5).
 
 **2-week MemNet proof (ALL pass/fail, alongside Foam):** [P1-acceptance.md](P1-acceptance.md) M1–M5 (tightened below).
 
 | Fail | Rule |
 |------|------|
 | **M1 or M2 fail** | MemNet **not ready** as sole engine. Stop Pro/beachhead. Keep as internal tool or fix fidelity. |
-| **Dual-engine / Kuzu** | **No.** Kuzu is not necessary for tip Path-B. Dual-engine only if Memnetor becomes a **hard blocker** later. Default: **no Kuzu**. |
+| **Dual-engine / Kuzu / Neo4j** | **No.** Kuzu/Neo4j are not necessary for tip Path-B. Dual-engine only if Memnetor becomes a **hard blocker** later **and** fidelity is green **and** timed H2H loses with numbers. Default: **no Kuzu, no Neo4j**. |
 
 ### NOT build (2 weeks) — MemNet surface
 
 In addition to the NARROW product freeze:
 
 1. Full KerML map
-2. Kuzu / Cypher dual-engine
+2. Kuzu / Cypher / **Neo4j** dual-engine
 3. `snap_model` / PKG as mission SSOT
 4. Multi-tenant / billing / ACL / InvenTree
 5. Graph write-back as SSOT
@@ -257,7 +276,7 @@ In addition to the NARROW product freeze:
 9. Autopilot / bot-merge
 10. First-class `rev` / STALE inside MemNet (SysMLEdge owns the bind)
 11. A **MemNet product roadmap** (engine features not required for M1–M5 / Foam fidelity)
-12. **C rewrite now** (or Rust/other engine-form rewrite). Prove on **0.19.8 + TCP** first.
+12. **C rewrite now** (or Rust/other engine-form rewrite). Prove bounce on **0.19.8 + TCP** and Path-B CON on **≥0.19.9+TCP** first.
 
 ### Improve only (CEO Core, 2026-09-11)
 
@@ -266,11 +285,11 @@ In addition to the NARROW product freeze:
 | Owner | Stays |
 |-------|-------|
 | **SysMLEdge** | `rev.sha` / STALE / reproject@SHA. Product face; bind is not on the MemNet wire. |
-| **MemNet** | Engine at **memnet-llm==0.19.8 + TCP**. Do not fork a SysMLEdge MemNet line. Do not rewrite the engine in C/Rust/other in this cut. |
+| **MemNet** | Engine: bounce **memnet-llm==0.19.8 + TCP**; Path-B CON **≥0.19.9+TCP**. Do not fork a SysMLEdge MemNet line. Do not rewrite the engine in C/Rust/other in this cut. Do not swap to Neo4j. |
 
-**Engine form:** prove on **memnet-llm==0.19.8 + TCP** first. Reopen C / Rust / other **only if** wall-clock **loses with numbers** after **fidelity is green** (M1–M2 / Foam gold). MUST NOT reopen on taste, “faster in C”, or before M5 is timed.
+**Engine form:** prove on TCP first (bounce **0.19.8**; Path-B CON **≥0.19.9**). Reopen C / Rust / Neo4j / other **only if** wall-clock **loses with numbers** after **fidelity is green** (M1–M2 / Foam gold). MUST NOT reopen on taste, “faster in C”, “wrong store”, or before M5 is timed.
 
-MUST NOT: add MemNet features beyond what M1–M5 / Foam fidelity require; put `rev` / STALE / reproject inside MemNet; dual-engine / Kuzu; treat this product as MemNet's backlog.
+MUST NOT: add MemNet features beyond what M1–M5 / Foam fidelity require; put `rev` / STALE / reproject inside MemNet; dual-engine / Kuzu / Neo4j; treat this product as MemNet's backlog; treat M1 FAIL gaps as a store swap.
 
 ---
 
@@ -388,14 +407,14 @@ SysMLEdge MCP  streamable HTTP (Cursor Bearer)
 |-------|------|
 | **SSOT** | SysML zip or `sysml-models/` tree. Import/save/download = **all** `.sysml` in that tree. Never parts-only SSOT. Download = SysML zip @ rev only. |
 | **Git / GitHub** | VCS backbone. Bind **project @ SHA**. SysMLEdge owns projection, STALE, and propose — not GitHub’s review UI. |
-| **MemNet** | Projected index. **P1:** Foam-complete (kinds Foam uses). Later: widen as projects demand. **TCP backend-only** (`serve` + MCP TCP-shared). **No Kuzu**, no Cypher, no `graph.kuzu`. Not the agent-facing wedge once SysMLEdge MCP binds. |
+| **MemNet** | Projected index. **P1:** Foam-complete (kinds Foam uses). Later: widen as projects demand. **TCP backend-only** (`serve` + MCP TCP-shared). **No Kuzu**, no Cypher, no Neo4j, no `graph.kuzu`. Not the agent-facing wedge once SysMLEdge MCP binds. Bounce **0.19.8**; Path-B CON **≥0.19.9+TCP**. |
 | **GQL** | Query/represent what SysML already says at `rev.sha`. MUST NOT invent. |
 | **MCP face** | **Streamable HTTP** with Cursor **Bearer**, same pattern as **memnet-pi**. Agents call **SysMLEdge MCP** (`rev_status` / `gql_*` / `propose`). |
 | **STALE** | Projection `rev.sha` ≠ current SHA. Show it; refuse live-SSOT pretence. `staleOk` is read-only. |
 
 Save **never** writes the graph. Save → auto-reproject → Live. Graph write-back is not a save.
 
-This face lock does **not** reopen KEEP sole / NARROW / improve-only / **no C rewrite now**. SysMLEdge consumes MemNet as the projection engine; it does not replace it.
+This face lock does **not** reopen KEEP sole / NARROW / improve-only / **no C rewrite now** / **no Neo4j**. SysMLEdge consumes MemNet as the projection engine; it does not replace it. Gaps = Foam projection fidelity + SysMLEdge reproject ego.
 
 ### Agent MCP vs MemNet (2026-09-11 Core)
 
@@ -501,7 +520,7 @@ SysMLEdge does **not** ship ClickUp or InvenTree: no sync, no PLM UI, no “link
 
 | Topic | P0 (seed) | This lock | Alignment |
 |-------|-----------|-----------|-----------|
-| Engine | MemNet; Kuzu rejected | Same; TCP backend-only; no C rewrite now | Unchanged. KEEP sole / NARROW / improve-only stand. |
+| Engine | MemNet; Kuzu rejected | Same; TCP backend-only; no C rewrite now; no Neo4j | Unchanged. KEEP sole / NARROW / improve-only stand. Steve + Elon agree 2026-09-12. |
 | Agent MCP transport | Tool names; not Cypher / Kuzu worker | Streamable HTTP + Bearer (memnet-pi); MemNet TCP-shared is backend | **Clarify** P0 §4: product face is SysMLEdge MCP, not MemNet HTTP. |
 | STALE / `staleOk` | Show; refuse pretence; `staleOk` read-only | Same + UI states Dirty ≠ STALE | P0 STALE rules stand. Dirty added as working-tree, not projection drift. |
 | Agent SSOT write | Silent MCP save forbidden | Agent merge **banned**; no write-SSOT tool | Unchanged. |
@@ -511,7 +530,7 @@ SysMLEdge does **not** ship ClickUp or InvenTree: no sync, no PLM UI, no “link
 | ClickUp/InvenTree | Mapped when present in SysML | Not product features | **Clarify** P0 §5: projection of SysML attributes only. |
 | SSOT shape | Whole-tree import/save/download | **All** `.sysml`; never parts-only SSOT | Align P0 §3. |
 | Mapping | P0 seed listed part/port/connection as v1 | **P1 = Foam-complete**; not parts/ports forever; not full KerML in 2 weeks | **Supersede** a forever parts/ports cap. Elon freeze = 2-week anti-scope-creep only. |
-| MemNet improve | Engine + Path-B | **Improve-only** M1–M5 / Foam fidelity; **0.19.8 + TCP**; **no C rewrite now**; SysMLEdge owns `rev`/STALE/reproject | Does **not** reopen KEEP sole / NARROW / NOT-build. Not a MemNet roadmap. Engine form (C/Rust/other) only after fidelity green **and** timed wall-clock loss. |
+| MemNet improve | Engine + Path-B | **Improve-only** M1–M5 / Foam fidelity; bounce **0.19.8 + TCP**; Path-B CON **≥0.19.9+TCP**; **no C rewrite now**; **no Neo4j**; SysMLEdge owns `rev`/STALE/reproject | Does **not** reopen KEEP sole / NARROW / NOT-build. Not a MemNet roadmap. Engine form (C/Rust/Neo4j/other) only after fidelity green **and** timed wall-clock loss. Gaps = projection + reproject ego. LIVE bind deferred while M1 FAIL. |
 
 ---
 
@@ -533,15 +552,16 @@ Implementations MUST reject, in addition to P0 §7:
 12. Treating “parts/ports” as a forever mapping cap, or boiling the ocean (whole-language) in the two-week proof.
 13. Declaring P1 won on **feature count** instead of **wall-clock + context footprint + no silent drop** vs tens-of-minutes grep.
 14. Stuffing the whole SysML tree into the LLM prompt instead of GQL/`pin_map` slices.
-15. Dual-engine / Kuzu hedge. Kuzu is **not necessary** for tip Path-B. Dual only if Memnetor becomes a documented hard blocker later.
-16. Inventing first-class `rev` / STALE inside MemNet. SysMLEdge owns the bind. Treating STALE proof as pass without that bind is theater.
-17. A MemNet **roadmap** from this product. MemNet improve-only for **M1–M5 / Foam fidelity**; engine stays **0.19.8 + TCP**.
-18. A **C rewrite now** (or Rust/other engine-form rewrite) before **0.19.8 + TCP** proof. Reopen form only if wall-clock **loses with numbers** after fidelity is green.
+15. Dual-engine / Kuzu / **Neo4j** hedge. Kuzu/Neo4j are **not necessary** for tip Path-B. Dual only if Memnetor becomes a documented hard blocker later **and** fidelity is green **and** timed H2H loses with numbers.
+16. Inventing first-class `rev` / STALE inside MemNet. SysMLEdge owns the bind. Treating STALE proof as pass without that bind is theater. LIVE bind while **M1 FAIL** without Post-A/B clear or published narrow+counts is theater.
+17. A MemNet **roadmap** from this product. MemNet improve-only for **M1–M5 / Foam fidelity**; bounce **0.19.8 + TCP**; Path-B CON **≥0.19.9+TCP**.
+18. A **C rewrite now** (or Rust/other engine-form rewrite) before TCP proof. Reopen form only if wall-clock **loses with numbers** after fidelity is green.
 19. Serving **MemNet** (TCP or its MCP) as the agent-facing wedge once SysMLEdge MCP binds.
 20. Serving projects on SysMLEdge, or migrating other repos onto it, before Foam + MemNet proof **and** SysMLEdge MCP bind pass (**plan ≠ product**, CEO Core 2026-09-12). Until then MemNet tip only.
 21. Treating NARROW dogfood as a second **real** in-house SysML desk (Elon Core 2026-09-12). Fixture tree = CI of import / bind / STALE / reproject / propose only.
-22. Kill-theater (Elon Core 2026-09-12): Foam tip sold as SysMLEdge bind before `rev.sha`; agents/repos on MemNet mission sessions as `project@rev`; “almost P1” second-repo migrate on Path-B/`pin_map` only; P2 UI or multi-repo onboarding before timed head-to-head + gold fidelity; pin below **memnet-llm==0.19.8** or drop TCP share.
-23. CEO Core P1 **kill risks** (2026-09-12): silent drop (`connections_parsed:0` / omitted files); tip Path-B sold as bind; full KerML in 2 weeks; shrink zip to parts-only. Treating [#11](https://github.com/chouswei/SysMLEdge/pull/11) / [#12](https://github.com/chouswei/SysMLEdge/pull/12) as P1 pass (scaffold ≠ P1). **Kill theater:** fake CI, tip-as-bind, H2H before meters. P1 **Pass only** is live `0.19.8`+TCP after bind; wall-clock + context vs same Foam Qs; fail-closed STALE; no silent drop.
+22. Kill-theater (Elon Core 2026-09-12): Foam tip sold as SysMLEdge bind before `rev.sha`; agents/repos on MemNet mission sessions as `project@rev`; “almost P1” second-repo migrate on Path-B/`pin_map` only; P2 UI or multi-repo onboarding before timed head-to-head + gold fidelity; pin below **memnet-llm==0.19.8** or drop TCP share; Path-B CON below **≥0.19.9+TCP**; LIVE bind while M1 FAIL unpublished.
+23. CEO Core P1 **kill risks** (2026-09-12): silent drop (`connections_parsed:0` / omitted files); tip Path-B sold as bind; full KerML in 2 weeks; shrink zip to parts-only. Treating [#11](https://github.com/chouswei/SysMLEdge/pull/11) / [#12](https://github.com/chouswei/SysMLEdge/pull/12) as P1 pass (scaffold ≠ P1). **Kill theater:** fake CI, tip-as-bind, H2H before meters. P1 **Pass only** is live TCP after bind (bounce `0.19.8`; Path-B CON **≥0.19.9+TCP**); wall-clock + context vs same Foam Qs; fail-closed STALE; no silent drop.
 24. Taste-cut narrative (Steve Jobs + CEO Core 2026-09-12): AGI copy; Pro/Team/marketplace; beachhead math; bilingual bus as brand lead; plus prior list (contract layer / humans–AGI API; seven roots as a pitch; freemium / Pro ~$19–29; SaaS-editor / PR-UI foreshadowing; slides instead of the 3-Q Foam keep-using proof).
 25. **Kill smells** (Steve Jobs + CEO Core 2026-09-12): IDE / canvas / MemNet tip = product.
 26. Edison Core (Thomas Alva Edison / Horcrux 2026-09-12): invert M1 → bind → timed H2H → row 12; time H2H before M1+bind; skip Day-1 instruments; spend hours on the refuse/freeze list.
+27. Steve + Elon agree (CEO Core 2026-09-12): treat M1 FAIL gaps as Neo4j / dual-engine / wrong store; claim LIVE bind before Post-A/B clear or published narrow+counts; claim Path-B CON below **≥0.19.9+TCP**.
