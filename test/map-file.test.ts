@@ -10,6 +10,7 @@ import {
 test("0.19.9 session open uses SCHEMA --map-file, never leftover --map", () => {
   const map = defaultSysmlSchemaMapPath();
   const args = sessionOpenArgs(map);
+  assert.ok(map.endsWith("fixtures/memnet-session.map"));
   assert.deepEqual(args, ["session", "open", "--map-file", map]);
   assert.equal(usesLeftoverMapFlag(args), false);
   const body = readFileSync(map, "utf8");

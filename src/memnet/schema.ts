@@ -8,7 +8,7 @@ export const MAP_FILE_FLAG = "--map-file";
 export function defaultSysmlSchemaMapPath(env: NodeJS.ProcessEnv = process.env): string {
   const override = env.MEMNET_MAP_FILE?.trim();
   if (override) return override;
-  return fileURLToPath(new URL("../../fixtures/memnet-schema.sysml.txt", import.meta.url));
+  return fileURLToPath(new URL("../../fixtures/memnet-session.map", import.meta.url));
 }
 
 /**

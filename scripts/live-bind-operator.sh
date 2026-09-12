@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Memnetor / Devicor: LIVE SysMLEdge rev bind on Pi (localhost memnet serve).
 # MUST NOT ingest into mn_0d4f6178 or mn_b05a9869. Opens a NEW session.
-# 0.19.9 session open uses SCHEMA --map-file (fixtures/memnet-schema.sysml.txt).
+# 0.19.9 session open uses SCHEMA --map-file (fixtures/memnet-session.map).
 # proof_pass_claimed=false until H2H + cold. H2H scores narrow 124+nested, not gold-200.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -18,7 +18,7 @@ export MEMNET_SERVE_HOST="${MEMNET_SERVE_HOST:-127.0.0.1}"
 export MEMNET_SERVE_PORT="${MEMNET_SERVE_PORT:-18765}"
 export MEMNET_MCP_PORT="${MEMNET_MCP_PORT:-18766}"
 export MEMNET_LLM_VERSION="${MEMNET_LLM_VERSION:-0.19.9}"
-export MEMNET_MAP_FILE="${MEMNET_MAP_FILE:-$ROOT/fixtures/memnet-schema.sysml.txt}"
+export MEMNET_MAP_FILE="${MEMNET_MAP_FILE:-$ROOT/fixtures/memnet-session.map}"
 export BIND_SMOKE_LIVE=1
 
 echo "operator LIVE bind: host=$MEMNET_SERVE_HOST version=$MEMNET_LLM_VERSION map-file=$MEMNET_MAP_FILE proof_pass_claimed=false lock_g=graph_working_ssot" >&2

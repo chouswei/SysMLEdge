@@ -54,7 +54,7 @@ npx tsx src/cli.ts head-to-head   # timings stay null until a timed run
 
 ### Live Pi (memnet-llm ≥0.19.9 + TCP; bounce 0.19.8)
 
-Proof env: bounce **0.19.8** + TCP-shared. LIVE bind ingest **≥0.19.9** with SCHEMA **`--map-file`** (`fixtures/memnet-schema.sysml.txt`). leftover `--map` TAG wire is rejected. SysMLEdge still owns `rev` / STALE / reproject. Path-B `mn_0d4f6178` CON **124** is **not** bind.
+Proof env: bounce **0.19.8** + TCP-shared. LIVE bind ingest **≥0.19.9** with SCHEMA **`--map-file`** (`fixtures/memnet-session.map`). leftover `--map` TAG wire is rejected. SysMLEdge still owns `rev` / STALE / reproject. Path-B `mn_0d4f6178` CON **124** is **not** bind.
 
 ```bash
 # Terminal 1 — MemNet serve (backend only)
@@ -72,7 +72,7 @@ export SYSMLEDGE_PROJECT=/tmp/p1-desk
 export MEMNET_MCP_TRANSPORT=tcp
 export MEMNET_MCP_PORT=18766
 export MEMNET_LLM_VERSION=0.19.9
-export MEMNET_MAP_FILE="$(pwd)/fixtures/memnet-schema.sysml.txt"
+export MEMNET_MAP_FILE="$(pwd)/fixtures/memnet-session.map"
 npx tsx src/cli.ts live-probe
 npx tsx src/cli.ts memnet-check
 npm run bind:live   # same bind rules; Path A CON=29 ≠ bind; Path-B 124 ≠ bind; not M1 pass

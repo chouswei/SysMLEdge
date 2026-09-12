@@ -15,7 +15,7 @@ Lock **(g):** `rev_status.working_ssot=graph`, `sysml_role=machine_mirror`. **No
 | Item | Value |
 |------|--------|
 | Engine on Pi | **memnet-llm ≥0.19.9** + TCP (bounce still proven on **0.19.8**) |
-| Session open | SCHEMA **`--map-file`** (`fixtures/memnet-schema.sysml.txt` or `MEMNET_MAP_FILE`). leftover `--map` TAG wire **rejected** |
+| Session open | SCHEMA **`--map-file`** (`fixtures/memnet-session.map` or `MEMNET_MAP_FILE`). leftover `--map PKG qname,path` **rejected** |
 | Path-B CON | **on Pi** — published narrow on `mn_0d4f6178` (MemNet #158). **≠ bind** |
 | Serve | `127.0.0.1:18765` (operator on Pi). Cloud VM **`10.0.0.10:18765` often unreachable** |
 | MemNet MCP (`pin_map` proof only) | `:18766`, `MEMNET_MCP_TRANSPORT=tcp` |
@@ -36,7 +36,7 @@ npm run live:probe
 memnet serve          # 127.0.0.1:18765
 export FOAM_DIR=/tmp/foam-soi          # or omit → fixtures/p1-tiny
 export SYSMLEDGE_PROJECT=/tmp/foam-desk
-export MEMNET_MAP_FILE="$(pwd)/fixtures/memnet-schema.sysml.txt"
+export MEMNET_MAP_FILE="$(pwd)/fixtures/memnet-session.map"
 npm run bind:live
 ```
 
@@ -44,16 +44,18 @@ MUST NOT set `MEMNET_ATTACH_SESSION=mn_0d4f6178` or `mn_b05a9869`.
 
 Record (operator): [RUNLOG-2026-09-12-live-bind.md](RUNLOG-2026-09-12-live-bind.md).
 
-| Field | Fill (Devicor 2026-09-12 p1-tiny) |
+| Field | Fill (Memnetor verified 2026-09-12) |
 |-------|------|
-| Date / host | 2026-09-12 / Pi |
-| `memnet-check` version | ≥0.19.9 |
-| Desk | `fixtures/p1-tiny` |
+| Floor | **0.19.9** + TCP **:18765** / **:18766** |
+| `memnet-check` | `ok=true` `memnet_llm=0.19.9` `transport=tcp` `proof_pass_claimed=false` |
+| Desk | `fixtures/p1-tiny` (`FOAM_DIR` absent) |
 | SysMLEdge `rev.sha` | `1664f20a41320b8ceba81340ea237d8c19245894` |
 | `rev.stale` | **false** |
-| New MemNet session | **`mn_27ce8714`** (not Path-A/B) |
-| smoke | **LIVE_TCP green** |
-| H2H | **held** |
+| `memnetSession` | **`mn_27ce8714`** (**not** A/B) |
+| housekeep | rows **56/5000** edges **30** orphans **26** — **not** Foam CON=124 |
+| smoke | `BIND_SMOKE_LIVE=1` **ok**; STALE fail-closed; reproject/MCP gates **true** |
+| map | SCHEMA `--map-file` `fixtures/memnet-session.map` |
+| H2H / cold | **held** |
 | `proof_pass_claimed` | **false** |
 
 ## Refuse

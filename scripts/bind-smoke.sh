@@ -17,7 +17,7 @@ if [[ "$LIVE" == "1" ]]; then
   export MEMNET_SERVE_PORT="${MEMNET_SERVE_PORT:-18765}"
   export MEMNET_MCP_PORT="${MEMNET_MCP_PORT:-18766}"
   export MEMNET_LLM_VERSION="${MEMNET_LLM_VERSION:-0.19.9}"
-  export MEMNET_MAP_FILE="${MEMNET_MAP_FILE:-$ROOT/fixtures/memnet-schema.sysml.txt}"
+  export MEMNET_MAP_FILE="${MEMNET_MAP_FILE:-$ROOT/fixtures/memnet-session.map}"
   npx tsx src/cli.ts memnet-check
 else
   export MEMNET_BACKEND=fake

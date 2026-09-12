@@ -9,7 +9,7 @@ This runbook does **not** record a proof pass. **Cite:** Sysmler **KEEP / NARROW
 | Item | Value |
 |------|--------|
 | Engine | bounce `memnet-llm==0.19.8`; LIVE bind / Path-B CON `≥0.19.9` |
-| Session map | `--map-file` SCHEMA (`fixtures/memnet-schema.sysml.txt`) |
+| Session map | `--map-file` SCHEMA (`fixtures/memnet-session.map`) |
 | Serve | `127.0.0.1:18765` |
 | MemNet MCP (proof `pin_map` only) | `:18766` |
 | Transport | `MEMNET_MCP_TRANSPORT=tcp` |
@@ -26,7 +26,7 @@ export MEMNET_SERVE_HOST=127.0.0.1
 export MEMNET_SERVE_PORT=18765
 export MEMNET_MCP_PORT=18766
 export MEMNET_LLM_VERSION=0.19.9   # LIVE bind / Path-B; bounce floor remains 0.19.8
-export MEMNET_MAP_FILE=/path/to/SysMLEdge/fixtures/memnet-schema.sysml.txt
+export MEMNET_MAP_FILE=/path/to/SysMLEdge/fixtures/memnet-session.map
 export SYSMLEDGE_MCP_TOKEN=replace-me
 export SYSMLEDGE_PROJECT=/tmp/foam-desk
 ```
@@ -75,4 +75,4 @@ Harness `sysmledge proof --live` only asserts the env. It does **not** restart p
 
 ## LIVE M1 (Memnetor 2026-09-12) — **not SysMLEdge bind**
 
-Session `mn_b05a9869`. **BEFORE:** CON=0, nested ABSENT, TSK ego = TSK only. **AFTER Path A (ops):** TSK ego **CON=29**, nested `backgroundSetIndicator` in ego via panel owns, Truncation=false. **Still not `rev.sha` bind.** Path-B CON ingest is **on Pi** (`mn_0d4f6178` @ **0.19.9+TCP**, published narrow **124**). `proof_pass_claimed: false`. near_cap ~4294/5000. [M1 RUNLOG](RUNLOG-2026-09-12-m1-bind.md). FAKE bind: [RUNLOG-2026-09-12-rev-bind.md](RUNLOG-2026-09-12-rev-bind.md). LIVE bind meters: [RUNLOG-2026-09-12-live-bind.md](RUNLOG-2026-09-12-live-bind.md) (`mn_27ce8714` p1-tiny; H2H held; **not M1 pass**).
+Session `mn_b05a9869`. **BEFORE:** CON=0, nested ABSENT, TSK ego = TSK only. **AFTER Path A (ops):** TSK ego **CON=29**, nested `backgroundSetIndicator` in ego via panel owns, Truncation=false. **Still not `rev.sha` bind.** Path-B CON ingest is **on Pi** (`mn_0d4f6178` @ **0.19.9+TCP**, published narrow **124**). `proof_pass_claimed: false`. near_cap ~4294/5000. [M1 RUNLOG](RUNLOG-2026-09-12-m1-bind.md). FAKE bind: [RUNLOG-2026-09-12-rev-bind.md](RUNLOG-2026-09-12-rev-bind.md). LIVE bind meters: [RUNLOG-2026-09-12-live-bind.md](RUNLOG-2026-09-12-live-bind.md) (`mn_27ce8714` p1-tiny housekeep 56/5000; H2H held; **not Foam M1 / not CON=124**).

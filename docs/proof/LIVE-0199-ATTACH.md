@@ -11,7 +11,7 @@ SysML zip / sysml-models/     SysML mirror (invent SSOT before upload)
         |  human Save / import (git SHA)
         v
 SysMLEdge reproject
-        |  session open --map-file fixtures/memnet-schema.sysml.txt  (0.19.9 SCHEMA; leftover --map rejected)
+        |  session open --map-file fixtures/memnet-session.map  (0.19.9 SCHEMA; leftover --map PKG qname,path rejected)
         |  parse + ground contains/owns/ends (FAKE always)
         |  LIVE: memnet ingest sysml --path <mirror> --session <sid>
         v
@@ -35,7 +35,7 @@ SysMLEdge MCP gql_context / gql_impact wraps that + rev.sha
 Cloud VM often **cannot** TCP `10.0.0.10:18765`. Then Memnetor/Devicor run this **on the Pi**. MUST NOT ingest into `mn_0d4f6178` / `mn_b05a9869`. leftover `--map` is **not** the wire.
 
 ```bash
-export MEMNET_MAP_FILE="$(pwd)/fixtures/memnet-schema.sysml.txt"
+export MEMNET_MAP_FILE="$(pwd)/fixtures/memnet-session.map"
 npm run bind:live
 # or: memnet serve; npx tsx src/cli.ts memnet-check
 # npx tsx src/cli.ts import-foam "$FOAM_DIR" --project "$SYSMLEDGE_PROJECT"
@@ -51,7 +51,7 @@ Then measure (fill [LIVE-M1-CHECKLIST.md](LIVE-M1-CHECKLIST.md)):
 4. Same for config-panel nested usage.
 5. `gql_impact` on `…::foamDetection` — neighbourhood/usage only until closure is measured.
 
-Until LIVE `rev.sha` is recorded from **SysMLEdge** `rev_status` on a **new** session, do not treat Path-B `pin_map` as bind. FAKE neighbourhood counts in [RUNLOG-2026-09-12-m1-bind.md](RUNLOG-2026-09-12-m1-bind.md) are **not** LIVE bind. LIVE meters (p1-tiny, Devicor): [RUNLOG-2026-09-12-live-bind.md](RUNLOG-2026-09-12-live-bind.md) — `mn_27ce8714`, `proof_pass_claimed: false`. **Not M1 pass.**
+Until LIVE `rev.sha` is recorded from **SysMLEdge** `rev_status` on a **new** session, do not treat Path-B `pin_map` as bind. LIVE meters (p1-tiny, Memnetor): [RUNLOG-2026-09-12-live-bind.md](RUNLOG-2026-09-12-live-bind.md) — `mn_27ce8714`, housekeep **56/5000**, `proof_pass_claimed: false`. **Not Foam M1.** **Not CON=124.**
 
 ## Kill theater
 
