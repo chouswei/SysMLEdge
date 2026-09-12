@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { existsSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 
@@ -14,10 +15,54 @@ export const SYSML_LOCATOR_FIELDS = ["qname", "path", "sysml_kind"] as const;
 /** Pi overwrite that dropped Path-B locators (Peak_L CueConflict). */
 export const NARROW_OPERATOR_PRT_FIELDS = "id name kind role status recycle";
 
+/** Default-branch bytes of fixtures/memnet-session.map (H1 CI-pin). */
+export const PINNED_SYSML_MAP_SHA256 =
+  "c2f16136e6f09f9a6c1ddf0026a15676f731575f1d2a1da6ccc2c464aa727bc3";
+
 export function defaultSysmlSchemaMapPath(env: NodeJS.ProcessEnv = process.env): string {
   const override = env.MEMNET_MAP_FILE?.trim();
   if (override) return override;
   return fileURLToPath(new URL("../../fixtures/memnet-session.map", import.meta.url));
+}
+
+export function defaultSysmlSchemaMapPinPath(): string {
+  return fileURLToPath(new URL("../../fixtures/memnet-session.map.sha256", import.meta.url));
+}
+
+export function sha256File(path: string): string {
+  return createHash("sha256").update(readFileSync(path)).digest("hex");
+}
+
+export function parsePinnedSha256(pinBody: string): string {
+  const line = pinBody
+    .split(/\r?\n/)
+    .map((l) => l.trim())
+    .find((l) => l && !l.startsWith("#"));
+  const hash = line?.split(/\s+/)[0]?.toLowerCase();
+  if (!hash || !/^[0-9a-f]{64}$/.test(hash)) {
+    throw new Error("fixtures/memnet-session.map.sha256 missing a 64-char SHA256");
+  }
+  return hash;
+}
+
+/** CI-pin for the checked-in GitHub map. MEMNET_MAP_FILE copies are not this pin. */
+export function assertCheckedInSchemaMapPin(
+  mapFile = fileURLToPath(new URL("../../fixtures/memnet-session.map", import.meta.url)),
+  pinFile = defaultSysmlSchemaMapPinPath(),
+): void {
+  const actual = sha256File(mapFile);
+  const pinned = parsePinnedSha256(readFileSync(pinFile, "utf8"));
+  if (pinned !== PINNED_SYSML_MAP_SHA256) {
+    throw new Error(
+      `pin file SHA256 ${pinned} != PINNED_SYSML_MAP_SHA256 ${PINNED_SYSML_MAP_SHA256}`,
+    );
+  }
+  if (actual !== PINNED_SYSML_MAP_SHA256) {
+    throw new Error(
+      `fixtures/memnet-session.map SHA256 ${actual} != pin ${PINNED_SYSML_MAP_SHA256}; ` +
+        `restore GitHub map (operator-narrow SCHEMA is a soft-pass, not bind)`,
+    );
+  }
 }
 
 /**

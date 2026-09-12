@@ -68,7 +68,7 @@ Record (operator): [RUNLOG-2026-09-12-live-bind.md](RUNLOG-2026-09-12-live-bind.
 - Claiming [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego is LIVE bind
 - Advertising `one_way: true` as product truth (lock **(g)**)
 - leftover `--map` TAG wire on 0.19.9
-- Overwriting `fixtures/memnet-session.map` with a narrow operator heredoc (`SCHEMA PRT ; fields=id name kind role status recycle`). Pi MUST restore the GitHub map. Operator-narrow SCHEMA is a **soft-pass**, not bind.
+- Overwriting `fixtures/memnet-session.map` with a narrow operator heredoc (`SCHEMA PRT ; fields=id name kind role status recycle`). Pi MUST restore the GitHub map (SHA256 `c2f16136e6f09f9a6c1ddf0026a15676f731575f1d2a1da6ccc2c464aa727bc3`). Operator-narrow SCHEMA is a **soft-pass**, not bind.
 - Claiming M1 / P1 / `proof_pass_claimed` from this checklist or from p1-tiny H2H
 - Scoring H2H vs gold-200; selling tiny / `mn_be03c1a9` H2H as the Foam wedge
 - Selling continuous same-session **(g)** until **(r)**
