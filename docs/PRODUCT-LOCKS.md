@@ -76,6 +76,10 @@ Elon’s “parts/ports” freeze was **2-week anti-scope-creep for mapping work
 
 **“Bilingual bus”** stays an **internal architecture** name. It is **not** the brand lead.
 
+**One-way, not a translator both ways.** SysML files → project into MemNet → query in GQL. Edits stay in SysML (or propose `delta.sysml`); GQL never invents SysML back. “Bilingual” = author SysML / ask GQL over one `model@rev`.
+
+This spine lock does **not** reopen KEEP MemNet sole, M1 narrow, or LIVE bind.
+
 **Load-bearing claim:** Foam desk, felt cold, vs grep. **Not** proven by this docs seed.
 
 **2-week product-story proof:** one **non-Core** operator, **3 Foam Qs**, wall-clock + context + no silent drop, **yes/no keep-using**. **No slides.** Pass bar **unchanged**: rows 9–12 + M1–M5; scaffold ≠ P1.
@@ -348,7 +352,7 @@ SysMLEdge (this cut) is **Foam desk proof**. **One-liner:** SysML stays the mode
 | Beats “git + LSP + grep `.sysml`” | **Kill smells:** IDE / canvas / MemNet tip = product |
 | Foam first | Defense PLM / enterprise >$100; Pro/Team/marketplace as this-cut story |
 
-**Internal architecture name (not brand lead):** bilingual bus = SysML (author SSOT) + GQL (query/represent). Not a zh/EN UI.
+**Internal architecture name (not brand lead):** bilingual bus = author SysML / ask GQL over one `model@rev` (one-way, not a translator both ways — exact in [CEO Core — Steve taste](#ceo-core--steve-taste-2026-09-12)). Not a zh/EN UI.
 
 **Buyer (desk, not a seat target):** solo / 2–5 engineers on SysML v2 textual + Cursor.
 
@@ -559,7 +563,7 @@ Implementations MUST reject, in addition to P0 §7:
 6. Bot review that writes SSOT.
 7. Serving MemNet/GQL as downloadable source; Kuzu/Cypher.
 8. Claiming P2 SaaS or P3 tenancy as shipping in this repository seed.
-9. Selling SysMLEdge as a product category, or shipping “bilingual bus” as a **product**, without cold Foam yes (Steve Jobs + CEO Core 2026-09-12; NARROW Elon/Horcrux 2026-09-11). Bilingual bus may remain an internal architecture name.
+9. Selling SysMLEdge as a product category, or shipping “bilingual bus” as a **product**, without cold Foam yes (Steve Jobs + CEO Core 2026-09-12; NARROW Elon/Horcrux 2026-09-11). Bilingual bus may remain an internal architecture name. MUST NOT treat it as a translator both ways (GQL never invents SysML back).
 10. Spending Foam Phase-1 hours on P2 UI, PR UI, Team ACL, billing, Cameo, ClickUp/InvenTree product, or **full KerML** in two weeks.
 11. Parts-only SSOT (import/save/download of a subset of `.sysml` as “the model”).
 12. Treating “parts/ports” as a forever mapping cap, or boiling the ocean (whole-language) in the two-week proof.
