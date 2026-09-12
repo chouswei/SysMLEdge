@@ -13,7 +13,7 @@ export async function parseSysmlTree(ssotDir: string): Promise<ParsedTree> {
   for (const abs of files) {
     const rel = relative(ssotDir, abs).split(sep).join("/");
     relFiles.push(rel);
-    const src = stripComments(await readFile(abs, "utf8"));
+    const src = stripStrings(stripComments(await readFile(abs, "utf8")));
     const parsed = parseFile(src, rel);
     nodes.push(...parsed.nodes);
     edges.push(...parsed.edges);
@@ -26,18 +26,25 @@ function stripComments(src: string): string {
   return src.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/.*$/gm, " ");
 }
 
+/** Brace matching must not see `{` / `}` inside quoted SysML strings. */
+function stripStrings(src: string): string {
+  return src.replace(/"(?:\\.|[^"\\])*"/g, '""');
+}
+
 interface Frame {
   kind: "package" | "part" | "port" | "other";
   name: string;
   qname: string;
+  depth: number;
 }
 
 function parseFile(src: string, path: string): { nodes: SysmlNode[]; edges: SysmlEdge[] } {
   const nodes: SysmlNode[] = [];
   const edges: SysmlEdge[] = [];
   const stack: Frame[] = [];
+  let depth = 0;
   const re =
-    /\b(package|part\s+def|part|port|connection|attribute)\b|[{};]/g;
+    /\b(package|part\s+def|port\s+def|part|port|connection|attribute)\b|[{};]/g;
   let match: RegExpExecArray | null;
   const seen = new Set<string>();
 
@@ -47,11 +54,19 @@ function parseFile(src: string, path: string): { nodes: SysmlNode[]; edges: Sysm
     nodes.push(n);
   };
 
+  const popToDepth = (d: number) => {
+    while (stack.length && (stack.at(-1)?.depth ?? 0) > d) stack.pop();
+  };
+
   while ((match = re.exec(src))) {
     const tok = match[0];
-    if (tok === "{") continue;
+    if (tok === "{") {
+      depth += 1;
+      continue;
+    }
     if (tok === "}") {
-      stack.pop();
+      depth = Math.max(0, depth - 1);
+      popToDepth(depth);
       continue;
     }
     if (tok === ";") continue;
@@ -61,7 +76,7 @@ function parseFile(src: string, path: string): { nodes: SysmlNode[]; edges: Sysm
       if (!name) continue;
       const qname = qualify(stack, name);
       if (hasBraceBody(src, afterIdent(src, re.lastIndex))) {
-        stack.push({ kind: "package", name, qname });
+        stack.push({ kind: "package", name, qname, depth: depth + 1 });
       }
       pushNode({
         kind: "package",
@@ -79,7 +94,7 @@ function parseFile(src: string, path: string): { nodes: SysmlNode[]; edges: Sysm
       const owner = stack.at(-1)?.qname;
       const attrs = readAttributes(src, re.lastIndex);
       if (hasBraceBody(src, afterIdent(src, re.lastIndex))) {
-        stack.push({ kind: "part", name, qname });
+        stack.push({ kind: "part", name, qname, depth: depth + 1 });
       }
       pushNode({
         kind: "part",
@@ -96,6 +111,9 @@ function parseFile(src: string, path: string): { nodes: SysmlNode[]; edges: Sysm
       if (!usage) continue;
       const qname = qualify(stack, usage.name);
       const owner = stack.at(-1)?.qname;
+      if (hasBraceBody(src, afterIdent(src, re.lastIndex))) {
+        stack.push({ kind: "part", name: usage.name, qname, depth: depth + 1 });
+      }
       pushNode({
         kind: "part",
         qname,
@@ -107,9 +125,11 @@ function parseFile(src: string, path: string): { nodes: SysmlNode[]; edges: Sysm
       continue;
     }
 
-    if (tok === "port") {
-      const usage = parseUsage(src, re.lastIndex);
-      if (!usage) continue;
+    if (tok === "port" || (tok.startsWith("port") && tok.includes("def"))) {
+      const usage = tok.includes("def")
+        ? { name: identAfter(src, re.lastIndex) ?? "", typeName: undefined as string | undefined }
+        : parseUsage(src, re.lastIndex);
+      if (!usage?.name) continue;
       const qname = qualify(stack, usage.name);
       const owner = stack.at(-1)?.qname;
       pushNode({

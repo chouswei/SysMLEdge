@@ -4,6 +4,8 @@ Living plan. **Locks (2026-09-11):** [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md) — **
 
 This repository seed does **not** implement P2/P3. P1 **runtime first cut** (fixture + bind + MCP) lives in-tree; Foam proof is not claimed.
 
+**CEO Core:** [#11](https://github.com/chouswei/SysMLEdge/pull/11) = scaffold only — **fake CI ≠ P1 pass**. Gate remains **live Foam M1–M5 + beat-grep** on **memnet-llm==0.19.8+TCP**.
+
 **Position:** bilingual bus for textual SysML v2 + agents (SysML stays the model; GQL/MCP so Cursor agents do not grep the tree). Not SysON/Cameo/graphic IDE. Not a GitHub clone. Not defense PLM yet. Pin: [PRODUCT-LOCKS.md — Market position](PRODUCT-LOCKS.md#market-position-pin).
 
 **Core (unchanged):** name **SysMLEdge**; bilingual = SysML (author SSOT) + GQL (query/represent); SSOT = whole `sysml-models/` tree / zip (**all** `.sysml`); MemNet = one-way projected index (**no Kuzu**; TCP backend-only; no C rewrite now); agent MCP face = **streamable HTTP** (Cursor Bearer, memnet-pi pattern); `graph = model @ SHA`; GQL never invents; agents propose only (no write-SSOT tool); human save = whole-tree overwrite + git history; download = SysML zip only; P1 mapping = Foam-complete; pilot SoI = `chouswei/modelbasedPrj-itri-vedan-foam-detection`.
@@ -17,7 +19,7 @@ This repository seed does **not** implement P2/P3. P1 **runtime first cut** (fix
 | Phase | Name | This repo | Intent |
 |-------|------|-----------|--------|
 | **P0** | Contracts | **Docs done** | Normative sheet so implementers do not rebuild a Kuzu indexer. |
-| **P1** | Foam slice | Runtime first cut in-repo (fixture CI). Foam proof **not** claimed. | Contract rows 1–8 plus Foam proof 9–12 **and** MemNet proof M1–M5. ALL required. |
+| **P1** | Foam slice | Runtime first cut + **Foam proof scaffolding**. **[#11](https://github.com/chouswei/SysMLEdge/pull/11) = scaffold only — fake CI ≠ P1 pass.** Gate = live Foam M1–M5 + beat-grep on memnet-llm==0.19.8+TCP. **Proof not executed / not passed.** | Contract rows 1–8 plus Foam proof 9–12 **and** MemNet proof M1–M5. ALL required. |
 | **P2** | Single-tenant SaaS | Plan only. **Spend frozen** until Foam proof passes. | Hosted on the **existing droplet (Devicor)**. Identity, import/save/download, MemNet per project, MCP, in-tenant ACL, Save/STALE UI, optional autopilot/bot review (default off). **InvenTree on that host: untouched.** |
 | **P3** | Tenancy | Plan only | Cross-tenant isolation, authz, billing-shaped tenancy. Not implied by P2. |
 

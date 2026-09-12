@@ -1,0 +1,1983 @@
+{
+  "status": "FROZEN_LIST",
+  "proof_executed": false,
+  "source": {
+    "repo": "chouswei/modelbasedPrj-itri-vedan-foam-detection",
+    "sha": "76459224e6afbe74612cca9b37ffe0b3503bda85",
+    "tree": "sysml-models/",
+    "parser": "src/sysml/parse.ts"
+  },
+  "counts": {
+    "files": 5,
+    "packages": 6,
+    "parts": 256,
+    "ports": 154,
+    "connections_parsed": 0,
+    "nested_parts": 181
+  },
+  "packages": [
+    "FoamDetectionLiteVer2",
+    "FoamDetectionLiteVer2::CoreEdgeSideDeviceInventory::vfdl2",
+    "FoamDetectionLiteVer2Requirements",
+    "FoamLiteVer2Behaviour",
+    "FoamLiteVer2HostConfig",
+    "FoamLiteVer2Mqtt"
+  ],
+  "parts": [
+    "FoamDetectionLiteVer2::CoilHoldConfig",
+    "FoamDetectionLiteVer2::CollectorDaemonProcess",
+    "FoamDetectionLiteVer2::CollectorPlantHttpBind",
+    "FoamDetectionLiteVer2::CollectorPlantHttpSite",
+    "FoamDetectionLiteVer2::CollectorPlantHttpSite::appEvidenceChip",
+    "FoamDetectionLiteVer2::CollectorPlantHttpSite::arvToolCell",
+    "FoamDetectionLiteVer2::CollectorPlantHttpSite::linkEvidenceChip",
+    "FoamDetectionLiteVer2::CollectorPlantHttpSite::uiStyle",
+    "FoamDetectionLiteVer2::CoreCameraTile",
+    "FoamDetectionLiteVer2::CoreCameraTile::coverageOverlay",
+    "FoamDetectionLiteVer2::CoreCameraTile::discreteStatusBadges",
+    "FoamDetectionLiteVer2::CoreCameraTile::liveVideo",
+    "FoamDetectionLiteVer2::CoreCameraTile::ratioReadout",
+    "FoamDetectionLiteVer2::CoreCameraWall",
+    "FoamDetectionLiteVer2::CoreCameraWall::camCoreTile",
+    "FoamDetectionLiteVer2::CoreDeployedMarker",
+    "FoamDetectionLiteVer2::CoreEdgeSideDeviceInventory",
+    "FoamDetectionLiteVer2::CoreGigeVisionHostTuning",
+    "FoamDetectionLiteVer2::CoreHistoryChart",
+    "FoamDetectionLiteVer2::CoreHistoryMonitor",
+    "FoamDetectionLiteVer2::CoreHistoryMonitor::historyChart",
+    "FoamDetectionLiteVer2::CoreHistoryMonitor::infoPage",
+    "FoamDetectionLiteVer2::CoreHistoryMonitor::tankSelect",
+    "FoamDetectionLiteVer2::CoreHistoryMonitor::uiStyle",
+    "FoamDetectionLiteVer2::CoreJournaldCap",
+    "FoamDetectionLiteVer2::CoreMonitorConfigPanel",
+    "FoamDetectionLiteVer2::CoreMonitorConfigPanel::alertThresholdSlider",
+    "FoamDetectionLiteVer2::CoreMonitorConfigPanel::backgroundSetIndicator",
+    "FoamDetectionLiteVer2::CoreMonitorConfigPanel::deployIdentityReadout",
+    "FoamDetectionLiteVer2::CoreMonitorConfigPanel::differenceSensitivitySlider",
+    "FoamDetectionLiteVer2::CoreMonitorConfigPanel::exposureSlider",
+    "FoamDetectionLiteVer2::CoreMonitorConfigPanel::frameRateSlider",
+    "FoamDetectionLiteVer2::CoreMonitorConfigPanel::gainSlider",
+    "FoamDetectionLiteVer2::CoreMonitorConfigPanel::uiStyle",
+    "FoamDetectionLiteVer2::CoreMonitorShell",
+    "FoamDetectionLiteVer2::CoreMonitorShell::uiStyle",
+    "FoamDetectionLiteVer2::CorePcDeviceInventory",
+    "FoamDetectionLiteVer2::CorePcInfoDialog",
+    "FoamDetectionLiteVer2::CorePcUiStyle",
+    "FoamDetectionLiteVer2::CoreRelayLabTestUi",
+    "FoamDetectionLiteVer2::CoreRelayLabTestUi::uiStyle",
+    "FoamDetectionLiteVer2::CoreTankSelectionRail",
+    "FoamDetectionLiteVer2::CoreTankSelectionRail::coverageBar",
+    "FoamDetectionLiteVer2::CoreTankSelectionRail::metricsLine",
+    "FoamDetectionLiteVer2::CoreTankSelectionRail::overThresholdLed",
+    "FoamDetectionLiteVer2::CoreTankSelectionRail::pathLed",
+    "FoamDetectionLiteVer2::CoreTankSelectionRail::streamingLed",
+    "FoamDetectionLiteVer2::CoreTankSelectionRail::valveLed",
+    "FoamDetectionLiteVer2::CoreThresholdCmdPublisher",
+    "FoamDetectionLiteVer2::CoreVideoMonitor",
+    "FoamDetectionLiteVer2::CoreVideoMonitor::appToolbar",
+    "FoamDetectionLiteVer2::CoreVideoMonitor::cameraWall",
+    "FoamDetectionLiteVer2::CoreVideoMonitor::configPanel",
+    "FoamDetectionLiteVer2::CoreVideoMonitor::infoPage",
+    "FoamDetectionLiteVer2::CoreVideoMonitor::selectedTile",
+    "FoamDetectionLiteVer2::CoreVideoMonitor::shell",
+    "FoamDetectionLiteVer2::CoreVideoMonitor::tankSelect",
+    "FoamDetectionLiteVer2::CoreVideoMonitor::uiStyle",
+    "FoamDetectionLiteVer2::CoreVideoMonitor::virtualToggleEcho",
+    "FoamDetectionLiteVer2::CoreVideoMonitorToolbar",
+    "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::alerts",
+    "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::assignmentFreshness",
+    "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::backgroundSetIndicator",
+    "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::captureBackground",
+    "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::configPanelEntry",
+    "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::displayMode",
+    "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::infoPageEntry",
+    "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::pathSelect",
+    "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::reloadDeviceTable",
+    "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::resetBackground",
+    "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::virtualToggleIndicator",
+    "FoamDetectionLiteVer2::CoreVirtualToggleMqttSubscriber",
+    "FoamDetectionLiteVer2::DeviceInventoryProcess",
+    "FoamDetectionLiteVer2::EdgeDeployedMarker",
+    "FoamDetectionLiteVer2::EdgeDeviceAssignmentLibrary",
+    "FoamDetectionLiteVer2::EdgeHmiApp",
+    "FoamDetectionLiteVer2::EdgeHmiApp::cameraPanel",
+    "FoamDetectionLiteVer2::EdgeHmiApp::configPanel",
+    "FoamDetectionLiteVer2::EdgeHmiApp::healthPanel",
+    "FoamDetectionLiteVer2::EdgeHmiApp::infoPage",
+    "FoamDetectionLiteVer2::EdgeHmiApp::msgHandler",
+    "FoamDetectionLiteVer2::EdgeHmiApp::msgQueue",
+    "FoamDetectionLiteVer2::EdgeHmiApp::shell",
+    "FoamDetectionLiteVer2::EdgeHmiApp::statusPanel",
+    "FoamDetectionLiteVer2::EdgeHmiApp::uiStyle",
+    "FoamDetectionLiteVer2::EdgeHmiApp::valvePanel",
+    "FoamDetectionLiteVer2::EdgeHmiInfoPage",
+    "FoamDetectionLiteVer2::EdgeHmiLabTestUi",
+    "FoamDetectionLiteVer2::EdgeHmiLabTestUi::uiStyle",
+    "FoamDetectionLiteVer2::EdgeMqttClient",
+    "FoamDetectionLiteVer2::EdgeSideDeviceInventory",
+    "FoamDetectionLiteVer2::FieldPressureTransmitter4_20mA",
+    "FoamDetectionLiteVer2::FoamAravisAcquireStage",
+    "FoamDetectionLiteVer2::FoamCameraBindingStage",
+    "FoamDetectionLiteVer2::FoamCoverageCsvLog",
+    "FoamDetectionLiteVer2::FoamCoverageWorkerStage",
+    "FoamDetectionLiteVer2::FoamLatestFrameSlotStage",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2CurrentLoopShunt150R",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2Edge24VPsu",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2EdgePc",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2EdgePc::deployedMarker",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2EdgePc::rpi5",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2LegacyPanelTimerRelay",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2Manual4p2tToggle",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2Relay1P1T",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2Relay4P2T",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController::coilHold",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController::evb",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController::virtualToggle",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController::wizPoe",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2ValveDriveDivider",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::bootSplash",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::coilHold",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::deviceTable",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::foamDetection",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::headscaleCoordinator",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::hmiApp",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::industrialPc",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::industrialPcSoftware",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::itriPlantServicesHost",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::itriPlantServicesSoftware",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::mqttClient",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::telemetry",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::thresholdCmd",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::virtualToggle",
+    "FoamDetectionLiteVer2::FoamLiteVer2JhemPoeCamera",
+    "FoamDetectionLiteVer2::FoamMqttStatusPublisherStage",
+    "FoamDetectionLiteVer2::FoamPoeRecoveryPublisherStage",
+    "FoamDetectionLiteVer2::FoamResultFanoutStage",
+    "FoamDetectionLiteVer2::FoamSnapshotService",
+    "FoamDetectionLiteVer2::FoamUiWidgetLibrary",
+    "FoamDetectionLiteVer2::FoamUiWidgetLibrary::colourTokens",
+    "FoamDetectionLiteVer2::FoamUiWidgetLibrary::floatKeypad",
+    "FoamDetectionLiteVer2::FoamUiWidgetLibrary::uiStyle",
+    "FoamDetectionLiteVer2::FoamUiWidgetLibrary::versionTable",
+    "FoamDetectionLiteVer2::Gs308epManagementDriver",
+    "FoamDetectionLiteVer2::HeadscaleCoordinatorHost",
+    "FoamDetectionLiteVer2::HeadscaleCoordinatorHost::aravisAcquire",
+    "FoamDetectionLiteVer2::HeadscaleCoordinatorHost::cameraBinding",
+    "FoamDetectionLiteVer2::HeadscaleCoordinatorHost::coverageWorker",
+    "FoamDetectionLiteVer2::HeadscaleCoordinatorHost::csvLog",
+    "FoamDetectionLiteVer2::HeadscaleCoordinatorHost::latestFrameSlot",
+    "FoamDetectionLiteVer2::HeadscaleCoordinatorHost::mqttStatusPublisher",
+    "FoamDetectionLiteVer2::HeadscaleCoordinatorHost::poeRecoveryPublisher",
+    "FoamDetectionLiteVer2::HeadscaleCoordinatorHost::resultFanout",
+    "FoamDetectionLiteVer2::HeadscaleCoordinatorHost::snapshotService",
+    "FoamDetectionLiteVer2::HmiHeaderBar",
+    "FoamDetectionLiteVer2::HmiHeaderBar::assignmentFreshness",
+    "FoamDetectionLiteVer2::HmiHeaderBar::languageSelect",
+    "FoamDetectionLiteVer2::HmiHeaderBar::mcuIdChip",
+    "FoamDetectionLiteVer2::HmiHeaderBar::onlineChip",
+    "FoamDetectionLiteVer2::HmiHeaderBar::pathChip",
+    "FoamDetectionLiteVer2::HmiHeaderBar::softwareVersionChip",
+    "FoamDetectionLiteVer2::HmiHeaderBar::uiStyle",
+    "FoamDetectionLiteVer2::HmiHealthPanel",
+    "FoamDetectionLiteVer2::HmiHealthPanel::brokerLink",
+    "FoamDetectionLiteVer2::HmiHealthPanel::cameraLink",
+    "FoamDetectionLiteVer2::HmiHealthPanel::infoPage",
+    "FoamDetectionLiteVer2::HmiHealthPanel::mcuHealth",
+    "FoamDetectionLiteVer2::HmiHealthPanel::mcuOnline",
+    "FoamDetectionLiteVer2::HmiHealthPanel::softwareVersionReadout",
+    "FoamDetectionLiteVer2::HmiHealthPanel::uiStyle",
+    "FoamDetectionLiteVer2::HmiInfoPage",
+    "FoamDetectionLiteVer2::HmiInfoPage::uiStyle",
+    "FoamDetectionLiteVer2::HmiKioskShell",
+    "FoamDetectionLiteVer2::HmiKioskShell::contentRegion",
+    "FoamDetectionLiteVer2::HmiKioskShell::headerBar",
+    "FoamDetectionLiteVer2::HmiKioskShell::powerOnSplash",
+    "FoamDetectionLiteVer2::HmiKioskShell::uiStyle",
+    "FoamDetectionLiteVer2::HmiUiStyle",
+    "FoamDetectionLiteVer2::HostMetricsSampler",
+    "FoamDetectionLiteVer2::IndustrialPcHost",
+    "FoamDetectionLiteVer2::IndustrialPcHost::deployedMarker",
+    "FoamDetectionLiteVer2::IndustrialPcHost::gigeVisionTuning",
+    "FoamDetectionLiteVer2::IndustrialPcHost::journaldCap",
+    "FoamDetectionLiteVer2::ItriPlantServicesHost",
+    "FoamDetectionLiteVer2::ItriPlantServicesHost::deployedMarker",
+    "FoamDetectionLiteVer2::ItriPlantServicesHost::rpi5",
+    "FoamDetectionLiteVer2::ItriPlantServicesHostStatusMonitor",
+    "FoamDetectionLiteVer2::PlantDhcpServerService",
+    "FoamDetectionLiteVer2::PlantHttpInfoPanel",
+    "FoamDetectionLiteVer2::PlantNtpServerService",
+    "FoamDetectionLiteVer2::PlantOtHubReservationAuditor",
+    "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::deviceList",
+    "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::deviceList::assignOwnerButton",
+    "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::deviceList::forgetUnassignedButton",
+    "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::deviceList::ownerDropdown",
+    "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::deviceList::saveOwnerRoleButton",
+    "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::deviceList::selectIntoSlotButton",
+    "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::deviceList::unassignOwnerButton",
+    "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::edgePicker",
+    "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::edgePicker::addSiteForm",
+    "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::edgePicker::addSiteForm::mcuIdField",
+    "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::edgePicker::addSiteForm::siteIdField",
+    "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::edgePicker::addSiteForm::siteLabelField",
+    "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::edgePicker::deleteSiteButton",
+    "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::edgePicker::siteDropdown",
+    "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::lanFind",
+    "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::lanFind::dhcpLeaseChipStrip",
+    "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::lanFind::findOnLanButton",
+    "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::siteCompletenessHint",
+    "FoamDetectionLiteVer2::PlantServicesDeployedMarker",
+    "FoamDetectionLiteVer2::PoeSwitchDeviceTableResolver",
+    "FoamDetectionLiteVer2::PoeSwitchIdentityCommitClient",
+    "FoamDetectionLiteVer2::PoeSwitchLocalHttpApi",
+    "FoamDetectionLiteVer2::PoeSwitchManagerService",
+    "FoamDetectionLiteVer2::PoeSwitchManagerService::deviceTableResolve",
+    "FoamDetectionLiteVer2::PoeSwitchManagerService::exclusiveSessionPool",
+    "FoamDetectionLiteVer2::PoeSwitchManagerService::identityCommitClient",
+    "FoamDetectionLiteVer2::PoeSwitchManagerService::localHttpApi",
+    "FoamDetectionLiteVer2::PoeSwitchManagerService::mqttAdapter",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::apiResult",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::exclusiveLoginPanel",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::healthBar",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::healthBar::loginDot",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::healthBar::loginText",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::healthBar::seqText",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::healthBar::svcDot",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::healthBar::svcText",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel::fCommit",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel::fEdge",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel::fFw",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel::fId",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel::fIp",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel::fProbe",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel::fRole",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel::fSku",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel::identBody",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel::identEmpty",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::infoPanel",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::managementIpPanel",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::managementIpPanel::newIp",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::managementIpPanel::readIpBtn",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::managementIpPanel::setIpBtn",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::portTable",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::portTable::portEmpty",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::portTable::portWrap",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::safetyBanner",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::safetyBanner::safetyNote",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::switchList",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::switchList::switchEmpty",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::uiStyle",
+    "FoamDetectionLiteVer2::PoeSwitchMqttAdapter",
+    "FoamDetectionLiteVer2::PoeSwitchSessionPool",
+    "FoamDetectionLiteVer2::ReservationAuditorProcess",
+    "FoamDetectionLiteVer2::TelemetryMonitor",
+    "FoamDetectionLiteVer2::ThresholdCmdPublisher",
+    "FoamDetectionLiteVer2::VirtualToggleControl",
+    "FoamDetectionLiteVer2::VirtualToggleIndicator",
+    "FoamDetectionLiteVer2::WaveshareRs485ToPoeEthB",
+    "FoamDetectionLiteVer2::YokogawaUm331",
+    "FoamDetectionLiteVer2::uiStyle"
+  ],
+  "ports": [
+    "FoamDetectionLiteVer2::CoreCameraTile::coverageRatioIn",
+    "FoamDetectionLiteVer2::CoreCameraTile::faultIn",
+    "FoamDetectionLiteVer2::CoreCameraTile::frameAgeIn",
+    "FoamDetectionLiteVer2::CoreCameraTile::overThresholdIn",
+    "FoamDetectionLiteVer2::CoreCameraTile::previewBundleIn",
+    "FoamDetectionLiteVer2::CoreCameraTile::previewFrameIn",
+    "FoamDetectionLiteVer2::CoreCameraTile::streamingIn",
+    "FoamDetectionLiteVer2::CoreCameraWall::previewBundleIn",
+    "FoamDetectionLiteVer2::CoreCameraWall::sink",
+    "FoamDetectionLiteVer2::CoreCameraWall::source",
+    "FoamDetectionLiteVer2::CoreEdgeSideDeviceInventory::bind",
+    "FoamDetectionLiteVer2::CoreEdgeSideDeviceInventory::industrialPc",
+    "FoamDetectionLiteVer2::CoreHistoryChart::historyIn",
+    "FoamDetectionLiteVer2::CoreHistoryReadPort",
+    "FoamDetectionLiteVer2::CoreMonitorConfigPanel::cameraSettingsOut",
+    "FoamDetectionLiteVer2::CoreMonitorConfigPanel::processingSettingsOut",
+    "FoamDetectionLiteVer2::CoreRelayLabTestUi::virtualToggleRequestOut",
+    "FoamDetectionLiteVer2::CoreTankSelectionRail::coverageRatioIn",
+    "FoamDetectionLiteVer2::CoreTankSelectionRail::overThresholdIn",
+    "FoamDetectionLiteVer2::CoreTankSelectionRail::pathEchoIn",
+    "FoamDetectionLiteVer2::CoreTankSelectionRail::streamingIn",
+    "FoamDetectionLiteVer2::CoreTankSelectionRail::valveStateIn",
+    "FoamDetectionLiteVer2::CoreValveStateInPort",
+    "FoamDetectionLiteVer2::CoreVideoMonitor::livePreviewIn",
+    "FoamDetectionLiteVer2::CoreVideoMonitor::sink",
+    "FoamDetectionLiteVer2::CoreVideoMonitor::source",
+    "FoamDetectionLiteVer2::CoreVideoMonitor::wallPreviewOut",
+    "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::echoIn",
+    "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::virtualToggleRequestOut",
+    "FoamDetectionLiteVer2::CoreVirtualToggleEchoInPort",
+    "FoamDetectionLiteVer2::CoreVirtualToggleEchoOutPort",
+    "FoamDetectionLiteVer2::CoreVirtualToggleMqttSubscriber::echoOut",
+    "FoamDetectionLiteVer2::EdgeHmiApp::virtualToggleRequestOut",
+    "FoamDetectionLiteVer2::FieldPressureTransmitter4_20mA::loopOut",
+    "FoamDetectionLiteVer2::FoamAravisAcquireStage::cameraIn",
+    "FoamDetectionLiteVer2::FoamAravisAcquireStage::frameOut",
+    "FoamDetectionLiteVer2::FoamCameraBindingInPort",
+    "FoamDetectionLiteVer2::FoamCameraBindingOutPort",
+    "FoamDetectionLiteVer2::FoamCameraBindingStage::bindingOut",
+    "FoamDetectionLiteVer2::FoamCameraStatusInPort",
+    "FoamDetectionLiteVer2::FoamCameraStatusOutPort",
+    "FoamDetectionLiteVer2::FoamCoverageResultInPort",
+    "FoamDetectionLiteVer2::FoamCoverageResultOutPort",
+    "FoamDetectionLiteVer2::FoamCoverageWorkerStage::frameIn",
+    "FoamDetectionLiteVer2::FoamCoverageWorkerStage::previewOut",
+    "FoamDetectionLiteVer2::FoamCoverageWorkerStage::processingSettingsIn",
+    "FoamDetectionLiteVer2::FoamCoverageWorkerStage::resultOut",
+    "FoamDetectionLiteVer2::FoamFrameInPort",
+    "FoamDetectionLiteVer2::FoamFrameOutPort",
+    "FoamDetectionLiteVer2::FoamLatestFrameSlotStage::frameIn",
+    "FoamDetectionLiteVer2::FoamLatestFrameSlotStage::frameOut",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2CurrentLoopShunt150R::loopIn",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2CurrentLoopShunt150R::loopReturn",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2CurrentLoopShunt150R::senseOut",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2EdgePc::ethernet",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2EdgePc::hdmi",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2EdgePc::i2cTouchHost",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2EdgePc::mipiDisp1",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2EdgePc::usbHost",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2LegacyPanelTimerRelay::timerThrow",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2Relay4P2T::ctrl",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2Relay4P2T::pole1",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2Relay4P2T::pole2",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2Relay4P2T::pole3",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2Relay4P2T::pole4",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2Relay4P2T::throw1",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2Relay4P2T::throw2",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController::coilLogic",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController::consumer",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController::ethernet",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController::gpioLine",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController::harnessPin",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController::loop4_20mASense",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController::mcuAdc",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController::mqttClient",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController::picoHeader",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController::powerIn",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController::relay4p2tStateSense",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController::relayDrive",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController::supplier",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController::usb",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController::valveStateSense",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2ValveDriveDivider::adcOut",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2ValveDriveDivider::inputLine",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::a",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::b",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::bootSplash::dsiIn",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::bootSplash::i2cTouch",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::broker",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::client",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::host",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::sink",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::source",
+    "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::switchPort",
+    "FoamDetectionLiteVer2::FoamMqttStatusPublisherStage::statusIn",
+    "FoamDetectionLiteVer2::FoamPoePortPowerCmdOutPort",
+    "FoamDetectionLiteVer2::FoamPoeRecoveryPublisherStage::commandOut",
+    "FoamDetectionLiteVer2::FoamPoeRecoveryPublisherStage::requestIn",
+    "FoamDetectionLiteVer2::FoamRecoveryRequestInPort",
+    "FoamDetectionLiteVer2::FoamRecoveryRequestOutPort",
+    "FoamDetectionLiteVer2::FoamResultFanoutStage::previewOut",
+    "FoamDetectionLiteVer2::FoamResultFanoutStage::recoveryOut",
+    "FoamDetectionLiteVer2::FoamResultFanoutStage::resultIn",
+    "FoamDetectionLiteVer2::FoamResultFanoutStage::statusOut",
+    "FoamDetectionLiteVer2::HeadscaleCoordinatorHost::cameraSettingsIn",
+    "FoamDetectionLiteVer2::HeadscaleCoordinatorHost::cameraSettingsOut",
+    "FoamDetectionLiteVer2::HeadscaleCoordinatorHost::livePreviewOut",
+    "FoamDetectionLiteVer2::HeadscaleCoordinatorHost::poePortPowerCmdOut",
+    "FoamDetectionLiteVer2::HeadscaleCoordinatorHost::processingSettingsIn",
+    "FoamDetectionLiteVer2::HeadscaleCoordinatorHost::sink",
+    "FoamDetectionLiteVer2::HeadscaleCoordinatorHost::source",
+    "FoamDetectionLiteVer2::IndustrialPcHost::ethernet",
+    "FoamDetectionLiteVer2::IndustrialPcHost::ethernetWww",
+    "FoamDetectionLiteVer2::ItriPlantServicesHost::ethernet",
+    "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::deviceList::assignOwnerButton::assignOut",
+    "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::deviceList::forgetUnassignedButton::forgetOut",
+    "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::deviceList::rowViewIn",
+    "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::deviceList::saveOwnerRoleButton::assignOut",
+    "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::deviceList::unassignOwnerButton::assignOut",
+    "FoamDetectionLiteVer2::PoeSwitchCatalogInPort",
+    "FoamDetectionLiteVer2::PoeSwitchDeviceTableResolver::catalogIn",
+    "FoamDetectionLiteVer2::PoeSwitchHealthOutPort",
+    "FoamDetectionLiteVer2::PoeSwitchHttpManagementIpInPort",
+    "FoamDetectionLiteVer2::PoeSwitchHttpPoeCommandInPort",
+    "FoamDetectionLiteVer2::PoeSwitchIdentityCommitClient::identityOut",
+    "FoamDetectionLiteVer2::PoeSwitchIdentityCommitOutPort",
+    "FoamDetectionLiteVer2::PoeSwitchLocalHttpApi::healthOut",
+    "FoamDetectionLiteVer2::PoeSwitchLocalHttpApi::mgmtIpIn",
+    "FoamDetectionLiteVer2::PoeSwitchLocalHttpApi::poeCmdIn",
+    "FoamDetectionLiteVer2::PoeSwitchLocalHttpApi::sessionIn",
+    "FoamDetectionLiteVer2::PoeSwitchLocalHttpApi::statusOut",
+    "FoamDetectionLiteVer2::PoeSwitchManagerService::identityOut",
+    "FoamDetectionLiteVer2::PoeSwitchManagerService::mqttClient",
+    "FoamDetectionLiteVer2::PoeSwitchManagerService::sink",
+    "FoamDetectionLiteVer2::PoeSwitchManagerService::source",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::healthIn",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::mgmtIpOut",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::poeCmdOut",
+    "FoamDetectionLiteVer2::PoeSwitchManagerUi::statusIn",
+    "FoamDetectionLiteVer2::PoeSwitchMqttAdapter::cmdIn",
+    "FoamDetectionLiteVer2::PoeSwitchMqttAdapter::statusOut",
+    "FoamDetectionLiteVer2::PoeSwitchMqttCommandInPort",
+    "FoamDetectionLiteVer2::PoeSwitchMqttStatusOutPort",
+    "FoamDetectionLiteVer2::PoeSwitchSessionInPort",
+    "FoamDetectionLiteVer2::PoeSwitchSessionOutPort",
+    "FoamDetectionLiteVer2::PoeSwitchSessionPool::sessionOut",
+    "FoamDetectionLiteVer2::PoeSwitchStatusOutPort",
+    "FoamDetectionLiteVer2::VirtualToggleControl::uiRequestIn",
+    "FoamDetectionLiteVer2::WaveshareRs485ToPoeEthB::ethernet",
+    "FoamDetectionLiteVer2::WaveshareRs485ToPoeEthB::rs485",
+    "FoamDetectionLiteVer2::YokogawaUm331::pvLoopIn",
+    "FoamDetectionLiteVer2::YokogawaUm331::rs485",
+    "FoamDetectionLiteVer2::sink",
+    "FoamDetectionLiteVer2::source"
+  ],
+  "connections": [],
+  "nested_parts": [
+    {
+      "qname": "FoamDetectionLiteVer2::CollectorPlantHttpSite::appEvidenceChip",
+      "ownerQname": "FoamDetectionLiteVer2::CollectorPlantHttpSite"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CollectorPlantHttpSite::arvToolCell",
+      "ownerQname": "FoamDetectionLiteVer2::CollectorPlantHttpSite"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CollectorPlantHttpSite::linkEvidenceChip",
+      "ownerQname": "FoamDetectionLiteVer2::CollectorPlantHttpSite"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CollectorPlantHttpSite::uiStyle",
+      "ownerQname": "FoamDetectionLiteVer2::CollectorPlantHttpSite"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreCameraTile::coverageOverlay",
+      "ownerQname": "FoamDetectionLiteVer2::CoreCameraTile"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreCameraTile::discreteStatusBadges",
+      "ownerQname": "FoamDetectionLiteVer2::CoreCameraTile"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreCameraTile::liveVideo",
+      "ownerQname": "FoamDetectionLiteVer2::CoreCameraTile"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreCameraTile::ratioReadout",
+      "ownerQname": "FoamDetectionLiteVer2::CoreCameraTile"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreCameraWall::camCoreTile",
+      "ownerQname": "FoamDetectionLiteVer2::CoreCameraWall"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreHistoryMonitor::historyChart",
+      "ownerQname": "FoamDetectionLiteVer2::CoreHistoryMonitor"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreHistoryMonitor::infoPage",
+      "ownerQname": "FoamDetectionLiteVer2::CoreHistoryMonitor"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreHistoryMonitor::tankSelect",
+      "ownerQname": "FoamDetectionLiteVer2::CoreHistoryMonitor"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreHistoryMonitor::uiStyle",
+      "ownerQname": "FoamDetectionLiteVer2::CoreHistoryMonitor"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreMonitorConfigPanel::alertThresholdSlider",
+      "ownerQname": "FoamDetectionLiteVer2::CoreMonitorConfigPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreMonitorConfigPanel::backgroundSetIndicator",
+      "ownerQname": "FoamDetectionLiteVer2::CoreMonitorConfigPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreMonitorConfigPanel::deployIdentityReadout",
+      "ownerQname": "FoamDetectionLiteVer2::CoreMonitorConfigPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreMonitorConfigPanel::differenceSensitivitySlider",
+      "ownerQname": "FoamDetectionLiteVer2::CoreMonitorConfigPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreMonitorConfigPanel::exposureSlider",
+      "ownerQname": "FoamDetectionLiteVer2::CoreMonitorConfigPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreMonitorConfigPanel::frameRateSlider",
+      "ownerQname": "FoamDetectionLiteVer2::CoreMonitorConfigPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreMonitorConfigPanel::gainSlider",
+      "ownerQname": "FoamDetectionLiteVer2::CoreMonitorConfigPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreMonitorConfigPanel::uiStyle",
+      "ownerQname": "FoamDetectionLiteVer2::CoreMonitorConfigPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreMonitorShell::uiStyle",
+      "ownerQname": "FoamDetectionLiteVer2::CoreMonitorShell"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreRelayLabTestUi::uiStyle",
+      "ownerQname": "FoamDetectionLiteVer2::CoreRelayLabTestUi"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreTankSelectionRail::coverageBar",
+      "ownerQname": "FoamDetectionLiteVer2::CoreTankSelectionRail"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreTankSelectionRail::metricsLine",
+      "ownerQname": "FoamDetectionLiteVer2::CoreTankSelectionRail"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreTankSelectionRail::overThresholdLed",
+      "ownerQname": "FoamDetectionLiteVer2::CoreTankSelectionRail"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreTankSelectionRail::pathLed",
+      "ownerQname": "FoamDetectionLiteVer2::CoreTankSelectionRail"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreTankSelectionRail::streamingLed",
+      "ownerQname": "FoamDetectionLiteVer2::CoreTankSelectionRail"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreTankSelectionRail::valveLed",
+      "ownerQname": "FoamDetectionLiteVer2::CoreTankSelectionRail"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreVideoMonitor::appToolbar",
+      "ownerQname": "FoamDetectionLiteVer2::CoreVideoMonitor"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreVideoMonitor::cameraWall",
+      "ownerQname": "FoamDetectionLiteVer2::CoreVideoMonitor"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreVideoMonitor::configPanel",
+      "ownerQname": "FoamDetectionLiteVer2::CoreVideoMonitor"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreVideoMonitor::infoPage",
+      "ownerQname": "FoamDetectionLiteVer2::CoreVideoMonitor"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreVideoMonitor::selectedTile",
+      "ownerQname": "FoamDetectionLiteVer2::CoreVideoMonitor"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreVideoMonitor::shell",
+      "ownerQname": "FoamDetectionLiteVer2::CoreVideoMonitor"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreVideoMonitor::tankSelect",
+      "ownerQname": "FoamDetectionLiteVer2::CoreVideoMonitor"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreVideoMonitor::uiStyle",
+      "ownerQname": "FoamDetectionLiteVer2::CoreVideoMonitor"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreVideoMonitor::virtualToggleEcho",
+      "ownerQname": "FoamDetectionLiteVer2::CoreVideoMonitor"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::alerts",
+      "ownerQname": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::assignmentFreshness",
+      "ownerQname": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::backgroundSetIndicator",
+      "ownerQname": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::captureBackground",
+      "ownerQname": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::configPanelEntry",
+      "ownerQname": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::displayMode",
+      "ownerQname": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::infoPageEntry",
+      "ownerQname": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::pathSelect",
+      "ownerQname": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::reloadDeviceTable",
+      "ownerQname": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::resetBackground",
+      "ownerQname": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::virtualToggleIndicator",
+      "ownerQname": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::EdgeHmiApp::cameraPanel",
+      "ownerQname": "FoamDetectionLiteVer2::EdgeHmiApp"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::EdgeHmiApp::configPanel",
+      "ownerQname": "FoamDetectionLiteVer2::EdgeHmiApp"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::EdgeHmiApp::healthPanel",
+      "ownerQname": "FoamDetectionLiteVer2::EdgeHmiApp"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::EdgeHmiApp::infoPage",
+      "ownerQname": "FoamDetectionLiteVer2::EdgeHmiApp"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::EdgeHmiApp::msgHandler",
+      "ownerQname": "FoamDetectionLiteVer2::EdgeHmiApp"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::EdgeHmiApp::msgQueue",
+      "ownerQname": "FoamDetectionLiteVer2::EdgeHmiApp"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::EdgeHmiApp::shell",
+      "ownerQname": "FoamDetectionLiteVer2::EdgeHmiApp"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::EdgeHmiApp::statusPanel",
+      "ownerQname": "FoamDetectionLiteVer2::EdgeHmiApp"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::EdgeHmiApp::uiStyle",
+      "ownerQname": "FoamDetectionLiteVer2::EdgeHmiApp"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::EdgeHmiApp::valvePanel",
+      "ownerQname": "FoamDetectionLiteVer2::EdgeHmiApp"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::EdgeHmiLabTestUi::uiStyle",
+      "ownerQname": "FoamDetectionLiteVer2::EdgeHmiLabTestUi"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::bootSplash",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::coilHold",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::deviceTable",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::foamDetection",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2CurrentLoopShunt150R",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2Edge24VPsu",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2EdgePc",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2EdgePc::deployedMarker",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2EdgePc"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2EdgePc::rpi5",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2EdgePc"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2LegacyPanelTimerRelay",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2Manual4p2tToggle",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2Relay1P1T",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2Relay4P2T",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController::coilHold",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController::evb",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController::virtualToggle",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController::wizPoe",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2RelayController"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::FoamLiteVer2ValveDriveDivider",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::headscaleCoordinator",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::hmiApp",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::industrialPc",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::industrialPcSoftware",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::itriPlantServicesHost",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::itriPlantServicesSoftware",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::mqttClient",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::telemetry",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::thresholdCmd",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware::virtualToggle",
+      "ownerQname": "FoamDetectionLiteVer2::FoamLiteVer2EdgePcSoftware"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamUiWidgetLibrary::colourTokens",
+      "ownerQname": "FoamDetectionLiteVer2::FoamUiWidgetLibrary"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamUiWidgetLibrary::floatKeypad",
+      "ownerQname": "FoamDetectionLiteVer2::FoamUiWidgetLibrary"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamUiWidgetLibrary::uiStyle",
+      "ownerQname": "FoamDetectionLiteVer2::FoamUiWidgetLibrary"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::FoamUiWidgetLibrary::versionTable",
+      "ownerQname": "FoamDetectionLiteVer2::FoamUiWidgetLibrary"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HeadscaleCoordinatorHost::aravisAcquire",
+      "ownerQname": "FoamDetectionLiteVer2::HeadscaleCoordinatorHost"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HeadscaleCoordinatorHost::cameraBinding",
+      "ownerQname": "FoamDetectionLiteVer2::HeadscaleCoordinatorHost"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HeadscaleCoordinatorHost::coverageWorker",
+      "ownerQname": "FoamDetectionLiteVer2::HeadscaleCoordinatorHost"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HeadscaleCoordinatorHost::csvLog",
+      "ownerQname": "FoamDetectionLiteVer2::HeadscaleCoordinatorHost"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HeadscaleCoordinatorHost::latestFrameSlot",
+      "ownerQname": "FoamDetectionLiteVer2::HeadscaleCoordinatorHost"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HeadscaleCoordinatorHost::mqttStatusPublisher",
+      "ownerQname": "FoamDetectionLiteVer2::HeadscaleCoordinatorHost"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HeadscaleCoordinatorHost::poeRecoveryPublisher",
+      "ownerQname": "FoamDetectionLiteVer2::HeadscaleCoordinatorHost"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HeadscaleCoordinatorHost::resultFanout",
+      "ownerQname": "FoamDetectionLiteVer2::HeadscaleCoordinatorHost"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HeadscaleCoordinatorHost::snapshotService",
+      "ownerQname": "FoamDetectionLiteVer2::HeadscaleCoordinatorHost"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HmiHeaderBar::assignmentFreshness",
+      "ownerQname": "FoamDetectionLiteVer2::HmiHeaderBar"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HmiHeaderBar::languageSelect",
+      "ownerQname": "FoamDetectionLiteVer2::HmiHeaderBar"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HmiHeaderBar::mcuIdChip",
+      "ownerQname": "FoamDetectionLiteVer2::HmiHeaderBar"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HmiHeaderBar::onlineChip",
+      "ownerQname": "FoamDetectionLiteVer2::HmiHeaderBar"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HmiHeaderBar::pathChip",
+      "ownerQname": "FoamDetectionLiteVer2::HmiHeaderBar"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HmiHeaderBar::softwareVersionChip",
+      "ownerQname": "FoamDetectionLiteVer2::HmiHeaderBar"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HmiHeaderBar::uiStyle",
+      "ownerQname": "FoamDetectionLiteVer2::HmiHeaderBar"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HmiHealthPanel::brokerLink",
+      "ownerQname": "FoamDetectionLiteVer2::HmiHealthPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HmiHealthPanel::cameraLink",
+      "ownerQname": "FoamDetectionLiteVer2::HmiHealthPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HmiHealthPanel::infoPage",
+      "ownerQname": "FoamDetectionLiteVer2::HmiHealthPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HmiHealthPanel::mcuHealth",
+      "ownerQname": "FoamDetectionLiteVer2::HmiHealthPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HmiHealthPanel::mcuOnline",
+      "ownerQname": "FoamDetectionLiteVer2::HmiHealthPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HmiHealthPanel::softwareVersionReadout",
+      "ownerQname": "FoamDetectionLiteVer2::HmiHealthPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HmiHealthPanel::uiStyle",
+      "ownerQname": "FoamDetectionLiteVer2::HmiHealthPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HmiInfoPage::uiStyle",
+      "ownerQname": "FoamDetectionLiteVer2::HmiInfoPage"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HmiKioskShell::contentRegion",
+      "ownerQname": "FoamDetectionLiteVer2::HmiKioskShell"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HmiKioskShell::headerBar",
+      "ownerQname": "FoamDetectionLiteVer2::HmiKioskShell"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HmiKioskShell::powerOnSplash",
+      "ownerQname": "FoamDetectionLiteVer2::HmiKioskShell"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::HmiKioskShell::uiStyle",
+      "ownerQname": "FoamDetectionLiteVer2::HmiKioskShell"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::IndustrialPcHost::deployedMarker",
+      "ownerQname": "FoamDetectionLiteVer2::IndustrialPcHost"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::IndustrialPcHost::gigeVisionTuning",
+      "ownerQname": "FoamDetectionLiteVer2::IndustrialPcHost"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::IndustrialPcHost::journaldCap",
+      "ownerQname": "FoamDetectionLiteVer2::IndustrialPcHost"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::ItriPlantServicesHost::deployedMarker",
+      "ownerQname": "FoamDetectionLiteVer2::ItriPlantServicesHost"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::ItriPlantServicesHost::rpi5",
+      "ownerQname": "FoamDetectionLiteVer2::ItriPlantServicesHost"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::deviceList",
+      "ownerQname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::deviceList::assignOwnerButton",
+      "ownerQname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::deviceList"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::deviceList::forgetUnassignedButton",
+      "ownerQname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::deviceList"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::deviceList::ownerDropdown",
+      "ownerQname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::deviceList"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::deviceList::saveOwnerRoleButton",
+      "ownerQname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::deviceList"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::deviceList::selectIntoSlotButton",
+      "ownerQname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::deviceList"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::deviceList::unassignOwnerButton",
+      "ownerQname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::deviceList"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::edgePicker",
+      "ownerQname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::edgePicker::addSiteForm",
+      "ownerQname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::edgePicker"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::edgePicker::addSiteForm::mcuIdField",
+      "ownerQname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::edgePicker::addSiteForm"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::edgePicker::addSiteForm::siteIdField",
+      "ownerQname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::edgePicker::addSiteForm"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::edgePicker::addSiteForm::siteLabelField",
+      "ownerQname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::edgePicker::addSiteForm"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::edgePicker::deleteSiteButton",
+      "ownerQname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::edgePicker"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::edgePicker::siteDropdown",
+      "ownerQname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::edgePicker"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::lanFind",
+      "ownerQname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::lanFind::dhcpLeaseChipStrip",
+      "ownerQname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::lanFind"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::lanFind::findOnLanButton",
+      "ownerQname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::lanFind"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor::siteCompletenessHint",
+      "ownerQname": "FoamDetectionLiteVer2::PlantOtHubReservationAuditor"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerService::deviceTableResolve",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerService"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerService::exclusiveSessionPool",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerService"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerService::identityCommitClient",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerService"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerService::localHttpApi",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerService"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerService::mqttAdapter",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerService"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::apiResult",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::exclusiveLoginPanel",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::healthBar",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::healthBar::loginDot",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::healthBar"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::healthBar::loginText",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::healthBar"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::healthBar::seqText",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::healthBar"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::healthBar::svcDot",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::healthBar"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::healthBar::svcText",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::healthBar"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel::fCommit",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel::fEdge",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel::fFw",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel::fId",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel::fIp",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel::fProbe",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel::fRole",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel::fSku",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel::identBody",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel::identEmpty",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::identityPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::infoPanel",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::managementIpPanel",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::managementIpPanel::newIp",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::managementIpPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::managementIpPanel::readIpBtn",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::managementIpPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::managementIpPanel::setIpBtn",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::managementIpPanel"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::portTable",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::portTable::portEmpty",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::portTable"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::portTable::portWrap",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::portTable"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::safetyBanner",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::safetyBanner::safetyNote",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::safetyBanner"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::switchList",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::switchList::switchEmpty",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::switchList"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::PoeSwitchManagerUi::uiStyle",
+      "ownerQname": "FoamDetectionLiteVer2::PoeSwitchManagerUi"
+    }
+  ],
+  "nested_hand_create": [
+    {
+      "hint": "backgroundSetIndicator",
+      "qnames": [
+        "FoamDetectionLiteVer2::CoreMonitorConfigPanel::backgroundSetIndicator",
+        "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::backgroundSetIndicator"
+      ],
+      "status": "IDENTIFIED"
+    }
+  ],
+  "unknown": [
+    {
+      "kind": "connection",
+      "name": "linkBindingToAcquire",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkProcessingSettingsToCoverageWorker",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkAcquireToSlot",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkSlotToCoverage",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkCoverageToFanout",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkFanoutPreviewToOutput",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkFanoutToStatus",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkFanoutToRecovery",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkRecoveryToPoeCommand",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkSessionToLocalApi",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkIdentityToBoundary",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkWallBundleToTiles",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "CoreVideoDisplayToCameraWall",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "CoreVirtualToggleEchoToIndicator",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkLivePreviewInToWallOut",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkHttpAssignToStore",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkHttpForgetToStore",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkHttpPoeIdentityToStore",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkStoreToPub",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkTelemetryHistorianToHistoryMonitor",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkFoamDetectionToVideoDisplay",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkCoreConfigToCameraFeatures",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkCoreConfigToProcessingSettings",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkVideoDisplayToCameraWall",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkVideoDisplayToVirtualToggle",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkVirtualToggleEchoToVideoIndicator",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkLabTestUiToVirtualToggle",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkUiHealth",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkUiStatus",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkUiPoeCmd",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkUiMgmtIp",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkAssignOwnerToHttp",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkSaveOwnerToHttp",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkForgetToHttp",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkPoeIdentityCommitToInventory",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkMqttWatchdogToMosquitto",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkPoeSwitchManagerToMosquitto",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkCameraPresenceToMosquitto",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkPressureGatewayPresenceToMosquitto",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkDeviceInventoryToMosquitto",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkReservationAuditorOnlineToWatchdog",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkReservationAuditorToMosquitto",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkHmiToVirtualToggle",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkHmiToCameraFeatures",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkEvbMagneticsToWizPoe",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkWizPoe5VToEvb",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkRelayDriveToPicoHeaderPin17",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkRelay4p2tStateSenseToPicoHeaderPin31",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkValveStateSenseToPicoHeaderPin32",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkLoop4_20mASenseToPicoHeaderPin34",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkHarnessPin17ToMcuCoilDrive",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkHarnessPin31ToRelay4p2tStateSense",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkHarnessPin32ToValveStateSense",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkHarnessPin34ToLoop4_20mASense",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkMcuCoilToBufferLogicIn",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkBufferToRelay1p1tCoil",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkManual4p2tToggleToRelay4p2tCoil",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkRelay1p1tThrowToRelay4p2tPole1",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkLegacyTimerToRelay4p2tPole2",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkPcba3V3ToRelay4p2tPole3",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkPcbaGndToRelay4p2tPole4",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkRelay4p2tThrow1ToValveTwoP",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkRelay4p2tThrow1ToDividerInput",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkDividerToA1",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkA1ToMcuValveStateSense",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkRelay4p2tThrow2ToA0",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkA0ToMcuRelay4p2tStateSense",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkLoop4_20mAInToShunt",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkShuntReturnToPcbaGnd",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkShuntSenseToA2",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkA2ToMcuLoop4_20mASense",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkRelayControllerToGs308epPort1",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkEdgePcToGs308epPort2",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkEdgePcToTouchScreen",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkEdgePcI2cToTouchScreen",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkPoeCameraAToGs308epPort3",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkPoeCameraBToGs308epPort4",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkPressureGatewayToGs308epPort6",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkPressureTxToUm331",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkUm331ToFieldInterconnectRs485",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkFieldInterconnectRs485ToGateway",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkAnnularLightDriverToTankLight",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkEdgePanelAcToEdge24VPsu",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkEdgePanelAcToAnnularLightDriver",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkEdge24VPsuToRelayChainPcba",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkRelayControllerPicoHeaderToRelayChainHarness",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkLegacyTimerRelayToRelayChainPcba",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkRelayChainToFieldInterconnectValve",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkFieldInterconnectValveToController",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkFieldInterconnectLoopToRelayChain",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkGs308epUplinkToCoreSwitch",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkItriPlantServicesHostToCoreSwitch",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkRelayControllerMqttToMosquitto",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkIndustrialPcToCoreSwitch",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkIndustrialPcHeadscaleCoordinatorWww",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkCoreFoamDetectionPoePortPowerCmd",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "connection",
+      "name": "linkEdgeFoamDetectionPoePortPowerCmd",
+      "path": "models/deploy.sysml",
+      "reason": "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints)."
+    },
+    {
+      "kind": "submodule",
+      "name": "sysml-models/libs",
+      "path": "sysml-models/libs",
+      "reason": "UNKNOWN until git submodule sysml-models/libs is present. Gold freeze is the Foam tree files that were parsed; common-lib kinds are not claimed."
+    },
+    {
+      "kind": "part_def",
+      "name": "HeadscaleAdminUiService",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "ValveController",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "FoamCoverageDetectionService",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "MqttWatchdog",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "GoogleChatIncomingWebhookNotifier",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "ReservationAuditMatrixUi",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "MosquittoDaemonProcess",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "MosquittoPersistenceStore",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "MosquittoPlantNetworkBind",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "MosquittoMcuTopicFace",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "MosquittoBrokerService",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "CoreWatchdogMonitorUi",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "DeviceInventoryUi",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "Um331ModbusTcpClientService",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "HeadscaleClientService",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "RemoteDesktopServerService",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "CoreTelemetryHistorian",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "FoamLiteVer2IndustrialPcSoftware",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "PlantMdnsService",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "CameraPresenceReporter",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "PressureGatewayPresenceReporter",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "FoamLiteVer2ItriPlantServicesSoftware",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "HmiStatusMetricsBand",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "HmiStatusPanel",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "HmiValvePanel",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "DeviceTableReloadControl",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "DeviceTableFreshnessIndicator",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "HmiCameraPanel",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "HmiConfigPanel",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "HmiPowerOnSplash",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "FoamLiteVer2EdgeTouchScreen",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "FoamLiteVer2McuCoilBuffer",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "FoamLiteVer2RelayChainPcba",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "FoamLiteVer2EdgeFieldInterconnectPcba",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "FoamLiteVer2EdgeSide",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    },
+    {
+      "kind": "part_def",
+      "name": "FoamDetectionLiteVer2System",
+      "path": "models/deploy.sysml",
+      "reason": "part def present in SysML but missing from parser output (often `doc /*` closed early by markdown `**.../**`). UNKNOWN — do not invent a qname."
+    }
+  ]
+}
