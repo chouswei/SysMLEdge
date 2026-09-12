@@ -22,7 +22,7 @@ Product-story locks are **exact** in [CEO Core — Steve taste](#ceo-core--steve
 | **Sysmler Core** (2026-09-12) | **KEEP / NARROW** the spine. Cite CEO Core P1 gate (exact locks below). |
 | **CEO Core P1 gate** (2026-09-12) | Exact locks: **Sequence** / **Pass only** / **Kill theater** (cite Edison). Must-fix / kill risks / OK. Scaffold ≠ P1. |
 | **Edison Core experiment** (Thomas Alva Edison / Horcrux, 2026-09-12) | **KEEP / NARROW** the 2-week Foam cycle (9–12 + M1–M5). Do **not** invert sequence. Engine + story locks untouched. Scaffold ≠ P1. |
-| **CEO Core — Steve + Elon agree** (2026-09-12) | **M1 FAIL still gates.** LIVE bind deferred until Post-A/B clear **or** published narrow+counts. **KEEP MemNet sole** — no Neo4j / dual-engine / Kuzu / C rewrite until fidelity green **and** timed H2H loses with numbers. Gaps = Foam projection fidelity + SysMLEdge reproject ego, **not** the wrong store. Path-B CON floor **≥0.19.9+TCP**. |
+| **CEO Core — Steve + Elon agree** (2026-09-12) | **M1 FAIL still gates.** [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego ≠ M1 pass. Gate = Memnetor LIVE re-measure vs gold. LIVE bind deferred until Post-A/B clear **or** LIVE meters match gold. **KEEP MemNet sole** — no Neo4j / dual-engine / Kuzu / C rewrite until fidelity green **and** timed H2H loses with numbers. Gaps = Foam projection fidelity + SysMLEdge reproject ego, **not** the wrong store. Path-B CON floor **≥0.19.9+TCP**. |
 
 **Taste risks** (Steve Jobs + CEO Core 2026-09-12): **Kill smells:** IDE / canvas / MemNet tip = product. Prior: Cameo-lite; MemNet-wrapper (tip Path-B ≠ product); yet-another-MCP without beat-grep cold feel.
 
@@ -88,11 +88,11 @@ This file does not implement runtime.
 
 **Cite:** Steve Jobs + Elon Musk / CEO Core 2026-09-12. **Agree.** Engine KEEP sole / NARROW / improve-only **stand**. This file does not implement runtime.
 
-LIVE M1 on `mn_b05a9869` is **FAIL** (BEFORE Path A: CON=0 session-wide / nested absent). Path A AFTER meters (TSK ego CON=29, nested via ops) ≠ gold and **≠ SysMLEdge bind**. Exact meters: [proof/RUNLOG-2026-09-12-m1-bind.md](proof/RUNLOG-2026-09-12-m1-bind.md).
+LIVE M1 on `mn_b05a9869` is **FAIL** (BEFORE Path A: CON=0 session-wide / nested absent). Path A AFTER meters (TSK ego CON=29, nested via ops) ≠ gold and **≠ SysMLEdge bind**. Path-B LIVE re-measure on `mn_0d4f6178` @ **0.19.9+TCP** (Memnetor, SysML qname cue, no owns mutate): CON find \|Q\|=**124** vs gold **200**; nested qname ego **YES**. [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego ≠ M1 pass. Exact meters: [proof/RUNLOG-2026-09-12-m1-bind.md](proof/RUNLOG-2026-09-12-m1-bind.md).
 
 | Lock | Rule |
 |------|------|
-| **M1 FAIL still gates** | LIVE bind is **deferred** until **Post-A/B clear** **or** a **published** narrow + counts. MUST NOT claim LIVE `rev.sha` / STALE / reproject while M1 is FAIL without that publish. FAKE bind smoke ≠ LIVE bind. Path A CON=29 / nested-in-ego ≠ bind. |
+| **M1 FAIL still gates** | [#21](https://github.com/chouswei/SysMLEdge/pull/21) **FAKE ego ≠ M1 pass.** Gate = **Memnetor LIVE re-measure vs gold**. LIVE bind is **deferred** until **Post-A/B clear** **or** LIVE meters match gold. MUST NOT claim LIVE `rev.sha` / STALE / reproject while M1 is FAIL. FAKE bind smoke ≠ LIVE bind. Path A CON=29 / nested-in-ego ≠ bind. Path-B CON **124** ≠ gold **200**. |
 | **KEEP MemNet sole** | **No Neo4j / dual-engine / Kuzu / C rewrite** until fidelity is **green** **and** timed H2H **loses with numbers**. Same reopen bar as engine form. MUST NOT reopen on taste or “wrong store”. |
 | **Gaps** | Foam **projection fidelity** + SysMLEdge **reproject ego**. **Not** the wrong store. CON=0 / nested absent / TSK-only ego is a projection + ego problem. MUST NOT treat it as a reason to swap MemNet. |
 | **Path-B CON floor** | **≥ memnet-llm==0.19.9 + TCP**. Bounce remains proven on **0.19.8**. Path-B CON ingest is **0.19.9** (MemNet **#158**). MUST NOT claim Path-B CON on Pi below that floor. |
@@ -119,7 +119,7 @@ Cited with NARROW fail/pass and MemNet M1–M5 above. Those gates **stand**. Thi
 2. Agents / repos pointed at MemNet mission sessions as `project@rev`.
 3. “Almost P1” migration of a second repo when only Path-B / `pin_map` works.
 4. Hours on P2 UI or multi-repo onboarding before timed head-to-head **and** gold fidelity.
-5. Pinning below **memnet-llm==0.19.8** or dropping TCP share. Path-B CON claimed below **≥0.19.9+TCP**. LIVE bind claimed while **M1 FAIL** without Post-A/B clear or published narrow+counts.
+5. Pinning below **memnet-llm==0.19.8** or dropping TCP share. Path-B CON claimed below **≥0.19.9+TCP**. LIVE bind claimed while **M1 FAIL**. [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego sold as M1 pass.
 
 **Optional** only after Foam **gold** bind + STALE **green**: read-only replay of the same **eight** P1 contract rows on a second repo. **Not** required for P1.
 
@@ -145,9 +145,9 @@ This review does **not** pass Foam gold. P1 gate = **CEO Core** exact locks (nex
 
 **Sequence:** M1 fidelity → `rev` bind → timed H2H → cold non-Core.
 
-**Pass only:** live TCP after bind; bounce proven on `0.19.8`; Path-B CON **≥0.19.9+TCP**; wall-clock + context vs same Foam Qs; fail-closed STALE; no silent drop. LIVE bind still gated by **M1 FAIL** (deferred until Post-A/B clear or published narrow+counts).
+**Pass only:** live TCP after bind; bounce proven on `0.19.8`; Path-B CON **≥0.19.9+TCP**; wall-clock + context vs same Foam Qs; fail-closed STALE; no silent drop. LIVE bind still gated by **M1 FAIL** (deferred until Post-A/B clear or LIVE meters match gold). [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego ≠ M1 pass.
 
-**Kill theater:** fake CI, tip-as-bind, H2H before meters, LIVE bind while M1 FAIL unpublished.
+**Kill theater:** fake CI, tip-as-bind, H2H before meters, LIVE bind while M1 FAIL, [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as M1 pass.
 
 **Must-fix before Foam gold:** full-clone construct matrix; nested ingest without hand CREATE (or narrow the claim); timed H2H on TCP after `rev` bind (Path-B CON on **≥0.19.9+TCP**).
 
@@ -158,6 +158,8 @@ This review does **not** pass Foam gold. P1 gate = **CEO Core** exact locks (nex
 [#11](https://github.com/chouswei/SysMLEdge/pull/11) / [#12](https://github.com/chouswei/SysMLEdge/pull/12) = scaffold. MUST NOT treat green CI as Foam gold.
 
 [#18](https://github.com/chouswei/SysMLEdge/pull/18) FAKE bind = scaffold only — **not** live bind / not P1.
+
+[#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego ≠ M1 pass. Gate = Memnetor LIVE re-measure vs gold. Path-B `mn_0d4f6178` CON **124** ≠ gold **200**; nested qname ego YES. `proof_pass_claimed: false`.
 
 ---
 
@@ -179,13 +181,13 @@ Same sequence, Day-1 instruments, refuse list, and fail-fast in [P1-acceptance.m
 | Instrument | Proof |
 |------------|-------|
 | Env lock | Bounce: `memnet-llm==0.19.8` + TCP. Path-B CON: **≥0.19.9+TCP**. |
-| M1 counts | Published construct / ingest counts **or** published narrow + counts (M1 FAIL still gates LIVE bind) |
+| M1 counts | Memnetor LIVE re-measure vs gold (M1 FAIL still gates LIVE bind). [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego ≠ that gate. |
 | Bind existence | `rev.sha` + stale on every structure read |
 | STALE smoke | mutate → STALE → `propose` refused |
 
 ### Refuse (this cycle)
 
-P2 UI / canvas / IDE / Pro–Team–marketplace; full KerML; parts-only zip; Neo4j / dual-engine / Kuzu; C rewrite now; second desk; MemNet mission as `project@rev`; timing H2H before M1+bind; LIVE bind while M1 FAIL unpublished; scaffold CI as gold; expand `pin_map` / impact before fidelity; treat projection gaps as a store swap.
+P2 UI / canvas / IDE / Pro–Team–marketplace; full KerML; parts-only zip; Neo4j / dual-engine / Kuzu; C rewrite now; second desk; MemNet mission as `project@rev`; timing H2H before M1+bind; LIVE bind while M1 FAIL; [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as M1 pass; scaffold CI as gold; expand `pin_map` / impact before fidelity; treat projection gaps as a store swap.
 
 ### Fail-fast
 
@@ -196,7 +198,7 @@ P2 UI / canvas / IDE / Pro–Team–marketplace; full KerML; parts-only zip; Neo
 | M1 or M2 fail | MemNet **not** a sole-engine claim |
 | M5 loses with numbers **after** fidelity | Reopen engine **form** only then |
 | Row 12 cold **no** | Kill Pro/beachhead |
-| M1 FAIL without Post-A/B clear or published narrow+counts | LIVE bind deferred. KEEP MemNet sole — do **not** swap store |
+| M1 FAIL (LIVE ≠ gold; [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego ≠ pass) | LIVE bind deferred. KEEP MemNet sole — do **not** swap store |
 | Hours on freeze list | Cut immediately |
 
 M1/M2 fail still means MemNet is **not a sole-engine claim**. It does **not** reopen Neo4j / dual-engine. **Cite:** Steve + Elon agree.
@@ -555,15 +557,15 @@ Implementations MUST reject, in addition to P0 §7:
 13. Declaring P1 won on **feature count** instead of **wall-clock + context footprint + no silent drop** vs tens-of-minutes grep.
 14. Stuffing the whole SysML tree into the LLM prompt instead of GQL/`pin_map` slices.
 15. Dual-engine / Kuzu / **Neo4j** hedge. Kuzu/Neo4j are **not necessary** for tip Path-B. Dual only if Memnetor becomes a documented hard blocker later **and** fidelity is green **and** timed H2H loses with numbers.
-16. Inventing first-class `rev` / STALE inside MemNet. SysMLEdge owns the bind. Treating STALE proof as pass without that bind is theater. LIVE bind while **M1 FAIL** without Post-A/B clear or published narrow+counts is theater.
+16. Inventing first-class `rev` / STALE inside MemNet. SysMLEdge owns the bind. Treating STALE proof as pass without that bind is theater. LIVE bind while **M1 FAIL** is theater. [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as M1 pass is theater.
 17. A MemNet **roadmap** from this product. MemNet improve-only for **M1–M5 / Foam fidelity**; bounce **0.19.8 + TCP**; Path-B CON **≥0.19.9+TCP**.
 18. A **C rewrite now** (or Rust/other engine-form rewrite) before TCP proof. Reopen form only if wall-clock **loses with numbers** after fidelity is green.
 19. Serving **MemNet** (TCP or its MCP) as the agent-facing wedge once SysMLEdge MCP binds.
 20. Serving projects on SysMLEdge, or migrating other repos onto it, before Foam + MemNet proof **and** SysMLEdge MCP bind pass (**plan ≠ product**, CEO Core 2026-09-12). Until then MemNet tip only.
 21. Treating NARROW dogfood as a second **real** in-house SysML desk (Elon Core 2026-09-12). Fixture tree = CI of import / bind / STALE / reproject / propose only.
-22. Kill-theater (Elon Core 2026-09-12): Foam tip sold as SysMLEdge bind before `rev.sha`; agents/repos on MemNet mission sessions as `project@rev`; “almost P1” second-repo migrate on Path-B/`pin_map` only; P2 UI or multi-repo onboarding before timed head-to-head + gold fidelity; pin below **memnet-llm==0.19.8** or drop TCP share; Path-B CON below **≥0.19.9+TCP**; LIVE bind while M1 FAIL unpublished.
+22. Kill-theater (Elon Core 2026-09-12): Foam tip sold as SysMLEdge bind before `rev.sha`; agents/repos on MemNet mission sessions as `project@rev`; “almost P1” second-repo migrate on Path-B/`pin_map` only; P2 UI or multi-repo onboarding before timed head-to-head + gold fidelity; pin below **memnet-llm==0.19.8** or drop TCP share; Path-B CON below **≥0.19.9+TCP**; LIVE bind while M1 FAIL; [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as M1 pass.
 23. CEO Core P1 **kill risks** (2026-09-12): silent drop (`connections_parsed:0` / omitted files); tip Path-B sold as bind; full KerML in 2 weeks; shrink zip to parts-only. Treating [#11](https://github.com/chouswei/SysMLEdge/pull/11) / [#12](https://github.com/chouswei/SysMLEdge/pull/12) as P1 pass (scaffold ≠ P1). **Kill theater:** fake CI, tip-as-bind, H2H before meters. P1 **Pass only** is live TCP after bind (bounce `0.19.8`; Path-B CON **≥0.19.9+TCP**); wall-clock + context vs same Foam Qs; fail-closed STALE; no silent drop.
 24. Taste-cut narrative (Steve Jobs + CEO Core 2026-09-12): AGI copy; Pro/Team/marketplace; beachhead math; bilingual bus as brand lead; plus prior list (contract layer / humans–AGI API; seven roots as a pitch; freemium / Pro ~$19–29; SaaS-editor / PR-UI foreshadowing; slides instead of the 3-Q Foam keep-using proof).
 25. **Kill smells** (Steve Jobs + CEO Core 2026-09-12): IDE / canvas / MemNet tip = product.
 26. Edison Core (Thomas Alva Edison / Horcrux 2026-09-12): invert M1 → bind → timed H2H → row 12; time H2H before M1+bind; skip Day-1 instruments; spend hours on the refuse/freeze list.
-27. Steve + Elon agree (CEO Core 2026-09-12): treat M1 FAIL gaps as Neo4j / dual-engine / wrong store; claim LIVE bind before Post-A/B clear or published narrow+counts; claim Path-B CON below **≥0.19.9+TCP**.
+27. Steve + Elon agree (CEO Core 2026-09-12): treat M1 FAIL gaps as Neo4j / dual-engine / wrong store; claim LIVE bind before Post-A/B clear or LIVE meters match gold; treat [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as M1 pass; claim Path-B CON below **≥0.19.9+TCP**; claim Path-B CON **124** as gold **200**.
