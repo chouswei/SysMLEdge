@@ -20,7 +20,7 @@ Product-story locks are **exact** in [CEO Core — Steve taste](#ceo-core--steve
 | **plan ≠ product** (CEO Core 2026-09-12) | Ready to *build* P1. Not ready to *serve* projects until Foam + MemNet proof **and** SysMLEdge MCP bind pass. Until then **MemNet tip only**. MUST NOT migrate other repos onto SysMLEdge. |
 | **don’t-migrate** (Elon Core 2026-09-12) | KEEP the freeze. NARROW dogfood = **synthetic fixture tree** (CI only). Kill-theater 1–5 below. Optional second-repo replay **not** required for P1. |
 | **Sysmler Core** (2026-09-12) | **KEEP / NARROW** the spine. Cite CEO Core P1 gate (exact locks below). |
-| **CEO Core P1 gate** (2026-09-12) | **Must-fix / kill risks / OK** as written. No scope widen. Scaffold ≠ P1. |
+| **CEO Core P1 gate** (2026-09-12) | Exact locks: **Sequence** / **Pass only** / **Kill theater** (cite Edison). Must-fix / kill risks / OK. Scaffold ≠ P1. |
 | **Edison Core experiment** (Thomas Alva Edison / Horcrux, 2026-09-12) | **KEEP / NARROW** the 2-week Foam cycle (9–12 + M1–M5). Do **not** invert sequence. Engine + story locks untouched. Scaffold ≠ P1. |
 
 **Taste risks** (Steve Jobs + CEO Core 2026-09-12): **Kill smells:** IDE / canvas / MemNet tip = product. Prior: Cameo-lite; MemNet-wrapper (tip Path-B ≠ product); yet-another-MCP without beat-grep cold feel.
@@ -125,7 +125,13 @@ This review does **not** pass Foam gold. P1 gate = **CEO Core** exact locks (nex
 
 ## CEO Core P1 gate (2026-09-12)
 
-**Cite:** Sysmler **KEEP / NARROW** + CEO Core 2026-09-12. No scope widen. Same text in [P1-acceptance.md](P1-acceptance.md).
+**Cite:** Edison Core (Thomas Alva Edison / Horcrux) + CEO Core 2026-09-12. No scope widen. Same text in [P1-acceptance.md](P1-acceptance.md).
+
+**Sequence:** M1 fidelity → `rev` bind → timed H2H → cold non-Core.
+
+**Pass only:** live `0.19.8`+TCP after bind; wall-clock + context vs same Foam Qs; fail-closed STALE; no silent drop.
+
+**Kill theater:** fake CI, tip-as-bind, H2H before meters.
 
 **Must-fix before Foam gold:** full-clone construct matrix; nested ingest without hand CREATE (or narrow the claim); timed H2H on 0.19.8+TCP after `rev` bind.
 
@@ -535,7 +541,7 @@ Implementations MUST reject, in addition to P0 §7:
 20. Serving projects on SysMLEdge, or migrating other repos onto it, before Foam + MemNet proof **and** SysMLEdge MCP bind pass (**plan ≠ product**, CEO Core 2026-09-12). Until then MemNet tip only.
 21. Treating NARROW dogfood as a second **real** in-house SysML desk (Elon Core 2026-09-12). Fixture tree = CI of import / bind / STALE / reproject / propose only.
 22. Kill-theater (Elon Core 2026-09-12): Foam tip sold as SysMLEdge bind before `rev.sha`; agents/repos on MemNet mission sessions as `project@rev`; “almost P1” second-repo migrate on Path-B/`pin_map` only; P2 UI or multi-repo onboarding before timed head-to-head + gold fidelity; pin below **memnet-llm==0.19.8** or drop TCP share.
-23. CEO Core P1 **kill risks** (2026-09-12): silent drop (`connections_parsed:0` / omitted files); tip Path-B sold as bind; full KerML in 2 weeks; shrink zip to parts-only. Treating [#11](https://github.com/chouswei/SysMLEdge/pull/11) / [#12](https://github.com/chouswei/SysMLEdge/pull/12) as P1 pass (scaffold ≠ P1).
+23. CEO Core P1 **kill risks** (2026-09-12): silent drop (`connections_parsed:0` / omitted files); tip Path-B sold as bind; full KerML in 2 weeks; shrink zip to parts-only. Treating [#11](https://github.com/chouswei/SysMLEdge/pull/11) / [#12](https://github.com/chouswei/SysMLEdge/pull/12) as P1 pass (scaffold ≠ P1). **Kill theater:** fake CI, tip-as-bind, H2H before meters. P1 **Pass only** is live `0.19.8`+TCP after bind; wall-clock + context vs same Foam Qs; fail-closed STALE; no silent drop.
 24. Taste-cut narrative (Steve Jobs + CEO Core 2026-09-12): AGI copy; Pro/Team/marketplace; beachhead math; bilingual bus as brand lead; plus prior list (contract layer / humans–AGI API; seven roots as a pitch; freemium / Pro ~$19–29; SaaS-editor / PR-UI foreshadowing; slides instead of the 3-Q Foam keep-using proof).
 25. **Kill smells** (Steve Jobs + CEO Core 2026-09-12): IDE / canvas / MemNet tip = product.
 26. Edison Core (Thomas Alva Edison / Horcrux 2026-09-12): invert M1 → bind → timed H2H → row 12; time H2H before M1+bind; skip Day-1 instruments; spend hours on the refuse/freeze list.

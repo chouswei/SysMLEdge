@@ -7,9 +7,15 @@ Normative contracts: [P0-contracts.md](P0-contracts.md). Product locks: [PRODUCT
 
 This document is the P1 pass/fail sheet. It does not implement runtime.
 
-### P1 gate (Sysmler KEEP / NARROW + CEO Core 2026-09-12)
+### P1 gate (Edison + CEO Core 2026-09-12)
 
-No scope widen. Source: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#ceo-core-p1-gate-2026-09-12).
+No scope widen. Source: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#ceo-core-p1-gate-2026-09-12). **Cite:** Edison Core (Thomas Alva Edison / Horcrux) + CEO Core 2026-09-12.
+
+**Sequence:** M1 fidelity → `rev` bind → timed H2H → cold non-Core.
+
+**Pass only:** live `0.19.8`+TCP after bind; wall-clock + context vs same Foam Qs; fail-closed STALE; no silent drop.
+
+**Kill theater:** fake CI, tip-as-bind, H2H before meters.
 
 **Must-fix before Foam gold:** full-clone construct matrix; nested ingest without hand CREATE (or narrow the claim); timed H2H on 0.19.8+TCP after `rev` bind.
 
