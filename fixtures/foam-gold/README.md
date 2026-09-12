@@ -1,21 +1,19 @@
 # Foam gold freeze
 
-Human-checkable list from the **existing SysML parser** (`src/sysml/parse.ts`) over Foam `sysml-models/`.
+Human-checkable list from `src/sysml/parse.ts` over Foam `sysml-models/` at `gold.json` → `source.sha`.
 
 - Source: `chouswei/modelbasedPrj-itri-vedan-foam-detection`
-- Frozen at git SHA in `gold.json` → `source.sha`
 - **Not** an M1 pass. `proof_executed: false`
+- Nested `backgroundSetIndicator`: **AUTO** in the parser. LIVE MemNet (`mn_b05a9869`): **ABSENT** (fail-fast). See [RUNLOG](../../docs/proof/RUNLOG-2026-09-12-m1-bind.md).
+- `tree_files` is the parsed path matrix (models/ + libs/common + outputs diagram demo). `libs/omg` KerML is UNKNOWN.
 
-Regenerate after cloning Foam (see `docs/proof/FOAM-IMPORT.md`):
+Regenerate after a Foam tree is on disk (see `docs/proof/FOAM-IMPORT.md` and `docs/proof/RUNLOG-2026-09-12-m1-bind.md`):
 
 ```bash
 npx tsx src/cli.ts gold /path/to/foam/sysml-models --sha <SHA> -o fixtures/foam-gold/gold.json
 ```
 
-Nested hand-CREATE example (Memnetor): `backgroundSetIndicator` under `CoreVideoMonitorToolbar` and `CoreMonitorConfigPanel`.
-
 UNKNOWN (explicit):
 
-- `connection` defs/usages without `connect A to B` (parser emits no edge)
-- `part def` present in SysML but missing after `doc /*` / markdown `**.../**` comment close
-- `sysml-models/libs` until the git submodule is in the tree
+- nested `sysml-models/libs/omg` until that gitlink is present
+- do not invent qnames for constructs the parser still misses

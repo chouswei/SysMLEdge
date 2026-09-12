@@ -7,4 +7,5 @@ auth_config.json
 secrets/
 .DS_Store
 .sysmledge/
+.tmp/
 

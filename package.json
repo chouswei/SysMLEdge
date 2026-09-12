@@ -17,6 +17,7 @@
     "test": "tsx --test test/*.test.ts",
     "typecheck": "tsc --noEmit",
     "foam:import": "bash scripts/foam-import.sh",
+    "m1:smoke": "bash scripts/m1-smoke.sh",
     "foam:gold": "tsx src/cli.ts gold",
     "proof": "tsx src/cli.ts proof",
     "head-to-head": "tsx src/cli.ts head-to-head",

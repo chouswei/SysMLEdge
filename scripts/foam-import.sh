@@ -7,14 +7,22 @@ FOAM_DIR="${FOAM_DIR:-/tmp/foam-soi}"
 PROJECT="${SYSMLEDGE_PROJECT:-/tmp/foam-desk}"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 
-if [[ ! -d "$FOAM_DIR/.git" ]]; then
-  git clone --recurse-submodules "$FOAM_URL" "$FOAM_DIR"
+if [[ ! -d "$FOAM_DIR/sysml-models" ]]; then
+  git clone --recurse-submodules "$FOAM_URL" "$FOAM_DIR" || {
+    echo "git clone failed (private repo / token). Place Foam sysml-models/ at $FOAM_DIR or use scripts/m1-smoke.sh with FOAM_DIR." >&2
+    exit 1
+  }
 fi
-git -C "$FOAM_DIR" submodule update --init --recursive
-echo "FOAM_SOURCE_SHA=$(git -C "$FOAM_DIR" rev-parse HEAD)"
+if [[ -d "$FOAM_DIR/.git" ]]; then
+  git -C "$FOAM_DIR" submodule update --init --recursive || true
+  echo "FOAM_SOURCE_SHA=$(git -C "$FOAM_DIR" rev-parse HEAD)"
+else
+  echo "FOAM_SOURCE_SHA=${FOAM_SOURCE_SHA:-UNKNOWN} (tree present, not a git clone)"
+fi
 
 export MEMNET_BACKEND="${MEMNET_BACKEND:-fake}"
 cd "$ROOT"
 npx tsx src/cli.ts import-foam "$FOAM_DIR" --project "$PROJECT"
 npx tsx src/cli.ts status --project "$PROJECT"
-echo "proof_pass_claimed=false"
+npx tsx src/cli.ts smoke-bind --project "$PROJECT"
+echo "proof_pass_claimed=false memnet_backend=$MEMNET_BACKEND"

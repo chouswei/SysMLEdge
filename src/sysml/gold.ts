@@ -30,6 +30,8 @@ export interface FoamGoldList {
     connections_parsed: number;
     nested_parts: number;
   };
+  /** Relative paths under sysml-models/ that the parser read. */
+  tree_files: string[];
   packages: string[];
   parts: string[];
   ports: string[];
@@ -38,7 +40,8 @@ export interface FoamGoldList {
   nested_hand_create: Array<{
     hint: string;
     qnames: string[];
-    status: "IDENTIFIED" | "UNKNOWN";
+    status: "AUTO" | "HAND_CREATE_NEEDED" | "IDENTIFIED" | "UNKNOWN";
+    ingest_note: string;
   }>;
   unknown: GoldUnknown[];
 }
@@ -66,7 +69,11 @@ export function buildGoldFromParsed(
     return {
       hint,
       qnames,
-      status: (qnames.length > 0 ? "IDENTIFIED" : "UNKNOWN") as "IDENTIFIED" | "UNKNOWN",
+      status: (qnames.length > 0 ? "AUTO" : "UNKNOWN") as "AUTO" | "HAND_CREATE_NEEDED" | "IDENTIFIED" | "UNKNOWN",
+      ingest_note:
+        qnames.length > 0
+          ? "Parser emits nested usages; FakeMemNet copies them with no hand CREATE. Live MemNet ingest CREATE is UNPROVEN (not M1 pass)."
+          : "Not found in this tree.",
     };
   });
   return {
@@ -86,6 +93,7 @@ export function buildGoldFromParsed(
       connections_parsed: parsed.edges.length,
       nested_parts: nested.length,
     },
+    tree_files: [...parsed.files].sort(),
     packages: sortUniq(packages),
     parts: sortUniq(parts.map((n) => n.qname)),
     ports: sortUniq(ports.map((n) => n.qname)),
@@ -113,16 +121,30 @@ export async function extractFoamGold(
 
 function libsUnknown(parsed: ParsedTree): GoldUnknown[] {
   const hasLibs = parsed.files.some((f) => f.startsWith("libs/"));
-  if (hasLibs) return [];
-  return [
-    {
-      kind: "submodule",
-      name: "sysml-models/libs",
-      path: "sysml-models/libs",
-      reason:
-        "UNKNOWN until git submodule sysml-models/libs is present. Gold freeze is the Foam tree files that were parsed; common-lib kinds are not claimed.",
-    },
-  ];
+  const hasOmg = parsed.files.some((f) => f.startsWith("libs/omg/"));
+  if (!hasLibs) {
+    return [
+      {
+        kind: "submodule",
+        name: "sysml-models/libs",
+        path: "sysml-models/libs",
+        reason:
+          "UNKNOWN until git submodule sysml-models/libs (and nested omg/SysML-v2-Release) is present. Gold freeze is the Foam tree files that were parsed; KerML/OMG kinds are not claimed.",
+      },
+    ];
+  }
+  if (!hasOmg) {
+    return [
+      {
+        kind: "submodule",
+        name: "sysml-models/libs/omg",
+        path: "sysml-models/libs/omg",
+        reason:
+          "libs/common/*.sysml present; nested gitlink omg/SysML-v2-Release (KerML) is not on disk. Not claimed.",
+      },
+    ];
+  }
+  return [];
 }
 
 async function scanMissingPartDefs(
@@ -143,6 +165,7 @@ async function scanMissingPartDefs(
     while ((m = re.exec(src))) {
       const name = m[1];
       if (!name) continue;
+      if (name === "when" || name === "if" || name === "else" || name === "for") continue;
       if (!shorts.has(name)) {
         unknown.push({
           kind: "part_def",
@@ -158,8 +181,8 @@ async function scanMissingPartDefs(
 }
 
 /**
- * Parser only emits connection edges with `connect A to B`.
- * Foam uses many `connection def` / named usages without that syntax.
+ * Named `connection` / `connection def` still UNKNOWN if no `connect A to B`
+ * and no `end port … ::>` / typed `end port` pair in the brace body.
  */
 async function scanUnknownConnections(
   ssotDir: string,
@@ -168,7 +191,7 @@ async function scanUnknownConnections(
   const files = await listSysmlFiles(ssotDir);
   const parsedQ = new Set(parsed.edges.map((e) => e.qname));
   const unknown: GoldUnknown[] = [];
-  const nameRe = /^[ \t]*connection(?:\s+def)?\s+([A-Za-z_][A-Za-z0-9_]*)/gm;
+  const nameRe = /^[ \t]*connection\s+(?!def\b)([A-Za-z_][A-Za-z0-9_]*)/gm;
   for (const abs of files) {
     const src = await readFile(abs, "utf8");
     const rel = parsed.files.find((f) => abs.endsWith(f)) ?? abs;
@@ -184,7 +207,7 @@ async function scanUnknownConnections(
           name,
           path: rel,
           reason:
-            "Parser requires `connect <from> to <to>`; this connection def/usage has no such clause in the 400-char window (UNKNOWN endpoints).",
+            "Named connection usage has no `connect A to B` and no `end port` pair in the brace body (UNKNOWN endpoints). `connection def` is not a usage.",
         });
       }
     }
@@ -234,8 +257,12 @@ export function assertGoldShape(gold: FoamGoldList): string[] {
   if (gold.proof_executed !== false) errors.push("must not claim proof executed");
   if (gold.counts.parts < 1) errors.push("gold needs ≥1 part");
   const nested = gold.nested_hand_create.find((n) => n.hint === "backgroundSetIndicator");
-  if (!nested || nested.status !== "IDENTIFIED" || nested.qnames.length < 1) {
-    errors.push("gold MUST include ≥1 nested backgroundSetIndicator (or mark UNKNOWN explicitly)");
+  if (
+    !nested ||
+    (nested.status !== "AUTO" && nested.status !== "IDENTIFIED") ||
+    nested.qnames.length < 1
+  ) {
+    errors.push("gold MUST include ≥1 nested backgroundSetIndicator as AUTO (or mark UNKNOWN explicitly)");
   }
   return errors;
 }
