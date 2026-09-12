@@ -6,19 +6,9 @@ If a lock and P0 wording differ, this sheet **notes** the difference and **align
 
 ---
 
-## NARROW lock (Elon / Horcrux, 2026-09-11; product story: Steve Jobs / Horcrux, 2026-09-12)
+## NARROW lock (Elon / Horcrux, 2026-09-11; product story: Steve Jobs + CEO Core, 2026-09-12)
 
-**Verdict: NARROW product story** — Foam desk proof is the **only** product story. Kill selling SysMLEdge as a product category until that demo is felt **cold**. Engine locks **stand** — do not reopen.
-
-**Buyer gut (one sentence):** “I ask the live model at this rev — no grep dump, no ghost tree.” Cite Steve Jobs / Horcrux 2026-09-12.
-
-| Keep | Cut from narrative until Foam desk is real |
-|-----|---------------------------------------------|
-| Foam desk proof; `graph = model @ rev`; MemNet one-way; STALE fail-closed; propose-only; no canvas | Category sell; AGI / contract layer / humans–AGI API copy; Pro ~$19–29, freemium, Team, marketplace; beachhead size / seats; “bilingual bus” as brand lead; seven roots as a pitch list; SaaS-editor / PR-UI foreshadowing |
-
-**“Bilingual bus”** stays an **internal architecture** name. It is **not** the brand lead.
-
-**Load-bearing claim:** Foam desk, felt cold, vs grep. **Not** proven by this docs seed. Do **not** sell later Pro pay as the story.
+Product-story locks are **exact** in [CEO Core — Steve taste](#ceo-core--steve-taste-2026-09-12). Engine locks **untouched** — do not reopen.
 
 **Proof bar unchanged:** ALL Foam proof items **and** ALL MemNet proof items in [P1-acceptance.md](P1-acceptance.md) (rows **9–12** + **M1–M5**). Scaffold ≠ P1. Kill the engine story only if the 2-week **MemNet** proof fails. **Cold no** on the product-story proof → kill Pro/beachhead; keep Foam tooling. **Cold yes** → outsider → then price.
 
@@ -26,13 +16,13 @@ If a lock and P0 wording differ, this sheet **notes** the difference and **align
 |------|------|
 | **Proof fails / cold no** | Kill the Pro/beachhead story for now. Keep Foam tooling (or docs as a contract sketch). MUST NOT ship SysMLEdge as a category product without the head-to-head. |
 | **Cold yes** | Then outsider → then price. P2 UI still gated. Marketplace stays off the story until Foam desk is real. |
-| **2-week product-story proof** (Steve Jobs / Horcrux 2026-09-12) | One **non-Core** operator, **3 Foam Qs**, wall-clock + context + no silent drop, **yes/no keep-using**. **No slides.** |
+| **2-week product-story proof** (Steve Jobs + CEO Core 2026-09-12) | One **non-Core** operator, **3 Foam Qs**, wall-clock + context + no silent drop, **yes/no keep-using**. **No slides.** |
 | **plan ≠ product** (CEO Core 2026-09-12) | Ready to *build* P1. Not ready to *serve* projects until Foam + MemNet proof **and** SysMLEdge MCP bind pass. Until then **MemNet tip only**. MUST NOT migrate other repos onto SysMLEdge. |
 | **don’t-migrate** (Elon Core 2026-09-12) | KEEP the freeze. NARROW dogfood = **synthetic fixture tree** (CI only). Kill-theater 1–5 below. Optional second-repo replay **not** required for P1. |
 | **Sysmler Core** (2026-09-12) | **KEEP / NARROW** the spine. Cite CEO Core P1 gate (exact locks below). |
 | **CEO Core P1 gate** (2026-09-12) | **Must-fix / kill risks / OK** as written. No scope widen. Scaffold ≠ P1. |
 
-**Taste risks** (Steve Jobs / Horcrux 2026-09-12): Cameo-lite; MemNet-wrapper (tip Path-B ≠ product); yet-another-MCP without beat-grep cold feel.
+**Taste risks** (Steve Jobs + CEO Core 2026-09-12): **Kill smells:** IDE / canvas / MemNet tip = product. Prior: Cameo-lite; MemNet-wrapper (tip Path-B ≠ product); yet-another-MCP without beat-grep cold feel.
 
 **Strongest cut:** Docs discipline ≠ product-market proof. Foam Phase-1 hours on P2 UI = kill signal.
 
@@ -42,7 +32,7 @@ NARROW fail/pass gates above **stand**. Mapping and SSOT rules below do **not** 
 
 **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team ACL.
 
-Product / ocean — **not** a forever mapping cap. Also **cut from narrative** (Steve Jobs / Horcrux 2026-09-12) until Foam desk is real:
+Product / ocean — **not** a forever mapping cap. Also **cut from narrative** until cold Foam yes (Steve Jobs + CEO Core 2026-09-12):
 
 1. P2 SaaS editor / PR-UI foreshadowing
 2. Team ACL / freemium / Pro price / marketplace as a product story
@@ -51,16 +41,44 @@ Product / ocean — **not** a forever mapping cap. Also **cut from narrative** (
 5. ClickUp / InvenTree product
 6. Full KerML / whole-language coverage in two weeks
 7. A second **real** in-house SysML desk / multi-repo onboarding (synthetic fixture CI is allowed; see Elon Core 2026-09-12)
-8. AGI / contract layer / humans–AGI API copy; seven roots as a pitch list; “bilingual bus” as brand lead; beachhead size / seats
+8. AGI / contract layer / humans–AGI API copy; seven roots as a pitch list; “bilingual bus” as brand lead; beachhead math / seats
 
 Elon’s “parts/ports” freeze was **2-week anti-scope-creep for mapping work**. It is **superseded** by: **Foam-complete mapping** + **whole-tree SSOT always** (this sheet, Core 2026-09-11). MUST NOT read it as “parts/ports forever” or as permission for parts-only SSOT.
 
 ### Risks (document; no extra mitigations here)
 
-1. Product story is Foam desk only until felt cold. Cold no → kill Pro/beachhead; keep Foam tooling. Beachhead size / seats are **not** this-cut narrative.
+1. Product story is Foam desk only until felt cold. Cold no → kill Pro/beachhead; keep Foam tooling. Beachhead math is **not** this-cut narrative.
 2. MemNet is **SPOF** — thin/slow Foam projection kills GQL vs LSP.
 3. “Beat grep” is **soft** until the timed head-to-head scores **wall-clock + context footprint + no silent drop** on the same Foam Qs.
-4. Taste: Cameo-lite; MemNet-wrapper (tip Path-B ≠ product); yet-another-MCP without beat-grep cold feel.
+4. Taste / kill smells: IDE / canvas / MemNet tip = product. Cameo-lite; MemNet-wrapper; yet-another-MCP without beat-grep cold feel.
+
+---
+
+## CEO Core — Steve taste (2026-09-12)
+
+**Cite:** Steve Jobs + CEO Core 2026-09-12. Same text is the product-story lock. Engine locks **untouched**.
+
+**NARROW product story.**
+
+**One-liner:** SysML stays the model; GQL/MCP is how agents query without stuffing/grepping the tree.
+
+**Keep:** Foam desk proof — model@rev bind, STALE fail-closed, beat grep (wall-clock + context + no silent drop); plan≠product; don’t-migrate.
+
+**Kill smells:** IDE / canvas / MemNet tip = product.
+
+**Cut until cold Foam yes:** AGI copy, Pro/Team/marketplace, beachhead math, “bilingual bus” as brand lead.
+
+**Buyer gut (prior, stands):** “I ask the live model at this rev — no grep dump, no ghost tree.”
+
+**Prior cut list** (stands where it does not contradict the locks above): contract layer / humans–AGI API copy; Pro ~$19–29; freemium; beachhead size / seat targets; seven roots as a pitch list (collapse to trust + ask-without-stuffing + ship zip); SaaS-editor / PR-UI foreshadowing.
+
+**“Bilingual bus”** stays an **internal architecture** name. It is **not** the brand lead.
+
+**Load-bearing claim:** Foam desk, felt cold, vs grep. **Not** proven by this docs seed.
+
+**2-week product-story proof:** one **non-Core** operator, **3 Foam Qs**, wall-clock + context + no silent drop, **yes/no keep-using**. **No slides.** Pass bar **unchanged**: rows 9–12 + M1–M5; scaffold ≠ P1.
+
+This file does not implement runtime.
 
 ---
 
@@ -70,7 +88,7 @@ Elon’s “parts/ports” freeze was **2-week anti-scope-creep for mapping work
 
 Until then: **MemNet tip only**. MUST NOT migrate other repos onto SysMLEdge.
 
-Cited with NARROW fail/pass and MemNet M1–M5 above. Those gates **stand**. This lock does **not** reopen P2 UI, Pro, AGI copy, or the Steve Jobs / Horcrux 2026-09-12 product-story cut.
+Cited with NARROW fail/pass and MemNet M1–M5 above. Those gates **stand**. This lock does **not** reopen P2 UI, Pro, AGI copy, or the Steve Jobs + CEO Core 2026-09-12 product-story cut.
 
 ---
 
@@ -224,7 +242,7 @@ MUST NOT: add MemNet features beyond what M1–M5 / Foam fidelity require; put `
 
 ## Position
 
-SysMLEdge (this cut) is **Foam desk proof**: SysML SSOT + GQL/MCP query face at `model@rev`. Competitive/buyer pin: [Market position (pin)](#market-position-pin).
+SysMLEdge (this cut) is **Foam desk proof**. **One-liner:** SysML stays the model; GQL/MCP is how agents query without stuffing/grepping the tree. Competitive/buyer pin: [Market position (pin)](#market-position-pin).
 
 | Is | Is not |
 |----|--------|
@@ -238,14 +256,18 @@ SysMLEdge (this cut) is **Foam desk proof**: SysML SSOT + GQL/MCP query face at 
 
 ## Market position (pin)
 
-**Cite:** Steve Jobs / Horcrux 2026-09-12. **NARROW product story.** Foam desk proof is the only product story until felt cold.
+**Cite:** Steve Jobs + CEO Core 2026-09-12. Exact locks: [CEO Core — Steve taste](#ceo-core--steve-taste-2026-09-12).
 
-**Buyer gut:** “I ask the live model at this rev — no grep dump, no ghost tree.”
+**NARROW product story.**
+
+**One-liner:** SysML stays the model; GQL/MCP is how agents query without stuffing/grepping the tree.
+
+**Buyer gut (prior, stands):** “I ask the live model at this rev — no grep dump, no ghost tree.”
 
 | We are (this cut) | We are not |
 |-------------------|------------|
-| Foam desk: textual SysML v2 SSOT + GQL/MCP at `model@rev` | A product **category** to sell before that desk is felt cold |
-| Beats “git + LSP + grep `.sysml`” | SysON / Cameo / graphic MBSE IDE; a GitHub clone |
+| Foam desk: model@rev bind, STALE fail-closed, beat grep | A product **category** to sell before cold Foam yes |
+| Beats “git + LSP + grep `.sysml`” | **Kill smells:** IDE / canvas / MemNet tip = product |
 | Foam first | Defense PLM / enterprise >$100; Pro/Team/marketplace as this-cut story |
 
 **Internal architecture name (not brand lead):** bilingual bus = SysML (author SSOT) + GQL (query/represent). Not a zh/EN UI.
@@ -266,15 +288,15 @@ SysMLEdge (this cut) is **Foam desk proof**: SysML SSOT + GQL/MCP query face at 
 
 **P1 stress tests** sit on the eight **contract** rows plus NARROW Foam proof 9–12 (not extra buyer-root rows): (a) beat a raw agent + git/grep; (b) STALE is real, not theater; (c) Foam desk demo beats a manifesto.
 
-**Pitch (collapsed):** trust + ask-without-stuffing + ship zip. MUST NOT pitch seven roots, AGI / contract layer / humans–AGI API, or bilingual bus as brand.
+**Pitch (collapsed):** trust + ask-without-stuffing + ship zip. MUST NOT pitch seven roots, AGI copy, or bilingual bus as brand.
 
-This pin does **not** widen scope: MemNet-only projection, `graph = model @ SHA`, STALE, no agent SSOT write, no graphic IDE, no GitHub clone, ClickUp/InvenTree not product features. Engine locks **stand**.
+This pin does **not** widen scope: MemNet-only projection, `graph = model @ SHA`, STALE, no agent SSOT write, no graphic IDE, no GitHub clone, ClickUp/InvenTree not product features. Engine locks **untouched**.
 
 ---
 
 ## Human root requirements (buyer)
 
-Buyer: **solo / lead MBSE engineer** (same desk as [Market position (pin)](#market-position-pin): solo / 2–5 on SysML v2 textual + Cursor). These **seven** remain **locks** (product intent, not extra P1 rows, not runtime). They are **not** a pitch list (Steve Jobs / Horcrux 2026-09-12). Collapse the **pitch** to **trust** + **ask-without-stuffing** + **ship zip**. GTM: [BUSINESS-PLAN.md](BUSINESS-PLAN.md).
+Buyer: **solo / lead MBSE engineer** (same desk as [Market position (pin)](#market-position-pin): solo / 2–5 on SysML v2 textual + Cursor). These **seven** remain **locks** (product intent, not extra P1 rows, not runtime). They are **not** a pitch list (Steve Jobs + CEO Core 2026-09-12). Collapse the **pitch** to **trust** + **ask-without-stuffing** + **ship zip**. GTM: [BUSINESS-PLAN.md](BUSINESS-PLAN.md).
 
 | # | Root | Lock |
 |---|------|------|
@@ -398,7 +420,7 @@ Dirty is **not** STALE.
 | Face | Surface |
 |------|---------|
 | **Agent** | Cursor **MCP plugin** → **SysMLEdge MCP** streamable HTTP (Bearer). Bind **project@rev**. |
-| **Human** | Files (zip / `sysml-models/` tree). SaaS editor is **P2** — **not** this-cut product story (Steve Jobs / Horcrux 2026-09-12). |
+| **Human** | Files (zip / `sysml-models/` tree). SaaS editor is **P2** — **not** this-cut product story (Steve Jobs + CEO Core 2026-09-12). |
 
 **Project ≠ account.** One account may hold several projects. MCP binds **project@rev**, not “the user’s graph”.
 
@@ -413,7 +435,7 @@ Dirty is **not** STALE.
 
 **Pinned users (desk):** solo / lead MBSE engineer; Cursor/MCP agents. Teammates / Team ACL are P2 derived — **not** this-cut product story. See [Market position (pin)](#market-position-pin).
 
-**Cite:** Steve Jobs / Horcrux 2026-09-12. Freemium, Pro ~$19–29, Team, marketplace, SaaS editor, and PR UI are **cut from narrative** until Foam desk is real. They remain **frozen locks**, not an offer sheet.
+**Cite:** Steve Jobs + CEO Core 2026-09-12. **Cut until cold Foam yes:** AGI copy, Pro/Team/marketplace, beachhead math, “bilingual bus” as brand lead. Prior list also stands: freemium, Pro ~$19–29, SaaS editor / PR UI as story. Frozen locks, not an offer sheet.
 
 **Product-story proof:** one non-Core operator, 3 Foam Qs, yes/no keep-using. No slides. Pass bar: [P1-acceptance.md](P1-acceptance.md) rows 9–12 + M1–M5; scaffold ≠ P1.
 
@@ -439,7 +461,7 @@ SysMLEdge does **not** ship ClickUp or InvenTree: no sync, no PLM UI, no “link
 | Agent SSOT write | Silent MCP save forbidden | Agent merge **banned**; no write-SSOT tool | Unchanged. |
 | Human-auth MCP merge | Save is human UI/CLI; MCP `save` forbidden as **unattended** | Token + confirm → apply + Save + reproject | **Clarify** P0: unattended/agent save stays forbidden; human-auth merge is the human Save path on MCP. |
 | Graphic IDE | Not specified | Explicit reject (SysON/Cameo) | Add to P0 reject list (does not weaken contracts). |
-| Market pin | Not specified | Foam desk only until felt cold; beat grep; bilingual bus = internal name not brand; no Pro/seats/AGI pitch this cut | Plan/locks only. Steve Jobs / Horcrux 2026-09-12. No runtime or P2 UI. |
+| Market pin | Not specified | **NARROW product story.** One-liner + Keep / Kill smells / Cut until cold Foam yes (exact). Bilingual bus = internal name not brand | Plan/locks only. Steve Jobs + CEO Core 2026-09-12. Engine locks untouched. No runtime. |
 | ClickUp/InvenTree | Mapped when present in SysML | Not product features | **Clarify** P0 §5: projection of SysML attributes only. |
 | SSOT shape | Whole-tree import/save/download | **All** `.sysml`; never parts-only SSOT | Align P0 §3. |
 | Mapping | P0 seed listed part/port/connection as v1 | **P1 = Foam-complete**; not parts/ports forever; not full KerML in 2 weeks | **Supersede** a forever parts/ports cap. Elon freeze = 2-week anti-scope-creep only. |
@@ -459,7 +481,7 @@ Implementations MUST reject, in addition to P0 §7:
 6. Bot review that writes SSOT.
 7. Serving MemNet/GQL as downloadable source; Kuzu/Cypher.
 8. Claiming P2 SaaS or P3 tenancy as shipping in this repository seed.
-9. Selling SysMLEdge as a product category, or shipping “bilingual bus” as a **product**, without Foam desk felt cold (Steve Jobs / Horcrux 2026-09-12; NARROW Elon/Horcrux 2026-09-11). Bilingual bus may remain an internal architecture name.
+9. Selling SysMLEdge as a product category, or shipping “bilingual bus” as a **product**, without cold Foam yes (Steve Jobs + CEO Core 2026-09-12; NARROW Elon/Horcrux 2026-09-11). Bilingual bus may remain an internal architecture name.
 10. Spending Foam Phase-1 hours on P2 UI, PR UI, Team ACL, billing, Cameo, ClickUp/InvenTree product, or **full KerML** in two weeks.
 11. Parts-only SSOT (import/save/download of a subset of `.sysml` as “the model”).
 12. Treating “parts/ports” as a forever mapping cap, or boiling the ocean (whole-language) in the two-week proof.
@@ -474,4 +496,5 @@ Implementations MUST reject, in addition to P0 §7:
 21. Treating NARROW dogfood as a second **real** in-house SysML desk (Elon Core 2026-09-12). Fixture tree = CI of import / bind / STALE / reproject / propose only.
 22. Kill-theater (Elon Core 2026-09-12): Foam tip sold as SysMLEdge bind before `rev.sha`; agents/repos on MemNet mission sessions as `project@rev`; “almost P1” second-repo migrate on Path-B/`pin_map` only; P2 UI or multi-repo onboarding before timed head-to-head + gold fidelity; pin below **memnet-llm==0.19.8** or drop TCP share.
 23. CEO Core P1 **kill risks** (2026-09-12): silent drop (`connections_parsed:0` / omitted files); tip Path-B sold as bind; full KerML in 2 weeks; shrink zip to parts-only. Treating [#11](https://github.com/chouswei/SysMLEdge/pull/11) / [#12](https://github.com/chouswei/SysMLEdge/pull/12) as P1 pass (scaffold ≠ P1).
-24. Taste-cut narrative (Steve Jobs / Horcrux 2026-09-12): AGI / contract layer / humans–AGI API copy; seven roots as a pitch list; bilingual bus as brand lead; Pro/freemium/Team/marketplace; beachhead size / seats; SaaS-editor / PR-UI foreshadowing; slides instead of the 3-Q Foam keep-using proof.
+24. Taste-cut narrative (Steve Jobs + CEO Core 2026-09-12): AGI copy; Pro/Team/marketplace; beachhead math; bilingual bus as brand lead; plus prior list (contract layer / humans–AGI API; seven roots as a pitch; freemium / Pro ~$19–29; SaaS-editor / PR-UI foreshadowing; slides instead of the 3-Q Foam keep-using proof).
+25. **Kill smells** (Steve Jobs + CEO Core 2026-09-12): IDE / canvas / MemNet tip = product.
