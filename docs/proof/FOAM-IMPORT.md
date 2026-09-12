@@ -24,13 +24,13 @@ Whole-tree SSOT = **all** `.sysml` under `sysml-models/` (including `models/`, `
 
 Default MemNet is **fake** (CI). Live Pi is optional (`docs/proof/MEMNET-LIVE.md`).
 
-One command (**FAKE** bind from this cloud VM; LIVE env is on Pi — see [LIVE-M1-CHECKLIST.md](LIVE-M1-CHECKLIST.md); does not claim M1–M5):
+One command (**FAKE** bind from this cloud VM; LIVE TCP bind on Pi — [LIVE-BIND-CHECKLIST.md](LIVE-BIND-CHECKLIST.md). Does not claim M1–M5. Does not wait on Path-B CON ingest):
 
 ```bash
 export MEMNET_BACKEND=fake
 export FOAM_DIR=/tmp/foam-soi
 export SYSMLEDGE_PROJECT=/tmp/foam-desk
-npm run m1:smoke
+npm run bind:smoke
 ```
 
 Equivalent split:
@@ -40,7 +40,7 @@ Equivalent split:
 export MEMNET_BACKEND=fake
 npx tsx src/cli.ts import-foam /tmp/foam-soi --project /tmp/foam-desk
 npx tsx src/cli.ts status --project /tmp/foam-desk
-npx tsx src/cli.ts smoke-bind --project /tmp/foam-desk
+npx tsx src/cli.ts smoke-bind --project /tmp/foam-desk --mcp
 ```
 
 Equivalent:

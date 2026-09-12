@@ -16,7 +16,7 @@ Usage:
   sysmledge import-foam <foam-repo> [--project DIR]
   sysmledge gold <sysml-models-dir> [--sha SHA] [-o FILE]
   sysmledge proof [--project DIR] [--foam-ssot DIR] [--live]
-  sysmledge smoke-bind [--project DIR] [--mutate-file REL]
+  sysmledge smoke-bind [--project DIR] [--mutate-file REL] [--mcp|--no-mcp]
   sysmledge head-to-head [-o FILE]
   sysmledge memnet-check
   sysmledge status [--project DIR]
@@ -101,7 +101,8 @@ async function main(argv: string[]): Promise<void> {
 
   if (cmd === "smoke-bind") {
     const mutateRel = flag(argv, "--mutate-file");
-    const report = await smokeBind(project, { mutateRel });
+    const mcp = !argv.includes("--no-mcp");
+    const report = await smokeBind(project, { mutateRel, mcp });
     console.log(JSON.stringify(report, null, 2));
     if (!report.ok) process.exit(1);
     return;

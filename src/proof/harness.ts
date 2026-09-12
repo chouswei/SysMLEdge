@@ -15,6 +15,7 @@ import {
 } from "../memnet/env.js";
 import { TcpMemNet } from "../memnet/tcp.js";
 import { listSysmlFiles } from "../rev/sha.js";
+import { exerciseMcpBind, type McpBindExercise } from "./mcp-bind.js";
 
 export type ProofLineStatus = "PASS_SHAPE" | "SKIPPED_NO_LIVE_MEMNET" | "NOT_EXECUTED";
 
@@ -229,73 +230,106 @@ export async function runProofHarness(opts: {
   };
 }
 
-/** Live TCP M1 is blocked until Memnetor restores Foam mission + memnet-llm version pin. */
+/** Path A MemNet meters on mn_b05a9869 are not SysMLEdge bind. Path-B CON is 0.19.9 pending Pi. */
 export const LIVE_MEMNET_TODO =
-  "LIVE M1: fail-fast CON=0 then Path A TSK ego CON=29; Path-B CON map still required. proof_pass_claimed=false. FAKE bind/STALE only.";
+  "LIVE M1: fail-fast CON=0 then Path A TSK ego CON=29 + nested via ops; still not SysMLEdge bind. Path-B CON shipped memnet-llm 0.19.9 (#158), pending Pi roll. proof_pass_claimed=false.";
 
-export async function smokeBind(
-  project: SysMLEdgeProject,
-  opts: { mutateRel?: string } = {},
-): Promise<{
+export const CITED_MEMNET_SESSION = "mn_b05a9869";
+
+export const BIND_SMOKE_THEATER =
+  "Path A AFTER on mn_b05a9869: CON=29 + nested in TSK ego via ops — still not SysMLEdge rev.sha bind. Path-B CON shipped as memnet-llm 0.19.9 (MemNet #158), pending Pi roll. Do not claim pin_map as bind.";
+
+export interface BindSmokeReport {
   ok: boolean;
   memnet_backend: string;
   memnet_mode: "FAKE" | "LIVE_TCP";
-  live_memnet: "blocked";
-  fake_memnet: "ok";
-  bind: { "rev.sha": string | null; "rev.stale": boolean };
-  stale: { "rev.stale": boolean; propose_refused: boolean; code?: string };
-  notes: string[];
   proof_pass_claimed: false;
-}> {
+  scaffold_not_p1: true;
+  cited_memnet_session: typeof CITED_MEMNET_SESSION;
+  path_b_con_ingest: "parallel_B_not_waited";
+  bind: { "rev.sha": string | null; "rev.stale": boolean; "current.sha": string };
+  stale: {
+    "rev.stale": boolean;
+    gql_read_fail_closed: boolean;
+    propose_refused: boolean;
+    code?: string;
+  };
+  reproject: { "rev.stale": boolean; gql_read_live: boolean };
+  mcp?: McpBindExercise;
+  notes: string[];
+}
+
+function memnetMode(): "FAKE" | "LIVE_TCP" {
+  const b = (process.env.MEMNET_BACKEND ?? "fake").toLowerCase();
+  return b === "tcp" || b === "live" ? "LIVE_TCP" : "FAKE";
+}
+
+export async function smokeBind(
+  project: SysMLEdgeProject,
+  opts: { mutateRel?: string; mcp?: boolean } = {},
+): Promise<BindSmokeReport> {
   const backend = process.env.MEMNET_BACKEND ?? "fake";
-  const memnet_mode: "FAKE" | "LIVE_TCP" = "FAKE";
-  const notes: string[] = [LIVE_MEMNET_TODO];
+  const memnet_mode = memnetMode();
+  const notes: string[] = [
+    BIND_SMOKE_THEATER,
+    "proof_pass_claimed=false. scaffold/bind smoke ≠ P1 pass. H2H not run. Kuzu unused.",
+  ];
   const bind = await project.revStatus();
   const bound =
     typeof bind["rev.sha"] === "string" &&
     /^[0-9a-f]{40}$/.test(bind["rev.sha"]) &&
     bind["rev.stale"] === false;
+  const fail = (extra: Partial<BindSmokeReport> & { notes: string[] }): BindSmokeReport => ({
+    ok: false,
+    memnet_backend: backend,
+    memnet_mode,
+    proof_pass_claimed: false,
+    scaffold_not_p1: true,
+    cited_memnet_session: CITED_MEMNET_SESSION,
+    path_b_con_ingest: "parallel_B_not_waited",
+    bind: {
+      "rev.sha": bind["rev.sha"],
+      "rev.stale": bind["rev.stale"],
+      "current.sha": bind["current.sha"],
+    },
+    stale: { "rev.stale": bind["rev.stale"], gql_read_fail_closed: false, propose_refused: false },
+    reproject: { "rev.stale": true, gql_read_live: false },
+    ...extra,
+  });
   if (!bound) {
-    return {
-      ok: false,
-      memnet_backend: backend,
-      memnet_mode,
-      bind: { "rev.sha": bind["rev.sha"], "rev.stale": bind["rev.stale"] },
-      stale: { "rev.stale": bind["rev.stale"], propose_refused: false },
-      notes: ["rev_status not bound with stale=false", LIVE_MEMNET_TODO],
-      live_memnet: "blocked",
-      fake_memnet: "ok",
-      proof_pass_claimed: false,
-    };
+    return fail({ notes: ["rev_status not bound with stale=false", ...notes] });
   }
   notes.push(`bound rev.sha=${bind["rev.sha"]} stale=false memnet_mode=${memnet_mode}`);
 
   const files = await listSysmlFiles(project.ssotDir());
   const prefer =
     opts.mutateRel ??
-    files.map((f) => f.replace(/\\/g, "/")).find((f) => f.endsWith("root.sysml") || f.endsWith("P1Tiny.sysml"));
+    files
+      .map((f) => f.replace(/\\/g, "/"))
+      .find((f) => f.endsWith("root.sysml") || f.endsWith("P1Tiny.sysml"));
   const targetAbs = prefer
     ? prefer.startsWith("/")
       ? prefer
       : files.find((f) => f.replace(/\\/g, "/").endsWith(prefer)) ?? files[0]
     : files[0];
   if (!targetAbs) {
-    notes.push("no .sysml to mutate");
-    return {
-      ok: false,
-      memnet_backend: backend,
-      memnet_mode,
-      bind: { "rev.sha": bind["rev.sha"], "rev.stale": bind["rev.stale"] },
-      stale: { "rev.stale": false, propose_refused: false },
-      notes,
-      live_memnet: "blocked",
-      fake_memnet: "ok",
-      proof_pass_claimed: false,
-    };
+    return fail({ notes: ["no .sysml to mutate", ...notes] });
   }
   const body = await readFile(targetAbs, "utf8");
   await writeFile(targetAbs, body + "\n// sysmledge-stale-smoke\n");
   const st = await project.revStatus();
+
+  let gql_read_fail_closed = false;
+  try {
+    await project.gqlRead({});
+  } catch (e) {
+    if (e instanceof StaleError && e.shape.code === "STALE") {
+      gql_read_fail_closed = true;
+    } else {
+      notes.push(e instanceof Error ? e.message : String(e));
+    }
+  }
+
   let propose_refused = false;
   let code: string | undefined;
   try {
@@ -308,19 +342,87 @@ export async function smokeBind(
       notes.push(e instanceof Error ? e.message : String(e));
     }
   }
-  const ok = st["rev.stale"] === true && propose_refused;
   notes.push(`mutated ${targetAbs}`);
-  notes.push("M1–M5 NOT claimed. This is bind/STALE smoke only.");
+
+  const runMcp = opts.mcp !== false;
+  let mcp: McpBindExercise | undefined;
+  if (runMcp) {
+    mcp = await exerciseMcpBind(project);
+    notes.push(
+      `mcp rev_status=${mcp.rev_status_ok} gql_stale=${mcp.gql_read_stale_refused} propose_stale=${mcp.propose_stale_refused} reproject_live=${mcp.reproject_live}`,
+    );
+    notes.push(...mcp.notes);
+  } else {
+    const live = await project.reproject();
+    const slice = await project.gqlRead({});
+    notes.push(`reproject stale=${live["rev.stale"]} gql_live=${slice["rev.stale"] === false}`);
+    const ok =
+      bound &&
+      st["rev.stale"] === true &&
+      gql_read_fail_closed &&
+      propose_refused &&
+      live["rev.stale"] === false &&
+      slice["rev.stale"] === false;
+    notes.push("M1–M5 NOT claimed. This is SysMLEdge bind/STALE/reproject smoke only.");
+    return {
+      ok,
+      memnet_backend: backend,
+      memnet_mode,
+      proof_pass_claimed: false,
+      scaffold_not_p1: true,
+      cited_memnet_session: CITED_MEMNET_SESSION,
+      path_b_con_ingest: "parallel_B_not_waited",
+      bind: {
+        "rev.sha": bind["rev.sha"],
+        "rev.stale": bind["rev.stale"],
+        "current.sha": bind["current.sha"],
+      },
+      stale: { "rev.stale": st["rev.stale"], gql_read_fail_closed, propose_refused, code },
+      reproject: {
+        "rev.stale": live["rev.stale"],
+        gql_read_live: slice["rev.stale"] === false,
+      },
+      notes,
+    };
+  }
+
+  const after = await project.revStatus();
+  let gql_read_live = false;
+  try {
+    const slice = await project.gqlRead({});
+    gql_read_live = slice["rev.stale"] === false;
+  } catch (e) {
+    notes.push(e instanceof Error ? e.message : String(e));
+  }
+  notes.push("M1–M5 NOT claimed. This is SysMLEdge bind/STALE/reproject smoke only.");
+  const ok =
+    bound &&
+    st["rev.stale"] === true &&
+    gql_read_fail_closed &&
+    propose_refused &&
+    mcp.gql_read_stale_refused &&
+    mcp.propose_stale_refused &&
+    mcp.reproject_live &&
+    mcp.gql_read_live &&
+    after["rev.stale"] === false &&
+    gql_read_live;
   return {
-    ok: bound && ok,
+    ok,
     memnet_backend: backend,
     memnet_mode,
-    bind: { "rev.sha": bind["rev.sha"], "rev.stale": bind["rev.stale"] },
-    stale: { "rev.stale": st["rev.stale"], propose_refused, code },
-    notes,
-    live_memnet: "blocked",
-    fake_memnet: "ok",
     proof_pass_claimed: false,
+    scaffold_not_p1: true,
+    cited_memnet_session: CITED_MEMNET_SESSION,
+    path_b_con_ingest: "parallel_B_not_waited",
+    bind: {
+      "rev.sha": bind["rev.sha"],
+      "rev.stale": bind["rev.stale"],
+      "current.sha": bind["current.sha"],
+    },
+    stale: { "rev.stale": st["rev.stale"], gql_read_fail_closed, propose_refused, code },
+    reproject: { "rev.stale": after["rev.stale"], gql_read_live },
+    mcp,
+    notes,
   };
 }
 

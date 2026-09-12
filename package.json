@@ -18,6 +18,7 @@
     "typecheck": "tsc --noEmit",
     "foam:import": "bash scripts/foam-import.sh",
     "m1:smoke": "bash scripts/m1-smoke.sh",
+    "bind:smoke": "bash scripts/bind-smoke.sh",
     "foam:gold": "tsx src/cli.ts gold",
     "proof": "tsx src/cli.ts proof",
     "head-to-head": "tsx src/cli.ts head-to-head",
