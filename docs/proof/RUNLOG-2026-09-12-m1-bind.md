@@ -11,7 +11,7 @@
 | **M1 FAIL LIVE-bind gate** | **cleared** by this publish. Next Edison step = **LIVE bind**. |
 | **FAKE** bind / STALE | **ok** (SysMLEdge desk) |
 | **FAKE M1 ego** | **invent progress** — SysML-grounded contains/owns/ends; fixture + gold reconstruction. **Does not change MemNet rows.** **≠ pass.** |
-| H2H | Plumbing on `mn_be03c1a9` — [RUNLOG-2026-09-12-h2h-plumbing.md](RUNLOG-2026-09-12-h2h-plumbing.md). Foam **tip** Track A ([#31](https://github.com/chouswei/SysMLEdge/pull/31)): must-win **PASS** (context **3/3** · no_drop **3/3**); wall **FAIL** **0/3** log-only after CEO Core narrow tip (A **307.745ms/23604B** · B **1286.676ms/19042B**); **≠ product / ≠ bind**. [RUNLOG-2026-09-12-h2h-foam-tip.md](RUNLOG-2026-09-12-h2h-foam-tip.md). **Track B** Foam bind **unlocked**. |
+| H2H | Plumbing on `mn_be03c1a9` — [RUNLOG-2026-09-12-h2h-plumbing.md](RUNLOG-2026-09-12-h2h-plumbing.md). Foam **tip** Track A ([#31](https://github.com/chouswei/SysMLEdge/pull/31)): must-win **PASS** (context **3/3** · no_drop **3/3**); wall **FAIL** **0/3** log-only after CEO Core narrow tip (A **307.745ms/23604B** · B **1286.676ms/19042B**); **≠ product / ≠ bind**. [RUNLOG-2026-09-12-h2h-foam-tip.md](RUNLOG-2026-09-12-h2h-foam-tip.md). Cut 1: [RUNLOG-2026-09-12-cut1-tip-wall.md](RUNLOG-2026-09-12-cut1-tip-wall.md). **Track B** Foam bind **unlocked**. |
 | `proof_pass_claimed` | **false** (full P1 until Foam bind H2H + cold unless desk re-locked to tiny) |
 | P1 / M1–M5 pass | **not claimed** |
 | housekeep (Path-B session) | **1673/5000** edges **923** orphans **750** (`mn_0d4f6178`) |

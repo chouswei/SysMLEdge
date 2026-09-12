@@ -58,7 +58,7 @@ Record (operator): [RUNLOG-2026-09-12-live-bind.md](RUNLOG-2026-09-12-live-bind.
 | map | SCHEMA `--map-file` `fixtures/memnet-session.map` |
 | invent meter (same sid, archive) | `InventProbeBar` / `inventProbe` / `probeOut`; `rev.sha` → `1c1e3e50769cc23d8111548d19277cdbddfd1ce5`; gold 11→13 / 12→13 / 6→6; zip≡disk PASS; InventProbe in MemNet yes; mirror-lie PASS |
 | append caveat | rows **56→116**; find PRT **11→24** / CON **5→10**. Honesty archive. MUST NOT sell continuous same-session **(g)** until **(r)** |
-| H2H / cold | Plumbing: [RUNLOG-2026-09-12-h2h-plumbing.md](RUNLOG-2026-09-12-h2h-plumbing.md). **Track A tip** [#31](https://github.com/chouswei/SysMLEdge/pull/31): must-win **PASS**; wall **FAIL** **0/3** log-only (A **307.745ms** vs B **1286.676ms**) — **≠ bind / ≠ product**. [RUNLOG-2026-09-12-h2h-foam-tip.md](RUNLOG-2026-09-12-h2h-foam-tip.md). **Track B** Foam bind **unlocked**. Product wedge = Foam SysMLEdge bind H2H + cold unless Core re-locks P1 desk to tiny. Product bind H2H still logs wall as **P/F**. `proof_pass_claimed: false` |
+| H2H / cold | Plumbing: [RUNLOG-2026-09-12-h2h-plumbing.md](RUNLOG-2026-09-12-h2h-plumbing.md). **Track A tip** [#31](https://github.com/chouswei/SysMLEdge/pull/31): must-win **PASS**; wall **FAIL** **0/3** log-only (A **307.745ms** vs B **1286.676ms**) — **≠ bind / ≠ product**. [RUNLOG-2026-09-12-h2h-foam-tip.md](RUNLOG-2026-09-12-h2h-foam-tip.md). Cut 1: [RUNLOG-2026-09-12-cut1-tip-wall.md](RUNLOG-2026-09-12-cut1-tip-wall.md). **Track B** Foam bind **unlocked**. Product wedge = Foam SysMLEdge bind H2H + cold unless Core re-locks P1 desk to tiny. Product bind H2H still logs wall as **P/F**. `proof_pass_claimed: false` |
 | `proof_pass_claimed` | **false** |
 
 ## Refuse

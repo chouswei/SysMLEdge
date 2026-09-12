@@ -6,7 +6,7 @@
 
 **[#31](https://github.com/chouswei/SysMLEdge/pull/31)** logged must-win **PASS** (context **3/3** · no_drop **3/3**) / wall **FAIL** **0/3** as honesty under the **old** tip-wall axis. **After the narrow, that wall fail does not block the tip claim.**
 
-**Cut 1 settled:** F1/F2/F3 **none** closed the **~4×** gap; **~400ms** floor **constant**.
+**Cut 1 settled:** F1/F2/F3 **none** closed the **~4×** gap; **~400ms** floor **constant**. Memnetor exact (F1 warm≈cold ~440ms; F2 +7–21ms; F3 M=200 omit150; A ~95–106ms vs B ~400–470ms): [RUNLOG-2026-09-12-cut1-tip-wall.md](RUNLOG-2026-09-12-cut1-tip-wall.md). **Confirm:** no factor missed; not ShapeWalk / Truncation / cold miss. **Out of scope:** serve/MCP hop, emit serialize, process-restart cold, session size.
 
 **Tip H2H ≠ product. Tip H2H ≠ SysMLEdge bind.** Wedge still needs **SysMLEdge bind + H2H + cold** on Foam (`mn_0d4f6178` CON **124** + nested). Gold-200 stays out. Do **not** reopen Neo4j.
 
@@ -66,7 +66,7 @@ System cue: **Truncation=true** **M=80** omitted=**270** (honest clip ≠ empty)
 | Tip wall-clock = log only | **FAIL 0/3** logged; MUST NOT hide the ~4× / ~400ms floor; MUST NOT treat it as a tip fail. |
 | Product bind H2H wall = P/F | Still the product axis. This log is **not** that run. |
 | [#31](https://github.com/chouswei/SysMLEdge/pull/31) wall FAIL | Honesty under the **old** tip-wall axis. After the narrow, it does **not** block the tip claim. |
-| Cut 1 settled | F1/F2/F3 **none** closed the ~4× gap; ~400ms floor **constant**. MUST NOT reopen those cuts as if they were open. |
+| Cut 1 settled | F1/F2/F3 **none** closed the ~4× gap; ~400ms floor **constant**. Memnetor exact: [RUNLOG-2026-09-12-cut1-tip-wall.md](RUNLOG-2026-09-12-cut1-tip-wall.md). MUST NOT reopen those cuts as if they were open. |
 | Tip H2H ≠ product / ≠ SysMLEdge bind | B = `pin_map` `--locator qname=` `--depth 2`. Kill theater: tip-as-bind. |
 | Track B Foam bind **unlocked** | Next invent = SysMLEdge **bind** H2H vs grep. **(f)** clean remains `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d`. Dirty `mn_27ce8714` = honesty archive only. MUST NOT reopen Neo4j. |
 
