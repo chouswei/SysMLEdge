@@ -1,8 +1,8 @@
 # SysMLEdge business plan (gated)
 
-**As of:** 2026-09-12. **NARROW product story:** Steve Jobs + CEO Core 2026-09-12. Exact locks: [PRODUCT-LOCKS.md — CEO Core — Steve taste](PRODUCT-LOCKS.md#ceo-core--steve-taste-2026-09-12). Engine locks **untouched**. Foam proof: [P1-acceptance.md](P1-acceptance.md). Living plan: [PRODUCT-PLAN.md](PRODUCT-PLAN.md).
+**As of:** 2026-09-12. **NARROW product story:** Steve Jobs + CEO Core 2026-09-12 **pinned features**. Exact locks: [PRODUCT-LOCKS.md — CEO Core — Steve taste](PRODUCT-LOCKS.md#ceo-core--steve-taste-2026-09-12). **v1:** [PRODUCT-LOCKS.md — pinned features](PRODUCT-LOCKS.md#ceo-core--pinned-features-v1-2026-09-12). Engine locks **untouched**. Foam proof: [P1-acceptance.md](P1-acceptance.md). Living plan: [PRODUCT-PLAN.md](PRODUCT-PLAN.md).
 
-This file is **not** a live price list and **not** a shipping claim. It does not implement runtime.
+This file is **not** a live price list and **not** a shipping claim. It does not implement runtime. `proof_pass_claimed: false`. **(g) is provisional.**
 
 ---
 
@@ -12,7 +12,9 @@ This file is **not** a live price list and **not** a shipping claim. It does not
 
 **One-liner:** Two faces at one `model@rev` — ask/propose GQL, author/view the SysML mirror. After upload, graph is live working SSOT **(g)**.
 
-**Keep:** Foam desk proof — model@rev bind, STALE fail-closed, beat grep (wall-clock + context + no silent drop); plan≠product; don’t-migrate.
+**Market pin (Steve, CEO Core 2026-09-12 pinned features):** beat grep / ghost trees for textual SysML v2 + Cursor — **not** Cameo/SysON. Sell that only. Leave **(g)** (typed ops → bit-true zip) **out** of the beachhead pitch. MUST NOT sell (g) as proven. Mirror-lie **PASS** ≠ proven.
+
+**Keep:** Foam desk proof — model@rev bind, STALE fail-closed, beat grep (wall-clock + context + no silent drop); plan≠product; don’t-migrate. **v1** bind / GQL ask / propose / streamable-HTTP MCP + MemNet sole. **(g) provisional.**
 
 **Kill smells:** IDE / canvas / MemNet tip = product.
 
@@ -85,11 +87,11 @@ If **M1 or M2 fail:** MemNet not ready as sole engine; stop Pro/beachhead; keep 
 
 ## Position (desk, not category)
 
-**Product story:** Foam desk proof — model@rev bind, STALE fail-closed, beat grep. **One-liner:** Two faces at one `model@rev` — ask/propose GQL, author/view the SysML mirror. After upload, graph is live working SSOT **(g)**.
+**Product story:** Foam desk proof — model@rev bind, STALE fail-closed, beat grep / ghost trees for textual SysML v2 + Cursor. **One-liner:** Two faces at one `model@rev` — ask/propose GQL, author/view the SysML mirror. After upload, graph is live working SSOT **(g)** — **provisional**; MUST NOT sell as proven. Leave **(g)** out of the beachhead pitch.
 
 **Cut until cold Foam yes:** AGI copy, Pro/Team/marketplace, beachhead math, “bilingual bus” as brand lead. Plus prior list where it does not contradict.
 
-**Not:** SysON, Cameo, graphic MBSE IDE, GitHub clone, defense PLM / enterprise >$100.
+**Not:** SysON, Cameo, graphic MBSE IDE, GitHub clone, defense PLM / enterprise >$100, canvas, Neo4j, ClickUp/InvenTree as product, P2 ACL/PR UI.
 
 **Expert reception:** own the limits — **not whole SysML**, **no canvas**. Pitch **beat grep, not MagicDraw**. MUST NOT chase Cameo (or Cameo/defense lists as the find-path).
 
@@ -122,7 +124,7 @@ Locks for all seven buyer roots: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#human-root-
 | Pitch now | Lock, not pitch |
 |-----------|-----------------|
 | **Trust** the live `project@rev` (no ghost tree) | Stay SSOT owner; git as home; mid-flight Path A; affordable / Pro (gated) |
-| **Ask without stuffing** the `.sysml` tree | |
+| **Ask without stuffing** the `.sysml` tree | **(g)** / bit-true zip — **provisional**; out of beachhead until meters |
 | **Ship zip** @ rev | |
 
 P1 proves trust + ask + ship zip via the **eight contract rows**. NARROW Foam proof **9–12** is the wedge bar. P1 demo still **must beat grep**.
@@ -160,6 +162,7 @@ Order:
 | **Pass bar** | Rows 9–12 + M1–M5; scaffold ≠ P1. Unchanged. |
 | **After cold yes** | Outsider → then price. |
 | **Hours** | Foam Phase-1 hours stay on the Foam slice (import, project, GQL/MCP, STALE, propose, zip). Do not spend them on P2 UI. Do not steal them for **VI**. |
+| **(g)** | **Provisional.** Mirror-lie **PASS** on `mn_27ce8714`. Out of beachhead pitch. MUST NOT claim `proof_pass`. Invent next = wait Core (`r`)/(`f`) then H2H. |
 
 ---
 
@@ -198,9 +201,12 @@ No extra mitigations beyond: run the proof items; freeze the list in [PRODUCT-LO
 9. Parts-only SSOT, or treating parts/ports as a forever mapping cap.
 10. Selling P1 as a feature-count win instead of **wall-clock + context footprint + no silent drop** vs grep.
 11. Claiming canvas, PLM, ClickUp/InvenTree, or Team ACL as this-week pains (non-claims freeze).
-12. Dual-engine / Kuzu unless Memnetor is a hard blocker.
+12. Dual-engine / Kuzu / Neo4j unless Memnetor is a hard blocker. MUST NOT reopen Neo4j.
 13. Slides as a substitute for the 3-Q Foam keep-using proof.
+14. Selling **(g)** (typed SysML ops → bit-true zip) as proven, or putting it in the beachhead pitch (CEO Core 2026-09-12 pinned features). Mirror-lie **PASS** ≠ proven.
+15. Claiming M1 on LIVE bind `mn_27ce8714` (p1-tiny CON \|Q\|=**5**), or mixing it with Foam narrow M1 on `mn_0d4f6178`.
+16. Claiming `proof_pass`. Inventing replace-on-reproject without Core (`r`)/(`f`).
 
 ## Out of this plan
 
-No graphic canvas. No agent write-SSOT. No ClickUp/InvenTree product. No Kuzu. No P2/P3 shipping claim in this seed.
+No graphic canvas. No agent write-SSOT. No ClickUp/InvenTree product. No Kuzu. No Neo4j. No P2/P3 shipping claim in this seed. No Pro pitch until cold Foam. **(g)** not sold as proven.
