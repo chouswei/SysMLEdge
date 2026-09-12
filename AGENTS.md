@@ -21,6 +21,6 @@
 - Add a graphic SysML canvas or modeler.
 - Widen **P1** to a dual-write editor. Foam proof still scores **projection fidelity + bind**.
 - Reopen KEEP MemNet sole, M1 narrow (CON 124 + nested on `mn_0d4f6178` @ 0.19.9), or LIVE bind gates.
-- Claim **(g)** proven. Mirror-lie meter **PASS** on `mn_27ce8714` does **not** sell (g). **(g) is provisional.** MUST NOT claim `proof_pass`. LIVE bind `mn_27ce8714` is p1-tiny — **no M1 claim** on that bind. MUST NOT invent replace-on-reproject without Core (`r`)/(`f`). Do not reopen Neo4j.
+- Claim **(g)** proven. Mirror-lie meter **PASS** on `mn_27ce8714` does **not** sell (g). **(g) is provisional.** MUST NOT claim `proof_pass`. LIVE bind `mn_27ce8714` is p1-tiny — **no M1 claim** on that bind. **Lock (f):** reproject opens a **new** MemNet session id (ops-only). **(r)** deferred. Do not reopen Neo4j.
 
 Contracts: [docs/P0-contracts.md](docs/P0-contracts.md). Locks: [docs/PRODUCT-LOCKS.md](docs/PRODUCT-LOCKS.md) (CEO Core 2026-09-12 pinned features). Plan: [docs/PRODUCT-PLAN.md](docs/PRODUCT-PLAN.md).

@@ -24,7 +24,7 @@ SysMLEdge MCP gql_context / gql_impact wraps that + rev.sha
 
 | Must | Must not |
 |------|----------|
-| `ingest sysml` on the **current SSOT path** into a **new** session | `mutate` owns onto `TSK_*` / `USR_*` |
+| `ingest sysml` on the **current SSOT path** into a **new** session (lock **(f)**) | `mutate` owns onto `TSK_*` / `USR_*`; same-sid replace-ingest **(r)** |
 | Cue `qname=FoamDetectionLiteVer2::…` (SysML) | Cue `TSK_model_*` as ego / bind |
 | Record SysMLEdge `rev.sha` (40 hex git) **and** MemNet `mn_…` separately | Treat session id as `rev.sha` |
 | Compare CON / nested / ego to [foam-gold](../../fixtures/foam-gold/gold.json) | Claim gold because `pin_map` is non-empty |

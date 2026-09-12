@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Memnetor / Devicor: LIVE SysMLEdge rev bind on Pi (localhost memnet serve).
 # MUST NOT ingest into mn_0d4f6178 or mn_b05a9869. Opens a NEW session.
+# Lock (f): reproject MUST refuse same-sid attach; (r) replace-ingest is deferred (no MemNet API this cut).
 # 0.19.9 session open uses SCHEMA --map-file (fixtures/memnet-session.map).
 # proof_pass_claimed=false until H2H + cold. H2H scores narrow 124+nested, not gold-200.
 set -euo pipefail

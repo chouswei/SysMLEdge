@@ -120,7 +120,7 @@ Query language is **GQL** against MemNet (cue → neighbourhood / find). GQL NEV
 | `gql_impact` | No | Upstream/downstream along mapped connections / relations Foam uses. Same STALE rules. |
 | `list_scope` | No | Indexed project roots / package qnames in the bound projection. |
 | `propose` | No (SSOT) | Write **only** under `sysml-models/proposals/<id>/`. See §6. |
-| `reproject` | No (agent SSOT) | P1: rebuild MemNet from **current** SysML. SaaS **(g)** also regenerates the SysML mirror from the graph (machines, not LLM). Agents MAY request; MUST NOT treat a GQL dump as the zip. |
+| `reproject` | No (agent SSOT) | P1: rebuild MemNet from **current** SysML. **Lock (f):** open a **new** MemNet session id (ops-only). **(r)** same-sid replace-ingest deferred. SaaS **(g)** also regenerates the SysML mirror from the graph (machines, not LLM). Agents MAY request; MUST NOT treat a GQL dump as the zip. |
 
 ### 4.2 Forbidden on MCP
 

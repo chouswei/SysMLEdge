@@ -2,7 +2,7 @@
 
 **CEO Core:** [#23](https://github.com/chouswei/SysMLEdge/pull/23) M1 narrow published → LIVE bind **unlocked**. [#18](https://github.com/chouswei/SysMLEdge/pull/18) FAKE bind remains scaffold. [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego ≠ LIVE bind. [#26](https://github.com/chouswei/SysMLEdge/pull/26) lock **(g)** — graph = SaaS working SSOT; SysML = machine-kept mirror. **Strip `one_way` product pitch.**
 
-`proof_pass_claimed: false`. **Not Foam M1.** Not P1. H2H **held**. Cold **held**. This session is **p1-tiny**, **not** Foam CON=124.
+`proof_pass_claimed: false`. **Not Foam M1.** Not P1. H2H **held** until a clean **(f)** path. Cold **held**. This session is **p1-tiny**, **not** Foam CON=124. **(g) provisional.** **(r)** deferred.
 
 ## Kill theater
 
@@ -93,7 +93,7 @@ Added in `P1Tiny.sysml`:
 | `proof_pass_claimed` | **false** | **false** |
 | H2H / cold | **held** | **held** |
 
-### CAVEAT — same-session re-ingest **appends**
+### CAVEAT — same-session re-ingest **appends** (honesty; pre-**(f)**)
 
 Path-B ingest on an already-open session **does not replace**. Gold/zip/rev are honest; MemNet row counts **are not** replace-on-reproject.
 
@@ -103,7 +103,7 @@ Path-B ingest on an already-open session **does not replace**. Gold/zip/rev are 
 | `find` PRT | **11** | **24** |
 | `find` CON | **5** | **10** |
 
-Duplicate **qnames** after append. Under lock **(g)** prefer a **fresh session** or **replace** semantics for clean MemNet counts. MUST NOT treat 116/24/10 as gold 13/13/6.
+Duplicate **qnames** after append. **Lock (f)** (user GO 2026-09-12 + Memnetor): on reproject, open a **new MemNet session id** (ops-only). **(r)** replace-ingest is **deferred** — **no MemNet API change this cut**. MUST NOT treat 116/24/10 as gold 13/13/6. H2H next after a clean **(f)** path. `proof_pass_claimed: false`.
 
 ## Operator command (Pi)
 
@@ -119,4 +119,5 @@ BIND_SMOKE_LIVE=1 npm run bind:live
 - Not H2H / cold
 - Not Neo4j / dual-engine / dual-write editor
 - Not attach to `mn_0d4f6178` / `mn_b05a9869`
-- Not treat same-session append (rows 56→116) as replace-on-reproject
+- Not treat same-session append (rows 56→116) as replace-on-reproject (**(r)** deferred)
+- Not skip lock **(f)** (reproject must open a **new** MemNet session id)
