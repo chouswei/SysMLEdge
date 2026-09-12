@@ -66,6 +66,7 @@ Fill when Memnetor/Devicor runs `npm run bind:live` on the Pi:
 | Desk | Foam SHA / `fixtures/p1-tiny` |
 | `rev.sha` (40 hex) | |
 | `rev.stale` after import | must be `false` |
+| `one_way` | **true** (not a reverse translator) |
 | `bind.json` `memnetSession` | must **not** be `mn_0d4f6178` / `mn_b05a9869` |
 | mutate → STALE / `propose` refused | |
 | `reproject` → `rev.stale=false` | |

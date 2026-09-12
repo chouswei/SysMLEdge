@@ -1,6 +1,6 @@
 # Agent rules — SysMLEdge
 
-SysML is the author **SSOT**. MemNet/GQL is the **trail** (projected index). Do not invent structure beside SysML.
+SysML is the author **SSOT**. MemNet/GQL is the **trail** (projected index). **One-way:** SysML files → project into MemNet → query in GQL. Edits stay in SysML (or `propose` `delta.sysml`). GQL never invents SysML back. Do not invent structure beside SysML.
 
 ## MUST
 

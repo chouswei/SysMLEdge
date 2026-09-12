@@ -32,6 +32,10 @@ export interface RevIdentity {
   "rev.stale": boolean;
   currentKind: "git" | "content";
   mappingVersion: string;
+  memnetSession?: string;
+  /** CEO+Steve: SysML → MemNet → GQL. Not a reverse translator. */
+  one_way: true;
+  proof_pass_claimed: false;
 }
 
 export interface StaleErrorShape {

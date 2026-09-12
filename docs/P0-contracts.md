@@ -2,7 +2,7 @@
 
 This sheet is the first implementable deliverable. Implement against these names and behaviours. Engine is **MemNet**. **Kuzu is rejected.**
 
-**Bilingual** = SysML (author SSOT) + GQL (query/represent). Not a zh/EN UI contract.
+**Bilingual** = author SysML / ask GQL over one `model@rev`. **One-way, not a translator both ways:** SysML files → project into MemNet → query in GQL. Edits stay in SysML (or `propose` `delta.sysml`). GQL never invents SysML back. Not a zh/EN UI contract.
 
 Pilot system of interest (P1, not this seed): `chouswei/modelbasedPrj-itri-vedan-foam-detection`.
 

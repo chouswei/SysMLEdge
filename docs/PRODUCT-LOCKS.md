@@ -23,6 +23,7 @@ Product-story locks are **exact** in [CEO Core — Steve taste](#ceo-core--steve
 | **CEO Core P1 gate** (2026-09-12) | Exact locks: **Sequence** / **Pass only** / **Kill theater** (cite Edison). Must-fix / kill risks / OK. Scaffold ≠ P1. |
 | **Edison Core experiment** (Thomas Alva Edison / Horcrux, 2026-09-12) | **KEEP / NARROW** the 2-week Foam cycle (9–12 + M1–M5). Do **not** invert sequence. Engine + story locks untouched. Scaffold ≠ P1. |
 | **CEO Core — Steve + Elon agree** (2026-09-12) | **M1 claim** = LIVE CON **124** + nested qname ego YES on `mn_0d4f6178` @ 0.19.9. Gold 200 = parser ref only. No invent edges. LIVE bind unlocked after this publish lands. Timed H2H must score the **narrow** claim (124 + nested ego) — gold-200 stays out of the competitor story. **KEEP MemNet sole.** Path-B CON floor **≥0.19.9+TCP**. |
+| **CEO+Steve Core — one-way** (2026-09-12) | **One-way, not a translator both ways.** SysML files → project into MemNet → query in GQL. Edits stay in SysML (or `propose` `delta.sysml`). GQL never invents SysML back. “Bilingual” = author SysML / ask GQL over one `model@rev`. |
 
 **Taste risks** (Steve Jobs + CEO Core 2026-09-12): **Kill smells:** IDE / canvas / MemNet tip = product. Prior: Cameo-lite; MemNet-wrapper (tip Path-B ≠ product); yet-another-MCP without beat-grep cold feel.
 
@@ -65,6 +66,8 @@ Elon’s “parts/ports” freeze was **2-week anti-scope-creep for mapping work
 **One-liner:** SysML stays the model; GQL/MCP is how agents query without stuffing/grepping the tree.
 
 **Keep:** Foam desk proof — model@rev bind, STALE fail-closed, beat grep (wall-clock + context + no silent drop); plan≠product; don’t-migrate.
+
+**One-way, not a translator both ways** (CEO+Steve Core, 2026-09-12): SysML files → project into MemNet → query in GQL. Edits stay in SysML (or `propose` `delta.sysml`). GQL never invents SysML back. “Bilingual” = author SysML / ask GQL over one `model@rev`. Not a zh/EN UI. Not a round-trip translator.
 
 **Kill smells:** IDE / canvas / MemNet tip = product.
 
@@ -136,7 +139,7 @@ Cited with NARROW fail/pass and MemNet M1–M5 above. Those gates **stand**. Thi
 
 ## Sysmler Core review (2026-09-12)
 
-**Verdict: KEEP / NARROW** — textual SysML v2 → one-way MemNet → GQL at `model@rev`. No invent-in-graph. Aligns with the CEO product spine.
+**Verdict: KEEP / NARROW** — textual SysML v2 → one-way MemNet → GQL at `model@rev`. No invent-in-graph. GQL never invents SysML back (CEO+Steve Core). Aligns with the CEO product spine.
 
 This review does **not** pass Foam gold. P1 gate = **CEO Core** exact locks (next section). No scope widen. This file does not implement runtime.
 
@@ -348,7 +351,7 @@ SysMLEdge (this cut) is **Foam desk proof**. **One-liner:** SysML stays the mode
 | Beats “git + LSP + grep `.sysml`” | **Kill smells:** IDE / canvas / MemNet tip = product |
 | Foam first | Defense PLM / enterprise >$100; Pro/Team/marketplace as this-cut story |
 
-**Internal architecture name (not brand lead):** bilingual bus = SysML (author SSOT) + GQL (query/represent). Not a zh/EN UI.
+**Internal architecture name (not brand lead):** bilingual bus = author SysML / ask GQL over one `model@rev`. **One-way.** Not a zh/EN UI. Not a translator both ways.
 
 **Buyer (desk, not a seat target):** solo / 2–5 engineers on SysML v2 textual + Cursor.
 
@@ -421,7 +424,7 @@ SysMLEdge MCP  streamable HTTP (Cursor Bearer)
 | **SSOT** | SysML zip or `sysml-models/` tree. Import/save/download = **all** `.sysml` in that tree. Never parts-only SSOT. Download = SysML zip @ rev only. |
 | **Git / GitHub** | VCS backbone. Bind **project @ SHA**. SysMLEdge owns projection, STALE, and propose — not GitHub’s review UI. |
 | **MemNet** | Projected index. **P1:** Foam-complete (kinds Foam uses). Later: widen as projects demand. **TCP backend-only** (`serve` + MCP TCP-shared). **No Kuzu**, no Cypher, no Neo4j, no `graph.kuzu`. Not the agent-facing wedge once SysMLEdge MCP binds. Bounce **0.19.8**; Path-B CON **≥0.19.9+TCP**. |
-| **GQL** | Query/represent what SysML already says at `rev.sha`. MUST NOT invent. |
+| **GQL** | Query/represent what SysML already says at `rev.sha`. MUST NOT invent. **One-way:** GQL never invents SysML back. |
 | **MCP face** | **Streamable HTTP** with Cursor **Bearer**, same pattern as **memnet-pi**. Agents call **SysMLEdge MCP** (`rev_status` / `gql_*` / `propose`). |
 | **STALE** | Projection `rev.sha` ≠ current SHA. Show it; refuse live-SSOT pretence. `staleOk` is read-only. |
 
@@ -578,3 +581,4 @@ Implementations MUST reject, in addition to P0 §7:
 25. **Kill smells** (Steve Jobs + CEO Core 2026-09-12): IDE / canvas / MemNet tip = product.
 26. Edison Core (Thomas Alva Edison / Horcrux 2026-09-12): invert M1 → bind → timed H2H → row 12; time H2H before M1+bind; skip Day-1 instruments; spend hours on the refuse/freeze list.
 27. Steve + Elon agree (CEO Core 2026-09-12; Core GO same day): treat M1 gaps as Neo4j / dual-engine / wrong store; invent CON to chase gold **200**; treat [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as M1 pass; claim Path-B CON below **≥0.19.9+TCP**; claim Path-B CON **124** as gold **200**; score timed H2H against gold-200; claim full P1 / `proof_pass_claimed` before bind + H2H + cold.
+28. **Translator both ways** (CEO+Steve Core 2026-09-12): GQL/MemNet dump as SysML; round-trip “bilingual” as two SSOT faces; generating `.sysml` from GQL neighbourhood. Edits stay in SysML or `propose` `delta.sysml`.

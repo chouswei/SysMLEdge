@@ -2,7 +2,7 @@
 
 **SysMLEdge** (this cut) is Foam desk proof. **One-liner:** SysML stays the model; GQL/MCP is how agents query without stuffing/grepping the tree. **Buyer gut:** *I ask the live model at this rev — no grep dump, no ghost tree.* The graph is a **MemNet** projection. **Kill smells:** IDE / canvas / MemNet tip = product. Not a Kuzu port, not a GitHub clone, and it does not ship SaaS or tenancy in this cut.
 
-**Internal architecture name** (not brand): bilingual = SysML (author SSOT) + GQL (query/represent). Not a zh/EN UI. Exact product-story locks: [docs/PRODUCT-LOCKS.md](docs/PRODUCT-LOCKS.md#ceo-core--steve-taste-2026-09-12) (Steve Jobs + CEO Core 2026-09-12).
+**Internal architecture name** (not brand): bilingual = author SysML / ask GQL over one `model@rev`. **One-way, not a translator both ways.** Not a zh/EN UI. Exact product-story locks: [docs/PRODUCT-LOCKS.md](docs/PRODUCT-LOCKS.md#ceo-core--steve-taste-2026-09-12) (Steve Jobs + CEO Core 2026-09-12).
 
 **This cut is P1 Foam proof scaffolding** on the runtime from #11. It does **not** make SysMLEdge ready to serve real projects. Plan ≠ product. Foam proof (`docs/P1-acceptance.md` rows 9–12 and M1–M5) is **not** claimed and **not** executed.
 

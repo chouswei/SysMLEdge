@@ -27,7 +27,7 @@ export function createSysmlEdgeMcpServer(project: SysMLEdgeProject): McpServer {
 
   server.tool(
     "rev_status",
-    "Return current.sha, rev.sha, rev.stale. SysMLEdge owns bind; not on the MemNet wire.",
+    "Return current.sha, rev.sha, rev.stale, memnetSession. One-way: SysML → MemNet → GQL; not a reverse translator. SysMLEdge owns bind; not on the MemNet wire.",
     {},
     async () => {
       try {

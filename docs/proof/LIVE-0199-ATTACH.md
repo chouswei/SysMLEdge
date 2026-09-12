@@ -12,7 +12,7 @@ Durable Path-B CON from ingest is proven on MemNet **0.19.9** (`mn_0d4f6178`). B
 SysML zip / sysml-models/     SSOT
         |  human Save / import (git SHA)
         v
-SysMLEdge reproject
+SysMLEdge reproject  (one-way; GQL never invents SysML back)
         |  parse + ground contains/owns/ends (FAKE always)
         |  LIVE: memnet ingest sysml --path <ssot> --session <sid>
         v

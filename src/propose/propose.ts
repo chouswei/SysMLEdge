@@ -38,6 +38,8 @@ export async function writeProposal(
     "",
     "Agents propose only. Human save applies this onto current.",
     "",
+    "One-way: GQL never invents SysML back. This delta is SysML text.",
+    "",
   ].join("\n");
   await writeFile(join(dir, "PATCH.md"), patch, "utf8");
   await writeFile(join(dir, "delta.sysml"), opts.deltaSysml, "utf8");

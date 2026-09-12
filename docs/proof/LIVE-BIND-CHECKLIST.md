@@ -55,6 +55,7 @@ Record (operator):
 | `memnet-check` version | ≥0.19.9 |
 | Desk (Foam SHA or `fixtures/p1-tiny`) | |
 | SysMLEdge `rev.sha` after import | 40 hex from `rev_status` — **not** a MemNet session id |
+| `rev_status.one_way` | **true** (SysML → MemNet → GQL) |
 | New MemNet session (`bind.json` `memnetSession`) | `mn_…` **not** `mn_0d4f6178` / `mn_b05a9869` |
 | Mutate → STALE `gql_read` / `propose` | pass / fail |
 | MCP `reproject` → live | pass / fail |
@@ -75,6 +76,7 @@ Template: [RUNLOG-2026-09-12-live-bind.md](RUNLOG-2026-09-12-live-bind.md).
 - Treating Path-B / `pin_map` / `mn_0d4f6178` as bind
 - Treating Path A AFTER meters (CON=29, nested in TSK ego) as bind
 - Claiming [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego is LIVE bind
+- GQL/MemNet dump as SysML (CEO+Steve: **one-way**, not a translator both ways)
 - Claiming M1 / P1 / `proof_pass_claimed` from this checklist
 - Starting H2H from this checklist (H2H later scores **124+nested**)
 - Inventing CON / Neo4j / dual-engine

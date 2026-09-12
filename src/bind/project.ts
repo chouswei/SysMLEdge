@@ -73,6 +73,9 @@ export class SysMLEdgeProject {
       "rev.stale": current.sha !== revSha,
       currentKind: current.kind,
       mappingVersion: bind?.mappingVersion ?? MAPPING_VERSION,
+      memnetSession: bind?.memnetSession,
+      one_way: true,
+      proof_pass_claimed: false,
     };
   }
 

@@ -33,6 +33,8 @@ test("import binds rev.sha; gql_read is live-SSOT", async () => {
   assert.equal(st["rev.stale"], false);
   assert.match(st["rev.sha"] as string, /^[0-9a-f]{40}$/);
   assert.equal(st["current.sha"], st["rev.sha"]);
+  assert.equal(st.one_way, true);
+  assert.equal(st.proof_pass_claimed, false);
   const slice = await p.gqlRead({ keyword: "nestedDetector" });
   assert.equal(slice["rev.stale"], false);
   assert.equal(slice["rev.sha"], st["rev.sha"]);
@@ -88,6 +90,7 @@ test("propose writes only under proposals/; SSOT unchanged", async () => {
   assert.match(out["base.sha"], /^[0-9a-f]{40}$/);
   const patch = await readFile(join(p.ssotDir(), "proposals", "prop-test-1", "PATCH.md"), "utf8");
   assert.match(patch, /base\.sha:/);
+  assert.match(patch, /GQL never invents SysML back/);
   const delta = await readFile(join(p.ssotDir(), "proposals", "prop-test-1", "delta.sysml"), "utf8");
   assert.equal(delta, "// delta only\n");
   const after = await readFile(join(p.ssotDir(), "P1Tiny.sysml"), "utf8");
