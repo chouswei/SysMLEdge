@@ -40,14 +40,10 @@ export function parseSchemaFields(body: string): Map<string, string[]> {
   for (const raw of body.split(/\r?\n/)) {
     const line = raw.trim();
     const m = /^SCHEMA\s+([A-Z]+)\s*;\s*fields=(\S.*)$/.exec(line);
-    if (!m) continue;
-    out.set(
-      m[1],
-      m[2]
-        .trim()
-        .split(/\s+/)
-        .filter(Boolean),
-    );
+    const kind = m?.[1];
+    const fieldList = m?.[2];
+    if (!kind || !fieldList) continue;
+    out.set(kind, fieldList.trim().split(/\s+/).filter(Boolean));
   }
   return out;
 }

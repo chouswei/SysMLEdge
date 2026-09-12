@@ -38,8 +38,12 @@ test("checked-in map keeps qname/path/sysml_kind on PKG/PRT/POR/CON", () => {
     assert.match(line!, /\bpath\b/);
     assert.match(line!, /\bsysml_kind\b/);
   }
-  assert.match(body, /SCHEMA PRT ; fields=id name qname path partNumber sysml_kind recycle/);
-  assert.doesNotMatch(body, new RegExp(`SCHEMA PRT ; fields=${NARROW_OPERATOR_PRT_FIELDS}`));
+  assert.match(body, /^SCHEMA PRT ; fields=id name qname path partNumber sysml_kind recycle$/m);
+  const prtSchema = body
+    .split(/\n/)
+    .find((l) => l.startsWith("SCHEMA PRT "));
+  assert.ok(prtSchema);
+  assert.notEqual(prtSchema, `SCHEMA PRT ; fields=${NARROW_OPERATOR_PRT_FIELDS}`);
 });
 
 test("narrow operator SCHEMA without qname is refused (keep-id hydrate)", () => {
