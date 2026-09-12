@@ -58,7 +58,7 @@ Until LIVE `rev.sha` is recorded from **SysMLEdge** `rev_status` on a **new** se
 - Tip Path-B sold as bind
 - Path A CON=29 / nested-in-TSK-ego as SysMLEdge bind
 - Claiming M1 / P1 pass from FAKE tests or from Path-B `pin_map`
-- H2H before timed Foam run, or treating p1-tiny / `mn_be03c1a9` H2H as wedge pass (plumbing only; score Foam `mn_0d4f6178` CON **124** + nested, not gold-200)
+- H2H before timed Foam **bind** run, or treating p1-tiny / `mn_be03c1a9` H2H as wedge pass (plumbing only; score Foam `mn_0d4f6178` CON **124** + nested, not gold-200). Tip Track A meters: [RUNLOG-2026-09-12-h2h-foam-tip.md](RUNLOG-2026-09-12-h2h-foam-tip.md) — **≠ bind**
 - Neo4j / dual-engine because CON=0 was a projection/ego gap
 - Attaching bind to `mn_0d4f6178` / `mn_b05a9869`
 - leftover `--map` TAG wire; `one_way: true` as product truth

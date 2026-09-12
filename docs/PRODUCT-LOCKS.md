@@ -42,6 +42,8 @@ If a lock and P0 wording differ, this sheet **notes** the difference and **align
 
 **H2H desk (CEO / Elon / Edison Core 2026-09-12):** H2H on **p1-tiny** / `mn_be03c1a9` = **plumbing only**. MUST NOT let tiny **soft-pass** the wedge. `proof_pass_claimed` stays **false** until **timed H2H + cold** on the **Foam narrow claim** (`mn_0d4f6178` CON **124** + nested). Gold-200 stays out. Core MAY **explicitly re-lock** the P1 desk to tiny; until that cut, the wedge desk is Foam. Memnetor exact plumbing table: [proof/RUNLOG-2026-09-12-h2h-plumbing.md](proof/RUNLOG-2026-09-12-h2h-plumbing.md). CLI `head-to-head` is a **null scaffold**.
 
+**Honesty — Foam tip H2H Track A (Devicor ms, scored):** `mn_0d4f6178` @ **0.19.9**. Housekeep rows **1673/5000** · edges **923** · relations **41** · orphans **750** · dangling **0**. Context **3/3** · no_drop **3/3**. **`wall_pass` 0/3** — A **307.745ms/23604B** · B **1286.676ms/19042B** (prefer over rounded 308/1287). Truncation honest (M=80 omitted=270). **B slower → reopen apparatus invent, not soft-pass.** **MUST NOT reopen Neo4j.** **Tip ≠ product / ≠ SysMLEdge bind.** B = `memnet query pin-map --locator qname=… --depth 2`. **Track B** Foam bind **held**. `proof_pass=false`. Log: [proof/RUNLOG-2026-09-12-h2h-foam-tip.md](proof/RUNLOG-2026-09-12-h2h-foam-tip.md).
+
 **KEEP:** MemNet sole. don’t-migrate. No Pro until cold Foam.
 
 ---
@@ -267,6 +269,7 @@ P2 UI / canvas / IDE / Pro–Team–marketplace; full KerML; parts-only zip; Neo
 | No `rev` bind | STALE theater — stop the story |
 | M1 or M2 fail | MemNet **not** a sole-engine claim |
 | M5 loses with numbers **after** fidelity | Reopen engine **form** only then |
+| **Tip** H2H `wall_pass` **0/3** (Track A, A **307.745ms** vs B **1286.676ms**) | **Reopen apparatus invent**, not soft-pass. MUST **not** reopen Neo4j from tip loss. [proof/RUNLOG-2026-09-12-h2h-foam-tip.md](proof/RUNLOG-2026-09-12-h2h-foam-tip.md) |
 | Row 12 cold **no** | Kill Pro/beachhead |
 | Invent CON to chase gold **200**; [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as pass | Stop. KEEP the published Path-B **124** (29+95). KEEP MemNet sole — do **not** swap store |
 | Hours on freeze list | Cut immediately |
