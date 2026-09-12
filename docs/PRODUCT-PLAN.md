@@ -6,9 +6,9 @@ This repository seed does **not** implement P2/P3. P1 **runtime first cut** (fix
 
 **CEO Core:** [#11](https://github.com/chouswei/SysMLEdge/pull/11) = scaffold only — **fake CI ≠ P1 pass**. Gate remains **live Foam M1–M5 + beat-grep** on **memnet-llm==0.19.8+TCP**.
 
-**Position:** bilingual bus for textual SysML v2 + agents (SysML stays the model; GQL/MCP so Cursor agents do not grep the tree). Not SysON/Cameo/graphic IDE. Not a GitHub clone. Not defense PLM yet. Pin: [PRODUCT-LOCKS.md — Market position](PRODUCT-LOCKS.md#market-position-pin).
+**Position:** bilingual bus for textual SysML v2 + agents (two faces at `model@rev`; after upload lock **(g)** — graph is live working SSOT, SysML is the machine-kept mirror). Not SysON/Cameo/graphic IDE. Not a GitHub clone. Not defense PLM yet. Pin: [PRODUCT-LOCKS.md — Market position](PRODUCT-LOCKS.md#market-position-pin).
 
-**Core (unchanged):** name **SysMLEdge**; bilingual = SysML (author SSOT) + GQL (query/represent); SSOT = whole `sysml-models/` tree / zip (**all** `.sysml`); MemNet = one-way projected index (**no Kuzu**; TCP backend-only; no C rewrite now); agent MCP face = **streamable HTTP** (Cursor Bearer, memnet-pi pattern); `graph = model @ SHA`; GQL never invents; agents propose only (no write-SSOT tool); human save = whole-tree overwrite + git history; download = SysML zip only; P1 mapping = Foam-complete; pilot SoI = `chouswei/modelbasedPrj-itri-vedan-foam-detection`.
+**Core (lock g, 2026-09-12):** name **SysMLEdge**; bilingual = ask/propose GQL + author/view SysML mirror @ one `model@rev`; after upload, **working SSOT = graph**, SysML = machine-kept full-fidelity mirror (whole tree / zip, **all** `.sysml`); org SysML-first still applies **before** upload; MemNet = graph engine (**no Kuzu**; TCP backend-only; no C rewrite now); agent MCP face = **streamable HTTP** (Cursor Bearer, memnet-pi pattern); `graph = model @ SHA`; GQL/LLM never freeform-invents **(b)**; typed machine ops ≡ SysML constructs (Jon); agents propose only unless autopilot (no agent write-SSOT tool); download = SysML zip only; P1 mapping = Foam-complete **(projection fidelity + bind — not a dual-write editor)**; pilot SoI = `chouswei/modelbasedPrj-itri-vedan-foam-detection`.
 
 **NARROW (2026-09-11):** keep the Foam contract slice (bilingual bus). Freeze P2 spend until Foam proof **ALL** pass. Pro / Team / SaaS editor / AGI-as-product copy stay gated. Docs discipline ≠ product-market proof. Foam Phase-1 hours on P2 UI = kill signal.
 
@@ -27,7 +27,7 @@ This repository seed does **not** implement P2/P3. P1 **runtime first cut** (fix
 
 **Product gate:** Foam proof ALL pass, **then** a second paid outsider. Until then: no Pro/beachhead story as shipping intent.
 
-**P2 freeze (explicit):** **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team ACL. Also: SaaS editor, PR UI, billing, Cameo, **full KerML**. Mapping in that window is **Foam-complete**. SSOT is **whole tree always**.
+**P2 freeze (explicit):** **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team ACL. Also: SaaS editor, PR UI, billing, Cameo, **full KerML**. Mapping in that window is **Foam-complete**. SysML **mirror** is **whole tree always**.
 
 **Pitch:** `model@rev` is the API between humans and AGI builders. Endgame (already locked): bilingual bus / contract layer — [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#market-position-pin). Do not expand that scope here. AGI copy stays gated until Foam proof.
 
@@ -47,7 +47,7 @@ This repository seed does **not** implement P2/P3. P1 **runtime first cut** (fix
 
 ## P1 — Foam slice
 
-Pilot: **https://github.com/chouswei/modelbasedPrj-itri-vedan-foam-detection** (`sysml-models/` as SSOT).
+Pilot: **https://github.com/chouswei/modelbasedPrj-itri-vedan-foam-detection** (`sysml-models/` as the SysML **mirror** / invent tree before upload).
 
 Acceptance (authoritative eight **contract** rows **plus** Foam proof 9–12): [P1-acceptance.md](P1-acceptance.md). Buyer roots **1, 2, 3, and 6** via the eight contract rows (no extra buyer-root rows).
 
@@ -71,7 +71,9 @@ Out of P1: SaaS accounts, in-tenant ACL, graphic canvas, autopilot UI, GitHub-li
 ## Day loop (all later phases)
 
 ```text
-edit SysML → Save → MCP ask → implement → (propose) → repeat
+before upload:  invent SysML → upload
+SaaS runtime:   typed op → graph mutate → machine rewrite mirror → (propose | zip @ rev)
+P1 this week:   import SysML → bind → MCP ask → (propose) → reproject
 ```
 
 Re-entrant mid-implement: **Path A** engineer (files/SaaS) · **Path B** agent (`propose` only). Human merge/Save (or human-auth MCP merge with token+confirm). Agent merge banned. See [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md).

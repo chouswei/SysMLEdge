@@ -1,8 +1,8 @@
 # SysMLEdge
 
-**SysMLEdge** (this cut) is Foam desk proof. **One-liner:** SysML stays the model; GQL/MCP is how agents query without stuffing/grepping the tree. **Buyer gut:** *I ask the live model at this rev — no grep dump, no ghost tree.* The graph is a **MemNet** projection. **Kill smells:** IDE / canvas / MemNet tip = product. Not a Kuzu port, not a GitHub clone, and it does not ship SaaS or tenancy in this cut.
+**SysMLEdge** (this cut) is Foam desk proof. **One-liner:** Two faces at one `model@rev` — ask/propose GQL, author/view the SysML mirror. After upload, **graph is live working SSOT** **(g)**; SysML is the machine-kept mirror. **Buyer gut:** *I ask the live model at this rev — no grep dump, no ghost tree.* **Kill smells:** IDE / canvas / MemNet tip = product. Not a Kuzu port, not a GitHub clone, and it does not ship SaaS or tenancy in this cut.
 
-**Internal architecture name** (not brand): bilingual = SysML (author SSOT) + GQL (query/represent). Not a zh/EN UI. Exact product-story locks: [docs/PRODUCT-LOCKS.md](docs/PRODUCT-LOCKS.md#ceo-core--steve-taste-2026-09-12) (Steve Jobs + CEO Core 2026-09-12).
+**Internal architecture name** (not brand): bilingual = ask/propose GQL + author/view SysML mirror. Org SysML-first still applies **before** upload. Not a zh/EN UI. Exact product-story locks: [docs/PRODUCT-LOCKS.md](docs/PRODUCT-LOCKS.md#ceo-core--steve-taste-2026-09-12) (Steve Jobs + CEO Core 2026-09-12 lock **(g)**).
 
 **This cut is P1 Foam proof scaffolding** on the runtime from #11. It does **not** make SysMLEdge ready to serve real projects. Plan ≠ product. Foam proof (`docs/P1-acceptance.md` rows 9–12 and M1–M5) is **not** claimed and **not** executed.
 
@@ -12,10 +12,10 @@
 
 | Layer | Role |
 |-------|------|
-| **SysML** zip or multi-file `sysml-models/` tree | Author SSOT |
-| **Git revision** | Identity of a saved tree (`graph = model @ <git commit SHA>`) |
-| **MemNet** | Projected graph index only. **No Kuzu.** TCP backend (`serve` + MCP TCP-shared); not the agent wedge once SysMLEdge MCP binds. |
-| **GQL** | Read/represent the projection. MUST NOT invent structure beside SysML. |
+| **SysML** zip or multi-file `sysml-models/` tree | Machine-kept full-fidelity **mirror** @ rev (invent SSOT *before* upload) |
+| **Git revision** | Identity of a saved mirror (`graph = model @ <git commit SHA>`) |
+| **MemNet** | After upload: live working **graph** **(g)** + P1 projected index. **No Kuzu.** TCP backend (`serve` + MCP TCP-shared); not the agent wedge once SysMLEdge MCP binds. |
+| **GQL** | Read/represent the bound model. MUST NOT invent **(b)**. Typed machine ops ≡ SysML constructs (Jon). |
 | **MCP** | Agent face: **streamable HTTP** (Cursor Bearer, memnet-pi pattern). Read GQL; **propose** only; no silent SSOT overwrite |
 | **Git / GitHub** | VCS backbone — repo @ SHA. We own projection, STALE, propose — not a GitHub rebuild. |
 | **CLI** | `import` / `import-foam` / `gold` / `proof` / `head-to-head` / `memnet-check` / `status` / `save` / `download` / `reproject` / `mcp` |
@@ -101,7 +101,7 @@ Downloadable source is the **SysML zip of a revision** (all `.sysml` in the tree
 
 Patterns (path index, MCP for agents, CLI) resume from **[codebase-sysmledgraph](https://github.com/chouswei/codebase-sysmledgraph)** — npm package **sysmledgraph** 0.8.2: SysML path indexer via LSP into a **Kuzu** knowledge graph, MCP (`indexDbGraph`, `query`, `context`, `impact`, Cypher, …), and CLI (`analyze`, `list`, `clean`, TCP worker for the Kuzu file lock).
 
-SysMLEdge keeps those *roles* and **replaces the engine**: MemNet + GQL, SysML tree as SSOT, human save as whole-tree overwrite with revision history. Do not vendor Kuzu or copy that stack wholesale.
+SysMLEdge keeps those *roles* and **replaces the engine**: MemNet + GQL; after upload lock **(g)** (graph = working SSOT, SysML = machine-kept mirror); human/policy apply with revision history. Do not vendor Kuzu or copy that stack wholesale.
 
 ## Status
 
