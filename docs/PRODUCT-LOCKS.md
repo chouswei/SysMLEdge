@@ -1,14 +1,49 @@
 # SysMLEdge product locks
 
-**As of:** 2026-09-12. Normative product locks for the living plan in [PRODUCT-PLAN.md](PRODUCT-PLAN.md). Implement against these plus [P0-contracts.md](P0-contracts.md). Business / GTM (NARROW product story): [BUSINESS-PLAN.md](BUSINESS-PLAN.md). Foam proof: [P1-acceptance.md](P1-acceptance.md). This file does not implement runtime.
+**As of:** 2026-09-12. **Cite:** CEO Core 2026-09-12 **pinned features**. Normative product locks for the living plan in [PRODUCT-PLAN.md](PRODUCT-PLAN.md). Implement against these plus [P0-contracts.md](P0-contracts.md). Business / GTM (NARROW product story): [BUSINESS-PLAN.md](BUSINESS-PLAN.md). Foam proof: [P1-acceptance.md](P1-acceptance.md). This file does not implement runtime. `proof_pass_claimed: false`.
 
 If a lock and P0 wording differ, this sheet **notes** the difference and **aligns** P0 language. It MUST NOT weaken: MemNet sole engine, `graph = model @ SHA`, STALE, **no agent/LLM freeform SSOT write**, or lock **(g)** (SaaS working SSOT = graph; SysML = machine-kept mirror).
 
 ---
 
+## CEO Core — pinned features (v1) (2026-09-12)
+
+**Cite:** CEO Core 2026-09-12 pinned features. Docs only. Engine KEEP sole / NARROW **stand**. **Do not reopen Neo4j.** **(g) is provisional** — MUST NOT sell (g) as proven. MUST NOT claim `proof_pass`.
+
+**v1 (verbatim sense):**
+
+| # | Feature | Pin |
+|---|---------|-----|
+| **1** | Upload/bind SysML tree @ `rev` + STALE fail-closed | Pinned |
+| **2** | GQL/MCP ask (no stuff/grep) | Pinned. **Narrow M1 claim** only — see sessions below |
+| **3** | Propose `delta.sysml` → Save/reproject (agents) | Pinned |
+| **(g)** | Typed SysML ops → bit-true zip @ rev | **Provisional.** Mirror-lie = **kill**. MUST NOT sell (g) as proven |
+| **5** | Streamable-HTTP MCP; MemNet sole backend | Pinned |
+
+**Out:** canvas; Neo4j; ClickUp/InvenTree as product; P2 ACL/PR UI; Pro pitch until cold Foam.
+
+**Market pin (Steve):** beat grep / ghost trees for textual SysML v2 + Cursor — **not** Cameo/SysON. Sell that only. Leave **(g)** out of the beachhead pitch until meters.
+
+**Sessions (do not mix):**
+
+| Session | Fact | MUST NOT |
+|---------|------|----------|
+| `mn_0d4f6178` | Foam Path-B **narrow M1**: CON find \|Q\|=**124** + nested qname ego YES | Claim gold **200**; mix with the p1-tiny bind |
+| `mn_27ce8714` | LIVE bind is **p1-tiny** (CON find \|Q\|=**5**) | Claim M1 on this bind; treat CON=5 as Foam M1 |
+
+**Invent status (meters after pin):** (g) **mirror-lie meter** on `mn_27ce8714`: **PASS** (InventProbe in MemNet; gold parts **11→13**, ports **12→13**; zip≡disk). Still **do not sell (g) as proven** — **provisional remains**. `proof_pass_claimed: false`.
+
+**Honesty:** same-session re-ingest **appends** (rows **56→116**, dup qnames). MUST NOT invent replace-on-reproject without a Core policy cut (`r`=replace vs `f`=fresh-session-only).
+
+**Invent next / sequence:** after mirror **PASS** → **wait Core (`r`)/(`f`)** → then H2H. MUST NOT start H2H before that Core cut.
+
+**KEEP:** MemNet sole. don’t-migrate. No Pro until cold Foam.
+
+---
+
 ## NARROW lock (Elon / Horcrux, 2026-09-11; product story: Steve Jobs + CEO Core, 2026-09-12)
 
-Product-story locks are **exact** in [CEO Core — Steve taste](#ceo-core--steve-taste-2026-09-12). Engine locks **untouched** — do not reopen.
+Product-story locks are **exact** in [CEO Core — Steve taste](#ceo-core--steve-taste-2026-09-12). **v1 features** are exact in [CEO Core — pinned features (v1)](#ceo-core--pinned-features-v1-2026-09-12). Engine locks **untouched** — do not reopen.
 
 **Proof bar unchanged:** ALL Foam proof items **and** ALL MemNet proof items in [P1-acceptance.md](P1-acceptance.md) (rows **9–12** + **M1–M5**). Scaffold ≠ P1. Kill the engine story only if the 2-week **MemNet** proof fails. **Cold no** on the product-story proof → kill Pro/beachhead; keep Foam tooling. **Cold yes** → outsider → then price.
 
@@ -23,12 +58,13 @@ Product-story locks are **exact** in [CEO Core — Steve taste](#ceo-core--steve
 | **CEO Core P1 gate** (2026-09-12) | Exact locks: **Sequence** / **Pass only** / **Kill theater** (cite Edison). Must-fix / kill risks / OK. Scaffold ≠ P1. |
 | **Edison Core experiment** (Thomas Alva Edison / Horcrux, 2026-09-12) | **KEEP / NARROW** the 2-week Foam cycle (9–12 + M1–M5). Do **not** invert sequence. Engine + story locks untouched. Scaffold ≠ P1. |
 | **CEO Core — Steve + Elon agree** (2026-09-12) | **M1 claim** = LIVE CON **124** + nested qname ego YES on `mn_0d4f6178` @ 0.19.9. Gold 200 = parser ref only. No invent edges. LIVE bind unlocked after this publish lands. Timed H2H must score the **narrow** claim (124 + nested ego) — gold-200 stays out of the competitor story. **KEEP MemNet sole.** Path-B CON floor **≥0.19.9+TCP**. |
+| **CEO Core pinned features (v1)** (2026-09-12) | Bind @ `rev` + STALE; GQL/MCP ask (narrow M1); propose `delta.sysml`; streamable-HTTP MCP + MemNet sole. **(g)** typed ops → bit-true zip = **provisional** (mirror-lie meter **PASS** on `mn_27ce8714`; MUST NOT sell as proven). Invent next = wait Core (`r`)/(`f`) → then H2H. `mn_0d4f6178` ≠ `mn_27ce8714`. |
 
 **Taste risks** (Steve Jobs + CEO Core 2026-09-12): **Kill smells:** IDE / canvas / MemNet tip = product. Prior: Cameo-lite; MemNet-wrapper (tip Path-B ≠ product); yet-another-MCP without beat-grep cold feel.
 
 **Strongest cut:** Docs discipline ≠ product-market proof. Foam Phase-1 hours on P2 UI = kill signal.
 
-NARROW fail/pass gates above **stand**. Mapping and SSOT rules below do **not** reopen P2 UI, Pro, or AGI copy. **plan ≠ product** (CEO), **don’t-migrate** (Elon Core 2026-09-12), **Sysmler KEEP / NARROW**, **CEO Core P1 gate**, **Edison Core experiment** (Thomas Alva Edison / Horcrux 2026-09-12), and **CEO Core — Steve + Elon agree** (2026-09-12) stand with those gates (sections below). This taste cut does **not** reopen MemNet sole, `rev`/STALE ownership, plan ≠ product, or don’t-migrate.
+NARROW fail/pass gates above **stand**. Mapping and SSOT rules below do **not** reopen P2 UI, Pro, or AGI copy. **plan ≠ product** (CEO), **don’t-migrate** (Elon Core 2026-09-12), **Sysmler KEEP / NARROW**, **CEO Core P1 gate**, **Edison Core experiment** (Thomas Alva Edison / Horcrux 2026-09-12), **CEO Core — Steve + Elon agree** (2026-09-12), and **CEO Core pinned features (v1)** (2026-09-12) stand with those gates (sections below). This taste cut does **not** reopen MemNet sole, `rev`/STALE ownership, plan ≠ product, or don’t-migrate. **(g) remains provisional.** Do not reopen Neo4j.
 
 ### Freeze (do not spend the two weeks on)
 
@@ -44,6 +80,7 @@ Product / ocean — **not** a forever mapping cap. Also **cut from narrative** u
 6. Full KerML / whole-language coverage in two weeks
 7. A second **real** in-house SysML desk / multi-repo onboarding (synthetic fixture CI is allowed; see Elon Core 2026-09-12)
 8. AGI / contract layer / humans–AGI API copy; seven roots as a pitch list; “bilingual bus” as brand lead; beachhead math / seats
+9. **(g)** as beachhead copy (CEO Core 2026-09-12 pinned features — **provisional**; mirror-lie PASS ≠ sell)
 
 Elon’s “parts/ports” freeze was **2-week anti-scope-creep for mapping work**. It is **superseded** by: **Foam-complete mapping** + **whole-tree SSOT always** (this sheet, Core 2026-09-11). MUST NOT read it as “parts/ports forever” or as permission for parts-only SSOT.
 
@@ -64,7 +101,9 @@ Elon’s “parts/ports” freeze was **2-week anti-scope-creep for mapping work
 
 **One-liner:** Two faces at one `model@rev` — ask/propose GQL, author/view the SysML mirror. After upload, **graph is live working SSOT**; SysML is the machine-kept mirror. Not LLM invent.
 
-**Keep:** Foam desk proof — model@rev bind, STALE fail-closed, beat grep (wall-clock + context + no silent drop); plan≠product; don’t-migrate.
+**Market pin (Steve, CEO Core 2026-09-12 pinned features):** beat grep / ghost trees for textual SysML v2 + Cursor — **not** Cameo/SysON. Sell that only. Leave **(g)** (typed ops → bit-true zip) **out** of the beachhead pitch. MUST NOT sell (g) as proven.
+
+**Keep:** Foam desk proof — model@rev bind, STALE fail-closed, beat grep (wall-clock + context + no silent drop); plan≠product; don’t-migrate. **v1** as [pinned features](#ceo-core--pinned-features-v1-2026-09-12). **(g) provisional.**
 
 **Kill smells:** IDE / canvas / MemNet tip = product.
 
@@ -108,9 +147,9 @@ This file does not implement runtime.
 1. M1 claim = LIVE CON **124** + nested qname ego YES on `mn_0d4f6178` @ 0.19.9. Gold 200 = parser ref only. No invent edges. LIVE bind unlocked after this publish lands.
 2. Timed H2H must score the **narrow** claim (124 + nested ego) — gold-200 stays out of the competitor story.
 
-Path A on `mn_b05a9869` remains **FAIL** as a gold-parity / bind claim (BEFORE: CON=0 / nested absent; AFTER: TSK ego CON=29 via ops ≠ SysMLEdge bind). **Published M1 narrow** is Path-B LIVE on `mn_0d4f6178` @ **memnet-llm==0.19.9+TCP**: CON find \|Q\|=**124** (**29** `connection_def` + **95** `connectionUsage`) — ingest alone, **no** owns mutate; both `backgroundSetIndicator` gold qnames close via SysML `qname=` `pin_map` + `contains` (Truncation=false on tip ego). TSK-only ego = wrong cue (not claimed). [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego still ≠ pass. Exact meters: [proof/RUNLOG-2026-09-12-m1-bind.md](proof/RUNLOG-2026-09-12-m1-bind.md).
+Path A on `mn_b05a9869` remains **FAIL** as a gold-parity / bind claim (BEFORE: CON=0 / nested absent; AFTER: TSK ego CON=29 via ops ≠ SysMLEdge bind). **Published M1 narrow** is Path-B LIVE on `mn_0d4f6178` @ **memnet-llm==0.19.9+TCP**: CON find \|Q\|=**124** (**29** `connection_def` + **95** `connectionUsage`) — ingest alone, **no** owns mutate; both `backgroundSetIndicator` gold qnames close via SysML `qname=` `pin_map` + `contains` (Truncation=false on tip ego). TSK-only ego = wrong cue (not claimed). LIVE bind `mn_27ce8714` is **p1-tiny** (CON find \|Q\|=**5**) — **no M1 claim** on that bind. [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego still ≠ pass. Exact meters: [proof/RUNLOG-2026-09-12-m1-bind.md](proof/RUNLOG-2026-09-12-m1-bind.md).
 
-This publish **clears** the M1 FAIL **LIVE-bind gate**. Next Edison step = **LIVE bind**. `proof_pass_claimed` for full P1 stays **false** until bind + H2H + cold.
+This publish **clears** the M1 FAIL **LIVE-bind gate**. Mirror-lie meter on `mn_27ce8714` is **PASS**; **(g) remains provisional**. Next = **wait Core (`r`)/(`f`)** then H2H. `proof_pass_claimed` for full P1 stays **false**.
 
 | Lock | Rule |
 |------|------|
@@ -167,23 +206,23 @@ This review does **not** pass Foam gold. P1 gate = **CEO Core** exact locks (nex
 
 **Cite:** Edison Core (Thomas Alva Edison / Horcrux) + CEO Core 2026-09-12. **Steve + Elon agree** (M1 narrow+counts / KEEP sole / Path-B CON floor) is exact in the section above. No scope widen. Same text in [P1-acceptance.md](P1-acceptance.md) except the later Steve+Elon floor (this sheet).
 
-**Sequence:** M1 fidelity → `rev` bind → timed H2H → cold non-Core.
+**Sequence:** M1 fidelity → `rev` bind → **mirror meter** (PASS on `mn_27ce8714`) → **wait Core (`r`)/(`f`)** → timed H2H → cold non-Core. MUST NOT time H2H before the Core (`r`)/(`f`) cut. **(g)** stays **provisional**.
 
-**Pass only:** live TCP after bind; bounce proven on `0.19.8`; Path-B CON **≥0.19.9+TCP**; wall-clock + context vs same Foam Qs; fail-closed STALE; no silent drop. M1 FAIL **LIVE-bind gate cleared** by published Path-B narrow+counts (Core GO 2026-09-12). [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego ≠ pass. Full P1 still **false** until bind + H2H + cold.
+**Pass only:** live TCP after bind; bounce proven on `0.19.8`; Path-B CON **≥0.19.9+TCP**; wall-clock + context vs same Foam Qs; fail-closed STALE; no silent drop. M1 FAIL **LIVE-bind gate cleared** by published Path-B narrow+counts (Core GO 2026-09-12). [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego ≠ pass. LIVE bind `mn_27ce8714` is **p1-tiny** (CON \|Q\|=**5**) — **no M1 claim** on that bind. Narrow M1 CON **124** + nested = Foam session `mn_0d4f6178` only. Full P1 still **false** until Core (`r`)/(`f`) + H2H + cold. **(g) not sold as proven.**
 
-**Kill theater:** fake CI, tip-as-bind, H2H before meters, inventing CON to chase gold **200**, [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as M1 pass.
+**Kill theater:** fake CI, tip-as-bind, H2H before meters, H2H before Core (`r`)/(`f`), inventing CON to chase gold **200**, [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as M1 pass, selling **(g)** as proven, claiming M1 on `mn_27ce8714`, inventing replace-on-reproject without Core (`r`)/(`f`).
 
-**Must-fix before Foam gold:** full-clone construct matrix; nested ingest without hand CREATE (or narrow the claim); timed H2H on TCP after `rev` bind (Path-B CON on **≥0.19.9+TCP**).
+**Must-fix before Foam gold:** full-clone construct matrix; nested ingest without hand CREATE (or narrow the claim); **invent next** = wait Core (`r`)/(`f`) after mirror **PASS**, then timed H2H on TCP (Path-B CON on **≥0.19.9+TCP**).
 
 **Kill risks:** silent drop (`connections_parsed:0` / omitted files); tip Path-B sold as bind; full KerML in 2 weeks; shrink zip to parts-only.
 
-**OK:** propose `delta.sysml` + human Save; narrow impact until proven; scaffold ≠ P1.
+**OK:** propose `delta.sysml` + human Save; narrow impact until proven; scaffold ≠ P1; **(g)** listed as **provisional** (not a pass).
 
 [#11](https://github.com/chouswei/SysMLEdge/pull/11) / [#12](https://github.com/chouswei/SysMLEdge/pull/12) = scaffold. MUST NOT treat green CI as Foam gold.
 
 [#18](https://github.com/chouswei/SysMLEdge/pull/18) FAKE bind = scaffold only — **not** live bind / not P1.
 
-[#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego ≠ pass. **Published M1 narrow** (Core GO 2026-09-12): Path-B `mn_0d4f6178` CON find \|Q\|=**124** (**29** def + **95** usage); nested qname ego YES; gold **200** = reference only. LIVE-bind gate **cleared**. `proof_pass_claimed: false` until bind + H2H + cold.
+[#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego ≠ pass. **Published M1 narrow** (Core GO 2026-09-12): Path-B `mn_0d4f6178` CON find \|Q\|=**124** (**29** def + **95** usage); nested qname ego YES; gold **200** = reference only. LIVE-bind gate **cleared**. LIVE bind `mn_27ce8714` = p1-tiny CON \|Q\|=**5** — **no M1 claim**. Mirror-lie **PASS**; **(g) provisional**. `proof_pass_claimed: false`.
 
 ---
 
@@ -195,10 +234,12 @@ Same sequence, Day-1 instruments, refuse list, and fail-fast in [P1-acceptance.m
 
 ### Sequence (do not invert)
 
-1. **M1** gold fidelity (construct matrix + nested without hand-CREATE, **or** narrow the claim) + **publish counts**
-2. SysMLEdge `rev.sha` / STALE / reproject bind (**M2–M3**)
-3. Timed H2H wall-clock + context on **TCP after bind** (**M5** / row **9**). Path-B CON on **≥0.19.9+TCP**. Score the **narrow** claim (124 + nested ego); gold-200 stays out of the competitor story.
-4. Then cold non-Core yes/no (**row 12**)
+1. **M1** gold fidelity (construct matrix + nested without hand-CREATE, **or** narrow the claim) + **publish counts**. Narrow CON **124** lives on `mn_0d4f6178` only — not on `mn_27ce8714`.
+2. SysMLEdge `rev.sha` / STALE / reproject bind (**M2–M3**). LIVE bind `mn_27ce8714` is **p1-tiny** — **no M1 claim**.
+3. **(g) mirror:** typed mutate→zip on `mn_27ce8714` — **PASS** (InventProbe; gold parts 11→13, ports 12→13; zip≡disk). **(g)** stays **provisional**. Same-session re-ingest **appends** (rows 56→116, dup qnames).
+4. **Invent next:** wait Core (`r`=replace vs `f`=fresh-session-only). MUST NOT invent replace-on-reproject without that cut.
+5. Timed H2H wall-clock + context on **TCP after bind and after Core (`r`)/(`f`)** (**M5** / row **9**). Path-B CON on **≥0.19.9+TCP**. Score the **narrow** claim (124 + nested ego); gold-200 stays out of the competitor story.
+6. Then cold non-Core yes/no (**row 12**)
 
 ### Day-1 instruments
 
@@ -211,7 +252,7 @@ Same sequence, Day-1 instruments, refuse list, and fail-fast in [P1-acceptance.m
 
 ### Refuse (this cycle)
 
-P2 UI / canvas / IDE / Pro–Team–marketplace; full KerML; parts-only zip; Neo4j / dual-engine / Kuzu; C rewrite now; second desk; MemNet mission as `project@rev`; timing H2H before M1+bind; inventing CON to chase gold **200**; [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as M1 pass; claiming full P1 before bind + H2H + cold; scaffold CI as gold; expand `pin_map` / impact before fidelity; treat projection gaps as a store swap.
+P2 UI / canvas / IDE / Pro–Team–marketplace; full KerML; parts-only zip; Neo4j / dual-engine / Kuzu; C rewrite now; second desk; MemNet mission as `project@rev`; timing H2H before M1+bind **or** before Core (`r`)/(`f`); inventing CON to chase gold **200**; [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as M1 pass; claiming full P1 before Core (`r`)/(`f`) + H2H + cold; scaffold CI as gold; expand `pin_map` / impact before fidelity; treat projection gaps as a store swap; sell **(g)** as proven; claim M1 on `mn_27ce8714`; invent replace-on-reproject without Core (`r`)/(`f`); claim `proof_pass`.
 
 ### Fail-fast
 
@@ -224,6 +265,7 @@ P2 UI / canvas / IDE / Pro–Team–marketplace; full KerML; parts-only zip; Neo
 | Row 12 cold **no** | Kill Pro/beachhead |
 | Invent CON to chase gold **200**; [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as pass | Stop. KEEP the published Path-B **124** (29+95). KEEP MemNet sole — do **not** swap store |
 | Hours on freeze list | Cut immediately |
+| **(g)** sold as proven / M1 claimed on `mn_27ce8714` | Stop. **(g)** is **provisional**. `proof_pass_claimed` stays **false** |
 
 M1/M2 fail still means MemNet is **not a sole-engine claim**. It does **not** reopen Neo4j / dual-engine. **Cite:** Steve + Elon agree.
 
@@ -335,7 +377,7 @@ MUST NOT: add MemNet features beyond what M1–M5 / Foam fidelity require; put `
 
 ## Position
 
-SysMLEdge (this cut) is **Foam desk proof**. **One-liner:** Two faces at one `model@rev` — ask/propose GQL, author/view the SysML mirror. After upload, graph is live working SSOT **(g)**. Competitive/buyer pin: [Market position (pin)](#market-position-pin).
+SysMLEdge (this cut) is **Foam desk proof**. **One-liner:** Two faces at one `model@rev` — ask/propose GQL, author/view the SysML mirror. After upload, graph is live working SSOT **(g)** — **provisional**; MUST NOT sell as proven. Competitive/buyer pin: [Market position (pin)](#market-position-pin). **v1 features:** [pinned features](#ceo-core--pinned-features-v1-2026-09-12).
 
 | Is | Is not |
 |----|--------|
@@ -349,11 +391,13 @@ SysMLEdge (this cut) is **Foam desk proof**. **One-liner:** Two faces at one `mo
 
 ## Market position (pin)
 
-**Cite:** Steve Jobs + CEO Core 2026-09-12. Exact locks: [CEO Core — Steve taste](#ceo-core--steve-taste-2026-09-12).
+**Cite:** Steve Jobs + CEO Core 2026-09-12 **pinned features**. Exact locks: [CEO Core — Steve taste](#ceo-core--steve-taste-2026-09-12). **v1:** [pinned features](#ceo-core--pinned-features-v1-2026-09-12).
 
 **NARROW product story.**
 
 **One-liner:** Two faces at one `model@rev` — ask/propose GQL, author/view the SysML mirror. After upload, graph is live working SSOT **(g)**.
+
+**Market pin (Steve):** beat grep / ghost trees for textual SysML v2 + Cursor — **not** Cameo/SysON. Sell that only. Leave **(g)** (typed SysML ops → bit-true zip @ rev) **out** of the beachhead pitch. MUST NOT sell (g) as proven.
 
 **Buyer gut (prior, stands):** “I ask the live model at this rev — no grep dump, no ghost tree.”
 
@@ -381,7 +425,7 @@ SysMLEdge (this cut) is **Foam desk proof**. **One-liner:** Two faces at one `mo
 
 **P1 stress tests** sit on the eight **contract** rows plus NARROW Foam proof 9–12 (not extra buyer-root rows): (a) beat a raw agent + git/grep; (b) STALE is real, not theater; (c) Foam desk demo beats a manifesto.
 
-**Pitch (collapsed):** trust + ask-without-stuffing + ship zip. MUST NOT pitch seven roots, AGI copy, or bilingual bus as brand.
+**Pitch (collapsed):** trust + ask-without-stuffing + ship zip. MUST NOT pitch seven roots, AGI copy, bilingual bus as brand, or **(g)** / bit-true zip until meters.
 
 This pin does **not** widen scope: MemNet-only projection, `graph = model @ SHA`, STALE, no agent SSOT write, no graphic IDE, no GitHub clone, ClickUp/InvenTree not product features. Engine locks **untouched**.
 
@@ -560,7 +604,7 @@ SysMLEdge does **not** ship ClickUp or InvenTree: no sync, no PLM UI, no “link
 | Agent SSOT write | Silent MCP save forbidden | Agent merge **banned**; no write-SSOT tool | Unchanged. |
 | Human-auth MCP merge | Save is human UI/CLI; MCP `save` forbidden as **unattended** | Token + confirm → apply + Save + reproject | **Clarify** P0: unattended/agent save stays forbidden; human-auth merge is the human Save path on MCP. |
 | Graphic IDE | Not specified | Explicit reject (SysON/Cameo) | Add to P0 reject list (does not weaken contracts). |
-| Market pin | Not specified | **NARROW product story.** One-liner + Keep / Kill smells / Cut until cold Foam yes (exact). Bilingual bus = internal name not brand | Plan/locks only. Steve Jobs + CEO Core 2026-09-12. Engine locks untouched. No runtime. |
+| Market pin | Not specified | **NARROW product story.** One-liner + Keep / Kill smells / Cut until cold Foam yes (exact). **Steve market pin (CEO Core 2026-09-12 pinned features):** beat grep / ghost trees for textual SysML v2 + Cursor — not Cameo/SysON. **(g)** out of beachhead until meters. Bilingual bus = internal name not brand | Plan/locks only. Steve Jobs + CEO Core 2026-09-12. Engine locks untouched. No runtime. |
 | ClickUp/InvenTree | Mapped when present in SysML | Not product features | **Clarify** P0 §5: projection of SysML attributes only. |
 | SSOT shape | Whole-tree import/save/download | Lock **(g):** graph = SaaS working SSOT; SysML = full-fidelity mirror (all `.sysml`); org SysML-first before upload | Align P0 §3 + §7. |
 | Mapping | P0 seed listed part/port/connection as v1 | **P1 = Foam-complete**; not parts/ports forever; not full KerML in 2 weeks | **Supersede** a forever parts/ports cap. Elon freeze = 2-week anti-scope-creep only. |
@@ -597,5 +641,6 @@ Implementations MUST reject, in addition to P0 §7:
 23. CEO Core P1 **kill risks** (2026-09-12): silent drop (`connections_parsed:0` / omitted files); tip Path-B sold as bind; full KerML in 2 weeks; shrink zip to parts-only. Treating [#11](https://github.com/chouswei/SysMLEdge/pull/11) / [#12](https://github.com/chouswei/SysMLEdge/pull/12) as P1 pass (scaffold ≠ P1). **Kill theater:** fake CI, tip-as-bind, H2H before meters. P1 **Pass only** is live TCP after bind (bounce `0.19.8`; Path-B CON **≥0.19.9+TCP**); wall-clock + context vs same Foam Qs; fail-closed STALE; no silent drop.
 24. Taste-cut narrative (Steve Jobs + CEO Core 2026-09-12): AGI copy; Pro/Team/marketplace; beachhead math; bilingual bus as brand lead; plus prior list (contract layer / humans–AGI API; seven roots as a pitch; freemium / Pro ~$19–29; SaaS-editor / PR-UI foreshadowing; slides instead of the 3-Q Foam keep-using proof).
 25. **Kill smells** (Steve Jobs + CEO Core 2026-09-12): IDE / canvas / MemNet tip = product.
-26. Edison Core (Thomas Alva Edison / Horcrux 2026-09-12): invert M1 → bind → timed H2H → row 12; time H2H before M1+bind; skip Day-1 instruments; spend hours on the refuse/freeze list.
-27. Steve + Elon agree (CEO Core 2026-09-12; Core GO same day): treat M1 gaps as Neo4j / dual-engine / wrong store; invent CON to chase gold **200**; treat [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as M1 pass; claim Path-B CON below **≥0.19.9+TCP**; claim Path-B CON **124** as gold **200**; score timed H2H against gold-200; claim full P1 / `proof_pass_claimed` before bind + H2H + cold.
+26. Edison Core (Thomas Alva Edison / Horcrux 2026-09-12): invert M1 → bind → mirror meter → Core (`r`)/(`f`) → timed H2H → row 12; time H2H before M1+bind **or** before Core (`r`)/(`f`); skip Day-1 instruments; spend hours on the refuse/freeze list.
+27. Steve + Elon agree (CEO Core 2026-09-12; Core GO same day): treat M1 gaps as Neo4j / dual-engine / wrong store; invent CON to chase gold **200**; treat [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as M1 pass; claim Path-B CON below **≥0.19.9+TCP**; claim Path-B CON **124** as gold **200**; score timed H2H against gold-200; claim full P1 / `proof_pass_claimed` before Core (`r`)/(`f`) + H2H + cold.
+28. CEO Core **pinned features** (2026-09-12): sell **(g)** (typed ops → bit-true zip) as proven (mirror-lie **PASS** ≠ proven); claim `proof_pass`; claim M1 on LIVE bind `mn_27ce8714` (p1-tiny CON \|Q\|=**5**); mix `mn_0d4f6178` Foam narrow M1 with that bind; put **(g)** in the beachhead pitch; invent replace-on-reproject without Core (`r`)/(`f`); reopen Neo4j.

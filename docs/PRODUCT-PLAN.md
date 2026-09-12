@@ -2,11 +2,23 @@
 
 Living plan. **Locks (2026-09-11):** [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md) — **NARROW** (Elon / Horcrux). **P0 behaviour:** [P0-contracts.md](P0-contracts.md). **P1 pass/fail + Foam proof:** [P1-acceptance.md](P1-acceptance.md). **Business (GTM / beachhead / buyer roots, gated):** [BUSINESS-PLAN.md](BUSINESS-PLAN.md).
 
-This repository seed does **not** implement P2/P3. P1 **runtime first cut** (fixture + bind + MCP) lives in-tree; Foam proof is not claimed.
+This repository seed does **not** implement P2/P3. P1 **runtime first cut** (fixture + bind + MCP) lives in-tree; Foam proof is not claimed. `proof_pass_claimed: false`. **(g) is provisional.**
+
+**CEO Core 2026-09-12 pinned features** (verbatim sense; locks: [PRODUCT-LOCKS.md — pinned features (v1)](PRODUCT-LOCKS.md#ceo-core--pinned-features-v1-2026-09-12)):
+
+1. Upload/bind SysML tree @ `rev` + STALE fail-closed
+2. GQL/MCP ask (no stuff/grep) — **narrow M1 claim** (`mn_0d4f6178` CON \|Q\|=**124** + nested; **not** gold 200; **not** `mn_27ce8714`)
+3. Propose `delta.sysml` → Save/reproject (agents)
+4. **(g) provisional:** typed SysML ops → bit-true zip @ rev (mirror-lie = kill). Mirror-lie meter on `mn_27ce8714`: **PASS**. MUST NOT sell (g) as proven.
+5. Streamable-HTTP MCP; MemNet sole backend
+
+**Invent status:** mirror-lie **PASS** (InventProbe in MemNet; gold parts **11→13**, ports **12→13**; zip≡disk). Same-session re-ingest **appends** (rows **56→116**, dup qnames). MUST NOT invent replace-on-reproject without Core (`r`)/(`f`). **Invent next:** wait Core (`r`)/(`f`) → then H2H. LIVE bind `mn_27ce8714` is **p1-tiny** (CON \|Q\|=**5**) — **no M1 claim**. `proof_pass_claimed: false`. don’t-migrate / no Pro until cold Foam. KEEP MemNet sole. Do not reopen Neo4j.
+
+**Out:** canvas, Neo4j, ClickUp/InvenTree as product, P2 ACL/PR UI, Pro pitch until cold Foam.
 
 **CEO Core:** [#11](https://github.com/chouswei/SysMLEdge/pull/11) = scaffold only — **fake CI ≠ P1 pass**. Gate remains **live Foam M1–M5 + beat-grep** on **memnet-llm==0.19.8+TCP**.
 
-**Position:** bilingual bus for textual SysML v2 + agents (two faces at `model@rev`; after upload lock **(g)** — graph is live working SSOT, SysML is the machine-kept mirror). Not SysON/Cameo/graphic IDE. Not a GitHub clone. Not defense PLM yet. Pin: [PRODUCT-LOCKS.md — Market position](PRODUCT-LOCKS.md#market-position-pin).
+**Position:** bilingual bus for textual SysML v2 + agents (two faces at `model@rev`; after upload lock **(g)** — graph is live working SSOT, SysML is the machine-kept mirror — **provisional**, MUST NOT sell as proven). Not SysON/Cameo/graphic IDE. Not a GitHub clone. Not defense PLM yet. **Market pin (Steve):** beat grep / ghost trees for textual SysML v2 + Cursor — not Cameo/SysON. Sell that only; leave **(g)** out of the beachhead pitch. Pin: [PRODUCT-LOCKS.md — Market position](PRODUCT-LOCKS.md#market-position-pin).
 
 **Core (lock g, 2026-09-12):** name **SysMLEdge**; bilingual = ask/propose GQL + author/view SysML mirror @ one `model@rev`; after upload, **working SSOT = graph**, SysML = machine-kept full-fidelity mirror (whole tree / zip, **all** `.sysml`); org SysML-first still applies **before** upload; MemNet = graph engine (**no Kuzu**; TCP backend-only; no C rewrite now); agent MCP face = **streamable HTTP** (Cursor Bearer, memnet-pi pattern); `graph = model @ SHA`; GQL/LLM never freeform-invents **(b)**; typed machine ops ≡ SysML constructs (Jon); agents propose only unless autopilot (no agent write-SSOT tool); download = SysML zip only; P1 mapping = Foam-complete **(projection fidelity + bind — not a dual-write editor)**; pilot SoI = `chouswei/modelbasedPrj-itri-vedan-foam-detection`.
 
@@ -23,7 +35,7 @@ This repository seed does **not** implement P2/P3. P1 **runtime first cut** (fix
 | **P2** | Single-tenant SaaS | Plan only. **Spend frozen** until Foam proof passes. | Hosted on the **existing droplet (Devicor)**. Identity, import/save/download, MemNet per project, MCP, in-tenant ACL, Save/STALE UI, optional autopilot/bot review (default off). **InvenTree on that host: untouched.** |
 | **P3** | Tenancy | Plan only | Cross-tenant isolation, authz, billing-shaped tenancy. Not implied by P2. |
 
-**P1 competitor to beat:** **grep** (git + SysML LSP), not MagicDraw/Cameo.
+**P1 competitor to beat:** **grep** (git + SysML LSP) / ghost trees — not MagicDraw/Cameo/SysON. Do not pitch **(g)** until meters.
 
 **Product gate:** Foam proof ALL pass, **then** a second paid outsider. Until then: no Pro/beachhead story as shipping intent.
 
@@ -62,9 +74,9 @@ Must prove (same as that sheet; not ClickUp/InvenTree product):
 
 P1 stress tests: (a) beat a raw agent + git/grep; (b) STALE is real, not theater; (c) Foam desk demo > manifesto. Own **not whole SysML / no canvas**; do not chase Cameo.
 
-Out of P1: SaaS accounts, in-tenant ACL, graphic canvas, autopilot UI, GitHub-like PR review UI, Kuzu, **whole-language** KerML, ClickUp/InvenTree features.
+Out of P1: SaaS accounts, in-tenant ACL, graphic canvas, autopilot UI, GitHub-like PR review UI, Kuzu, Neo4j, **whole-language** KerML, ClickUp/InvenTree features, Pro pitch until cold Foam. **(g)** is not a P1 pass (mirror-lie **PASS** ≠ proven).
 
-**Foam + MemNet proof (ALL, 2-week):** **Pains 1–5** and MemNet KEEP/NARROW + Memnetor amendment in [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md). Proof env: **memnet-llm==0.19.8** + TCP-shared MCP. SysMLEdge **owns** `rev`/STALE (absent on MemNet wire). Head-to-head **must time wall-clock** + **context footprint**. Gold MUST include ≥1 nested part that today needs manual CREATE. Impact: `gql_impact` closure **or** narrow to neighbourhood/tip + usage. Bounce = one regression re-run. **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team ACL. **No Kuzu.** **CEO Core (2026-09-11):** MemNet **improve-only** for M1–M5 / Foam fidelity — not a MemNet roadmap. **No C rewrite now**; reopen C/Rust/other only if wall-clock loses with numbers after fidelity is green.
+**Foam + MemNet proof (ALL, 2-week):** **Pains 1–5** and MemNet KEEP/NARROW + Memnetor amendment in [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md). Proof env: **memnet-llm==0.19.8** + TCP-shared MCP. SysMLEdge **owns** `rev`/STALE (absent on MemNet wire). Mirror-lie **PASS** on `mn_27ce8714`; **invent next** = wait Core (`r`)/(`f`) then H2H. Head-to-head **must time wall-clock** + **context footprint** **after** that Core cut. Gold MUST include ≥1 nested part that today needs manual CREATE. Impact: `gql_impact` closure **or** narrow to neighbourhood/tip + usage. Bounce = one regression re-run. **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team ACL. **No Kuzu. No Neo4j.** **CEO Core (2026-09-11):** MemNet **improve-only** for M1–M5 / Foam fidelity — not a MemNet roadmap. **No C rewrite now**; reopen C/Rust/other only if wall-clock loses with numbers after fidelity is green. **(g) provisional**; `proof_pass_claimed: false`.
 
 ---
 
