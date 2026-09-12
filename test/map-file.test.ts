@@ -3,6 +3,8 @@ import { readFileSync } from "node:fs";
 import { test } from "node:test";
 import {
   NARROW_OPERATOR_PRT_FIELDS,
+  PINNED_SYSML_MAP_SHA256,
+  assertCheckedInSchemaMapPin,
   assertSchemaMapFile,
   assertSysmlLocatorSchema,
   defaultSysmlSchemaMapPath,
@@ -44,6 +46,14 @@ test("checked-in map keeps qname/path/sysml_kind on PKG/PRT/POR/CON", () => {
     .find((l) => l.startsWith("SCHEMA PRT "));
   assert.ok(prtSchema);
   assert.notEqual(prtSchema, `SCHEMA PRT ; fields=${NARROW_OPERATOR_PRT_FIELDS}`);
+});
+
+test("CI-pin: fixtures/memnet-session.map SHA256 is GitHub default-branch bytes", () => {
+  assert.equal(
+    PINNED_SYSML_MAP_SHA256,
+    "c2f16136e6f09f9a6c1ddf0026a15676f731575f1d2a1da6ccc2c464aa727bc3",
+  );
+  assertCheckedInSchemaMapPin();
 });
 
 test("narrow operator SCHEMA without qname is refused (keep-id hydrate)", () => {
