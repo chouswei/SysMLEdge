@@ -6,3 +6,5 @@ dist/
 auth_config.json
 secrets/
 .DS_Store
+.sysmledge/
+

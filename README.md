@@ -4,6 +4,8 @@
 
 **Bilingual** here means SysML (author SSOT) + GQL (query and represent). It does not mean a zh/EN product UI. Market pin: [docs/PRODUCT-LOCKS.md](docs/PRODUCT-LOCKS.md#market-position-pin).
 
+**This cut is P1 runtime enablement only.** It does **not** make SysMLEdge ready to serve real projects. Plan ≠ product. Foam proof (`docs/P1-acceptance.md` rows 9–12 and M1–M5 on the Foam tree) is **not** claimed.
+
 ## Stack (this cut)
 
 | Layer | Role |
@@ -14,14 +16,57 @@
 | **GQL** | Read/represent the projection. MUST NOT invent structure beside SysML. |
 | **MCP** | Agent face: **streamable HTTP** (Cursor Bearer, memnet-pi pattern). Read GQL; **propose** only; no silent SSOT overwrite |
 | **Git / GitHub** | VCS backbone — repo @ SHA. We own projection, STALE, propose — not a GitHub rebuild. |
-| **CLI** (planned) | Path index / project, list, freshness — same *patterns* as the prior indexer, new engine |
+| **CLI** | `import` / `status` / `save` / `download` / `reproject` / `mcp` |
 
 Normative contracts: [docs/P0-contracts.md](docs/P0-contracts.md). Product locks (2026-09-11, **NARROW**): [docs/PRODUCT-LOCKS.md](docs/PRODUCT-LOCKS.md). Living plan: [docs/PRODUCT-PLAN.md](docs/PRODUCT-PLAN.md). Business plan (gated GTM + buyer roots): [docs/BUSINESS-PLAN.md](docs/BUSINESS-PLAN.md). P1 Foam acceptance + proof: [docs/P1-acceptance.md](docs/P1-acceptance.md). Agent rules: [AGENTS.md](AGENTS.md).
+
+## P1 runtime (fixture)
+
+Implementation language: **TypeScript on Node ≥ 20** (matches this `package.json`). The live MemNet path speaks the 0.19.8 TCP frame to `memnet serve`; it does not rewrite MemNet in C.
+
+Synthetic tree: [`fixtures/p1-tiny/`](fixtures/p1-tiny/) — parts, ports, one connection, **one nested part usage**. Not a second desk.
+
+### Fake MemNet (CI / default)
+
+Use this when Pi / `memnet serve` is unreachable. Bind, STALE, propose, and reproject run against an in-memory projection parsed from SysML.
+
+```bash
+npm install
+export MEMNET_BACKEND=fake   # default
+npx tsx src/cli.ts import fixtures/p1-tiny --project /tmp/p1-desk
+npx tsx src/cli.ts status --project /tmp/p1-desk
+npm test
+```
+
+### Live Pi (memnet-llm==0.19.8 + TCP)
+
+Proof env lock: **memnet-llm==0.19.8** and TCP-shared (`MEMNET_MCP_TRANSPORT=tcp`). SysMLEdge still owns `rev` / STALE / reproject.
+
+```bash
+# Terminal 1 — MemNet serve (backend only)
+memnet serve   # 127.0.0.1:18765
+
+# optional: memnet MCP TCP-shared on :18766 for P1 pin_map proof (M1–M4), not the product agent face
+export MEMNET_MCP_TRANSPORT=tcp
+
+# Terminal 2 — SysMLEdge MCP (agent face)
+export MEMNET_BACKEND=tcp
+export MEMNET_SERVE_HOST=127.0.0.1
+export MEMNET_SERVE_PORT=18765
+export SYSMLEDGE_MCP_TOKEN=replace-me   # Cursor Authorization: Bearer
+export SYSMLEDGE_PROJECT=/tmp/p1-desk
+npm run mcp
+# streamable HTTP: http://127.0.0.1:18776/mcp
+```
+
+Cursor: HTTP MCP URL `http://127.0.0.1:18776/mcp` with `Authorization: Bearer ${SYSMLEDGE_MCP_TOKEN}`.
+
+Human/operator (not agent tools): `sysmledge import`, `save`, `download`. Agents: `rev_status`, `gql_*`, `propose`, `reproject` only.
 
 ## Plan (not shipping here)
 
 1. **P0** — contracts (this repository seed).
-2. **P1** — Foam slice on pilot SoI [`chouswei/modelbasedPrj-itri-vedan-foam-detection`](https://github.com/chouswei/modelbasedPrj-itri-vedan-foam-detection) — [acceptance + Foam proof](docs/P1-acceptance.md) (docs done; proof not yet run). Runtime not in this cut.
+2. **P1** — Foam slice on pilot SoI [`chouswei/modelbasedPrj-itri-vedan-foam-detection`](https://github.com/chouswei/modelbasedPrj-itri-vedan-foam-detection) — [acceptance + Foam proof](docs/P1-acceptance.md) (docs done; **proof not yet run**). This repo now has a **fixture** runtime so that proof can start.
 3. **P2** — single-tenant SaaS on the existing droplet (Devicor); InvenTree untouched. **Spend frozen** until Foam proof passes.
 4. **P3** — tenancy.
 
@@ -29,7 +74,7 @@ P2/P3 are plan phases only. This cut does not claim they are implemented. ClickU
 
 ## What you can download
 
-Downloadable source is the **SysML zip of a revision** (all `.sysml` in the tree). Never the graph dump. Never parts-only SSOT.
+Downloadable source is the **SysML zip of a revision** (all `.sysml` in the tree, excluding `proposals/`). Never the graph dump. Never parts-only SSOT.
 
 ## Lineage
 
@@ -39,4 +84,4 @@ SysMLEdge keeps those *roles* and **replaces the engine**: MemNet + GQL, SysML t
 
 ## Status
 
-**NARROW** (Elon / Horcrux, 2026-09-11) — Foam proof in progress. Docs-first seed. Runtime MCP/CLI against MemNet is specified in P0, not implemented here.
+**NARROW** (Elon / Horcrux, 2026-09-11) — Foam proof in progress. P1 runtime first cut: fixture + SysMLEdge-owned bind + streamable HTTP MCP. Not a Foam pass. Not ready to serve real projects.
