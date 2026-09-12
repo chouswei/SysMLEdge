@@ -4,7 +4,7 @@ SysMLEdge **bind** on live `memnet serve`. **Not** Path-B CON ingest. **Not** `p
 
 [#23](https://github.com/chouswei/SysMLEdge/pull/23) published M1 **narrow** (CON **124** + nested qname ego on `mn_0d4f6178` @ **0.19.9+TCP**) and **cleared** the LIVE-bind gate. This checklist is the Edison operator path.
 
-`proof_pass_claimed: false` until LIVE bind **and** timed H2H **and** cold. H2H scores **narrow 124+nested**, not gold-200.
+`proof_pass_claimed: false` until timed H2H **and** cold on **Foam** `mn_0d4f6178` (CON **124** + nested). H2H on **p1-tiny** / `mn_be03c1a9` = **plumbing only**. MUST NOT soft-pass the wedge. Gold-200 stays out.
 
 Cite Path-B **`mn_0d4f6178`** as published M1 meters **only**. Cite Path A **`mn_b05a9869`** AFTER (CON=29) as **engine ops**. Dirty **`mn_27ce8714`** = honesty archive only. Live **(f)** = **`mn_be03c1a9`** @ **`f6768b1108b20c15212f0895f41fb7a27b6a408d`**. Neither Path A/B id is `rev.sha`. LIVE bind **opens a new ingest session**. MUST NOT sell continuous same-session **(g)** until **(r)**.
 
@@ -58,7 +58,7 @@ Record (operator): [RUNLOG-2026-09-12-live-bind.md](RUNLOG-2026-09-12-live-bind.
 | map | SCHEMA `--map-file` `fixtures/memnet-session.map` |
 | invent meter (same sid, archive) | `InventProbeBar` / `inventProbe` / `probeOut`; `rev.sha` → `1c1e3e50769cc23d8111548d19277cdbddfd1ce5`; gold 11→13 / 12→13 / 6→6; zip≡disk PASS; InventProbe in MemNet yes; mirror-lie PASS |
 | append caveat | rows **56→116**; find PRT **11→24** / CON **5→10**. Honesty archive. MUST NOT sell continuous same-session **(g)** until **(r)** |
-| H2H / cold | **held** (scores **narrow** 124+nested only) |
+| H2H / cold | **held**. Tiny H2H = plumbing. Wedge = Foam `mn_0d4f6178` unless Core re-locks P1 desk to tiny |
 | `proof_pass_claimed` | **false** |
 
 ## Refuse
@@ -68,8 +68,8 @@ Record (operator): [RUNLOG-2026-09-12-live-bind.md](RUNLOG-2026-09-12-live-bind.
 - Claiming [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego is LIVE bind
 - Advertising `one_way: true` as product truth (lock **(g)**)
 - leftover `--map` TAG wire on 0.19.9
-- Claiming M1 / P1 / `proof_pass_claimed` from this checklist
-- Scoring H2H vs gold-200 (narrow claim only)
+- Claiming M1 / P1 / `proof_pass_claimed` from this checklist or from p1-tiny H2H
+- Scoring H2H vs gold-200; selling tiny / `mn_be03c1a9` H2H as the Foam wedge
 - Selling continuous same-session **(g)** until **(r)**
 - Treating dirty `mn_27ce8714` as live **(f)**
 - Same-sid replace-ingest **(r)** (deferred; no MemNet API this cut)

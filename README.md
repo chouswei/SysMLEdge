@@ -80,7 +80,7 @@ npm run mcp
 # streamable HTTP: http://127.0.0.1:18776/mcp
 ```
 
-LIVE operator boxes: [docs/proof/LIVE-BIND-CHECKLIST.md](docs/proof/LIVE-BIND-CHECKLIST.md). Meters: [docs/proof/RUNLOG-2026-09-12-live-bind.md](docs/proof/RUNLOG-2026-09-12-live-bind.md). **(f)** clean = `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d`. Dirty `mn_27ce8714` = honesty archive only. H2H scores **narrow** only. `mn_b05a9869` / `mn_0d4f6178` / `pin_map` are **not** bind.
+LIVE operator boxes: [docs/proof/LIVE-BIND-CHECKLIST.md](docs/proof/LIVE-BIND-CHECKLIST.md). Meters: [docs/proof/RUNLOG-2026-09-12-live-bind.md](docs/proof/RUNLOG-2026-09-12-live-bind.md). **(f)** clean = `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d`. Dirty `mn_27ce8714` = honesty archive only. Tiny H2H = plumbing. Wedge H2H = Foam `mn_0d4f6178`. `mn_b05a9869` / `mn_0d4f6178` / `pin_map` are **not** bind.
 
 Cursor: HTTP MCP URL `http://127.0.0.1:18776/mcp` with `Authorization: Bearer ${SYSMLEDGE_MCP_TOKEN}`.
 

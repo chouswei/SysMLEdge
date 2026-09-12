@@ -28,15 +28,17 @@ If a lock and P0 wording differ, this sheet **notes** the difference and **align
 
 | Session | Fact | MUST NOT |
 |---------|------|----------|
-| `mn_0d4f6178` | Foam Path-B **narrow M1**: CON find \|Q\|=**124** + nested qname ego YES | Claim gold **200**; mix with p1-tiny; score H2H vs gold-200 |
-| `mn_be03c1a9` | **Lock (f) clean** LIVE bind @ `rev.sha` **`f6768b1108b20c15212f0895f41fb7a27b6a408d`** (p1-tiny) | Mix with dirty archive; same-sid ingest; claim Foam M1 |
+| `mn_0d4f6178` | Foam Path-B **narrow M1**: CON find \|Q\|=**124** + nested qname ego YES. **Wedge H2H desk** | Claim gold **200**; mix with p1-tiny; score H2H vs gold-200; skip Foam H2H |
+| `mn_be03c1a9` | **Lock (f) clean** LIVE bind @ `rev.sha` **`f6768b1108b20c15212f0895f41fb7a27b6a408d`** (p1-tiny). H2H here = **plumbing only** | Mix with dirty archive; same-sid ingest; claim Foam M1; **soft-pass the wedge** on tiny H2H |
 | `mn_27ce8714` | **Dirty honesty archive only** (append 56→116, dup qnames). Mirror-lie **PASS** on that sid | Sell as the live **(f)** bind; sell continuous same-session **(g)** |
 
 **Invent status (meters after pin):** (g) **mirror-lie meter** on dirty archive `mn_27ce8714`: **PASS** (InventProbe; gold parts **11→13**, ports **12→13**; zip≡disk). Still **do not sell (g) as proven** — **provisional remains**. MUST NOT sell **continuous same-session (g)** until **(r)**. `proof_pass_claimed: false`.
 
 **Honesty archive:** same-session re-ingest **appends** (rows **56→116**, dup qnames on `mn_27ce8714`). Gold/zip/rev stay honest; MemNet row counts on that sid **are not** replace-on-reproject. Cite that sid as **archive only**.
 
-**Lock (f) P1** — CEO Core exact (user GO 2026-09-12 + Memnetor). Clean session = **`mn_be03c1a9`** @ **`rev.sha` `f6768b1108b20c15212f0895f41fb7a27b6a408d`**. On **reproject**, open a **new MemNet session id** (ops-only). Same-session **replace-ingest is not invented** — **no MemNet API change this cut**. **(r)** (replace-in-session) is **deferred**. MUST NOT sell continuous same-session **(g)** until **(r)**. Timed **H2H scores the narrow claim only** (124 + nested ego) — gold-200 stays out. Dirty **`mn_27ce8714`** = honesty archive only. `proof_pass_claimed: false`. KEEP MemNet sole — **no Neo4j**.
+**Lock (f) P1** — CEO Core exact (user GO 2026-09-12 + Memnetor). Clean session = **`mn_be03c1a9`** @ **`rev.sha` `f6768b1108b20c15212f0895f41fb7a27b6a408d`**. On **reproject**, open a **new MemNet session id** (ops-only). Same-session **replace-ingest is not invented** — **no MemNet API change this cut**. **(r)** (replace-in-session) is **deferred**. MUST NOT sell continuous same-session **(g)** until **(r)**. Dirty **`mn_27ce8714`** = honesty archive only. KEEP MemNet sole — **no Neo4j**.
+
+**H2H desk (CEO / Elon / Edison Core 2026-09-12):** H2H on **p1-tiny** / `mn_be03c1a9` = **plumbing only**. MUST NOT let tiny **soft-pass** the wedge. `proof_pass_claimed` stays **false** until **timed H2H + cold** on the **Foam narrow claim** (`mn_0d4f6178` CON **124** + nested). Gold-200 stays out. Core MAY **explicitly re-lock** the P1 desk to tiny; until that cut, the wedge desk is Foam.
 
 **KEEP:** MemNet sole. don’t-migrate. No Pro until cold Foam.
 
@@ -58,8 +60,8 @@ Product-story locks are **exact** in [CEO Core — Steve taste](#ceo-core--steve
 | **Sysmler Core** (2026-09-12) | **KEEP / NARROW** the spine. Cite CEO Core P1 gate (exact locks below). |
 | **CEO Core P1 gate** (2026-09-12) | Exact locks: **Sequence** / **Pass only** / **Kill theater** (cite Edison). Must-fix / kill risks / OK. Scaffold ≠ P1. |
 | **Edison Core experiment** (Thomas Alva Edison / Horcrux, 2026-09-12) | **KEEP / NARROW** the 2-week Foam cycle (9–12 + M1–M5). Do **not** invert sequence. Engine + story locks untouched. Scaffold ≠ P1. |
-| **CEO Core — Steve + Elon agree** (2026-09-12) | **M1 claim** = LIVE CON **124** + nested qname ego YES on `mn_0d4f6178` @ 0.19.9. Gold 200 = parser ref only. No invent edges. LIVE bind unlocked after this publish lands. Timed H2H must score the **narrow** claim (124 + nested ego) — gold-200 stays out of the competitor story. **KEEP MemNet sole.** Path-B CON floor **≥0.19.9+TCP**. |
-| **CEO Core pinned features (v1)** (2026-09-12) | Bind @ `rev` + STALE; GQL/MCP ask (narrow M1); propose `delta.sysml`; streamable-HTTP MCP + MemNet sole. **(g)** typed ops → bit-true zip = **provisional**. MUST NOT sell continuous same-session **(g)** until **(r)**. **Lock (f) exact:** `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d`. Dirty `mn_27ce8714` = honesty archive only. H2H scores **narrow** only. |
+| **CEO Core — Steve + Elon agree** (2026-09-12) | **M1 claim** = LIVE CON **124** + nested qname ego YES on `mn_0d4f6178` @ 0.19.9. Gold 200 = parser ref only. No invent edges. Timed H2H (row 9 / M5) must score that **narrow** claim on the **Foam** desk — **not** p1-tiny / `mn_be03c1a9` (plumbing only). **KEEP MemNet sole.** Path-B CON floor **≥0.19.9+TCP**. |
+| **CEO Core pinned features (v1)** (2026-09-12) | Bind @ `rev` + STALE; GQL/MCP ask (narrow M1); propose `delta.sysml`; streamable-HTTP MCP + MemNet sole. **(g)** typed ops → bit-true zip = **provisional**. MUST NOT sell continuous same-session **(g)** until **(r)**. **Lock (f) exact:** `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d`. Dirty `mn_27ce8714` = honesty archive only. Tiny H2H = plumbing; wedge H2H = Foam `mn_0d4f6178`. |
 
 **Taste risks** (Steve Jobs + CEO Core 2026-09-12): **Kill smells:** IDE / canvas / MemNet tip = product. Prior: Cameo-lite; MemNet-wrapper (tip Path-B ≠ product); yet-another-MCP without beat-grep cold feel.
 
@@ -146,16 +148,16 @@ This file does not implement runtime.
 **CEO+Elon Core locks (verbatim):**
 
 1. M1 claim = LIVE CON **124** + nested qname ego YES on `mn_0d4f6178` @ 0.19.9. Gold 200 = parser ref only. No invent edges. LIVE bind unlocked after this publish lands.
-2. Timed H2H must score the **narrow** claim (124 + nested ego) — gold-200 stays out of the competitor story.
+2. Timed H2H must score the **narrow** claim (124 + nested ego) **on Foam** `mn_0d4f6178` — gold-200 stays out. H2H on p1-tiny / `mn_be03c1a9` = plumbing only.
 
 Path A on `mn_b05a9869` remains **FAIL** as a gold-parity / bind claim (BEFORE: CON=0 / nested absent; AFTER: TSK ego CON=29 via ops ≠ SysMLEdge bind). **Published M1 narrow** is Path-B LIVE on `mn_0d4f6178` @ **memnet-llm==0.19.9+TCP**: CON find \|Q\|=**124** (**29** `connection_def` + **95** `connectionUsage`) — ingest alone, **no** owns mutate; both `backgroundSetIndicator` gold qnames close via SysML `qname=` `pin_map` + `contains` (Truncation=false on tip ego). TSK-only ego = wrong cue (not claimed). **(f)** clean bind `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d` is **p1-tiny** — **no M1 claim**. Dirty `mn_27ce8714` = honesty archive only. [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego still ≠ pass. Exact meters: [proof/RUNLOG-2026-09-12-m1-bind.md](proof/RUNLOG-2026-09-12-m1-bind.md).
 
-This publish **clears** the M1 FAIL **LIVE-bind gate**. Mirror-lie meter on dirty archive `mn_27ce8714` is **PASS** (append honesty). **(g) remains provisional** — MUST NOT sell continuous same-session **(g)** until **(r)**. **Lock (f) exact:** `mn_be03c1a9` @ `rev.sha` `f6768b1108b20c15212f0895f41fb7a27b6a408d`. **(r)** deferred. H2H scores the **narrow** claim only. `proof_pass_claimed` for full P1 stays **false**.
+This publish **clears** the M1 FAIL **LIVE-bind gate**. Mirror-lie meter on dirty archive `mn_27ce8714` is **PASS** (append honesty). **(g) remains provisional** — MUST NOT sell continuous same-session **(g)** until **(r)**. **Lock (f) exact:** `mn_be03c1a9` @ `rev.sha` `f6768b1108b20c15212f0895f41fb7a27b6a408d`. **(r)** deferred. H2H on that tiny session = **plumbing only**. `proof_pass_claimed` stays **false** until timed H2H + cold on Foam `mn_0d4f6178` (CON **124** + nested), unless Core explicitly re-locks the P1 desk to tiny.
 
 | Lock | Rule |
 |------|------|
 | **M1 claim** (CEO+Elon Core, verbatim) | M1 claim = LIVE CON **124** + nested qname ego YES on `mn_0d4f6178` @ 0.19.9. Gold 200 = parser ref only. No invent edges. LIVE bind unlocked after this publish lands. |
-| **H2H scores narrow** (CEO+Elon Core, verbatim) | Timed H2H must score the **narrow** claim (124 + nested ego) — gold-200 stays out of the competitor story. |
+| **H2H scores Foam narrow** (CEO / Elon / Edison Core) | Timed H2H (row **9** / **M5**) must score the **narrow** claim on Foam `mn_0d4f6178` (CON **124** + nested ego). Gold-200 stays out. H2H on **p1-tiny** / `mn_be03c1a9` = **plumbing only**. MUST NOT soft-pass the wedge. `proof_pass_claimed` stays **false** until that Foam H2H **and** cold, unless Core explicitly re-locks the P1 desk to tiny. |
 | **KEEP MemNet sole** | **No Neo4j / dual-engine / Kuzu / C rewrite** until fidelity is **green** **and** timed H2H **loses with numbers**. Same reopen bar as engine form. MUST NOT reopen on taste or “wrong store”. |
 | **Gaps** | Foam **projection fidelity** + SysMLEdge **reproject ego**. **Not** the wrong store. CON=0 / nested absent / TSK-only ego is a projection + ego problem. MUST NOT treat it as a reason to swap MemNet. |
 | **Path-B CON floor** | **≥ memnet-llm==0.19.9 + TCP**. Bounce remains proven on **0.19.8**. Path-B CON ingest is **0.19.9** (MemNet **#158**). MUST NOT claim Path-B CON on Pi below that floor. |
@@ -207,13 +209,13 @@ This review does **not** pass Foam gold. P1 gate = **CEO Core** exact locks (nex
 
 **Cite:** Edison Core (Thomas Alva Edison / Horcrux) + CEO Core 2026-09-12. **Steve + Elon agree** (M1 narrow+counts / KEEP sole / Path-B CON floor) is exact in the section above. No scope widen. Same text in [P1-acceptance.md](P1-acceptance.md) except the later Steve+Elon floor (this sheet).
 
-**Sequence:** M1 fidelity → `rev` bind → **mirror meter** (PASS, dirty archive `mn_27ce8714`) → **lock (f)** clean `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d` → timed H2H (narrow only) → cold non-Core. **(r)** deferred. **(g)** stays **provisional**.
+**Sequence:** M1 fidelity → `rev` bind → **mirror meter** (PASS, dirty archive `mn_27ce8714`) → **lock (f)** clean `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d` → timed H2H on **Foam** `mn_0d4f6178` (narrow) → cold non-Core. Tiny H2H = plumbing. **(r)** deferred. **(g)** stays **provisional**.
 
-**Pass only:** live TCP after bind; bounce proven on `0.19.8`; Path-B CON **≥0.19.9+TCP**; wall-clock + context vs same Foam Qs; fail-closed STALE; no silent drop. M1 FAIL **LIVE-bind gate cleared** by published Path-B narrow+counts (Core GO 2026-09-12). [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego ≠ pass. **(f)** clean bind `mn_be03c1a9` is **p1-tiny** — **no M1 claim**. Dirty `mn_27ce8714` = honesty archive only. Narrow M1 CON **124** + nested = Foam session `mn_0d4f6178` only. H2H scores that **narrow** claim only. Full P1 still **false** until H2H + cold. **(g) not sold as proven.** MUST NOT sell continuous same-session **(g)** until **(r)**.
+**Pass only:** live TCP after bind; bounce proven on `0.19.8`; Path-B CON **≥0.19.9+TCP**; wall-clock + context vs same **Foam** Qs; fail-closed STALE; no silent drop. M1 FAIL **LIVE-bind gate cleared** by published Path-B narrow+counts (Core GO 2026-09-12). [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego ≠ pass. **(f)** clean bind `mn_be03c1a9` is **p1-tiny** — **no M1 claim**; H2H there is **plumbing only**. Dirty `mn_27ce8714` = honesty archive only. Narrow M1 CON **124** + nested = Foam session `mn_0d4f6178` only. Full P1 still **false** until Foam H2H + cold (unless Core re-locks P1 desk to tiny). **(g) not sold as proven.** MUST NOT sell continuous same-session **(g)** until **(r)**.
 
-**Kill theater:** fake CI, tip-as-bind, H2H before meters, H2H vs gold-200, inventing CON to chase gold **200**, [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as M1 pass, selling **(g)** as proven, selling continuous same-session **(g)** before **(r)**, claiming M1 on `mn_27ce8714` or `mn_be03c1a9`, treating dirty archive as the live **(f)** bind, same-sid replace-ingest as product (**(r)**; **deferred**; no MemNet API this cut).
+**Kill theater:** fake CI, tip-as-bind, H2H before meters, H2H vs gold-200, **tiny H2H sold as wedge pass**, inventing CON to chase gold **200**, [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as M1 pass, selling **(g)** as proven, selling continuous same-session **(g)** before **(r)**, claiming M1 on `mn_27ce8714` or `mn_be03c1a9`, treating dirty archive as the live **(f)** bind, same-sid replace-ingest as product (**(r)**; **deferred**; no MemNet API this cut).
 
-**Must-fix before Foam gold:** full-clone construct matrix; nested ingest without hand CREATE (or narrow the claim); **lock (f)** exact `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d`; timed H2H on TCP scoring **narrow** only (Path-B CON on **≥0.19.9+TCP**). MUST NOT sell continuous same-session **(g)** until **(r)**.
+**Must-fix before Foam gold:** full-clone construct matrix; nested ingest without hand CREATE (or narrow the claim); **lock (f)** exact `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d`; **timed H2H + cold on Foam** `mn_0d4f6178` (CON **124** + nested). MUST NOT sell continuous same-session **(g)** until **(r)**. MUST NOT let p1-tiny soft-pass the wedge.
 
 **Kill risks:** silent drop (`connections_parsed:0` / omitted files); tip Path-B sold as bind; full KerML in 2 weeks; shrink zip to parts-only.
 
@@ -223,7 +225,7 @@ This review does **not** pass Foam gold. P1 gate = **CEO Core** exact locks (nex
 
 [#18](https://github.com/chouswei/SysMLEdge/pull/18) FAKE bind = scaffold only — **not** live bind / not P1.
 
-[#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego ≠ pass. **Published M1 narrow** (Core GO 2026-09-12): Path-B `mn_0d4f6178` CON find \|Q\|=**124** (**29** def + **95** usage); nested qname ego YES; gold **200** = reference only. LIVE-bind gate **cleared**. **Lock (f) exact:** `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d` — p1-tiny, **no M1 claim**. Dirty `mn_27ce8714` = honesty archive only. Mirror-lie **PASS** on the archive (append honesty). **(g) provisional**. MUST NOT sell continuous same-session **(g)** until **(r)**. H2H scores **narrow** only. `proof_pass_claimed: false`.
+[#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego ≠ pass. **Published M1 narrow** (Core GO 2026-09-12): Path-B `mn_0d4f6178` CON find \|Q\|=**124** (**29** def + **95** usage); nested qname ego YES; gold **200** = reference only. LIVE-bind gate **cleared**. **Lock (f) exact:** `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d` — p1-tiny, **no M1 claim**; H2H there = **plumbing only**. Dirty `mn_27ce8714` = honesty archive only. Mirror-lie **PASS** on the archive (append honesty). **(g) provisional**. MUST NOT sell continuous same-session **(g)** until **(r)**. `proof_pass_claimed: false` until Foam H2H + cold (unless Core re-locks P1 desk to tiny).
 
 ---
 
@@ -239,7 +241,7 @@ Same sequence, Day-1 instruments, refuse list, and fail-fast in [P1-acceptance.m
 2. SysMLEdge `rev.sha` / STALE / reproject bind (**M2–M3**). **(f)** clean = `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d` — p1-tiny, **no M1 claim**.
 3. **(g) mirror:** typed mutate→zip on dirty archive `mn_27ce8714` — **PASS** (InventProbe; gold parts 11→13, ports 12→13; zip≡disk). **(g)** stays **provisional**. Same-session re-ingest **appends**. MUST NOT sell continuous same-session **(g)** until **(r)**.
 4. **Lock (f)** exact: clean session **`mn_be03c1a9`** @ **`f6768b1108b20c15212f0895f41fb7a27b6a408d`**. On reproject, open a **new** MemNet session id (ops-only). **(r)** deferred. No MemNet API change this cut. Dirty `mn_27ce8714` = honesty archive only.
-5. Timed H2H wall-clock + context on **TCP after bind** (**M5** / row **9**). Path-B CON on **≥0.19.9+TCP**. Score the **narrow** claim only (124 + nested ego); gold-200 stays out of the competitor story.
+5. Timed H2H wall-clock + context on **TCP after bind** (**M5** / row **9**) on the **Foam** desk (`mn_0d4f6178` CON **124** + nested). Score the **narrow** claim; gold-200 stays out. H2H on **p1-tiny** / `mn_be03c1a9` = **plumbing only**. MUST NOT soft-pass the wedge. `proof_pass_claimed` stays **false** until Foam H2H + cold unless Core explicitly re-locks P1 desk to tiny.
 6. Then cold non-Core yes/no (**row 12**)
 
 ### Day-1 instruments
@@ -253,7 +255,7 @@ Same sequence, Day-1 instruments, refuse list, and fail-fast in [P1-acceptance.m
 
 ### Refuse (this cycle)
 
-P2 UI / canvas / IDE / Pro–Team–marketplace; full KerML; parts-only zip; Neo4j / dual-engine / Kuzu; C rewrite now; second desk; MemNet mission as `project@rev`; timing H2H before M1+bind; inventing CON to chase gold **200**; [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as M1 pass; claiming full P1 before H2H + cold; scaffold CI as gold; expand `pin_map` / impact before fidelity; treat projection gaps as a store swap; sell **(g)** as proven; sell continuous same-session **(g)** until **(r)**; treat dirty `mn_27ce8714` as live **(f)**; claim M1 on `mn_be03c1a9` / `mn_27ce8714`; same-sid replace-ingest **(r)** this cut; claim `proof_pass`.
+P2 UI / canvas / IDE / Pro–Team–marketplace; full KerML; parts-only zip; Neo4j / dual-engine / Kuzu; C rewrite now; second desk; MemNet mission as `project@rev`; timing H2H before M1+bind; inventing CON to chase gold **200**; [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as M1 pass; claiming full P1 / `proof_pass` from p1-tiny H2H; scaffold CI as gold; expand `pin_map` / impact before fidelity; treat projection gaps as a store swap; sell **(g)** as proven; sell continuous same-session **(g)** until **(r)**; treat dirty `mn_27ce8714` as live **(f)**; claim M1 on `mn_be03c1a9` / `mn_27ce8714`; same-sid replace-ingest **(r)** this cut.
 
 ### Fail-fast
 
@@ -267,6 +269,7 @@ P2 UI / canvas / IDE / Pro–Team–marketplace; full KerML; parts-only zip; Neo
 | Invent CON to chase gold **200**; [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as pass | Stop. KEEP the published Path-B **124** (29+95). KEEP MemNet sole — do **not** swap store |
 | Hours on freeze list | Cut immediately |
 | **(g)** sold as proven / continuous same-session **(g)** before **(r)** / dirty `mn_27ce8714` sold as live **(f)** | Stop. Dirty sid is honesty archive only. **(g)** is **provisional**. `proof_pass_claimed` stays **false** |
+| Tiny / `mn_be03c1a9` H2H sold as wedge pass | Stop. Plumbing only. `proof_pass_claimed` stays **false** until Foam `mn_0d4f6178` H2H + cold (unless Core re-locks P1 desk to tiny) |
 
 M1/M2 fail still means MemNet is **not a sole-engine claim**. It does **not** reopen Neo4j / dual-engine. **Cite:** Steve + Elon agree.
 
@@ -284,7 +287,7 @@ Exact claimed list. **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team 
 | **4** | chat-as-SSOT | No ship-rev zip, no propose-only trail — SysMLEdge **has** both. |
 | **5** | mid-flight model change → re-entrant reproject | Day loop: edit → Save → reproject → keep going. |
 
-**P1 head-to-head** still scores **wall-clock + context footprint + no silent drop** (pains **1–2** + silent-drop vs grep→LLM). **CEO+Elon Core (verbatim):** Timed H2H must score the **narrow** claim (124 + nested ego) — gold-200 stays out of the competitor story. Pains **3–5** are **contract claims** proven by existing STALE / propose / ship-rev / reproject rows in [P1-acceptance.md](P1-acceptance.md) — **not** extra feature work this week.
+**P1 head-to-head** still scores **wall-clock + context footprint + no silent drop** (pains **1–2** + silent-drop vs grep→LLM). **CEO / Elon / Edison Core:** Timed H2H must score the **narrow** claim on **Foam** `mn_0d4f6178` (124 + nested ego). H2H on p1-tiny / `mn_be03c1a9` = **plumbing only**. Gold-200 stays out of the competitor story. Pains **3–5** are **contract claims** proven by existing STALE / propose / ship-rev / reproject rows in [P1-acceptance.md](P1-acceptance.md) — **not** extra feature work this week.
 
 | Axis | Measure |
 |------|---------|
@@ -642,6 +645,6 @@ Implementations MUST reject, in addition to P0 §7:
 23. CEO Core P1 **kill risks** (2026-09-12): silent drop (`connections_parsed:0` / omitted files); tip Path-B sold as bind; full KerML in 2 weeks; shrink zip to parts-only. Treating [#11](https://github.com/chouswei/SysMLEdge/pull/11) / [#12](https://github.com/chouswei/SysMLEdge/pull/12) as P1 pass (scaffold ≠ P1). **Kill theater:** fake CI, tip-as-bind, H2H before meters. P1 **Pass only** is live TCP after bind (bounce `0.19.8`; Path-B CON **≥0.19.9+TCP**); wall-clock + context vs same Foam Qs; fail-closed STALE; no silent drop.
 24. Taste-cut narrative (Steve Jobs + CEO Core 2026-09-12): AGI copy; Pro/Team/marketplace; beachhead math; bilingual bus as brand lead; plus prior list (contract layer / humans–AGI API; seven roots as a pitch; freemium / Pro ~$19–29; SaaS-editor / PR-UI foreshadowing; slides instead of the 3-Q Foam keep-using proof).
 25. **Kill smells** (Steve Jobs + CEO Core 2026-09-12): IDE / canvas / MemNet tip = product.
-26. Edison Core (Thomas Alva Edison / Horcrux 2026-09-12): invert M1 → bind → mirror meter → lock **(f)** → timed H2H → row 12; time H2H before M1+bind; skip Day-1 instruments; spend hours on the refuse/freeze list.
-27. Steve + Elon agree (CEO Core 2026-09-12; Core GO same day): treat M1 gaps as Neo4j / dual-engine / wrong store; invent CON to chase gold **200**; treat [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as M1 pass; claim Path-B CON below **≥0.19.9+TCP**; claim Path-B CON **124** as gold **200**; score timed H2H against gold-200; claim full P1 / `proof_pass_claimed` before H2H + cold.
+26. Edison Core (Thomas Alva Edison / Horcrux 2026-09-12): invert M1 → bind → mirror meter → lock **(f)** → Foam H2H → row 12; time H2H before M1+bind; skip Day-1 instruments; spend hours on the refuse/freeze list; let p1-tiny H2H soft-pass the wedge.
+27. Steve + Elon agree (CEO Core 2026-09-12; Core GO same day): treat M1 gaps as Neo4j / dual-engine / wrong store; invent CON to chase gold **200**; treat [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as M1 pass; claim Path-B CON below **≥0.19.9+TCP**; claim Path-B CON **124** as gold **200**; score timed H2H against gold-200; claim `proof_pass_claimed` from p1-tiny / `mn_be03c1a9` H2H; skip Foam `mn_0d4f6178` H2H + cold unless Core re-locks P1 desk to tiny.
 28. CEO Core **pinned features** (2026-09-12): sell **(g)** as proven; sell continuous same-session **(g)** before **(r)**; claim `proof_pass`; treat dirty `mn_27ce8714` as the live **(f)** bind (it is honesty archive only); mix `mn_0d4f6178` Foam narrow M1 with p1-tiny `mn_be03c1a9` / `mn_27ce8714`; put **(g)** in the beachhead pitch; same-sid replace-ingest **(r)** this cut; score H2H vs gold-200; reopen Neo4j.

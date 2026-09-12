@@ -232,7 +232,7 @@ export async function runProofHarness(opts: {
 
 /** Path A ops and Path-B pin_map are not SysMLEdge bind. */
 export const LIVE_MEMNET_TODO =
-  "LIVE M1 Path A on mn_b05a9869 still not bind. Published Path-B narrow mn_0d4f6178 CON=124 + nested qname ego @ 0.19.9+TCP ≠ rev.sha. Lock (f) clean mn_be03c1a9 @ f6768b1108b20c15212f0895f41fb7a27b6a408d. Dirty mn_27ce8714 honesty archive only (append 56→116). H2H scores narrow only. proof_pass_claimed=false. Not M1 pass.";
+  "LIVE M1 Path A on mn_b05a9869 still not bind. Published Path-B narrow mn_0d4f6178 CON=124 + nested qname ego @ 0.19.9+TCP ≠ rev.sha. Lock (f) clean mn_be03c1a9 @ f6768b1108b20c15212f0895f41fb7a27b6a408d. Dirty mn_27ce8714 honesty archive only (append 56→116). Tiny H2H plumbing only. proof_pass_claimed=false until Foam H2H+cold. Not M1 pass.";
 
 export const CITED_MEMNET_SESSION = "mn_b05a9869";
 export const CITED_PATH_B_SESSION = "mn_0d4f6178";
