@@ -79,6 +79,8 @@ test("smokeBind FAKE: bound stale=false then mutate → STALE → propose refuse
   const report = await smokeBind(project);
   assert.equal(report.proof_pass_claimed, false);
   assert.equal(report.memnet_mode, "FAKE");
+  assert.equal(report.live_memnet, "blocked");
+  assert.equal(report.fake_memnet, "ok");
   assert.equal(report.ok, true);
   assert.equal(report.stale["rev.stale"], true);
   assert.equal(report.stale.propose_refused, true);

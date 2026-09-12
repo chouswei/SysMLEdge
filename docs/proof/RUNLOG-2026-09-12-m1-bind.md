@@ -1,15 +1,40 @@
-# RUNLOG — 2026-09-12 — M1 meters + bind smoke
+# RUNLOG — 2026-09-12 — M1 parser gold + FAKE bind smoke
 
-**Must not read as M1–M5 pass.** Live memnet-llm 0.19.8 + TCP ingest was not the bind backend.
+| Gate | Status |
+|------|--------|
+| **LIVE** MemNet M1 | **blocked** |
+| **FAKE** bind / STALE | **ok** |
+| `proof_pass_claimed` | `false` |
+| M1–M5 pass | **not claimed** |
+
+## LIVE=blocked (Memnetor probe)
+
+Do **not** claim live MemNet M1. Leave the TCP ingest path as **TODO** until Memnetor restores **both**:
+
+1. Foam mission `mn_b05a9869` as a proven TCP-shared ingest (not an in-process id list)
+2. `memnet-llm` **version pin** (`==0.19.8` or higher on the wire)
+
+| Probe | Result |
+|-------|--------|
+| Memnetor | TCP ports OK; Foam mission `mn_b05a9869` **ABSENT**; `memnet-llm` version **UNKNOWN** |
+| This VM | `127.0.0.1:18765` connect **refused** (ports-up reports are not a version pin) |
+| `git clone` Foam | **blocked** (private; agent token 404) |
+
+`sysmledge memnet-check` / `--live` ingest is **out of scope** for this cut.
+
+## FAKE=ok (this cut)
 
 | Field | Value |
 |-------|--------|
 | Date (UTC) | 2026-09-12 |
-| Foam source | `chouswei/modelbasedPrj-itri-vedan-foam-detection` @ `76459224e6afbe74612cca9b37ffe0b3503bda85` |
-| Foam fetch | **LIVE source via GitHub MCP** (agent `git clone` 404 on private repo). Tree assembled under `/tmp/foam-soi/sysml-models/` (models/ 7 files + `libs/common/**/*.sysml`). Nested `libs/omg` gitlink **not** on disk. |
-| Bind / STALE smoke | **FAKE** (`MEMNET_BACKEND=fake`). `memnet_mode=FAKE`. |
+| Foam source SHA | `76459224e6afbe74612cca9b37ffe0b3503bda85` |
+| Foam fetch | **LIVE SysML via GitHub MCP** (clone blocked). Tree: `/tmp/foam-soi/sysml-models/` — 7 `models/` files including `connections.sysml` + `root.sysml`, plus `libs/common/**/*.sysml`. Nested `libs/omg` **not** on disk. |
+| Bind / STALE | **FAKE** (`MEMNET_BACKEND=fake`, forced by `npm run m1:smoke`) |
 | Command | `FOAM_DIR=/tmp/foam-soi SYSMLEDGE_PROJECT=/tmp/foam-desk npm run m1:smoke` |
-| `proof_pass_claimed` | `false` |
+
+1. `import` Foam tree → `rev.sha` 40-hex, `rev.stale=false`
+2. Mutate `models/root.sysml` → `rev.stale=true`
+3. `propose` refused with `code: STALE`
 
 ## Gold counts (parser, not ingest pass)
 
@@ -25,25 +50,14 @@ Frozen at `fixtures/foam-gold/gold.json`. `proof_executed: false`.
 | nested_parts | 380 |
 | unknown | 1 (`libs/omg` KerML gitlink) |
 
-`connections_parsed:0` was a parser bug: quote pairing after `doc` strip swallowed later `connection` usages in `deploy.sysml`. Fix: same-line strings only; parse `end port … ::>` usages; do not emit `connection def` as usage edges.
+`connections_parsed:0` was a parser bug (quote pairing swallowed `deploy.sysml` usages). Still **186** after re-extract. Nested `backgroundSetIndicator`: **AUTO** (no hand CREATE on FakeMemNet). Live MemNet CREATE: **TODO** (blocked).
 
-Nested `backgroundSetIndicator`: **AUTO** (toolbar + config panel). Parser + FakeMemNet copy nested usages with **no hand CREATE**. Live MemNet CREATE / ingest fidelity: **UNPROVEN**.
+## TODO — live MemNet (Memnetor)
 
-## Bind smoke (FAKE)
-
-1. `import` Foam tree → `rev.sha` 40-hex, `rev.stale=false`.
-2. Mutate `models/root.sysml` → `rev.stale=true`.
-3. `propose` refused with `code: STALE`.
-
-Desk SHA on this run: `ccde8cb6b562778502a2fa42b8c41f1a733755ab` (content git commit of `/tmp/foam-desk`, not Foam upstream SHA).
-
-## Gaps still blocking a claimed M1–M5 pass
-
-- Live **memnet-llm==0.19.8** TCP-shared serve `:18765` + MCP `:18766` ingest of this Foam tree (CREATE / pin_map gold).
-- Operator `git clone --recurse-submodules` of Foam (private) including `libs/omg`.
-- Timed H2H (M5) — not run; must wait until M1+bind on live MemNet.
-- KerML/OMG library kinds not on disk.
+- Restore Foam mission ingest on TCP-shared serve (`mn_b05a9869` or successor named on the wire)
+- Pin `memnet-llm==0.19.8` (or higher) so `memnet-check` is not UNKNOWN
+- Then: live ingest of this gold tree, pin_map vs gold, bounce (M4), then H2H (M5)
 
 ## Not this cut
 
-H2H timings, P2 UI, Kuzu, other-repo migrate, Foam VI, product-ready claim.
+H2H timings, P2 UI, Kuzu, other-repo migrate, Foam VI, product-ready claim, live M1.

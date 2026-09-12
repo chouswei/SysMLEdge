@@ -229,6 +229,10 @@ export async function runProofHarness(opts: {
   };
 }
 
+/** Live TCP M1 is blocked until Memnetor restores Foam mission + memnet-llm version pin. */
+export const LIVE_MEMNET_TODO =
+  "LIVE=blocked: Foam mission mn_b05a9869 not a proven TCP ingest; memnet-llm version UNKNOWN. Do not claim live MemNet M1. FAKE bind/STALE only.";
+
 export async function smokeBind(
   project: SysMLEdgeProject,
   opts: { mutateRel?: string } = {},
@@ -236,14 +240,16 @@ export async function smokeBind(
   ok: boolean;
   memnet_backend: string;
   memnet_mode: "FAKE" | "LIVE_TCP";
+  live_memnet: "blocked";
+  fake_memnet: "ok";
   bind: { "rev.sha": string | null; "rev.stale": boolean };
   stale: { "rev.stale": boolean; propose_refused: boolean; code?: string };
   notes: string[];
   proof_pass_claimed: false;
 }> {
   const backend = process.env.MEMNET_BACKEND ?? "fake";
-  const memnet_mode = backend === "tcp" ? "LIVE_TCP" : "FAKE";
-  const notes: string[] = [];
+  const memnet_mode: "FAKE" | "LIVE_TCP" = "FAKE";
+  const notes: string[] = [LIVE_MEMNET_TODO];
   const bind = await project.revStatus();
   const bound =
     typeof bind["rev.sha"] === "string" &&
@@ -256,7 +262,9 @@ export async function smokeBind(
       memnet_mode,
       bind: { "rev.sha": bind["rev.sha"], "rev.stale": bind["rev.stale"] },
       stale: { "rev.stale": bind["rev.stale"], propose_refused: false },
-      notes: ["rev_status not bound with stale=false"],
+      notes: ["rev_status not bound with stale=false", LIVE_MEMNET_TODO],
+      live_memnet: "blocked",
+      fake_memnet: "ok",
       proof_pass_claimed: false,
     };
   }
@@ -280,6 +288,8 @@ export async function smokeBind(
       bind: { "rev.sha": bind["rev.sha"], "rev.stale": bind["rev.stale"] },
       stale: { "rev.stale": false, propose_refused: false },
       notes,
+      live_memnet: "blocked",
+      fake_memnet: "ok",
       proof_pass_claimed: false,
     };
   }
@@ -308,6 +318,8 @@ export async function smokeBind(
     bind: { "rev.sha": bind["rev.sha"], "rev.stale": bind["rev.stale"] },
     stale: { "rev.stale": st["rev.stale"], propose_refused, code },
     notes,
+    live_memnet: "blocked",
+    fake_memnet: "ok",
     proof_pass_claimed: false,
   };
 }
