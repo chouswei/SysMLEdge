@@ -231,7 +231,7 @@ export async function runProofHarness(opts: {
 
 /** Live TCP M1 is blocked until Memnetor restores Foam mission + memnet-llm version pin. */
 export const LIVE_MEMNET_TODO =
-  "LIVE env unlocked on Pi (Memnetor: 0.19.8+TCP, mn_b05a9869). This VM cannot reach 10.0.0.10 — no LIVE counts. FAKE bind/STALE only. P1 not claimed.";
+  "LIVE M1 fail-fast (Memnetor mn_b05a9869): CON=0, backgroundSetIndicator ABSENT. FAKE bind/STALE only. P1 not claimed.";
 
 export async function smokeBind(
   project: SysMLEdgeProject,

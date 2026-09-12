@@ -1,56 +1,37 @@
-# RUNLOG — 2026-09-12 — parser gold + FAKE bind; LIVE env unlocked on Pi
+# RUNLOG — 2026-09-12 — Edison LIVE M1 **fail-fast**
 
 | Gate | Status |
 |------|--------|
-| **LIVE env** (Memnetor) | **unlocked**: `memnet-llm==0.19.8` + TCP; session `mn_b05a9869`; **2922** rows (operator); `pin_map` `TSK_model_vfdl2` **non-empty** |
-| **LIVE M1 compare** from this cloud VM | **not executed** — `10.0.0.10:18765` / `:18766` / `:22` **timeout**. **No LIVE counts invented.** |
-| **FAKE** bind / STALE | **ok** |
+| **LIVE env** | unlocked (`memnet-llm==0.19.8` + TCP; `mn_b05a9869`) |
+| **LIVE M1** | **fail-fast** — silent drop (CON=0) / nested absent |
+| **FAKE** bind / STALE | **ok** (SysMLEdge desk; not live ingest) |
+| H2H | **not run** |
 | `proof_pass_claimed` | `false` |
 | P1 / M1–M5 pass | **not claimed** |
 
-## LIVE env (Memnetor — operator, not this VM)
+## Edison fail-fast (Memnetor LIVE, `mn_b05a9869`)
 
-Do **not** treat this table as SysMLEdge-measured ingest fidelity.
+Kill smells from [P1-acceptance M1](../P1-acceptance.md): silent drop (`connections_parsed:0` / omitted graph edges); nested ingest without the nested row.
 
-| Item | Memnetor |
-|------|----------|
-| Engine | `memnet-llm==0.19.8` |
-| Transport | TCP-shared |
-| Session | `mn_b05a9869` loaded |
-| Rows | 2922 (session total; **not** equated to parser parts/ports/CONN) |
-| `pin_map` `TSK_model_vfdl2` | non-empty |
+| Meter | SysML parser gold (`gold.json`) | LIVE MemNet (`mn_b05a9869`) |
+|-------|--------------------------------:|-----------------------------|
+| Session rows | n/a | 2922 (operator, prior) |
+| Connections | **200** `connections_parsed` | **CON=0** session-wide |
+| Nested `backgroundSetIndicator` | **AUTO** (2 qnames: toolbar + config panel) | **ABSENT** |
+| Parts | 663 | **PRT 1390** (`read_list`) |
+| Ports | 1400 | **POR 385** (`read_list`) |
+| `pin_map` `TSK_model_vfdl2` | n/a | non-empty but **ego = TSK only** |
+| Orphans | n/a | **2008** |
 
-Queries Memnetor must run to finish LIVE M1 compare: [LIVE-M1-CHECKLIST.md](LIVE-M1-CHECKLIST.md).
+**Verdict:** LIVE M1 **FAIL**. SysML-side gold still has 200 connection usages and nested `backgroundSetIndicator`. The live session has **no CON edges** and **no** that nested tip. Do not treat env-unlock or a non-empty TSK pin as gold fidelity.
 
-## This cloud VM (2026-09-12)
+### Orphan / tip (optional)
 
-| Probe | Result |
-|-------|--------|
-| `10.0.0.10:18765` | timeout |
-| `10.0.0.10:18766` | timeout |
-| `10.0.0.10:22` | timeout |
-| `127.0.0.1:18765` | connection refused |
-| `git clone` Foam | blocked (private; agent token 404) |
-
-`npm run m1:smoke` stays **FAKE**. `MEMNET_BACKEND=tcp` is not used from this VM.
-
-## FAKE=ok (SysMLEdge bind)
-
-| Field | Value |
-|-------|--------|
-| Foam source SHA | `76459224e6afbe74612cca9b37ffe0b3503bda85` |
-| Foam fetch | GitHub MCP (clone blocked). Whole `.sysml` under `sysml-models/` that could be fetched: 7 `models/` + `libs/common/**` + `outputs/diagrams/foam-lite-demo.sysml`. Nested `libs/omg` **not** on disk. |
-| Bind / STALE | **FAKE** (`npm run m1:smoke` forces fake) |
-
-1. `import` → `rev.sha` 40-hex, `rev.stale=false`
-2. Mutate `models/root.sysml` → `rev.stale=true`
-3. `propose` refused `code: STALE`
+ShapeWalk from `TSK_model_vfdl2` stays on the TSK ego (TSK only). It does **not** reach keyword-findable tips (`backgroundSetIndicator`, named `connection` usages). **2008 orphans** matches a graph where ingest left parts/ports unhooked from the mission TSK. Fix is MemNet ingest / CREATE / walk — not H2H, not a parser recount.
 
 ## Parser gold matrix (this PR)
 
-Frozen at `fixtures/foam-gold/gold.json`. `proof_executed: false`. `tree_files` lists every parsed path.
-
-`connections_parsed:0` was a parser bug; current freeze is **200** (7 `models/` + `libs/common` + `outputs/diagrams/foam-lite-demo.sysml`). Nested `backgroundSetIndicator`: **AUTO**.
+Frozen: `fixtures/foam-gold/gold.json` @ Foam `76459224e6afbe74612cca9b37ffe0b3503bda85`. `proof_executed: false`. `tree_files`: 7 `models/` (including `connections.sysml` + `root.sysml`) + `libs/common/**` + `outputs/diagrams/foam-lite-demo.sysml`. `libs/omg` UNKNOWN.
 
 | Meter | Count |
 |-------|------:|
@@ -62,6 +43,12 @@ Frozen at `fixtures/foam-gold/gold.json`. `proof_executed: false`. `tree_files` 
 | nested_parts | 388 |
 | unknown | 1 (`libs/omg`) |
 
+Cloud VM still cannot reach `10.0.0.10` (timeout). LIVE numbers above are **Memnetor**, not invented here.
+
+## FAKE=ok (SysMLEdge bind only)
+
+`npm run m1:smoke` forces fake: import → `rev.stale=false` → mutate → STALE → `propose` refused. That does **not** clear LIVE M1 fail-fast.
+
 ## Not this cut
 
-LIVE pin_map vs gold **counts** (checklist only). H2H. P2 UI. Kuzu. Product-ready / P1 pass.
+H2H (M5). P2 UI. Kuzu. Product-ready. Claiming M1 pass while CON=0 / nested absent.

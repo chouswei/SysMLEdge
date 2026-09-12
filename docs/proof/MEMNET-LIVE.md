@@ -69,8 +69,8 @@ Harness `sysmledge proof --live` only asserts the env. It does **not** restart p
 |--|------|------|
 | CI | default `MEMNET_BACKEND=fake` | skip |
 | Bind / STALE / propose | yes | same SysMLEdge bind |
-| M1 ingest fidelity | structure only | required for pass; **LIVE=blocked** until Memnetor restores Foam mission + version pin (see RUNLOG) |
+| M1 ingest fidelity | structure only | **FAIL-FAST** Memnetor: CON=0, nested ABSENT (see RUNLOG) |
 
-## Blocked from this cloud VM (2026-09-12)
+## LIVE M1 fail-fast (Memnetor 2026-09-12)
 
-Memnetor: LIVE env **unlocked** (`0.19.8` + TCP, `mn_b05a9869`, `TSK_model_vfdl2` non-empty). Cloud agent **cannot** reach `10.0.0.10`. **No LIVE counts invented.** Operator compare: [LIVE-M1-CHECKLIST.md](LIVE-M1-CHECKLIST.md). SysMLEdge `m1:smoke` remains **FAKE**. P1 not claimed.
+Session `mn_b05a9869`: **CON=0**, `pin_map` TSK ego = TSK only, `backgroundSetIndicator` **ABSENT**, orphans **2008**, `read_list` PRT **1390** POR **385**. Parser gold still has 200 connections and nested AUTO. **Not a pass.** [RUNLOG](RUNLOG-2026-09-12-m1-bind.md). Cloud VM still cannot reach `10.0.0.10`. `m1:smoke` remains **FAKE**.
