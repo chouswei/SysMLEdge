@@ -1,17 +1,18 @@
-# RUNLOG — 2026-09-12 — Edison LIVE M1 (fail-fast **then** Path A) + FAKE ego
+# RUNLOG — 2026-09-12 — Edison LIVE M1 (fail-fast **then** Path A) + published Path-B **narrow+counts**
 
-**CEO Core 2026-09-12:** [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego ≠ M1 pass. Gate = Memnetor LIVE re-measure vs gold.
+**Cite:** Core GO 2026-09-12 + advisors Jon / Edison / Steve / Elon + CEO: prefer **narrow+counts**. MUST NOT invent CON to chase gold **200**. [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego still ≠ pass; this publish is the **LIVE** narrow.
 
 | Gate | Status |
 |------|--------|
 | **LIVE env** | unlocked (`memnet-llm==0.19.8` + TCP; `mn_b05a9869`) |
 | **LIVE M1 BEFORE Path A** | **fail-fast** — CON=0 session-wide / nested absent |
 | **LIVE M1 AFTER Path A** | TSK ego CON=29; nested in ego via ops; **not SysMLEdge bind** |
-| **LIVE Path-B re-measure** | `mn_0d4f6178` @ **0.19.9+TCP** (Memnetor, SysML qname cue, **no** owns mutate). CON find \|Q\|=**124**. Nested qname ego **YES**. **≠ gold 200.** Not SysMLEdge LIVE re-ingest. |
+| **Published M1 narrow (Path-B LIVE)** | `mn_0d4f6178` @ **memnet-llm==0.19.9+TCP**. CON find \|Q\|=**124** (**29** `connection_def` + **95** `connectionUsage`) — ingest alone, **no** owns mutate. Nested both gold `backgroundSetIndicator` qnames via SysML `qname=` `pin_map` + `contains` (Truncation=false on tip ego). TSK-only ego = wrong cue (not claimed). Parser gold **200** = **reference only**, **not** the M1 fail bar. Not SysMLEdge LIVE re-ingest. |
+| **M1 FAIL LIVE-bind gate** | **cleared** by this publish. Next Edison step = **LIVE bind**. |
 | **FAKE** bind / STALE | **ok** (SysMLEdge desk) |
-| **FAKE M1 ego** | **invent progress** — SysML-grounded contains/owns/ends; fixture + gold reconstruction. **Does not change MemNet rows.** **≠ M1 pass.** |
+| **FAKE M1 ego** | **invent progress** — SysML-grounded contains/owns/ends; fixture + gold reconstruction. **Does not change MemNet rows.** **≠ pass.** |
 | H2H | **not run** |
-| `proof_pass_claimed` | **false** |
+| `proof_pass_claimed` | **false** (full P1 until bind + H2H + cold) |
 | P1 / M1–M5 pass | **not claimed** |
 | housekeep (Path-B session) | **1673/5000** edges **923** orphans **750** (`mn_0d4f6178`) |
 
@@ -48,22 +49,22 @@ Kill smells: silent drop of graph edges; nested ingest without the nested row.
 
 Parser gold still **200** connections / nested **AUTO**. Path A TSK ego CON=29 is a **slice**, not session-wide gold parity, and **not SysMLEdge bind**.
 
-## LIVE Path-B re-measure (Memnetor, `mn_0d4f6178`)
+## LIVE Path-B narrow (Memnetor, `mn_0d4f6178`) — **published**
 
-**0.19.9+TCP.** SysML **qname** cue. **No** owns mutate. Path-B ingest **alone**. Not a pass.
+**memnet-llm==0.19.9+TCP.** SysML **`qname=`** cue. **No** owns mutate. Path-B ingest **alone**. This is the M1 bar for this cut (Core GO 2026-09-12). Not full P1.
 
-| Meter | Gold (`gold.json`) | LIVE Path-B |
-|-------|-------------------:|--------------|
-| Connections | **200** `connections_parsed` | CON find \|Q\|=**124** (ingest alone; **def+usage split**) |
-| Nested `backgroundSetIndicator` | **AUTO** (2 qnames) | **YES** — both gold qnames close via `pin_map` **qname** + `contains` to owner; Truncation=**false** on tip ego |
+| Meter | Gold (`gold.json`) — **reference** | LIVE Path-B **narrow** |
+|-------|--------------------------------:|------------------------|
+| Connections | **200** `connections_parsed` (parser; **not** the fail bar) | CON find \|Q\|=**124** (**29** `connection_def` + **95** `connectionUsage`) |
+| Nested `backgroundSetIndicator` | **AUTO** (2 qnames: toolbar + config panel) | **YES** — both gold qnames close via `pin_map` **`qname=`** + `contains` to owner; Truncation=**false** on tip ego |
 | find keyword `backgroundSetIndicator` | n/a | \|Q\|=**2** |
-| TSK-only ego | n/a | still **wrong cue** |
+| TSK-only ego | n/a | still **wrong cue** (not claimed) |
 | housekeep | n/a | **1673/5000** edges **923** orphans **750** |
-| `proof_pass_claimed` | **false** | **false** |
+| `proof_pass_claimed` | **false** | **false** until bind + H2H + cold |
 
 **Caveat:** this Path-B session is **not** SysMLEdge LIVE re-ingest. [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego does **not** change MemNet rows.
 
-**vs gold:** `connections_parsed` **200** vs LIVE CON **124** (def+usage split). Nested AUTO vs LIVE qname ego **YES**. M1 still **FAIL** on CON parity.
+**vs gold:** parser `connections_parsed` **200** remains **reference**. LIVE CON **124** (29+95) is the **published narrow**. MUST NOT invent CON to chase 200. Nested AUTO vs LIVE qname ego **YES**. M1 FAIL **LIVE-bind gate cleared**.
 
 ## Parser gold matrix (this PR)
 
@@ -87,13 +88,13 @@ Cloud VM cannot reach `10.0.0.10` (timeout). LIVE numbers are **Memnetor**.
 
 ## FAKE M1 ego — invent progress (**≠ M1 pass**)
 
-SysMLEdge reproject (FAKE) emits **SysML-grounded** `contains` (nested part usage), `owns` (part→port), `ends` (connection→endpoints) plus connection usages. `gql_context` / `gql_impact` BFS that graph. **MUST NOT** invent `TSK_*` / `USR_*` owns. **MUST NOT** treat FAKE neighbourhood counts as M1 pass. Gate = Memnetor LIVE re-measure vs gold (Path-B section above).
+SysMLEdge reproject (FAKE) emits **SysML-grounded** `contains` (nested part usage), `owns` (part→port), `ends` (connection→endpoints) plus connection usages. `gql_context` / `gql_impact` BFS that graph. **MUST NOT** invent `TSK_*` / `USR_*` owns. **MUST NOT** treat FAKE neighbourhood counts as the LIVE narrow. The published bar is Path-B LIVE above.
 
 | Meter | Parser gold | FAKE projection | LIVE Path-B (`mn_0d4f6178`) |
 |-------|------------:|----------------:|------------------------------|
 | parts | **663** | **663** (gold reconstruct) | not re-ingested by SysMLEdge |
 | ports | **1400** freeze / **1392** unique list | **1392** unique (MUST NOT invent 8) | not re-ingested by SysMLEdge |
-| connections | **200** | **200** | CON find \|Q\|=**124** (def+usage split) |
+| connections | **200** (reference) | **200** (FAKE reconstruct; ≠ LIVE) | CON find \|Q\|=**124** (**29** def + **95** usage) |
 | nested `backgroundSetIndicator` | **AUTO** (2 qnames) | in owner ego via **contains** | **YES** (qname + contains); TSK-only ego still wrong cue |
 | TSK owns invented | n/a | **0** | Path A ops — do not copy; Path-B: **no** owns mutate |
 | `proof_pass_claimed` | false | **false** | **false** |
@@ -104,4 +105,4 @@ LIVE attach without tip-as-bind: [LIVE-0199-ATTACH.md](LIVE-0199-ATTACH.md). Pat
 
 ## Not this cut
 
-H2H (M5). Claiming M1 pass / LIVE bind. Treating [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as M1 pass. Treating Path A ops meters (CON=29, nested in TSK ego) as SysMLEdge bind. Treating Path-B CON **124** as gold **200**. Treating this Path-B session as SysMLEdge LIVE re-ingest. Neo4j / dual-engine.
+H2H (M5). Claiming full P1 / `proof_pass_claimed`. Treating [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as pass. Treating Path A ops meters (CON=29, nested in TSK ego) as SysMLEdge bind. Inventing CON to chase gold **200**. Treating Path-B CON **124** as gold **200**. Treating this Path-B session as SysMLEdge LIVE re-ingest. Neo4j / dual-engine.
