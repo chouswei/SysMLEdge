@@ -73,6 +73,10 @@ export class SysMLEdgeProject {
       "rev.stale": current.sha !== revSha,
       currentKind: current.kind,
       mappingVersion: bind?.mappingVersion ?? MAPPING_VERSION,
+      memnetSession: bind?.memnetSession,
+      working_ssot: "graph",
+      sysml_role: "machine_mirror",
+      proof_pass_claimed: false,
     };
   }
 

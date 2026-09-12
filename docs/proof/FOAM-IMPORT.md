@@ -24,7 +24,7 @@ Whole-tree **mirror** = **all** `.sysml` under `sysml-models/` (including `model
 
 Default MemNet is **fake** (CI). Live Pi is optional (`docs/proof/MEMNET-LIVE.md`).
 
-One command (**FAKE** bind from this cloud VM; LIVE TCP bind on Pi — [LIVE-BIND-CHECKLIST.md](LIVE-BIND-CHECKLIST.md). Does not claim M1–M5. Does not wait on Path-B CON ingest):
+LIVE attach / LIVE bind operator: [LIVE-0199-ATTACH.md](LIVE-0199-ATTACH.md). Meters: [RUNLOG-2026-09-12-live-bind.md](RUNLOG-2026-09-12-live-bind.md).
 
 ```bash
 export MEMNET_BACKEND=fake

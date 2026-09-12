@@ -1,0 +1,11 @@
+# Session map for Path-B SysML pin-map ingest (MemNet 0.19.9+ SCHEMA).
+# Operator patch (Devicor Pi): TcpMemNet session open --map-file this path.
+# Replaces leftover --map PKG qname,path / PRT … / PORT … / CONN … (rejected on 0.19.9).
+# Built-in LAW / EDG are merged automatically — do not redefine them here.
+SCHEMA PKG ; fields=id name qname path sysml_kind session grain kind_band recycle
+SCHEMA PRT ; fields=id name qname path partNumber sysml_kind recycle
+SCHEMA REQ ; fields=id name qname path requirementId sysml_kind recycle
+SCHEMA POR ; fields=id name qname path sysml_kind recycle
+SCHEMA CON ; fields=id name qname path sysml_kind kind recycle
+SCHEMA TSK ; fields=id goal anchor status recycle
+SCHEMA USR ; fields=id topic content status recycle

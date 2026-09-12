@@ -27,7 +27,7 @@ export function createSysmlEdgeMcpServer(project: SysMLEdgeProject): McpServer {
 
   server.tool(
     "rev_status",
-    "Return current.sha, rev.sha, rev.stale. SysMLEdge owns bind; not on the MemNet wire.",
+    "Return current.sha, rev.sha, rev.stale, memnetSession. Lock (g): working_ssot=graph, sysml_role=machine_mirror. Not a one_way flag. proof_pass_claimed stays false until H2H+cold. SysMLEdge owns bind; not on the MemNet wire.",
     {},
     async () => {
       try {

@@ -19,6 +19,7 @@ test("FAKE bind smoke via MCP: STALE fail-closed then reproject live", async () 
   assert.equal(report.proof_pass_claimed, false);
   assert.equal(report.scaffold_not_p1, true);
   assert.ok(report.notes.some((n) => n.includes("pin_map")));
+  assert.ok(report.notes.some((n) => n.includes("#21")));
   assert.ok(report.mcp);
   for (const t of ["rev_status", "gql_read", "propose", "reproject"]) {
     assert.ok(report.mcp?.tools.includes(t), `missing ${t}`);

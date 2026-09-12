@@ -86,8 +86,17 @@ test("streamable HTTP MCP rev_status + Bearer + no save tool", async () => {
       arguments: {},
     });
     const text = (status.result as { content: { text: string }[] }).content[0]?.text ?? "";
-    const parsed = JSON.parse(text) as { "rev.stale": boolean };
+    const parsed = JSON.parse(text) as {
+      "rev.stale": boolean;
+      working_ssot: "graph";
+      sysml_role: "machine_mirror";
+      proof_pass_claimed: false;
+    };
     assert.equal(parsed["rev.stale"], false);
+    assert.equal(parsed.working_ssot, "graph");
+    assert.equal(parsed.sysml_role, "machine_mirror");
+    assert.equal(parsed.proof_pass_claimed, false);
+    assert.equal("one_way" in parsed, false);
   } finally {
     await new Promise<void>((resolve, reject) => http.close((e) => (e ? reject(e) : resolve())));
   }

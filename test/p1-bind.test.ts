@@ -33,6 +33,10 @@ test("import binds rev.sha; gql_read is live-SSOT", async () => {
   assert.equal(st["rev.stale"], false);
   assert.match(st["rev.sha"] as string, /^[0-9a-f]{40}$/);
   assert.equal(st["current.sha"], st["rev.sha"]);
+  assert.equal(st.working_ssot, "graph");
+  assert.equal(st.sysml_role, "machine_mirror");
+  assert.equal(st.proof_pass_claimed, false);
+  assert.equal("one_way" in st, false);
   const slice = await p.gqlRead({ keyword: "nestedDetector" });
   assert.equal(slice["rev.stale"], false);
   assert.equal(slice["rev.sha"], st["rev.sha"]);

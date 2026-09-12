@@ -230,14 +230,15 @@ export async function runProofHarness(opts: {
   };
 }
 
-/** Path A MemNet meters on mn_b05a9869 are not SysMLEdge bind. Path-B CON is 0.19.9 pending Pi. */
+/** Path A ops and Path-B pin_map are not SysMLEdge bind. */
 export const LIVE_MEMNET_TODO =
-  "LIVE M1: fail-fast CON=0 then Path A TSK ego CON=29 + nested via ops; still not SysMLEdge bind. Path-B CON shipped memnet-llm 0.19.9 (#158), pending Pi roll. proof_pass_claimed=false.";
+  "LIVE M1 Path A on mn_b05a9869 still not bind. Published Path-B narrow mn_0d4f6178 CON=124 + nested qname ego @ 0.19.9+TCP ≠ rev.sha. LIVE bind 2026-09-12 Memnetor: mn_27ce8714 p1-tiny housekeep 56/5000 then same-session invent append 116 — not Foam CON=124. proof_pass_claimed=false until H2H+cold. Not M1 pass.";
 
 export const CITED_MEMNET_SESSION = "mn_b05a9869";
+export const CITED_PATH_B_SESSION = "mn_0d4f6178";
 
 export const BIND_SMOKE_THEATER =
-  "Path A AFTER on mn_b05a9869: CON=29 + nested in TSK ego via ops — still not SysMLEdge rev.sha bind. Path-B CON shipped as memnet-llm 0.19.9 (MemNet #158), pending Pi roll. Do not claim pin_map as bind.";
+  "Kill theater: tip Path-B / pin_map ≠ bind; #21 FAKE ego ≠ LIVE bind; Path A CON=29 on mn_b05a9869 ≠ bind; H2H later scores narrow 124+nested not gold-200. Published Path-B mn_0d4f6178 is not project@rev. leftover --map is not the 0.19.9 SCHEMA wire.";
 
 export interface BindSmokeReport {
   ok: boolean;
@@ -246,7 +247,8 @@ export interface BindSmokeReport {
   proof_pass_claimed: false;
   scaffold_not_p1: true;
   cited_memnet_session: typeof CITED_MEMNET_SESSION;
-  path_b_con_ingest: "parallel_B_not_waited";
+  cited_path_b_session: typeof CITED_PATH_B_SESSION;
+  path_b_con_ingest: "published_narrow_124_not_bind";
   bind: { "rev.sha": string | null; "rev.stale": boolean; "current.sha": string };
   stale: {
     "rev.stale": boolean;
@@ -272,7 +274,7 @@ export async function smokeBind(
   const memnet_mode = memnetMode();
   const notes: string[] = [
     BIND_SMOKE_THEATER,
-    "proof_pass_claimed=false. scaffold/bind smoke ≠ P1 pass. H2H not run. Kuzu unused.",
+    "proof_pass_claimed=false. scaffold/bind smoke ≠ P1 pass. H2H not run (scores 124+nested later). Kuzu unused. No one_way flag (lock g).",
   ];
   const bind = await project.revStatus();
   const bound =
@@ -286,7 +288,8 @@ export async function smokeBind(
     proof_pass_claimed: false,
     scaffold_not_p1: true,
     cited_memnet_session: CITED_MEMNET_SESSION,
-    path_b_con_ingest: "parallel_B_not_waited",
+    cited_path_b_session: CITED_PATH_B_SESSION,
+    path_b_con_ingest: "published_narrow_124_not_bind",
     bind: {
       "rev.sha": bind["rev.sha"],
       "rev.stale": bind["rev.stale"],
@@ -371,7 +374,8 @@ export async function smokeBind(
       proof_pass_claimed: false,
       scaffold_not_p1: true,
       cited_memnet_session: CITED_MEMNET_SESSION,
-      path_b_con_ingest: "parallel_B_not_waited",
+      cited_path_b_session: CITED_PATH_B_SESSION,
+      path_b_con_ingest: "published_narrow_124_not_bind",
       bind: {
         "rev.sha": bind["rev.sha"],
         "rev.stale": bind["rev.stale"],
@@ -413,7 +417,8 @@ export async function smokeBind(
     proof_pass_claimed: false,
     scaffold_not_p1: true,
     cited_memnet_session: CITED_MEMNET_SESSION,
-    path_b_con_ingest: "parallel_B_not_waited",
+    cited_path_b_session: CITED_PATH_B_SESSION,
+    path_b_con_ingest: "published_narrow_124_not_bind",
     bind: {
       "rev.sha": bind["rev.sha"],
       "rev.stale": bind["rev.stale"],

@@ -7,6 +7,8 @@ import { extractFoamGold, goldJson, summariseGold } from "./sysml/gold.js";
 import { importFoamTree, runProofHarness, emptyHeadToHead, smokeBind } from "./proof/harness.js";
 import { TcpMemNet } from "./memnet/tcp.js";
 import { assertLiveMemNetEnv } from "./memnet/env.js";
+import { probeLiveTcp } from "./memnet/probe.js";
+import { isProtectedMemnetSession } from "./memnet/sessions.js";
 
 function usage(): never {
   console.error(`sysmledge — P1 runtime (fixture + Foam proof scaffolding)
@@ -19,6 +21,7 @@ Usage:
   sysmledge smoke-bind [--project DIR] [--mutate-file REL] [--mcp|--no-mcp]
   sysmledge head-to-head [-o FILE]
   sysmledge memnet-check
+  sysmledge live-probe
   sysmledge status [--project DIR]
   sysmledge reproject [--project DIR]
   sysmledge save [--message MSG] [--project DIR]
@@ -31,7 +34,8 @@ Env:
   MEMNET_SERVE_HOST                default 127.0.0.1
   MEMNET_SERVE_PORT                must be 18765 for live proof env
   MEMNET_MCP_PORT                  must be 18766 for TCP-shared MCP
-  MEMNET_LLM_VERSION                e.g. 0.19.8 (required if serve omits version)
+  MEMNET_LLM_VERSION                bounce 0.19.8; LIVE bind 0.19.9 if serve omits version
+  MEMNET_MAP_FILE                  SCHEMA --map-file on the serve host (default fixtures/memnet-session.map)
   SYSMLEDGE_MCP_TOKEN              Bearer token (optional locally)
   SYSMLEDGE_MCP_PORT               default 18776
   FOAM_SOURCE_SHA                  Foam git SHA for gold freeze
@@ -45,7 +49,22 @@ async function main(argv: string[]): Promise<void> {
   const cmd = argv[0];
   if (!cmd || cmd === "-h" || cmd === "--help") usage();
 
+  if (cmd === "live-probe") {
+    const report = await probeLiveTcp({
+      extraHost: process.env.MEMNET_SERVE_HOST,
+    });
+    console.log(JSON.stringify(report, null, 2));
+    if (!report.ok) process.exit(2);
+    return;
+  }
+
   if (cmd === "memnet-check") {
+    const attach = process.env.MEMNET_ATTACH_SESSION;
+    if (isProtectedMemnetSession(attach)) {
+      throw new Error(
+        `refuse MEMNET_ATTACH_SESSION=${attach}: cited Path-A/Path-B sessions are not SysMLEdge bind. Open a new ingest session (docs/proof/LIVE-0199-ATTACH.md).`,
+      );
+    }
     const live = assertLiveMemNetEnv();
     const tcp = new TcpMemNet({ host: live.host, port: live.servePort });
     const version = await tcp.assertEngineFloor();
@@ -57,6 +76,7 @@ async function main(argv: string[]): Promise<void> {
           serve: `${live.host}:${live.servePort}`,
           mcp_port: live.mcpPort,
           transport: live.transport,
+          proof_pass_claimed: false,
         },
         null,
         2,
