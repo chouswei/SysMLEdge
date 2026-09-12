@@ -15,7 +15,7 @@ Pi artifact: `/tmp/h2h-mn_be03c1a9/RUNLOG-h2h.json` (not copied into this reposi
 | `proof_pass_claimed` | **false** |
 | P1 / row 9 / M5 | **not claimed** |
 | Cold / non-Core | **not run** |
-| Product H2H | still **Foam narrow** on **`mn_0d4f6178`** cite + **cold** |
+| Product H2H | still **Foam bind** on **`mn_0d4f6178`** + **cold**. **Track B unlocked.** Tip must-win ([#31](https://github.com/chouswei/SysMLEdge/pull/31)) does **not** set `proof_pass_claimed` |
 | **(g)** continuous graph-as-SSOT | **not sold** — wait **(`r`)** |
 | SysMLEdge CLI `head-to-head` | **null scaffold** (known gap) |
 | Neo4j / dual-engine | **unused** |
@@ -69,7 +69,7 @@ Still emits `status: NOT_EXECUTED` with **null** `wall_clock_ms` / `context_toke
 
 **Invent next (CLI):** a recorder that copies an operator JSON (e.g. the Pi `RUNLOG-h2h.json`) without generating numbers — **not** a scaffold that invents timings.
 
-**Invent next (product):** Foam **narrow** H2H on **`mn_0d4f6178`** cite + **cold**. MUST NOT sell continuous **(g)** until **(`r`)**.
+**Invent next (product):** Foam **bind** H2H on **`mn_0d4f6178`** + **cold** (**Track B unlocked**). Product bind H2H still logs wall as **P/F**. MUST NOT sell continuous **(g)** until **(`r`)**.
 
 ## Explicit non-claims
 

@@ -65,7 +65,7 @@ Serve/MCP ports on the floor row (`:18765` / `:18766`). `proof_pass_claimed` sta
 | STALE fail-closed | **true** (`gql_read` default / `propose` refused while stale) |
 | `reproject` live | **true** |
 | MCP gates (`rev_status` / `gql_read` / `propose` / `reproject`) | **true** |
-| H2H | **plumbing** on `mn_be03c1a9` ([RUNLOG-2026-09-12-h2h-plumbing.md](RUNLOG-2026-09-12-h2h-plumbing.md)). Foam **tip** Track A Devicor `wall_pass` **0/3** (A **307.745ms** vs B **1286.676ms**); context **3/3** · no_drop **3/3** — [RUNLOG-2026-09-12-h2h-foam-tip.md](RUNLOG-2026-09-12-h2h-foam-tip.md). **≠** Foam M5 / ≠ bind. Product bind H2H **held** |
+| H2H | **plumbing** on `mn_be03c1a9` ([RUNLOG-2026-09-12-h2h-plumbing.md](RUNLOG-2026-09-12-h2h-plumbing.md)). Foam **tip** Track A ([#31](https://github.com/chouswei/SysMLEdge/pull/31)): must-win **PASS**; wall **FAIL** **0/3** log-only (A **307.745ms** vs B **1286.676ms**) — [RUNLOG-2026-09-12-h2h-foam-tip.md](RUNLOG-2026-09-12-h2h-foam-tip.md). **≠** Foam M5 / ≠ bind. **Track B** Foam bind **unlocked**; product bind H2H **not run** |
 | cold | **held** (not run) |
 | `proof_pass_claimed` | **false** |
 
