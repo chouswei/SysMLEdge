@@ -58,7 +58,7 @@ export function emptyHeadToHead(): HeadToHeadLog {
     status: "NOT_EXECUTED",
     proof_pass_claimed: false,
     known_gap:
-      "CLI head-to-head is a null scaffold. It does not time Arm A or Arm B. Prefer docs honesty over a fake timer. Operator plumbing meters (p1-tiny, grep wins ~6ms vs ~1992ms) live in docs/proof/RUNLOG-2026-09-12-h2h-plumbing.md.",
+      "CLI head-to-head is a null scaffold. It does not time Arm A or Arm B. Prefer docs honesty over a fake timer. Operator plumbing meters (p1-tiny, A_total 6ms/1181B vs B_total 1992ms/8557B) live in docs/proof/RUNLOG-2026-09-12-h2h-plumbing.md.",
     operator_plumbing_runlog: "docs/proof/RUNLOG-2026-09-12-h2h-plumbing.md",
     note:
       "Do not invent wall-clock or token numbers. Fill only from a timed operator run. Whole-tree dump baseline is measured later as Foam .sysml byte/token count. Plumbing H2H ≠ Foam M5 / row 9.",

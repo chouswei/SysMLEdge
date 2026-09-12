@@ -49,7 +49,7 @@ Foam is the **one** SoI. Import the whole `sysml-models/` tree (all `.sysml`). D
 FOAM_DIR=/tmp/foam-soi SYSMLEDGE_PROJECT=/tmp/foam-desk npm run bind:smoke   # FAKE bind; not M1–M5 / P1 pass
 npx tsx src/cli.ts gold /tmp/foam-soi/sysml-models --sha "$(git -C /tmp/foam-soi rev-parse HEAD 2>/dev/null || echo UNKNOWN)"
 npx tsx src/cli.ts proof --project /tmp/foam-desk --foam-ssot /tmp/foam-soi/sysml-models
-npx tsx src/cli.ts head-to-head   # timings stay null until a timed run
+npx tsx src/cli.ts head-to-head   # null scaffold; plumbing meters in docs/proof/RUNLOG-2026-09-12-h2h-plumbing.md
 ```
 
 ### Live Pi (memnet-llm ≥0.19.9 + TCP; bounce 0.19.8)
