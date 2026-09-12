@@ -125,7 +125,7 @@ export class TcpMemNet implements MemNetAdapter {
     }
     if (isProtectedMemnetSession(sid)) {
       throw new Error(
-        `refuse session ${sid}: cited Path-A/Path-B sessions are not SysMLEdge bind`,
+        `refuse session ${sid}: cited Path-A/Path-B or dirty archive sessions are not lock (f) bind`,
       );
     }
     const attach = process.env.MEMNET_ATTACH_SESSION;

@@ -6,7 +6,7 @@ SysMLEdge **bind** on live `memnet serve`. **Not** Path-B CON ingest. **Not** `p
 
 `proof_pass_claimed: false` until LIVE bind **and** timed H2H **and** cold. H2H scores **narrow 124+nested**, not gold-200.
 
-Cite Path-B **`mn_0d4f6178`** as published M1 meters **only**. Cite Path A **`mn_b05a9869`** AFTER (CON=29) as **engine ops**. Neither session id is `rev.sha`. LIVE bind **opens a new ingest session**.
+Cite Path-B **`mn_0d4f6178`** as published M1 meters **only**. Cite Path A **`mn_b05a9869`** AFTER (CON=29) as **engine ops**. Dirty **`mn_27ce8714`** = honesty archive only. Live **(f)** = **`mn_be03c1a9`** @ **`f6768b1108b20c15212f0895f41fb7a27b6a408d`**. Neither Path A/B id is `rev.sha`. LIVE bind **opens a new ingest session**. MUST NOT sell continuous same-session **(g)** until **(r)**.
 
 Lock **(g):** `rev_status.working_ssot=graph`, `sysml_role=machine_mirror`. **No `one_way` flag.**
 
@@ -40,7 +40,7 @@ export MEMNET_MAP_FILE="$(pwd)/fixtures/memnet-session.map"
 npm run bind:live
 ```
 
-MUST NOT set `MEMNET_ATTACH_SESSION` to reuse a prior sid (lock **(f)**: reproject opens a **new** session). MUST NOT attach `mn_0d4f6178` or `mn_b05a9869`.
+MUST NOT set `MEMNET_ATTACH_SESSION` to reuse a prior sid (lock **(f)**). MUST NOT attach `mn_0d4f6178`, `mn_b05a9869`, or dirty archive `mn_27ce8714`.
 
 Record (operator): [RUNLOG-2026-09-12-live-bind.md](RUNLOG-2026-09-12-live-bind.md).
 
@@ -49,15 +49,16 @@ Record (operator): [RUNLOG-2026-09-12-live-bind.md](RUNLOG-2026-09-12-live-bind.
 | Floor | **0.19.9** + TCP **:18765** / **:18766** |
 | `memnet-check` | `ok=true` `memnet_llm=0.19.9` `transport=tcp` `proof_pass_claimed=false` |
 | Desk | `fixtures/p1-tiny` (`FOAM_DIR` absent) |
-| SysMLEdge `rev.sha` | `1664f20a41320b8ceba81340ea237d8c19245894` |
+| SysMLEdge `rev.sha` (archive first bind) | `1664f20a41320b8ceba81340ea237d8c19245894` |
 | `rev.stale` | **false** |
-| `memnetSession` | **`mn_27ce8714`** (**not** A/B) |
-| housekeep | rows **56/5000** edges **30** orphans **26** — **not** Foam CON=124 |
+| dirty archive `memnetSession` | **`mn_27ce8714`** — honesty only; **not** live **(f)** |
+| **(f)** clean | **`mn_be03c1a9`** @ **`f6768b1108b20c15212f0895f41fb7a27b6a408d`** |
+| housekeep (archive first) | rows **56/5000** edges **30** orphans **26** — **not** Foam CON=124 |
 | smoke | `BIND_SMOKE_LIVE=1` **ok**; STALE fail-closed; reproject/MCP gates **true** |
 | map | SCHEMA `--map-file` `fixtures/memnet-session.map` |
-| invent meter (same sid) | `InventProbeBar` / `inventProbe` / `probeOut`; `rev.sha` → `1c1e3e50769cc23d8111548d19277cdbddfd1ce5`; gold 11→13 / 12→13 / 6→6; zip≡disk PASS; InventProbe in MemNet yes; mirror-lie PASS |
-| append caveat | rows **56→116**; find PRT **11→24** / CON **5→10** (duplicate qnames). Honesty, not replace. **Lock (f):** next reproject opens a **new** sid. **(r)** deferred |
-| H2H / cold | **held** (after clean **(f)** path)
+| invent meter (same sid, archive) | `InventProbeBar` / `inventProbe` / `probeOut`; `rev.sha` → `1c1e3e50769cc23d8111548d19277cdbddfd1ce5`; gold 11→13 / 12→13 / 6→6; zip≡disk PASS; InventProbe in MemNet yes; mirror-lie PASS |
+| append caveat | rows **56→116**; find PRT **11→24** / CON **5→10**. Honesty archive. MUST NOT sell continuous same-session **(g)** until **(r)** |
+| H2H / cold | **held** (scores **narrow** 124+nested only) |
 | `proof_pass_claimed` | **false** |
 
 ## Refuse
@@ -68,6 +69,8 @@ Record (operator): [RUNLOG-2026-09-12-live-bind.md](RUNLOG-2026-09-12-live-bind.
 - Advertising `one_way: true` as product truth (lock **(g)**)
 - leftover `--map` TAG wire on 0.19.9
 - Claiming M1 / P1 / `proof_pass_claimed` from this checklist
-- Starting H2H from this checklist (wait a clean **(f)** reproject path)
+- Scoring H2H vs gold-200 (narrow claim only)
+- Selling continuous same-session **(g)** until **(r)**
+- Treating dirty `mn_27ce8714` as live **(f)**
 - Same-sid replace-ingest **(r)** (deferred; no MemNet API this cut)
 - Inventing CON / Neo4j / dual-engine / dual-write editor

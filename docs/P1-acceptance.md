@@ -11,13 +11,13 @@ This document is the P1 pass/fail sheet. It does not implement runtime. `proof_p
 
 No scope widen. Source: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#ceo-core-p1-gate-2026-09-12). **Cite:** Edison Core (Thomas Alva Edison / Horcrux) + CEO Core 2026-09-12.
 
-**Sequence:** M1 fidelity → `rev` bind → **mirror meter** (PASS on `mn_27ce8714`) → **lock (f)** (new MemNet session on reproject) → timed H2H → cold non-Core. MUST NOT time H2H before a clean **(f)** path. **(r)** deferred.
+**Sequence:** M1 fidelity → `rev` bind → **mirror meter** (PASS, dirty archive `mn_27ce8714`) → **lock (f)** clean `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d` → timed H2H (narrow only) → cold non-Core. **(r)** deferred.
 
-**Pass only:** live `0.19.8`+TCP after bind; wall-clock + context vs same Foam Qs; fail-closed STALE; no silent drop. LIVE bind `mn_27ce8714` is **p1-tiny** (CON \|Q\|=**5**) — **no M1 claim**. Narrow M1 CON **124** + nested = Foam `mn_0d4f6178` only. **(g) not proven.**
+**Pass only:** live `0.19.8`+TCP after bind; wall-clock + context vs same Foam Qs; fail-closed STALE; no silent drop. **(f)** clean bind `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d` is **p1-tiny** — **no M1 claim**. Dirty `mn_27ce8714` = honesty archive only. Narrow M1 CON **124** + nested = Foam `mn_0d4f6178` only. H2H scores that **narrow** claim only. **(g) not proven.** MUST NOT sell continuous same-session **(g)** until **(r)**.
 
-**Kill theater:** fake CI, tip-as-bind, H2H before meters, H2H vs gold-200, H2H before a clean **(f)** path, selling **(g)** as proven, claiming M1 on `mn_27ce8714`, same-sid replace-ingest **(r)** this cut.
+**Kill theater:** fake CI, tip-as-bind, H2H before meters, H2H vs gold-200, selling **(g)** as proven, selling continuous same-session **(g)** until **(r)**, treating dirty `mn_27ce8714` as live **(f)**, claiming M1 on `mn_27ce8714` / `mn_be03c1a9`, same-sid replace-ingest **(r)** this cut.
 
-**Must-fix before Foam gold:** full-clone construct matrix; nested ingest without hand CREATE (or narrow the claim); **lock (f)** after mirror **PASS** (new MemNet session id on reproject; ops-only; **(r)** deferred); timed H2H on 0.19.8+TCP **after** a clean **(f)** path. Mirror-lie **PASS** (InventProbe; gold parts 11→13, ports 12→13; zip≡disk; append honesty) does **not** sell **(g)**.
+**Must-fix before Foam gold:** full-clone construct matrix; nested ingest without hand CREATE (or narrow the claim); **lock (f)** recorded (`mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d`; **(r)** deferred); timed H2H on 0.19.8+TCP scoring **narrow** only. Mirror-lie **PASS** on dirty archive `mn_27ce8714` (InventProbe; gold parts 11→13, ports 12→13; zip≡disk; append honesty) does **not** sell **(g)**.
 
 **Kill risks:** silent drop (`connections_parsed:0` / omitted files); tip Path-B sold as bind; full KerML in 2 weeks; shrink zip to parts-only; silent drop / invent on mutate→zip (**kill (g)**).
 
@@ -30,15 +30,15 @@ No scope widen. Source: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#ceo-core-p1-gate-202
 **Do not invert:**
 
 1. **M1** gold fidelity (construct matrix + nested without hand-CREATE, **or** narrow) + **publish counts**. Narrow CON **124** = `mn_0d4f6178` only.
-2. SysMLEdge `rev.sha` / STALE / reproject bind (**M2–M3**). `mn_27ce8714` = p1-tiny — **no M1 claim**.
-3. **(g) mirror:** typed mutate→zip on `mn_27ce8714` — **PASS**. **(g)** stays **provisional**. Same-session re-ingest **appends** (rows 56→116).
-4. **Lock (f)** (user GO 2026-09-12 + Memnetor): on reproject, open a **new** MemNet session id (ops-only). **(r)** deferred. No MemNet API change this cut.
-5. Timed H2H wall-clock + context on **0.19.8+TCP after bind and after a clean (f) path** (**M5** / row **9**). Score the **narrow** claim (124 + nested ego); gold-200 stays out of the competitor story.
+2. SysMLEdge `rev.sha` / STALE / reproject bind (**M2–M3**). **(f)** clean = `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d` — p1-tiny, **no M1 claim**. Dirty `mn_27ce8714` = honesty archive only.
+3. **(g) mirror:** typed mutate→zip on dirty archive `mn_27ce8714` — **PASS**. **(g)** stays **provisional**. Same-session re-ingest **appends** (rows 56→116). MUST NOT sell continuous same-session **(g)** until **(r)**.
+4. **Lock (f)** exact (CEO Core): clean session **`mn_be03c1a9`** @ **`f6768b1108b20c15212f0895f41fb7a27b6a408d`**. On reproject, open a **new** MemNet session id (ops-only). **(r)** deferred. No MemNet API change this cut.
+5. Timed H2H wall-clock + context on **0.19.8+TCP after bind** (**M5** / row **9**). Score the **narrow** claim only (124 + nested ego); gold-200 stays out of the competitor story.
 6. Then cold non-Core yes/no (**row 12**)
 
 **Day-1 instruments:** env lock 0.19.8+TCP; M1 counts; bind existence (`rev.sha` + stale on structure read); STALE smoke (mutate → STALE → `propose` refused).
 
-**Refuse:** P2 UI / canvas / IDE / Pro–Team–marketplace; full KerML; parts-only zip; dual-engine / Kuzu / Neo4j; C rewrite now; second desk; MemNet mission as `project@rev`; timing H2H before M1+bind **or** before a clean **(f)** path; scaffold CI as gold; expand `pin_map` / impact before fidelity; sell **(g)** as proven; claim M1 on `mn_27ce8714`; same-sid replace-ingest **(r)** this cut; claim `proof_pass`.
+**Refuse:** P2 UI / canvas / IDE / Pro–Team–marketplace; full KerML; parts-only zip; dual-engine / Kuzu / Neo4j; C rewrite now; second desk; MemNet mission as `project@rev`; timing H2H before M1+bind; scaffold CI as gold; expand `pin_map` / impact before fidelity; sell **(g)** as proven; sell continuous same-session **(g)** until **(r)**; treat dirty `mn_27ce8714` as live **(f)**; claim M1 on `mn_27ce8714` / `mn_be03c1a9`; same-sid replace-ingest **(r)** this cut; claim `proof_pass`.
 
 | Fail | Stop |
 |------|------|
@@ -48,7 +48,7 @@ No scope widen. Source: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#ceo-core-p1-gate-202
 | M5 loses with numbers **after** fidelity | Reopen engine **form** only then |
 | Row 12 cold **no** | Kill Pro/beachhead |
 | Hours on freeze list | Cut immediately |
-| **(g)** sold as proven / M1 claimed on `mn_27ce8714` | Stop. **(g)** is **provisional**. `proof_pass_claimed` stays **false** |
+| **(g)** sold as proven / continuous same-session **(g)** before **(r)** / M1 claimed on `mn_27ce8714` or `mn_be03c1a9` | Stop. Dirty `mn_27ce8714` is honesty archive only. **(g)** is **provisional**. `proof_pass_claimed` stays **false** |
 
 Buyer roots **1, 2, 3, and 6** (trust, SSOT owner, beat-grep ask, ship rev) MUST pass via the **eight contract** rows below. Mapping: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md). Do not add extra **buyer-root** rows. Foam proof **9–12** is the NARROW wedge bar, not a ninth buyer-root row. Roots 4, 5, and 7 are locks, not extra P1 tests.
 
@@ -59,7 +59,7 @@ Buyer roots **1, 2, 3, and 6** (trust, SSOT owner, beat-grep ask, ship rev) MUST
 | 1 | Import | Import Foam `sysml-models/` (dir or zip) = **all** `.sysml` in the tree. Never parts-only SSOT. `rev.sha` bound. MemNet is **Foam-complete** (every construct Foam uses — not parts/ports forever, not whole KerML). Nodes only from that tree. Previous graph nodes gone. |
 | 2 | GQL read | Via SysMLEdge MCP `gql_read` (or equivalent): reachability, ownership, usage for a known Foam element **without** stuffing the full `.sysml` tree into the agent context. Answers include `rev.sha` and `rev.stale=false`. P1 proof MAY still use MemNet `pin_map` for M1–M4. |
 | 3 | STALE detect | Change a SysML file on disk without reproject. Structure reads with default `staleOk=false` **fail** with `code: STALE`. With `staleOk=true`, read may succeed but MUST return `rev.stale=true`. `propose` while STALE **refused**. |
-| 4 | Reproject | `reproject` from current SysML → new bind; STALE clears; live reads succeed. **Lock (f):** LIVE reproject opens a **new MemNet session id** (ops-only). Same-session replace-ingest is **not** invented (**(r)** deferred). |
+| 4 | Reproject | `reproject` from current SysML → new bind; STALE clears; live reads succeed. **Lock (f) exact:** LIVE clean session **`mn_be03c1a9`** @ **`f6768b1108b20c15212f0895f41fb7a27b6a408d`**. Same-session replace-ingest is **not** invented (**(r)** deferred). Dirty `mn_27ce8714` = honesty archive only. |
 | 5 | Propose isolation | `propose` writes only under `sysml-models/proposals/<id>/` (`PATCH.md` + `delta.sysml`). Current mirror tree unchanged; no LLM/GQL dump as SSOT. P1 does **not** add a dual-write editor row. |
 | 6 | Human save + history | Human whole-tree save → new `rev.sha`. Previous SHA remains **downloadable**. |
 | 7 | Download shape | Download @ rev = **SysML zip only**. No MemNet/GQL/Kuzu export as “the model”. |
@@ -114,7 +114,7 @@ Log wall-clock, **context footprint** (prompt tokens per Q + whole-tree-dump bas
 
 ## MemNet proof (2-week, ALL required) — Elon 2026-09-11
 
-**Alongside Foam.** KEEP MemNet as sole engine; **NARROW** the surface. No Kuzu hedge. **Kill only if** this proof fails. Amendment (Memnetor 2026-09-09/10): [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#memnet-engine-elon-hard-review-2026-09-11). **Sequence:** Edison Core — M1 before bind; **(g)** mirror **PASS** on `mn_27ce8714` (append honesty); **lock (f)** (new sid on reproject) before timed H2H; timed H2H (M5 / row 9) only after M1+bind+mirror+clean **(f)**; row 12 last. MUST NOT invert. **(g) provisional.** **(r)** deferred. `proof_pass_claimed: false`.
+**Alongside Foam.** KEEP MemNet as sole engine; **NARROW** the surface. No Kuzu hedge. **Kill only if** this proof fails. Amendment (Memnetor 2026-09-09/10): [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#memnet-engine-elon-hard-review-2026-09-11). **Sequence:** Edison Core — M1 before bind; **(g)** mirror **PASS** on dirty archive `mn_27ce8714` (append honesty); **lock (f)** clean `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d`; timed H2H (M5 / row 9) scores **narrow** only; row 12 last. MUST NOT invert. **(g) provisional.** MUST NOT sell continuous same-session **(g)** until **(r)**. `proof_pass_claimed: false`.
 
 **Proof env:** `memnet-llm==0.19.8` + TCP-shared MCP (`MEMNET_MCP_TRANSPORT=tcp`, serve `:18765` / mcp `:18766`). UNKNOWN on a required field = **fail that line**.
 
@@ -122,9 +122,9 @@ Log wall-clock, **context footprint** (prompt tokens per Q + whole-tree-dump bas
 
 | # | Name | Pass criteria |
 |---|------|----------------|
-| **M1** | Gold fidelity (narrow) | **Published** (Core GO 2026-09-12; advisors Jon/Edison/Steve/Elon + CEO prefer **narrow+counts**). Path-B LIVE `mn_0d4f6178` @ **memnet-llm==0.19.9+TCP**. CON find \|Q\|=**124** (**29** `connection_def` + **95** `connectionUsage`) — ingest alone, **no** owns mutate. Nested: both `backgroundSetIndicator` gold qnames close via SysML `qname=` `pin_map` + `contains` (Truncation=false on tip ego). TSK-only ego = **wrong cue** (not claimed). Parser gold `connections_parsed` **200** = **reference only**, **not** the M1 fail bar. MUST NOT invent CON to chase 200. [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego ≠ pass; this publish is the LIVE narrow. **LIVE-bind gate cleared.** LIVE bind `mn_27ce8714` is **p1-tiny** — **no M1 claim**. Mirror-lie **PASS** (append honesty); **(g) provisional**. **Lock (f)** = new MemNet session on reproject; **(r)** deferred. H2H after clean **(f)**. `proof_pass_claimed` stays **false**. Kill: silent drop (`connections_parsed:0` / omitted files). Zero extras not in SysML. |
+| **M1** | Gold fidelity (narrow) | **Published** (Core GO 2026-09-12; advisors Jon/Edison/Steve/Elon + CEO prefer **narrow+counts**). Path-B LIVE `mn_0d4f6178` @ **memnet-llm==0.19.9+TCP**. CON find \|Q\|=**124** (**29** `connection_def` + **95** `connectionUsage`) — ingest alone, **no** owns mutate. Nested: both `backgroundSetIndicator` gold qnames close via SysML `qname=` `pin_map` + `contains` (Truncation=false on tip ego). TSK-only ego = **wrong cue** (not claimed). Parser gold `connections_parsed` **200** = **reference only**, **not** the M1 fail bar. MUST NOT invent CON to chase 200. [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego ≠ pass; this publish is the LIVE narrow. LIVE-bind gate **cleared.** **(f)** clean bind `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d` is **p1-tiny** — **no M1 claim**. Dirty `mn_27ce8714` = honesty archive only. Mirror-lie **PASS** on the archive (append honesty); **(g) provisional**. MUST NOT sell continuous same-session **(g)** until **(r)**. H2H scores **narrow** only. `proof_pass_claimed` stays **false**. Kill: silent drop (`connections_parsed:0` / omitted files). Zero extras not in SysML. |
 | **M2** | Query slice | Same 3 Foam Qs via `pin_map` and/or `gql_*`. **SysMLEdge** binds `rev.sha` + `rev.stale=false` (absent on MemNet wire). **UNKNOWN = fail that line.** Impact: closure on gold **or** narrowed neighbourhood/usage (see above). |
-| **M3** | STALE/reproject | **SysMLEdge-owned** bind. Mutate → fail-closed → `propose` refused → `reproject` → live. **Lock (f):** reproject opens a **new** MemNet session id. Timed / scripted. MUST NOT invent first-class STALE inside MemNet. MUST NOT same-sid replace-ingest **(r)**. Theater if bind is missing. |
+| **M3** | STALE/reproject | **SysMLEdge-owned** bind. Mutate → fail-closed → `propose` refused → `reproject` → live. **Lock (f) exact:** clean `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d`. Timed / scripted. MUST NOT invent first-class STALE inside MemNet. MUST NOT same-sid replace-ingest **(r)**. Dirty `mn_27ce8714` is archive only. Theater if bind is missing. |
 | **M4** | Bounce regression | **Re-run once** in the 2-week window on **0.19.8** TCP-shared: `session_save` → restart **serve + MCP together** → load → gold `pin_map` **non-empty**. Record memnet-llm version. **Fail if** MCP `session_list` ≠ serve. Known: **FAIL on 0.19.7**. Serve death without `session_save` loses in-process sessions. |
 | **M5** | Wall-clock + context vs grep | **Must-fix:** timed H2H on **0.19.8+TCP** after `rev` bind. Same 3 Qs vs grep/LSP. **MUST time wall-clock** (Path-B UNKNOWN until timed). Also **context footprint**. **CEO+Elon Core (verbatim):** Timed H2H must score the **narrow** claim (124 + nested ego) — gold-200 stays out of the competitor story. Kill: tip Path-B sold as bind; H2H vs gold-200. May share logs with row 9. |
 
@@ -141,4 +141,4 @@ Log wall-clock, **context footprint** (prompt tokens per Q + whole-tree-dump bas
 - **Contract:** all eight rows (1–8) pass on the Foam pilot tree with MemNet + MCP (or CLI stand-in for the same contracts). P1 = Foam-complete + these rows — **not** whole-language coverage.
 - **Wedge:** all four Foam proof items (9–12) pass (NARROW fail/pass unchanged).
 - **Engine:** all five MemNet proof items (M1–M5) pass. Until then MemNet is KEEP/NARROW, not a dual-engine hedge.
-- **Not done:** scaffold ≠ P1 ([#11](https://github.com/chouswei/SysMLEdge/pull/11) / [#12](https://github.com/chouswei/SysMLEdge/pull/12)). [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego ≠ pass. M1 LIVE-bind gate **cleared** by published Path-B narrow+counts; mirror-lie **PASS** on `mn_27ce8714`; **(g) not proven.** **Lock (f)** explicit (new sid on reproject). **(r)** deferred. Full P1 still **false** until clean **(f)** + H2H + cold. Edison: do not invert M1 → bind → mirror → **(f)** → H2H → row 12. LIVE bind `mn_27ce8714` is not Foam M1.
+- **Not done:** scaffold ≠ P1 ([#11](https://github.com/chouswei/SysMLEdge/pull/11) / [#12](https://github.com/chouswei/SysMLEdge/pull/12)). [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego ≠ pass. M1 LIVE-bind gate **cleared** by published Path-B narrow+counts; mirror-lie **PASS** on dirty archive `mn_27ce8714`; **(g) not proven.** MUST NOT sell continuous same-session **(g)** until **(r)**. **Lock (f) exact:** `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d`. **(r)** deferred. Full P1 still **false** until H2H (narrow only) + cold. Edison: do not invert M1 → bind → mirror → **(f)** → H2H → row 12. p1-tiny is not Foam M1.

@@ -2,7 +2,7 @@
 
 **CEO Core:** [#23](https://github.com/chouswei/SysMLEdge/pull/23) M1 narrow published → LIVE bind **unlocked**. [#18](https://github.com/chouswei/SysMLEdge/pull/18) FAKE bind remains scaffold. [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego ≠ LIVE bind. [#26](https://github.com/chouswei/SysMLEdge/pull/26) lock **(g)** — graph = SaaS working SSOT; SysML = machine-kept mirror. **Strip `one_way` product pitch.**
 
-`proof_pass_claimed: false`. **Not Foam M1.** Not P1. H2H **held** until a clean **(f)** path. Cold **held**. This session is **p1-tiny**, **not** Foam CON=124. **(g) provisional.** **(r)** deferred.
+**CEO Core exact (user GO + Memnetor):** lock **(f)** clean session = **`mn_be03c1a9`** @ **`rev.sha` `f6768b1108b20c15212f0895f41fb7a27b6a408d`**. Dirty **`mn_27ce8714`** = honesty archive only. MUST NOT sell continuous same-session **(g)** until **(r)**. H2H scores the **narrow** claim only (124 + nested ego). `proof_pass_claimed: false`. **Not Foam M1.** Not P1. H2H **held**. Cold **held**. p1-tiny, **not** Foam CON=124. **(g) provisional.** **(r)** deferred.
 
 ## Kill theater
 
@@ -13,7 +13,8 @@
 | Path A AFTER on `mn_b05a9869` | CON=**29** via ops. **≠** bind. **Refused attach.** |
 | Foam CON=124 | Desk is **p1-tiny**. Housekeep **56** rows ≠ Foam ingest. |
 | leftover `--map PKG qname,path` | 0.19.9 rejects leftover `--map`. Operator patch = SCHEMA `--map-file`. |
-| `one_way: true` | Lock **(g)** — not product truth. |
+| `mn_27ce8714` | **Dirty honesty archive** (append). **≠** live **(f)** bind. |
+| Continuous same-session **(g)** | Deferred until **(r)**. Mirror-lie PASS ≠ sell. |
 
 ## Floor (Memnetor)
 
@@ -37,12 +38,21 @@
 
 Serve/MCP ports on the floor row (`:18765` / `:18766`). `proof_pass_claimed` stays **false**.
 
-## SysMLEdge bind (exact)
+## SysMLEdge bind (exact) — lock **(f)** clean
+
+| Field | Value |
+|-------|--------|
+| `memnetSession` | **`mn_be03c1a9`** (CEO Core **(f)** clean; **not** dirty archive `mn_27ce8714`; **not** Path A/B) |
+| `rev.sha` | `f6768b1108b20c15212f0895f41fb7a27b6a408d` |
+| Desk | **`fixtures/p1-tiny`** |
+| Operator | new-sid reproject (ops-only). **(r)** deferred |
+
+## Archive — dirty `mn_27ce8714` (honesty only; not live **(f)**)
 
 | Field | Value |
 |-------|--------|
 | `memnetSession` | **`mn_27ce8714`** (**not** Path A `mn_b05a9869`, **not** Path B `mn_0d4f6178`) |
-| `rev.sha` | `1664f20a41320b8ceba81340ea237d8c19245894` |
+| `rev.sha` (first bind) | `1664f20a41320b8ceba81340ea237d8c19245894` |
 | `rev.stale` | **false** |
 | Desk | **`fixtures/p1-tiny`** (`FOAM_DIR` **absent**) |
 | Operator patch | `TcpMemNet` SCHEMA **`--map-file` `fixtures/memnet-session.map`** (replaces leftover `--map PKG qname,path`) |
@@ -59,7 +69,7 @@ Serve/MCP ports on the floor row (`:18765` / `:18766`). `proof_pass_claimed` sta
 | cold | **held** (not run) |
 | `proof_pass_claimed` | **false** |
 
-## Housekeep on `mn_27ce8714` — **not** Foam CON=124
+## Housekeep on dirty archive `mn_27ce8714` — **not** Foam CON=124; **not** live **(f)**
 
 | Meter | Value |
 |-------|------:|
@@ -103,7 +113,7 @@ Path-B ingest on an already-open session **does not replace**. Gold/zip/rev are 
 | `find` PRT | **11** | **24** |
 | `find` CON | **5** | **10** |
 
-Duplicate **qnames** after append. **Lock (f)** (user GO 2026-09-12 + Memnetor): on reproject, open a **new MemNet session id** (ops-only). **(r)** replace-ingest is **deferred** — **no MemNet API change this cut**. MUST NOT treat 116/24/10 as gold 13/13/6. H2H next after a clean **(f)** path. `proof_pass_claimed: false`.
+Duplicate **qnames** after append. **Lock (f)** clean = **`mn_be03c1a9`** @ **`f6768b1108b20c15212f0895f41fb7a27b6a408d`**. This dirty sid is **honesty archive only**. **(r)** replace-ingest is **deferred** — **no MemNet API change this cut**. MUST NOT sell continuous same-session **(g)** until **(r)**. MUST NOT treat 116/24/10 as gold 13/13/6. H2H scores **narrow** only. `proof_pass_claimed: false`.
 
 ## Operator command (Pi)
 
@@ -114,10 +124,11 @@ BIND_SMOKE_LIVE=1 npm run bind:live
 
 ## Explicit non-claims
 
-- Not Foam M1 pass on `mn_27ce8714`
+- Not Foam M1 pass on `mn_27ce8714` or `mn_be03c1a9`
+- Not treat dirty `mn_27ce8714` as live **(f)** (honesty archive only)
+- Not sell continuous same-session **(g)** until **(r)**
 - Not `proof_pass_claimed` (invent meter ≠ P1 / H2H)
-- Not H2H / cold
+- Not H2H / cold (H2H scores **narrow** only when run)
 - Not Neo4j / dual-engine / dual-write editor
-- Not attach to `mn_0d4f6178` / `mn_b05a9869`
+- Not attach to `mn_0d4f6178` / `mn_b05a9869` / dirty `mn_27ce8714`
 - Not treat same-session append (rows 56→116) as replace-on-reproject (**(r)** deferred)
-- Not skip lock **(f)** (reproject must open a **new** MemNet session id)

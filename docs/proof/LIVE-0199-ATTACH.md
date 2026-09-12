@@ -51,7 +51,7 @@ Then measure (fill [LIVE-M1-CHECKLIST.md](LIVE-M1-CHECKLIST.md)):
 4. Same for config-panel nested usage.
 5. `gql_impact` on `…::foamDetection` — neighbourhood/usage only until closure is measured.
 
-Until LIVE `rev.sha` is recorded from **SysMLEdge** `rev_status` on a **new** session, do not treat Path-B `pin_map` as bind. LIVE meters (p1-tiny, Memnetor): [RUNLOG-2026-09-12-live-bind.md](RUNLOG-2026-09-12-live-bind.md) — `mn_27ce8714`, housekeep **56/5000**, `proof_pass_claimed: false`. **Not Foam M1.** **Not CON=124.**
+Until LIVE `rev.sha` is recorded from **SysMLEdge** `rev_status` on a **new** session, do not treat Path-B `pin_map` as bind. **(f)** clean (Memnetor): `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d`. Dirty `mn_27ce8714` = honesty archive only (housekeep **56→116**). `proof_pass_claimed: false`. **Not Foam M1.** **Not CON=124.** MUST NOT sell continuous same-session **(g)** until **(r)**.
 
 ## Kill theater
 
