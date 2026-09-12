@@ -69,7 +69,7 @@ Exact claimed list. **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team 
 | **4** | chat-as-SSOT | Ship-rev zip + propose-only trail. Chat is not SSOT. |
 | **5** | mid-flight reproject | Re-enter after Save/reproject. |
 
-**P1 head-to-head** scores **wall-clock + context footprint + no silent drop** (pains 1–2). Pains **3–5** are contract claims (STALE / propose / ship-rev / reproject) — **not** extra feature work this week. [P1-acceptance.md](P1-acceptance.md). [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md).
+**P1 head-to-head** scores **wall-clock + context footprint + no silent drop** (pains 1–2). **CEO+Elon Core (verbatim):** Timed H2H must score the **narrow** claim (124 + nested ego) — gold-200 stays out of the competitor story. Pains **3–5** are contract claims (STALE / propose / ship-rev / reproject) — **not** extra feature work this week. [P1-acceptance.md](P1-acceptance.md). [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md).
 
 ---
 
@@ -155,7 +155,7 @@ Order:
 | Gate | Lock |
 |------|------|
 | **P0** | Docs done (this seed). |
-| **P1 demo** | Foam query demo **must beat grep**. Contract: eight rows in [P1-acceptance.md](P1-acceptance.md). Wedge: Foam proof 9–12 (**wall-clock + context footprint + no silent drop**; STALE/propose/ship-rev). |
+| **P1 demo** | Foam query demo **must beat grep** on the **narrow** claim (124 + nested ego). Gold-200 stays out of the competitor story. Contract: eight rows in [P1-acceptance.md](P1-acceptance.md). Wedge: Foam proof 9–12 (**wall-clock + context footprint + no silent drop**; STALE/propose/ship-rev). |
 | **Product-story proof** | One non-Core operator, 3 Foam Qs, yes/no keep-using. No slides. Steve Jobs + CEO Core 2026-09-12. |
 | **Pass bar** | Rows 9–12 + M1–M5; scaffold ≠ P1. Unchanged. |
 | **After cold yes** | Outsider → then price. |
@@ -178,7 +178,7 @@ Skills are not this repository’s runtime.
 
 1. Product story is Foam desk only until felt cold. Cold no → kill Pro/beachhead; keep Foam tooling.
 2. MemNet is **SPOF** (KEEP/NARROW, not a Kuzu hedge). Re-ranked: (1) contract bridge — SysMLEdge owns `rev`/STALE; (2) silent drop / nested fidelity; (3) version/ops floor **0.19.8+TCP**. Proof: M1–M5.
-3. “Beat grep” is soft until the timed head-to-head. Competitor = **tens-of-minutes grep**, not Cameo. MUST score **wall-clock + context footprint + no silent drop**. Feature count is not a win.
+3. “Beat grep” is soft until the timed head-to-head. Competitor = **tens-of-minutes grep**, not Cameo, **not** gold-200. MUST score **wall-clock + context footprint + no silent drop** on the **narrow** claim (124 + nested ego). Feature count is not a win.
 4. Taste / kill smells: IDE / canvas / MemNet tip = product. Cameo-lite; MemNet-wrapper (tip Path-B ≠ product); yet-another-MCP without beat-grep cold feel.
 
 No extra mitigations beyond: run the proof items; freeze the list in [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md); fail closed on the product story if any item fails.
