@@ -24,10 +24,11 @@ If a lock and P0 wording differ, this sheet **notes** the difference and **align
 | **Proof passes** | KEEP narrowed: Foam vertical + MCP marketplace path. Price/experiment only after a **second paid outsider**. P2 UI still gated. |
 | **plan ≠ product** (CEO Core 2026-09-12) | Ready to *build* P1. Not ready to *serve* projects until Foam + MemNet proof **and** SysMLEdge MCP bind pass. Until then **MemNet tip only**. MUST NOT migrate other repos onto SysMLEdge. |
 | **don’t-migrate** (Elon Core 2026-09-12) | KEEP the freeze. NARROW dogfood = **synthetic fixture tree** (CI only). Kill-theater 1–5 below. Optional second-repo replay **not** required for P1. |
+| **Sysmler Core** (2026-09-12) | **KEEP / NARROW** the spine. [#11](https://github.com/chouswei/SysMLEdge/pull/11) / [#12](https://github.com/chouswei/SysMLEdge/pull/12) **≠ P1 pass**. Must-fix 1–5 before Foam gold (section below). |
 
 **Strongest cut:** Docs discipline ≠ product-market proof. Foam Phase-1 hours on P2 UI = kill signal.
 
-NARROW fail/pass gates above **stand**. Mapping and SSOT rules below do **not** reopen P2 UI, Pro, or AGI copy. **plan ≠ product** (CEO) and **don’t-migrate** (Elon Core 2026-09-12) stand with those gates (sections below).
+NARROW fail/pass gates above **stand**. Mapping and SSOT rules below do **not** reopen P2 UI, Pro, or AGI copy. **plan ≠ product** (CEO), **don’t-migrate** (Elon Core 2026-09-12), and **Sysmler Core KEEP / NARROW** (2026-09-12) stand with those gates (sections below).
 
 ### Freeze (do not spend the two weeks on)
 
@@ -77,6 +78,34 @@ Cited with NARROW fail/pass and MemNet M1–M5 above. Those gates **stand**. Thi
 5. Pinning below **memnet-llm==0.19.8** or dropping TCP share.
 
 **Optional** only after Foam **gold** bind + STALE **green**: read-only replay of the same **eight** P1 contract rows on a second repo. **Not** required for P1.
+
+---
+
+## Sysmler Core review (2026-09-12)
+
+**Verdict: KEEP / NARROW** — textual SysML v2 → one-way MemNet → GQL at `model@rev`. No invent-in-graph. Aligns with the CEO product spine.
+
+This review does **not** pass Foam gold, MemNet M1–M5, or the head-to-head. It does **not** implement runtime.
+
+**[#11](https://github.com/chouswei/SysMLEdge/pull/11) / [#12](https://github.com/chouswei/SysMLEdge/pull/12) ≠ P1 pass.** Scaffold / fake CI is not Foam-complete gold.
+
+### Must-fix before Foam gold
+
+| # | Gate |
+|---|------|
+| **1** | Full Foam clone gold: parse `connections.sysml` / `root.sysml`; coverage matrix (**part / port / connection / satisfy / allocate / nested**). |
+| **2** | Nested (`backgroundSetIndicator`) **without** hand CREATE — **or** explicitly narrow the P1 claim. |
+| **3** | Timed head-to-head (**wall-clock + context + no silent drop**) on **0.19.8+TCP** **after** bind owns `rev.sha`. |
+| **4** | Impact: prove **closure** **or** narrow the win to neighbourhood / usage **before** marketing impact. |
+| **5** | Keep **don’t-migrate** / **no invent-in-graph** / **no agent SSOT write**. |
+
+### Top 3 SysML risks
+
+1. **Fidelity / silent drop**
+2. **Propose / merge hygiene**
+3. **Projection complete but slow**
+
+Cited from [P1-acceptance.md](P1-acceptance.md) and [docs/proof](proof/). NARROW fail/pass, MemNet KEEP sole, don’t-migrate, and no agent write of SSOT **stand**.
 
 ---
 
@@ -437,3 +466,4 @@ Implementations MUST reject, in addition to P0 §7:
 20. Serving projects on SysMLEdge, or migrating other repos onto it, before Foam + MemNet proof **and** SysMLEdge MCP bind pass (**plan ≠ product**, CEO Core 2026-09-12). Until then MemNet tip only.
 21. Treating NARROW dogfood as a second **real** in-house SysML desk (Elon Core 2026-09-12). Fixture tree = CI of import / bind / STALE / reproject / propose only.
 22. Kill-theater (Elon Core 2026-09-12): Foam tip sold as SysMLEdge bind before `rev.sha`; agents/repos on MemNet mission sessions as `project@rev`; “almost P1” second-repo migrate on Path-B/`pin_map` only; P2 UI or multi-repo onboarding before timed head-to-head + gold fidelity; pin below **memnet-llm==0.19.8** or drop TCP share.
+23. Treating [#11](https://github.com/chouswei/SysMLEdge/pull/11) / [#12](https://github.com/chouswei/SysMLEdge/pull/12) (scaffold / fake CI) as a Foam gold or P1 proof pass (Sysmler Core 2026-09-12). Marketing **impact** before closure **or** a narrowed neighbourhood/usage claim.
