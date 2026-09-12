@@ -46,6 +46,7 @@ No scope widen. Source: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#ceo-core-p1-gate-202
 | No `rev` bind | STALE theater — stop the story |
 | M1 or M2 fail | MemNet **not** a sole-engine claim |
 | M5 loses with numbers **after** fidelity | Reopen engine **form** only then |
+| **Tip** H2H `wall_pass` **0/3** (Track A, A **307.745ms** vs B **1286.676ms**) | **Reopen apparatus invent**, not soft-pass. MUST NOT reopen Neo4j. [proof/RUNLOG-2026-09-12-h2h-foam-tip.md](proof/RUNLOG-2026-09-12-h2h-foam-tip.md) |
 | Row 12 cold **no** | Kill Pro/beachhead |
 | Hours on freeze list | Cut immediately |
 | **(g)** sold as proven / continuous same-session **(g)** before **(r)** / M1 claimed on `mn_27ce8714` or `mn_be03c1a9` | Stop. Dirty `mn_27ce8714` is honesty archive only. **(g)** is **provisional**. `proof_pass_claimed` stays **false** |
@@ -81,6 +82,8 @@ Hard pass/fail. Cited from [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md), [PRODUCT-PLAN.m
 **Claimed pains 1–5** ([PRODUCT-LOCKS.md](PRODUCT-LOCKS.md)): **1** grep latency; **2** big SysML + small LLM context / **context footprint** (GQL/`pin_map` slices); **3** STALE blindness / wrong rev; **4** chat-as-SSOT (no ship-rev zip, no propose-only trail); **5** mid-flight model change → re-entrant reproject. **Non-claims freeze:** canvas, PLM, ClickUp/InvenTree, Team ACL.
 
 **P1 head-to-head** scores **wall-clock + context footprint + no silent drop** (pains 1–2). **CEO / Elon / Edison Core:** Timed H2H must score the **narrow** claim on **Foam** `mn_0d4f6178` (124 + nested ego). H2H on p1-tiny / `mn_be03c1a9` = **plumbing only**. MUST NOT soft-pass the wedge. Gold-200 stays out of the competitor story. Pains **3–5** are proven by STALE / propose / ship-rev / reproject rows below — **not** extra feature work this week.
+
+**Honesty — Foam tip H2H Track A (Devicor ms, scored):** `mn_0d4f6178` @ 0.19.9. Housekeep 1673/5000 · 923 · 41 · 750 · 0. Context **3/3** · no_drop **3/3**. **`wall_pass` 0/3** — A **307.745ms/23604B** · B **1286.676ms/19042B** (prefer over rounded 308/1287). Truncation honest. **B slower → reopen apparatus invent, not soft-pass.** **Tip ≠ product / ≠ SysMLEdge bind.** Track B Foam bind **held**. `proof_pass=false`. [proof/RUNLOG-2026-09-12-h2h-foam-tip.md](proof/RUNLOG-2026-09-12-h2h-foam-tip.md). MUST NOT treat context PASS as row **9** / **M5** product pass.
 
 ### Row 9 — score all three axes
 
@@ -129,7 +132,7 @@ Log wall-clock, **context footprint** (prompt tokens per Q + whole-tree-dump bas
 | **M2** | Query slice | Same 3 Foam Qs via `pin_map` and/or `gql_*`. **SysMLEdge** binds `rev.sha` + `rev.stale=false` (absent on MemNet wire). **UNKNOWN = fail that line.** Impact: closure on gold **or** narrowed neighbourhood/usage (see above). |
 | **M3** | STALE/reproject | **SysMLEdge-owned** bind. Mutate → fail-closed → `propose` refused → `reproject` → live. **Lock (f) exact:** clean `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d`. Timed / scripted. MUST NOT invent first-class STALE inside MemNet. MUST NOT same-sid replace-ingest **(r)**. Dirty `mn_27ce8714` is archive only. Theater if bind is missing. |
 | **M4** | Bounce regression | **Re-run once** in the 2-week window on **0.19.8** TCP-shared: `session_save` → restart **serve + MCP together** → load → gold `pin_map` **non-empty**. Record memnet-llm version. **Fail if** MCP `session_list` ≠ serve. Known: **FAIL on 0.19.7**. Serve death without `session_save` loses in-process sessions. |
-| **M5** | Wall-clock + context vs grep | **Must-fix:** timed H2H on **0.19.8+TCP** after `rev` bind, on the **Foam** desk (`mn_0d4f6178` CON **124** + nested). Same 3 Foam Qs vs grep/LSP. **MUST time wall-clock**. Also **context footprint**. H2H on **p1-tiny** / `mn_be03c1a9` = **plumbing only** (`A_total` **6ms/1181B** vs `B_total` **1992ms/8557B**; B silent_drop **no**; [RUNLOG-2026-09-12-h2h-plumbing.md](proof/RUNLOG-2026-09-12-h2h-plumbing.md)) — MUST NOT set `proof_pass_claimed`. CLI `head-to-head` is a **null scaffold**. Gold-200 stays out. Kill: tip Path-B sold as bind; H2H vs gold-200; tiny soft-pass. Wedge pass = Foam only unless Core re-locks P1 desk to tiny. |
+| **M5** | Wall-clock + context vs grep | **Must-fix:** timed H2H on **0.19.8+TCP** after `rev` bind, on the **Foam** desk (`mn_0d4f6178` CON **124** + nested). Same 3 Foam Qs vs grep/LSP. **MUST time wall-clock**. Also **context footprint**. H2H on **p1-tiny** / `mn_be03c1a9` = **plumbing only** (`A_total` **6ms/1181B** vs `B_total` **1992ms/8557B**; [RUNLOG-2026-09-12-h2h-plumbing.md](proof/RUNLOG-2026-09-12-h2h-plumbing.md)). **Honesty (tip Track A, Devicor ms):** context **3/3** · no_drop **3/3** · `wall_pass` **0/3** (A **307.745ms/23604B** · B **1286.676ms/19042B**) — [proof/RUNLOG-2026-09-12-h2h-foam-tip.md](proof/RUNLOG-2026-09-12-h2h-foam-tip.md). **≠** this M5 product bar (no bind). MUST NOT set `proof_pass_claimed`. CLI `head-to-head` is a **null scaffold**. Gold-200 stays out. Kill: tip Path-B sold as bind; H2H vs gold-200; tiny soft-pass. Track B Foam bind **held**. |
 
 | Outcome | Engine / product rule |
 |---------|------------------------|
