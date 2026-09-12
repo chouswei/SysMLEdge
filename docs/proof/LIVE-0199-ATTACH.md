@@ -7,14 +7,14 @@ Durable Path-B CON from ingest is proven on MemNet **0.19.9** (`mn_0d4f6178`). B
 ## What attaches
 
 ```text
-SysML zip / sysml-models/     SSOT
+SysML zip / sysml-models/     SysML mirror (invent SSOT before upload)
         |  human Save / import (git SHA)
         v
 SysMLEdge reproject
         |  parse + ground contains/owns/ends (FAKE always)
-        |  LIVE: memnet ingest sysml --path <ssot> --session <sid>
+        |  LIVE: memnet ingest sysml --path <mirror> --session <sid>
         v
-MemNet session (TCP :18765)  Path-B ingest ≥0.19.9
+MemNet session (TCP :18765)  Path-B ingest ≥0.19.9  (SaaS working SSOT after upload = graph)
         |
         v
 pin_map locator qname=<SysML qname>   bounded neighbourhood

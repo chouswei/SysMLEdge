@@ -2,11 +2,11 @@
 
 This sheet is the first implementable deliverable. Implement against these names and behaviours. Engine is **MemNet**. **Kuzu is rejected.**
 
-**Bilingual** = SysML (author SSOT) + GQL (query/represent). Not a zh/EN UI contract.
+**Bilingual** = two faces at `model@rev` (ask/propose GQL + author/view SysML mirror). After upload, lock **(g)**: working SSOT = graph; SysML = machine-kept full-fidelity mirror. Org SysML-first still applies **before** upload. Not a zh/EN UI contract.
 
 Pilot system of interest (P1, not this seed): `chouswei/modelbasedPrj-itri-vedan-foam-detection`.
 
-Product locks (position, market pin, no graphic, day loop, merge/autopilot, faces, freemium): [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md) as of **2026-09-11**. Where that sheet clarifies this file, wording below is aligned; MemNet, STALE, and **no agent SSOT write** are not weakened.
+Product locks (position, market pin, no graphic, day loop, merge/autopilot, faces, freemium): [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md) as of **2026-09-12** lock **(g)**. Where that sheet clarifies this file, wording below is aligned; MemNet, STALE, and **no agent / LLM freeform SSOT write** are not weakened.
 
 ---
 
@@ -57,15 +57,15 @@ hint: reproject from current SysML, or read with staleOk=true (read-only)
 
 ## 3. Whole-tree import, save, download
 
-SSOT operations are **whole tree always**. Import / save / download = **all** `.sysml` in the tree. **Never** parts-only SSOT. Agents do not merge by dumping the graph. Projection completeness is a mapping gate (Foam-complete for P1); it MUST NOT shrink the zip/tree.
+SSOT operations after upload treat the **graph** as live working truth **(g)** and the SysML tree as the **full-fidelity mirror**. Import / save / download of the mirror = **all** `.sysml`. **Never** parts-only. Agents do not merge by dumping GQL. P1 still scores Foam-complete **projection** (it MUST NOT shrink the zip). P1 MUST NOT ship a dual-write editor.
 
 ### 3.1 Layout
 
-Canonical on-disk SSOT:
+Canonical on-disk **SysML mirror** (invent SSOT *before* upload):
 
 ```text
-sysml-models/          # multi-file SysML v2 tree (author SSOT)
-sysml-models/proposals/<id>/   # optional agent proposals (not SSOT until human save)
+sysml-models/          # multi-file SysML v2 tree (mirror @ rev; invent tree before upload)
+sysml-models/proposals/<id>/   # optional agent proposals (not applied until human/policy)
 ```
 
 Zip import/export is that tree (see 3.4). `proposals/` MAY be omitted from a “source zip” download of a published rev; if included, it is labelled proposal material, not SSOT.
@@ -86,7 +86,7 @@ Zip import/export is that tree (see 3.4). `proposals/` MAY be omitted from a “
 | Who | Human (UI/files/CLI with explicit save). **Agent merge is banned.** MCP MUST NOT call this silently or as an unattended agent tool. |
 | Human-auth MCP merge | Allowed: human **token + confirm** → apply a proposal onto current + Save + reproject. Same effect as human Save. Not an agent tool. |
 | Effect | **Whole-tree overwrite of current** from the working SysML tree the human accepted. Git keeps **revision history** (previous SHAs remain downloadable). |
-| Graph | **Save never writes the graph.** After commit, **auto-reproject** MemNet to the new SHA (Live). |
+| Graph | **Save never dumps GQL.** P1: after commit, **auto-reproject** MemNet from the imported SysML (Live). SaaS lock **(g):** typed machine ops mutate the live graph; machines rewrite this mirror. |
 | STALE | Merge is blocked while STALE until **reproject** succeeds. Dirty working tree ≠ STALE (see [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md)). |
 | Agents | A proposal is not saved until a human applies it (files/SaaS Save, or human-auth MCP merge). There is no agent write-SSOT tool. |
 
@@ -120,7 +120,7 @@ Query language is **GQL** against MemNet (cue → neighbourhood / find). GQL NEV
 | `gql_impact` | No | Upstream/downstream along mapped connections / relations Foam uses. Same STALE rules. |
 | `list_scope` | No | Indexed project roots / package qnames in the bound projection. |
 | `propose` | No (SSOT) | Write **only** under `sysml-models/proposals/<id>/`. See §6. |
-| `reproject` | No (SSOT) | Rebuild MemNet from **current** SysML. Human or privileged operator. Agents MAY request; MUST NOT pretend the graph is SSOT. |
+| `reproject` | No (agent SSOT) | P1: rebuild MemNet from **current** SysML. SaaS **(g)** also regenerates the SysML mirror from the graph (machines, not LLM). Agents MAY request; MUST NOT treat a GQL dump as the zip. |
 
 ### 4.2 Forbidden on MCP
 
@@ -129,10 +129,10 @@ Query language is **GQL** against MemNet (cue → neighbourhood / find). GQL NEV
 | Silent overwrite of `sysml-models/` SSOT files | Human save (including human-auth MCP merge with token+confirm) is the only SSOT write path. **No agent write-SSOT tool.** |
 | `save` / `import` / `download` as unattended **agent** tools | Those are human/operator APIs (CLI/UI/SaaS). Human-auth MCP merge is the human Save path, not an agent merge. |
 | Agent-owned merge / apply of `delta.sysml` onto current | Agent path is read → draft → `propose` only. |
-| Graph write-back as SSOT | Projection is derived. |
-| Unbounded full-tree dump as the **only** merge **or query** story | Agents propose deltas (§6). GQL/MCP reads are **bounded** (prompt tokens far below whole-tree dump). Humans save the whole tree. |
+| Graph dump as downloadable source | Download = SysML zip @ rev only. Working SSOT after upload is the graph **(g)**; the zip is the regenerable mirror. |
+| Unbounded full-tree dump as the **only** merge **or query** story | Agents propose deltas (§6). GQL/MCP reads are **bounded** (prompt tokens far below whole-tree dump). Humans save the whole mirror. |
 | Cypher / Kuzu / `graph.kuzu` | Engine is MemNet. |
-| `mutate` of MemNet that adds structure not in SysML | GQL MUST NOT invent. |
+| `mutate` of MemNet that adds structure not a SysML construct | **Jon:** typed ops ≡ SysML constructs. GQL/LLM MUST NOT invent **(b)**. |
 | MemNet as the agent MCP face after SysMLEdge binds | MemNet stays TCP-shared backend; agents hit SysMLEdge streamable HTTP. |
 
 `rename` in the old package was dry-run preview. SysMLEdge: rename is a **proposal** (`delta.sysml` + `PATCH.md`), not a graph edit.
@@ -153,7 +153,7 @@ Query language is **GQL** against MemNet (cue → neighbourhood / find). GQL NEV
 
 ## 5. Mapping scope
 
-**SSOT** is always the whole `.sysml` tree (see §3). Mapping is what MemNet/GQL **indexes**.
+After upload, **working SSOT** is the bound **graph** **(g)**. Mapping is what MemNet/GQL **indexes**. The **mirror** is always the whole `.sysml` tree (see §3).
 
 | Gate | Rule |
 |------|------|
@@ -201,7 +201,7 @@ sysml-models/proposals/<id>/
 | SSOT | Files outside `proposals/` change only on **human save** (whole-tree overwrite). |
 | MCP `propose` | Creates/updates this directory. Returns the path + `base.sha`. |
 
-Human apply: merge `delta.sysml` into the tree (human/tooling or **human-auth MCP merge** with token+confirm), then **save** (commit + auto-reproject). There is no “apply GQL to SSOT”. Agents MUST NOT apply. Optional P2 **autopilot** (default off) and **bot review** (default off) are product locks, not P0 runtime — see [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md).
+Human apply: merge `delta.sysml` into the tree (human/tooling or **human-auth MCP merge** with token+confirm), then **save** (commit + auto-reproject). There is no “apply freeform GQL as invent-SSOT” **(b)**. Typed machine ops only. Agents MUST NOT apply. Optional P2 **autopilot** (default off) and **bot review** (default off) are product locks, not P0 runtime — see [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md).
 
 ---
 
@@ -209,7 +209,7 @@ Human apply: merge `delta.sysml` into the tree (human/tooling or **human-auth MC
 
 Implementations MUST reject:
 
-1. **Graph write-back as SSOT** — MemNet/GQL is a projection. Saving the graph is not saving the model.
+1. **LLM/GQL freeform write-back as SSOT (b)** — only **typed machine ops** mutate the live graph; machines rewrite the SysML mirror. Saving a graph dump is not saving the model. P1 MUST NOT ship a dual-write editor.
 2. **Kuzu** as required runtime, storage (`graph.kuzu`), Cypher, a long-lived Kuzu worker, or a **dual-engine hedge** (default: MemNet sole engine; dual only if Memnetor hard blocker).
 3. **Full-tree dump as the only merge or query story for agents** — agents use `proposals/<id>/` and **bounded** GQL; humans overwrite current as a whole tree and keep git history. MUST NOT stuff the whole `.sysml` tree into the LLM prompt.
 4. Serving the **graph** as downloadable source.

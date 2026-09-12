@@ -57,7 +57,7 @@ Buyer roots **1, 2, 3, and 6** (trust, SSOT owner, beat-grep ask, ship rev) MUST
 | 2 | GQL read | Via SysMLEdge MCP `gql_read` (or equivalent): reachability, ownership, usage for a known Foam element **without** stuffing the full `.sysml` tree into the agent context. Answers include `rev.sha` and `rev.stale=false`. P1 proof MAY still use MemNet `pin_map` for M1–M4. |
 | 3 | STALE detect | Change a SysML file on disk without reproject. Structure reads with default `staleOk=false` **fail** with `code: STALE`. With `staleOk=true`, read may succeed but MUST return `rev.stale=true`. `propose` while STALE **refused**. |
 | 4 | Reproject | `reproject` from current SysML → new bind; STALE clears; live reads succeed. |
-| 5 | Propose isolation | `propose` writes only under `sysml-models/proposals/<id>/` (`PATCH.md` + `delta.sysml`). Current SSOT tree unchanged; no MemNet write-back as SSOT. |
+| 5 | Propose isolation | `propose` writes only under `sysml-models/proposals/<id>/` (`PATCH.md` + `delta.sysml`). Current mirror tree unchanged; no LLM/GQL dump as SSOT. P1 does **not** add a dual-write editor row. |
 | 6 | Human save + history | Human whole-tree save → new `rev.sha`. Previous SHA remains **downloadable**. |
 | 7 | Download shape | Download @ rev = **SysML zip only**. No MemNet/GQL/Kuzu export as “the model”. |
 | 8 | MCP bind | Session binds **project@rev**. No MCP tool silently overwrites current SSOT. |
@@ -66,7 +66,7 @@ Buyer roots **1, 2, 3, and 6** (trust, SSOT owner, beat-grep ask, ship rev) MUST
 
 - Website UI, user accounts, in-tenant ACL, GitHub-like PR review UI (P2)
 - Multi-tenant / billing (P3)
-- Edit-in-graph as SSOT
+- Edit-in-graph as a **P1** dual-write editor (SaaS lock **(g)** is published; P1 still scores **projection fidelity + bind** only)
 - Everything on the NARROW freeze list in [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md) (SaaS editor, PR UI, Team ACL, billing, Cameo, ClickUp/InvenTree product, **full KerML** in two weeks)
 - Whole-language coverage (P1 = Foam-complete projection + beat-grep / STALE / demo only)
 
@@ -99,7 +99,7 @@ Log wall-clock, **context footprint** (prompt tokens per Q + whole-tree-dump bas
 |---|------|----------------|
 | 9 | Head-to-head | **wall-clock + context footprint + no silent drop** on the three Foam Qs, scoring the **narrow** claim (124 + nested ego). Competitor = tens-of-minutes grep, not Cameo, **not** gold-200. Context footprint **far smaller** than whole-tree dump. |
 | 10 | STALE not theater | **Pain 3 + 5:** mutate SysML on disk → structure read fails `code: STALE` → `propose` refused → `reproject` clears → live reads work. Scripted log or short recording. No extra feature work this week. |
-| 11 | Propose + ship rev | **Pain 4:** `propose` only under `proposals/<id>/`; SSOT unchanged; human save → new SHA; prior SHA zip downloadable; download = SysML zip only. **All eight** rows above green on Foam MemNet. |
+| 11 | Propose + ship rev | **Pain 4:** `propose` only under `proposals/<id>/`; current mirror unchanged; human save → new SHA; prior SHA zip downloadable; download = SysML zip only. **All eight** rows above green on Foam MemNet. |
 | 12 | Non-Core operator | One operator **not** from Core runs the demo **cold**. Keep using this vs grep? **Yes/no + why.** If **no**, narrow further or **kill** the wedge claim. |
 
 ### Fail / pass (product)
@@ -131,7 +131,7 @@ Log wall-clock, **context footprint** (prompt tokens per Q + whole-tree-dump bas
 | **M3–M5 fail** | Same: do not ship bilingual bus as a product on an unproven MemNet path. |
 | **All M1–M5 pass** | KEEP MemNet sole engine, **narrowed** surface. Foam proof 9–12 still required for the wedge. |
 
-**NOT this week:** full KerML map; Kuzu/Cypher dual; `snap_model`/PKG as mission SSOT; multi-tenant/billing/ACL/InvenTree; graph write-back SSOT; agent save; `pin_map` expand beyond Foam P1; graph dumps as downloadable source; autopilot/bot-merge; first-class `rev`/STALE inside MemNet.
+**NOT this week:** full KerML map; Kuzu/Cypher dual; `snap_model`/PKG as mission SSOT; multi-tenant/billing/ACL/InvenTree; LLM/GQL freeform write-back **(b)**; P1 dual-write editor; agent save; `pin_map` expand beyond Foam P1; graph dumps as downloadable source; autopilot/bot-merge; first-class `rev`/STALE inside MemNet.
 
 ## Done when
 

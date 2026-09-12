@@ -18,7 +18,7 @@ git submodule update --init --recursive
 git rev-parse HEAD
 ```
 
-Whole-tree SSOT = **all** `.sysml` under `sysml-models/` (including `models/`, `outputs/`, and `libs/` once the submodule is present). Never parts-only. Never treat `parts/**` as model SSOT.
+Whole-tree **mirror** = **all** `.sysml` under `sysml-models/` (including `models/`, `outputs/`, and `libs/` once the submodule is present). Never parts-only. Never treat `parts/**` as the model. After upload, lock **(g)** — graph is working SSOT; this tree is the regenerable mirror.
 
 ## Bind with existing P1 runtime
 

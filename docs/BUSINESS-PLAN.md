@@ -10,7 +10,7 @@ This file is **not** a live price list and **not** a shipping claim. It does not
 
 **NARROW product story.**
 
-**One-liner:** SysML stays the model; GQL/MCP is how agents query without stuffing/grepping the tree.
+**One-liner:** Two faces at one `model@rev` — ask/propose GQL, author/view the SysML mirror. After upload, graph is live working SSOT **(g)**.
 
 **Keep:** Foam desk proof — model@rev bind, STALE fail-closed, beat grep (wall-clock + context + no silent drop); plan≠product; don’t-migrate.
 
@@ -85,7 +85,7 @@ If **M1 or M2 fail:** MemNet not ready as sole engine; stop Pro/beachhead; keep 
 
 ## Position (desk, not category)
 
-**Product story:** Foam desk proof — model@rev bind, STALE fail-closed, beat grep. **One-liner:** SysML stays the model; GQL/MCP is how agents query without stuffing/grepping the tree.
+**Product story:** Foam desk proof — model@rev bind, STALE fail-closed, beat grep. **One-liner:** Two faces at one `model@rev` — ask/propose GQL, author/view the SysML mirror. After upload, graph is live working SSOT **(g)**.
 
 **Cut until cold Foam yes:** AGI copy, Pro/Team/marketplace, beachhead math, “bilingual bus” as brand lead. Plus prior list where it does not contradict.
 

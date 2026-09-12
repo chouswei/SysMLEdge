@@ -2,7 +2,7 @@
 
 **As of:** 2026-09-12. Normative product locks for the living plan in [PRODUCT-PLAN.md](PRODUCT-PLAN.md). Implement against these plus [P0-contracts.md](P0-contracts.md). Business / GTM (NARROW product story): [BUSINESS-PLAN.md](BUSINESS-PLAN.md). Foam proof: [P1-acceptance.md](P1-acceptance.md). This file does not implement runtime.
 
-If a lock and P0 wording differ, this sheet **notes** the difference and **aligns** P0 language. It MUST NOT weaken: MemNet-only projection, `graph = model @ SHA`, STALE, or **no agent write of SSOT**.
+If a lock and P0 wording differ, this sheet **notes** the difference and **aligns** P0 language. It MUST NOT weaken: MemNet sole engine, `graph = model @ SHA`, STALE, **no agent/LLM freeform SSOT write**, or lock **(g)** (SaaS working SSOT = graph; SysML = machine-kept mirror).
 
 ---
 
@@ -62,7 +62,7 @@ Elon’s “parts/ports” freeze was **2-week anti-scope-creep for mapping work
 
 **NARROW product story.**
 
-**One-liner:** SysML stays the model; GQL/MCP is how agents query without stuffing/grepping the tree.
+**One-liner:** Two faces at one `model@rev` — ask/propose GQL, author/view the SysML mirror. After upload, **graph is live working SSOT**; SysML is the machine-kept mirror. Not LLM invent.
 
 **Keep:** Foam desk proof — model@rev bind, STALE fail-closed, beat grep (wall-clock + context + no silent drop); plan≠product; don’t-migrate.
 
@@ -76,9 +76,20 @@ Elon’s “parts/ports” freeze was **2-week anti-scope-creep for mapping work
 
 **“Bilingual bus”** stays an **internal architecture** name. It is **not** the brand lead.
 
-**One-way, not a translator both ways.** SysML files → project into MemNet → query in GQL. Edits stay in SysML (or propose `delta.sysml`); GQL never invents SysML back. “Bilingual” = author SysML / ask GQL over one `model@rev`.
+**Lock (g)** — CEO Core 2026-09-12 (CEO + user upload note + Jon constraint). **Graph is live working SSOT** for the **SaaS runtime**. SysML is the **machine-kept mirror** (web UI + downloadable zip @ rev). Graph mutate → machines rewrite SysML — **not LLM invent**. Drop “one-way” / dead-pipe pitch.
 
-This spine lock does **not** reopen KEEP MemNet sole, M1 narrow, or LIVE bind.
+**Org invent vs runtime (must stay explicit):** invent/lock of *new* domain models MAY still start as SysML (org SysML-first **before** upload). After upload into SysMLEdge, live working truth is **graph + machine mirror**. MUST NOT read (g) as killing SysML-first authoring before upload.
+
+| # | Constraint (all required) |
+|---|---------------------------|
+| 1 | Only **typed machine ops** mutate the graph (no freeform LLM write-SSOT). |
+| 2 | **Jon MUST:** typed machine ops ≡ SysML constructs; the mirror is **full-fidelity @ rev**. Without this, the graph invents beside the model — **forbid**. |
+| 3 | Mirror always regenerable → downloadable SysML zip @ rev. |
+| 4 | Agents still **propose** (`delta.sysml`) unless autopilot policy applies. |
+| 5 | P1 Foam proof still scores **projection fidelity + bind**. MUST NOT widen P1 to a full dual-write editor yet. |
+| 6 | Two faces: ask/propose GQL + author/view SysML mirror @ one `model@rev`. |
+| 7 | **(b)** still killed: GQL/LLM never becomes freeform invent-SSOT. |
+| 8 | Do **not** reopen KEEP MemNet sole, M1 narrow (CON **124** + nested on `mn_0d4f6178` @ 0.19.9), or LIVE bind gates. |
 
 **Load-bearing claim:** Foam desk, felt cold, vs grep. **Not** proven by this docs seed.
 
@@ -140,7 +151,7 @@ Cited with NARROW fail/pass and MemNet M1–M5 above. Those gates **stand**. Thi
 
 ## Sysmler Core review (2026-09-12)
 
-**Verdict: KEEP / NARROW** — textual SysML v2 → one-way MemNet → GQL at `model@rev`. No invent-in-graph. Aligns with the CEO product spine.
+**Verdict: KEEP / NARROW** — lock **(g)**: after upload, graph is live working SSOT; SysML is the machine-kept full-fidelity mirror @ `model@rev`. Typed machine ops ≡ SysML constructs (Jon). LLM/GQL MUST NOT invent **(b)**. Aligns with the CEO product spine.
 
 This review does **not** pass Foam gold. P1 gate = **CEO Core** exact locks (next section). No scope widen. This file does not implement runtime.
 
@@ -286,7 +297,7 @@ In addition to the NARROW product freeze:
 2. Kuzu / Cypher / **Neo4j** dual-engine
 3. `snap_model` / PKG as mission SSOT
 4. Multi-tenant / billing / ACL / InvenTree
-5. Graph write-back as SSOT
+5. LLM/GQL freeform write-back as SSOT **(b)**; P1 dual-write editor (lock **(g)** is SaaS runtime, not this week’s Foam bar)
 6. Agent save
 7. `pin_map` expand beyond Foam P1
 8. Graph dumps as downloadable source
@@ -314,7 +325,7 @@ MUST NOT: add MemNet features beyond what M1–M5 / Foam fidelity require; put `
 
 | Lock | Rule |
 |------|------|
-| **Whole tree always** | Import / save / download = **all** `.sysml` in the tree. Never parts-only SSOT. Projection may omit unmapped *kinds* from GQL; the zip/tree MUST still be the full tree. |
+| **Whole tree always** | The SysML **mirror** (import / save / download) = **all** `.sysml`. Never parts-only. Projection may omit unmapped *kinds* from GQL; the zip MUST still be the full-fidelity mirror @ rev (Jon). |
 | **Mapping** | Every construct **that tree uses**. Not “parts/ports forever”. Not “full KerML in 2 weeks.” |
 | **P1 gate** | **Foam-complete** projection (whatever Foam uses) + beat-grep / STALE / demo. **Not** whole-language coverage. Widen element kinds as later projects demand (`mapping.version` bump). |
 
@@ -324,15 +335,15 @@ MUST NOT: add MemNet features beyond what M1–M5 / Foam fidelity require; put `
 
 ## Position
 
-SysMLEdge (this cut) is **Foam desk proof**. **One-liner:** SysML stays the model; GQL/MCP is how agents query without stuffing/grepping the tree. Competitive/buyer pin: [Market position (pin)](#market-position-pin).
+SysMLEdge (this cut) is **Foam desk proof**. **One-liner:** Two faces at one `model@rev` — ask/propose GQL, author/view the SysML mirror. After upload, graph is live working SSOT **(g)**. Competitive/buyer pin: [Market position (pin)](#market-position-pin).
 
 | Is | Is not |
 |----|--------|
-| Textual SysML v2 as author SSOT; MemNet one-way projection; GQL/MCP to query and represent | Graphic MBSE IDE (SysON, Cameo, canvas, diagram-as-SSOT) |
+| Lock **(g):** graph = SaaS runtime working SSOT; SysML = machine-kept full-fidelity mirror; LLM/GQL never invents **(b)** | Graphic MBSE IDE (SysON, Cameo, canvas, diagram-as-SSOT) |
 | Link/sync a GitHub (or git) repo **at a SHA**; own projection, STALE, and propose | A GitHub clone (issues, PRs-as-product, social VCS) |
 | Project service for MBSE + agents | ClickUp or InvenTree as product features |
 
-**No graphic:** no diagram canvas, graphic modeler, or diagram-as-SSOT. Authoring is **textual SysML**. Query is **GQL/MCP**. Agents **propose** only; they do not write SSOT.
+**No graphic:** no diagram canvas, graphic modeler, or diagram-as-SSOT. Humans **author/view** the textual SysML **mirror**. Query is **GQL/MCP**. Agents **propose** only (unless autopilot); they do not freeform-write SSOT.
 
 ---
 
@@ -342,7 +353,7 @@ SysMLEdge (this cut) is **Foam desk proof**. **One-liner:** SysML stays the mode
 
 **NARROW product story.**
 
-**One-liner:** SysML stays the model; GQL/MCP is how agents query without stuffing/grepping the tree.
+**One-liner:** Two faces at one `model@rev` — ask/propose GQL, author/view the SysML mirror. After upload, graph is live working SSOT **(g)**.
 
 **Buyer gut (prior, stands):** “I ask the live model at this rev — no grep dump, no ghost tree.”
 
@@ -352,7 +363,7 @@ SysMLEdge (this cut) is **Foam desk proof**. **One-liner:** SysML stays the mode
 | Beats “git + LSP + grep `.sysml`” | **Kill smells:** IDE / canvas / MemNet tip = product |
 | Foam first | Defense PLM / enterprise >$100; Pro/Team/marketplace as this-cut story |
 
-**Internal architecture name (not brand lead):** bilingual bus = author SysML / ask GQL over one `model@rev` (one-way, not a translator both ways — exact in [CEO Core — Steve taste](#ceo-core--steve-taste-2026-09-12)). Not a zh/EN UI.
+**Internal architecture name (not brand lead):** bilingual bus = two faces at one `model@rev` (ask/propose GQL + author/view SysML mirror). After upload, lock **(g)** — graph live working SSOT; SysML machine-kept full-fidelity mirror; typed ops ≡ SysML constructs (Jon). Exact in [CEO Core — Steve taste](#ceo-core--steve-taste-2026-09-12). Not a zh/EN UI. Not an LLM round-trip. Org SysML-first still applies **before** upload.
 
 **Buyer (desk, not a seat target):** solo / 2–5 engineers on SysML v2 textual + Cursor.
 
@@ -383,7 +394,7 @@ Buyer: **solo / lead MBSE engineer** (same desk as [Market position (pin)](#mark
 | # | Root | Lock |
 |---|------|------|
 | 1 | **Trust the model** | Always know `project@rev` versus **STALE** / **Dirty**. MUST NOT leave the human (or agents) wondering if they saw a ghost tree (unbound graph, Live pretence, or silent drift). |
-| 2 | **Stay SSOT owner** | Only the human — or their explicit policy (human Save, human-auth MCP merge, later opt-in autopilot) — applies SysML. Agents MUST NOT silently rewrite SSOT. |
+| 2 | **Stay SSOT owner** | After upload, working SSOT is the **graph**; humans own policy (typed machine ops, Save of the mirror, human-auth merge, later opt-in autopilot). Agents MUST NOT silently rewrite SSOT. Org SysML-first still applies **before** upload. |
 | 3 | **Ask without grep pain** | “What uses this?” via MCP/GQL **without** stuffing `.sysml` into chat. |
 | 4 | **Keep git as home** | Link/sync the git/GitHub repo. MUST NOT abandon GitHub for a closed silo. |
 | 5 | **Mid-flight change** | Path A: fix the model while implementing without breaking the day loop. |
@@ -410,10 +421,14 @@ P1 proves the collapsed pitch (**trust**, **ask-without-stuffing**, **ship zip**
 ## Stack
 
 ```text
-SysML zip / sysml-models/ tree     author SSOT
-        |  human Save (whole tree) → git commit
+org SysML invent (before upload)     optional SysML-first
+        |  upload
         v
-MemNet one-way projection @ rev.sha     TCP backend (serve + MCP TCP-shared)
+MemNet graph @ rev.sha              SaaS runtime working SSOT (g)
+        |  typed machine ops only (≡ SysML constructs)
+        |  graph mutate ⇒ machine rewrite of SysML mirror (not LLM)
+        v
+SysML zip / sysml-models/           full-fidelity mirror @ rev (UI + download)
         |
         v
 SysMLEdge MCP  streamable HTTP (Cursor Bearer)
@@ -422,14 +437,14 @@ SysMLEdge MCP  streamable HTTP (Cursor Bearer)
 
 | Layer | Lock |
 |-------|------|
-| **SSOT** | SysML zip or `sysml-models/` tree. Import/save/download = **all** `.sysml` in that tree. Never parts-only SSOT. Download = SysML zip @ rev only. |
+| **SSOT** | **Lock (g)** — SaaS runtime working SSOT = the **graph**. SysML zip / `sysml-models/` = **machine-kept full-fidelity mirror** @ rev (never parts-only; download = zip only). Org invent MAY start as SysML **before** upload. |
 | **Git / GitHub** | VCS backbone. Bind **project @ SHA**. SysMLEdge owns projection, STALE, and propose — not GitHub’s review UI. |
-| **MemNet** | Projected index. **P1:** Foam-complete (kinds Foam uses). Later: widen as projects demand. **TCP backend-only** (`serve` + MCP TCP-shared). **No Kuzu**, no Cypher, no Neo4j, no `graph.kuzu`. Not the agent-facing wedge once SysMLEdge MCP binds. Bounce **0.19.8**; Path-B CON **≥0.19.9+TCP**. |
-| **GQL** | Query/represent what SysML already says at `rev.sha`. MUST NOT invent. |
+| **MemNet** | Live graph (working SSOT after upload) + projected index for P1 Foam-complete kinds. **TCP backend-only** (`serve` + MCP TCP-shared). **No Kuzu**, no Cypher, no Neo4j, no `graph.kuzu`. Not the agent-facing wedge once SysMLEdge MCP binds. Bounce **0.19.8**; Path-B CON **≥0.19.9+TCP**. |
+| **GQL** | Query/represent the bound `model@rev`. MUST NOT invent. LLM/GQL is **not** freeform SSOT **(b)**. |
 | **MCP face** | **Streamable HTTP** with Cursor **Bearer**, same pattern as **memnet-pi**. Agents call **SysMLEdge MCP** (`rev_status` / `gql_*` / `propose`). |
 | **STALE** | Projection `rev.sha` ≠ current SHA. Show it; refuse live-SSOT pretence. `staleOk` is read-only. |
 
-Save **never** writes the graph. Save → auto-reproject → Live. Graph write-back is not a save.
+Save of the **mirror** never dumps GQL. Typed machine ops mutate the live graph; machines rewrite SysML. Graph **export** is not a save. P1 this week still **reprojects from imported SysML** (no dual-write editor).
 
 This face lock does **not** reopen KEEP sole / NARROW / improve-only / **no C rewrite now** / **no Neo4j**. SysMLEdge consumes MemNet as the projection engine; it does not replace it. Gaps = Foam projection fidelity + SysMLEdge reproject ego.
 
@@ -438,7 +453,7 @@ This face lock does **not** reopen KEEP sole / NARROW / improve-only / **no C re
 | Surface | Role |
 |---------|------|
 | **SysMLEdge MCP** | Agent-facing wedge. Streamable HTTP, Cursor Bearer (memnet-pi pattern). Bind **project@rev**. Tools: `rev_status`, `gql_read` / `gql_context` / `gql_impact`, `propose` (P0 §4). |
-| **MemNet** | Backend only: TCP `serve` plus MCP **TCP-shared** with that serve. One-way projection. Not the Cursor plugin target once SysMLEdge binds. |
+| **MemNet** | Backend only: TCP `serve` plus MCP **TCP-shared** with that serve. Graph face of the machine mirror (upload + mutate + reproject). Not the Cursor plugin target once SysMLEdge binds. |
 
 **P1 proof** MAY still use MemNet `pin_map` for **M1–M4**. That is a proof path, not a second product MCP face.
 
@@ -449,13 +464,15 @@ This face lock does **not** reopen KEEP sole / NARROW / improve-only / **no C re
 Re-entrant. Mid-implement is allowed.
 
 ```text
-edit SysML → Save → MCP ask → implement → (propose) → repeat
+before upload:  invent SysML → upload
+SaaS runtime:   typed op → graph mutate → machine rewrite mirror → (propose | zip @ rev)
+P1 this week:   import SysML → bind → MCP ask → (propose) → reproject
 ```
 
 | Path | Who | Mid-implement |
 |------|------|----------------|
-| **A — eng** | Human engineer | Edit SysML (files or SaaS editor), Save, keep coding against MCP reads. |
-| **B — agent propose** | Cursor/MCP agent | Read GQL → draft delta → `propose` only. Human merge or Save. |
+| **A — eng** | Human engineer | Before upload: edit SysML then upload. After upload: typed machine ops and/or the SysML mirror; keep coding against MCP reads. P1: files + Save + reproject (no dual-write editor). |
+| **B — agent propose** | Cursor/MCP agent | Read GQL → draft delta → `propose` only (unless autopilot). Human merge or policy apply. |
 
 Agents do **not** get a write-SSOT tool. A proposal is not current until a human (or a lock below that is still human-gated) applies it.
 
@@ -488,7 +505,7 @@ Dirty is **not** STALE.
 | **Live** | Bound projection SHA equals current. Structure reads are live-SSOT. |
 | **Dirty** | Working SysML differs from last Save. Projection may still match last Save (not STALE). |
 | **STALE** | Projection SHA ≠ current SHA (Save or import landed; reproject not done — or disk drifted without reproject). |
-| **Saving** | Whole-tree overwrite + git commit in flight. MUST NOT write MemNet as SSOT. |
+| **Saving** | Mirror overwrite + git commit in flight. MUST NOT treat an LLM dump or graph export as the save. |
 | **Reprojecting** | Rebuilding MemNet from current SysML. |
 | **Error** | Import/save/reproject/read failed; do not pretend Live. |
 
@@ -545,7 +562,7 @@ SysMLEdge does **not** ship ClickUp or InvenTree: no sync, no PLM UI, no “link
 | Graphic IDE | Not specified | Explicit reject (SysON/Cameo) | Add to P0 reject list (does not weaken contracts). |
 | Market pin | Not specified | **NARROW product story.** One-liner + Keep / Kill smells / Cut until cold Foam yes (exact). Bilingual bus = internal name not brand | Plan/locks only. Steve Jobs + CEO Core 2026-09-12. Engine locks untouched. No runtime. |
 | ClickUp/InvenTree | Mapped when present in SysML | Not product features | **Clarify** P0 §5: projection of SysML attributes only. |
-| SSOT shape | Whole-tree import/save/download | **All** `.sysml`; never parts-only SSOT | Align P0 §3. |
+| SSOT shape | Whole-tree import/save/download | Lock **(g):** graph = SaaS working SSOT; SysML = full-fidelity mirror (all `.sysml`); org SysML-first before upload | Align P0 §3 + §7. |
 | Mapping | P0 seed listed part/port/connection as v1 | **P1 = Foam-complete**; not parts/ports forever; not full KerML in 2 weeks | **Supersede** a forever parts/ports cap. Elon freeze = 2-week anti-scope-creep only. |
 | MemNet improve | Engine + Path-B | **Improve-only** M1–M5 / Foam fidelity; bounce **0.19.8 + TCP**; Path-B CON **≥0.19.9+TCP**; **no C rewrite now**; **no Neo4j**; SysMLEdge owns `rev`/STALE/reproject | Does **not** reopen KEEP sole / NARROW / NOT-build. Not a MemNet roadmap. Engine form (C/Rust/Neo4j/other) only after fidelity green **and** timed wall-clock loss. Gaps = projection + reproject ego. M1 LIVE-bind gate **cleared** (published Path-B narrow+counts). |
 
@@ -563,7 +580,7 @@ Implementations MUST reject, in addition to P0 §7:
 6. Bot review that writes SSOT.
 7. Serving MemNet/GQL as downloadable source; Kuzu/Cypher.
 8. Claiming P2 SaaS or P3 tenancy as shipping in this repository seed.
-9. Selling SysMLEdge as a product category, or shipping “bilingual bus” as a **product**, without cold Foam yes (Steve Jobs + CEO Core 2026-09-12; NARROW Elon/Horcrux 2026-09-11). Bilingual bus may remain an internal architecture name. MUST NOT treat it as a translator both ways (GQL never invents SysML back).
+9. Selling SysMLEdge as a product category, or shipping “bilingual bus” as a **product**, without cold Foam yes (Steve Jobs + CEO Core 2026-09-12; NARROW Elon/Horcrux 2026-09-11). Bilingual bus may remain an internal architecture name. MUST NOT treat LLM/GQL as freeform invent-SSOT **(b)**. MUST NOT brand the spine as “one-way”. Lock **(g)** is published: graph = SaaS runtime working SSOT; SysML = machine-kept full-fidelity mirror; typed machine ops ≡ SysML constructs (Jon). MUST NOT read (g) as killing org SysML-first **before** upload. MUST NOT widen P1 to a dual-write editor.
 10. Spending Foam Phase-1 hours on P2 UI, PR UI, Team ACL, billing, Cameo, ClickUp/InvenTree product, or **full KerML** in two weeks.
 11. Parts-only SSOT (import/save/download of a subset of `.sysml` as “the model”).
 12. Treating “parts/ports” as a forever mapping cap, or boiling the ocean (whole-language) in the two-week proof.
