@@ -1,5 +1,7 @@
 # RUNLOG — 2026-09-12 — Edison **rev bind smoke**
 
+**CEO Core 2026-09-12:** [#18](https://github.com/chouswei/SysMLEdge/pull/18) FAKE bind = scaffold only — **not** live bind / not P1.
+
 `proof_pass_claimed: false`. **scaffold / bind smoke ≠ P1 pass.** Not M1–M5. No H2H. No Kuzu.
 
 SysMLEdge owns `rev.sha` / STALE / reproject. MemNet Path-B ingest is **B parallel** and is **not** this smoke.

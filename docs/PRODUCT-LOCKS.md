@@ -141,6 +141,8 @@ This review does **not** pass Foam gold. P1 gate = **CEO Core** exact locks (nex
 
 [#11](https://github.com/chouswei/SysMLEdge/pull/11) / [#12](https://github.com/chouswei/SysMLEdge/pull/12) = scaffold. MUST NOT treat green CI as Foam gold.
 
+[#18](https://github.com/chouswei/SysMLEdge/pull/18) FAKE bind = scaffold only — **not** live bind / not P1.
+
 ---
 
 ## Edison Core experiment (Thomas Alva Edison / Horcrux, 2026-09-12)
