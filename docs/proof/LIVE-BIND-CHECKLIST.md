@@ -4,7 +4,7 @@ SysMLEdge **bind** on live `memnet serve`. **Not** Path-B CON ingest. **Not** `p
 
 [#23](https://github.com/chouswei/SysMLEdge/pull/23) published M1 **narrow** (CON **124** + nested qname ego on `mn_0d4f6178` @ **0.19.9+TCP**) and **cleared** the LIVE-bind gate. This checklist is the Edison operator path.
 
-`proof_pass_claimed: false` until timed H2H **and** cold on **Foam** `mn_0d4f6178` (CON **124** + nested). H2H on **p1-tiny** / `mn_be03c1a9` = **plumbing only**. MUST NOT soft-pass the wedge. Gold-200 stays out.
+`proof_pass_claimed: false`. Foam bind ingest **GREEN** on **`mn_c7b75f2c`**; **CEO product H2H FAIL**. Invent next = **BSI context apparatus** **before** claim-narrow. [RUNLOG-2026-09-12-h2h-foam-bind.md](RUNLOG-2026-09-12-h2h-foam-bind.md). H2H on **p1-tiny** / `mn_be03c1a9` = **plumbing only**.
 
 Cite Path-B **`mn_0d4f6178`** as published M1 meters **only**. Cite Path A **`mn_b05a9869`** AFTER (CON=29) as **engine ops**. Dirty **`mn_27ce8714`** = honesty archive only. Live **(f)** = **`mn_be03c1a9`** @ **`f6768b1108b20c15212f0895f41fb7a27b6a408d`**. Neither Path A/B id is `rev.sha`. LIVE bind **opens a new ingest session**. MUST NOT sell continuous same-session **(g)** until **(r)**.
 
@@ -58,7 +58,7 @@ Record (operator): [RUNLOG-2026-09-12-live-bind.md](RUNLOG-2026-09-12-live-bind.
 | map | SCHEMA `--map-file` `fixtures/memnet-session.map` |
 | invent meter (same sid, archive) | `InventProbeBar` / `inventProbe` / `probeOut`; `rev.sha` → `1c1e3e50769cc23d8111548d19277cdbddfd1ce5`; gold 11→13 / 12→13 / 6→6; zip≡disk PASS; InventProbe in MemNet yes; mirror-lie PASS |
 | append caveat | rows **56→116**; find PRT **11→24** / CON **5→10**. Honesty archive. MUST NOT sell continuous same-session **(g)** until **(r)** |
-| H2H / cold | Plumbing: [RUNLOG-2026-09-12-h2h-plumbing.md](RUNLOG-2026-09-12-h2h-plumbing.md). **Track A tip** [#31](https://github.com/chouswei/SysMLEdge/pull/31): must-win **PASS**; wall **FAIL** **0/3** log-only (A **307.745ms** vs B **1286.676ms**) — **≠ bind / ≠ product**. [RUNLOG-2026-09-12-h2h-foam-tip.md](RUNLOG-2026-09-12-h2h-foam-tip.md). Cut 1: [RUNLOG-2026-09-12-cut1-tip-wall.md](RUNLOG-2026-09-12-cut1-tip-wall.md). **Track B** Foam bind **unlocked**. Core GO **(F)** **STOP** then GO **(S)** **STOP** (`STOP_ONLY_INTER_ITEMS_LOAD_ONCE_METERED`; PKG×2 **cleared**; only-inter remains; `bind_attempted=false`; bind held for Core Items **(S)/(M)**) — [RUNLOG-2026-09-12-gos-ads1274-only-inter.md](RUNLOG-2026-09-12-gos-ads1274-only-inter.md). Product wedge = Foam SysMLEdge bind H2H + cold unless Core re-locks P1 desk to tiny. Product bind H2H still logs wall as **P/F**. `proof_pass_claimed: false` |
+| H2H / cold | Memnetor exact bind H2H: [RUNLOG-2026-09-12-h2h-foam-bind.md](RUNLOG-2026-09-12-h2h-foam-bind.md) (`mn_c7b75f2c`; context **1/3**, no_drop **3/3**, wall **0/3 log-only**; BSI ctx **F** = must-win fail). Table `cold` = B cold **ms**, not row 12. Plumbing: [RUNLOG-2026-09-12-h2h-plumbing.md](RUNLOG-2026-09-12-h2h-plumbing.md). **Track A tip** ≠ bind / ≠ product. Bind GREEN ≠ `proof_pass`. `proof_pass_claimed: false` |
 | `proof_pass_claimed` | **false** |
 
 ## Refuse

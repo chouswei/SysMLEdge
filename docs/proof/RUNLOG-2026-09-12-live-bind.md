@@ -2,7 +2,7 @@
 
 **CEO Core:** [#23](https://github.com/chouswei/SysMLEdge/pull/23) M1 narrow published → LIVE bind **unlocked**. [#18](https://github.com/chouswei/SysMLEdge/pull/18) FAKE bind remains scaffold. [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego ≠ LIVE bind. [#26](https://github.com/chouswei/SysMLEdge/pull/26) lock **(g)** — graph = SaaS working SSOT; SysML = machine-kept mirror. **Strip `one_way` product pitch.**
 
-**CEO Core exact (user GO + Memnetor):** lock **(f)** clean session = **`mn_be03c1a9`** @ **`rev.sha` `f6768b1108b20c15212f0895f41fb7a27b6a408d`**. Dirty **`mn_27ce8714`** = honesty archive only. MUST NOT sell continuous same-session **(g)** until **(r)**. H2H on **p1-tiny / `mn_be03c1a9` = plumbing only**. `proof_pass_claimed` stays **false** until timed H2H + cold on Foam narrow (`mn_0d4f6178` CON **124** + nested), unless Core re-locks P1 desk to tiny. **Not Foam M1.** Not P1. Cold **held**. **(g) provisional.** **(r)** deferred.
+**CEO Core exact (user GO + Memnetor):** lock **(f)** clean session = **`mn_be03c1a9`** @ **`rev.sha` `f6768b1108b20c15212f0895f41fb7a27b6a408d`**. Dirty **`mn_27ce8714`** = honesty archive only. MUST NOT sell continuous same-session **(g)** until **(r)**. H2H on **p1-tiny / `mn_be03c1a9` = plumbing only**. Foam bind ingest GREEN on **`mn_c7b75f2c`**; `must_win_passed=false`; product claim **not unlocked**. `proof_pass_claimed: false`. **Not Foam M1.** Not P1. **(g) provisional.** **(r)** deferred.
 
 ## Kill theater
 
@@ -65,8 +65,8 @@ Serve/MCP ports on the floor row (`:18765` / `:18766`). `proof_pass_claimed` sta
 | STALE fail-closed | **true** (`gql_read` default / `propose` refused while stale) |
 | `reproject` live | **true** |
 | MCP gates (`rev_status` / `gql_read` / `propose` / `reproject`) | **true** |
-| H2H | **plumbing** on `mn_be03c1a9` ([RUNLOG-2026-09-12-h2h-plumbing.md](RUNLOG-2026-09-12-h2h-plumbing.md)). Foam **tip** Track A ([#31](https://github.com/chouswei/SysMLEdge/pull/31)): must-win **PASS**; wall **FAIL** **0/3** log-only (A **307.745ms** vs B **1286.676ms**) — [RUNLOG-2026-09-12-h2h-foam-tip.md](RUNLOG-2026-09-12-h2h-foam-tip.md). Cut 1: [RUNLOG-2026-09-12-cut1-tip-wall.md](RUNLOG-2026-09-12-cut1-tip-wall.md). **≠** Foam M5 / ≠ bind. **Track B** Foam bind **unlocked**; product bind H2H **not run** |
-| cold | **held** (not run) |
+| H2H | **plumbing** on `mn_be03c1a9` ([RUNLOG-2026-09-12-h2h-plumbing.md](RUNLOG-2026-09-12-h2h-plumbing.md)). Foam **tip** Track A: ≠ Foam M5 / ≠ bind. Foam bind `mn_c7b75f2c`: ingest GREEN; `must_win_passed=false` ([RUNLOG-2026-09-12-h2h-foam-bind.md](RUNLOG-2026-09-12-h2h-foam-bind.md)) |
+| cold | table `cold` = B cold **ms** on `mn_c7b75f2c` (not row 12) |
 | `proof_pass_claimed` | **false** |
 
 ## Housekeep on dirty archive `mn_27ce8714` — **not** Foam CON=124; **not** live **(f)**
