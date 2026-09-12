@@ -32,6 +32,11 @@ export interface RevIdentity {
   "rev.stale": boolean;
   currentKind: "git" | "content";
   mappingVersion: string;
+  memnetSession?: string;
+  /** Lock (g): SaaS working SSOT is the graph; SysML is the machine-kept mirror. Not a one_way flag. */
+  working_ssot: "graph";
+  sysml_role: "machine_mirror";
+  proof_pass_claimed: false;
 }
 
 export interface StaleErrorShape {

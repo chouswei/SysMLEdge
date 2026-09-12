@@ -11,6 +11,7 @@ SysML zip / sysml-models/     SysML mirror (invent SSOT before upload)
         |  human Save / import (git SHA)
         v
 SysMLEdge reproject
+        |  session open --map-file fixtures/memnet-schema.sysml.txt  (0.19.9 SCHEMA; leftover --map rejected)
         |  parse + ground contains/owns/ends (FAKE always)
         |  LIVE: memnet ingest sysml --path <mirror> --session <sid>
         v
@@ -29,25 +30,17 @@ SysMLEdge MCP gql_context / gql_impact wraps that + rev.sha
 | Compare CON / nested / ego to [foam-gold](../../fixtures/foam-gold/gold.json) | Claim gold because `pin_map` is non-empty |
 | Engine `memnet-llm>=0.19.9` + `MEMNET_MCP_TRANSPORT=tcp` | Pin below 0.19.8; claim Path-B CON on 0.19.8 |
 
-## Operator sequence (Pi after 0.19.9 roll)
+## Operator sequence (Pi after 0.19.9; LIVE bind)
+
+Cloud VM often **cannot** TCP `10.0.0.10:18765`. Then Memnetor/Devicor run this **on the Pi**. MUST NOT ingest into `mn_0d4f6178` / `mn_b05a9869`. leftover `--map` is **not** the wire.
 
 ```bash
-export MEMNET_BACKEND=tcp
-export MEMNET_MCP_TRANSPORT=tcp
-export MEMNET_SERVE_HOST=127.0.0.1
-export MEMNET_SERVE_PORT=18765
-export MEMNET_MCP_PORT=18766
-export MEMNET_LLM_VERSION=0.19.9
-export FOAM_DIR=/tmp/foam-soi
-export SYSMLEDGE_PROJECT=/tmp/foam-desk
-
-memnet serve                          # :18765
-# optional proof pin_map only:
-# MEMNET_MCP_TRANSPORT=tcp memnet mcp  # :18766
-
-npx tsx src/cli.ts memnet-check
-npx tsx src/cli.ts import-foam "$FOAM_DIR" --project "$SYSMLEDGE_PROJECT"
-npx tsx src/cli.ts status --project "$SYSMLEDGE_PROJECT"
+export MEMNET_MAP_FILE="$(pwd)/fixtures/memnet-schema.sysml.txt"
+npm run bind:live
+# or: memnet serve; npx tsx src/cli.ts memnet-check
+# npx tsx src/cli.ts import-foam "$FOAM_DIR" --project "$SYSMLEDGE_PROJECT"
+# npx tsx src/cli.ts status --project "$SYSMLEDGE_PROJECT"
+# BIND_SMOKE_LIVE=1 npm run bind:smoke
 ```
 
 Then measure (fill [LIVE-M1-CHECKLIST.md](LIVE-M1-CHECKLIST.md)):
@@ -58,12 +51,14 @@ Then measure (fill [LIVE-M1-CHECKLIST.md](LIVE-M1-CHECKLIST.md)):
 4. Same for config-panel nested usage.
 5. `gql_impact` on `…::foamDetection` — neighbourhood/usage only until closure is measured.
 
-Until those meters are green, LIVE bind stays **gated**. FAKE neighbourhood counts in [RUNLOG-2026-09-12-m1-bind.md](RUNLOG-2026-09-12-m1-bind.md) are the published **narrow** for this cut.
+Until LIVE `rev.sha` is recorded from **SysMLEdge** `rev_status` on a **new** session, do not treat Path-B `pin_map` as bind. FAKE neighbourhood counts in [RUNLOG-2026-09-12-m1-bind.md](RUNLOG-2026-09-12-m1-bind.md) are **not** LIVE bind. LIVE meters (p1-tiny, Devicor): [RUNLOG-2026-09-12-live-bind.md](RUNLOG-2026-09-12-live-bind.md) — `mn_27ce8714`, `proof_pass_claimed: false`. **Not M1 pass.**
 
 ## Kill theater
 
 - Tip Path-B sold as bind
 - Path A CON=29 / nested-in-TSK-ego as SysMLEdge bind
-- Claiming M1 pass from FAKE tests
-- H2H before LIVE meters
+- Claiming M1 / P1 pass from FAKE tests or from Path-B `pin_map`
+- H2H before timed run (H2H scores **124 + nested ego**, not gold-200)
 - Neo4j / dual-engine because CON=0 was a projection/ego gap
+- Attaching bind to `mn_0d4f6178` / `mn_b05a9869`
+- leftover `--map` TAG wire; `one_way: true` as product truth

@@ -11,7 +11,7 @@ SysMLEdge owns `rev.sha` / STALE / reproject. MemNet Path-B ingest is **B parall
 | Arm | Where | Backend | Bind smoke |
 |-----|--------|---------|------------|
 | **FAKE** | CI / this cloud VM | `MEMNET_BACKEND=fake` | **green** — import desk → bound SHA `stale=false` → mutate → STALE fail-closed → `propose` refused → `reproject` → live. MCP tools exercised. |
-| **LIVE** | Pi when TCP `:18765` reachable | `memnet-llm==0.19.8` + `MEMNET_MCP_TRANSPORT=tcp` | **runbook only** until an operator fills [LIVE-BIND-CHECKLIST.md](LIVE-BIND-CHECKLIST.md). Same SysMLEdge bind rules. |
+| **LIVE** | Pi when TCP `:18765` reachable | `memnet-llm≥0.19.9` + `MEMNET_MCP_TRANSPORT=tcp` + SCHEMA `--map-file` | **operator** `npm run bind:live`. Devicor 2026-09-12: [RUNLOG-2026-09-12-live-bind.md](RUNLOG-2026-09-12-live-bind.md) — `mn_27ce8714`, `rev.sha=1664f20a41320b8ceba81340ea237d8c19245894`, `stale=false`, smoke LIVE_TCP green. H2H held. **Not M1 pass.** |
 
 Cloud VM does not claim LIVE TCP bind. FAKE is the recorded proof for this cut.
 
@@ -21,7 +21,7 @@ Cloud VM does not claim LIVE TCP bind. FAKE is the recorded proof for this cut.
 |---------|-----|
 | Tip Path-B / `pin_map` | Product lock: MemNet wire has **no** `rev` / STALE. Non-empty `pin_map` is not `project@rev`. |
 | Path A AFTER on `mn_b05a9869` | **CON=29** + nested in TSK ego **via ops**. Cite separately. **≠** SysMLEdge bind. |
-| Path-B CON **0.19.9** | Shipped MemNet **#158**; **pending Pi roll**. Not this smoke. |
+| Path-B CON **0.19.9** | On Pi: `mn_0d4f6178` published narrow **124**. **≠** this FAKE smoke. LIVE bind session is **`mn_27ce8714`**. |
 
 ### Cited MemNet session meters (separate; not this bind)
 
@@ -34,7 +34,7 @@ From [RUNLOG-2026-09-12-m1-bind.md](RUNLOG-2026-09-12-m1-bind.md) / Memnetor on 
 | BEFORE | `pin_map` TSK ego | TSK only |
 | AFTER Path A (ops) | TSK ego CON | **29** |
 | AFTER Path A | nested in TSK ego | yes, via panel **owns** |
-| Path-B CON | memnet-llm **0.19.9** (#158) | **pending Pi roll** |
+| Path-B CON | memnet-llm **0.19.9** (`mn_0d4f6178`) | **published narrow 124 — not bind** |
 
 AFTER Path A meters are **still not** `rev.sha` bind. This RUNLOG does **not** reuse them as bind evidence.
 

@@ -1,0 +1,12 @@
+# Session map for Path-B SysML pin-map ingest (MemNet 0.19.9+ SCHEMA).
+# session open --map-file (absolute path on the serve host). leftover --map TAG
+# lines (e.g. "PKG qname,path") are rejected on 0.19.9.
+# Built-in LAW / EDG are merged automatically — do not redefine them here.
+# Mirror of MemNet schema.sysml.example.txt + partNumber on PRT (P0 projection).
+SCHEMA PKG ; fields=id name qname path sysml_kind session grain kind_band recycle
+SCHEMA PRT ; fields=id name qname path partNumber sysml_kind recycle
+SCHEMA REQ ; fields=id name qname path requirementId sysml_kind recycle
+SCHEMA POR ; fields=id name qname path sysml_kind recycle
+SCHEMA CON ; fields=id name qname path sysml_kind kind recycle
+SCHEMA TSK ; fields=id goal anchor status recycle
+SCHEMA USR ; fields=id topic content status recycle

@@ -17,10 +17,10 @@ Session `mn_b05a9869`. CON **0** session-wide. `backgroundSetIndicator` **ABSENT
 | POR | **≥3** |
 | Truncation | **false** |
 | `backgroundSetIndicator` | in TSK ego via panel **owns** (`contains` / `HAS_PART`) |
-| Path-B CON map | **0.19.9 shipped** (MemNet #158); **pending Pi roll**. Ops mutate ≠ bind |
+| Path-B CON map | **0.19.9 on Pi** (`mn_0d4f6178` published narrow **124**). Ops mutate ≠ bind |
 | near_cap | **~4294/5000** |
 
-Parser gold remains 200 CON. TSK ego 29 ≠ session-wide parity and **≠ SysMLEdge bind**. Path-B CON = memnet-llm **0.19.9** (#158) pending Pi.
+Parser gold remains 200 CON (**reference**). TSK ego 29 ≠ session-wide parity and **≠ SysMLEdge bind**. Path-B CON = memnet-llm **0.19.9** on Pi (`mn_0d4f6178`). LIVE bind: [LIVE-BIND-CHECKLIST.md](LIVE-BIND-CHECKLIST.md).
 
 ## LIVE 0.19.9 attach (after Pi roll) — measure, do not claim
 

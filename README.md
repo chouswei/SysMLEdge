@@ -18,7 +18,7 @@
 | **GQL** | Read/represent the bound model. MUST NOT invent **(b)**. Typed machine ops ≡ SysML constructs (Jon). |
 | **MCP** | Agent face: **streamable HTTP** (Cursor Bearer, memnet-pi pattern). Read GQL; **propose** only; no silent SSOT overwrite |
 | **Git / GitHub** | VCS backbone — repo @ SHA. We own projection, STALE, propose — not a GitHub rebuild. |
-| **CLI** | `import` / `import-foam` / `gold` / `proof` / `head-to-head` / `memnet-check` / `status` / `save` / `download` / `reproject` / `mcp` |
+| **CLI** | `import` / `import-foam` / `gold` / `proof` / `head-to-head` / `memnet-check` / `live-probe` / `status` / `save` / `download` / `reproject` / `mcp` |
 
 Normative contracts: [docs/P0-contracts.md](docs/P0-contracts.md). Product locks (**NARROW product story**, Steve Jobs + CEO Core 2026-09-12): [docs/PRODUCT-LOCKS.md](docs/PRODUCT-LOCKS.md). Living plan: [docs/PRODUCT-PLAN.md](docs/PRODUCT-PLAN.md). Business plan (Foam desk only until cold Foam yes): [docs/BUSINESS-PLAN.md](docs/BUSINESS-PLAN.md). P1 Foam acceptance + proof: [docs/P1-acceptance.md](docs/P1-acceptance.md). Agent rules: [AGENTS.md](AGENTS.md).
 
@@ -52,9 +52,9 @@ npx tsx src/cli.ts proof --project /tmp/foam-desk --foam-ssot /tmp/foam-soi/sysm
 npx tsx src/cli.ts head-to-head   # timings stay null until a timed run
 ```
 
-### Live Pi (memnet-llm==0.19.8 + TCP)
+### Live Pi (memnet-llm ≥0.19.9 + TCP; bounce 0.19.8)
 
-Proof env lock: **memnet-llm==0.19.8** and TCP-shared (`MEMNET_MCP_TRANSPORT=tcp`). SysMLEdge still owns `rev` / STALE / reproject.
+Proof env: bounce **0.19.8** + TCP-shared. LIVE bind ingest **≥0.19.9** with SCHEMA **`--map-file`** (`fixtures/memnet-schema.sysml.txt`). leftover `--map` TAG wire is rejected. SysMLEdge still owns `rev` / STALE / reproject. Path-B `mn_0d4f6178` CON **124** is **not** bind.
 
 ```bash
 # Terminal 1 — MemNet serve (backend only)
@@ -63,7 +63,7 @@ memnet serve   # 127.0.0.1:18765
 # optional: memnet MCP TCP-shared on :18766 for P1 pin_map proof (M1–M4), not the product agent face
 export MEMNET_MCP_TRANSPORT=tcp
 
-# Terminal 2 — SysMLEdge MCP (agent face)
+# Terminal 2 — SysMLEdge (on the Pi; cloud VM often cannot reach 10.0.0.10)
 export MEMNET_BACKEND=tcp
 export MEMNET_SERVE_HOST=127.0.0.1
 export MEMNET_SERVE_PORT=18765
@@ -71,14 +71,16 @@ export SYSMLEDGE_MCP_TOKEN=replace-me   # Cursor Authorization: Bearer
 export SYSMLEDGE_PROJECT=/tmp/p1-desk
 export MEMNET_MCP_TRANSPORT=tcp
 export MEMNET_MCP_PORT=18766
-export MEMNET_LLM_VERSION=0.19.8
+export MEMNET_LLM_VERSION=0.19.9
+export MEMNET_MAP_FILE="$(pwd)/fixtures/memnet-schema.sysml.txt"
+npx tsx src/cli.ts live-probe
 npx tsx src/cli.ts memnet-check
-BIND_SMOKE_LIVE=1 npm run bind:smoke   # same bind rules; Path A CON=29 ≠ bind; 0.19.9 pending Pi
+npm run bind:live   # same bind rules; Path A CON=29 ≠ bind; Path-B 124 ≠ bind; not M1 pass
 npm run mcp
 # streamable HTTP: http://127.0.0.1:18776/mcp
 ```
 
-LIVE operator boxes: [docs/proof/LIVE-BIND-CHECKLIST.md](docs/proof/LIVE-BIND-CHECKLIST.md). `mn_b05a9869` / `pin_map` are **not** bind.
+LIVE operator boxes: [docs/proof/LIVE-BIND-CHECKLIST.md](docs/proof/LIVE-BIND-CHECKLIST.md). Meters: [docs/proof/RUNLOG-2026-09-12-live-bind.md](docs/proof/RUNLOG-2026-09-12-live-bind.md) (`mn_27ce8714`, `rev.sha=1664f20a…`, `stale=false`, smoke LIVE_TCP green, H2H held). `mn_b05a9869` / `mn_0d4f6178` / `pin_map` are **not** bind.
 
 Cursor: HTTP MCP URL `http://127.0.0.1:18776/mcp` with `Authorization: Bearer ${SYSMLEDGE_MCP_TOKEN}`.
 
