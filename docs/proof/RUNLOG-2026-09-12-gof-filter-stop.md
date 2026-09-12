@@ -57,6 +57,7 @@ These two remain after the 310-path exclude. **STOP.** Do not bind. Do not treat
 ## Next (Core)
 
 - **(S)/(M)** — escalate; operators, not this log
+- **Folded (S) Ads1274:** PKG×2 **cleared**; only-inter remains; bind still **held** — [RUNLOG-2026-09-12-gos-ads1274-only-inter.md](RUNLOG-2026-09-12-gos-ads1274-only-inter.md). Next = Core **Items (S)/(M)**. **≠ bind green.**
 - **No** soft-pass of CueConflict / bind / `proof_pass`
 - **No** Path-B CueConflict dedupe invent (MemNet-side collapse of remaining dups)
 - Tip sessions **untouched** (`mn_0d4f6178` tip Track A; Cut 1 wall apparatus)
