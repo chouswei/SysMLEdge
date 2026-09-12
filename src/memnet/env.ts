@@ -4,7 +4,7 @@
  */
 
 export const MEMNET_LLM_FLOOR = "0.19.8";
-/** Path-B CON from ingest (MemNet #158). Bounce stays 0.19.8. LIVE bind still gated. */
+/** Path-B CON from ingest (MemNet #158). Bounce stays 0.19.8. Pi Path-B = mn_0d4f6178 @ 0.19.9 (published narrow; not bind). */
 export const MEMNET_PATH_B_CON_FLOOR = "0.19.9";
 export const MEMNET_SERVE_PORT_DEFAULT = 18765;
 export const MEMNET_MCP_PORT_DEFAULT = 18766;

@@ -15,6 +15,6 @@ See [docs/proof/MEMNET-LIVE.md](../../docs/proof/MEMNET-LIVE.md).
 | `MEMNET_SERVE_HOST` | default `127.0.0.1` |
 | `MEMNET_SERVE_PORT` | **must be `18765`** |
 | `MEMNET_MCP_PORT` | **must be `18766`** |
-| `MEMNET_LLM_VERSION` | bounce `0.19.8`; Path-B CON ingest `0.19.9` if serve does not print a version |
+| `MEMNET_LLM_VERSION` | bounce `0.19.8`; LIVE bind / Path-B CON ingest `0.19.9` if serve does not print a version |
 
 `createMemNetAdapter()` and `TcpMemNet.assertEngineFloor()` fail with `MemNetEnvError` when the floor is wrong. Default backend remains **fake** for CI.

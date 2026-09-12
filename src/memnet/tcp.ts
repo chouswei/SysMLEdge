@@ -10,6 +10,7 @@ import {
   parseMemnetVersion,
   versionAtLeastFloor,
 } from "./env.js";
+import { isProtectedMemnetSession } from "./sessions.js";
 
 export interface TcpMemNetOptions {
   host: string;
@@ -34,7 +35,8 @@ interface Envelope {
  * - cue pin_map at TSK_model_* as project@rev
  *
  * LIVE attach: ingest sysml Path-B into a fresh session, then bounded pin_map
- * on SysML qname= locators. See docs/proof/LIVE-0199-ATTACH.md.
+ * on SysML qname= locators. MUST NOT attach to mn_0d4f6178 / mn_b05a9869.
+ * See docs/proof/LIVE-0199-ATTACH.md.
  */
 export class TcpMemNet implements MemNetAdapter {
   private session: string | undefined;
@@ -124,6 +126,17 @@ export class TcpMemNet implements MemNetAdapter {
     const sid = parseSession(opened.stderr + opened.stdout);
     if (!sid) {
       throw new Error(`memnet session open failed: ${opened.stderr || opened.stdout}`);
+    }
+    if (isProtectedMemnetSession(sid)) {
+      throw new Error(
+        `refuse session ${sid}: cited Path-A/Path-B sessions are not SysMLEdge bind`,
+      );
+    }
+    const attach = process.env.MEMNET_ATTACH_SESSION;
+    if (isProtectedMemnetSession(attach)) {
+      throw new Error(
+        `refuse MEMNET_ATTACH_SESSION=${attach}: LIVE bind opens a new ingest session`,
+      );
     }
     this.session = sid;
     this.live = true;

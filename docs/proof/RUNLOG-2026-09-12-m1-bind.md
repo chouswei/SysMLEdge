@@ -84,7 +84,7 @@ Cloud VM cannot reach `10.0.0.10` (timeout). LIVE numbers are **Memnetor**.
 
 ## FAKE=ok (SysMLEdge bind only)
 
-`npm run bind:smoke` (FAKE): import → `rev.stale=false` → mutate → STALE fail-closed → `propose` refused → reproject live. Path A CON=29 / nested-in-ego is **not** that bind. See [RUNLOG-2026-09-12-rev-bind.md](RUNLOG-2026-09-12-rev-bind.md). `proof_pass_claimed: false`.
+`npm run bind:smoke` (FAKE): import → `rev.stale=false` → mutate → STALE fail-closed → `propose` refused → reproject live. Path A CON=29 / nested-in-ego is **not** that bind. See [RUNLOG-2026-09-12-rev-bind.md](RUNLOG-2026-09-12-rev-bind.md). LIVE operator: `npm run bind:live` — [RUNLOG-2026-09-12-live-bind.md](RUNLOG-2026-09-12-live-bind.md). `proof_pass_claimed: false`.
 
 ## FAKE M1 ego — invent progress (**≠ M1 pass**)
 

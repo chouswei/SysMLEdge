@@ -254,7 +254,7 @@ Verified (do not relitigate):
 |------|--------|
 | Tip Path-B + `pin_map` | **PASS** on `mn_b05a9869` TCP-shared. Nested e.g. `backgroundSetIndicator` needed **manual CREATE**. Impact **PARTIAL**. Path-B wall-clock **UNKNOWN**. |
 | Serve + MCP | **PASS** with `MEMNET_MCP_TRANSPORT=tcp`, serve `:18765` / mcp `:18766`, **memnet-llm==0.19.8**. Pre-fix in-process → `session_not_found`. |
-| Bounce | **PASS** on **0.19.8**. **FAIL** on **0.19.7**. Bounce floor = **0.19.8**. Path-B CON floor = **≥0.19.9+TCP** (MemNet **#158**; pending Pi roll). |
+| Bounce | **PASS** on **0.19.8**. **FAIL** on **0.19.7**. Bounce floor = **0.19.8**. Path-B CON floor = **≥0.19.9+TCP** (MemNet **#158**; **on Pi** `mn_0d4f6178`). |
 | `rev.sha` / STALE / reproject@SHA | **CONFIRMED ABSENT** on the MemNet wire — **SysMLEdge-to-build**. Without SysMLEdge owning the bind, STALE proof is **theater**. |
 | Serve death | Loses in-process sessions without `session_save`. |
 | Kuzu / Neo4j | **Not necessary** for tip `pin_map` / Path-B. Gaps are projection + reproject ego, **not** the store. |

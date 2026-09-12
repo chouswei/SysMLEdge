@@ -85,7 +85,8 @@ test("smokeBind FAKE: bound stale=false then mutate → STALE → propose refuse
   assert.equal(report.scaffold_not_p1, true);
   assert.equal(report.memnet_mode, "FAKE");
   assert.equal(report.cited_memnet_session, "mn_b05a9869");
-  assert.equal(report.path_b_con_ingest, "parallel_B_not_waited");
+  assert.equal(report.cited_path_b_session, "mn_0d4f6178");
+  assert.equal(report.path_b_con_ingest, "published_narrow_124_not_bind");
   assert.equal(report.ok, true);
   assert.equal(report.stale["rev.stale"], true);
   assert.equal(report.stale.gql_read_fail_closed, true);
