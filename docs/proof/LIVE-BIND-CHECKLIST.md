@@ -58,7 +58,7 @@ Record (operator): [RUNLOG-2026-09-12-live-bind.md](RUNLOG-2026-09-12-live-bind.
 | map | SCHEMA `--map-file` `fixtures/memnet-session.map` |
 | invent meter (same sid, archive) | `InventProbeBar` / `inventProbe` / `probeOut`; `rev.sha` → `1c1e3e50769cc23d8111548d19277cdbddfd1ce5`; gold 11→13 / 12→13 / 6→6; zip≡disk PASS; InventProbe in MemNet yes; mirror-lie PASS |
 | append caveat | rows **56→116**; find PRT **11→24** / CON **5→10**. Honesty archive. MUST NOT sell continuous same-session **(g)** until **(r)** |
-| H2H / cold | **held**. Tiny H2H = plumbing. Wedge = Foam `mn_0d4f6178` unless Core re-locks P1 desk to tiny |
+| H2H / cold | Plumbing logged: [RUNLOG-2026-09-12-h2h-plumbing.md](RUNLOG-2026-09-12-h2h-plumbing.md). Wedge = Foam `mn_0d4f6178` unless Core re-locks P1 desk to tiny |
 | `proof_pass_claimed` | **false** |
 
 ## Refuse

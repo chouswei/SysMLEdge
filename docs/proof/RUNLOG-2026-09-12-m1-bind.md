@@ -11,8 +11,8 @@
 | **M1 FAIL LIVE-bind gate** | **cleared** by this publish. Next Edison step = **LIVE bind**. |
 | **FAKE** bind / STALE | **ok** (SysMLEdge desk) |
 | **FAKE M1 ego** | **invent progress** — SysML-grounded contains/owns/ends; fixture + gold reconstruction. **Does not change MemNet rows.** **≠ pass.** |
-| H2H | **not run** |
-| `proof_pass_claimed` | **false** (full P1 until bind + H2H + cold) |
+| H2H | **held** at bind time. Later **plumbing** H2H on clean sid `mn_be03c1a9` — [RUNLOG-2026-09-12-h2h-plumbing.md](RUNLOG-2026-09-12-h2h-plumbing.md). **Not** Foam M5. |
+| `proof_pass_claimed` | **false** (full P1 until Foam H2H + cold unless desk re-locked to tiny) |
 | P1 / M1–M5 pass | **not claimed** |
 | housekeep (Path-B session) | **1673/5000** edges **923** orphans **750** (`mn_0d4f6178`) |
 
@@ -105,4 +105,4 @@ LIVE attach without tip-as-bind: [LIVE-0199-ATTACH.md](LIVE-0199-ATTACH.md). Pat
 
 ## Not this cut
 
-H2H (M5). Claiming full P1 / `proof_pass_claimed`. Treating [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as pass. Treating Path A ops meters (CON=29, nested in TSK ego) as SysMLEdge bind. Inventing CON to chase gold **200**. Treating Path-B CON **124** as gold **200**. Treating this Path-B session as SysMLEdge LIVE re-ingest. Neo4j / dual-engine.
+H2H (Foam M5 / row 9). Claiming full P1 / `proof_pass_claimed`. Treating [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego as pass. Treating Path A ops meters (CON=29, nested in TSK ego) as SysMLEdge bind. Inventing CON to chase gold **200**. Treating Path-B CON **124** as gold **200**. Treating this Path-B session as SysMLEdge LIVE re-ingest. Selling p1-tiny plumbing H2H as Foam beat-grep. Neo4j / dual-engine.

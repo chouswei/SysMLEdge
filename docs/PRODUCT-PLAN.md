@@ -12,7 +12,7 @@ This repository seed does **not** implement P2/P3. P1 **runtime first cut** (fix
 4. **(g) provisional:** typed SysML ops → bit-true zip @ rev (mirror-lie = kill). Mirror-lie meter on dirty archive `mn_27ce8714`: **PASS**. MUST NOT sell (g) as proven. MUST NOT sell continuous same-session **(g)** until **(r)**.
 5. Streamable-HTTP MCP; MemNet sole backend
 
-**Invent status:** mirror-lie **PASS** on dirty archive `mn_27ce8714` (InventProbe; gold parts **11→13**, ports **12→13**; zip≡disk; append 56→116). **Lock (f) exact:** `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d`. **(r)** deferred. MUST NOT sell continuous same-session **(g)** until **(r)**. H2H on p1-tiny / `mn_be03c1a9` = **plumbing only**. `proof_pass_claimed` stays **false** until Foam `mn_0d4f6178` H2H + cold unless Core re-locks P1 desk to tiny. p1-tiny **no M1 claim**. don’t-migrate / no Pro until cold Foam. KEEP MemNet sole. Do not reopen Neo4j.
+**Invent status:** mirror-lie **PASS** on dirty archive `mn_27ce8714` (InventProbe; gold parts **11→13**, ports **12→13**; zip≡disk; append 56→116). **Lock (f) exact:** `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d`. **(r)** deferred. MUST NOT sell continuous same-session **(g)** until **(r)**. H2H on p1-tiny / `mn_be03c1a9` = **plumbing only** ([proof/RUNLOG-2026-09-12-h2h-plumbing.md](proof/RUNLOG-2026-09-12-h2h-plumbing.md)). `proof_pass_claimed` stays **false** until Foam `mn_0d4f6178` H2H + cold unless Core re-locks P1 desk to tiny. p1-tiny **no M1 claim**. don’t-migrate / no Pro until cold Foam. KEEP MemNet sole. Do not reopen Neo4j.
 
 **Out:** canvas, Neo4j, ClickUp/InvenTree as product, P2 ACL/PR UI, Pro pitch until cold Foam.
 

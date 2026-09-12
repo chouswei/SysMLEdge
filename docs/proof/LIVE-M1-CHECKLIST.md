@@ -1,6 +1,6 @@
 # LIVE M1 checklist — fail-fast **then** Path A (Memnetor 2026-09-12)
 
-`proof_pass_claimed: false`. No H2H. No P1 claim.
+`proof_pass_claimed: false`. No Foam H2H / no P1 claim. Plumbing p1-tiny H2H is a separate log.
 
 Parser gold: `fixtures/foam-gold/gold.json` @ `76459224e6afbe74612cca9b37ffe0b3503bda85`.
 

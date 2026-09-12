@@ -99,6 +99,8 @@ Same operator. Three fixed Foam questions: **usage / ownership / impact**.
 
 Log wall-clock, **context footprint** (prompt tokens per Q + whole-tree-dump baseline), **no silent drop** notes (narrow edges kept vs dropped), `rev.sha` / `rev.stale`. Feature count is **not** a win. MUST NOT treat parser gold **200** as the H2H bar.
 
+**Plumbing (not this row):** Memnetor table on `mn_be03c1a9` — [proof/RUNLOG-2026-09-12-h2h-plumbing.md](proof/RUNLOG-2026-09-12-h2h-plumbing.md). CLI `head-to-head` is a **null scaffold**. `proof_pass_claimed: false`. Product H2H still Foam `mn_0d4f6178` + cold.
+
 | # | Name | Pass criteria |
 |---|------|----------------|
 | 9 | Head-to-head | **wall-clock + context footprint + no silent drop** on the three **Foam** Qs, scoring the **narrow** claim (`mn_0d4f6178` CON **124** + nested ego). Competitor = tens-of-minutes grep, not Cameo, **not** gold-200. H2H on **p1-tiny** / `mn_be03c1a9` = **plumbing only** — MUST NOT set `proof_pass_claimed`. Context footprint **far smaller** than whole-tree dump. |
