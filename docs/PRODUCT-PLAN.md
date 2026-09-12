@@ -2,7 +2,7 @@
 
 Living plan. **Locks (2026-09-11):** [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md) — **NARROW** (Elon / Horcrux). **P0 behaviour:** [P0-contracts.md](P0-contracts.md). **P1 pass/fail + Foam proof:** [P1-acceptance.md](P1-acceptance.md). **Business (GTM / beachhead / buyer roots, gated):** [BUSINESS-PLAN.md](BUSINESS-PLAN.md).
 
-This repository seed does **not** implement runtime MCP/CLI. P2/P3 are not shipping here.
+This repository seed does **not** implement P2/P3. P1 **runtime first cut** (fixture + bind + MCP) lives in-tree; Foam proof is not claimed.
 
 **Position:** bilingual bus for textual SysML v2 + agents (SysML stays the model; GQL/MCP so Cursor agents do not grep the tree). Not SysON/Cameo/graphic IDE. Not a GitHub clone. Not defense PLM yet. Pin: [PRODUCT-LOCKS.md — Market position](PRODUCT-LOCKS.md#market-position-pin).
 
@@ -17,7 +17,7 @@ This repository seed does **not** implement runtime MCP/CLI. P2/P3 are not shipp
 | Phase | Name | This repo | Intent |
 |-------|------|-----------|--------|
 | **P0** | Contracts | **Docs done** | Normative sheet so implementers do not rebuild a Kuzu indexer. |
-| **P1** | Foam slice | **Docs done** ([P1-acceptance.md](P1-acceptance.md)). Runtime next (not this docs change). **Proof in progress.** | Contract rows 1–8 plus Foam proof 9–12 **and** MemNet proof M1–M5. ALL required. |
+| **P1** | Foam slice | Runtime first cut in-repo (fixture CI). Foam proof **not** claimed. | Contract rows 1–8 plus Foam proof 9–12 **and** MemNet proof M1–M5. ALL required. |
 | **P2** | Single-tenant SaaS | Plan only. **Spend frozen** until Foam proof passes. | Hosted on the **existing droplet (Devicor)**. Identity, import/save/download, MemNet per project, MCP, in-tenant ACL, Save/STALE UI, optional autopilot/bot review (default off). **InvenTree on that host: untouched.** |
 | **P3** | Tenancy | Plan only | Cross-tenant isolation, authz, billing-shaped tenancy. Not implied by P2. |
 
@@ -39,7 +39,7 @@ This repository seed does **not** implement runtime MCP/CLI. P2/P3 are not shipp
 - [x] [BUSINESS-PLAN.md](BUSINESS-PLAN.md) (Pro/beachhead gated on Foam proof).
 - [x] [P0-contracts.md](P0-contracts.md): rev identity, STALE, whole-tree import/save/download, MCP, Foam-complete mapping, proposal path, reject list.
 - [x] [AGENTS.md](../AGENTS.md).
-- [ ] Runtime MCP/CLI (out of P0 seed; not this change).
+- [x] Runtime MCP/CLI first cut (fixture + fake MemNet). Foam proof still outstanding.
 
 ---
 
