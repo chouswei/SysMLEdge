@@ -55,6 +55,8 @@ Record (operator): [RUNLOG-2026-09-12-live-bind.md](RUNLOG-2026-09-12-live-bind.
 | housekeep | rows **56/5000** edges **30** orphans **26** — **not** Foam CON=124 |
 | smoke | `BIND_SMOKE_LIVE=1` **ok**; STALE fail-closed; reproject/MCP gates **true** |
 | map | SCHEMA `--map-file` `fixtures/memnet-session.map` |
+| invent meter (same sid) | `InventProbeBar` / `inventProbe` / `probeOut`; `rev.sha` → `1c1e3e50769cc23d8111548d19277cdbddfd1ce5`; gold 11→13 / 12→13 / 6→6; zip≡disk PASS; InventProbe in MemNet yes; mirror-lie PASS |
+| append caveat | rows **56→116**; find PRT **11→24** / CON **5→10** (duplicate qnames). Prefer fresh session or replace |
 | H2H / cold | **held** |
 | `proof_pass_claimed` | **false** |
 

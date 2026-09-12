@@ -67,7 +67,43 @@ Serve/MCP ports on the floor row (`:18765` / `:18766`). `proof_pass_claimed` sta
 | edges | **30** |
 | orphans | **26** |
 
-These are **p1-tiny** ingest sizes. MUST NOT treat them as Foam Path-B CON **124** (`mn_0d4f6178`) or gold **200**.
+These are **p1-tiny** ingest sizes **before** the lock **(g)** invent probe. MUST NOT treat them as Foam Path-B CON **124** (`mn_0d4f6178`) or gold **200**.
+
+## Lock (g) invent meter (Devicor, same session)
+
+Typed SysML mutate on desk **`fixtures/p1-tiny`**, session **`mn_27ce8714`**. **Not** LLM invent. **Not** a new-sid reproject: Path-B ingest into the **same** session.
+
+Added in `P1Tiny.sysml`:
+
+- `part def InventProbeBar`
+- `part inventProbe`
+- `port probeOut`
+
+| Axis | Pre | Post |
+|------|------|------|
+| `rev.sha` | `1664f20a41320b8ceba81340ea237d8c19245894` | `1c1e3e50769cc23d8111548d19277cdbddfd1ce5` |
+| `rev.stale` | **false** | **false** |
+| gold parts | **11** | **13** |
+| gold ports | **12** | **13** |
+| `connections_parsed` | **6** | **6** |
+| zip sha256 | (pre) | **changed** |
+| zip ≡ disk SSOT | — | **PASS** |
+| InventProbe in MemNet | — | **yes** (def + usage + port) |
+| mirror-lie (silent drop) | — | **PASS** (no silent drop) |
+| `proof_pass_claimed` | **false** | **false** |
+| H2H / cold | **held** | **held** |
+
+### CAVEAT — same-session re-ingest **appends**
+
+Path-B ingest on an already-open session **does not replace**. Gold/zip/rev are honest; MemNet row counts **are not** replace-on-reproject.
+
+| Meter | Pre (bind smoke) | Post (same-sid ingest) |
+|-------|------------------:|------------------------:|
+| housekeep rows | **56 / 5000** | **116 / 5000** |
+| `find` PRT | **11** | **24** |
+| `find` CON | **5** | **10** |
+
+Duplicate **qnames** after append. Under lock **(g)** prefer a **fresh session** or **replace** semantics for clean MemNet counts. MUST NOT treat 116/24/10 as gold 13/13/6.
 
 ## Operator command (Pi)
 
@@ -79,7 +115,8 @@ BIND_SMOKE_LIVE=1 npm run bind:live
 ## Explicit non-claims
 
 - Not Foam M1 pass on `mn_27ce8714`
-- Not `proof_pass_claimed`
+- Not `proof_pass_claimed` (invent meter ≠ P1 / H2H)
 - Not H2H / cold
 - Not Neo4j / dual-engine / dual-write editor
 - Not attach to `mn_0d4f6178` / `mn_b05a9869`
+- Not treat same-session append (rows 56→116) as replace-on-reproject
