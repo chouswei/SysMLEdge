@@ -1,0 +1,51 @@
+{
+  "cut": "Core GO (S)",
+  "date": "2026-09-12",
+  "status": "STOP_ONLY_INTER_ITEMS_LOAD_ONCE_METERED",
+  "bind_attempted": false,
+  "new_mn": null,
+  "proof_pass_claimed": false,
+  "SoI_shrunk": false,
+  "libs_submodule": {
+    "path": "sysml-models/libs",
+    "sha": "e32616f",
+    "cite": "sysml-libs#1 Ads1274Models",
+    "parent_index_committed": false
+  },
+  "semiconductors": {
+    "pkg_x2": "gone",
+    "projected_pkg_count": 1,
+    "ads1274": "package Ads1274Models"
+  },
+  "filter_desk_rescan": {
+    "cite": "Core GO (F) exclude still in force",
+    "nodes": { "after_F": 2876, "after_S": 2848 },
+    "CON": 261,
+    "dup_qnames": { "after_F": 2, "after_S": 1 },
+    "conflict_edges": { "after_F": 45, "after_S": 2 }
+  },
+  "remaining_dups": [
+    {
+      "kind": "PRT",
+      "qname": "Item::boundingShapes::inter",
+      "count": 2,
+      "files": ["sysml.library Items.sysml"],
+      "note": "same-file nested; file-level load-once cannot fix"
+    }
+  ],
+  "items_load_once": {
+    "metered": true,
+    "applied": false,
+    "sim": "first-qname-wins",
+    "cue_conflict": 0
+  },
+  "next": "Core Items (S)/(M) — MemNet invent vs SysML edit; no soft-pass bind",
+  "must_not": [
+    "soft-pass bind",
+    "claim CueConflict cleared",
+    "claim bind green",
+    "apply Items load-once as ingest",
+    "commit Foam parent index for libs",
+    "touch tip sessions"
+  ]
+}
