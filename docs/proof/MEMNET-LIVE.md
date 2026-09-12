@@ -9,7 +9,7 @@ This runbook does **not** record a proof pass. **Cite:** Sysmler **KEEP / NARROW
 | Item | Value |
 |------|--------|
 | Engine | bounce `memnet-llm==0.19.8`; LIVE bind / Path-B CON `≥0.19.9` |
-| Session map | `--map-file` SCHEMA (`fixtures/memnet-session.map`) |
+| Session map | `--map-file` SCHEMA (`fixtures/memnet-session.map`) with **qname** on PRT/POR/CON (Core **H1**; narrow `id name kind role status` strips locators on save/load) |
 | Serve | `127.0.0.1:18765` |
 | MemNet MCP (proof `pin_map` only) | `:18766` |
 | Transport | `MEMNET_MCP_TRANSPORT=tcp` |

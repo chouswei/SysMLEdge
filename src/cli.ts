@@ -35,7 +35,7 @@ Env:
   MEMNET_SERVE_PORT                must be 18765 for live proof env
   MEMNET_MCP_PORT                  must be 18766 for TCP-shared MCP
   MEMNET_LLM_VERSION                bounce 0.19.8; LIVE bind 0.19.9 if serve omits version
-  MEMNET_MAP_FILE                  SCHEMA --map-file on the serve host (default fixtures/memnet-session.map)
+  MEMNET_MAP_FILE                  SCHEMA --map-file with qname on PRT/POR/CON (default fixtures/memnet-session.map)
   SYSMLEDGE_MCP_TOKEN              Bearer token (optional locally)
   SYSMLEDGE_MCP_PORT               default 18776
   FOAM_SOURCE_SHA                  Foam git SHA for gold freeze

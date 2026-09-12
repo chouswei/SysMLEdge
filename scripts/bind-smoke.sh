@@ -3,6 +3,7 @@
 # Path-B mn_0d4f6178 CON 124+nested is published M1 narrow — not this bind.
 # Path A CON=29 ≠ bind. #21 FAKE ego ≠ LIVE bind. proof_pass_claimed=false.
 # LIVE: SCHEMA --map-file (0.19.9 rejects leftover --map TAG wire).
+# Map MUST keep qname on PRT/POR/CON; do not paste narrow id name kind role status.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 FOAM_DIR="${FOAM_DIR:-/tmp/foam-soi}"

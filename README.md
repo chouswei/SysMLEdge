@@ -54,7 +54,7 @@ npx tsx src/cli.ts head-to-head   # null scaffold; plumbing meters in docs/proof
 
 ### Live Pi (memnet-llm ≥0.19.9 + TCP; bounce 0.19.8)
 
-Proof env: bounce **0.19.8** + TCP-shared. LIVE bind ingest **≥0.19.9** with SCHEMA **`--map-file`** (`fixtures/memnet-session.map`). leftover `--map` TAG wire is rejected. SysMLEdge still owns `rev` / STALE / reproject. Path-B `mn_0d4f6178` CON **124** is **not** bind.
+Proof env: bounce **0.19.8** + TCP-shared. LIVE bind ingest **≥0.19.9** with SCHEMA **`--map-file`** (`fixtures/memnet-session.map`, **qname** on PRT/POR/CON). leftover `--map` TAG wire is rejected. MUST NOT overwrite that map with narrow `fields=id name kind role status recycle`. SysMLEdge still owns `rev` / STALE / reproject. Path-B `mn_0d4f6178` CON **124** is **not** bind.
 
 ```bash
 # Terminal 1 — MemNet serve (backend only)

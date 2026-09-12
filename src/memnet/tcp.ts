@@ -37,7 +37,8 @@ interface Envelope {
  *
  * LIVE attach: ingest sysml Path-B into a fresh session, then bounded pin_map
  * on SysML qname= locators. MUST NOT attach to mn_0d4f6178 / mn_b05a9869.
- * 0.19.9 session open: SCHEMA --map-file (leftover --map TAG wire rejected).
+ * 0.19.9 session open: SCHEMA --map-file fixtures/memnet-session.map
+ * (leftover --map TAG wire rejected). Map MUST keep qname on PRT/POR/CON.
  * See docs/proof/LIVE-0199-ATTACH.md.
  */
 export class TcpMemNet implements MemNetAdapter {

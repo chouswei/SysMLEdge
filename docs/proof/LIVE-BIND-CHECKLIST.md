@@ -15,7 +15,7 @@ Lock **(g):** `rev_status.working_ssot=graph`, `sysml_role=machine_mirror`. **No
 | Item | Value |
 |------|--------|
 | Engine on Pi | **memnet-llm ≥0.19.9** + TCP (bounce still proven on **0.19.8**) |
-| Session open | SCHEMA **`--map-file`** (`fixtures/memnet-session.map` or `MEMNET_MAP_FILE`). leftover `--map PKG qname,path` **rejected** |
+| Session open | SCHEMA **`--map-file`** (`fixtures/memnet-session.map` or `MEMNET_MAP_FILE`) with **`qname` / `path` / `sysml_kind`** on PKG/PRT/POR/CON. leftover `--map PKG qname,path` **rejected**. MUST NOT overwrite the map with narrow `fields=id name kind role status recycle` (strips locators on `session_save`/`load`) |
 | Path-B CON | **on Pi** — published narrow on `mn_0d4f6178` (MemNet #158). **≠ bind** |
 | Serve | `127.0.0.1:18765` (operator on Pi). Cloud VM **`10.0.0.10:18765` often unreachable** |
 | MemNet MCP (`pin_map` proof only) | `:18766`, `MEMNET_MCP_TRANSPORT=tcp` |
@@ -55,7 +55,7 @@ Record (operator): [RUNLOG-2026-09-12-live-bind.md](RUNLOG-2026-09-12-live-bind.
 | **(f)** clean | **`mn_be03c1a9`** @ **`f6768b1108b20c15212f0895f41fb7a27b6a408d`** |
 | housekeep (archive first) | rows **56/5000** edges **30** orphans **26** — **not** Foam CON=124 |
 | smoke | `BIND_SMOKE_LIVE=1` **ok**; STALE fail-closed; reproject/MCP gates **true** |
-| map | SCHEMA `--map-file` `fixtures/memnet-session.map` |
+| map | SCHEMA `--map-file` `fixtures/memnet-session.map` (qname columns required; Core **H1**) |
 | invent meter (same sid, archive) | `InventProbeBar` / `inventProbe` / `probeOut`; `rev.sha` → `1c1e3e50769cc23d8111548d19277cdbddfd1ce5`; gold 11→13 / 12→13 / 6→6; zip≡disk PASS; InventProbe in MemNet yes; mirror-lie PASS |
 | append caveat | rows **56→116**; find PRT **11→24** / CON **5→10**. Honesty archive. MUST NOT sell continuous same-session **(g)** until **(r)** |
 | H2H / cold | Plumbing: [RUNLOG-2026-09-12-h2h-plumbing.md](RUNLOG-2026-09-12-h2h-plumbing.md). **Track A tip** [#31](https://github.com/chouswei/SysMLEdge/pull/31): must-win **PASS**; wall **FAIL** **0/3** log-only (A **307.745ms** vs B **1286.676ms**) — **≠ bind / ≠ product**. [RUNLOG-2026-09-12-h2h-foam-tip.md](RUNLOG-2026-09-12-h2h-foam-tip.md). Cut 1: [RUNLOG-2026-09-12-cut1-tip-wall.md](RUNLOG-2026-09-12-cut1-tip-wall.md). **Track B** Foam bind **unlocked**. Core GO **(F)** **STOP** then GO **(S)** **STOP** (`STOP_ONLY_INTER_ITEMS_LOAD_ONCE_METERED`; PKG×2 **cleared**; only-inter remains; `bind_attempted=false`; bind held for Core Items **(S)/(M)**) — [RUNLOG-2026-09-12-gos-ads1274-only-inter.md](RUNLOG-2026-09-12-gos-ads1274-only-inter.md). Product wedge = Foam SysMLEdge bind H2H + cold unless Core re-locks P1 desk to tiny. Product bind H2H still logs wall as **P/F**. `proof_pass_claimed: false` |
@@ -68,6 +68,7 @@ Record (operator): [RUNLOG-2026-09-12-live-bind.md](RUNLOG-2026-09-12-live-bind.
 - Claiming [#21](https://github.com/chouswei/SysMLEdge/pull/21) FAKE ego is LIVE bind
 - Advertising `one_way: true` as product truth (lock **(g)**)
 - leftover `--map` TAG wire on 0.19.9
+- Overwriting `fixtures/memnet-session.map` with a narrow operator heredoc (`SCHEMA PRT ; fields=id name kind role status recycle`). Pi MUST restore the GitHub map (SHA256 `c2f16136e6f09f9a6c1ddf0026a15676f731575f1d2a1da6ccc2c464aa727bc3`). Operator-narrow SCHEMA is a **soft-pass**, not bind.
 - Claiming M1 / P1 / `proof_pass_claimed` from this checklist or from p1-tiny H2H
 - Scoring H2H vs gold-200; selling tiny / `mn_be03c1a9` H2H as the Foam wedge
 - Selling continuous same-session **(g)** until **(r)**

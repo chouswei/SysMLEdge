@@ -3,6 +3,7 @@
 # MUST NOT ingest into mn_0d4f6178, mn_b05a9869, or dirty archive mn_27ce8714. Opens a NEW session.
 # Lock (f) clean = mn_be03c1a9 @ f6768b1108b20c15212f0895f41fb7a27b6a408d. Refuse same-sid attach. (r) deferred.
 # 0.19.9 session open uses SCHEMA --map-file (fixtures/memnet-session.map).
+# MUST keep qname/path/sysml_kind on PRT/POR/CON. Restore GitHub map; operator-narrow SCHEMA is a soft-pass.
 # proof_pass_claimed=false until Foam H2H + cold on mn_0d4f6178 (CON 124+nested). Tiny/mn_be03c1a9 H2H = plumbing only.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
