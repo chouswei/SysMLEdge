@@ -2,13 +2,13 @@
 
 **Cite:** Devicor higher-precision wall-clock (prefer over rounded Memnetor integers). **Track A.** `mn_0d4f6178` @ **0.19.9**. **≠ SysMLEdge bind.** `proof_pass=false` / `proof_pass_claimed: false`. **Tip ≠ product.**
 
-**CEO Core — narrow tip (2026-09-12):** Tip **must-win** = **context + no silent drop** only. Tip **wall-clock** = **log only** (not a tip pass/fail). Product **bind** H2H still logs wall as **P/F**. **Track B later executed** — product FAIL on `mn_c7b75f2c`. **No Neo4j.**
+**CEO Core — narrow tip (2026-09-12):** Tip **must-win** = **context + no silent drop** only. Tip **wall-clock** = **log only** (not a tip pass/fail). Memnetor product bind wall = **log-only**. **Track B later:** ingest GREEN on `mn_c7b75f2c`; product claim **not unlocked**. **No Neo4j.**
 
 **[#31](https://github.com/chouswei/SysMLEdge/pull/31)** logged must-win **PASS** (context **3/3** · no_drop **3/3**) / wall **FAIL** **0/3** as honesty under the **old** tip-wall axis. **After the narrow, that wall fail does not block the tip claim.**
 
 **Cut 1 settled:** F1/F2/F3 **none** closed the **~4×** gap; **~400ms** floor **constant**. Memnetor exact (F1 warm≈cold ~440ms; F2 +7–21ms; F3 M=200 omit150; A ~95–106ms vs B ~400–470ms): [RUNLOG-2026-09-12-cut1-tip-wall.md](RUNLOG-2026-09-12-cut1-tip-wall.md). **Confirm:** no factor missed; not ShapeWalk / Truncation / cold miss. **Out of scope:** serve/MCP hop, emit serialize, process-restart cold, session size.
 
-**Tip H2H ≠ product. Tip H2H ≠ SysMLEdge bind.** Product bind H2H + cold **FAIL** on `mn_c7b75f2c` ([RUNLOG-2026-09-12-h2h-foam-bind.md](RUNLOG-2026-09-12-h2h-foam-bind.md)). Gold-200 stays out. Do **not** reopen Neo4j.
+**Tip H2H ≠ product. Tip H2H ≠ SysMLEdge bind.** Foam bind ingest GREEN on `mn_c7b75f2c`; `must_win_passed=false`; product claim **not unlocked** ([RUNLOG-2026-09-12-h2h-foam-bind.md](RUNLOG-2026-09-12-h2h-foam-bind.md)). Gold-200 stays out. Do **not** reopen Neo4j.
 
 Pi artifact: `/tmp/h2h-mn_0d4f6178/RUNLOG-h2h.json`.
 
@@ -54,7 +54,7 @@ System cue: **Truncation=true** **M=80** omitted=**270** (honest clip ≠ empty)
 | **wall-clock** | **FAIL 0/3, log only** | Honesty under the **old** tip-wall axis ([#31](https://github.com/chouswei/SysMLEdge/pull/31)). B slower on each seed (405.351>107.125, 411.155>106.204, 470.169>94.416). Totals B **1286.676ms** vs A **307.745ms**. **Does not block the tip claim** after CEO Core narrow tip. Product **bind** H2H still scores wall **P/F**. |
 | **tip claim** | **must-win PASS** | context + no silent drop only. |
 | **product / bind** | **not scored** | ≠ SysMLEdge bind. |
-| **`proof_pass`** | **false** | Foam bind H2H + cold **FAIL** on `mn_c7b75f2c`. MUST NOT set true. |
+| **`proof_pass`** | **false** | Foam bind `mn_c7b75f2c` product claim **not unlocked**. MUST NOT set true. |
 | **cold (row 12)** | **FAIL** (product desk) | Not this tip log. |
 | **Track B** | **executed** | Product FAIL honesty; ≠ this tip run. |
 
@@ -64,7 +64,7 @@ System cue: **Truncation=true** **M=80** omitted=**270** (honest clip ≠ empty)
 |------|-------------|
 | Tip must-win = context + no drop | **PASS** 3/3 + 3/3. |
 | Tip wall-clock = log only | **FAIL 0/3** logged; MUST NOT hide the ~4× / ~400ms floor; MUST NOT treat it as a tip fail. |
-| Product bind H2H wall = P/F | Still the product axis. This log is **not** that run. |
+| Product bind H2H wall | **log-only** (Memnetor on `mn_c7b75f2c`). Must-win fail = BSI **context**. This log is **not** that run. |
 | [#31](https://github.com/chouswei/SysMLEdge/pull/31) wall FAIL | Honesty under the **old** tip-wall axis. After the narrow, it does **not** block the tip claim. |
 | Cut 1 settled | F1/F2/F3 **none** closed the ~4× gap; ~400ms floor **constant**. Memnetor exact: [RUNLOG-2026-09-12-cut1-tip-wall.md](RUNLOG-2026-09-12-cut1-tip-wall.md). MUST NOT reopen those cuts as if they were open. |
 | Tip H2H ≠ product / ≠ SysMLEdge bind | B = `pin_map` `--locator qname=` `--depth 2`. Kill theater: tip-as-bind. |
@@ -78,14 +78,14 @@ System cue: **Truncation=true** **M=80** omitted=**270** (honest clip ≠ empty)
 - Truncation M=80 omitted=270 as empty / silent drop (honest clip ≠ empty)
 - p1-tiny / `mn_be03c1a9` plumbing as the Foam wedge
 - Gold **200** as the competitor bar
-- Track B bind GREEN as product pass (H2H + cold **FAIL**)
+- Track B bind GREEN as product pass (`must_win_passed=false`)
 - Cut 1 F1/F2/F3 as still open
 
 ## Explicit non-claims
 
 - Not `proof_pass` / `proof_pass_claimed`
 - Not SysMLEdge LIVE bind on `mn_0d4f6178` (Path-B **≠** `rev.sha`)
-- Not Foam bind **product pass** (later Track B: GREEN invent, H2H + cold FAIL)
+- Not Foam bind **product pass** (later Track B: GREEN ingest; product claim not unlocked)
 - Not cold **yes**
 - Not Neo4j / dual-engine / C rewrite
 - Not continuous same-session **(g)** (**(r)** deferred; **(g)** provisional)

@@ -3,6 +3,7 @@
   "date": "2026-09-12",
   "session": "mn_c7b75f2c",
   "rev_sha": "f4679d848ccab5b26875eb9d2812171bb759ebf1",
+  "rev_sha_short": "f4679d84",
   "bind_ingest": "GREEN",
   "product_claim_unlocked": false,
   "must_win_passed": false,
@@ -15,6 +16,7 @@
   "tip_equals_product": false,
   "silent_drop": "clean",
   "must_win_fail": "context gap on both BSI tips (not wall)",
+  "operator_json": "/workspace/RUNLOG-h2h-mn_c7b75f2c.json",
   "seeds": [
     {"seed": "Toolbar BSI", "A_ms": 103, "B_warm": 512, "cold": 605, "ctx": "F", "wall": "F", "drop": "no"},
     {"seed": "Config BSI", "A_ms": 103, "B_warm": 521, "cold": 612, "ctx": "F", "wall": "F", "drop": "no"},

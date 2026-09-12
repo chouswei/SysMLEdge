@@ -11,8 +11,8 @@
 | **M1 FAIL LIVE-bind gate** | **cleared** by this publish. Next Edison step = **LIVE bind**. |
 | **FAKE** bind / STALE | **ok** (SysMLEdge desk) |
 | **FAKE M1 ego** | **invent progress** — SysML-grounded contains/owns/ends; fixture + gold reconstruction. **Does not change MemNet rows.** **≠ pass.** |
-| H2H | Plumbing on `mn_be03c1a9` — [RUNLOG-2026-09-12-h2h-plumbing.md](RUNLOG-2026-09-12-h2h-plumbing.md). Foam **tip** Track A ([#31](https://github.com/chouswei/SysMLEdge/pull/31)): must-win **PASS**; wall **FAIL** **0/3** log-only; **≠ product / ≠ bind**. **Track B executed** — product FAIL on `mn_c7b75f2c` ([RUNLOG-2026-09-12-h2h-foam-bind.md](RUNLOG-2026-09-12-h2h-foam-bind.md)). |
-| `proof_pass_claimed` | **false** (Foam bind H2H + cold **FAIL**) |
+| H2H | Plumbing on `mn_be03c1a9` — [RUNLOG-2026-09-12-h2h-plumbing.md](RUNLOG-2026-09-12-h2h-plumbing.md). Foam **tip** Track A ([#31](https://github.com/chouswei/SysMLEdge/pull/31)): must-win **PASS**; wall **FAIL** **0/3** log-only; **≠ product / ≠ bind**. **Track B:** ingest GREEN on `mn_c7b75f2c`; `must_win_passed=false` ([RUNLOG-2026-09-12-h2h-foam-bind.md](RUNLOG-2026-09-12-h2h-foam-bind.md)). |
+| `proof_pass_claimed` | **false** (product claim **not unlocked**) |
 | P1 / M1–M5 pass | **not claimed** |
 | housekeep (Path-B session) | **1673/5000** edges **923** orphans **750** (`mn_0d4f6178`) |
 

@@ -6,7 +6,7 @@ Prior scored tip H2H: [RUNLOG-2026-09-12-h2h-foam-tip.md](RUNLOG-2026-09-12-h2h-
 
 Pi artifact: `/tmp/cut1-wall-mn_0d4f6178/RUNLOG.json` (not copied into this repository). **MUST NOT invent per-cell ms** beyond the Memnetor table below.
 
-**CEO Core — narrow tip (2026-09-12)** ([#33](https://github.com/chouswei/SysMLEdge/pull/33)): Tip **must-win** = **context + no silent drop** only. Tip **wall-clock** = **log only** (not a tip pass/fail). Product **bind** H2H still logs wall as **P/F**. This Cut 1 log does **not** invent bind. Later Track B: product FAIL on `mn_c7b75f2c` ([RUNLOG-2026-09-12-h2h-foam-bind.md](RUNLOG-2026-09-12-h2h-foam-bind.md)). **No Neo4j.**
+**CEO Core — narrow tip (2026-09-12)** ([#33](https://github.com/chouswei/SysMLEdge/pull/33)): Tip **must-win** = **context + no silent drop** only. Tip **wall-clock** = **log only** (not a tip pass/fail). Later Track B: ingest GREEN on `mn_c7b75f2c`; product claim **not unlocked** ([RUNLOG-2026-09-12-h2h-foam-bind.md](RUNLOG-2026-09-12-h2h-foam-bind.md)). **No Neo4j.**
 
 ## What ran
 

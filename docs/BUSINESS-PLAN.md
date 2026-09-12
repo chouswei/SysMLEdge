@@ -162,7 +162,7 @@ Order:
 | **Pass bar** | Rows 9–12 + M1–M5; scaffold ≠ P1. Unchanged. |
 | **After cold yes** | Outsider → then price. |
 | **Hours** | Foam Phase-1 hours stay on the Foam slice (import, project, GQL/MCP, STALE, propose, zip). Do not spend them on P2 UI. Do not steal them for **VI**. |
-| **(g)** | **Provisional.** Mirror-lie **PASS** on dirty archive `mn_27ce8714`. MUST NOT sell continuous same-session **(g)** until **(r)**. Out of beachhead pitch. MUST NOT claim `proof_pass`. **Lock (f) exact:** `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d`. Tiny H2H = plumbing ([proof/RUNLOG-2026-09-12-h2h-plumbing.md](proof/RUNLOG-2026-09-12-h2h-plumbing.md)). Foam bind H2H + cold **FAIL** on `mn_c7b75f2c` ([proof/RUNLOG-2026-09-12-h2h-foam-bind.md](proof/RUNLOG-2026-09-12-h2h-foam-bind.md)). |
+| **(g)** | **Provisional.** Mirror-lie **PASS** on dirty archive `mn_27ce8714`. MUST NOT sell continuous same-session **(g)** until **(r)**. Out of beachhead pitch. MUST NOT claim `proof_pass`. **Lock (f) exact:** `mn_be03c1a9` @ `f6768b1108b20c15212f0895f41fb7a27b6a408d`. Tiny H2H = plumbing ([proof/RUNLOG-2026-09-12-h2h-plumbing.md](proof/RUNLOG-2026-09-12-h2h-plumbing.md)). Foam bind ingest GREEN on `mn_c7b75f2c`; product claim **not unlocked** ([proof/RUNLOG-2026-09-12-h2h-foam-bind.md](proof/RUNLOG-2026-09-12-h2h-foam-bind.md)). |
 
 ---
 
