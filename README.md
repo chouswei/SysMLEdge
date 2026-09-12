@@ -1,8 +1,8 @@
 # SysMLEdge
 
-**SysMLEdge** is the bilingual bus for textual SysML v2 + agents: humans author **SysML** as the single source of truth; Cursor agents query and represent the same structure as **GQL/MCP** instead of grepping the tree. The graph is a **MemNet** projection of that tree. It is not a Kuzu port, not a SysON/Cameo/graphic SysML IDE, not a GitHub clone, and it does not ship SaaS or tenancy in this cut.
+**SysMLEdge** (this cut) is Foam desk proof. **One-liner:** SysML stays the model; GQL/MCP is how agents query without stuffing/grepping the tree. **Buyer gut:** *I ask the live model at this rev — no grep dump, no ghost tree.* The graph is a **MemNet** projection. **Kill smells:** IDE / canvas / MemNet tip = product. Not a Kuzu port, not a GitHub clone, and it does not ship SaaS or tenancy in this cut.
 
-**Bilingual** here means SysML (author SSOT) + GQL (query and represent). It does not mean a zh/EN product UI. Market pin: [docs/PRODUCT-LOCKS.md](docs/PRODUCT-LOCKS.md#market-position-pin).
+**Internal architecture name** (not brand): bilingual = SysML (author SSOT) + GQL (query/represent). Not a zh/EN UI. Exact product-story locks: [docs/PRODUCT-LOCKS.md](docs/PRODUCT-LOCKS.md#ceo-core--steve-taste-2026-09-12) (Steve Jobs + CEO Core 2026-09-12).
 
 **This cut is P1 Foam proof scaffolding** on the runtime from #11. It does **not** make SysMLEdge ready to serve real projects. Plan ≠ product. Foam proof (`docs/P1-acceptance.md` rows 9–12 and M1–M5) is **not** claimed and **not** executed.
 
@@ -20,7 +20,7 @@
 | **Git / GitHub** | VCS backbone — repo @ SHA. We own projection, STALE, propose — not a GitHub rebuild. |
 | **CLI** | `import` / `import-foam` / `gold` / `proof` / `head-to-head` / `memnet-check` / `status` / `save` / `download` / `reproject` / `mcp` |
 
-Normative contracts: [docs/P0-contracts.md](docs/P0-contracts.md). Product locks (2026-09-11, **NARROW**): [docs/PRODUCT-LOCKS.md](docs/PRODUCT-LOCKS.md). Living plan: [docs/PRODUCT-PLAN.md](docs/PRODUCT-PLAN.md). Business plan (gated GTM + buyer roots): [docs/BUSINESS-PLAN.md](docs/BUSINESS-PLAN.md). P1 Foam acceptance + proof: [docs/P1-acceptance.md](docs/P1-acceptance.md). Agent rules: [AGENTS.md](AGENTS.md).
+Normative contracts: [docs/P0-contracts.md](docs/P0-contracts.md). Product locks (**NARROW product story**, Steve Jobs + CEO Core 2026-09-12): [docs/PRODUCT-LOCKS.md](docs/PRODUCT-LOCKS.md). Living plan: [docs/PRODUCT-PLAN.md](docs/PRODUCT-PLAN.md). Business plan (Foam desk only until cold Foam yes): [docs/BUSINESS-PLAN.md](docs/BUSINESS-PLAN.md). P1 Foam acceptance + proof: [docs/P1-acceptance.md](docs/P1-acceptance.md). Agent rules: [AGENTS.md](AGENTS.md).
 
 ## P1 runtime (fixture)
 
