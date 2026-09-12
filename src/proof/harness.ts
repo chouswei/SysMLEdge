@@ -231,7 +231,7 @@ export async function runProofHarness(opts: {
 
 /** Live TCP M1 is blocked until Memnetor restores Foam mission + memnet-llm version pin. */
 export const LIVE_MEMNET_TODO =
-  "LIVE M1 fail-fast (Memnetor mn_b05a9869): CON=0, backgroundSetIndicator ABSENT. FAKE bind/STALE only. P1 not claimed.";
+  "LIVE M1: fail-fast CON=0 then Path A TSK ego CON=29; Path-B CON map still required. proof_pass_claimed=false. FAKE bind/STALE only.";
 
 export async function smokeBind(
   project: SysMLEdgeProject,
