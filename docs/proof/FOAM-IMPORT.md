@@ -39,11 +39,11 @@ npx tsx src/cli.ts import /tmp/foam-soi --project /tmp/foam-desk
 
 `import` / `import-foam` copy the **entire** `sysml-models/` tree into the project, commit, and `reproject`. Previous graph nodes are gone. `rev.sha` is the git commit of that desk snapshot.
 
-**Sysmler Core (2026-09-12):** this import path is **not** Foam gold. Full-clone gold MUST parse `connections.sysml` / `root.sysml` and publish a coverage matrix (part / port / connection / satisfy / allocate / nested). Cite [PRODUCT-LOCKS.md](../PRODUCT-LOCKS.md#sysmler-core-review-2026-09-12).
+**Cite:** Sysmler **KEEP / NARROW** + [CEO Core P1 gate](../PRODUCT-LOCKS.md#ceo-core-p1-gate-2026-09-12). This import path is **not** Foam gold. **Must-fix:** full-clone construct matrix. **Kill:** silent drop (`connections_parsed:0` / omitted files); shrink zip to parts-only.
 
 ## Gold list
 
-Frozen parser output: [`fixtures/foam-gold/`](../../fixtures/foam-gold/). Regenerate (does not claim ingest fidelity; does not claim full-clone gold):
+Frozen parser output: [`fixtures/foam-gold/`](../../fixtures/foam-gold/). Regenerate (does not claim ingest fidelity; does not claim the full-clone construct matrix):
 
 ```bash
 npx tsx src/cli.ts gold /tmp/foam-soi/sysml-models --sha <FOAM_HEAD_SHA> -o fixtures/foam-gold/gold.json
