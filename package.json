@@ -14,7 +14,7 @@
     "build": "tsc",
     "mcp": "tsx src/mcp/main.ts",
     "cli": "tsx src/cli.ts",
-    "test": "tsx --test test/**/*.test.ts",
+    "test": "tsx --test test/*.test.ts",
     "typecheck": "tsc --noEmit"
   },
   "keywords": [
