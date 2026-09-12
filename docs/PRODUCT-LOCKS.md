@@ -21,12 +21,13 @@ Product-story locks are **exact** in [CEO Core — Steve taste](#ceo-core--steve
 | **don’t-migrate** (Elon Core 2026-09-12) | KEEP the freeze. NARROW dogfood = **synthetic fixture tree** (CI only). Kill-theater 1–5 below. Optional second-repo replay **not** required for P1. |
 | **Sysmler Core** (2026-09-12) | **KEEP / NARROW** the spine. Cite CEO Core P1 gate (exact locks below). |
 | **CEO Core P1 gate** (2026-09-12) | **Must-fix / kill risks / OK** as written. No scope widen. Scaffold ≠ P1. |
+| **Edison Core experiment** (Thomas Alva Edison / Horcrux, 2026-09-12) | **KEEP / NARROW** the 2-week Foam cycle (9–12 + M1–M5). Do **not** invert sequence. Engine + story locks untouched. Scaffold ≠ P1. |
 
 **Taste risks** (Steve Jobs + CEO Core 2026-09-12): **Kill smells:** IDE / canvas / MemNet tip = product. Prior: Cameo-lite; MemNet-wrapper (tip Path-B ≠ product); yet-another-MCP without beat-grep cold feel.
 
 **Strongest cut:** Docs discipline ≠ product-market proof. Foam Phase-1 hours on P2 UI = kill signal.
 
-NARROW fail/pass gates above **stand**. Mapping and SSOT rules below do **not** reopen P2 UI, Pro, or AGI copy. **plan ≠ product** (CEO), **don’t-migrate** (Elon Core 2026-09-12), **Sysmler KEEP / NARROW**, and **CEO Core P1 gate** (2026-09-12) stand with those gates (sections below). This taste cut does **not** reopen MemNet sole, `rev`/STALE ownership, plan ≠ product, or don’t-migrate.
+NARROW fail/pass gates above **stand**. Mapping and SSOT rules below do **not** reopen P2 UI, Pro, or AGI copy. **plan ≠ product** (CEO), **don’t-migrate** (Elon Core 2026-09-12), **Sysmler KEEP / NARROW**, **CEO Core P1 gate**, and **Edison Core experiment** (Thomas Alva Edison / Horcrux 2026-09-12) stand with those gates (sections below). This taste cut does **not** reopen MemNet sole, `rev`/STALE ownership, plan ≠ product, or don’t-migrate.
 
 ### Freeze (do not spend the two weeks on)
 
@@ -133,6 +134,45 @@ This review does **not** pass Foam gold. P1 gate = **CEO Core** exact locks (nex
 **OK:** propose `delta.sysml` + human Save; narrow impact until proven; scaffold ≠ P1.
 
 [#11](https://github.com/chouswei/SysMLEdge/pull/11) / [#12](https://github.com/chouswei/SysMLEdge/pull/12) = scaffold. MUST NOT treat green CI as Foam gold.
+
+---
+
+## Edison Core experiment (Thomas Alva Edison / Horcrux, 2026-09-12)
+
+**Verdict: KEEP / NARROW.** The 2-week Foam cycle (**9–12** + **M1–M5**) is the right first cycle. Do **not** invert the sequence. Engine KEEP sole / NARROW / improve-only and the NARROW product story **stand** (untouched). This file does not implement runtime. Scaffold ≠ P1.
+
+Same sequence, Day-1 instruments, refuse list, and fail-fast in [P1-acceptance.md](P1-acceptance.md).
+
+### Sequence (do not invert)
+
+1. **M1** gold fidelity (construct matrix + nested without hand-CREATE, **or** narrow the claim) + **publish counts**
+2. SysMLEdge `rev.sha` / STALE / reproject bind (**M2–M3**)
+3. Timed H2H wall-clock + context on **0.19.8+TCP after bind** (**M5** / row **9**)
+4. Then cold non-Core yes/no (**row 12**)
+
+### Day-1 instruments
+
+| Instrument | Proof |
+|------------|-------|
+| Env lock | `memnet-llm==0.19.8` + TCP |
+| M1 counts | Published construct / ingest counts |
+| Bind existence | `rev.sha` + stale on every structure read |
+| STALE smoke | mutate → STALE → `propose` refused |
+
+### Refuse (this cycle)
+
+P2 UI / canvas / IDE / Pro–Team–marketplace; full KerML; parts-only zip; dual-engine / Kuzu; C rewrite now; second desk; MemNet mission as `project@rev`; timing H2H before M1+bind; scaffold CI as gold; expand `pin_map` / impact before fidelity.
+
+### Fail-fast
+
+| Fail | Stop |
+|------|------|
+| Silent drop / nested hand-CREATE un-narrowed | Stop the wedge |
+| No `rev` bind | STALE theater — stop the story |
+| M1 or M2 fail | MemNet **not** a sole-engine claim |
+| M5 loses with numbers **after** fidelity | Reopen engine **form** only then |
+| Row 12 cold **no** | Kill Pro/beachhead |
+| Hours on freeze list | Cut immediately |
 
 ---
 
@@ -498,3 +538,4 @@ Implementations MUST reject, in addition to P0 §7:
 23. CEO Core P1 **kill risks** (2026-09-12): silent drop (`connections_parsed:0` / omitted files); tip Path-B sold as bind; full KerML in 2 weeks; shrink zip to parts-only. Treating [#11](https://github.com/chouswei/SysMLEdge/pull/11) / [#12](https://github.com/chouswei/SysMLEdge/pull/12) as P1 pass (scaffold ≠ P1).
 24. Taste-cut narrative (Steve Jobs + CEO Core 2026-09-12): AGI copy; Pro/Team/marketplace; beachhead math; bilingual bus as brand lead; plus prior list (contract layer / humans–AGI API; seven roots as a pitch; freemium / Pro ~$19–29; SaaS-editor / PR-UI foreshadowing; slides instead of the 3-Q Foam keep-using proof).
 25. **Kill smells** (Steve Jobs + CEO Core 2026-09-12): IDE / canvas / MemNet tip = product.
+26. Edison Core (Thomas Alva Edison / Horcrux 2026-09-12): invert M1 → bind → timed H2H → row 12; time H2H before M1+bind; skip Day-1 instruments; spend hours on the refuse/freeze list.
