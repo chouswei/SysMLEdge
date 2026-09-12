@@ -1,0 +1,170 @@
+{
+  "cut": "A1 BSI remeter depth=1",
+  "date": "2026-09-12",
+  "must_win_passed": false,
+  "claim_text": null,
+  "proof_pass_claimed": false,
+  "memnetSession": "mn_c7b75f2c",
+  "cap": "5903/10000",
+  "cap_after": "MAX_ROWS=10000 bounce",
+  "lock": "CEO Core A1 claim pin = depth=1 ego; BSI tips Toolbar+Config only",
+  "desk": "/tmp/foam-desk-gof/sysml-models",
+  "protocol": "explicit --locator qname=SEED --depth 1; warm+cold>=5s; System skipped",
+  "system_skipped": true,
+  "InvenTree": "untouched",
+  "tip_untouched": true,
+  "serve_invent": false,
+  "soft_pass": false,
+  "sessions_refuse_attach_untouched": [
+    "mn_0d4f6178",
+    "mn_b05a9869",
+    "mn_be03c1a9",
+    "mn_27ce8714",
+    "mn_f9d25cfe"
+  ],
+  "blocker": {
+    "kind": "CueConflict",
+    "q": 118,
+    "emit": "locators-only CON list",
+    "on": "all Arm B outs",
+    "when": "post-10k",
+    "pre_bounce_mcp_d1": "~655/649B clean"
+  },
+  "arm_A": {
+    "kind": "grep backgroundSetIndicator",
+    "wall_clock_ms": 102.134,
+    "bytes": 4725,
+    "hits": 29,
+    "desk": "/tmp/foam-desk-gof/sysml-models"
+  },
+  "exact_Q_table": [
+    {
+      "seed": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::backgroundSetIndicator",
+      "A": { "ms": 102.134, "bytes": 4725, "hits": 29 },
+      "B_warm": {
+        "ms": 667.475,
+        "bytes": 2998,
+        "hits": 51,
+        "ctx": "P",
+        "nodrop": "F",
+        "CueConflict_Q": 118
+      },
+      "B_cold": {
+        "ms": 690.446,
+        "bytes": 2998,
+        "hits": 51,
+        "ctx": "P",
+        "nodrop": "F",
+        "CueConflict_Q": 118,
+        "idle": ">=5s"
+      }
+    },
+    {
+      "seed": "FoamDetectionLiteVer2::CoreMonitorConfigPanel::backgroundSetIndicator",
+      "A": { "ms": 102.134, "bytes": 4725, "hits": 29 },
+      "B_warm": {
+        "ms": 684.264,
+        "bytes": 2998,
+        "hits": 51,
+        "ctx": "P",
+        "nodrop": "F",
+        "CueConflict_Q": 118
+      },
+      "B_cold": {
+        "ms": 713.021,
+        "bytes": 2998,
+        "hits": 51,
+        "ctx": "P",
+        "nodrop": "F",
+        "CueConflict_Q": 118,
+        "idle": ">=5s"
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "toolbar_bsi",
+      "seed": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::backgroundSetIndicator",
+      "arm_A_grep": {
+        "wall_clock_ms": 102.134,
+        "context_bytes": 4725,
+        "hits": 29
+      },
+      "arm_B_memnet_warm": {
+        "locator": "qname=SEED",
+        "depth": 1,
+        "wall_clock_ms": 667.475,
+        "context_bytes": 2998,
+        "hits": 51,
+        "CueConflict_Q": 118
+      },
+      "arm_B_memnet_cold": {
+        "locator": "qname=SEED",
+        "depth": 1,
+        "idle": ">=5s",
+        "wall_clock_ms": 690.446,
+        "context_bytes": 2998,
+        "hits": 51,
+        "CueConflict_Q": 118
+      },
+      "axes": { "context": "P", "nodrop": "F" }
+    },
+    {
+      "id": "config_bsi",
+      "seed": "FoamDetectionLiteVer2::CoreMonitorConfigPanel::backgroundSetIndicator",
+      "arm_A_grep": {
+        "wall_clock_ms": 102.134,
+        "context_bytes": 4725,
+        "hits": 29
+      },
+      "arm_B_memnet_warm": {
+        "locator": "qname=SEED",
+        "depth": 1,
+        "wall_clock_ms": 684.264,
+        "context_bytes": 2998,
+        "hits": 51,
+        "CueConflict_Q": 118
+      },
+      "arm_B_memnet_cold": {
+        "locator": "qname=SEED",
+        "depth": 1,
+        "idle": ">=5s",
+        "wall_clock_ms": 713.021,
+        "context_bytes": 2998,
+        "hits": 51,
+        "CueConflict_Q": 118
+      },
+      "axes": { "context": "P", "nodrop": "F" }
+    }
+  ],
+  "cold": [
+    {
+      "seed": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::backgroundSetIndicator",
+      "idle": ">=5s",
+      "ms": 690.446,
+      "bytes": 2998,
+      "hits": 51,
+      "ctx": "P",
+      "nodrop": "F",
+      "CueConflict_Q": 118
+    },
+    {
+      "seed": "FoamDetectionLiteVer2::CoreMonitorConfigPanel::backgroundSetIndicator",
+      "idle": ">=5s",
+      "ms": 713.021,
+      "bytes": 2998,
+      "hits": 51,
+      "ctx": "P",
+      "nodrop": "F",
+      "CueConflict_Q": 118
+    }
+  ],
+  "cue_conflict_snip": {
+    "heading": "## CueConflict |Q|=118",
+    "body": "locators-only CON list",
+    "locators_copied": false,
+    "note": "Do not invent the 118 locators. All Arm B outs. Post-10k. Pre-bounce MCP d=1 was ~655/649B clean."
+  },
+  "table_md": "| seed | A ms | A bytes | A hits | B warm ms | B warm bytes | B warm hits | cold ms | cold bytes | cold hits | ctx | nodrop |\n|------|------:|--------:|-------:|----------:|-------------:|-----------:|--------:|-----------:|----------:|:---:|:------:|\n| FoamDetectionLiteVer2::CoreVideoMonitorToolbar::backgroundSetIndicator | 102.134 | 4725 | 29 | 667.475 | 2998 | 51 | 690.446 | 2998 | 51 | P | F |\n| FoamDetectionLiteVer2::CoreMonitorConfigPanel::backgroundSetIndicator | 102.134 | 4725 | 29 | 684.264 | 2998 | 51 | 713.021 | 2998 | 51 | P | F |\n",
+  "fold_note": "A1 BSI remeter d=1 folded; must_win_passed=false; claim_text=null; proof_pass_claimed=false; CueConflict |Q|=118 locators-only CON; tip untouched; InvenTree untouched; no serve invent"
+}
