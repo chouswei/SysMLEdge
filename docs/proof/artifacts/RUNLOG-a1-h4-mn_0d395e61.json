@@ -1,0 +1,50 @@
+{
+  "cut": "A1 H4 remeter",
+  "date": "2026-09-12",
+  "session": "mn_0d395e61",
+  "not_this_session": ["mn_c7b75f2c", "mn_dbabac66"],
+  "engine": "memnet-llm 0.19.9",
+  "map_sha256": "c2f16136e6f09f9a6c1ddf0026a15676f731575f1d2a1da6ccc2c464aa727bc3",
+  "ci_pin": "SysMLEdge #39",
+  "h1_root": "Pi restore of GitHub fixtures/memnet-session.map; operator-narrow SCHEMA is soft-pass not bind",
+  "must_win_passed": true,
+  "cue_conflict": "none",
+  "ctx": "P",
+  "nodrop": "P",
+  "wall": "F log-only both BSI tips warm+cold",
+  "claim_text": "BSI tips = depth=1 ego (owner/contains) — not depth=2 sibling neighbourhood",
+  "proof_pass_claimed": false,
+  "soft_pass": false,
+  "tip_untouched": true,
+  "inventree_untouched": true,
+  "system_seed": "skipped",
+  "seeds": [
+    {
+      "qname": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::backgroundSetIndicator",
+      "A_bytes": 4725,
+      "B_warm_cold_bytes": "~655",
+      "B_hits": 3,
+      "ctx": "P",
+      "nodrop": "P",
+      "wall": "F log-only"
+    },
+    {
+      "qname": "FoamDetectionLiteVer2::CoreMonitorConfigPanel::backgroundSetIndicator",
+      "A_bytes": 4725,
+      "B_warm_cold_bytes": "~649",
+      "B_hits": 3,
+      "ctx": "P",
+      "nodrop": "P",
+      "wall": "F log-only"
+    }
+  ],
+  "must_not": [
+    "claim proof_pass",
+    "claim Foam full green",
+    "mix mn_c7b75f2c",
+    "use discarded mn_dbabac66",
+    "treat wall F as A1 fail",
+    "claim depth=2 sibling neighbourhood",
+    "touch tip or InvenTree"
+  ]
+}
