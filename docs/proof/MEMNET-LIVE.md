@@ -71,6 +71,6 @@ Harness `sysmledge proof --live` only asserts the env. It does **not** restart p
 | Bind / STALE / propose | yes | same SysMLEdge bind |
 | M1 ingest fidelity | structure only | required for pass; **LIVE=blocked** until Memnetor restores Foam mission + version pin (see RUNLOG) |
 
-## Blocked (2026-09-12)
+## Blocked from this cloud VM (2026-09-12)
 
-Memnetor LIVE probe: TCP ports may be up, Foam mission `mn_b05a9869` **ABSENT**, `memnet-llm` version **UNKNOWN**. SysMLEdge **MUST NOT** claim live MemNet M1. Bind/STALE smoke uses **FAKE** only (`npm run m1:smoke`). Live path is TODO.
+Memnetor: LIVE env **unlocked** (`0.19.8` + TCP, `mn_b05a9869`, `TSK_model_vfdl2` non-empty). Cloud agent **cannot** reach `10.0.0.10`. **No LIVE counts invented.** Operator compare: [LIVE-M1-CHECKLIST.md](LIVE-M1-CHECKLIST.md). SysMLEdge `m1:smoke` remains **FAKE**. P1 not claimed.

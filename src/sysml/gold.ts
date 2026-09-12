@@ -30,6 +30,8 @@ export interface FoamGoldList {
     connections_parsed: number;
     nested_parts: number;
   };
+  /** Relative paths under sysml-models/ that the parser read. */
+  tree_files: string[];
   packages: string[];
   parts: string[];
   ports: string[];
@@ -91,6 +93,7 @@ export function buildGoldFromParsed(
       connections_parsed: parsed.edges.length,
       nested_parts: nested.length,
     },
+    tree_files: [...parsed.files].sort(),
     packages: sortUniq(packages),
     parts: sortUniq(parts.map((n) => n.qname)),
     ports: sortUniq(ports.map((n) => n.qname)),

@@ -1,63 +1,67 @@
-# RUNLOG — 2026-09-12 — M1 parser gold + FAKE bind smoke
+# RUNLOG — 2026-09-12 — parser gold + FAKE bind; LIVE env unlocked on Pi
 
 | Gate | Status |
 |------|--------|
-| **LIVE** MemNet M1 | **blocked** |
+| **LIVE env** (Memnetor) | **unlocked**: `memnet-llm==0.19.8` + TCP; session `mn_b05a9869`; **2922** rows (operator); `pin_map` `TSK_model_vfdl2` **non-empty** |
+| **LIVE M1 compare** from this cloud VM | **not executed** — `10.0.0.10:18765` / `:18766` / `:22` **timeout**. **No LIVE counts invented.** |
 | **FAKE** bind / STALE | **ok** |
 | `proof_pass_claimed` | `false` |
-| M1–M5 pass | **not claimed** |
+| P1 / M1–M5 pass | **not claimed** |
 
-## LIVE=blocked (Memnetor probe)
+## LIVE env (Memnetor — operator, not this VM)
 
-Do **not** claim live MemNet M1. Leave the TCP ingest path as **TODO** until Memnetor restores **both**:
+Do **not** treat this table as SysMLEdge-measured ingest fidelity.
 
-1. Foam mission `mn_b05a9869` as a proven TCP-shared ingest (not an in-process id list)
-2. `memnet-llm` **version pin** (`==0.19.8` or higher on the wire)
+| Item | Memnetor |
+|------|----------|
+| Engine | `memnet-llm==0.19.8` |
+| Transport | TCP-shared |
+| Session | `mn_b05a9869` loaded |
+| Rows | 2922 (session total; **not** equated to parser parts/ports/CONN) |
+| `pin_map` `TSK_model_vfdl2` | non-empty |
+
+Queries Memnetor must run to finish LIVE M1 compare: [LIVE-M1-CHECKLIST.md](LIVE-M1-CHECKLIST.md).
+
+## This cloud VM (2026-09-12)
 
 | Probe | Result |
 |-------|--------|
-| Memnetor | TCP ports OK; Foam mission `mn_b05a9869` **ABSENT**; `memnet-llm` version **UNKNOWN** |
-| This VM | `127.0.0.1:18765` connect **refused** (ports-up reports are not a version pin) |
-| `git clone` Foam | **blocked** (private; agent token 404) |
+| `10.0.0.10:18765` | timeout |
+| `10.0.0.10:18766` | timeout |
+| `10.0.0.10:22` | timeout |
+| `127.0.0.1:18765` | connection refused |
+| `git clone` Foam | blocked (private; agent token 404) |
 
-`sysmledge memnet-check` / `--live` ingest is **out of scope** for this cut.
+`npm run m1:smoke` stays **FAKE**. `MEMNET_BACKEND=tcp` is not used from this VM.
 
-## FAKE=ok (this cut)
+## FAKE=ok (SysMLEdge bind)
 
 | Field | Value |
 |-------|--------|
-| Date (UTC) | 2026-09-12 |
 | Foam source SHA | `76459224e6afbe74612cca9b37ffe0b3503bda85` |
-| Foam fetch | **LIVE SysML via GitHub MCP** (clone blocked). Tree: `/tmp/foam-soi/sysml-models/` — 7 `models/` files including `connections.sysml` + `root.sysml`, plus `libs/common/**/*.sysml`. Nested `libs/omg` **not** on disk. |
-| Bind / STALE | **FAKE** (`MEMNET_BACKEND=fake`, forced by `npm run m1:smoke`) |
-| Command | `FOAM_DIR=/tmp/foam-soi SYSMLEDGE_PROJECT=/tmp/foam-desk npm run m1:smoke` |
+| Foam fetch | GitHub MCP (clone blocked). Whole `.sysml` under `sysml-models/` that could be fetched: 7 `models/` + `libs/common/**` + `outputs/diagrams/foam-lite-demo.sysml`. Nested `libs/omg` **not** on disk. |
+| Bind / STALE | **FAKE** (`npm run m1:smoke` forces fake) |
 
-1. `import` Foam tree → `rev.sha` 40-hex, `rev.stale=false`
+1. `import` → `rev.sha` 40-hex, `rev.stale=false`
 2. Mutate `models/root.sysml` → `rev.stale=true`
-3. `propose` refused with `code: STALE`
+3. `propose` refused `code: STALE`
 
-## Gold counts (parser, not ingest pass)
+## Parser gold matrix (this PR)
 
-Frozen at `fixtures/foam-gold/gold.json`. `proof_executed: false`.
+Frozen at `fixtures/foam-gold/gold.json`. `proof_executed: false`. `tree_files` lists every parsed path.
+
+`connections_parsed:0` was a parser bug; current freeze is **200** (7 `models/` + `libs/common` + `outputs/diagrams/foam-lite-demo.sysml`). Nested `backgroundSetIndicator`: **AUTO**.
 
 | Meter | Count |
 |-------|------:|
-| files | 25 |
-| packages | 26 |
-| parts | 647 |
+| files | 26 |
+| packages | 27 |
+| parts | 663 |
 | ports | 1400 |
-| connections_parsed | 186 |
-| nested_parts | 380 |
-| unknown | 1 (`libs/omg` KerML gitlink) |
-
-`connections_parsed:0` was a parser bug (quote pairing swallowed `deploy.sysml` usages). Still **186** after re-extract. Nested `backgroundSetIndicator`: **AUTO** (no hand CREATE on FakeMemNet). Live MemNet CREATE: **TODO** (blocked).
-
-## TODO — live MemNet (Memnetor)
-
-- Restore Foam mission ingest on TCP-shared serve (`mn_b05a9869` or successor named on the wire)
-- Pin `memnet-llm==0.19.8` (or higher) so `memnet-check` is not UNKNOWN
-- Then: live ingest of this gold tree, pin_map vs gold, bounce (M4), then H2H (M5)
+| connections_parsed | 200 |
+| nested_parts | 388 |
+| unknown | 1 (`libs/omg`) |
 
 ## Not this cut
 
-H2H timings, P2 UI, Kuzu, other-repo migrate, Foam VI, product-ready claim, live M1.
+LIVE pin_map vs gold **counts** (checklist only). H2H. P2 UI. Kuzu. Product-ready / P1 pass.

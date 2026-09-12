@@ -24,7 +24,7 @@ Whole-tree SSOT = **all** `.sysml` under `sysml-models/` (including `models/`, `
 
 Default MemNet is **fake** (CI). Live Pi is optional (`docs/proof/MEMNET-LIVE.md`).
 
-One command (**FAKE** only; **LIVE=blocked** until Memnetor restores mission + version pin; does not claim M1–M5):
+One command (**FAKE** bind from this cloud VM; LIVE env is on Pi — see [LIVE-M1-CHECKLIST.md](LIVE-M1-CHECKLIST.md); does not claim M1–M5):
 
 ```bash
 export MEMNET_BACKEND=fake

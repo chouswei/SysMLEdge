@@ -8,13 +8,41 @@
     "parser": "src/sysml/parse.ts"
   },
   "counts": {
-    "files": 25,
-    "packages": 26,
-    "parts": 647,
+    "files": 26,
+    "packages": 27,
+    "parts": 663,
     "ports": 1400,
-    "connections_parsed": 186,
-    "nested_parts": 380
+    "connections_parsed": 200,
+    "nested_parts": 388
   },
+  "tree_files": [
+    "libs/common/composites/cam_revision2_assembly.sysml",
+    "libs/common/composites/optoelectronic.sysml",
+    "libs/common/composites/poe_edge_computer.sysml",
+    "libs/common/composites/rp2350_w5500_m12_poe_pcba.sysml",
+    "libs/common/connections/connections.sysml",
+    "libs/common/parts/ads1274-model.sysml",
+    "libs/common/parts/data_loggers.sysml",
+    "libs/common/parts/development_boards.sysml",
+    "libs/common/parts/flow_items.sysml",
+    "libs/common/parts/hardware_ports.sysml",
+    "libs/common/parts/network.sysml",
+    "libs/common/parts/opto_vision.sysml",
+    "libs/common/parts/polarfire-soc.sysml",
+    "libs/common/parts/relays.sysml",
+    "libs/common/parts/semiconductors.sysml",
+    "libs/common/parts/sensors.sysml",
+    "libs/common/stubs/electronics.sysml",
+    "libs/common/stubs/mechanical.sysml",
+    "models/behaviour.sysml",
+    "models/connections.sysml",
+    "models/deploy.sysml",
+    "models/items-host-config.sysml",
+    "models/items-mqtt.sysml",
+    "models/requirements.sysml",
+    "models/root.sysml",
+    "outputs/diagrams/foam-lite-demo.sysml"
+  ],
   "packages": [
     "DataLoggers",
     "DevelopmentBoards",
@@ -25,6 +53,7 @@
     "FoamDetectionLiteVer2Root",
     "FoamLiteVer2Behaviour",
     "FoamLiteVer2Connections",
+    "FoamLiteVer2DiagramDemo",
     "FoamLiteVer2HostConfig",
     "FoamLiteVer2Mqtt",
     "HardwarePorts",
@@ -507,6 +536,22 @@
     "FoamDetectionLiteVer2::uiStyle",
     "FoamDetectionLiteVer2Root::deployment",
     "FoamDetectionLiteVer2Root::satisfactionContext",
+    "FoamLiteVer2DiagramDemo::CoreSwitch",
+    "FoamLiteVer2DiagramDemo::EdgePc",
+    "FoamLiteVer2DiagramDemo::IndustrialPc",
+    "FoamLiteVer2DiagramDemo::ItriPlantServicesHost",
+    "FoamLiteVer2DiagramDemo::NetgearGs308EP",
+    "FoamLiteVer2DiagramDemo::PoeCamera",
+    "FoamLiteVer2DiagramDemo::RelayController",
+    "FoamLiteVer2DiagramDemo::foamLiteVer2Demo",
+    "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::corePC",
+    "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::coreSwitch",
+    "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::edgePc",
+    "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::gs308EP",
+    "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::itriPlantServicesHost",
+    "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::poeCameraA",
+    "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::poeCameraB",
+    "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::relayController",
     "Network::CableAssemblyRj45ToM12Xcode",
     "Network::DashboardPc",
     "Network::Gs305EPWithFourPoeCameras",
@@ -2617,6 +2662,76 @@
       "to": "FoamDetectionLiteVer2::PoeSwitchLocalHttpApi::sessionIn"
     },
     {
+      "qname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::connect_CamCore_to_gs308EP",
+      "from": "CamCore",
+      "to": "FoamDetectionLiteVer2::FoamLiteVer2EdgeSide::gs308EP"
+    },
+    {
+      "qname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::connect_CamEdge_to_gs308EP",
+      "from": "CamEdge",
+      "to": "FoamDetectionLiteVer2::FoamLiteVer2EdgeSide::gs308EP"
+    },
+    {
+      "qname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::connect_corePC_to_coreSwitch",
+      "from": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::corePC",
+      "to": "FoamDetectionLiteVer2::FoamDetectionLiteVer2System::coreSwitch"
+    },
+    {
+      "qname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::connect_edgePc_to_gs308EP",
+      "from": "FoamDetectionLiteVer2::FoamLiteVer2EdgeSide::edgePc",
+      "to": "FoamDetectionLiteVer2::FoamLiteVer2EdgeSide::gs308EP"
+    },
+    {
+      "qname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::connect_gs308EP_to_coreSwitch",
+      "from": "FoamDetectionLiteVer2::FoamLiteVer2EdgeSide::gs308EP",
+      "to": "FoamDetectionLiteVer2::FoamDetectionLiteVer2System::coreSwitch"
+    },
+    {
+      "qname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::connect_itriPlantServicesHost_to_coreSwitch",
+      "from": "FoamDetectionLiteVer2::FoamDetectionLiteVer2System::itriPlantServicesHost",
+      "to": "FoamDetectionLiteVer2::FoamDetectionLiteVer2System::coreSwitch"
+    },
+    {
+      "qname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::connect_relayController_to_gs308EP",
+      "from": "FoamDetectionLiteVer2::FoamLiteVer2EdgeSide::relayController",
+      "to": "FoamDetectionLiteVer2::FoamLiteVer2EdgeSide::gs308EP"
+    },
+    {
+      "qname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::linkEdgePcToGs308epPort2",
+      "from": "FoamDetectionLiteVer2::FoamLiteVer2EdgeSide::edgePc",
+      "to": "FoamDetectionLiteVer2::FoamLiteVer2EdgeSide::gs308EP"
+    },
+    {
+      "qname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::linkGs308epUplinkToCoreSwitch",
+      "from": "FoamDetectionLiteVer2::FoamLiteVer2EdgeSide::gs308EP",
+      "to": "FoamDetectionLiteVer2::FoamDetectionLiteVer2System::coreSwitch"
+    },
+    {
+      "qname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::linkIndustrialPcToCoreSwitch",
+      "from": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::corePC",
+      "to": "FoamDetectionLiteVer2::FoamDetectionLiteVer2System::coreSwitch"
+    },
+    {
+      "qname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::linkItriPlantServicesHostToCoreSwitch",
+      "from": "FoamDetectionLiteVer2::FoamDetectionLiteVer2System::itriPlantServicesHost",
+      "to": "FoamDetectionLiteVer2::FoamDetectionLiteVer2System::coreSwitch"
+    },
+    {
+      "qname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::linkPoeCameraAToGs308epPort3",
+      "from": "CamCore",
+      "to": "FoamDetectionLiteVer2::FoamLiteVer2EdgeSide::gs308EP"
+    },
+    {
+      "qname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::linkPoeCameraBToGs308epPort4",
+      "from": "CamEdge",
+      "to": "FoamDetectionLiteVer2::FoamLiteVer2EdgeSide::gs308EP"
+    },
+    {
+      "qname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::linkRelayControllerToGs308epPort1",
+      "from": "FoamDetectionLiteVer2::FoamLiteVer2EdgeSide::relayController",
+      "to": "FoamDetectionLiteVer2::FoamLiteVer2EdgeSide::gs308EP"
+    },
+    {
       "qname": "Network::Gs305EPWithFourPoeCameras::linkPoeEth1ToCamera1",
       "from": "Network::NetgearMS324TXUP::poeEthernet1",
       "to": "EdgeAI::EdgeAI::ethernet"
@@ -4297,6 +4412,38 @@
     {
       "qname": "FoamDetectionLiteVer2::ReservationAuditMatrixUi::uiStyle",
       "ownerQname": "FoamDetectionLiteVer2::ReservationAuditMatrixUi"
+    },
+    {
+      "qname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::corePC",
+      "ownerQname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo"
+    },
+    {
+      "qname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::coreSwitch",
+      "ownerQname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo"
+    },
+    {
+      "qname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::edgePc",
+      "ownerQname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo"
+    },
+    {
+      "qname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::gs308EP",
+      "ownerQname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo"
+    },
+    {
+      "qname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::itriPlantServicesHost",
+      "ownerQname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo"
+    },
+    {
+      "qname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::poeCameraA",
+      "ownerQname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo"
+    },
+    {
+      "qname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::poeCameraB",
+      "ownerQname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo"
+    },
+    {
+      "qname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo::relayController",
+      "ownerQname": "FoamLiteVer2DiagramDemo::foamLiteVer2Demo"
     },
     {
       "qname": "Network::Gs305EPWithFourPoeCameras::camera1",

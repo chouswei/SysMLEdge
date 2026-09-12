@@ -23,4 +23,7 @@ test("frozen Foam gold lists nested backgroundSetIndicator and does not claim pa
   assert.ok(gold.counts.files >= 7, "full Foam models/ must include connections.sysml + root.sysml");
   assert.ok(gold.counts.connections_parsed >= 90, "silent drop: connections_parsed:0 / quote-swallow");
   assert.equal(nested?.status, "AUTO");
+  assert.ok(gold.tree_files.some((f) => f.endsWith("models/connections.sysml")));
+  assert.ok(gold.tree_files.some((f) => f.endsWith("models/root.sysml")));
+  assert.ok(gold.tree_files.some((f) => f.endsWith("models/deploy.sysml")));
 });

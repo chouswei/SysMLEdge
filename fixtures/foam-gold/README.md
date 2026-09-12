@@ -4,7 +4,8 @@ Human-checkable list from `src/sysml/parse.ts` over Foam `sysml-models/` at `gol
 
 - Source: `chouswei/modelbasedPrj-itri-vedan-foam-detection`
 - **Not** an M1 pass. `proof_executed: false`
-- Nested `backgroundSetIndicator`: **AUTO** in this freeze (parser; FakeMemNet copies with no hand CREATE). Live MemNet ingest CREATE is UNPROVEN.
+- Nested `backgroundSetIndicator`: **AUTO** in this freeze (parser; FakeMemNet copies with no hand CREATE). Live CREATE vs AUTO is [LIVE-M1-CHECKLIST.md](../../docs/proof/LIVE-M1-CHECKLIST.md) — not counted here.
+- `tree_files` is the parsed path matrix (models/ + libs/common + outputs diagram demo). `libs/omg` KerML is UNKNOWN.
 
 Regenerate after a Foam tree is on disk (see `docs/proof/FOAM-IMPORT.md` and `docs/proof/RUNLOG-2026-09-12-m1-bind.md`):
 
