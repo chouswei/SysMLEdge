@@ -2,7 +2,7 @@
 
 Proof env lock: **memnet-llm==0.19.8** + TCP-shared MCP. Bounce **FAIL** on 0.19.7. SysMLEdge owns `rev.sha` / STALE / reproject — those fields are **absent** on the MemNet wire.
 
-This runbook does **not** record a proof pass.
+This runbook does **not** record a proof pass. **Cite:** Sysmler **KEEP / NARROW** + [CEO Core P1 gate](../PRODUCT-LOCKS.md#ceo-core-p1-gate-2026-09-12). **Must-fix:** timed H2H on 0.19.8+TCP after `rev` bind. **Kill:** tip Path-B sold as bind. **OK:** scaffold ≠ P1.
 
 ## Floor
 

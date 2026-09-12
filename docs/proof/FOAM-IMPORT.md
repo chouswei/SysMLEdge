@@ -39,9 +39,11 @@ npx tsx src/cli.ts import /tmp/foam-soi --project /tmp/foam-desk
 
 `import` / `import-foam` copy the **entire** `sysml-models/` tree into the project, commit, and `reproject`. Previous graph nodes are gone. `rev.sha` is the git commit of that desk snapshot.
 
+**Cite:** Sysmler **KEEP / NARROW** + [CEO Core P1 gate](../PRODUCT-LOCKS.md#ceo-core-p1-gate-2026-09-12). This import path is **not** Foam gold. **Must-fix:** full-clone construct matrix. **Kill:** silent drop (`connections_parsed:0` / omitted files); shrink zip to parts-only.
+
 ## Gold list
 
-Frozen parser output: [`fixtures/foam-gold/`](../../fixtures/foam-gold/). Regenerate (does not claim ingest fidelity):
+Frozen parser output: [`fixtures/foam-gold/`](../../fixtures/foam-gold/). Regenerate (does not claim ingest fidelity; does not claim the full-clone construct matrix):
 
 ```bash
 npx tsx src/cli.ts gold /tmp/foam-soi/sysml-models --sha <FOAM_HEAD_SHA> -o fixtures/foam-gold/gold.json
@@ -52,3 +54,4 @@ npx tsx src/cli.ts gold /tmp/foam-soi/sysml-models --sha <FOAM_HEAD_SHA> -o fixt
 - Not a Foam product change
 - Not Kuzu, not a C rewrite, not P2 UI
 - Not a claim that MemNet ingest covers nested parts without hand CREATE until M1 is run live
+- Not a P1 pass from [#11](https://github.com/chouswei/SysMLEdge/pull/11) / [#12](https://github.com/chouswei/SysMLEdge/pull/12)

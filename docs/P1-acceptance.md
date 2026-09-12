@@ -3,9 +3,19 @@
 Pilot SoI: `chouswei/modelbasedPrj-itri-vedan-foam-detection` (`sysml-models/`).
 Engine: **MemNet**. No Kuzu. No SaaS accounts (P1 = local project).
 
-Normative contracts: [P0-contracts.md](P0-contracts.md). Product locks: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md) (**NARROW**, Elon/Horcrux 2026-09-11). Living plan: [PRODUCT-PLAN.md](PRODUCT-PLAN.md). Business: [BUSINESS-PLAN.md](BUSINESS-PLAN.md).
+Normative contracts: [P0-contracts.md](P0-contracts.md). Product locks: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md) (**NARROW**, Elon/Horcrux 2026-09-11; **Sysmler KEEP / NARROW** + **CEO Core P1 gate**, 2026-09-12). Living plan: [PRODUCT-PLAN.md](PRODUCT-PLAN.md). Business: [BUSINESS-PLAN.md](BUSINESS-PLAN.md).
 
 This document is the P1 pass/fail sheet. It does not implement runtime.
+
+### P1 gate (Sysmler KEEP / NARROW + CEO Core 2026-09-12)
+
+No scope widen. Source: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md#ceo-core-p1-gate-2026-09-12).
+
+**Must-fix before Foam gold:** full-clone construct matrix; nested ingest without hand CREATE (or narrow the claim); timed H2H on 0.19.8+TCP after `rev` bind.
+
+**Kill risks:** silent drop (`connections_parsed:0` / omitted files); tip Path-B sold as bind; full KerML in 2 weeks; shrink zip to parts-only.
+
+**OK:** propose `delta.sysml` + human Save; narrow impact until proven; scaffold ≠ P1.
 
 Buyer roots **1, 2, 3, and 6** (trust, SSOT owner, beat-grep ask, ship rev) MUST pass via the **eight contract** rows below. Mapping: [PRODUCT-LOCKS.md](PRODUCT-LOCKS.md). Do not add extra **buyer-root** rows. Foam proof **9–12** is the NARROW wedge bar, not a ninth buyer-root row. Roots 4, 5, and 7 are locks, not extra P1 tests.
 
@@ -75,15 +85,15 @@ Log wall-clock, **context footprint** (prompt tokens per Q + whole-tree-dump bas
 
 **Proof env:** `memnet-llm==0.19.8` + TCP-shared MCP (`MEMNET_MCP_TRANSPORT=tcp`, serve `:18765` / mcp `:18766`). UNKNOWN on a required field = **fail that line**.
 
-**Impact claim:** MUST NOT claim exhaustive impact until measured. Either prove `gql_impact` **closure** on Foam gold, **or** narrow the P1 win to neighbourhood / tip + **usage** cues.
+**Impact claim:** **OK** to **narrow impact until proven**. MUST NOT claim exhaustive impact until measured. Either prove `gql_impact` **closure** on Foam gold, **or** narrow the P1 win to neighbourhood / tip + **usage** cues. [CEO Core P1 gate](PRODUCT-LOCKS.md#ceo-core-p1-gate-2026-09-12).
 
 | # | Name | Pass criteria |
 |---|------|----------------|
-| **M1** | Gold fidelity | Frozen **N** parts / ports / connections from Foam `sysml-models/`. Gold list MUST include **≥1 nested part** that today needs **manual CREATE** (e.g. `backgroundSetIndicator`). **Pass only if** ingest/reproject covers it **without** hand CREATE — **or** document it P1 out-of-scope and **narrow the claim**. Zero extras not in SysML. Zero silent drops. **Publish counts.** |
+| **M1** | Gold fidelity | **Must-fix:** **full-clone construct matrix**; nested ingest **without** hand CREATE (e.g. `backgroundSetIndicator`) **or** narrow the claim. Kill: silent drop (`connections_parsed:0` / omitted files). Zero extras not in SysML. **Publish counts.** |
 | **M2** | Query slice | Same 3 Foam Qs via `pin_map` and/or `gql_*`. **SysMLEdge** binds `rev.sha` + `rev.stale=false` (absent on MemNet wire). **UNKNOWN = fail that line.** Impact: closure on gold **or** narrowed neighbourhood/usage (see above). |
 | **M3** | STALE/reproject | **SysMLEdge-owned** bind. Mutate → fail-closed → `propose` refused → `reproject` → live. Timed / scripted. MUST NOT invent first-class STALE inside MemNet. Theater if bind is missing. |
 | **M4** | Bounce regression | **Re-run once** in the 2-week window on **0.19.8** TCP-shared: `session_save` → restart **serve + MCP together** → load → gold `pin_map` **non-empty**. Record memnet-llm version. **Fail if** MCP `session_list` ≠ serve. Known: **FAIL on 0.19.7**. Serve death without `session_save` loses in-process sessions. |
-| **M5** | Wall-clock + context vs grep | Same 3 Qs vs grep/LSP. **MUST time wall-clock** (Path-B UNKNOWN until timed). Also **context footprint**. May share logs with row 9. |
+| **M5** | Wall-clock + context vs grep | **Must-fix:** timed H2H on **0.19.8+TCP** after `rev` bind. Same 3 Qs vs grep/LSP. **MUST time wall-clock** (Path-B UNKNOWN until timed). Also **context footprint**. Kill: tip Path-B sold as bind. May share logs with row 9. |
 
 | Outcome | Engine / product rule |
 |---------|------------------------|
@@ -98,3 +108,4 @@ Log wall-clock, **context footprint** (prompt tokens per Q + whole-tree-dump bas
 - **Contract:** all eight rows (1–8) pass on the Foam pilot tree with MemNet + MCP (or CLI stand-in for the same contracts). P1 = Foam-complete + these rows — **not** whole-language coverage.
 - **Wedge:** all four Foam proof items (9–12) pass (NARROW fail/pass unchanged).
 - **Engine:** all five MemNet proof items (M1–M5) pass. Until then MemNet is KEEP/NARROW, not a dual-engine hedge.
+- **Not done:** scaffold ≠ P1 ([#11](https://github.com/chouswei/SysMLEdge/pull/11) / [#12](https://github.com/chouswei/SysMLEdge/pull/12)). CEO Core must-fix still open.
