@@ -1,0 +1,46 @@
+{
+  "cut": "Core GO (F)",
+  "date": "2026-09-12",
+  "status": "STOP_CUE_CONFLICT_REMAINING",
+  "bind_attempted": false,
+  "new_mn": null,
+  "proof_pass_claimed": false,
+  "SoI_shrunk": false,
+  "exclude_list_pi": "/tmp/trackb-foam-bind/FILTER-EXCLUDE.txt",
+  "exclude_total": 310,
+  "exclude_prefixes": [
+    { "prefix": "libs/omg/.../sysml/src/examples", "count": 95 },
+    { "prefix": "libs/omg/.../sysml/src/training", "count": 100 },
+    { "prefix": "libs/omg/.../sysml/src/validation", "count": 57 },
+    { "prefix": "libs/omg/.../kerml/src/examples", "count": 58 }
+  ],
+  "pre": { "nodes": 5118, "CON": 298, "dup_qnames": 215 },
+  "post": { "nodes": 2876, "CON": 261, "dup_qnames": 2 },
+  "SoI_models_common_outputs": {
+    "nodes_pre": 2692,
+    "nodes_post": 2692,
+    "CON_pre": 250,
+    "CON_post": 250
+  },
+  "remaining_dups": [
+    {
+      "kind": "PKG",
+      "qname": "Semiconductors",
+      "count": 2,
+      "files": ["ads1274-model.sysml", "semiconductors.sysml"]
+    },
+    {
+      "kind": "PRT",
+      "qname": "Item::boundingShapes::inter",
+      "count": 2,
+      "files": ["sysml.library Items.sysml"]
+    }
+  ],
+  "next": "Core (S)/(M)",
+  "must_not": [
+    "soft-pass",
+    "Path-B CueConflict dedupe invent",
+    "claim bind green",
+    "touch tip sessions"
+  ]
+}
