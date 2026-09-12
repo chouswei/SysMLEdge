@@ -6,6 +6,8 @@
 
 **This cut is P1 Foam proof scaffolding** on the runtime from #11. It does **not** make SysMLEdge ready to serve real projects. Plan ≠ product. Foam proof (`docs/P1-acceptance.md` rows 9–12 and M1–M5) is **not** claimed and **not** executed.
 
+**CEO Core:** [#11](https://github.com/chouswei/SysMLEdge/pull/11) = scaffold only — **fake CI ≠ P1 pass**. Gate remains **live Foam M1–M5 + beat-grep** on **memnet-llm==0.19.8+TCP**.
+
 ## Stack (this cut)
 
 | Layer | Role |
@@ -100,4 +102,4 @@ SysMLEdge keeps those *roles* and **replaces the engine**: MemNet + GQL, SysML t
 
 ## Status
 
-**NARROW** (Elon / Horcrux, 2026-09-11) — Foam proof scaffolding (gold, import docs, live 0.19.8 TCP floor, M1–M5 harness stubs). **Not a Foam/MemNet proof pass.** Not ready to serve real projects.
+**NARROW** (Elon / Horcrux, 2026-09-11) — Foam proof scaffolding (gold, import docs, live 0.19.8 TCP floor, M1–M5 harness stubs). **CEO Core:** [#11](https://github.com/chouswei/SysMLEdge/pull/11) = scaffold only — **fake CI ≠ P1 pass**. Gate remains live Foam M1–M5 + beat-grep on memnet-llm==0.19.8+TCP. **Not a Foam/MemNet proof pass.** Not ready to serve real projects.
