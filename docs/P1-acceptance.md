@@ -132,4 +132,4 @@ Log wall-clock, **context footprint** (prompt tokens per Q + whole-tree-dump bas
 - **Contract:** all eight rows (1–8) pass on the Foam pilot tree with MemNet + MCP (or CLI stand-in for the same contracts). P1 = Foam-complete + these rows — **not** whole-language coverage.
 - **Wedge:** all four Foam proof items (9–12) pass (NARROW fail/pass unchanged).
 - **Engine:** all five MemNet proof items (M1–M5) pass. Until then MemNet is KEEP/NARROW, not a dual-engine hedge.
-- **Not done:** scaffold ≠ P1 ([#11](https://github.com/chouswei/SysMLEdge/pull/11) / [#12](https://github.com/chouswei/SysMLEdge/pull/12)). CEO Core must-fix still open.
+- **Not done:** scaffold ≠ P1 ([#11](https://github.com/chouswei/SysMLEdge/pull/11) / [#12](https://github.com/chouswei/SysMLEdge/pull/12)). CEO Core must-fix still open. Edison: do not invert M1 → bind → H2H → row 12.
