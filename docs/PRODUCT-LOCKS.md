@@ -1,6 +1,6 @@
 # SysMLEdge product locks
 
-**As of:** 2026-09-11. Normative product locks for the living plan in [PRODUCT-PLAN.md](PRODUCT-PLAN.md). Implement against these plus [P0-contracts.md](P0-contracts.md). Business / GTM / buyer roots: [BUSINESS-PLAN.md](BUSINESS-PLAN.md). Foam proof: [P1-acceptance.md](P1-acceptance.md). This file does not implement runtime.
+**As of:** 2026-09-12. Normative product locks for the living plan in [PRODUCT-PLAN.md](PRODUCT-PLAN.md). Implement against these plus [P0-contracts.md](P0-contracts.md). Business / GTM / buyer roots: [BUSINESS-PLAN.md](BUSINESS-PLAN.md). Foam proof: [P1-acceptance.md](P1-acceptance.md). This file does not implement runtime.
 
 If a lock and P0 wording differ, this sheet **notes** the difference and **aligns** P0 language. It MUST NOT weaken: MemNet-only projection, `graph = model @ SHA`, STALE, or **no agent write of SSOT**.
 
@@ -22,10 +22,12 @@ If a lock and P0 wording differ, this sheet **notes** the difference and **align
 |------|------|
 | **Proof fails** | Kill the Pro/beachhead story for now. Keep docs as a contract sketch or fold into MemNet tooling. MUST NOT ship “bilingual bus” as a product without the head-to-head. |
 | **Proof passes** | KEEP narrowed: Foam vertical + MCP marketplace path. Price/experiment only after a **second paid outsider**. P2 UI still gated. |
+| **plan ≠ product** (CEO Core 2026-09-12) | Ready to *build* P1. Not ready to *serve* projects until Foam + MemNet proof **and** SysMLEdge MCP bind pass. Until then **MemNet tip only**. MUST NOT migrate other repos onto SysMLEdge. |
+| **don’t-migrate** (Elon Core 2026-09-12) | KEEP the freeze. NARROW dogfood = **synthetic fixture tree** (CI only). Kill-theater 1–5 below. Optional second-repo replay **not** required for P1. |
 
 **Strongest cut:** Docs discipline ≠ product-market proof. Foam Phase-1 hours on P2 UI = kill signal.
 
-NARROW fail/pass gates above **stand**. Mapping and SSOT rules below do **not** reopen P2 UI, Pro, or AGI copy.
+NARROW fail/pass gates above **stand**. Mapping and SSOT rules below do **not** reopen P2 UI, Pro, or AGI copy. **plan ≠ product** (CEO) and **don’t-migrate** (Elon Core 2026-09-12) stand with those gates (sections below).
 
 ### Freeze (do not spend the two weeks on)
 
@@ -40,6 +42,7 @@ Product / ocean — **not** a forever mapping cap:
 5. Cameo comparisons
 6. ClickUp / InvenTree product
 7. Full KerML / whole-language coverage in two weeks
+8. A second **real** in-house SysML desk / multi-repo onboarding (synthetic fixture CI is allowed; see Elon Core 2026-09-12)
 
 Elon’s “parts/ports” freeze was **2-week anti-scope-creep for mapping work**. It is **superseded** by: **Foam-complete mapping** + **whole-tree SSOT always** (this sheet, Core 2026-09-11). MUST NOT read it as “parts/ports forever” or as permission for parts-only SSOT.
 
@@ -48,6 +51,32 @@ Elon’s “parts/ports” freeze was **2-week anti-scope-creep for mapping work
 1. Beachhead ~1k–10k textual SysML v2 + Cursor is **asserted, not evidenced**. Second paid outsider **after Foam** is required.
 2. MemNet is **SPOF** — thin/slow Foam projection kills GQL vs LSP.
 3. “Beat grep” is **soft** until the timed head-to-head scores **wall-clock + context footprint + no silent drop** on the same Foam Qs. Freemium/Pro SaaS editor (P2) is a **gap** while P1 forbids that UI.
+
+---
+
+## plan ≠ product (CEO Core, 2026-09-12)
+
+**plan ≠ product.** Ready to *build* P1; not ready to *serve* projects until **Foam proof** + **MemNet proof** ([P1-acceptance.md](P1-acceptance.md) 9–12 and M1–M5) **and** **SysMLEdge MCP bind** ([P1-acceptance.md](P1-acceptance.md) row 8) pass.
+
+Until then: **MemNet tip only**. MUST NOT migrate other repos onto SysMLEdge.
+
+Cited with NARROW fail/pass and MemNet M1–M5 above. Those gates **stand**. This lock does **not** reopen P2 UI, Pro, or AGI copy.
+
+---
+
+## don’t-migrate freeze (Elon Core, 2026-09-12)
+
+**KEEP** the don’t-migrate freeze (CEO **plan ≠ product** stands). NARROW dogfood is a **synthetic fixture tree**: tiny parts / ports / connections + **one nested**, for CI of import / bind / STALE / reproject / propose. It is **not** a second real in-house SysML desk.
+
+**Kill-theater** (any of these = theater; stop):
+
+1. Foam tip demo sold as SysMLEdge bind **before** `rev.sha` exists.
+2. Agents / repos pointed at MemNet mission sessions as `project@rev`.
+3. “Almost P1” migration of a second repo when only Path-B / `pin_map` works.
+4. Hours on P2 UI or multi-repo onboarding before timed head-to-head **and** gold fidelity.
+5. Pinning below **memnet-llm==0.19.8** or dropping TCP share.
+
+**Optional** only after Foam **gold** bind + STALE **green**: read-only replay of the same **eight** P1 contract rows on a second repo. **Not** required for P1.
 
 ---
 
@@ -405,3 +434,6 @@ Implementations MUST reject, in addition to P0 §7:
 17. A MemNet **roadmap** from this product. MemNet improve-only for **M1–M5 / Foam fidelity**; engine stays **0.19.8 + TCP**.
 18. A **C rewrite now** (or Rust/other engine-form rewrite) before **0.19.8 + TCP** proof. Reopen form only if wall-clock **loses with numbers** after fidelity is green.
 19. Serving **MemNet** (TCP or its MCP) as the agent-facing wedge once SysMLEdge MCP binds.
+20. Serving projects on SysMLEdge, or migrating other repos onto it, before Foam + MemNet proof **and** SysMLEdge MCP bind pass (**plan ≠ product**, CEO Core 2026-09-12). Until then MemNet tip only.
+21. Treating NARROW dogfood as a second **real** in-house SysML desk (Elon Core 2026-09-12). Fixture tree = CI of import / bind / STALE / reproject / propose only.
+22. Kill-theater (Elon Core 2026-09-12): Foam tip sold as SysMLEdge bind before `rev.sha`; agents/repos on MemNet mission sessions as `project@rev`; “almost P1” second-repo migrate on Path-B/`pin_map` only; P2 UI or multi-repo onboarding before timed head-to-head + gold fidelity; pin below **memnet-llm==0.19.8** or drop TCP share.
