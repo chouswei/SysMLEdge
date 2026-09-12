@@ -4,7 +4,7 @@ SysMLEdge **bind** on live `memnet serve`. **Not** Path-B CON ingest. **Not** `p
 
 [#23](https://github.com/chouswei/SysMLEdge/pull/23) published M1 **narrow** (CON **124** + nested qname ego on `mn_0d4f6178` @ **0.19.9+TCP**) and **cleared** the LIVE-bind gate. This checklist is the Edison operator path.
 
-`proof_pass_claimed: false`. Foam bind ingest **GREEN** on **`mn_c7b75f2c`**; product claim **not unlocked** (`must_win_passed=false`; wall **0/3 log-only**). [RUNLOG-2026-09-12-h2h-foam-bind.md](RUNLOG-2026-09-12-h2h-foam-bind.md). H2H on **p1-tiny** / `mn_be03c1a9` = **plumbing only**. MUST NOT soft-pass the wedge. Gold-200 stays out.
+`proof_pass_claimed: false`. Foam bind ingest **GREEN** on **`mn_c7b75f2c`**; **CEO product H2H FAIL**. Invent next = **BSI context apparatus** **before** claim-narrow. [RUNLOG-2026-09-12-h2h-foam-bind.md](RUNLOG-2026-09-12-h2h-foam-bind.md). H2H on **p1-tiny** / `mn_be03c1a9` = **plumbing only**.
 
 Cite Path-B **`mn_0d4f6178`** as published M1 meters **only**. Cite Path A **`mn_b05a9869`** AFTER (CON=29) as **engine ops**. Dirty **`mn_27ce8714`** = honesty archive only. Live **(f)** = **`mn_be03c1a9`** @ **`f6768b1108b20c15212f0895f41fb7a27b6a408d`**. Neither Path A/B id is `rev.sha`. LIVE bind **opens a new ingest session**. MUST NOT sell continuous same-session **(g)** until **(r)**.
 

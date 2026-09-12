@@ -69,7 +69,7 @@ Still emits `status: NOT_EXECUTED` with **null** `wall_clock_ms` / `context_toke
 
 **Invent next (CLI):** a recorder that copies an operator JSON (e.g. the Pi `RUNLOG-h2h.json`) without generating numbers — **not** a scaffold that invents timings.
 
-**Invent next (product):** Foam bind H2H **ran** on **`mn_c7b75f2c`**. Memnetor: `must_win_passed=false`; wall **log-only**; product claim **not unlocked** ([RUNLOG-2026-09-12-h2h-foam-bind.md](RUNLOG-2026-09-12-h2h-foam-bind.md)). MUST NOT sell continuous **(g)** until **(`r`)**.
+**Invent next (product):** **BSI context apparatus** on Foam bind `mn_c7b75f2c` **before** claim-narrow. CEO: product H2H **FAIL**. Memnetor Q table: [RUNLOG-2026-09-12-h2h-foam-bind.md](RUNLOG-2026-09-12-h2h-foam-bind.md).
 
 ## Explicit non-claims
 

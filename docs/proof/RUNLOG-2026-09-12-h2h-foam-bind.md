@@ -1,6 +1,8 @@
 # RUNLOG — 2026-09-12 — Foam SysMLEdge **bind** H2H (Memnetor exact)
 
-**Cite:** Memnetor exact product H2H table. **Track B executed.** Desk **`mn_c7b75f2c`** @ **`rev.sha` `f4679d848ccab5b26875eb9d2812171bb759ebf1`**. Foam bind ingest **GREEN**. Product claim **not unlocked**. `must_win_passed=false`. `proof_pass=false` / `proof_pass_claimed: false`. **Tip ≠ product.** **Tip ≠ this desk.**
+**CEO lock:** product H2H **FAIL**. Next apparatus = **BSI context** **before** claim-narrow. MUST NOT claim-narrow until that apparatus.
+
+**Cite:** Memnetor exact Q table. **Track B executed.** Desk **`mn_c7b75f2c`** @ **`rev.sha` `f4679d848ccab5b26875eb9d2812171bb759ebf1`**. Foam bind ingest **GREEN**. Product H2H **FAIL**. `must_win_passed=false`. `proof_pass=false` / `proof_pass_claimed: false`. **Tip ≠ product.** **Tip ≠ this desk.**
 
 Pi / operator JSON: `/workspace/RUNLOG-h2h-mn_c7b75f2c.json` (Pi path may differ). In-repo copy: [artifacts/RUNLOG-h2h-mn_c7b75f2c.json](artifacts/RUNLOG-h2h-mn_c7b75f2c.json).
 
@@ -16,7 +18,7 @@ Pi / operator JSON: `/workspace/RUNLOG-h2h-mn_c7b75f2c.json` (Pi path may differ
 
 `must_win_passed=false` (context **1/3**; no_drop **3/3**). wall **0/3** **log-only**. `proof_pass=false`. tip≠product.
 
-**Read:** `silent_drop` **clean**. Context gap on **both BSI tips** is the **must-win fail** (**not** wall). Foam bind stays **GREEN ingest**; product claim **not unlocked**.
+**Read:** `silent_drop` **clean**. Context gap on **both BSI tips** is the **must-win fail** (**not** wall). Foam bind stays **GREEN ingest**. CEO: product H2H **FAIL**. Product claim **not unlocked**.
 
 Columns: `cold` = Arm B **cold ms** (not P1 row **12**). `ctx` / `wall` = P/F per seed. `drop` = silent_drop.
 
@@ -28,7 +30,9 @@ Columns: `cold` = Arm B **cold ms** (not P1 row **12**). `ctx` / `wall` = P/F pe
 | Session | **`mn_c7b75f2c`** |
 | `rev.sha` | **`f4679d848ccab5b26875eb9d2812171bb759ebf1`** |
 | Bind ingest | **GREEN** |
+| Product H2H (CEO) | **FAIL** |
 | Product claim | **not unlocked** |
+| Invent next | **BSI context apparatus** (Toolbar BSI + Config BSI ctx **F**). **Before** claim-narrow. |
 | `must_win_passed` | **false** |
 | context | **1/3** (Toolbar BSI **F**, Config BSI **F**, System **P**) |
 | no_drop | **3/3** (`drop=no` ×3; silent_drop clean) |
@@ -49,9 +53,16 @@ Fold-time MCP `housekeep_stats` (not a wall meter): rows **5903/8000** · edges 
 | **no_drop** (must-win) | **3/3 PASS** | silent_drop **clean** |
 | **wall-clock** | **0/3 log-only** | A 103/103/91 vs B warm 512/521/530 vs B cold 605/612/644. MUST NOT treat wall as the must-win fail. |
 | **must_win_passed** | **false** | context **1/3**; no_drop **3/3** |
-| **product claim** | **not unlocked** | Bind GREEN ingest ≠ pass |
+| **product H2H** | **FAIL** (CEO) | `must_win_passed=false`. Bind GREEN ≠ pass. |
+| **product claim** | **not unlocked** | MUST NOT claim-narrow before BSI context apparatus. |
 | **`proof_pass`** | **false** | MUST NOT set true |
 | **tip** | **≠ product** | |
+
+## Invent next
+
+**BSI context apparatus** on Toolbar BSI + Config BSI (ctx **F** / **F**; System ctx **P**). Do this **before** claim-narrow. MUST NOT narrow the product claim to System-only, to no_drop, or to bind GREEN while BSI context is **F**.
+
+MUST NOT invent ms beyond the Memnetor table. MUST NOT reopen Neo4j. MUST NOT treat wall **0/3** as this apparatus.
 
 ## Sessions (do not mix)
 
@@ -65,6 +76,7 @@ Fold-time MCP `housekeep_stats` (not a wall meter): rows **5903/8000** · edges 
 ## Kill theater (do not sell)
 
 - Bind GREEN ingest as P1 / M5 / row 9 / `proof_pass`
+- Claim-narrow **before** BSI context apparatus
 - Wall **0/3** as the must-win fail (it is **log-only**)
 - Context **1/3** as unknown or as a wall-clock story
 - no_drop **3/3** as product pass
@@ -78,6 +90,8 @@ Fold-time MCP `housekeep_stats` (not a wall meter): rows **5903/8000** · edges 
 ## Explicit non-claims
 
 - Not `proof_pass` / `proof_pass_claimed`
+- Not product H2H pass (CEO: **FAIL**)
+- Not claim-narrow before BSI context apparatus
 - Not product claim unlocked
 - Not faster-than-grep
 - Not tip Track A
