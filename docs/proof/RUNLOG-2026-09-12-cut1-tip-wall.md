@@ -6,7 +6,7 @@ Prior scored tip H2H: [RUNLOG-2026-09-12-h2h-foam-tip.md](RUNLOG-2026-09-12-h2h-
 
 Pi artifact: `/tmp/cut1-wall-mn_0d4f6178/RUNLOG.json` (not copied into this repository). **MUST NOT invent per-cell ms** beyond the Memnetor table below.
 
-**CEO Core — narrow tip (2026-09-12)** ([#33](https://github.com/chouswei/SysMLEdge/pull/33)): Tip **must-win** = **context + no silent drop** only. Tip **wall-clock** = **log only** (not a tip pass/fail). Product **bind** H2H still logs wall as **P/F**. **Track B** Foam bind **unlocked** after this narrow. GO invent is **separate** (operators). This log does **not** invent bind. **No Neo4j.**
+**CEO Core — narrow tip (2026-09-12)** ([#33](https://github.com/chouswei/SysMLEdge/pull/33)): Tip **must-win** = **context + no silent drop** only. Tip **wall-clock** = **log only** (not a tip pass/fail). Product **bind** H2H still logs wall as **P/F**. This Cut 1 log does **not** invent bind. Later Track B: product FAIL on `mn_c7b75f2c` ([RUNLOG-2026-09-12-h2h-foam-bind.md](RUNLOG-2026-09-12-h2h-foam-bind.md)). **No Neo4j.**
 
 ## What ran
 
@@ -16,7 +16,7 @@ Pi artifact: `/tmp/cut1-wall-mn_0d4f6178/RUNLOG.json` (not copied into this repo
 | Session | **`mn_0d4f6178`** @ **0.19.9** (same Path-B sid as tip Track A) |
 | Arm A | Foam grep **~95–106ms** |
 | Arm B | MemNet tip `pin_map` **~400–470ms** (**~4×**) |
-| Track B | Foam **bind** — **unlocked** (GO invent is **separate**, operators) |
+| Track B | Foam **bind** — **not this log**. Later: **FAIL** on `mn_c7b75f2c` |
 
 ## Memnetor exact (verbatim sense)
 
@@ -46,7 +46,7 @@ Honest clip (M=200 omit**150**) ≠ empty / ≠ silent drop.
 |------|--------|------|
 | **wall-clock** (tip) | **log only** | A ~95–106ms vs B ~400–470ms (~4×). Logged. **Not** a tip pass/fail ([#33](https://github.com/chouswei/SysMLEdge/pull/33)). |
 | **context** / **no silent drop** | **tip must-win** | Tip Track A context **3/3** · no_drop **3/3**. |
-| **product / bind** | **not scored here** | ≠ SysMLEdge bind. Product bind H2H still logs wall as **P/F**. Track B **unlocked**; GO invent = **operators, separate**. |
+| **product / bind** | **not scored here** | ≠ SysMLEdge bind. Later product FAIL: [RUNLOG-2026-09-12-h2h-foam-bind.md](RUNLOG-2026-09-12-h2h-foam-bind.md). |
 | **`proof_pass`** | **not claimed** | MUST NOT set true. |
 | **cold (row 12)** | **held** | Not run. |
 
@@ -59,7 +59,7 @@ MUST NOT treat Cut 1 as row **9** / **M5** product pass.
 - Cut 1 as a missed ShapeWalk / Truncation / cold miss (floor ~400ms almost constant)
 - Treat serve/MCP hop, emit serialize, process-restart cold, or session size as Cut 1 missed factors (those are **out of scope**)
 - M=200 Truncation omit150 as empty / silent drop (honest clip ≠ empty)
-- Selling this log as Track B **invent** (unlocked ≠ done; GO = operators, separate)
+- Selling this log as Track B **product pass**
 - Tip Path-B as SysMLEdge bind
 - Neo4j / dual-engine reopen from the ~4× / ~400ms floor
 - Selling CEO Core narrow tip as still **pending recommend**
@@ -67,7 +67,7 @@ MUST NOT treat Cut 1 as row **9** / **M5** product pass.
 ## Explicit non-claims
 
 - Not `proof_pass` / `proof_pass_claimed`
-- Not Track B invent (unlocked only; operators GO separately)
+- Not Track B product pass (Cut 1 ≠ bind H2H)
 - Not Neo4j / dual-engine / C rewrite
 - Not SysMLEdge LIVE bind on `mn_0d4f6178`
 - Not cold non-Core (row 12)

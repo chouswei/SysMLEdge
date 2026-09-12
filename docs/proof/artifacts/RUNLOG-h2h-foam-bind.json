@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-12",
+  "track": "B",
+  "desk": "foam_sysmledge_bind",
+  "session": "mn_c7b75f2c",
+  "rev_sha": "f4679d848ccab5b26875eb9d2812171bb759ebf1",
+  "bind_invent": "GREEN",
+  "product_pass": false,
+  "must_win": false,
+  "context": "1/3",
+  "no_drop": "3/3",
+  "wall": "0/3",
+  "wall_axis": "P/F",
+  "cold": "FAIL",
+  "proof_pass_claimed": false,
+  "faster_than_grep": false,
+  "tip_desk": "mn_0d4f6178",
+  "tip_equals_this_desk": false,
+  "per_q_ms_table": null,
+  "foam_snap_saved": true,
+  "max_rows_bounce_after": 10000,
+  "fold_time_housekeep": {
+    "rows": 5903,
+    "row_cap": 8000,
+    "edges": 3054,
+    "relations": 41,
+    "orphans": 2849,
+    "dangling": 0
+  },
+  "must_not": [
+    "claim proof_pass",
+    "claim faster-than-grep",
+    "invent milliseconds",
+    "treat tip as this desk",
+    "treat bind GREEN as product pass"
+  ]
+}
