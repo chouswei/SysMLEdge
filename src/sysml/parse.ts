@@ -8,10 +8,15 @@ import { parseRegexFile } from "./parse-regex.js";
 
 export type { ParseEngine };
 
+export type ParseFallbackReason = "none" | "antlr_fail" | "silent_drop";
+
 export interface FileParseMeta {
   path: string;
   engine: ParseEngine;
+  antlrOk: boolean;
+  fallbackReason: ParseFallbackReason;
   antlrErrors: string[];
+  antlrHits: Record<string, number>;
 }
 
 export interface ParseMeta {
@@ -47,7 +52,10 @@ export async function parseSysmlTreeWithMeta(
     metaFiles.push({
       path: rel,
       engine: chosen.engine,
+      antlrOk: chosen.antlrOk,
+      fallbackReason: chosen.fallbackReason,
       antlrErrors: chosen.antlrErrors,
+      antlrHits: chosen.antlrHits,
     });
   }
   resolveConnectionEndpoints(nodes, edges);
@@ -64,7 +72,10 @@ function pickEngine(
   nodes: SysmlNode[];
   edges: SysmlEdge[];
   engine: ParseEngine;
+  antlrOk: boolean;
+  fallbackReason: ParseFallbackReason;
   antlrErrors: string[];
+  antlrHits: Record<string, number>;
 } {
   const regex = parseRegexFile(raw, path);
   const antlr = parseAntlrFile(raw, path);
@@ -73,14 +84,20 @@ function pickEngine(
       nodes: antlr.nodes,
       edges: antlr.edges,
       engine: "antlr",
+      antlrOk: true,
+      fallbackReason: "none",
       antlrErrors: antlr.errors,
+      antlrHits: antlr.hits,
     };
   }
   return {
     nodes: regex.nodes,
     edges: regex.edges,
     engine: "regex",
+    antlrOk: antlr.ok,
+    fallbackReason: antlr.ok ? "silent_drop" : "antlr_fail",
     antlrErrors: antlr.errors,
+    antlrHits: antlr.hits,
   };
 }
 

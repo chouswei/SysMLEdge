@@ -23,6 +23,7 @@
     "bind:live": "bash scripts/live-bind-operator.sh",
     "live:probe": "tsx src/cli.ts live-probe",
     "foam:gold": "tsx src/cli.ts gold",
+    "projection-census": "tsx src/cli.ts projection-census",
     "proof": "tsx src/cli.ts proof",
     "head-to-head": "tsx src/cli.ts head-to-head",
     "memnet:check": "tsx src/cli.ts memnet-check"

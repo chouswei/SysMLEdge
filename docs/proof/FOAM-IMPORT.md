@@ -59,7 +59,10 @@ Frozen parser output: [`fixtures/foam-gold/`](../../fixtures/foam-gold/). See [R
 
 ```bash
 npx tsx src/cli.ts gold /tmp/foam-soi/sysml-models --sha <FOAM_HEAD_SHA> -o fixtures/foam-gold/gold.json
+npx tsx src/cli.ts projection-census /tmp/foam-soi/sysml-models --sha <FOAM_HEAD_SHA> --gold fixtures/foam-gold/gold.json -o docs/proof/artifacts/RUNLOG-antlr-foam-gold.json
 ```
+
+`projection-census` publishes engine mix (ANTLR vs regex fallback) and walker-omitted constructs. It MUST NOT overwrite `fixtures/foam-gold/gold.json`. It is **not** a proof pass. Frozen gold stays the regex-era extract until a human replaces it.
 
 ## What this is not
 

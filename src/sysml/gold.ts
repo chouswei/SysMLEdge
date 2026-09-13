@@ -109,15 +109,24 @@ export function buildGoldFromParsed(
   };
 }
 
+export async function extractFoamGoldFromParsed(
+  ssotDir: string,
+  parsed: ParsedTree,
+  sourceSha: string,
+  repo?: string,
+): Promise<FoamGoldList> {
+  const unknown = await scanUnknownConnections(ssotDir, parsed);
+  unknown.push(...libsUnknown(parsed));
+  unknown.push(...(await scanMissingPartDefs(ssotDir, parsed)));
+  return buildGoldFromParsed(parsed, { sourceSha, repo, unknown });
+}
+
 export async function extractFoamGold(
   ssotDir: string,
   sourceSha: string,
 ): Promise<FoamGoldList> {
   const parsed = await parseSysmlTree(ssotDir);
-  const unknown = await scanUnknownConnections(ssotDir, parsed);
-  unknown.push(...libsUnknown(parsed));
-  unknown.push(...(await scanMissingPartDefs(ssotDir, parsed)));
-  return buildGoldFromParsed(parsed, { sourceSha, unknown });
+  return extractFoamGoldFromParsed(ssotDir, parsed, sourceSha);
 }
 
 function libsUnknown(parsed: ParsedTree): GoldUnknown[] {

@@ -18,7 +18,7 @@
 | **GQL** | Read/represent the bound model. MUST NOT invent **(b)**. Typed machine ops ≡ SysML constructs (Jon). |
 | **MCP** | Agent face: **streamable HTTP** (Cursor Bearer, memnet-pi pattern). Read GQL; **propose** only; no silent SSOT overwrite |
 | **Git / GitHub** | VCS backbone — repo @ SHA. We own projection, STALE, propose — not a GitHub rebuild. |
-| **CLI** | `import` / `import-foam` / `gold` / `proof` / `head-to-head` / `memnet-check` / `live-probe` / `status` / `save` / `download` / `reproject` / `mcp` |
+| **CLI** | `import` / `import-foam` / `gold` / `projection-census` / `proof` / `head-to-head` / `memnet-check` / `live-probe` / `status` / `save` / `download` / `reproject` / `mcp` |
 | **SysML v2 grammar** | Submodule [`vendor/sysml-v2-grammar`](https://github.com/daltskin/sysml-v2-grammar) **v2026.05.0** (`7292dc3`). Projects Foam-complete kinds only. Regex fallback if ANTLR would silent-drop. **Not** full KerML. |
 
 Normative contracts: [docs/P0-contracts.md](docs/P0-contracts.md). Product locks (**NARROW product story**, Steve Jobs + CEO Core 2026-09-12): [docs/PRODUCT-LOCKS.md](docs/PRODUCT-LOCKS.md). Living plan: [docs/PRODUCT-PLAN.md](docs/PRODUCT-PLAN.md). Business plan (Foam desk only until cold Foam yes): [docs/BUSINESS-PLAN.md](docs/BUSINESS-PLAN.md). P1 Foam acceptance + proof: [docs/P1-acceptance.md](docs/P1-acceptance.md). Agent rules: [AGENTS.md](AGENTS.md).
@@ -50,6 +50,7 @@ Foam is the **one** SoI. Import the whole `sysml-models/` tree (all `.sysml`). D
 # operator: clone Foam (private) + submodule, then bind
 FOAM_DIR=/tmp/foam-soi SYSMLEDGE_PROJECT=/tmp/foam-desk npm run bind:smoke   # FAKE bind; not M1–M5 / P1 pass
 npx tsx src/cli.ts gold /tmp/foam-soi/sysml-models --sha "$(git -C /tmp/foam-soi rev-parse HEAD 2>/dev/null || echo UNKNOWN)"
+npx tsx src/cli.ts projection-census /tmp/foam-soi/sysml-models --sha "$(git -C /tmp/foam-soi rev-parse HEAD 2>/dev/null || echo UNKNOWN)" --gold fixtures/foam-gold/gold.json
 npx tsx src/cli.ts proof --project /tmp/foam-desk --foam-ssot /tmp/foam-soi/sysml-models
 npx tsx src/cli.ts head-to-head   # null scaffold; plumbing meters in docs/proof/RUNLOG-2026-09-12-h2h-plumbing.md
 ```

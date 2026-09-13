@@ -1,9 +1,10 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { createMemNetAdapter } from "./memnet/factory.js";
 import { SysMLEdgeProject } from "./bind/project.js";
 import { createMcpHttpServer } from "./mcp/http.js";
-import { extractFoamGold, goldJson, summariseGold } from "./sysml/gold.js";
+import { extractFoamGold, goldJson, summariseGold, type FoamGoldList } from "./sysml/gold.js";
+import { censusJson, censusSysmlTree, summariseCensus } from "./sysml/projection-census.js";
 import { importFoamTree, runProofHarness, emptyHeadToHead, smokeBind } from "./proof/harness.js";
 import { TcpMemNet } from "./memnet/tcp.js";
 import { assertLiveMemNetEnv } from "./memnet/env.js";
@@ -17,6 +18,7 @@ Usage:
   sysmledge import <sysml-tree> [--project DIR]
   sysmledge import-foam <foam-repo> [--project DIR]
   sysmledge gold <sysml-models-dir> [--sha SHA] [-o FILE]
+  sysmledge projection-census <sysml-models-dir> [--sha SHA] [--gold FILE] [-o FILE]
   sysmledge proof [--project DIR] [--foam-ssot DIR] [--live]
   sysmledge smoke-bind [--project DIR] [--mutate-file REL] [--mcp|--no-mcp]
   sysmledge head-to-head [-o FILE]
@@ -42,6 +44,7 @@ Env:
 
 Proof M1–M5 is scaffolding only. This CLI MUST NOT claim a Foam/MemNet proof pass.
   head-to-head is a null scaffold (known gap). Plumbing p1-tiny meters are operator-logged, not this command.
+  projection-census MUST NOT overwrite fixtures/foam-gold/gold.json.
 `);
   process.exit(2);
 }
@@ -100,6 +103,28 @@ async function main(argv: string[]): Promise<void> {
       process.stdout.write(json);
     }
     console.error(summariseGold(gold));
+    return;
+  }
+
+  if (cmd === "projection-census") {
+    const src = argv[1];
+    if (!src) usage();
+    const sha = flag(argv, "--sha") ?? process.env.FOAM_SOURCE_SHA ?? "UNKNOWN";
+    const goldPath = flag(argv, "--gold");
+    let frozen: FoamGoldList | undefined;
+    if (goldPath) {
+      frozen = JSON.parse(await readFile(resolve(goldPath), "utf8")) as FoamGoldList;
+    }
+    const census = await censusSysmlTree(resolve(src), { sourceSha: sha, frozenGold: frozen });
+    const json = censusJson(census);
+    const out = flag(argv, "-o") ?? flag(argv, "--out");
+    if (out) {
+      await mkdir(dirname(resolve(out)), { recursive: true });
+      await writeFile(out, json);
+    } else {
+      process.stdout.write(json);
+    }
+    console.error(summariseCensus(census));
     return;
   }
 

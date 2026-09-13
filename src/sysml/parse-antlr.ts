@@ -30,11 +30,91 @@ const ATTR_KEYS = ["partNumber", "clickUp", "inventree"] as const;
 
 export type ParseEngine = "antlr" | "regex";
 
+export type WalkerDisposition = "projected" | "omitted" | "walked_not_kind";
+
+export interface CensusConstruct {
+  kind: string;
+  rule: number;
+  walker: WalkerDisposition;
+  note: string;
+}
+
+/** Grammar constructs the walker may see. Projected kinds stay Foam-complete P0 only. */
+export const CENSUS_CONSTRUCTS: readonly CensusConstruct[] = [
+  { kind: "package", rule: SysMLv2Parser.RULE_package, walker: "projected", note: "package node" },
+  { kind: "library_package", rule: SysMLv2Parser.RULE_libraryPackage, walker: "projected", note: "package node" },
+  { kind: "part_def", rule: SysMLv2Parser.RULE_partDefinition, walker: "projected", note: "part node" },
+  { kind: "part_usage", rule: SysMLv2Parser.RULE_partUsage, walker: "projected", note: "part node" },
+  { kind: "port_def", rule: SysMLv2Parser.RULE_portDefinition, walker: "projected", note: "port node" },
+  { kind: "port_usage", rule: SysMLv2Parser.RULE_portUsage, walker: "projected", note: "port node" },
+  { kind: "connection_usage", rule: SysMLv2Parser.RULE_connectionUsage, walker: "projected", note: "connection edge when two ends resolve" },
+  { kind: "connection_def", rule: SysMLv2Parser.RULE_connectionDefinition, walker: "walked_not_kind", note: "definition is not a usage edge" },
+  { kind: "attribute_usage", rule: SysMLv2Parser.RULE_attributeUsage, walker: "walked_not_kind", note: "only partNumber / clickUp / inventree become properties" },
+  { kind: "attribute_def", rule: SysMLv2Parser.RULE_attributeDefinition, walker: "omitted", note: "not a P0 graph kind" },
+  { kind: "item_def", rule: SysMLv2Parser.RULE_itemDefinition, walker: "omitted", note: "Foam-complete mapping gap" },
+  { kind: "item_usage", rule: SysMLv2Parser.RULE_itemUsage, walker: "omitted", note: "Foam-complete mapping gap" },
+  { kind: "requirement_def", rule: SysMLv2Parser.RULE_requirementDefinition, walker: "omitted", note: "Foam-complete mapping gap" },
+  { kind: "requirement_usage", rule: SysMLv2Parser.RULE_requirementUsage, walker: "omitted", note: "Foam-complete mapping gap" },
+  { kind: "satisfy_requirement", rule: SysMLv2Parser.RULE_satisfyRequirementUsage, walker: "omitted", note: "Foam-complete mapping gap" },
+  { kind: "action_def", rule: SysMLv2Parser.RULE_actionDefinition, walker: "omitted", note: "Foam-complete mapping gap" },
+  { kind: "action_usage", rule: SysMLv2Parser.RULE_actionUsage, walker: "omitted", note: "Foam-complete mapping gap" },
+  { kind: "perform_action", rule: SysMLv2Parser.RULE_performActionUsage, walker: "omitted", note: "Foam-complete mapping gap" },
+  { kind: "state_def", rule: SysMLv2Parser.RULE_stateDefinition, walker: "omitted", note: "Foam-complete mapping gap" },
+  { kind: "state_usage", rule: SysMLv2Parser.RULE_stateUsage, walker: "omitted", note: "Foam-complete mapping gap" },
+  { kind: "exhibit_state", rule: SysMLv2Parser.RULE_exhibitStateUsage, walker: "omitted", note: "Foam-complete mapping gap" },
+  { kind: "constraint_def", rule: SysMLv2Parser.RULE_constraintDefinition, walker: "omitted", note: "Foam-complete mapping gap" },
+  { kind: "constraint_usage", rule: SysMLv2Parser.RULE_constraintUsage, walker: "omitted", note: "Foam-complete mapping gap" },
+  { kind: "enumeration_def", rule: SysMLv2Parser.RULE_enumerationDefinition, walker: "omitted", note: "not a P0 graph kind" },
+  { kind: "interface_def", rule: SysMLv2Parser.RULE_interfaceDefinition, walker: "omitted", note: "not a P0 graph kind" },
+  { kind: "interface_usage", rule: SysMLv2Parser.RULE_interfaceUsage, walker: "omitted", note: "not a P0 graph kind" },
+  { kind: "flow_def", rule: SysMLv2Parser.RULE_flowDefinition, walker: "omitted", note: "not a P0 graph kind" },
+  { kind: "flow_usage", rule: SysMLv2Parser.RULE_flowUsage, walker: "omitted", note: "not a P0 graph kind" },
+  { kind: "allocation_def", rule: SysMLv2Parser.RULE_allocationDefinition, walker: "omitted", note: "not a P0 graph kind" },
+  { kind: "allocation_usage", rule: SysMLv2Parser.RULE_allocationUsage, walker: "omitted", note: "not a P0 graph kind" },
+  { kind: "calc_def", rule: SysMLv2Parser.RULE_calculationDefinition, walker: "omitted", note: "not a P0 graph kind" },
+  { kind: "calc_usage", rule: SysMLv2Parser.RULE_calculationUsage, walker: "omitted", note: "not a P0 graph kind" },
+  { kind: "occurrence_def", rule: SysMLv2Parser.RULE_occurrenceDefinition, walker: "omitted", note: "not a P0 graph kind" },
+  { kind: "occurrence_usage", rule: SysMLv2Parser.RULE_occurrenceUsage, walker: "omitted", note: "not a P0 graph kind" },
+  { kind: "view_def", rule: SysMLv2Parser.RULE_viewDefinition, walker: "omitted", note: "not a P0 graph kind" },
+  { kind: "view_usage", rule: SysMLv2Parser.RULE_viewUsage, walker: "omitted", note: "not a P0 graph kind" },
+  { kind: "viewpoint_def", rule: SysMLv2Parser.RULE_viewpointDefinition, walker: "omitted", note: "not a P0 graph kind" },
+  { kind: "viewpoint_usage", rule: SysMLv2Parser.RULE_viewpointUsage, walker: "omitted", note: "not a P0 graph kind" },
+  { kind: "use_case_def", rule: SysMLv2Parser.RULE_useCaseDefinition, walker: "omitted", note: "not a P0 graph kind" },
+  { kind: "use_case_usage", rule: SysMLv2Parser.RULE_useCaseUsage, walker: "omitted", note: "not a P0 graph kind" },
+  { kind: "concern_def", rule: SysMLv2Parser.RULE_concernDefinition, walker: "omitted", note: "not a P0 graph kind" },
+  { kind: "concern_usage", rule: SysMLv2Parser.RULE_concernUsage, walker: "omitted", note: "not a P0 graph kind" },
+  { kind: "analysis_case_def", rule: SysMLv2Parser.RULE_analysisCaseDefinition, walker: "omitted", note: "not a P0 graph kind" },
+  { kind: "analysis_case_usage", rule: SysMLv2Parser.RULE_analysisCaseUsage, walker: "omitted", note: "not a P0 graph kind" },
+  { kind: "metadata_def", rule: SysMLv2Parser.RULE_metadataDefinition, walker: "omitted", note: "not a P0 graph kind" },
+  { kind: "rendering_def", rule: SysMLv2Parser.RULE_renderingDefinition, walker: "omitted", note: "not a P0 graph kind" },
+  { kind: "rendering_usage", rule: SysMLv2Parser.RULE_renderingUsage, walker: "omitted", note: "not a P0 graph kind" },
+];
+
+const RULE_TO_CENSUS_KIND = new Map(CENSUS_CONSTRUCTS.map((c) => [c.rule, c.kind]));
+
+export function emptyConstructHits(): Record<string, number> {
+  const hits: Record<string, number> = {};
+  for (const c of CENSUS_CONSTRUCTS) hits[c.kind] = 0;
+  return hits;
+}
+
+export function countConstructHits(tree: ParserRuleContext): Record<string, number> {
+  const hits = emptyConstructHits();
+  const walk = (node: ParserRuleContext): void => {
+    const kind = RULE_TO_CENSUS_KIND.get(node.ruleIndex);
+    if (kind) hits[kind] = (hits[kind] ?? 0) + 1;
+    walkChildren(node, walk);
+  };
+  walk(tree);
+  return hits;
+}
+
 export interface AntlrFileParse {
   nodes: SysmlNode[];
   edges: SysmlEdge[];
   errors: string[];
   ok: boolean;
+  hits: Record<string, number>;
 }
 
 interface Frame {
@@ -74,10 +154,11 @@ export function parseAntlrFile(src: string, path: string): AntlrFileParse {
     errors.push(e instanceof Error ? e.message : String(e));
   }
   if (!tree) {
-    return { nodes: [], edges: [], errors, ok: false };
+    return { nodes: [], edges: [], errors, ok: false, hits: emptyConstructHits() };
   }
   const walked = walkTree(tree, path);
-  return { ...walked, errors, ok: errors.length === 0 };
+  const hits = countConstructHits(tree);
+  return { ...walked, errors, ok: errors.length === 0, hits };
 }
 
 function parseRoot(src: string): { tree: ParserRuleContext | null; errors: string[] } {
