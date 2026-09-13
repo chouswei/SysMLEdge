@@ -4,7 +4,7 @@
 
 ### Added
 
-- **SysML v2 ANTLR grammar** — pin [`daltskin/sysml-v2-grammar`](https://github.com/daltskin/sysml-v2-grammar) **v2026.05.0** (`7292dc39983a6d263d14f8f6689de0f3b35db5eb`). Projection prefers the generated TypeScript parser; regex remains a per-file silent-drop fallback. Foam-complete kinds only. **Not** full KerML. `proof_pass_claimed` stays **false**. Frozen Foam gold.json is not re-extracted.
+- **SysML v2 ANTLR grammar** — git submodule [`vendor/sysml-v2-grammar`](https://github.com/daltskin/sysml-v2-grammar) **v2026.05.0** (`7292dc39983a6d263d14f8f6689de0f3b35db5eb`). Projection prefers the generated TypeScript parser; regex remains a per-file silent-drop fallback. Foam-complete kinds only. **Not** full KerML. `proof_pass_claimed` stays **false**. Frozen Foam gold.json is not re-extracted.
 
 ### Docs
 

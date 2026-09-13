@@ -20,7 +20,7 @@ export interface ParseMeta {
 
 /**
  * Whole-tree projection. Prefer the pinned ANTLR4 SysML v2 grammar
- * (daltskin/sysml-v2-grammar v2026.05.0). Fall back to the regex scanner
+ * (git submodule vendor/sysml-v2-grammar @ v2026.05.0). Fall back to the regex scanner
  * per file when ANTLR fails or would silent-drop parts/ports/connections.
  * Mapping stays Foam-complete; this is not full KerML.
  */

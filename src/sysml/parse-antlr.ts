@@ -59,7 +59,8 @@ class CollectingErrorListener extends BaseErrorListener {
 }
 
 /**
- * Parse one SysML file with the pinned ANTLR4 grammar (daltskin/sysml-v2-grammar v2026.05.0).
+ * Parse one SysML file with the pinned ANTLR4 grammar
+ * (git submodule vendor/sysml-v2-grammar @ v2026.05.0).
  * Projects Foam-complete kinds only. Not a full-KerML claim.
  */
 export function parseAntlrFile(src: string, path: string): AntlrFileParse {

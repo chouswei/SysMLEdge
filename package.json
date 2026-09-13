@@ -14,7 +14,7 @@
     "build": "tsc",
     "mcp": "tsx src/mcp/main.ts",
     "cli": "tsx src/cli.ts",
-    "generate:grammar": "antlr-ng -D language=TypeScript -o src/sysml/generated --generate-visitor true grammar/SysMLv2Lexer.g4 grammar/SysMLv2Parser.g4 && rm -f src/sysml/generated/*.interp && node scripts/stamp-generated.mjs",
+    "generate:grammar": "antlr-ng -D language=TypeScript -o src/sysml/generated --generate-visitor true vendor/sysml-v2-grammar/grammar/SysMLv2Lexer.g4 vendor/sysml-v2-grammar/grammar/SysMLv2Parser.g4 && rm -f src/sysml/generated/*.interp && node scripts/stamp-generated.mjs",
     "test": "tsx --test test/*.test.ts",
     "typecheck": "tsc --noEmit",
     "foam:import": "bash scripts/foam-import.sh",

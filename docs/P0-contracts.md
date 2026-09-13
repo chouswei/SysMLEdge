@@ -164,7 +164,7 @@ After upload, **working SSOT** is the bound **graph** **(g)**. Mapping is what M
 
 Baseline kinds Foam (and typical trees) already use — **minimum**, not a cap.
 
-Parser: pinned ANTLR4 SysML v2 grammar [`daltskin/sysml-v2-grammar`](https://github.com/daltskin/sysml-v2-grammar) **v2026.05.0** (`grammar/PIN.json`), with the regex scanner as a per-file fallback when ANTLR would silent-drop. This is **not** whole-language / full KerML.
+Parser: git submodule [`vendor/sysml-v2-grammar`](https://github.com/daltskin/sysml-v2-grammar) **v2026.05.0** (`src/sysml/grammar-pin.json`), with the regex scanner as a per-file fallback when ANTLR would silent-drop. This is **not** whole-language / full KerML.
 
 | SysML | Graph | Locators (stable) |
 |-------|-------|-------------------|
