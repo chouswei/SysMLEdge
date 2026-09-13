@@ -1,0 +1,81 @@
+{
+  "must_win_passed": false,
+  "proof_pass_claimed": false,
+  "memnetSession": "mn_0d395e61",
+  "rev_sha": "c69a051e1352e745381eeb8a1ea490655551b151",
+  "memnet_llm": "0.19.9",
+  "product": "product_cold_bound_model_rev",
+  "a1_green_untouched": true,
+  "roll_0_19_10": "held",
+  "tip_untouched": true,
+  "inventree_untouched": true,
+  "soft_pass": false,
+  "rows": [
+    {
+      "seed": "FoamDetectionLiteVer2::CoreVideoMonitorToolbar::backgroundSetIndicator",
+      "depth": 2,
+      "warm": {
+        "ms": 527.044,
+        "bytes": 5849,
+        "hits": 25,
+        "omit_n": 0,
+        "truncation": false,
+        "ghost_n": 0,
+        "cue_n": 0
+      },
+      "cold": {
+        "ms": 569.909,
+        "bytes": 5849,
+        "hits": 25,
+        "omit_n": 0,
+        "truncation": false,
+        "ghost_n": 0,
+        "cue_n": 0
+      },
+      "must_win_seed": true,
+      "ghost": "P",
+      "stuffing": "P",
+      "nodrop": "P"
+    },
+    {
+      "seed": "FoamDetectionLiteVer2::CoreMonitorConfigPanel::backgroundSetIndicator",
+      "depth": 2,
+      "warm": {
+        "ms": 501.855,
+        "bytes": 4877,
+        "hits": 21
+      },
+      "cold": {
+        "ms": 606.137,
+        "bytes": 4877,
+        "hits": 21
+      },
+      "must_win_seed": true,
+      "ghost": "P",
+      "stuffing": "P",
+      "nodrop": "P"
+    },
+    {
+      "seed": "FoamDetectionLiteVer2::FoamDetectionLiteVer2System",
+      "depth": 2,
+      "warm": {
+        "ms": 525.792,
+        "bytes": 8397,
+        "hits": 51,
+        "truncation": true,
+        "omit_n": 310
+      },
+      "cold": {
+        "ms": 615.851,
+        "bytes": 8397,
+        "hits": 51,
+        "truncation": true,
+        "omit_n": 310
+      },
+      "must_win_seed": false,
+      "ghost": "P",
+      "stuffing": "F",
+      "nodrop": "P"
+    }
+  ]
+}
