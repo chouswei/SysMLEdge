@@ -1,0 +1,508 @@
+{
+  "proof_pass_claimed": false,
+  "proof_executed": false,
+  "source": {
+    "repo": "chouswei/modelbasedPrj-itri-vedan-foam-detection",
+    "sha": "76459224e6afbe74612cca9b37ffe0b3503bda85",
+    "tree": "sysml-models/",
+    "parser": "src/sysml/parse.ts (antlr-first; regex per-file fallback)",
+    "grammar": "vendor/sysml-v2-grammar @ v2026.05.0"
+  },
+  "engines": {
+    "antlr": 21,
+    "regex": 5,
+    "regex_antlr_fail": 5,
+    "regex_silent_drop": 0,
+    "files": [
+      {
+        "path": "libs/common/composites/cam_revision2_assembly.sysml",
+        "engine": "regex",
+        "antlrOk": false,
+        "fallbackReason": "antlr_fail",
+        "antlrErrorCount": 1,
+        "antlrErrorsSample": [
+          "15:24 mismatched input ':' expecting {';', '{'}"
+        ]
+      },
+      {
+        "path": "libs/common/composites/optoelectronic.sysml",
+        "engine": "antlr",
+        "antlrOk": true,
+        "fallbackReason": "none",
+        "antlrErrorCount": 0,
+        "antlrErrorsSample": []
+      },
+      {
+        "path": "libs/common/composites/poe_edge_computer.sysml",
+        "engine": "antlr",
+        "antlrOk": true,
+        "fallbackReason": "none",
+        "antlrErrorCount": 0,
+        "antlrErrorsSample": []
+      },
+      {
+        "path": "libs/common/composites/rp2350_w5500_m12_poe_pcba.sysml",
+        "engine": "antlr",
+        "antlrOk": true,
+        "fallbackReason": "none",
+        "antlrErrorCount": 0,
+        "antlrErrorsSample": []
+      },
+      {
+        "path": "libs/common/connections/connections.sysml",
+        "engine": "antlr",
+        "antlrOk": true,
+        "fallbackReason": "none",
+        "antlrErrorCount": 0,
+        "antlrErrorsSample": []
+      },
+      {
+        "path": "libs/common/parts/ads1274-model.sysml",
+        "engine": "antlr",
+        "antlrOk": true,
+        "fallbackReason": "none",
+        "antlrErrorCount": 0,
+        "antlrErrorsSample": []
+      },
+      {
+        "path": "libs/common/parts/data_loggers.sysml",
+        "engine": "antlr",
+        "antlrOk": true,
+        "fallbackReason": "none",
+        "antlrErrorCount": 0,
+        "antlrErrorsSample": []
+      },
+      {
+        "path": "libs/common/parts/development_boards.sysml",
+        "engine": "antlr",
+        "antlrOk": true,
+        "fallbackReason": "none",
+        "antlrErrorCount": 0,
+        "antlrErrorsSample": []
+      },
+      {
+        "path": "libs/common/parts/flow_items.sysml",
+        "engine": "antlr",
+        "antlrOk": true,
+        "fallbackReason": "none",
+        "antlrErrorCount": 0,
+        "antlrErrorsSample": []
+      },
+      {
+        "path": "libs/common/parts/hardware_ports.sysml",
+        "engine": "regex",
+        "antlrOk": false,
+        "fallbackReason": "antlr_fail",
+        "antlrErrorCount": 23,
+        "antlrErrorsSample": [
+          "30:25 mismatched input ':' expecting {';', '{'}",
+          "31:26 mismatched input ':' expecting {';', '{'}",
+          "93:32 mismatched input ':' expecting {';', '{'}"
+        ]
+      },
+      {
+        "path": "libs/common/parts/network.sysml",
+        "engine": "antlr",
+        "antlrOk": true,
+        "fallbackReason": "none",
+        "antlrErrorCount": 0,
+        "antlrErrorsSample": []
+      },
+      {
+        "path": "libs/common/parts/opto_vision.sysml",
+        "engine": "regex",
+        "antlrOk": false,
+        "fallbackReason": "antlr_fail",
+        "antlrErrorCount": 2,
+        "antlrErrorsSample": [
+          "110:34 mismatched input ':' expecting {';', '{'}",
+          "262:24 mismatched input ':' expecting {';', '{'}"
+        ]
+      },
+      {
+        "path": "libs/common/parts/polarfire-soc.sysml",
+        "engine": "antlr",
+        "antlrOk": true,
+        "fallbackReason": "none",
+        "antlrErrorCount": 0,
+        "antlrErrorsSample": []
+      },
+      {
+        "path": "libs/common/parts/relays.sysml",
+        "engine": "antlr",
+        "antlrOk": true,
+        "fallbackReason": "none",
+        "antlrErrorCount": 0,
+        "antlrErrorsSample": []
+      },
+      {
+        "path": "libs/common/parts/semiconductors.sysml",
+        "engine": "regex",
+        "antlrOk": false,
+        "fallbackReason": "antlr_fail",
+        "antlrErrorCount": 2,
+        "antlrErrorsSample": [
+          "286:32 mismatched input ':' expecting {';', '{'}",
+          "645:9 no viable alternative at input 'portout'"
+        ]
+      },
+      {
+        "path": "libs/common/parts/sensors.sysml",
+        "engine": "antlr",
+        "antlrOk": true,
+        "fallbackReason": "none",
+        "antlrErrorCount": 0,
+        "antlrErrorsSample": []
+      },
+      {
+        "path": "libs/common/stubs/electronics.sysml",
+        "engine": "antlr",
+        "antlrOk": true,
+        "fallbackReason": "none",
+        "antlrErrorCount": 0,
+        "antlrErrorsSample": []
+      },
+      {
+        "path": "libs/common/stubs/mechanical.sysml",
+        "engine": "antlr",
+        "antlrOk": true,
+        "fallbackReason": "none",
+        "antlrErrorCount": 0,
+        "antlrErrorsSample": []
+      },
+      {
+        "path": "models/behaviour.sysml",
+        "engine": "antlr",
+        "antlrOk": true,
+        "fallbackReason": "none",
+        "antlrErrorCount": 0,
+        "antlrErrorsSample": []
+      },
+      {
+        "path": "models/connections.sysml",
+        "engine": "antlr",
+        "antlrOk": true,
+        "fallbackReason": "none",
+        "antlrErrorCount": 0,
+        "antlrErrorsSample": []
+      },
+      {
+        "path": "models/deploy.sysml",
+        "engine": "regex",
+        "antlrOk": false,
+        "fallbackReason": "antlr_fail",
+        "antlrErrorCount": 2,
+        "antlrErrorsSample": [
+          "1:0 token recognition error at: '﻿'",
+          "25:37 mismatched input ':' expecting {';', '{'}"
+        ]
+      },
+      {
+        "path": "models/items-host-config.sysml",
+        "engine": "antlr",
+        "antlrOk": true,
+        "fallbackReason": "none",
+        "antlrErrorCount": 0,
+        "antlrErrorsSample": []
+      },
+      {
+        "path": "models/items-mqtt.sysml",
+        "engine": "antlr",
+        "antlrOk": true,
+        "fallbackReason": "none",
+        "antlrErrorCount": 0,
+        "antlrErrorsSample": []
+      },
+      {
+        "path": "models/requirements.sysml",
+        "engine": "antlr",
+        "antlrOk": true,
+        "fallbackReason": "none",
+        "antlrErrorCount": 0,
+        "antlrErrorsSample": []
+      },
+      {
+        "path": "models/root.sysml",
+        "engine": "antlr",
+        "antlrOk": true,
+        "fallbackReason": "none",
+        "antlrErrorCount": 0,
+        "antlrErrorsSample": []
+      },
+      {
+        "path": "outputs/diagrams/foam-lite-demo.sysml",
+        "engine": "antlr",
+        "antlrOk": true,
+        "fallbackReason": "none",
+        "antlrErrorCount": 0,
+        "antlrErrorsSample": []
+      }
+    ]
+  },
+  "projected": {
+    "files": 26,
+    "packages": 27,
+    "parts": 665,
+    "ports": 1432,
+    "connections": 193,
+    "nested_parts": 390
+  },
+  "frozen_gold": {
+    "sha": "76459224e6afbe74612cca9b37ffe0b3503bda85",
+    "counts": {
+      "files": 26,
+      "packages": 27,
+      "parts": 663,
+      "ports": 1400,
+      "connections_parsed": 200,
+      "nested_parts": 388
+    },
+    "delta": {
+      "files": {
+        "got": 26,
+        "frozen": 26,
+        "d": 0
+      },
+      "packages": {
+        "got": 27,
+        "frozen": 27,
+        "d": 0
+      },
+      "parts": {
+        "got": 665,
+        "frozen": 663,
+        "d": 2
+      },
+      "ports": {
+        "got": 1432,
+        "frozen": 1400,
+        "d": 32
+      },
+      "connections_parsed": {
+        "got": 193,
+        "frozen": 200,
+        "d": -7
+      },
+      "nested_parts": {
+        "got": 390,
+        "frozen": 388,
+        "d": 2
+      }
+    },
+    "extra_part_qnames_sample": [
+      "Network::NetgearGS724T",
+      "OptoVision::Jhem600gmHmP",
+      "Rp2350W5500PoeEdge::Rp2350W5500M12PoePcba::poePowerOutConn",
+      "Rp2350W5500PoeEdge::Rp2350W5500M12PoePcba::wizPoe"
+    ],
+    "missing_part_qnames_sample": [
+      "Rp2350W5500PoeEdge::poePowerOutConn",
+      "Rp2350W5500PoeEdge::wizPoe"
+    ]
+  },
+  "omitted_kinds": [
+    {
+      "kind": "action_def",
+      "walker": "omitted",
+      "antlr_hits": 193,
+      "source_keyword_hits": 193,
+      "files": [
+        "libs/common/parts/relays.sysml",
+        "models/behaviour.sysml"
+      ],
+      "note": "Foam-complete mapping gap"
+    },
+    {
+      "kind": "action_usage",
+      "walker": "omitted",
+      "antlr_hits": 8,
+      "source_keyword_hits": 13,
+      "files": [
+        "libs/common/parts/relays.sysml",
+        "models/behaviour.sysml"
+      ],
+      "note": "Foam-complete mapping gap"
+    },
+    {
+      "kind": "allocation_usage",
+      "walker": "omitted",
+      "antlr_hits": 7,
+      "source_keyword_hits": 7,
+      "files": [
+        "models/deploy.sysml"
+      ],
+      "note": "not a P0 graph kind"
+    },
+    {
+      "kind": "attribute_def",
+      "walker": "omitted",
+      "antlr_hits": 126,
+      "source_keyword_hits": 126,
+      "files": [
+        "libs/common/parts/polarfire-soc.sysml",
+        "models/behaviour.sysml"
+      ],
+      "note": "not a P0 graph kind"
+    },
+    {
+      "kind": "attribute_usage",
+      "walker": "walked_not_kind",
+      "antlr_hits": 3191,
+      "source_keyword_hits": 0,
+      "files": [
+        "libs/common/composites/cam_revision2_assembly.sysml",
+        "libs/common/composites/optoelectronic.sysml",
+        "libs/common/composites/rp2350_w5500_m12_poe_pcba.sysml",
+        "libs/common/parts/ads1274-model.sysml",
+        "libs/common/parts/data_loggers.sysml",
+        "libs/common/parts/development_boards.sysml",
+        "libs/common/parts/flow_items.sysml",
+        "libs/common/parts/network.sysml",
+        "libs/common/parts/opto_vision.sysml",
+        "libs/common/parts/polarfire-soc.sysml",
+        "libs/common/parts/relays.sysml",
+        "libs/common/parts/semiconductors.sysml",
+        "libs/common/parts/sensors.sysml",
+        "models/behaviour.sysml",
+        "models/connections.sysml",
+        "models/deploy.sysml",
+        "models/items-host-config.sysml",
+        "models/items-mqtt.sysml",
+        "models/requirements.sysml"
+      ],
+      "note": "only partNumber / clickUp / inventree become properties"
+    },
+    {
+      "kind": "calc_def",
+      "walker": "omitted",
+      "antlr_hits": 3,
+      "source_keyword_hits": 3,
+      "files": [
+        "models/behaviour.sysml"
+      ],
+      "note": "not a P0 graph kind"
+    },
+    {
+      "kind": "connection_def",
+      "walker": "walked_not_kind",
+      "antlr_hits": 72,
+      "source_keyword_hits": 72,
+      "files": [
+        "libs/common/composites/rp2350_w5500_m12_poe_pcba.sysml",
+        "libs/common/connections/connections.sysml",
+        "libs/common/parts/network.sysml",
+        "models/connections.sysml",
+        "models/deploy.sysml"
+      ],
+      "note": "definition is not a usage edge"
+    },
+    {
+      "kind": "constraint_def",
+      "walker": "omitted",
+      "antlr_hits": 4,
+      "source_keyword_hits": 4,
+      "files": [
+        "libs/common/parts/relays.sysml",
+        "models/behaviour.sysml"
+      ],
+      "note": "Foam-complete mapping gap"
+    },
+    {
+      "kind": "item_def",
+      "walker": "omitted",
+      "antlr_hits": 124,
+      "source_keyword_hits": 124,
+      "files": [
+        "libs/common/parts/flow_items.sysml",
+        "models/connections.sysml",
+        "models/deploy.sysml",
+        "models/items-host-config.sysml",
+        "models/items-mqtt.sysml"
+      ],
+      "note": "Foam-complete mapping gap"
+    },
+    {
+      "kind": "item_usage",
+      "walker": "omitted",
+      "antlr_hits": 117,
+      "source_keyword_hits": 117,
+      "files": [
+        "libs/common/parts/flow_items.sysml",
+        "libs/common/parts/hardware_ports.sysml",
+        "models/behaviour.sysml",
+        "models/connections.sysml",
+        "models/deploy.sysml",
+        "models/items-host-config.sysml"
+      ],
+      "note": "Foam-complete mapping gap"
+    },
+    {
+      "kind": "perform_action",
+      "walker": "omitted",
+      "antlr_hits": 5,
+      "source_keyword_hits": 0,
+      "files": [
+        "libs/common/parts/relays.sysml"
+      ],
+      "note": "Foam-complete mapping gap"
+    },
+    {
+      "kind": "requirement_def",
+      "walker": "omitted",
+      "antlr_hits": 125,
+      "source_keyword_hits": 125,
+      "files": [
+        "models/requirements.sysml"
+      ],
+      "note": "Foam-complete mapping gap"
+    },
+    {
+      "kind": "requirement_usage",
+      "walker": "omitted",
+      "antlr_hits": 0,
+      "source_keyword_hits": 182,
+      "files": [
+        "models/root.sysml"
+      ],
+      "note": "Foam-complete mapping gap"
+    },
+    {
+      "kind": "satisfy_requirement",
+      "walker": "omitted",
+      "antlr_hits": 182,
+      "source_keyword_hits": 0,
+      "files": [
+        "models/root.sysml"
+      ],
+      "note": "Foam-complete mapping gap"
+    },
+    {
+      "kind": "state_def",
+      "walker": "omitted",
+      "antlr_hits": 16,
+      "source_keyword_hits": 16,
+      "files": [
+        "models/behaviour.sysml"
+      ],
+      "note": "Foam-complete mapping gap"
+    },
+    {
+      "kind": "state_usage",
+      "walker": "omitted",
+      "antlr_hits": 85,
+      "source_keyword_hits": 85,
+      "files": [
+        "models/behaviour.sysml"
+      ],
+      "note": "Foam-complete mapping gap"
+    }
+  ],
+  "unknown": [
+    {
+      "kind": "submodule",
+      "name": "sysml-models/libs/omg",
+      "path": "sysml-models/libs/omg",
+      "reason": "libs/common/*.sysml present; nested gitlink omg/SysML-v2-Release (KerML) is not on disk. Not claimed."
+    }
+  ]
+}
