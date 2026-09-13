@@ -8,4 +8,5 @@ secrets/
 .DS_Store
 .sysmledge/
 .tmp/
+src/sysml/generated/*.interp
 

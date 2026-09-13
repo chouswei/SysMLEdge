@@ -19,6 +19,7 @@
 | **MCP** | Agent face: **streamable HTTP** (Cursor Bearer, memnet-pi pattern). Read GQL; **propose** only; no silent SSOT overwrite |
 | **Git / GitHub** | VCS backbone — repo @ SHA. We own projection, STALE, propose — not a GitHub rebuild. |
 | **CLI** | `import` / `import-foam` / `gold` / `proof` / `head-to-head` / `memnet-check` / `live-probe` / `status` / `save` / `download` / `reproject` / `mcp` |
+| **SysML v2 grammar** | Submodule [`vendor/sysml-v2-grammar`](https://github.com/daltskin/sysml-v2-grammar) **v2026.05.0** (`7292dc3`). Projects Foam-complete kinds only. Regex fallback if ANTLR would silent-drop. **Not** full KerML. |
 
 Normative contracts: [docs/P0-contracts.md](docs/P0-contracts.md). Product locks (**NARROW product story**, Steve Jobs + CEO Core 2026-09-12): [docs/PRODUCT-LOCKS.md](docs/PRODUCT-LOCKS.md). Living plan: [docs/PRODUCT-PLAN.md](docs/PRODUCT-PLAN.md). Business plan (Foam desk only until cold Foam yes): [docs/BUSINESS-PLAN.md](docs/BUSINESS-PLAN.md). P1 Foam acceptance + proof: [docs/P1-acceptance.md](docs/P1-acceptance.md). Agent rules: [AGENTS.md](AGENTS.md).
 
@@ -33,6 +34,7 @@ Synthetic tree: [`fixtures/p1-tiny/`](fixtures/p1-tiny/) — parts, ports, one c
 Use this when Pi / `memnet serve` is unreachable. Bind, STALE, propose, and reproject run against an in-memory projection parsed from SysML (parts/ports/connections + nested usages, **contains/owns/ends** neighbourhood). MUST NOT invent mission-TSK owns. LIVE attach plan: [`docs/proof/LIVE-0199-ATTACH.md`](docs/proof/LIVE-0199-ATTACH.md).
 
 ```bash
+git submodule update --init --recursive   # vendor/sysml-v2-grammar @ v2026.05.0
 npm install
 export MEMNET_BACKEND=fake   # default
 npx tsx src/cli.ts import fixtures/p1-tiny --project /tmp/p1-desk
