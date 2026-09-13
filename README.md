@@ -19,6 +19,7 @@
 | **MCP** | Agent face: **streamable HTTP** (Cursor Bearer, memnet-pi pattern). Read GQL; **propose** only; no silent SSOT overwrite |
 | **Git / GitHub** | VCS backbone — repo @ SHA. We own projection, STALE, propose — not a GitHub rebuild. |
 | **CLI** | `import` / `import-foam` / `gold` / `proof` / `head-to-head` / `memnet-check` / `live-probe` / `status` / `save` / `download` / `reproject` / `mcp` |
+| **SysML v2 grammar** | ANTLR4 pin [`daltskin/sysml-v2-grammar`](https://github.com/daltskin/sysml-v2-grammar) **v2026.05.0** (`7292dc3`). Projects Foam-complete kinds only. Regex fallback if ANTLR would silent-drop. **Not** full KerML. |
 
 Normative contracts: [docs/P0-contracts.md](docs/P0-contracts.md). Product locks (**NARROW product story**, Steve Jobs + CEO Core 2026-09-12): [docs/PRODUCT-LOCKS.md](docs/PRODUCT-LOCKS.md). Living plan: [docs/PRODUCT-PLAN.md](docs/PRODUCT-PLAN.md). Business plan (Foam desk only until cold Foam yes): [docs/BUSINESS-PLAN.md](docs/BUSINESS-PLAN.md). P1 Foam acceptance + proof: [docs/P1-acceptance.md](docs/P1-acceptance.md). Agent rules: [AGENTS.md](AGENTS.md).
 

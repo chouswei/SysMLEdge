@@ -1,0 +1,14 @@
+{
+  "source": "https://github.com/daltskin/sysml-v2-grammar",
+  "tag": "v2026.05.0",
+  "sha": "7292dc39983a6d263d14f8f6689de0f3b35db5eb",
+  "grammar_version": "2026.05.0",
+  "omg_release": "2026-05",
+  "license": "MIT",
+  "files": [
+    "SysMLv2Lexer.g4",
+    "SysMLv2Parser.g4",
+    "SysMLv2Lexer.tokens"
+  ],
+  "product_claim": "Foam-complete projection only. Not full KerML. Not a P1 proof pass."
+}

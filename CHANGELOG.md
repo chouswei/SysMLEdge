@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+- **SysML v2 ANTLR grammar** — pin [`daltskin/sysml-v2-grammar`](https://github.com/daltskin/sysml-v2-grammar) **v2026.05.0** (`7292dc39983a6d263d14f8f6689de0f3b35db5eb`). Projection prefers the generated TypeScript parser; regex remains a per-file silent-drop fallback. Foam-complete kinds only. **Not** full KerML. `proof_pass_claimed` stays **false**. Frozen Foam gold.json is not re-extracted.
+
 ### Docs
 
 - **A1 green @ `mn_0d395e61`** — H4 remeter fold: d=1 ego claim pin; CueConflict none; wall F log-only; H1 = Pi restore GitHub map (CI-pin #39). `proof_pass_claimed` stays **false**. Not Foam full green.
